@@ -2,14 +2,14 @@
 
 [![License: Apache 2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
 [![Google Antigravity](https://img.shields.io/badge/Antigravity-2.0%20Ready-4285F4.svg)](https://antigravity.google)
-[![Skills Count](https://img.shields.io/badge/Elite%20Skills-125%20Active-success.svg)](skills/)
+[![Skills Count](https://img.shields.io/badge/Elite%20Skills-124%20Active-success.svg)](skills/)
 [![DeepMind Science](https://img.shields.io/badge/DeepMind%20Science-41%20Skills-8A2BE2.svg)](plugins/science/)
 [![Universal Agents](https://img.shields.io/badge/~%2F.agents%2Fskills-Compatible-orange.svg)](#-universal-agent-compatibility-agentsskills)
 [![Integrity Score](https://img.shields.io/badge/Audit%20Score-100%2F100-brightgreen.svg)](scripts/verify_skills.py)
 [![CI Status](https://img.shields.io/badge/CI-Passing-brightgreen.svg)](.github/workflows/validate-skills.yml)
 
 > **The Ultimate Production-Grade Skill & Customization Suite for [Google Antigravity](https://antigravity.google) and Modern AI Coding Agents.**  
-> Includes **125 audited and fused elite skills**, the official **Google DeepMind Science toolkit** (41 skills + 3D Mol* interactive sidecar), custom Model Context Protocol (MCP) servers, full `~/.agents/skills` multi-agent support, and one-click installers.
+> Includes **124 audited and fused elite skills**, the official **Google DeepMind Science toolkit** (41 skills + 3D Mol* interactive sidecar), custom Model Context Protocol (MCP) servers, full `~/.agents/skills` multi-agent support, and one-click installers.
 
 ---
 
@@ -18,7 +18,7 @@
 1. [Overview & Philosophy](#-overview--philosophy)
 2. [Universal Agent Compatibility (~/.agents/skills)](#-universal-agent-compatibility-agentsskills)
 3. [One-Click Installation](#-one-click-installation)
-4. [Elite Skills Catalog (125 Skills)](#-elite-skills-catalog-125-skills)
+4. [Elite Skills Catalog (124 Skills)](#-elite-skills-catalog-124-skills)
 5. [Google DeepMind Science Suite (41 Skills)](#-google-deepmind-science-suite-41-skills)
 6. [Plugins & MCP Architecture](#-plugins--mcp-architecture)
 7. [Zero-Trust Security & Sanitization](#-zero-trust-security--sanitization)
@@ -79,7 +79,7 @@ chmod +x scripts/install.sh && ./scripts/install.sh
 
 ---
 
-## 📦 Elite Skills Catalog (125 Skills)
+## 📦 Elite Skills Catalog (124 Skills)
 
 
 ### 🎮 Game Development, 3D & Shaders
@@ -201,7 +201,6 @@ chmod +x scripts/install.sh && ./scripts/install.sh
 | :--- | :--- |
 | [`devops-infrastructure-as-code`](skills/devops-infrastructure-as-code/SKILL.md) | Architect and implement declarative Infrastructure as Code (IaC) and containerization using Terraform/OpenTofu, Docker multi-stage builds, and Kubernetes (K8s/Helm). Enforces immutable infrastructure, remote state locking, least-privilege non-root containers, health probes, resource limits, and production Kubernetes manifests. |
 | [`monorepo-release-engineering`](skills/monorepo-release-engineering/SKILL.md) | Manage monorepos, release automation, and software supply chains: Turborepo/Nx, pnpm workspaces, automated Semantic Versioning (SemVer), changelog generation, Software Bill of Materials (SBOM), and CI/CD secret management (Vault/SOPS). |
-| [`observability-engineer`](skills/observability-engineer/SKILL.md) | Implement Observability-Driven Development (ODD) based on Charity Majors' Honeycomb standard. Enforces high-cardinality structured JSON logging, distributed tracing contexts (trace_id, span_id), duration metrics, and elimination of silent failures. |
 | [`sre-observability-slos`](skills/sre-observability-slos/SKILL.md) | Design and manage Site Reliability Engineering (SRE) systems: SLI/SLO definition, error budget calculation and burn rates, Prometheus metric collectors & alerting rules, Grafana dashboard architecture, blameless incident post-mortems, and load testing with k6. |
 
 ### 💳 Backend Architecture, APIs & SaaS Revenue Systems

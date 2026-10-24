@@ -18,10 +18,40 @@ L'ingénierie SRE (Site Reliability Engineering, inventée par Google), c'est la
 - **SLO (Service Level Objective - L'Objectif Officiel)** : C'est l'engagement de l'équipe. Par exemple : *"On vise 99.0% de requêtes rapides sur 30 jours."*
 - **L'Error Budget (Le Droit à l'Erreur)** : Si ton objectif est de 99.0%, tu as le droit à 1% d'erreurs ! Tant qu'il te reste du budget, tu peux déployer de nouvelles fonctionnalités rapidement. Si tu grilles ton budget d'erreur, on gèle les déploiements et toute l'équipe se concentre sur la stabilité.
 - **Le Post-Mortem Blameless (Sans Blâme)** : Quand un serveur tombe en panne, on ne cherche JAMAIS de coupable individuel. On cherche **pourquoi le système a permis l'erreur humaine** et on met en place des barrières pour que ça n'arrive plus jamais.
+- **L'Observabilité selon Charity Majors (Le Télescope)** : En production, le code doit expliquer son état interne via des événements JSON structurés larges (wide events). Quand une requête échoue ou ralentit, on ne doit pas deviner : la trace (`trace_id`, `span_id`, durée en ms) doit donner la cause exacte immédiatement.
 
 ---
 
-## 📐 2. Mathématiques des SLOs & Burn Rate
+## 🔭 2. Les 4 Invariants de l'Observabilité Applicative (Charity Majors ODD)
+
+```text
+ ┌─────────────────────────────────────────────────────────────┐
+ │ 1. Événements JSON Structurés (Bannir les prints bruts)     │
+ ├─────────────────────────────────────────────────────────────┤
+ │ 2. Haute Cardinalité (trace_id, customer_id, store_id)      │
+ ├─────────────────────────────────────────────────────────────┤
+ │ 3. Mesure de Durée Monotone Haute Résolution (perf_counter) │
+ ├─────────────────────────────────────────────────────────────┤
+ │ 4. Zéro Panne Silencieuse (Capture explicite des causes)    │
+ └─────────────────────────────────────────────────────────────┘
+```
+
+Exemple d'événement canonique émis en production :
+```json
+{
+  "timestamp": "2026-10-24T14:30:00Z",
+  "level": "INFO",
+  "event": "order_processed",
+  "trace_id": "tr-7f9a8b1c",
+  "customer_id": "cus_9942",
+  "duration_ms": 142.5,
+  "http_status": 200
+}
+```
+
+---
+
+## 📐 3. Mathématiques des SLOs & Burn Rate
 
 ### Formule de Disponibilité (SLI)
 $$\text{SLI} = \frac{\text{Requêtes Valides et Réussies}}{\text{Total des Requêtes Reçues}} \times 100$$
@@ -131,10 +161,18 @@ export default function () {
 
 ---
 
-## 🛠️ 6. Calculateur Déterministe de SLO & Burn Rates
+## 🛠️ 6. Outillage Déterministe CLI SRE & Observabilité
 
-Un script CLI Python est fourni pour calculer l'indisponibilité permise et générer les règles d'alerte Prometheus :
+Deux scripts Python autonomes sont fournis dans le dossier `scripts/` :
+
+### 1. Calculateur de SLO & Burn Rates Prometheus
 ```bash
 python scripts/calc_slo_burn.py 99.9 --window 30
 ```
 Fournit les minutes de panne autorisées, les seuils de burn rate 14.4x / 6x, et produit le bloc YAML Prometheus complet prêt à l'emploi.
+
+### 2. Validateur de Logs Structurés ODD (Charity Majors)
+```bash
+python scripts/validate_structured_logs.py --log-file production.log
+```
+Vérifie la validité JSON des événements, la présence des champs obligatoires (`timestamp`, `level`, `event`), du `trace_id` de haute cardinalité et de la métrique `duration_ms`.
