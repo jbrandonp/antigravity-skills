@@ -8,3 +8,8 @@ node_modules/
 .venv/
 tmp/
 .agents/
+*.exe
+*.zip
+*.dll
+*.so
+*.dylib
