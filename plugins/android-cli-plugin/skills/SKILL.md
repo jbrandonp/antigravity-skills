@@ -4,7 +4,56 @@ description: Provides instructions for installing and using the `android` CLI. T
 ---
 # Android CLI Specialist
 
-This skill provides instructions for using the `android` CLI tool. The tool includes various commands for creating projects, running applications, interacting with devices, and managing the CLI environment.
+This skill provides instructions for using the official Google `android` CLI tool, inspecting connected devices, running journey tests, and maintaining Android developer environments.
+
+---
+
+## 💡 Comprendre Android CLI (Explication Simple pour un ado de 15 ans)
+
+Développer pour Android sans IDE lourd (comme Android Studio), c'est possible grâce à la ligne de commande :
+1. **Le Couteau Suisse (`android` CLI)** : C'est une commande unique créée par Google pour tout faire depuis le terminal : créer un projet flambant neuf en Jetpack Compose (`android create`), lancer un émulateur (`android emulator`), et installer ton application en une seconde (`android run`).
+2. **Les Yeux de l'Agent (`android layout` & `android screen`)** : Quand l'IA teste ton application sur un téléphone ou un émulateur, elle utilise `android layout` pour "lire" tous les boutons et textes à l'écran sous forme d'arbre JSON, et `android screen` pour prendre une capture d'écran.
+3. **Le Pilote Automatique (`ADB Input`)** : Une fois que l'IA a repéré les coordonnées d'un bouton (ex: le bouton "Valider" au centre `[540, 870]`), elle envoie une impulsion tactile avec `adb shell input tap 540 870` comme si un doigt humain appuyait sur l'écran.
+4. **Les Tests de Parcours (`Journeys`)** : Ce sont des scénarios écrits en langage simple : *"1. Clique sur Rechercher, 2. Tape 'Pizza', 3. Vérifie que le premier résultat est affiché"*. L'IA suit ce parcours étape par étape pour certifier que l'application ne plante jamais.
+
+---
+
+## 🛠️ Outils Déterministes Inclus (WAT Framework)
+
+Le skill intègre une suite d'outils Python déterministes situés dans `scripts/` :
+
+### 1. Diagnostic de l'Environnement Android (`scripts/diagnose_android_env.py`)
+Vérifie la présence et la configuration du SDK Android, de `JAVA_HOME` (JDK 17+), d'`adb`, d'`emulator` et des appareils connectés :
+```bash
+python scripts/diagnose_android_env.py
+# Ou export JSON pour pipelines CI/CD :
+python scripts/diagnose_android_env.py --json
+```
+
+### 2. Analyseur de Layout & Résolveur ADB (`scripts/parse_android_layout.py`)
+Parse l'arbre JSON issu de `android layout`, résout les clics tactiles et audite l'accessibilité :
+```bash
+# Trouver un bouton et générer la commande ADB exacte :
+python scripts/parse_android_layout.py layout.json --find-text "Checkout" --action tap
+
+# Comparer deux captures d'écran UI consécutives (détecter les changements) :
+python scripts/parse_android_layout.py --diff prev_layout.json current_layout.json
+
+# Auditer l'accessibilité (cibles tactiles < 48dp et labels manquants) :
+python scripts/parse_android_layout.py layout.json --audit-a11y
+```
+
+### 3. Linter de Manifest & Build Gradle (`scripts/lint_android_project.py`)
+Contrôle la conformité Android 12+ (`android:exported`), targetSdk Google Play (API 34+) et Java 17 :
+```bash
+python scripts/lint_android_project.py ./app
+```
+
+### 4. Playbook Maître d'Architecture Android
+Pour les standards de plateforme Android 12-15, insets edge-to-edge, permissions et recettes ADB :
+Consulte le [Playbook d'Architecture Android](./references/android_dev_playbook.md).
+
+---
 
 ## Installation
 
