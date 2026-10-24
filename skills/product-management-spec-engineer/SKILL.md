@@ -101,3 +101,17 @@ Toute tâche découpée pour un sprint agile doit respecter les 6 critères :
 4. **E - Estimable** : La complexité est claire et peut être chiffrée en story points.
 5. **S - Small** : La tâche se termine en 1 à 2 jours maximum.
 6. **T - Testable** : On peut prouver mathématiquement par un test automatisé si elle est réussie ou ratée.
+
+---
+
+## 🛠️ 5. Générateur Déterministe de Spécifications CLI
+
+Un utilitaire CLI Python est inclus pour créer instantanément des modèles complets aux normes de l'industrie :
+```bash
+# Générer un PRD
+python scripts/scaffold_spec.py --type prd --title "Système de Facturation Stripe"
+
+# Générer une RFC technique ou un ADR
+python scripts/scaffold_spec.py --type rfc --title "Migration vers PostgreSQL"
+python scripts/scaffold_spec.py --type adr --title "Choix de SQLite WAL en local"
+```

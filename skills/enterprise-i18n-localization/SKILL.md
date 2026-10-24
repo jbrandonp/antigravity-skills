@@ -88,3 +88,13 @@ Pour éviter que Google pénalise ton site pour contenu dupliqué et pour dirige
 <link rel="alternate" hreflang="de" href="https://yourdomain.com/de/pricing" />
 <link rel="alternate" hreflang="x-default" href="https://yourdomain.com/en/pricing" />
 ```
+
+---
+
+## 🛠️ 6. Générateur Déterministe de Pseudo-Localisation
+
+Un outil CLI Python est inclus pour tester la résistance de vos interfaces aux textes longs (+30%) et repérer instantanément les chaînes restées en anglais :
+```bash
+python scripts/pseudo_localize.py locales/en.json -o locales/en.pseudo.json
+```
+Préserve les variables d'interpolation (`{name}`, `%s`), ajoute des caractères accentués (`Ħééllôô Wôôrld`) et encadre le texte de marqueurs `[!!! ... !!!]`.

@@ -86,3 +86,13 @@ test('Vérification de conformité a11y WCAG 2.2 AA', async ({ page }) => {
    - Icônes décoratives à côté d'un texte visible $\rightarrow$ `aria-hidden="true"` obligatoire.
    - Messages d'erreur sous un champ de formulaire $\rightarrow$ reliés par `aria-describedby="error-email"`.
    - Notifications toast ou bannières $\rightarrow$ `role="status"` ou `aria-live="polite"` pour avertir les malvoyants sans couper leur lecture.
+
+---
+
+## 🛠️ 5. Scanner d'Accessibilité HTML Hors-Ligne Déterministe
+
+Un scanner Python autonome sans dépendance externe est inclus pour auditer vos fichiers HTML bruts :
+```bash
+python scripts/audit_html_a11y.py path/to/index.html
+```
+Audite instantanément les attributs `lang`, les balises `<img>` sans `alt`, les champs de formulaire sans label, les `tabindex` positifs perturbateurs et les cibles tactiles sous le seuil des 24 px.

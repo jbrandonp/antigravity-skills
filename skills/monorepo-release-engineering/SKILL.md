@@ -105,3 +105,13 @@ sops --encrypt --age $(cat ~/.age/key.pub) secrets.prod.env > secrets.prod.enc.e
 # Déchiffrer à la volée pendant le déploiement CI/CD
 sops --decrypt secrets.prod.enc.env > secrets.env
 ```
+
+---
+
+## 🛠️ 6. Calculateur Déterministe de Version SemVer & Changelog
+
+Un utilitaire Python est inclus pour déterminer automatiquement la montée de version selon Conventional Commits :
+```bash
+python scripts/check_semver_bump.py --current 1.2.0
+```
+Analyse l'historique Git (`feat!` -> Major, `feat` -> Minor, `fix` -> Patch) et génère le journal des modifications markdown catégorisé.

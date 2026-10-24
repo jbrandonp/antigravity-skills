@@ -128,3 +128,13 @@ export default function () {
 - [ ] Ajouter un test de migration sous charge dans la suite k6.
 - [ ] Automatiser le rollback si le taux d'erreur dépasse 1% pendant 3 minutes consécutives.
 ```
+
+---
+
+## 🛠️ 6. Calculateur Déterministe de SLO & Burn Rates
+
+Un script CLI Python est fourni pour calculer l'indisponibilité permise et générer les règles d'alerte Prometheus :
+```bash
+python scripts/calc_slo_burn.py 99.9 --window 30
+```
+Fournit les minutes de panne autorisées, les seuils de burn rate 14.4x / 6x, et produit le bloc YAML Prometheus complet prêt à l'emploi.

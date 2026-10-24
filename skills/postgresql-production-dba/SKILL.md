@@ -89,3 +89,13 @@ default_statistics_target = 100
 random_page_cost = 1.1              # Optimisé pour disques SSD NVMe
 work_mem = 32MB                     # Alloué par nœud de tri
 ```
+
+---
+
+## 🛠️ 5. Linter de Migration Zéro-Downtime Déterministe
+
+Un script Python autonome est fourni pour vérifier automatiquement la sécurité de vos fichiers SQL de migration avant exécution :
+```bash
+python scripts/check_migration_safety.py path/to/migration.sql
+```
+Vérifications effectuées : absence de `CONCURRENTLY`, colonnes `NOT NULL` sans valeur par défaut, absence de `lock_timeout`, requêtes non-SARGables (`LOWER()`) et `DROP` destructifs.
