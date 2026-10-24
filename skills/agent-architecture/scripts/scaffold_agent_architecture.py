@@ -243,9 +243,10 @@ def build_specification(
 | :--- | :--- | :--- | :--- |
 | **Max Iterations** | `{max_steps}` iterations | Runtime Step Counter | Terminate loop, return partial summary + escalation |
 | **Total Task Timeout** | `{timeout_sec}` seconds | Async Watchdog Timer | Cancel background tasks, return HTTP 504 status |
-| **Total Budget Cap** | `${budget_usd:.2f}` USD | Token & Cost Interceptor | Halt immediately upon budget depletion |
+| **Total Budget Cap** | `${budget_usd:.2f}` USD | Centralized atomic budget reservation pool | Halt immediately upon budget depletion |
 | **Consecutive Identical Calls** | 2 identical parameter sets | Loop Breaker Guard | Abort with `LOOP_DETECTED` warning |
-| **Max Concurrent Workers** | 3 parallel sub-tasks | Thread/Worker Pool | Queue excess requests with backpressure |
+| **Max Concurrent Workers** | 3 parallel sub-tasks | Thread/Worker Pool with atomic budget shares | Queue excess requests with backpressure |
+| **Execution Guardrail** | Synchronous pre-call gate | Pre-execution Policy Gate | Immediate rejection before an external effect |
 
 ---
 
@@ -270,6 +271,7 @@ Total Window Footprint: ~12,000 tokens (Safely fits standard 32k/128k context)
 ### 4.2 Compaction & Memory Hierarchy
 - **Working Memory :** Ephemeral memory buffer for current session. Compacted via high-density summarization when history exceeds 8,000 tokens.
 - **Episodic Memory :** Key task outcomes and user preferences stored in external store with explicit user/tenant isolation.
+- **Procedural Memory Admission :** Candidate memory updates require explicit change authority approval before being promoted to active procedures.
 - **Critical Invariant :** Authorization tokens and active transaction IDs are **never** stored in raw prompt memory.
 
 ---
@@ -281,9 +283,10 @@ Total Window Footprint: ~12,000 tokens (Safely fits standard 32k/128k context)
 | :--- | :--- | :--- | :--- | :--- | :--- |
 {tools_rows}
 
-### 5.2 Idempotency and Write Operations Contract
+### 5.2 Idempotency, Pagination, and Write Operations Contract
 - Every mutating tool invocation **must** supply a deterministic `idempotency_key` (e.g., `hash(task_id + step_index)`).
 - If an external call times out, the tool enters `EFFECT_UNKNOWN` state: the agent **must not** blindly re-execute without querying the downstream resource to confirm execution status.
+- Tool responses enforce pagination and explicit truncation indicators (`has_more`, `total_count`) to eliminate silent data truncation.
 
 ---
 
@@ -292,9 +295,10 @@ Total Window Footprint: ~12,000 tokens (Safely fits standard 32k/128k context)
 | Threat Vector | Attack Scenario | Trust Boundary | Mitigation Mechanism | Residual Risk & Owner |
 | :--- | :--- | :--- | :--- | :--- |
 | **Prompt Injection** | Malicious payload in user input or retrieved docs | Ingress Gate | Strict separation of System prompt vs User data | Monitored by Ops |
-| **Tool Abuse / SSRF** | Model attempts to call internal `169.254.169.254` | Tool Sandbox | IP whitelisting & parameter validation in code | SecOps |
+| **Tool Abuse / SSRF** | Model attempts to call internal `169.254.169.254` | Tool Sandbox | IP whitelisting & non-root container with network isolation | SecOps |
 | **Runaway Costs** | Infinite reasoning / retry loop | Runtime Counter | Hard cap at `${budget_usd:.2f}` and `{max_steps}` steps | Architect |
-| **Data Leakage** | Agent returns private API keys in output | Egress Gate | Regex scanning and PII scrubber before delivery | App Owner |
+| **Data Leakage** | Agent returns private API keys in output | Egress Gate | Egress redaction proxy scanning and PII scrubber before delivery | App Owner |
+| **Cancellation Race** | Job cancelled while call in-flight | Dispatcher | Explicit tracking: task cancellation is not an automatic rollback | Core Engine |
 
 ---
 
@@ -302,6 +306,9 @@ Total Window Footprint: ~12,000 tokens (Safely fits standard 32k/128k context)
 
 ### 7.1 Quality Gate Criteria (CI/CD Pipeline)
 An agent architecture is considered ready for implementation only when it satisfies:
+- **Minimal Viable Complexity :** The architecture is justified against a simpler predefined workflow or single-call baseline.
+- **Independent Evaluation Split :** Testing is conducted on an unpolluted independent holdout validation set separated from tuning data.
+- **Non-Compensable Security Gates :** Authorization, tenant access, and safety checks are hard binary gates; high response quality never compensates for an access violation.
 - **Accuracy / Task Completion :** $\\ge 90\\%$ on synthetic evaluation benchmark.
 - **Safety / Injection Rejection :** $100\\%$ on adversarial security eval cases.
 - **Zero Runaway Incidents :** $0$ executions exceeding `{max_steps}` steps or `${budget_usd:.2f}` budget.

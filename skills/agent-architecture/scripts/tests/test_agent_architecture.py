@@ -21,6 +21,7 @@ sys.path.insert(0, str(SCRIPTS_DIR))
 import scaffold_agent_architecture as scaffolder
 import audit_agent_design as auditor
 import validate_agent_architecture as validator
+import simulate_agent_threats as threat_sim
 
 
 class TestAgentArchitectureToolkit(unittest.TestCase):
@@ -117,6 +118,27 @@ Prompt only controls access.
         partial_res = validator.validate_architecture_contract(partial_spec)
         self.assertEqual(partial_res["status"], "FAIL")
         self.assertLess(partial_res["contract_score"], 50.0)
+
+    def test_threat_simulator(self):
+        """Threat simulator must verify 12 stress probes on resilient vs vulnerable architectures."""
+        spec_path = Path(self.test_dir) / "STRESS_SPEC.md"
+        content = scaffolder.build_specification(
+            name="ResilientAgent",
+            role="Perform high-assurance trading operations",
+            topology="router_worker",
+            model="claude-3-5-sonnet",
+            tools=["execute_order", "check_risk"],
+            max_steps=8,
+            timeout_sec=45,
+            budget_usd=0.25
+        )
+        spec_path.write_text(content, encoding="utf-8")
+
+        res = threat_sim.run_threat_probes(spec_path)
+        self.assertEqual(res["verdict"], "RESILIENT")
+        self.assertEqual(res["critical_failures"], 0)
+        self.assertEqual(res["mitigated_probes"], 12)
+        self.assertEqual(res["pass_rate"], 100.0)
 
 
 if __name__ == "__main__":

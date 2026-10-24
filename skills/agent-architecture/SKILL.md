@@ -93,6 +93,13 @@ Vérifie la conformité formelle d'un document aux 7 vues obligatoires du contra
 python scripts/validate_agent_architecture.py AGENT_ARCHITECTURE.md
 ```
 
+### 🌪️ D. Simulateur de Menaces & Stress-Tests (`simulate_agent_threats.py`)
+Exécute 12 sondes discriminantes de stress (basées sur les scénarios U01–U15) pour valider la résilience face aux cas limites critiques (courses concurrentes sur les budgets, timing des barrières parallèles, état `EFFECT_UNKNOWN` en cas de timeout réseau, et isolation sandbox) :
+```bash
+python scripts/simulate_agent_threats.py AGENT_ARCHITECTURE.md
+python scripts/simulate_agent_threats.py AGENT_ARCHITECTURE.md --json
+```
+
 ---
 
 ## 📋 5. Choix de la Route d'Ingénierie
