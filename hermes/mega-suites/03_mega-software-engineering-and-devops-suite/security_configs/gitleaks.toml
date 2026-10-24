@@ -1,0 +1,14 @@
+# gitleaks.toml — config globale d'audit (créée par security_audit.py)
+# NOTE : les chemins sont des REGEX (pas des globs)
+title = "Hermes security audit global config"
+
+[extend]
+useDefault = true
+
+[allowlist]
+description = "Dépendances, builds et artefacts — hors périmètre du code source"
+paths = [
+  "\\.venv/", "/venv/", "node_modules/", "\\.git/", "/build/", "/dist/", "/target/",
+  "site-packages/", "__pycache__/", "\\.next/", "\\.cache/", "/vendor/",
+  ".*\\.min\\.js", ".*\\.map", "package-lock\\.json", "yarn\\.lock", "poetry\\.lock",
+]

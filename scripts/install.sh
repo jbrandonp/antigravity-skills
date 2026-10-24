@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# One-click installer for Antigravity & Universal AI Agent Skills
+# One-click installer for Antigravity, Hermes & Universal AI Agent Skills
 set -euo pipefail
 
 TARGET="${1:-All}"
@@ -65,6 +65,42 @@ if [ "$TARGET" = "All" ] || [ "$TARGET" = "Agents" ]; then
             done
         fi
     done
+
+    # Deploy Hermes Mega-Suites & Master-Suites into ~/.agents/skills
+    if [ -d "${SCRIPT_DIR}/hermes/mega-suites" ]; then
+        echo "--> Deploying Hermes Mega-Suites into ${DEST_AGENTS}..."
+        cp -R "${SCRIPT_DIR}/hermes/mega-suites/"* "${DEST_AGENTS}/"
+    fi
+    if [ -d "${SCRIPT_DIR}/hermes/master-suites" ]; then
+        echo "--> Deploying Hermes Master-Suites into ${DEST_AGENTS}..."
+        cp -R "${SCRIPT_DIR}/hermes/master-suites/"* "${DEST_AGENTS}/"
+    fi
 fi
 
-echo "✓ Installation complete! All 174 skills (117 core, 41 science, 16 stitch), 9 plugins, and 5 MCP servers are active and ready."
+# 3. Hermes Autonomous Agent Ecosystem (~/.hermes/skills and ~/.hermes/mcp)
+if [ "$TARGET" = "All" ] || [ "$TARGET" = "Hermes" ]; then
+    DEST_HERMES_SKILLS="${HOME}/.hermes/skills"
+    DEST_HERMES_MCP="${HOME}/.hermes/mcp"
+    echo "=== Installing Hermes Autonomous Suite (~/.hermes) ==="
+    mkdir -p "${DEST_HERMES_SKILLS}" "${DEST_HERMES_MCP}"
+
+    echo "--> Copying Hermes Mega-Suites (10) and Master-Suites (50) to ${DEST_HERMES_SKILLS}..."
+    cp -R "${SCRIPT_DIR}/hermes/mega-suites/"* "${DEST_HERMES_SKILLS}/"
+    cp -R "${SCRIPT_DIR}/hermes/master-suites/"* "${DEST_HERMES_SKILLS}/"
+
+    echo "--> Copying Hermes MCP servers (eBay, Vinted, Web Tools) to ${DEST_HERMES_MCP}..."
+    cp -R "${SCRIPT_DIR}/hermes/mcp-servers/"* "${DEST_HERMES_MCP}/"
+fi
+
+# 4. Anthropic Claude Code Installation (~/.claude/skills)
+if [ "$TARGET" = "All" ] || [ "$TARGET" = "Claude" ]; then
+    DEST_CLAUDE_SKILLS="${HOME}/.claude/skills"
+    echo "=== Installing Claude Code Skills (~/.claude/skills) ==="
+    mkdir -p "${DEST_CLAUDE_SKILLS}"
+
+    echo "--> Deploying Antigravity Elite Skills & Hermes Mega-Suites to ${DEST_CLAUDE_SKILLS}..."
+    cp -R "${SCRIPT_DIR}/skills/"* "${DEST_CLAUDE_SKILLS}/"
+    cp -R "${SCRIPT_DIR}/hermes/mega-suites/"* "${DEST_CLAUDE_SKILLS}/"
+fi
+
+echo "✓ Installation complete! 177 skills & suites (117 elite, 10 mega-suites, 50 master suites, 41 science, 16 stitch) and 8 MCP servers are active and ready."

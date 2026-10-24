@@ -23,6 +23,9 @@ ROOT = Path(__file__).resolve().parent.parent
 SKILLS_DIR = ROOT / "skills"
 PLUGINS_DIR = ROOT / "plugins"
 MCP_DIR = ROOT / "mcp"
+HERMES_DIR = ROOT / "hermes"
+HERMES_MEGA = HERMES_DIR / "mega-suites"
+HERMES_MASTER = HERMES_DIR / "master-suites"
 
 errors = []
 warnings = []
@@ -31,23 +34,29 @@ print("==================================================================")
 print("       ANTIGRAVITY SUPER SUITE — MASTER QUALITY GATE AUDIT        ")
 print("==================================================================")
 
-# --- 1. Audit Skills ---
+# --- 1. Audit Skills & Hermes Suites ---
 total_skills = 0
 skill_errors = 0
-print("\n[1/5] Auditing Production Skills...")
-if SKILLS_DIR.exists():
-    for d in sorted(SKILLS_DIR.iterdir()):
+print("\n[1/5] Auditing Production Skills & Hermes Suites...")
+
+def audit_skill_dir(directory, category_name):
+    global total_skills, skill_errors
+    if not directory.exists():
+        return
+    count = 0
+    for d in sorted(directory.iterdir()):
         if not d.is_dir():
             continue
         total_skills += 1
+        count += 1
         sk = d / "SKILL.md"
         if not sk.exists():
-            errors.append(f"Skill '{d.name}': Missing SKILL.md")
+            errors.append(f"{category_name} '{d.name}': Missing SKILL.md")
             skill_errors += 1
             continue
         txt = sk.read_text(encoding="utf-8", errors="replace")
         if not txt.startswith("---"):
-            errors.append(f"Skill '{d.name}': Missing opening frontmatter '---'")
+            errors.append(f"{category_name} '{d.name}': Missing opening frontmatter '---'")
             skill_errors += 1
             continue
         name_m = re.search(
@@ -55,14 +64,20 @@ if SKILLS_DIR.exists():
         )
         desc_m = re.search(r"^description:\s*(.+)", txt, re.MULTILINE)
         if not name_m or not desc_m:
-            errors.append(f"Skill '{d.name}': Missing 'name' or 'description'")
+            errors.append(f"{category_name} '{d.name}': Missing 'name' or 'description'")
             skill_errors += 1
         elif name_m.group(1).strip() != d.name:
             errors.append(
-                f"Skill '{d.name}': Folder name does not match frontmatter name '{name_m.group(1).strip()}'"
+                f"{category_name} '{d.name}': Folder name does not match frontmatter name '{name_m.group(1).strip()}'"
             )
             skill_errors += 1
-    print(f"  ✓ {total_skills} skills audited ({skill_errors} errors)")
+    print(f"  ✓ {count} {category_name} audited")
+
+if SKILLS_DIR.exists():
+    audit_skill_dir(SKILLS_DIR, "Antigravity Elite Skill")
+    audit_skill_dir(HERMES_MEGA, "Hermes Mega-Suite")
+    audit_skill_dir(HERMES_MASTER, "Hermes Master-Suite")
+    print(f"  -> Total: {total_skills} skills & suites audited ({skill_errors} errors)")
 else:
     errors.append("Missing 'skills/' directory!")
 

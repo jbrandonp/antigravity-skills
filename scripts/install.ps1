@@ -1,7 +1,7 @@
 # One-click installer for Antigravity & Universal AI Agent Skills
 [CmdletBinding()]
 param(
-    [ValidateSet("All", "Antigravity", "Agents")]
+    [ValidateSet("All", "Antigravity", "Agents", "Hermes", "Claude")]
     [string]$Target = "All"
 )
 
@@ -76,6 +76,45 @@ if ($Target -eq "All" -or $Target -eq "Agents") {
             }
         }
     }
+
+    # Also deploy Hermes Mega-Suites & Master-Suites into ~/.agents/skills
+    $HermesMegaDir = Join-Path $ScriptDir "hermes\mega-suites"
+    if (Test-Path $HermesMegaDir) {
+        Write-Host "--> Deploying Hermes Mega-Suites into $DestAgents..." -ForegroundColor Yellow
+        Copy-Item -Path (Join-Path $HermesMegaDir "*") -Destination $DestAgents -Recurse -Force
+    }
+    $HermesMasterDir = Join-Path $ScriptDir "hermes\master-suites"
+    if (Test-Path $HermesMasterDir) {
+        Write-Host "--> Deploying Hermes Master-Suites into $DestAgents..." -ForegroundColor Yellow
+        Copy-Item -Path (Join-Path $HermesMasterDir "*") -Destination $DestAgents -Recurse -Force
+    }
 }
 
-Write-Host "✓ Installation complete! All 174 skills (117 core, 41 science, 16 stitch), 9 plugins, and 5 MCP servers are active and ready." -ForegroundColor Green
+# 3. Hermes Autonomous Agent Ecosystem (~/.hermes/skills and ~/.hermes/mcp)
+if ($Target -eq "All" -or $Target -eq "Hermes") {
+    $DestHermesSkills = Join-Path $HOME ".hermes\skills"
+    $DestHermesMcp = Join-Path $HOME ".hermes\mcp"
+    Write-Host "=== Installing Hermes Autonomous Suite (~/.hermes) ===" -ForegroundColor Cyan
+    New-Item -ItemType Directory -Force -Path $DestHermesSkills | Out-Null
+    New-Item -ItemType Directory -Force -Path $DestHermesMcp | Out-Null
+
+    Write-Host "--> Copying Hermes Mega-Suites (10) and Master-Suites (50) to $DestHermesSkills..." -ForegroundColor Yellow
+    Copy-Item -Path (Join-Path $ScriptDir "hermes\mega-suites\*") -Destination $DestHermesSkills -Recurse -Force
+    Copy-Item -Path (Join-Path $ScriptDir "hermes\master-suites\*") -Destination $DestHermesSkills -Recurse -Force
+
+    Write-Host "--> Copying Hermes MCP servers (eBay, Vinted, Web Tools) to $DestHermesMcp..." -ForegroundColor Yellow
+    Copy-Item -Path (Join-Path $ScriptDir "hermes\mcp-servers\*") -Destination $DestHermesMcp -Recurse -Force
+}
+
+# 4. Anthropic Claude Code Installation (~/.claude/skills)
+if ($Target -eq "All" -or $Target -eq "Claude") {
+    $DestClaudeSkills = Join-Path $HOME ".claude\skills"
+    Write-Host "=== Installing Claude Code Skills (~/.claude/skills) ===" -ForegroundColor Cyan
+    New-Item -ItemType Directory -Force -Path $DestClaudeSkills | Out-Null
+
+    Write-Host "--> Deploying Antigravity Elite Skills & Hermes Mega-Suites to $DestClaudeSkills..." -ForegroundColor Yellow
+    Copy-Item -Path (Join-Path $ScriptDir "skills\*") -Destination $DestClaudeSkills -Recurse -Force
+    Copy-Item -Path (Join-Path $ScriptDir "hermes\mega-suites\*") -Destination $DestClaudeSkills -Recurse -Force
+}
+
+Write-Host "✓ Installation complete! 177 skills & suites (117 elite, 10 mega-suites, 50 master suites, 41 science, 16 stitch) and 8 MCP servers are active and ready." -ForegroundColor Green
