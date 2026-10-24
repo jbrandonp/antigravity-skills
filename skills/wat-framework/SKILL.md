@@ -1,6 +1,6 @@
 ---
 name: wat-framework
-description: Architect and execute agentic workflows using the WAT (Workflows, Agents, Tools) paradigm. Separates probabilistic AI reasoning from deterministic Python tools to eliminate compounding error rates and achieve 99%+ reliability.
+description: Architect, scaffold, and execute agentic workflows using the WAT (Workflows, Agents, Tools) paradigm. Separates probabilistic AI reasoning from deterministic Python tools to eliminate compounding error rates and achieve 99%+ reliability. Includes automated CLI scaffolder and architectural validator.
 ---
 
 # WAT Framework: Workflows, Agents, Tools Architecture
@@ -22,7 +22,7 @@ $$\text{WAT Reliability} \ge 95\% \text{ across } 10+ \text{ sequential steps}$$
 
 ---
 
-## The Three Layers of WAT
+## 🏗️ The Three Layers of WAT
 
 ### Layer 1: Workflows (The SOPs)
 - Stored as Markdown files in `workflows/`.
@@ -42,11 +42,26 @@ $$\text{WAT Reliability} \ge 95\% \text{ across } 10+ \text{ sequential steps}$$
 
 ---
 
+## 🛠️ CLI Scaffolder & Architecture Validator
+
+This skill includes an automated CLI utility in `scripts/scaffold_wat_pipeline.py` to instantiate and audit WAT project structures:
+
+```bash
+# 1. Scaffold a new WAT project with canonical folders, SOP, and starter tool
+python scripts/scaffold_wat_pipeline.py scaffold --dir my_wat_project --pipeline video_ingest
+
+# 2. Audit an existing project for WAT compliance (clean separation, gitignore guards)
+python scripts/scaffold_wat_pipeline.py validate --dir my_wat_project
+```
+
+---
+
 ## Standard Project Directory Layout
 
 ```
 project/
 ├── .env                  # API keys and secrets (never committed)
+├── .gitignore            # Ignores .env, work/, and __pycache__
 ├── workflows/            # Markdown SOPs defining each pipeline
 │   ├── derush_video.md
 │   └── publish_post.md

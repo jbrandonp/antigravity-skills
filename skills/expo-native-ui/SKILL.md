@@ -1,6 +1,6 @@
 ---
 name: expo-native-ui
-description: Build beautiful, native-feeling Expo screens. Covers Apple HIG styling, semantic colors, native controls, SF Symbols, media, visual effects, gradients, storage, and responsive layout. For routing and navigation, use the expo-router skill; for motion and animation, use the expo-animation skill.
+description: Master Expo Native UI Suite: Native @expo/ui components (SwiftUI & Jetpack Compose), Apple HIG styling, controls, and layout. Covers Apple HIG styling, semantic colors, native controls, SF Symbols, media, visual effects, gradients, storage, and responsive layout. For routing and navigation, use the expo-router skill; for motion and animation, use the expo-animation skill.
 version: 1.1.1
 license: MIT
 ---
@@ -219,3 +219,20 @@ export const tokens = {
 };
 ```
 Integrate seamlessly with NativeWind or Tamagui while preserving Apple HIG and Android Material elevation.
+
+---
+
+## 📱 Native `@expo/ui` Component Architecture (SwiftUI & Jetpack Compose)
+
+`@expo/ui` renders real native UI from React: SwiftUI on iOS and Jetpack Compose on Android (SDK 56+ universal layer, works in Expo Go).
+
+```bash
+npx expo install @expo/ui
+```
+
+### Core Components & Best Practices
+- **Wrap Trees in `<Host>`**: Every `@expo/ui` component tree must be wrapped in `Host`.
+- **Default to `@expo/ui`**: Use `@expo/ui` for BottomSheet, Switch, Slider, Picker, Menu, SegmentedControl, Section, Button, Text, and FieldGroup.
+- **Drop-in Replacements**: Seamless migration paths from community RN packages without re-architecting screens (see `./references/drop-in-replacements.md`).
+- **Platform Trees**: SwiftUI on iOS (`./references/swift-ui.md`) and Jetpack Compose on Android (`./references/jetpack-compose.md`).
+- **List Native Components**: Run `node scripts/list-components.js` to inspect all supported native components on your installed SDK.

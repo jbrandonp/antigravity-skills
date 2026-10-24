@@ -170,3 +170,4 @@ To prevent generative 3D assets from looking disconnected, apply a unified post-
 - [`blender-game-rigging-animation`](../blender-game-rigging-animation/SKILL.md): Headless Blender pipeline and pivot grounding.
 - [`mixamo-animation-library-engine`](../mixamo-animation-library-engine/SKILL.md): Supplies verified locomotion and combat animations.
 - [`loopcraft-harness-engineer`](../loopcraft-harness-engineer/SKILL.md): Governs general code self-healing loops and ISO 25010 Quality Gates.
+- **Zero-Stutter Performance Architecture**: See `./references/world-warmup-minimap.md` for WorldWarmup C# driver, static minimap UV projections, and shader keep-alive stripping guards.

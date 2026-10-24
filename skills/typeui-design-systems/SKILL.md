@@ -111,3 +111,20 @@ When the user asks for a specific visual style or when designing an interface:
 1. **Tokens (`DESIGN.md`)**: Concrete values (colors, spacing, typography scales) always come from the chosen theme.
 2. **Accessibility**: WCAG 2.2 AA (from `typeui-fundamentals`) always overrides purely aesthetic styling if a color contrast fails.
 3. **Component Architecture**: Pair with `shadcn` or `frontend-design` for component markup.
+
+---
+
+## 🎨 Presentation Slide Decks & Document Themes (Theme Factory)
+
+For presentation slide decks, PDF reports, or executive documents, reference the visual showcase in `./references/theme-showcase.pdf` or apply one of the 10 foundational presentation themes:
+
+1. **Ocean Gradient**: Deep navy `#0f172a`, cyan `#06b6d4`, white `#ffffff` (Tech, SaaS, Data).
+2. **Warm Editorial**: Cream `#fefae0`, terracotta `#bc6c25`, dark earth `#283618` (Articles, Strategy).
+3. **Executive Slate**: Charcoal `#1e293b`, silver `#94a3b8`, electric blue `#3b82f6` (Board meetings).
+4. **Neon Matrix**: Deep black `#09090b`, emerald `#10b981`, lime `#84cc16` (Security, Developer tools).
+5. **Nordic Frost**: Snow `#f8fafc`, ice blue `#38bdf8`, midnight `#0369a1` (Healthcare, Clean tech).
+6. **Crimson Authority**: White `#ffffff`, crimson `#dc2626`, charcoal `#18181b` (Finance, Legal, Urgency).
+7. **Monochrome Luxury**: Pure black `#000000`, white `#ffffff`, neutral gold `#d4af37` (Fashion, High-end).
+8. **Sunset Warmth**: Plum `#581c87`, amber `#f59e0b`, rose `#f43f5e` (Creative, Media, Marketing).
+9. **Forest Canopy**: Deep pine `#064e3b`, sage `#10b981`, warm sand `#fef3c7` (Sustainability, Nature).
+10. **Cyberpunk Violet**: Dark purple `#2e1065`, fuchsia `#d946ef`, cyan `#06b6d4` (Gaming, Web3, Creative).

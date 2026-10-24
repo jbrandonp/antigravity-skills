@@ -50,6 +50,8 @@ Choose the specific playbook for your current task:
 - **Formal Interface Audit**: `reference/audit.md`
 - **Native iOS / Mobile Screens**: `reference/ios.md`
 - **Deep Design Laws & Tokens**: `reference/design-laws.md`
+- **Eradicating AI Tells & Clichés**: `reference/ai-tells.md`
+- **Immersive Frontend & Motion**: `reference/immersive-frontend.md`
 
 Do not load multiple playbooks at once. Apply focused architectural judgment rather than treating checklists as mindless busywork.
 

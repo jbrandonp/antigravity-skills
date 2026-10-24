@@ -11,6 +11,20 @@ Derived from Mariel Cartwright's GDC masterclass (*Skullgirls* animation polish)
 
 ---
 
+## 🛠️ Automated Hitstop & Curve Calculator CLI
+
+Use `scripts/calc_hitstop_curve.py` to calculate exact millisecond timings, frame divisions, camera shake parameters, and code snippets for Unity C# and Godot:
+
+```bash
+# Calculate heavy attack hitstop curve for 60 FPS
+python scripts/calc_hitstop_curve.py --weight heavy --fps 60
+
+# Calculate light jab or snappy dagger strike
+python scripts/calc_hitstop_curve.py --weight light --fps 60
+```
+
+---
+
 ## 🧒 1. Explication Pédagogique (Style 15 ans)
 
 As-tu déjà remarqué pourquoi frapper un ennemi dans certains jeux donne une sensation incroyable de puissance (comme dans *God of War*, *Super Smash Bros* ou *Hades*), alors que dans d'autres jeux, on a l'impression de taper dans du beurre mou avec une épée en mousse ?
