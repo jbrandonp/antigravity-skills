@@ -39,7 +39,7 @@
 | 28 | [**`international-business-culture-translation-suite`**](international-business-culture-translation-suite/SKILL.md) | **7** | 6,719 | Global Business, Cultural Intelligence & Translation Suite: Technical and conversational translation... |
 | 29 | [**`legal-contracts-compliance-suite`**](legal-contracts-compliance-suite/SKILL.md) | **6** | 4,440 | Legal Analysis, Contracts & Policy Suite: Contract review checklists, terms of service and privacy p... |
 | 30 | [**`llm-structured-generation-eval-suite`**](llm-structured-generation-eval-suite/SKILL.md) | **6** | 10,000 | Structured LLM Generation, Quantization & Evaluation Suite: JSON/grammar constrained generation (Out... |
-| 31 | [**`mcp-redteaming-gaming-meta-suite`**](mcp-redteaming-gaming-meta-suite/SKILL.md) | **7** | 8,914 | Model Context Protocol (MCP), Red-Teaming & Autonomous Game Agent Suite: Native MCP tool client & ru... |
+| 31 | [**`ai-redteaming-adversarial-security-suite`**](ai-redteaming-adversarial-security-suite/SKILL.md) | **7** | 8,914 | Advanced AI Red-Teaming, LLM Jailbreak Auditing & Adversarial Robustness Suite: Native MCP tool client & ru... |
 | 32 | [**`meta-agent-governance-automation-suite`**](meta-agent-governance-automation-suite/SKILL.md) | **9** | 7,223 | Meta-Agent Orchestration, Governance & Protocol Suite: Multi-agent orchestrators, agentic identity a... |
 | 33 | [**`mlops-llm-fine-tuning-training-suite`**](mlops-llm-fine-tuning-training-suite/SKILL.md) | **7** | 30,221 | State-of-the-Art LLM Fine-Tuning & Training Suite: Axolotl, Unsloth 5x faster training, PEFT (LoRA/Q... |
 | 34 | [**`mlops-llm-infrastructure-suite`**](mlops-llm-infrastructure-suite/SKILL.md) | **4** | 3,750 | High-Throughput LLM & MLOps Infrastructure Suite: Low-latency inference with vLLM, serverless GPU sc... |
@@ -452,9 +452,9 @@
   - `outlines` (`01_Hermes_Skills_Core_Library\mlops\inference\outlines\SKILL.md`)
   - `weights-and-biases` (`01_Hermes_Skills_Core_Library\mlops\evaluation\weights-and-biases\SKILL.md`)
 
-### 31. `mcp-redteaming-gaming-meta-suite` (7 compétences)
+### 31. `ai-redteaming-adversarial-security-suite` (7 compétences)
 - **Fichier SKILL.md :** [`mcp-redteaming-gaming-meta-suite/SKILL.md`](mcp-redteaming-gaming-meta-suite/SKILL.md)
-- **Description :** Model Context Protocol (MCP), Red-Teaming & Autonomous Game Agent Suite: Native MCP tool client & runner (mcporter, native-mcp), adversarial AI red-teaming & jailbreak audit (Godmode), Blender 3D addon tool engineering, Minecraft modpack server operations, autonomous Pokémon game playing agent, dogfood internal self-testing, and LM-Eval harness benchmarking.
+- **Description :** Advanced AI Red-Teaming, LLM Jailbreak Auditing & Adversarial Robustness Suite: Native MCP tool client & runner (mcporter, native-mcp), adversarial AI red-teaming & jailbreak audit (Godmode), Blender 3D addon tool engineering, Minecraft modpack server operations, autonomous Pokémon game playing agent, dogfood internal self-testing, and LM-Eval harness benchmarking.
 - **Volume :** 8,914 mots | Scripts embarqués : Oui
 - **Membres unifiés :**
   - `blender-addon-engineer` (`01_Hermes_Skills_Core_Library\blender\blender-addon-engineer\SKILL.md`)

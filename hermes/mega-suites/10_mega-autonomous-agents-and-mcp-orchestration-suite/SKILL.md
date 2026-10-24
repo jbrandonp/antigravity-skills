@@ -15,7 +15,7 @@ consolidated_master_suites:
   - hermes-core-orchestration-suite
   - multi-agent-delegation-suite
   - meta-agent-governance-automation-suite
-  - mcp-redteaming-gaming-meta-suite
+  - ai-redteaming-adversarial-security-suite
   - data-engineering-browser-automation-suite
 ---
 
@@ -32,7 +32,7 @@ Activez ce méga-module dès qu'une tâche complexe nécessite l'orchestration t
 1. [**hermes-core-orchestration-suite**](#suite-1-hermes-core-orchestration-suite)
 2. [**multi-agent-delegation-suite**](#suite-2-multi-agent-delegation-suite)
 3. [**meta-agent-governance-automation-suite**](#suite-3-meta-agent-governance-automation-suite)
-4. [**mcp-redteaming-gaming-meta-suite**](#suite-4-mcp-redteaming-gaming-meta-suite)
+4. [**ai-redteaming-adversarial-security-suite**](#suite-4-ai-redteaming-adversarial-security-suite)
 5. [**data-engineering-browser-automation-suite**](#suite-5-data-engineering-browser-automation-suite)
 
 ---
@@ -7584,7 +7584,7 @@ docs/workflows/
 
 ---
 
-## Suite 4: `mcp-redteaming-gaming-meta-suite`
+## Suite 4: `ai-redteaming-adversarial-security-suite`
 
 ## Mcp Redteaming Gaming Meta Suite
 
