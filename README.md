@@ -2,14 +2,17 @@
 
 [![License: Apache 2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
 [![Google Antigravity](https://img.shields.io/badge/Antigravity-2.0%20Ready-4285F4.svg)](https://antigravity.google)
-[![Skills Count](https://img.shields.io/badge/Elite%20Skills-121%20Active-success.svg)](skills/)
+[![Skills Count](https://img.shields.io/badge/Elite%20Skills-132%20Active-success.svg)](skills/)
+[![DeepMind Science](https://img.shields.io/badge/DeepMind%20Science-41%20Skills-8A2BE2.svg)](plugins/science/)
+[![MCP Servers](https://img.shields.io/badge/MCP%20Servers-5%20Bundled-blue.svg)](mcp/)
+[![Total Tools](https://img.shields.io/badge/Total%20Tools-173%20Skills%20%2B%205%20MCP-orange.svg)](#)
 [![DeepMind Science](https://img.shields.io/badge/DeepMind%20Science-41%20Skills-8A2BE2.svg)](plugins/science/)
 [![Universal Agents](https://img.shields.io/badge/~%2F.agents%2Fskills-Compatible-orange.svg)](#-universal-agent-compatibility-agentsskills)
 [![Integrity Score](https://img.shields.io/badge/Audit%20Score-100%2F100-brightgreen.svg)](scripts/verify_skills.py)
 [![CI Status](https://img.shields.io/badge/CI-Passing-brightgreen.svg)](.github/workflows/validate-skills.yml)
 
 > **The Ultimate Production-Grade Skill & Customization Suite for [Google Antigravity](https://antigravity.google) and Modern AI Coding Agents.**  
-> Includes **121 audited and fused elite skills**, the official **Google DeepMind Science toolkit** (41 skills + 3D Mol* interactive sidecar), custom Model Context Protocol (MCP) servers, full `~/.agents/skills` multi-agent support, and one-click installers.
+> Includes **132 audited elite skills**, **41 Google DeepMind Science skills** and **5 pre-bundled MCP servers**, the official **Google DeepMind Science toolkit** (41 skills + 3D Mol* interactive sidecar), custom Model Context Protocol (MCP) servers, full `~/.agents/skills` multi-agent support, and one-click installers.
 
 ---
 
@@ -18,7 +21,7 @@
 1. [Overview & Philosophy](#-overview--philosophy)
 2. [Universal Agent Compatibility (~/.agents/skills)](#-universal-agent-compatibility-agentsskills)
 3. [One-Click Installation](#-one-click-installation)
-4. [Elite Skills Catalog (121 Skills)](#-elite-skills-catalog-121-skills)
+4. [Elite Skills Catalog (132 Skills)](#-elite-skills-catalog-132-skills)
 5. [Google DeepMind Science Suite (41 Skills)](#-google-deepmind-science-suite-41-skills)
 6. [Plugins & MCP Architecture](#-plugins--mcp-architecture)
 7. [Zero-Trust Security & Sanitization](#-zero-trust-security--sanitization)
@@ -79,7 +82,23 @@ chmod +x scripts/install.sh && ./scripts/install.sh
 
 ---
 
-## 📦 Elite Skills Catalog (121 Skills)
+## 📦 Elite Skills Catalog (132 Skills)
+
+### 🌌 Google Antigravity & Agentic Customizations (11 Skills)
+
+| Skill | Description |
+| :--- | :--- |
+| [`agy-customizations`](skills/agy-customizations/SKILL.md) | Comprehensive guide and reference for the Antigravity Customization System: loading priority, discovery mechanisms, skills, rules, plugins, hooks, and MCP servers. |
+| [`android-cli`](skills/android-cli/SKILL.md) | Instructions for installing and using the `android` CLI: create projects, run apps, manage virtual devices, take screenshots, UI inspection, and SDK management. |
+| [`antigravity-guide`](skills/antigravity-guide/SKILL.md) | Authoritative reference and sitemap for Google Antigravity (AGY CLI, Antigravity 2.0, IDE, Python SDK, slash commands, keybindings, and customizations). |
+| [`automation`](skills/automation/SKILL.md) | Interactive guide to design and create scheduled background automations and recurring cron tasks. |
+| [`generative_ui`](skills/generative_ui/SKILL.md) | Render rich interactive HTML widgets inline in chat or as standalone artifacts (diagrams, data visualizations, controls, educational walkthroughs). |
+| [`google-antigravity-sdk`](skills/google-antigravity-sdk/SKILL.md) | Design, implement, and debug autonomous AI agents and multi-agent systems using the official Google Antigravity (AGY) SDK. |
+| [`migrate-workflows`](skills/migrate-workflows/SKILL.md) | Automatically migrate legacy workflows to modern skills across global and workspace configurations. |
+| [`permissioned-github`](skills/permissioned-github/SKILL.md) | Guidelines for interacting with GitHub and requesting user permissions safely when commands fail due to sandbox restrictions. |
+| [`plugin`](skills/plugin/SKILL.md) | Create and manage Antigravity plugins — namespaced bundles of skills, agents, rules, MCP servers and hooks. |
+| [`run-workflow`](skills/run-workflow/SKILL.md) | Author and run dynamic workflow scripts with the `run_workflow` automation engine. |
+| [`ui-plugin-navigation`](skills/ui-plugin-navigation/SKILL.md) | Discover UI plugin panels relevant to the current task and surface a one-click pill in chat to toggle them in the side pane. |
 
 
 ### 🎮 Game Development, 3D & Shaders

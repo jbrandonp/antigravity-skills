@@ -9,21 +9,28 @@ $ErrorActionPreference = "Stop"
 
 $ScriptDir = Split-Path -Parent $PSScriptRoot
 
-# 1. Antigravity Installation (~/.gemini/config)
+# 1. Antigravity Installation (~/.gemini/config and ~/.gemini/antigravity)
 if ($Target -eq "All" -or $Target -eq "Antigravity") {
     $DestGemini = Join-Path $HOME ".gemini\config"
     $DestSkills = Join-Path $DestGemini "skills"
     $DestPlugins = Join-Path $DestGemini "plugins"
+    $DestMcp = Join-Path $HOME ".gemini\antigravity\mcp"
 
     Write-Host "=== Installing Antigravity Customizations (~/.gemini/config) ===" -ForegroundColor Cyan
     New-Item -ItemType Directory -Force -Path $DestSkills | Out-Null
     New-Item -ItemType Directory -Force -Path $DestPlugins | Out-Null
+    New-Item -ItemType Directory -Force -Path $DestMcp | Out-Null
 
     Write-Host "--> Copying skills to $DestSkills..." -ForegroundColor Yellow
     Copy-Item -Path (Join-Path $ScriptDir "skills\*") -Destination $DestSkills -Recurse -Force
 
     Write-Host "--> Copying plugins to $DestPlugins..." -ForegroundColor Yellow
     Copy-Item -Path (Join-Path $ScriptDir "plugins\*") -Destination $DestPlugins -Recurse -Force
+
+    if (Test-Path (Join-Path $ScriptDir "mcp")) {
+        Write-Host "--> Copying MCP tool schemas to $DestMcp..." -ForegroundColor Yellow
+        Copy-Item -Path (Join-Path $ScriptDir "mcp\*") -Destination $DestMcp -Recurse -Force
+    }
 
     $ConfigTarget = Join-Path $DestGemini "config.json"
     if (-not (Test-Path $ConfigTarget)) {
@@ -59,4 +66,4 @@ if ($Target -eq "All" -or $Target -eq "Agents") {
     }
 }
 
-Write-Host "✓ Installation complete! All skills and plugins are active and ready." -ForegroundColor Green
+Write-Host "✓ Installation complete! All skills, plugins, and MCP servers are active and ready." -ForegroundColor Green
