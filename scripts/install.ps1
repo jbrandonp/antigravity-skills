@@ -78,4 +78,4 @@ if ($Target -eq "All" -or $Target -eq "Agents") {
     }
 }
 
-Write-Host "✓ Installation complete! All 192 skills, 9 plugins, and 5 MCP servers are active and ready." -ForegroundColor Green
+Write-Host "✓ Installation complete! All 174 skills (117 core, 41 science, 16 stitch), 9 plugins, and 5 MCP servers are active and ready." -ForegroundColor Green

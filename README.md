@@ -21,7 +21,7 @@
 1. [Overview & Philosophy](#-overview--philosophy)
 2. [Universal Agent Compatibility (~/.agents/skills)](#-universal-agent-compatibility-agentsskills)
 3. [One-Click Installation](#-one-click-installation)
-4. [Elite Skills Catalog (117 Skills)](#-elite-skills-catalog-135-skills)
+4. [Elite Skills Catalog (117 Skills)](#-elite-skills-catalog-117-skills)
 5. [Google DeepMind Science Suite (41 Skills)](#-google-deepmind-science-suite-41-skills)
 6. [Plugins & MCP Architecture](#-plugins--mcp-architecture)
 7. [Zero-Trust Security & Sanitization](#-zero-trust-security--sanitization)
@@ -101,7 +101,7 @@ chmod +x scripts/install.sh && ./scripts/install.sh
 | [`automation`](skills/automation/SKILL.md) | Interactive guide to design and create scheduled background automations and recurring cron tasks. |
 | [`generative_ui`](skills/generative_ui/SKILL.md) | Render rich interactive HTML widgets inline in chat or as standalone artifacts (diagrams, data visualizations, controls, educational walkthroughs). |
 | [`google-antigravity-sdk`](skills/google-antigravity-sdk/SKILL.md) | Design, implement, and debug autonomous AI agents and multi-agent systems using the official Google Antigravity (AGY) SDK. |
-| [crewai-orchestration-suite](skills/crewai-orchestration-suite/SKILL.md) | Master CrewAI Multi-Agent Orchestration Suite: Architecture decisions, mandatory CLI scaffolding (crewai create flow), Agent design (Role-Goal-Backstory), Task design, Structured outputs, Flow state machines (@start/@listen), YAML configs, tool integration, and official documentation lookup via docs.crewai.com/llms.txt. Complete all-in-one suite. |
+| [`crewai-orchestration-suite`](skills/crewai-orchestration-suite/SKILL.md) | Master CrewAI Multi-Agent Orchestration Suite: Architecture decisions, mandatory CLI scaffolding (crewai create flow), Agent design (Role-Goal-Backstory), Task design, Structured outputs, Flow state machines (@start/@listen), YAML configs, tool integration, and official documentation lookup via docs.crewai.com/llms.txt. Complete all-in-one suite. |
 | [`migrate-workflows`](skills/migrate-workflows/SKILL.md) | Automatically migrate legacy workflows to modern skills across global and workspace configurations. |
 | [`permissioned-github`](skills/permissioned-github/SKILL.md) | Guidelines for interacting with GitHub and requesting user permissions safely when commands fail due to sandbox restrictions. |
 | [`plugin`](skills/plugin/SKILL.md) | Create and manage Antigravity plugins — namespaced bundles of skills, agents, rules, MCP servers and hooks. |

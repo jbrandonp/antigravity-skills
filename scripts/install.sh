@@ -67,4 +67,4 @@ if [ "$TARGET" = "All" ] || [ "$TARGET" = "Agents" ]; then
     done
 fi
 
-echo "✓ Installation complete! All 192 skills, 9 plugins, and 5 MCP servers are active and ready."
+echo "✓ Installation complete! All 174 skills (117 core, 41 science, 16 stitch), 9 plugins, and 5 MCP servers are active and ready."
