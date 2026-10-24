@@ -6843,7 +6843,6 @@ Chaque module peut être exécuté individuellement ou orchestré en séquence s
 ### 📋 Vue d'Ensemble & Sommaire des Modules
 
 1. **[accounts-payable-agent](#module-1-accounts-payable-agent)** : 自主支付处理专家，负责执行供应商付款、承包商发票和定期账单，支持加密货币、法币、稳定币等多种支付通道，通过 MCP 与 AI 智能体工作流集成。
-2. **[find-nearby](#module-2-find-nearby)** : Find nearby places (restaurants, cafes, bars, pharmacies, etc.) using OpenStreetMap. Works with coordinates, addresses, cities, zip codes, or Telegram location pins. No API keys needed.
 3. **[recruitment-specialist](#module-3-recruitment-specialist)** : 招聘运营与人才获取专家，精通国内主流招聘平台、人才评估体系和劳动法合规，帮助企业高效吸引、筛选和留住优秀人才，打造有竞争力的雇主品牌。
 4. **[specialized-ai-policy-writer](#module-4-specialized-ai-policy-writer)** : 面向中国企业和机构的 AI 治理与合规专家，精通《生成式 AI 管理办法》、算法备案制度、深度合成管理规定、大模型安全评估流程及 AI 伦理审查机制，帮助组织构建符合中国监管要求的 AI 治理框架并落地执行。
 5. **[specialized-pricing-optimizer](#module-5-specialized-pricing-optimizer)** : 专注电商动态定价与促销策略的价格优化专家，精通淘宝、京东、拼多多等平台的价格机制、大促定价规则、竞品价格监控和利润最大化策略，帮助商家在激烈的价格战中实现利润与销量的最优平衡。

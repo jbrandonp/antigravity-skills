@@ -102,23 +102,23 @@ relevant information.
 
 -   If the user needs to understand the high-level overview and core concepts of
     the Google Antigravity SDK (Agent, Conversation, Connection), read
-    `references/architecture.md`.
+    [`references/sdk.md`](references/sdk.md) (Architecture section).
 -   If the user needs to perform advanced agent configuration, select
     appropriate models, or understand the critical rules for model identifiers
-    to avoid assumptions, read `references/agent_configuration.md`.
+    to avoid assumptions, read [`references/sdk.md`](references/sdk.md) (Agent Configuration section).
 -   If the user needs to extend an agent's capabilities by integrating Model
     Context Protocol (MCP) servers, or configure tool permissions for the agent,
-    read `references/mcp_integration.md`.
+    read [`references/sdk.md`](references/sdk.md) (MCP Integration section).
 -   If the user needs to define safety policies, resolve execution order, or
     restrict agent actions using predicates, read
-    `references/safety_policies.md`.
+    [`references/sdk.md`](references/sdk.md) (Safety Policies section).
 -   If the user needs to debug failed agents, stream logs, or implement error
     recovery using hooks to make agents robust, read
-    `references/error_handling.md`.
+    [`references/sdk.md`](references/sdk.md) (Error Handling section).
 -   If the user needs to monitor costs, track token usage (including thinking
     tokens), or build custom audit logs for advanced monitoring, read
-    `references/observability.md`.
--   If the user needs to see a list of built-in tools and understand their default state, read `references/built_in_tools.md`.
+    [`references/sdk.md`](references/sdk.md) (Observability section).
+-   If the user needs to see a list of built-in tools and understand their default state, read [`references/sdk.md`](references/sdk.md) (Built-in Tools section).
 
 ### Examples
 

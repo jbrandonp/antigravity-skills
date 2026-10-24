@@ -724,7 +724,7 @@ When the user asks you to "review PR #N", "look at this PR", or gives you a PR U
 #### Step 1: Set up environment
 
 ```bash
-source "${HERMES_HOME:-$HOME/.hermes}/skills/github/github-auth/scripts/gh-env.sh"
+source "${HERMES_HOME:-$HOME/.hermes}/skills/github/github-auth/scripts/github-auth_gh-env.sh"
 ## Or run the inline setup block from the top of this skill
 ```
 
@@ -828,7 +828,7 @@ curl -s -X POST \
 
 #### Step 8: Also post a summary comment
 
-In addition to inline comments, leave a top-level summary so the PR author gets the full picture at a glance. Use the review output format from `references/review-output-template.md`.
+In addition to inline comments, leave a top-level summary so the PR author gets the full picture at a glance. Use the review output format from `references/github-code-review_review-output-template.md`.
 
 **With gh:**
 ```bash

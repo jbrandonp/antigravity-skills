@@ -33,7 +33,6 @@ Chaque module peut être exécuté individuellement ou orchestré en séquence s
 2. **[blogwatcher](#module-2-blogwatcher)** : Monitor blogs and RSS/Atom feeds for updates using the blogwatcher-cli tool. Add blogs, scan for new articles, track read status, and filter by category.
 3. **[llm-wiki](#module-3-llm-wiki)** : Karpathy's LLM Wiki — build and maintain a persistent, interlinked markdown knowledge base. Ingest sources, query compiled knowledge, and lint for consistency.
 4. **[ml-paper-writing](#module-4-ml-paper-writing)** : Write publication-ready ML/AI papers for NeurIPS, ICML, ICLR, ACL, AAAI, COLM. Use when drafting papers from research repos, structuring arguments, verifying citations, or preparing camera-ready submissions. Includes LaTeX templates, reviewer guidelines, and citation verification workflows.
-5. **[polymarket](#module-5-polymarket)** : Query Polymarket prediction market data — search markets, get prices, orderbooks, and price history. Read-only via public REST APIs, no API key needed.
 6. **[research-paper-writing](#module-6-research-paper-writing)** : End-to-end pipeline for writing ML/AI research papers — from experiment design through analysis, drafting, revision, and submission. Covers NeurIPS, ICML, ICLR, ACL, AAAI, COLM. Integrates automated experiment monitoring, statistical analysis, iterative writing, and citation verification.
 
 ---
@@ -206,15 +205,15 @@ Full list: https://arxiv.org/category_taxonomy
 
 ### Helper Script
 
-The `scripts/search_arxiv.py` script handles XML parsing and provides clean output:
+The `scripts/arxiv_search_arxiv.py` script handles XML parsing and provides clean output:
 
 ```bash
-python scripts/search_arxiv.py "GRPO reinforcement learning"
-python scripts/search_arxiv.py "transformer attention" --max 10 --sort date
-python scripts/search_arxiv.py --author "Yann LeCun" --max 5
-python scripts/search_arxiv.py --category cs.AI --sort date
-python scripts/search_arxiv.py --id 2402.03300
-python scripts/search_arxiv.py --id 2402.03300,2401.12345
+python scripts/arxiv_search_arxiv.py "GRPO reinforcement learning"
+python scripts/arxiv_search_arxiv.py "transformer attention" --max 10 --sort date
+python scripts/arxiv_search_arxiv.py --author "Yann LeCun" --max 5
+python scripts/arxiv_search_arxiv.py --category cs.AI --sort date
+python scripts/arxiv_search_arxiv.py --id 2402.03300
+python scripts/arxiv_search_arxiv.py --id 2402.03300,2401.12345
 ```
 
 No dependencies — uses only Python stdlib.
@@ -275,7 +274,7 @@ curl -s "https://api.semanticscholar.org/graph/v1/author/search?query=Yann+LeCun
 
 ### Complete Research Workflow
 
-1. **Discover**: `python scripts/search_arxiv.py "your topic" --sort date --max 10`
+1. **Discover**: `python scripts/arxiv_search_arxiv.py "your topic" --sort date --max 10`
 2. **Assess impact**: `curl -s "https://api.semanticscholar.org/graph/v1/paper/arXiv:ID?fields=citationCount,influentialCitationCount"`
 3. **Read abstract**: `web_extract(urls=["https://arxiv.org/abs/ID"])`
 4. **Read full paper**: `web_extract(urls=["https://arxiv.org/pdf/ID"])`
@@ -1236,7 +1235,7 @@ All major conferences require this. Counter-intuitively, honesty helps:
 
 **Step 9: Paper Checklist**
 
-NeurIPS, ICML, and ICLR all require paper checklists. See [references/checklists.md](references/checklists.md).
+NeurIPS, ICML, and ICLR all require paper checklists. See [references/ml-paper-writing_checklists.md](references/ml-paper-writing_checklists.md).
 
 ---
 
@@ -1261,8 +1260,8 @@ This skill synthesizes writing philosophy from researchers who have published ex
 | **Andrej Karpathy** | Single contribution focus | Various lectures |
 
 **For deeper dives into any of these, see:**
-- [references/writing-guide.md](references/writing-guide.md) - Full explanations with examples
-- [references/sources.md](references/sources.md) - Complete bibliography
+- [references/ml-paper-writing_writing-guide.md](references/ml-paper-writing_writing-guide.md) - Full explanations with examples
+- [references/ml-paper-writing_sources.md](references/ml-paper-writing_sources.md) - Complete bibliography
 
 #### Time Allocation (From Neel Nanda)
 
@@ -1290,7 +1289,7 @@ These principles are based on how readers actually process prose. Violating them
 | **Action in verb** | Use verbs, not nominalizations | ❌ "We performed an analysis" → ✅ "We analyzed" |
 | **Context before new** | Set stage before presenting | Explain before showing equation |
 
-**Full 7 principles with detailed examples:** See [references/writing-guide.md](references/writing-guide.md#the-7-principles-of-reader-expectations)
+**Full 7 principles with detailed examples:** See [references/ml-paper-writing_writing-guide.md](references/ml-paper-writing_writing-guide.md#the-7-principles-of-reader-expectations)
 
 ##### Micro-Level Tips (Ethan Perez)
 
@@ -1301,7 +1300,7 @@ These small changes accumulate into significantly clearer prose:
 - **Unfold apostrophes**: ❌ "X's Y" → ✅ "The Y of X" (when awkward)
 - **Delete filler words**: "actually," "a bit," "very," "really," "basically," "quite," "essentially"
 
-**Full micro-tips with examples:** See [references/writing-guide.md](references/writing-guide.md#micro-level-writing-tips)
+**Full micro-tips with examples:** See [references/ml-paper-writing_writing-guide.md](references/ml-paper-writing_writing-guide.md#micro-level-writing-tips)
 
 ##### Word Choice (Zachary Lipton)
 
@@ -1703,7 +1702,7 @@ If you cannot verify a citation at ANY step:
 
 **🚨 NEVER generate BibTeX from memory—always fetch programmatically. 🚨**
 
-See [references/citation-workflow.md](references/citation-workflow.md) for complete API documentation.
+See [references/ml-paper-writing_citation-workflow.md](references/ml-paper-writing_citation-workflow.md) for complete API documentation.
 
 ---
 
@@ -1755,7 +1754,7 @@ Reviewers assess papers on four dimensions:
 - 2: Reject - Technical flaws
 - 1: Strong Reject - Known results or ethics issues
 
-See [references/reviewer-guidelines.md](references/reviewer-guidelines.md) for detailed reviewer instructions.
+See [references/ml-paper-writing_reviewer-guidelines.md](references/ml-paper-writing_reviewer-guidelines.md) for detailed reviewer instructions.
 
 ---
 
@@ -1800,11 +1799,11 @@ Baseline & 85.2 & 45ms \\
 
 | Document | Contents |
 |----------|----------|
-| [writing-guide.md](references/writing-guide.md) | Gopen & Swan 7 principles, Ethan Perez micro-tips, word choice |
-| [citation-workflow.md](references/citation-workflow.md) | Citation APIs, Python code, BibTeX management |
-| [checklists.md](references/checklists.md) | NeurIPS 16-item, ICML, ICLR, ACL requirements |
-| [reviewer-guidelines.md](references/reviewer-guidelines.md) | Evaluation criteria, scoring, rebuttals |
-| [sources.md](references/sources.md) | Complete bibliography of all sources |
+| [writing-guide.md](references/ml-paper-writing_writing-guide.md) | Gopen & Swan 7 principles, Ethan Perez micro-tips, word choice |
+| [citation-workflow.md](references/ml-paper-writing_citation-workflow.md) | Citation APIs, Python code, BibTeX management |
+| [checklists.md](references/ml-paper-writing_checklists.md) | NeurIPS 16-item, ICML, ICLR, ACL requirements |
+| [reviewer-guidelines.md](references/ml-paper-writing_reviewer-guidelines.md) | Evaluation criteria, scoring, rebuttals |
+| [sources.md](references/ml-paper-writing_sources.md) | Complete bibliography of all sources |
 
 #### LaTeX Templates
 
@@ -1829,79 +1828,6 @@ See [templates/README.md](templates/README.md) for detailed setup instructions.
 **APIs:** [Semantic Scholar](https://api.semanticscholar.org/api-docs/) | [CrossRef](https://www.crossref.org/documentation/retrieve-metadata/rest-api/) | [arXiv](https://info.arxiv.org/help/api/basics.html)
 
 **Venues:** [NeurIPS](https://neurips.cc/Conferences/2025/PaperInformation/StyleFiles) | [ICML](https://icml.cc/Conferences/2025/AuthorInstructions) | [ICLR](https://iclr.cc/Conferences/2026/AuthorGuide) | [ACL](https://github.com/acl-org/acl-style-files)
-
-
----
-
-
-## Polymarket — Prediction Market Data
-
-Query prediction market data from Polymarket using their public REST APIs.
-All endpoints are read-only and require zero authentication.
-
-See `references/api-endpoints.md` for the full endpoint reference with curl examples.
-
-### When to Use
-
-- User asks about prediction markets, betting odds, or event probabilities
-- User wants to know "what are the odds of X happening?"
-- User asks about Polymarket specifically
-- User wants market prices, orderbook data, or price history
-- User asks to monitor or track prediction market movements
-
-### Key Concepts
-
-- **Events** contain one or more **Markets** (1:many relationship)
-- **Markets** are binary outcomes with Yes/No prices between 0.00 and 1.00
-- Prices ARE probabilities: price 0.65 means the market thinks 65% likely
-- `outcomePrices` field: JSON-encoded array like `["0.80", "0.20"]`
-- `clobTokenIds` field: JSON-encoded array of two token IDs [Yes, No] for price/book queries
-- `conditionId` field: hex string used for price history queries
-- Volume is in USDC (US dollars)
-
-### Three Public APIs
-
-1. **Gamma API** at `gamma-api.polymarket.com` — Discovery, search, browsing
-2. **CLOB API** at `clob.polymarket.com` — Real-time prices, orderbooks, history
-3. **Data API** at `data-api.polymarket.com` — Trades, open interest
-
-### Typical Workflow
-
-When a user asks about prediction market odds:
-
-1. **Search** using the Gamma API public-search endpoint with their query
-2. **Parse** the response — extract events and their nested markets
-3. **Present** market question, current prices as percentages, and volume
-4. **Deep dive** if asked — use clobTokenIds for orderbook, conditionId for history
-
-### Presenting Results
-
-Format prices as percentages for readability:
-- outcomePrices `["0.652", "0.348"]` becomes "Yes: 65.2%, No: 34.8%"
-- Always show the market question and probability
-- Include volume when available
-
-Example: `"Will X happen?" — 65.2% Yes ($1.2M volume)`
-
-### Parsing Double-Encoded Fields
-
-The Gamma API returns `outcomePrices`, `outcomes`, and `clobTokenIds` as JSON strings
-inside JSON responses (double-encoded). When processing with Python, parse them with
-`json.loads(market['outcomePrices'])` to get the actual array.
-
-### Rate Limits
-
-Generous — unlikely to hit for normal usage:
-- Gamma: 4,000 requests per 10 seconds (general)
-- CLOB: 9,000 requests per 10 seconds (general)
-- Data: 1,000 requests per 10 seconds (general)
-
-### Limitations
-
-- This skill is read-only — it does not support placing trades
-- Trading requires wallet-based crypto authentication (EIP-712 signatures)
-- Some new markets may have empty price history
-- Geographic restrictions apply to trading but read-only data is globally accessible
 
 
 ---
@@ -2235,7 +2161,7 @@ If you cannot verify a citation:
 
 **Always tell the scientist**: "I've marked [X] citations as placeholders that need verification."
 
-See [references/citation-workflow.md](references/citation-workflow.md) for complete API documentation and the full `CitationManager` class.
+See [references/ml-paper-writing_citation-workflow.md](references/ml-paper-writing_citation-workflow.md) for complete API documentation and the full `CitationManager` class.
 
 #### Step 1.4: Organize Related Work
 
@@ -2317,7 +2243,7 @@ analyze_results.py             # Statistical analysis
 make_charts.py                 # Visualization
 ```
 
-See [references/experiment-patterns.md](references/experiment-patterns.md) for complete design patterns, cron monitoring, and error recovery.
+See [references/research-paper-writing_experiment-patterns.md](references/research-paper-writing_experiment-patterns.md) for complete design patterns, cron monitoring, and error recovery.
 
 #### Step 2.5: Design Human Evaluation (If Applicable)
 
@@ -2356,7 +2282,7 @@ Many NLP, HCI, and alignment papers require human evaluation as primary or compl
 - Annotation interface description or screenshot (appendix)
 - Total annotation time
 
-See [references/human-evaluation.md](references/human-evaluation.md) for complete guide including statistical tests for human eval data, crowdsourcing quality control patterns, and IRB guidance.
+See [references/research-paper-writing_human-evaluation.md](references/research-paper-writing_human-evaluation.md) for complete guide including statistical tests for human eval data, crowdsourcing quality control patterns, and IRB guidance.
 
 ---
 
@@ -2486,7 +2412,7 @@ Always compute:
 - **Pairwise tests**: McNemar's test for comparing two methods
 - **Effect sizes**: Cohen's d or h for practical significance
 
-See [references/experiment-patterns.md](references/experiment-patterns.md) for complete implementations of McNemar's test, bootstrapped CIs, and Cohen's h.
+See [references/research-paper-writing_experiment-patterns.md](references/research-paper-writing_experiment-patterns.md) for complete implementations of McNemar's test, bootstrapped CIs, and Cohen's h.
 
 #### Step 4.3: Identify the Story
 
@@ -2664,7 +2590,7 @@ When refining the paper itself through autoreason:
 | Overfitting (code) | High public-test pass, low private-test pass | Use structured analysis, not just test feedback |
 | Broken judges | Parsing failures reduce panel below 3 | Fix parser before continuing |
 
-See [references/autoreason-methodology.md](references/autoreason-methodology.md) for complete prompts, Borda scoring details, model selection guide, scope constraint design patterns, and compute budget reference.
+See [references/research-paper-writing_autoreason-methodology.md](references/research-paper-writing_autoreason-methodology.md) for complete prompts, Borda scoring details, model selection guide, scope constraint design patterns, and compute budget reference.
 
 ---
 
@@ -2730,8 +2656,8 @@ This skill synthesizes writing philosophy from researchers who have published ex
 | **Andrej Karpathy** | Single contribution focus | Various lectures |
 
 **For deeper dives into any of these, see:**
-- [references/writing-guide.md](references/writing-guide.md) — Full explanations with examples
-- [references/sources.md](references/sources.md) — Complete bibliography
+- [references/ml-paper-writing_writing-guide.md](references/ml-paper-writing_writing-guide.md) — Full explanations with examples
+- [references/ml-paper-writing_sources.md](references/ml-paper-writing_sources.md) — Complete bibliography
 
 #### Time Allocation
 
@@ -3040,7 +2966,7 @@ Model Card (Appendix):
 - Consistent terminology throughout
 - Avoid incremental vocabulary: "develop", not "combine"
 
-**Full writing guide with examples**: See [references/writing-guide.md](references/writing-guide.md)
+**Full writing guide with examples**: See [references/ml-paper-writing_writing-guide.md](references/ml-paper-writing_writing-guide.md)
 
 #### Using LaTeX Templates
 
@@ -3492,7 +3418,7 @@ Each reviewer can refine their review after seeing the meta-review. Use an early
 
 **Model selection for reviewing**: Reviewing is best done with the strongest available model, even if you wrote the paper with a cheaper one. The reviewer model should be chosen independently from the writing model.
 
-**Few-shot calibration**: If available, include 1-2 real published reviews from the target venue as examples. This dramatically improves score calibration. See [references/reviewer-guidelines.md](references/reviewer-guidelines.md) for example reviews.
+**Few-shot calibration**: If available, include 1-2 real published reviews from the target venue as examples. This dramatically improves score calibration. See [references/ml-paper-writing_reviewer-guidelines.md](references/ml-paper-writing_reviewer-guidelines.md) for example reviews.
 
 #### Step 6.1b: Visual Review Pass (VLM)
 
@@ -3593,7 +3519,7 @@ paper/
 
 Every venue has mandatory checklists. Complete them carefully — incomplete checklists can result in desk rejection.
 
-See [references/checklists.md](references/checklists.md) for:
+See [references/ml-paper-writing_checklists.md](references/ml-paper-writing_checklists.md) for:
 - NeurIPS 16-item paper checklist
 - ICML broader impact + reproducibility
 - ICLR LLM disclosure policy
@@ -3953,7 +3879,7 @@ ACL venues have distinct submission types:
 
 ### Paper Types Beyond Empirical ML
 
-The main pipeline above targets empirical ML papers. Other paper types require different structures and evidence standards. See [references/paper-types.md](references/paper-types.md) for detailed guidance on each type.
+The main pipeline above targets empirical ML papers. Other paper types require different structures and evidence standards. See [references/research-paper-writing_paper-types.md](references/research-paper-writing_paper-types.md) for detailed guidance on each type.
 
 #### Theory Papers
 
@@ -4213,7 +4139,7 @@ Understanding what reviewers look for helps focus effort:
 - 2: Reject — technical flaws
 - 1: Strong Reject — known results or ethics issues
 
-See [references/reviewer-guidelines.md](references/reviewer-guidelines.md) for detailed guidelines, common concerns, and rebuttal strategies.
+See [references/ml-paper-writing_reviewer-guidelines.md](references/ml-paper-writing_reviewer-guidelines.md) for detailed guidelines, common concerns, and rebuttal strategies.
 
 ---
 
@@ -4229,9 +4155,9 @@ See [references/reviewer-guidelines.md](references/reviewer-guidelines.md) for d
 | Scope creep in experiments | Every experiment must map to a specific claim. Cut experiments that don't. |
 | Paper rejected, need to resubmit | See Conference Resubmission in Phase 7. Address reviewer concerns without referencing reviews. |
 | Missing broader impact statement | See Step 5.10. Most venues require it. "No negative impacts" is almost never credible. |
-| Human eval criticized as weak | See Step 2.5 and [references/human-evaluation.md](references/human-evaluation.md). Report agreement metrics, annotator details, compensation. |
+| Human eval criticized as weak | See Step 2.5 and [references/research-paper-writing_human-evaluation.md](references/research-paper-writing_human-evaluation.md). Report agreement metrics, annotator details, compensation. |
 | Reviewers question reproducibility | Release code (Step 7.9), document all hyperparameters, include seeds and compute details. |
-| Theory paper lacks intuition | Add proof sketches with plain-language explanations before formal proofs. See [references/paper-types.md](references/paper-types.md). |
+| Theory paper lacks intuition | Add proof sketches with plain-language explanations before formal proofs. See [references/research-paper-writing_paper-types.md](references/research-paper-writing_paper-types.md). |
 | Results are negative/null | See Phase 4.3 on handling negative results. Consider workshops, TMLR, or reframing as analysis. |
 
 ---
@@ -4240,15 +4166,15 @@ See [references/reviewer-guidelines.md](references/reviewer-guidelines.md) for d
 
 | Document | Contents |
 |----------|----------|
-| [references/writing-guide.md](references/writing-guide.md) | Gopen & Swan 7 principles, Perez micro-tips, Lipton word choice, Steinhardt precision, figure design |
-| [references/citation-workflow.md](references/citation-workflow.md) | Citation APIs, Python code, CitationManager class, BibTeX management |
-| [references/checklists.md](references/checklists.md) | NeurIPS 16-item, ICML, ICLR, ACL requirements, universal pre-submission checklist |
-| [references/reviewer-guidelines.md](references/reviewer-guidelines.md) | Evaluation criteria, scoring, common concerns, rebuttal template |
-| [references/sources.md](references/sources.md) | Complete bibliography of all writing guides, conference guidelines, APIs |
-| [references/experiment-patterns.md](references/experiment-patterns.md) | Experiment design patterns, evaluation protocols, monitoring, error recovery |
-| [references/autoreason-methodology.md](references/autoreason-methodology.md) | Autoreason loop, strategy selection, model guide, prompts, scope constraints, Borda scoring |
-| [references/human-evaluation.md](references/human-evaluation.md) | Human evaluation design, annotation guidelines, agreement metrics, crowdsourcing QC, IRB guidance |
-| [references/paper-types.md](references/paper-types.md) | Theory papers (proof writing, theorem structure), survey papers, benchmark papers, position papers |
+| [references/ml-paper-writing_writing-guide.md](references/ml-paper-writing_writing-guide.md) | Gopen & Swan 7 principles, Perez micro-tips, Lipton word choice, Steinhardt precision, figure design |
+| [references/ml-paper-writing_citation-workflow.md](references/ml-paper-writing_citation-workflow.md) | Citation APIs, Python code, CitationManager class, BibTeX management |
+| [references/ml-paper-writing_checklists.md](references/ml-paper-writing_checklists.md) | NeurIPS 16-item, ICML, ICLR, ACL requirements, universal pre-submission checklist |
+| [references/ml-paper-writing_reviewer-guidelines.md](references/ml-paper-writing_reviewer-guidelines.md) | Evaluation criteria, scoring, common concerns, rebuttal template |
+| [references/ml-paper-writing_sources.md](references/ml-paper-writing_sources.md) | Complete bibliography of all writing guides, conference guidelines, APIs |
+| [references/research-paper-writing_experiment-patterns.md](references/research-paper-writing_experiment-patterns.md) | Experiment design patterns, evaluation protocols, monitoring, error recovery |
+| [references/research-paper-writing_autoreason-methodology.md](references/research-paper-writing_autoreason-methodology.md) | Autoreason loop, strategy selection, model guide, prompts, scope constraints, Borda scoring |
+| [references/research-paper-writing_human-evaluation.md](references/research-paper-writing_human-evaluation.md) | Human evaluation design, annotation guidelines, agreement metrics, crowdsourcing QC, IRB guidance |
+| [references/research-paper-writing_paper-types.md](references/research-paper-writing_paper-types.md) | Theory papers (proof writing, theorem structure), survey papers, benchmark papers, position papers |
 
 #### LaTeX Templates
 

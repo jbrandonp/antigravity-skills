@@ -71,6 +71,3 @@ When auditing a repository or rating Compose architecture quality:
 ## Scripts & Tools
 
 - `scripts/compose-reports.init.gradle`: Gradle initialization script for generating Compose compiler stability reports.
-'''
-
-Path = r"C:\Users\brand\.gemini\config\skills\jetpack-compose-suite\SKILL.md"

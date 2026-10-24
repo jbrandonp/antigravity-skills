@@ -232,7 +232,7 @@ Pause or kill off-screen animations.
 
 ### References (loaded on demand)
 
-- **[references/effects.md](references/effects.md)** — Drop-in effects: typewriter text, audio visualizer. Read when needing ready-made effect patterns for HyperFrames.
+- **[references/p5js_visual-effects.md](references/p5js_visual-effects.md)** — Drop-in effects: typewriter text, audio visualizer. Read when needing ready-made effect patterns for HyperFrames.
 
 ### Best Practices
 
@@ -278,19 +278,19 @@ This is educational cinema. Every frame teaches. Every animation reveals structu
 
 ### Prerequisites
 
-Run `scripts/setup.sh` to verify all dependencies. Requires: Python 3.10+, Manim Community Edition v0.20+ (`pip install manim`), LaTeX (`texlive-full` on Linux, `mactex` on macOS), and ffmpeg. Reference docs tested against Manim CE v0.20.1.
+Run `scripts/manim-video_setup.sh` to verify all dependencies. Requires: Python 3.10+, Manim Community Edition v0.20+ (`pip install manim`), LaTeX (`texlive-full` on Linux, `mactex` on macOS), and ffmpeg. Reference docs tested against Manim CE v0.20.1.
 
 ### Modes
 
 | Mode | Input | Output | Reference |
 |------|-------|--------|-----------|
-| **Concept explainer** | Topic/concept | Animated explanation with geometric intuition | `references/scene-planning.md` |
-| **Equation derivation** | Math expressions | Step-by-step animated proof | `references/equations.md` |
-| **Algorithm visualization** | Algorithm description | Step-by-step execution with data structures | `references/graphs-and-data.md` |
-| **Data story** | Data/metrics | Animated charts, comparisons, counters | `references/graphs-and-data.md` |
-| **Architecture diagram** | System description | Components building up with connections | `references/mobjects.md` |
-| **Paper explainer** | Research paper | Key findings and methods animated | `references/scene-planning.md` |
-| **3D visualization** | 3D concept | Rotating surfaces, parametric curves, spatial geometry | `references/camera-and-3d.md` |
+| **Concept explainer** | Topic/concept | Animated explanation with geometric intuition | `references/manim-video_scene-planning.md` |
+| **Equation derivation** | Math expressions | Step-by-step animated proof | `references/manim-video_equations.md` |
+| **Algorithm visualization** | Algorithm description | Step-by-step execution with data structures | `references/manim-video_graphs-and-data.md` |
+| **Data story** | Data/metrics | Animated charts, comparisons, counters | `references/manim-video_graphs-and-data.md` |
+| **Architecture diagram** | System description | Components building up with connections | `references/manim-video_mobjects.md` |
+| **Paper explainer** | Research paper | Key findings and methods animated | `references/manim-video_scene-planning.md` |
+| **3D visualization** | 3D concept | Rotating surfaces, parametric curves, spatial geometry | `references/manim-video_camera-and-3d.md` |
 
 ### Stack
 
@@ -313,7 +313,7 @@ PLAN --> CODE --> RENDER --> STITCH --> AUDIO (optional) --> REVIEW
 2. **CODE** — Write `script.py` with one class per scene, each independently renderable
 3. **RENDER** — `manim -ql script.py Scene1 Scene2 ...` for draft, `-qh` for production
 4. **STITCH** — ffmpeg concat of scene clips into `final.mp4`
-5. **AUDIO** (optional) — Add voiceover and/or background music via ffmpeg. See `references/rendering.md`
+5. **AUDIO** (optional) — Add voiceover and/or background music via ffmpeg. See `references/manim-video_rendering.md`
 6. **REVIEW** — Render preview stills, verify against plan, adjust
 
 ### Project Structure
@@ -362,7 +362,7 @@ project-name/
 
 #### Fonts
 
-**Use monospace fonts for all text.** Manim's Pango renderer produces broken kerning with proportional fonts at all sizes. See `references/visual-design.md` for full recommendations.
+**Use monospace fonts for all text.** Manim's Pango renderer produces broken kerning with proportional fonts at all sizes. See `references/manim-video_visual-design.md` for full recommendations.
 
 ```python
 MONO = "Menlo"  # define once at top of file
@@ -386,7 +386,7 @@ Never use identical config for all scenes. For each scene:
 
 #### Step 1: Plan (plan.md)
 
-Before any code, write `plan.md`. See `references/scene-planning.md` for the comprehensive template.
+Before any code, write `plan.md`. See `references/manim-video_scene-planning.md` for the comprehensive template.
 
 #### Step 2: Code (script.py)
 
@@ -479,20 +479,20 @@ Always iterate at `-ql`. Only render `-qh` for final output.
 
 | File | Contents |
 |------|----------|
-| `references/animations.md` | Core animations, rate functions, composition, `.animate` syntax, timing patterns |
-| `references/mobjects.md` | Text, shapes, VGroup/Group, positioning, styling, custom mobjects |
-| `references/visual-design.md` | 12 design principles, opacity layering, layout templates, color palettes |
-| `references/equations.md` | LaTeX in Manim, TransformMatchingTex, derivation patterns |
-| `references/graphs-and-data.md` | Axes, plotting, BarChart, animated data, algorithm visualization |
-| `references/camera-and-3d.md` | MovingCameraScene, ThreeDScene, 3D surfaces, camera control |
-| `references/scene-planning.md` | Narrative arcs, layout templates, scene transitions, planning template |
-| `references/rendering.md` | CLI reference, quality presets, ffmpeg, voiceover workflow, GIF export |
-| `references/troubleshooting.md` | LaTeX errors, animation errors, common mistakes, debugging |
-| `references/animation-design-thinking.md` | When to animate vs show static, decomposition, pacing, narration sync |
-| `references/updaters-and-trackers.md` | ValueTracker, add_updater, always_redraw, time-based updaters, patterns |
-| `references/paper-explainer.md` | Turning research papers into animations — workflow, templates, domain patterns |
-| `references/decorations.md` | SurroundingRectangle, Brace, arrows, DashedLine, Angle, annotation lifecycle |
-| `references/production-quality.md` | Pre-code, pre-render, post-render checklists, spatial layout, color, tempo |
+| `references/manim-video_animations.md` | Core animations, rate functions, composition, `.animate` syntax, timing patterns |
+| `references/manim-video_mobjects.md` | Text, shapes, VGroup/Group, positioning, styling, custom mobjects |
+| `references/manim-video_visual-design.md` | 12 design principles, opacity layering, layout templates, color palettes |
+| `references/manim-video_equations.md` | LaTeX in Manim, TransformMatchingTex, derivation patterns |
+| `references/manim-video_graphs-and-data.md` | Axes, plotting, BarChart, animated data, algorithm visualization |
+| `references/manim-video_camera-and-3d.md` | MovingCameraScene, ThreeDScene, 3D surfaces, camera control |
+| `references/manim-video_scene-planning.md` | Narrative arcs, layout templates, scene transitions, planning template |
+| `references/manim-video_rendering.md` | CLI reference, quality presets, ffmpeg, voiceover workflow, GIF export |
+| `references/manim-video_troubleshooting.md` | LaTeX errors, animation errors, common mistakes, debugging |
+| `references/manim-video_animation-design-thinking.md` | When to animate vs show static, decomposition, pacing, narration sync |
+| `references/manim-video_updaters-and-trackers.md` | ValueTracker, add_updater, always_redraw, time-based updaters, patterns |
+| `references/manim-video_paper-explainer.md` | Turning research papers into animations — workflow, templates, domain patterns |
+| `references/manim-video_decorations.md` | SurroundingRectangle, Brace, arrows, DashedLine, Angle, annotation lifecycle |
+| `references/manim-video_production-quality.md` | Pre-code, pre-render, post-render checklists, spatial layout, color, tempo |
 
 ---
 
@@ -547,13 +547,13 @@ This is visual art rendered in the browser. The canvas is the medium; the algori
 
 | Mode | Input | Output | Reference |
 |------|-------|--------|-----------|
-| **Generative art** | Seed / parameters | Procedural visual composition (still or animated) | `references/visual-effects.md` |
-| **Data visualization** | Dataset / API | Interactive charts, graphs, custom data displays | `references/interaction.md` |
-| **Interactive experience** | None (user drives) | Mouse/keyboard/touch-driven sketch | `references/interaction.md` |
-| **Animation / motion graphics** | Timeline / storyboard | Timed sequences, kinetic typography, transitions | `references/animation.md` |
-| **3D scene** | Concept description | WebGL geometry, lighting, camera, materials | `references/webgl-and-3d.md` |
-| **Image processing** | Image file(s) | Pixel manipulation, filters, mosaic, pointillism | `references/visual-effects.md` § Pixel Manipulation |
-| **Audio-reactive** | Audio file / mic | Sound-driven generative visuals | `references/interaction.md` § Audio Input |
+| **Generative art** | Seed / parameters | Procedural visual composition (still or animated) | `references/p5js_visual-effects.md` |
+| **Data visualization** | Dataset / API | Interactive charts, graphs, custom data displays | `references/p5js_interaction.md` |
+| **Interactive experience** | None (user drives) | Mouse/keyboard/touch-driven sketch | `references/p5js_interaction.md` |
+| **Animation / motion graphics** | Timeline / storyboard | Timed sequences, kinetic typography, transitions | `references/p5js_animation.md` |
+| **3D scene** | Concept description | WebGL geometry, lighting, camera, materials | `references/p5js_webgl-and-3d.md` |
+| **Image processing** | Image file(s) | Pixel manipulation, filters, mosaic, pointillism | `references/p5js_visual-effects.md` § Pixel Manipulation |
+| **Audio-reactive** | Audio file / mic | Sound-driven generative visuals | `references/p5js_interaction.md` § Audio Input |
 
 ### Stack
 
@@ -576,7 +576,7 @@ Single self-contained HTML file per project. No build step required.
 
 **p5.js 1.x** (1.11.3) is the default — stable, well-documented, broadest library compatibility. Use this unless a project requires 2.x features.
 
-**p5.js 2.x** (2.2+) adds: `async setup()` replacing `preload()`, OKLCH/OKLAB color modes, `splineVertex()`, shader `.modify()` API, variable fonts, `textToContours()`, pointer events. Required for p5.brush. See `references/core-api.md` § p5.js 2.0.
+**p5.js 2.x** (2.2+) adds: `async setup()` replacing `preload()`, OKLCH/OKLAB color modes, `splineVertex()`, shader `.modify()` API, variable fonts, `textToContours()`, pointer events. Required for p5.brush. See `references/p5js_core-api.md` § p5.js 2.0.
 
 ### Pipeline
 
@@ -599,18 +599,18 @@ CONCEPT → DESIGN → CODE → PREVIEW → EXPORT → VERIFY
 
 | Dimension | Options | Reference |
 |-----------|---------|-----------|
-| **Color system** | HSB/HSL, RGB, named palettes, procedural harmony, gradient interpolation | `references/color-systems.md` |
-| **Noise vocabulary** | Perlin noise, simplex, fractal (octaved), domain warping, curl noise | `references/visual-effects.md` § Noise |
-| **Particle systems** | Physics-based, flocking, trail-drawing, attractor-driven, flow-field following | `references/visual-effects.md` § Particles |
-| **Shape language** | Geometric primitives, custom vertices, bezier curves, SVG paths | `references/shapes-and-geometry.md` |
-| **Motion style** | Eased, spring-based, noise-driven, physics sim, lerped, stepped | `references/animation.md` |
-| **Typography** | System fonts, loaded OTF, `textToPoints()` particle text, kinetic | `references/typography.md` |
-| **Shader effects** | GLSL fragment/vertex, filter shaders, post-processing, feedback loops | `references/webgl-and-3d.md` § Shaders |
-| **Composition** | Grid, radial, golden ratio, rule of thirds, organic scatter, tiled | `references/core-api.md` § Composition |
-| **Interaction model** | Mouse follow, click spawn, drag, keyboard state, scroll-driven, mic input | `references/interaction.md` |
-| **Blend modes** | `BLEND`, `ADD`, `MULTIPLY`, `SCREEN`, `DIFFERENCE`, `EXCLUSION`, `OVERLAY` | `references/color-systems.md` § Blend Modes |
-| **Layering** | `createGraphics()` offscreen buffers, alpha compositing, masking | `references/core-api.md` § Offscreen Buffers |
-| **Texture** | Perlin surface, stippling, hatching, halftone, pixel sorting | `references/visual-effects.md` § Texture Generation |
+| **Color system** | HSB/HSL, RGB, named palettes, procedural harmony, gradient interpolation | `references/p5js_color-systems.md` |
+| **Noise vocabulary** | Perlin noise, simplex, fractal (octaved), domain warping, curl noise | `references/p5js_visual-effects.md` § Noise |
+| **Particle systems** | Physics-based, flocking, trail-drawing, attractor-driven, flow-field following | `references/p5js_visual-effects.md` § Particles |
+| **Shape language** | Geometric primitives, custom vertices, bezier curves, SVG paths | `references/p5js_shapes-and-geometry.md` |
+| **Motion style** | Eased, spring-based, noise-driven, physics sim, lerped, stepped | `references/p5js_animation.md` |
+| **Typography** | System fonts, loaded OTF, `textToPoints()` particle text, kinetic | `references/p5js_typography.md` |
+| **Shader effects** | GLSL fragment/vertex, filter shaders, post-processing, feedback loops | `references/p5js_webgl-and-3d.md` § Shaders |
+| **Composition** | Grid, radial, golden ratio, rule of thirds, organic scatter, tiled | `references/p5js_core-api.md` § Composition |
+| **Interaction model** | Mouse follow, click spawn, drag, keyboard state, scroll-driven, mic input | `references/p5js_interaction.md` |
+| **Blend modes** | `BLEND`, `ADD`, `MULTIPLY`, `SCREEN`, `DIFFERENCE`, `EXCLUSION`, `OVERLAY` | `references/p5js_color-systems.md` § Blend Modes |
+| **Layering** | `createGraphics()` offscreen buffers, alpha compositing, masking | `references/p5js_core-api.md` § Offscreen Buffers |
+| **Texture** | Perlin surface, stippling, hatching, halftone, pixel sorting | `references/p5js_visual-effects.md` § Texture Generation |
 
 #### Per-Project Variation Rules
 
@@ -762,7 +762,7 @@ Key implementation patterns:
 #### Step 4: Preview & Iterate
 
 - Open HTML file directly in browser — no server needed for basic sketches
-- For `loadImage()`/`loadFont()` from local files: use `scripts/serve.sh` or `python3 -m http.server`
+- For `loadImage()`/`loadFont()` from local files: use `scripts/p5js_serve.sh` or `python3 -m http.server`
 - Chrome DevTools Performance tab to verify 60fps
 - Test at target export resolution, not just the window size
 - Adjust parameters until the visual matches the concept from Step 1
@@ -772,10 +772,10 @@ Key implementation patterns:
 | Format | Method | Command |
 |--------|--------|---------|
 | **PNG** | `saveCanvas('output', 'png')` in `keyPressed()` | Press 's' to save |
-| **High-res PNG** | Puppeteer headless capture | `node scripts/export-frames.js sketch.html --width 3840 --height 2160 --frames 1` |
+| **High-res PNG** | Puppeteer headless capture | `node scripts/p5js_export-frames.js sketch.html --width 3840 --height 2160 --frames 1` |
 | **GIF** | `saveGif('output', 5)` — captures N seconds | Press 'g' to save |
 | **Frame sequence** | `saveFrames('frame', 'png', 10, 30)` — 10s at 30fps | Then `ffmpeg -i frame-%04d.png -c:v libx264 output.mp4` |
-| **MP4** | Puppeteer frame capture + ffmpeg | `bash scripts/render.sh sketch.html output.mp4 --duration 30 --fps 30` |
+| **MP4** | Puppeteer frame capture + ffmpeg | `bash scripts/p5js_render.sh sketch.html output.mp4 --duration 30 --fps 30` |
 | **SVG** | `createCanvas(w, h, SVG)` with p5.js-svg | `save('output.svg')` |
 
 #### Step 6: Quality Verification
@@ -811,7 +811,7 @@ let v = Math.random();        // not random() — when seed not needed
 let m = Math.min(a, b);       // not min(a, b)
 ```
 
-Never `console.log()` inside `draw()`. Never manipulate DOM in `draw()`. See `references/troubleshooting.md` § Performance.
+Never `console.log()` inside `draw()`. Never manipulate DOM in `draw()`. See `references/manim-video_troubleshooting.md` § Performance.
 
 #### Seeded Randomness — Always
 
@@ -845,7 +845,7 @@ noiseSeed(SEED);
 let x = rng() * width;  // instead of random(width)
 ```
 
-See `references/export-pipeline.md` § Platform Export.
+See `references/p5js_export-pipeline.md` § Platform Export.
 
 #### Color Mode — Use HSB
 
@@ -859,7 +859,7 @@ colorMode(HSB, 360, 100, 100, 100);
 // Darken: fill(hue, sat, bri * 0.5)
 ```
 
-Never hardcode raw RGB values. Define a palette object, derive variations procedurally. See `references/color-systems.md`.
+Never hardcode raw RGB values. Define a palette object, derive variations procedurally. See `references/p5js_color-systems.md`.
 
 #### Noise — Multi-Octave, Not Raw
 
@@ -878,7 +878,7 @@ function fbm(x, y, octaves = 4) {
 }
 ```
 
-For flowing organic forms, use **domain warping**: feed noise output back as noise input coordinates. See `references/visual-effects.md`.
+For flowing organic forms, use **domain warping**: feed noise output back as noise input coordinates. See `references/p5js_visual-effects.md`.
 
 #### createGraphics() for Layers — Not Optional
 
@@ -928,7 +928,7 @@ for (let p of particles) {
 updatePixels();
 ```
 
-See `references/troubleshooting.md` § Performance.
+See `references/manim-video_troubleshooting.md` § Performance.
 
 #### Instance Mode for Multiple Sketches
 
@@ -984,9 +984,9 @@ function setup() {
 }
 ```
 
-The bundled `scripts/export-frames.js` detects `_p5Ready` and calls `redraw()` once per capture for exact 1:1 frame correspondence. See `references/export-pipeline.md` § Deterministic Capture.
+The bundled `scripts/p5js_export-frames.js` detects `_p5Ready` and calls `redraw()` once per capture for exact 1:1 frame correspondence. See `references/p5js_export-pipeline.md` § Deterministic Capture.
 
-For multi-scene videos, use the per-clip architecture: one HTML per scene, render independently, stitch with `ffmpeg -f concat`. See `references/export-pipeline.md` § Per-Clip Architecture.
+For multi-scene videos, use the per-clip architecture: one HTML per scene, render independently, stitch with `ffmpeg -f concat`. See `references/p5js_export-pipeline.md` § Per-Clip Architecture.
 
 #### Agent Workflow
 
@@ -996,8 +996,8 @@ When building p5.js sketches:
 2. **Open in browser** — `open sketch.html` (macOS) or `xdg-open sketch.html` (Linux)
 3. **Local assets** (fonts, images) require a server: `python3 -m http.server 8080` in the project directory, then open `http://localhost:8080/sketch.html`
 4. **Export PNG/GIF** — add `keyPressed()` shortcuts as shown above, tell the user which key to press
-5. **Headless export** — `node scripts/export-frames.js sketch.html --frames 300` for automated frame capture (sketch must use `noLoop()` + `_p5Ready`)
-6. **MP4 rendering** — `bash scripts/render.sh sketch.html output.mp4 --duration 30`
+5. **Headless export** — `node scripts/p5js_export-frames.js sketch.html --frames 300` for automated frame capture (sketch must use `noLoop()` + `_p5Ready`)
+6. **MP4 rendering** — `bash scripts/p5js_render.sh sketch.html output.mp4 --duration 30`
 7. **Iterative refinement** — edit the HTML file, user refreshes browser to see changes
 8. **Load references on demand** — use `skill_view(name="p5js", file_path="references/...")` to load specific reference files as needed during implementation
 
@@ -1017,16 +1017,16 @@ When building p5.js sketches:
 
 | File | Contents |
 |------|----------|
-| `references/core-api.md` | Canvas setup, coordinate system, draw loop, `push()`/`pop()`, offscreen buffers, composition patterns, `pixelDensity()`, responsive design |
-| `references/shapes-and-geometry.md` | 2D primitives, `beginShape()`/`endShape()`, Bezier/Catmull-Rom curves, `vertex()` systems, custom shapes, `p5.Vector`, signed distance fields, SVG path conversion |
-| `references/visual-effects.md` | Noise (Perlin, fractal, domain warp, curl), flow fields, particle systems (physics, flocking, trails), pixel manipulation, texture generation (stipple, hatch, halftone), feedback loops, reaction-diffusion |
-| `references/animation.md` | Frame-based animation, easing functions, `lerp()`/`map()`, spring physics, state machines, timeline sequencing, `millis()`-based timing, transition patterns |
-| `references/typography.md` | `text()`, `loadFont()`, `textToPoints()`, kinetic typography, text masks, font metrics, responsive text sizing |
-| `references/color-systems.md` | `colorMode()`, HSB/HSL/RGB, `lerpColor()`, `paletteLerp()`, procedural palettes, color harmony, `blendMode()`, gradient rendering, curated palette library |
-| `references/webgl-and-3d.md` | WEBGL renderer, 3D primitives, camera, lighting, materials, custom geometry, GLSL shaders (`createShader()`, `createFilterShader()`), framebuffers, post-processing |
-| `references/interaction.md` | Mouse events, keyboard state, touch input, DOM elements, `createSlider()`/`createButton()`, audio input (p5.sound FFT/amplitude), scroll-driven animation, responsive events |
-| `references/export-pipeline.md` | `saveCanvas()`, `saveGif()`, `saveFrames()`, deterministic headless capture, ffmpeg frame-to-video, CCapture.js, SVG export, per-clip architecture, platform export (fxhash), video gotchas |
-| `references/troubleshooting.md` | Performance profiling, per-pixel budgets, common mistakes, browser compatibility, WebGL debugging, font loading issues, pixel density traps, memory leaks, CORS |
+| `references/p5js_core-api.md` | Canvas setup, coordinate system, draw loop, `push()`/`pop()`, offscreen buffers, composition patterns, `pixelDensity()`, responsive design |
+| `references/p5js_shapes-and-geometry.md` | 2D primitives, `beginShape()`/`endShape()`, Bezier/Catmull-Rom curves, `vertex()` systems, custom shapes, `p5.Vector`, signed distance fields, SVG path conversion |
+| `references/p5js_visual-effects.md` | Noise (Perlin, fractal, domain warp, curl), flow fields, particle systems (physics, flocking, trails), pixel manipulation, texture generation (stipple, hatch, halftone), feedback loops, reaction-diffusion |
+| `references/p5js_animation.md` | Frame-based animation, easing functions, `lerp()`/`map()`, spring physics, state machines, timeline sequencing, `millis()`-based timing, transition patterns |
+| `references/p5js_typography.md` | `text()`, `loadFont()`, `textToPoints()`, kinetic typography, text masks, font metrics, responsive text sizing |
+| `references/p5js_color-systems.md` | `colorMode()`, HSB/HSL/RGB, `lerpColor()`, `paletteLerp()`, procedural palettes, color harmony, `blendMode()`, gradient rendering, curated palette library |
+| `references/p5js_webgl-and-3d.md` | WEBGL renderer, 3D primitives, camera, lighting, materials, custom geometry, GLSL shaders (`createShader()`, `createFilterShader()`), framebuffers, post-processing |
+| `references/p5js_interaction.md` | Mouse events, keyboard state, touch input, DOM elements, `createSlider()`/`createButton()`, audio input (p5.sound FFT/amplitude), scroll-driven animation, responsive events |
+| `references/p5js_export-pipeline.md` | `saveCanvas()`, `saveGif()`, `saveFrames()`, deterministic headless capture, ffmpeg frame-to-video, CCapture.js, SVG export, per-clip architecture, platform export (fxhash), video gotchas |
+| `references/manim-video_troubleshooting.md` | Performance profiling, per-pixel budgets, common mistakes, browser compatibility, WebGL debugging, font loading issues, pixel density traps, memory leaks, CORS |
 | `templates/viewer.html` | Interactive viewer template: seed navigation (prev/next/random/jump), parameter sliders, download PNG, responsive canvas. Start from this for explorable generative art |
 
 ---

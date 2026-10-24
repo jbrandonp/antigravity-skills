@@ -781,9 +781,9 @@ for call in dspy.settings.trace:
 
 ### See Also
 
-- `references/modules.md` - Detailed module guide (Predict, ChainOfThought, ReAct, ProgramOfThought)
-- `references/optimizers.md` - Optimization algorithms (BootstrapFewShot, MIPRO, BootstrapFinetune)
-- `references/examples.md` - Real-world examples (RAG, agents, classifiers)
+- `references/dspy_modules.md` - Detailed module guide (Predict, ChainOfThought, ReAct, ProgramOfThought)
+- `references/dspy_optimizers.md` - Optimization algorithms (BootstrapFewShot, MIPRO, BootstrapFinetune)
+- `references/dspy_examples.md` - Real-world examples (RAG, agents, classifiers)
 
 
 ---
@@ -1202,13 +1202,13 @@ config = PPOConfig(
 
 ### Advanced topics
 
-**SFT training guide**: See [references/sft-training.md](references/sft-training.md) for dataset formats, chat templates, packing strategies, and multi-GPU training.
+**SFT training guide**: See [references/fine-tuning-with-trl_sft-training.md](references/fine-tuning-with-trl_sft-training.md) for dataset formats, chat templates, packing strategies, and multi-GPU training.
 
-**DPO variants**: See [references/dpo-variants.md](references/dpo-variants.md) for IPO, cDPO, RPO, and other DPO loss functions with recommended hyperparameters.
+**DPO variants**: See [references/fine-tuning-with-trl_dpo-variants.md](references/fine-tuning-with-trl_dpo-variants.md) for IPO, cDPO, RPO, and other DPO loss functions with recommended hyperparameters.
 
-**Reward modeling**: See [references/reward-modeling.md](references/reward-modeling.md) for outcome vs process rewards, Bradley-Terry loss, and reward model evaluation.
+**Reward modeling**: See [references/fine-tuning-with-trl_reward-modeling.md](references/fine-tuning-with-trl_reward-modeling.md) for outcome vs process rewards, Bradley-Terry loss, and reward model evaluation.
 
-**Online RL methods**: See [references/online-rl.md](references/online-rl.md) for PPO, GRPO, RLOO, and OnlineDPO with detailed configurations.
+**Online RL methods**: See [references/fine-tuning-with-trl_online-rl.md](references/fine-tuning-with-trl_online-rl.md) for PPO, GRPO, RLOO, and OnlineDPO with detailed configurations.
 
 ### Hardware requirements
 
@@ -2223,8 +2223,8 @@ TrainingArguments(learning_rate=1e-4)
 
 ### References
 
-- **[Advanced Usage](references/advanced-usage.md)** - DoRA, LoftQ, rank stabilization, custom modules
-- **[Troubleshooting](references/troubleshooting.md)** - Common errors, debugging, optimization
+- **[Advanced Usage](references/peft-fine-tuning_advanced-usage.md)** - DoRA, LoftQ, rank stabilization, custom modules
+- **[Troubleshooting](references/peft-fine-tuning_troubleshooting.md)** - Common errors, debugging, optimization
 
 ### Resources
 

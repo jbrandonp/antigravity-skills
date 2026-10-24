@@ -14852,9 +14852,9 @@ Screen 组件接 callback props（`onEnter`、`onClose`、`onTabChange`、`onOpe
 |------|--------|------|
 | `deck_index.html` | **做幻灯片（默认，多文件架构）** | iframe拼接 + 键盘导航 + scale + 计数器 + 打印合并，每页独立HTML免CSS串扰 |
 | `deck_stage.js` | 做幻灯片（单文件架构，≤10页） | web component：auto-scale + 键盘导航 + slide counter + localStorage + speaker notes ⚠️ **script 必须放在 `</deck-stage>` 之后，section 的 `display: flex` 必须写到 `.active` 上**，详见 `references/slide-decks.md` 的两个硬约束 |
-| `scripts/export_deck_pdf.mjs` | **HTML→PDF 导出（多文件架构）** · 每页独立 HTML 文件，playwright 逐个 `page.pdf()` → pdf-lib 合并。文字保留矢量可搜。依赖 `playwright pdf-lib` |
-| `scripts/export_deck_stage_pdf.mjs` | **HTML→PDF 导出（单文件 deck-stage 架构专用）** · 2026-04-20 新增。处理 shadow DOM slot 导致的「只出 1 页」、absolute 子元素溢出等坑。详见 `references/slide-decks.md` 末节。依赖 `playwright` |
-| `scripts/export_deck_pptx.mjs` | **HTML→PPTX 导出（双模式）** · `--mode image` 图片铺底视觉 100% 保真但文字不可编辑；`--mode editable` 调 `html2pptx.js` 导出原生可编辑文本框，但 HTML 必须符合 4 条硬约束（见 `references/editable-pptx.md`）。依赖 `playwright pptxgenjs`（editable 模式还需 `sharp`） |
+| `../master-suites/export/scripts/deck_pdf.mjs` | **HTML→PDF 导出（多文件架构）** · 每页独立 HTML 文件，playwright 逐个 `page.pdf()` → pdf-lib 合并。文字保留矢量可搜。依赖 `playwright pdf-lib` |
+| `../master-suites/export/scripts/deck_stage_pdf.mjs` | **HTML→PDF 导出（单文件 deck-stage 架构专用）** · 2026-04-20 新增。处理 shadow DOM slot 导致的「只出 1 页」、absolute 子元素溢出等坑。详见 `references/slide-decks.md` 末节。依赖 `playwright` |
+| `../master-suites/export/scripts/deck_pptx.mjs` | **HTML→PPTX 导出（双模式）** · `--mode image` 图片铺底视觉 100% 保真但文字不可编辑；`--mode editable` 调 `html2pptx.js` 导出原生可编辑文本框，但 HTML 必须符合 4 条硬约束（见 `references/editable-pptx.md`）。依赖 `playwright pptxgenjs`（editable 模式还需 `sharp`） |
 | `scripts/html2pptx.js` | **HTML→PPTX 元素级翻译器** · 读 computedStyle 把 DOM 逐元素翻译成 PowerPoint 对象（text frame / shape / picture）。`export_deck_pptx.mjs --mode editable` 内部调用。要求 HTML 严格满足 4 条硬约束 |
 | `design_canvas.jsx` | 并排展示≥2个静态variations | 带label的网格布局 |
 | `animations.jsx` | 任何动画HTML | Stage + Sprite + useTime + Easing + interpolate |

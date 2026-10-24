@@ -772,8 +772,8 @@ mask_generator = SamAutomaticMaskGenerator(
 
 ### References
 
-- **[Advanced Usage](references/advanced-usage.md)** - Batching, fine-tuning, integration
-- **[Troubleshooting](references/troubleshooting.md)** - Common issues and solutions
+- **[Advanced Usage](references/segment-anything-model_advanced-usage.md)** - Batching, fine-tuning, integration
+- **[Troubleshooting](references/segment-anything-model_troubleshooting.md)** - Common issues and solutions
 
 ### Resources
 
@@ -1291,8 +1291,8 @@ image = pipe(prompt, num_inference_steps=20).images[0]
 
 ### References
 
-- **[Advanced Usage](references/advanced-usage.md)** - Custom pipelines, fine-tuning, deployment
-- **[Troubleshooting](references/troubleshooting.md)** - Common issues and solutions
+- **[Advanced Usage](references/segment-anything-model_advanced-usage.md)** - Custom pipelines, fine-tuning, deployment
+- **[Troubleshooting](references/segment-anything-model_troubleshooting.md)** - Common issues and solutions
 
 ### Resources
 

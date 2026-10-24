@@ -1451,7 +1451,7 @@ mintty / git-bash behaves the same (fullscreen on Alt+Enter) unless you disable 
 
 ##### Testing / Contributing
 
-**`scripts/run_tests.sh` doesn't work as-is on Windows** — it looks for POSIX venv layouts (`.venv/bin/activate`). The Hermes-installed venv at `venv/Scripts/` has no pip or pytest either (stripped for install size). Workaround: install `pytest + pytest-xdist + pyyaml` into a system Python 3.11 user site, then invoke pytest directly with `PYTHONPATH` set:
+**`../master-suites/run/scripts/tests.sh` doesn't work as-is on Windows** — it looks for POSIX venv layouts (`.venv/bin/activate`). The Hermes-installed venv at `venv/Scripts/` has no pip or pytest either (stripped for install size). Workaround: install `pytest + pytest-xdist + pyyaml` into a system Python 3.11 user site, then invoke pytest directly with `PYTHONPATH` set:
 
 ```bash
 "/c/Program Files/Python311/python" -m pip install --user pytest pytest-xdist pyyaml
@@ -1637,7 +1637,7 @@ python -m pytest tests/tools/ -q            # Specific area
 - Run full suite before pushing any change
 - Use `-o 'addopts='` to clear any baked-in pytest flags
 
-**Windows contributors:** `scripts/run_tests.sh` currently looks for POSIX venvs (`.venv/bin/activate` / `venv/bin/activate`) and will error out on Windows where the layout is `venv/Scripts/activate` + `python.exe`. The Hermes-installed venv at `venv/Scripts/` also has no `pip` or `pytest` — it's stripped for end-user install size. Workaround: install pytest + pytest-xdist + pyyaml into a system Python 3.11 user site (`/c/Program Files/Python311/python -m pip install --user pytest pytest-xdist pyyaml`), then run tests directly:
+**Windows contributors:** `../master-suites/run/scripts/tests.sh` currently looks for POSIX venvs (`.venv/bin/activate` / `venv/bin/activate`) and will error out on Windows where the layout is `venv/Scripts/activate` + `python.exe`. The Hermes-installed venv at `venv/Scripts/` also has no `pip` or `pytest` — it's stripped for end-user install size. Workaround: install pytest + pytest-xdist + pyyaml into a system Python 3.11 user site (`/c/Program Files/Python311/python -m pip install --user pytest pytest-xdist pyyaml`), then run tests directly:
 
 ```bash
 export PYTHONPATH="$(pwd)"
@@ -8049,7 +8049,7 @@ See `scripts/parseltongue.py` for the Python implementation.
 ##### 3. ULTRAPLINIAN — Multi-Model Racing
 Query N models in parallel via OpenRouter, score responses on quality/filteredness/speed, return the best unfiltered answer. Uses 55 models across 5 tiers (FAST/STANDARD/SMART/POWER/ULTRA).
 
-See `scripts/godmode_race.py` for the implementation.
+See `../master-suites/godmode/scripts/race.py` for the implementation.
 
 #### Step 0: Auto-Jailbreak (Recommended)
 

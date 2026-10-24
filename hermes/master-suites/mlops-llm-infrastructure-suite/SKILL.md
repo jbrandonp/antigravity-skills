@@ -359,9 +359,9 @@ cat prompts.txt | ./llama-cli \
 
 ### References
 
-- **[Quantization Guide](references/quantization.md)** - GGUF formats, conversion, quality comparison
-- **[Server Deployment](references/server.md)** - API endpoints, Docker, monitoring
-- **[Optimization](references/optimization.md)** - Performance tuning, hybrid CPU+GPU
+- **[Quantization Guide](references/llama-cpp_quantization.md)** - GGUF formats, conversion, quality comparison
+- **[Server Deployment](references/llama-cpp_server.md)** - API endpoints, Docker, monitoring
+- **[Optimization](references/llama-cpp_optimization.md)** - Performance tuning, hybrid CPU+GPU
 
 ### Resources
 
@@ -699,8 +699,8 @@ if __name__ == "__main__":
 
 ### References
 
-- **[Advanced Usage](references/advanced-usage.md)** - Multi-GPU, distributed training, cost optimization
-- **[Troubleshooting](references/troubleshooting.md)** - Common issues and solutions
+- **[Advanced Usage](references/modal-serverless-gpu_advanced-usage.md)** - Multi-GPU, distributed training, cost optimization
+- **[Troubleshooting](references/modal-serverless-gpu_troubleshooting.md)** - Common issues and solutions
 
 ### Resources
 
@@ -1046,13 +1046,13 @@ vllm serve MODEL --speculative-model DRAFT_MODEL
 
 ### Advanced topics
 
-**Server deployment patterns**: See [references/server-deployment.md](references/server-deployment.md) for Docker, Kubernetes, and load balancing configurations.
+**Server deployment patterns**: See [references/serving-llms-vllm_server-deployment.md](references/serving-llms-vllm_server-deployment.md) for Docker, Kubernetes, and load balancing configurations.
 
-**Performance optimization**: See [references/optimization.md](references/optimization.md) for PagedAttention tuning, continuous batching details, and benchmark results.
+**Performance optimization**: See [references/llama-cpp_optimization.md](references/llama-cpp_optimization.md) for PagedAttention tuning, continuous batching details, and benchmark results.
 
-**Quantization guide**: See [references/quantization.md](references/quantization.md) for AWQ/GPTQ/FP8 setup, model preparation, and accuracy comparisons.
+**Quantization guide**: See [references/llama-cpp_quantization.md](references/llama-cpp_quantization.md) for AWQ/GPTQ/FP8 setup, model preparation, and accuracy comparisons.
 
-**Troubleshooting**: See [references/troubleshooting.md](references/troubleshooting.md) for detailed error messages, debugging steps, and performance diagnostics.
+**Troubleshooting**: See [references/modal-serverless-gpu_troubleshooting.md](references/modal-serverless-gpu_troubleshooting.md) for detailed error messages, debugging steps, and performance diagnostics.
 
 ### Hardware requirements
 

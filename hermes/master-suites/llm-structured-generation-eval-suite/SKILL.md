@@ -452,8 +452,8 @@ python server.py --model model-q4_k_m.gguf --loader llama.cpp --n-gpu-layers 35
 
 ### References
 
-- **[Advanced Usage](references/advanced-usage.md)** - Batching, speculative decoding, custom builds
-- **[Troubleshooting](references/troubleshooting.md)** - Common issues, debugging, benchmarks
+- **[Advanced Usage](references/gguf-quantization_advanced-usage.md)** - Batching, speculative decoding, custom builds
+- **[Troubleshooting](references/gguf-quantization_troubleshooting.md)** - Common issues, debugging, benchmarks
 
 ### Resources
 
@@ -1028,9 +1028,9 @@ lm += gen("name", regex=r"^(John|Jane)$", max_tokens=10)
 
 ### See Also
 
-- `references/constraints.md` - Comprehensive regex and grammar patterns
-- `references/backends.md` - Backend-specific configuration
-- `references/examples.md` - Production-ready examples
+- `references/guidance_constraints.md` - Comprehensive regex and grammar patterns
+- `references/guidance_backends.md` - Backend-specific configuration
+- `references/guidance_examples.md` - Production-ready examples
 
 
 ---
@@ -1278,7 +1278,7 @@ vllm serve ./abliterated-models/<model>
 ### Analysis Modules
 
 OBLITERATUS includes 28 analysis modules for mechanistic interpretability.
-See `skill_view(name="obliteratus", file_path="references/analysis-modules.md")` for the full reference.
+See `skill_view(name="obliteratus", file_path="references/obliteratus_analysis-modules.md")` for the full reference.
 
 #### Quick analysis commands
 ```bash
@@ -2003,9 +2003,9 @@ class Article(BaseModel):
 
 ### See Also
 
-- `references/json_generation.md` - Comprehensive JSON and Pydantic patterns
-- `references/backends.md` - Backend-specific configuration
-- `references/examples.md` - Production-ready examples
+- `references/outlines_json_generation.md` - Comprehensive JSON and Pydantic patterns
+- `references/guidance_backends.md` - Backend-specific configuration
+- `references/guidance_examples.md` - Production-ready examples
 
 
 ---
@@ -2590,9 +2590,9 @@ print(f"Share this URL: {run.url}")
 
 ### See Also
 
-- `references/sweeps.md` - Comprehensive hyperparameter optimization guide
-- `references/artifacts.md` - Data and model versioning patterns
-- `references/integrations.md` - Framework-specific examples
+- `references/weights-and-biases_sweeps.md` - Comprehensive hyperparameter optimization guide
+- `references/weights-and-biases_artifacts.md` - Data and model versioning patterns
+- `references/weights-and-biases_integrations.md` - Framework-specific examples
 
 
 ---

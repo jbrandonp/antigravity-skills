@@ -52,12 +52,12 @@ Gmail, Calendar, Drive, Contacts, Sheets, and Docs — through Hermes-managed OA
 
 ### References
 
-- `references/gmail-search-syntax.md` — Gmail search operators (is:unread, from:, newer_than:, etc.)
+- `references/google-workspace_gmail-search-syntax.md` — Gmail search operators (is:unread, from:, newer_than:, etc.)
 
 ### Scripts
 
-- `scripts/setup.py` — OAuth2 setup (run once to authorize)
-- `scripts/google_api.py` — compatibility wrapper CLI. It prefers `gws` for operations when available, while preserving Hermes' existing JSON output contract.
+- `scripts/google-workspace_setup.py` — OAuth2 setup (run once to authorize)
+- `scripts/google-workspace_google_api.py` — compatibility wrapper CLI. It prefers `gws` for operations when available, while preserving Hermes' existing JSON output contract.
 
 ### First-Time Setup
 
@@ -67,7 +67,7 @@ on CLI, Telegram, Discord, or any platform.
 Define a shorthand first:
 
 ```bash
-GSETUP="python ${HERMES_HOME:-$HOME/.hermes}/skills/productivity/google-workspace/scripts/setup.py"
+GSETUP="python ${HERMES_HOME:-$HOME/.hermes}/skills/productivity/google-workspace/scripts/google-workspace_setup.py"
 ```
 
 #### Step 0: Check if already set up
@@ -198,7 +198,7 @@ Should print `AUTHENTICATED`. Setup is complete — token refreshes automaticall
 All commands go through the API script. Set `GAPI` as a shorthand:
 
 ```bash
-GAPI="python ${HERMES_HOME:-$HOME/.hermes}/skills/productivity/google-workspace/scripts/google_api.py"
+GAPI="python ${HERMES_HOME:-$HOME/.hermes}/skills/productivity/google-workspace/scripts/google-workspace_google_api.py"
 ```
 
 #### Gmail
@@ -292,7 +292,7 @@ All commands return JSON. Parse with `jq` or read directly. Key fields:
 
 1. **Never send email or create/delete events without confirming with the user first.** Show the draft content and ask for approval.
 2. **Check auth before first use** — run `setup.py --check`. If it fails, guide the user through setup.
-3. **Use the Gmail search syntax reference** for complex queries — load it with `skill_view("google-workspace", file_path="references/gmail-search-syntax.md")`.
+3. **Use the Gmail search syntax reference** for complex queries — load it with `skill_view("google-workspace", file_path="references/google-workspace_gmail-search-syntax.md")`.
 4. **Calendar times must include timezone** — always use ISO 8601 with offset (e.g., `2026-03-01T10:00:00-06:00`) or UTC (`Z`).
 5. **Respect rate limits** — avoid rapid-fire sequential API calls. Batch reads when possible.
 
@@ -880,12 +880,12 @@ pip install pymupdf pymupdf4llm
 
 **Via helper script**:
 ```bash
-python scripts/extract_pymupdf.py document.pdf              # Plain text
-python scripts/extract_pymupdf.py document.pdf --markdown    # Markdown
-python scripts/extract_pymupdf.py document.pdf --tables      # Tables
-python scripts/extract_pymupdf.py document.pdf --images out/ # Extract images
-python scripts/extract_pymupdf.py document.pdf --metadata    # Title, author, pages
-python scripts/extract_pymupdf.py document.pdf --pages 0-4   # Specific pages
+python scripts/ocr-and-documents_extract_pymupdf.py document.pdf              # Plain text
+python scripts/ocr-and-documents_extract_pymupdf.py document.pdf --markdown    # Markdown
+python scripts/ocr-and-documents_extract_pymupdf.py document.pdf --tables      # Tables
+python scripts/ocr-and-documents_extract_pymupdf.py document.pdf --images out/ # Extract images
+python scripts/ocr-and-documents_extract_pymupdf.py document.pdf --metadata    # Title, author, pages
+python scripts/ocr-and-documents_extract_pymupdf.py document.pdf --pages 0-4   # Specific pages
 ```
 
 **Inline**:
@@ -904,18 +904,18 @@ for page in doc:
 
 ```bash
 ## Check disk space first
-python scripts/extract_marker.py --check
+python scripts/ocr-and-documents_extract_marker.py --check
 
 pip install marker-pdf
 ```
 
 **Via helper script**:
 ```bash
-python scripts/extract_marker.py document.pdf                # Markdown
-python scripts/extract_marker.py document.pdf --json         # JSON with metadata
-python scripts/extract_marker.py document.pdf --output_dir out/  # Save images
-python scripts/extract_marker.py scanned.pdf                 # Scanned PDF (OCR)
-python scripts/extract_marker.py document.pdf --use_llm      # LLM-boosted accuracy
+python scripts/ocr-and-documents_extract_marker.py document.pdf                # Markdown
+python scripts/ocr-and-documents_extract_marker.py document.pdf --json         # JSON with metadata
+python scripts/ocr-and-documents_extract_marker.py document.pdf --output_dir out/  # Save images
+python scripts/ocr-and-documents_extract_marker.py scanned.pdf                 # Scanned PDF (OCR)
+python scripts/ocr-and-documents_extract_marker.py document.pdf --use_llm      # LLM-boosted accuracy
 ```
 
 **CLI** (installed with marker-pdf):

@@ -587,8 +587,8 @@ for desc in descriptions:
 
 ### References
 
-- **[Advanced Usage](references/advanced-usage.md)** - Training, fine-tuning, deployment
-- **[Troubleshooting](references/troubleshooting.md)** - Common issues and solutions
+- **[Advanced Usage](references/audiocraft-audio-generation_advanced-usage.md)** - Training, fine-tuning, deployment
+- **[Troubleshooting](references/audiocraft-audio-generation_troubleshooting.md)** - Common issues and solutions
 
 ### Resources
 
@@ -1149,16 +1149,16 @@ pip install youtube-transcript-api
 
 ```bash
 ## JSON output with metadata
-python3 SKILL_DIR/scripts/fetch_transcript.py "https://youtube.com/watch?v=VIDEO_ID"
+python3 SKILL_DIR/scripts/youtube-content_fetch_transcript.py "https://youtube.com/watch?v=VIDEO_ID"
 
 ## Plain text (good for piping into further processing)
-python3 SKILL_DIR/scripts/fetch_transcript.py "URL" --text-only
+python3 SKILL_DIR/scripts/youtube-content_fetch_transcript.py "URL" --text-only
 
 ## With timestamps
-python3 SKILL_DIR/scripts/fetch_transcript.py "URL" --timestamps
+python3 SKILL_DIR/scripts/youtube-content_fetch_transcript.py "URL" --timestamps
 
 ## Specific language with fallback chain
-python3 SKILL_DIR/scripts/fetch_transcript.py "URL" --language tr,en
+python3 SKILL_DIR/scripts/youtube-content_fetch_transcript.py "URL" --language tr,en
 ```
 
 ### Output Formats

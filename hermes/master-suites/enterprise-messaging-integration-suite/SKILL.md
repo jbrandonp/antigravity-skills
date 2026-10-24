@@ -1572,8 +1572,8 @@ Himalaya is a CLI email client that lets you manage emails from the terminal usi
 
 ### References
 
-- `references/configuration.md` (config file setup + IMAP/SMTP authentication)
-- `references/message-composition.md` (MML syntax for composing emails)
+- `references/himalaya_configuration.md` (config file setup + IMAP/SMTP authentication)
+- `references/himalaya_message-composition.md` (MML syntax for composing emails)
 
 ### Prerequisites
 
@@ -1828,7 +1828,7 @@ RUST_LOG=trace RUST_BACKTRACE=1 himalaya envelope list
 
 - Use `himalaya --help` or `himalaya <command> --help` for detailed usage.
 - Message IDs are relative to the current folder; re-list after folder changes.
-- For composing rich emails with attachments, use MML syntax (see `references/message-composition.md`).
+- For composing rich emails with attachments, use MML syntax (see `references/himalaya_message-composition.md`).
 - Store passwords securely using `pass`, system keyring, or a command that outputs the password.
 
 
