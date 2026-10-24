@@ -2,14 +2,14 @@
 
 [![License: Apache 2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
 [![Google Antigravity](https://img.shields.io/badge/Antigravity-2.0%20Ready-4285F4.svg)](https://antigravity.google)
-[![Skills Count](https://img.shields.io/badge/Elite%20Skills-113%20Active-success.svg)](skills/)
+[![Skills Count](https://img.shields.io/badge/Elite%20Skills-125%20Active-success.svg)](skills/)
 [![DeepMind Science](https://img.shields.io/badge/DeepMind%20Science-41%20Skills-8A2BE2.svg)](plugins/science/)
 [![Universal Agents](https://img.shields.io/badge/~%2F.agents%2Fskills-Compatible-orange.svg)](#-universal-agent-compatibility-agentsskills)
 [![Integrity Score](https://img.shields.io/badge/Audit%20Score-100%2F100-brightgreen.svg)](scripts/verify_skills.py)
 [![CI Status](https://img.shields.io/badge/CI-Passing-brightgreen.svg)](.github/workflows/validate-skills.yml)
 
-> **The Ultimate Production-Ready Skill & Customization Suite for [Google Antigravity](https://antigravity.google) and Modern AI Coding Agents.**  
-> Includes **113 audited and fused elite skills**, the official **Google DeepMind Science toolkit** (41 skills + 3D Mol* interactive sidecar), custom Model Context Protocol (MCP) servers, full `~/.agents/skills` multi-agent support, and one-click installers.
+> **The Ultimate Production-Grade Skill & Customization Suite for [Google Antigravity](https://antigravity.google) and Modern AI Coding Agents.**  
+> Includes **125 audited and fused elite skills**, the official **Google DeepMind Science toolkit** (41 skills + 3D Mol* interactive sidecar), custom Model Context Protocol (MCP) servers, full `~/.agents/skills` multi-agent support, and one-click installers.
 
 ---
 
@@ -18,7 +18,7 @@
 1. [Overview & Philosophy](#-overview--philosophy)
 2. [Universal Agent Compatibility (~/.agents/skills)](#-universal-agent-compatibility-agentsskills)
 3. [One-Click Installation](#-one-click-installation)
-4. [Elite Skills Catalog (113 Skills)](#-elite-skills-catalog-113-skills)
+4. [Elite Skills Catalog (125 Skills)](#-elite-skills-catalog-125-skills)
 5. [Google DeepMind Science Suite (41 Skills)](#-google-deepmind-science-suite-41-skills)
 6. [Plugins & MCP Architecture](#-plugins--mcp-architecture)
 7. [Zero-Trust Security & Sanitization](#-zero-trust-security--sanitization)
@@ -34,8 +34,8 @@ In modern agentic AI development, probabilistic language models frequently suffe
 2. **Hallucinated Execution**: Agents guessing CLI flags, imaginary timestamps, or non-existent APIs.
 
 The **Antigravity Super Suite** solves this through the **WAT (Workflows, Agents, Tools) architecture** and a strict **100% Audit Score**:
-- **Consolidated Master Suites**: 12 fragmented sub-skills were unified into 7 master suites (e.g., `gsap-core`, `reel-cut`, `minecraft-plugin-development`, `mmo-tab-target-combat-pipeline`).
-- **Zero Duplicates**: Every skill has a single, authoritative responsibility.
+- **Consolidated Master Suites**: Micro-skills are unified into coherent, authoritative suites (e.g., `devops-infrastructure-as-code`, `postgresql-production-dba`, `saas-backend-architecture`, `rag-vector-search-engineer`).
+- **Zero Duplicates**: Every skill has a single, unambiguous operational responsibility.
 - **Hermetic Tool Execution**: Uses Python PEP 723 metadata with `uv` for sub-second, isolated CLI executions without polluting global environments.
 
 ---
@@ -79,7 +79,7 @@ chmod +x scripts/install.sh && ./scripts/install.sh
 
 ---
 
-## 📦 Elite Skills Catalog (113 Skills)
+## 📦 Elite Skills Catalog (125 Skills)
 
 
 ### 🎮 Game Development, 3D & Shaders
@@ -135,10 +135,11 @@ chmod +x scripts/install.sh && ./scripts/install.sh
 | [`material-3`](skills/material-3/SKILL.md) | Implement Google's Material Design 3 (Material You) UI system. Primary: Jetpack Compose |
 | [`mobile-app-ui-design`](skills/mobile-app-ui-design/SKILL.md) | Design high-quality mobile app UI/UX screens, flows, and components. Use this skill whenever the user asks to design a mobile app screen, create app mockups, build mobile UI components, improve an existing mobile app design, create onboarding flows, design mobile navigation, or requests any mobile-first interface work. Also trigger when the user mentions app design, mobile UI, mobile UX, screen design, app mockups, wireframes, or wants to build React Native / Flutter / SwiftUI style interfaces as visual prototypes. Even if the user just says "design an app" or "make this screen look better", use this skill. |
 
-### 🎨 Frontend Craft, UI/UX & Design Systems
+### 🎨 Frontend Craft, UI/UX, Design Systems & Accessibilité
 
 | Skill | Description |
 | :--- | :--- |
+| [`accessibility-audit-engine`](skills/accessibility-audit-engine/SKILL.md) | Automated and manual accessibility testing engine enforcing WCAG 2.2 Level AA/AAA and European Accessibility Act (EAA) compliance. Integrates axe-core, Pa11y CLI, ARIA pattern validation, keyboard focus trap detection, and screen reader compatibility audits. |
 | [`algorithmic-art`](skills/algorithmic-art/SKILL.md) | Creating algorithmic art using p5.js with seeded randomness and interactive parameter exploration. Use this when users request creating art using code, generative art, algorithmic art, flow fields, or particle systems. Create original algorithmic art rather than copying existing artists' work to avoid copyright violations. |
 | [`anti-ui-slop`](skills/anti-ui-slop/SKILL.md) | Stop coding agents from shipping generic UI. Use UIZZE''s 800,000+ real web and iOS screens to build product-specific interfaces, define a design contract, cover required states, and run a hard finish gate. Use when designing, implementing, redesigning, critiquing, or pre-ship reviewing a web or iOS interface in Codex, Claude Code, Cursor, Copilot, or another coding agent. Trigger with "anti-ui-slop", "stop UI slop", "ground this UI in real screens", or "run the UI finish gate". |
 | [`banner-design`](skills/banner-design/SKILL.md) | Design banners for social media, ads, website heroes, creative assets, and print. Multiple art direction options with optional generated or supplied visuals. Actions: design, create, generate banner. Platforms: Facebook, Twitter/X, LinkedIn, YouTube, Instagram, Google Display, website hero, print. Styles: minimalist, gradient, bold typography, photo-based, illustrated, geometric, retro, glassmorphism, 3D, neon, duotone, editorial, collage. |
@@ -158,15 +159,17 @@ chmod +x scripts/install.sh && ./scripts/install.sh
 | [`ui-ux-pro-max`](skills/ui-ux-pro-max/SKILL.md) | UI/UX design intelligence for web, mobile, and desktop. This skill should be used when designing, building, reviewing, or fixing interfaces, including pages, components, design systems, accessibility, interaction, responsive layout, typography, color, charts, and stack-specific UI implementation. Searchable local data: 79 searchable styles (50 active), 192 product palettes and reasoning profiles, 74 font pairings, 119 UX guidelines, 105 icons, 17 GSAP presets, 25 chart types, and 22 stacks. |
 | [`web-artifacts-builder`](skills/web-artifacts-builder/SKILL.md) | Suite of tools for creating elaborate, multi-component claude.ai HTML artifacts using modern frontend web technologies (React, Tailwind CSS, shadcn/ui). Use for complex artifacts requiring state management, routing, or shadcn/ui components - not for simple single-file HTML/JSX artifacts. |
 
-### 🛡️ Cybersecurity, DevSecOps & Quality Assurance
+### 🛡️ Cybersecurity, DevSecOps, Privacy & Governance
 
 | Skill | Description |
 | :--- | :--- |
 | [`agent-owasp-compliance`](skills/agent-owasp-compliance/SKILL.md) | | |
 | [`bridgesecurity-auditor`](skills/bridgesecurity-auditor/SKILL.md) | Perform senior-level security audits, input defense, and Zero-Trust secrets governance based on BridgeMind BridgeSecurity standards. Scans for OWASP Top 10, CWE Top 25, high-entropy secrets and API keys, actively defends against prompt-injections during web scraping, enforces age/SOPS envelope encryption in Git, ephemeral environment injection, and native in-memory secret masking (Zero-Docker). |
+| [`compliance-privacy-gdpr-engineer`](skills/compliance-privacy-gdpr-engineer/SKILL.md) | Audit and implement software privacy compliance, GDPR/RGPD regulations, open-source license compatibility, and European AI Act requirements. Enforces privacy-by-design, cookie consent architectures, right-to-erasure workflows, data processing registers, and license risk triage. |
 | [`loopcraft-harness-engineer`](skills/loopcraft-harness-engineer/SKILL.md) | Use this skill when designing, setting up, or executing autonomous agentic loops, self-healing test harnesses, continuous verification pipelines, automated error classification (SYNTAX, RUNTIME, TEST_FAIL, LINT, SECURITY), or SonarQube / ISO 25010 Quality Gates. Enforces systematic plan-code-test-diagnose cycles with up to 8 bounded iterations. |
 | [`remove-ai-slops`](skills/remove-ai-slops/SKILL.md) | Removes AI-generated code smells from branch changes or an explicit file list behind regression tests. Use when the user asks to clean up, deslop, or remove AI-slop patterns from recent changes. |
 | [`senior-code-reviewer`](skills/senior-code-reviewer/SKILL.md) | Conduct structured senior-level code reviews and anti-bloat architectural audits following Google, Anthropic, and Swyx's Smol Architect standards. Classifies findings by strict severity tiers (Critical, Major, Minor, Nit), audits logic flaws, eliminates speculative generality, prunes dead code, and inlines single-use indirections. |
+| [`skill-security-auditor`](skills/skill-security-auditor/SKILL.md) | Audit and verify third-party AI agent skills and plugins before installation. Detects prompt injections in markdown/docstrings, dangerous tool permissions (raw shell execution, network exfiltration, arbitrary file system writes), dependency supply-chain risks, and issues a deterministic PASS / WARN / FAIL security verdict. |
 | [`systematic-debugging`](skills/systematic-debugging/SKILL.md) | Investigate and resolve complex bugs using the Anthropic SWE-bench Systematic Debugging standard. Enforces root-cause investigation, deterministic reproduction scripts, difference analysis, and regression guards before applying code fixes. |
 | [`tech-debt-audit`](skills/tech-debt-audit/SKILL.md) | Thorough, file-cited technical debt audit across 9 dimensions using AST-grep (tree-sitter), grep, LSP, and language-native tooling. Produces TECH_DEBT_AUDIT.md with severity, effort estimates, and prioritized fixes. Use when asked for codebase health check, tech debt audit, architecture review, code quality assessment, or cleanup planning. Triggers: 'tech debt', 'technical debt', 'debt audit', 'code health', 'technical debt audit', 'codebase health check', 'find tech debt', 'debt analysis', 'audit code quality'. |
 | [`test-driven-development`](skills/test-driven-development/SKILL.md) | Enforce strict Test-Driven Development (TDD) using the Red-Green-Refactor cycle combined with generative property-based testing and invariant fuzzing inspired by Hypothesis and QuickCheck. Forbids writing production code without a failing test, validates test failure semantics, and generates randomized edge-case inputs (surrogate Unicode, boundary numbers, empty sequences) to discover hidden boundary bugs. |
@@ -174,24 +177,41 @@ chmod +x scripts/install.sh && ./scripts/install.sh
 | [`visual-qa`](skills/visual-qa/SKILL.md) | Runs rigorous visual QA across web, terminal, and paginated surfaces: an Apple HIG-based checklist, paired light/dark captures at phone and desktop widths, screenshot evidence, and a per-item PASS/FAIL verdict. Use for any UI build or change, or when asked whether a page, component, or TUI looks right or follows the platform's design guidelines. |
 | [`vuln-scan`](skills/vuln-scan/SKILL.md) | Static source-code vulnerability scan. Reads a target directory (and |
 
-### 📊 Data Engineering, Stealth Scraping & Columnar Analytics
+### 📊 Data Engineering, Databases & Modern Data Stack
 
 | Skill | Description |
 | :--- | :--- |
 | [`api-reverse-engineer`](skills/api-reverse-engineer/SKILL.md) | Reverse-engineer private mobile and web APIs by analyzing HTTP Archive (.har) files, network captures, or decompiled Android application source trees (APKs/JADX). Extracts endpoints, headers, authentication tokens, GraphQL operations, Retrofit interfaces, and generates executable Python curl_cffi / httpx snippets (JA4 TLS fingerprinting & HTTP/2). |
 | [`ast-grep`](skills/ast-grep/SKILL.md) | Searches and rewrites code by AST shape across 25 languages. Use when the target is a syntax pattern (every call/class/import shaped like X, a codemod, a YAML rule) rather than literal text; for plain strings, comments, or filenames, use rg. |
 | [`datasette-sqlite-detective`](skills/datasette-sqlite-detective/SKILL.md) | Investigate, profile, and audit SQLite databases using Simon Willison Datasette Detective standards, while guarding schema evolution without data loss. Validates WAL mode, foreign key integrity, missing indexes, query plan efficiency (EXPLAIN QUERY PLAN), table fragmentation, detects schema drift between code models and production databases, and generates reversible UP/DOWN migration scripts. |
+| [`dbt-data-pipeline-engineer`](skills/dbt-data-pipeline-engineer/SKILL.md) | Design, orchestrate, and test scalable data transformation pipelines using dbt (data build tool), modern orchestrators (Dagster, Prefect, Airflow), and cloud data warehouses (BigQuery, Snowflake). Covers staging/intermediate/marts modeling, lineage graphs, incremental models, and automated data quality tests. |
 | [`docx`](skills/docx/SKILL.md) | Use this skill whenever the user wants to create, read, edit, or manipulate Word documents (.docx files) or Word templates (.dotx files). Triggers include: any mention of 'Word doc', 'word document', '.docx', '.dotx', or requests to produce professional documents with formatting like tables of contents, headings, page numbers, or letterheads. Also use when extracting or reorganizing content from .docx or .dotx files, inserting or replacing images in documents, performing find-and-replace in Word files, working with tracked changes or comments, or converting content into a polished Word document. If the user asks for a 'report', 'memo', 'letter', 'template', or similar deliverable as a Word or .docx file, use this skill. Do NOT use for PDFs, spreadsheets, Google Docs, or general coding tasks unrelated to document generation. |
 | [`duckdb-parquet-analyst`](skills/duckdb-parquet-analyst/SKILL.md) | Perform high-performance columnar analytics, query Parquet datasets, and benchmark data pipelines using DuckDB, while enforcing dataset quality based on Andrew Ng Data-Centric AI standards (detecting duplicate records, missing fields, distribution skew, corrupted types, and statistical anomalies in scraped supermarket datasets). |
 | [`excel-architect`](skills/excel-architect/SKILL.md) | Design and generate production-grade Excel spreadsheets (.xlsx) using openpyxl. Enforces professional styling, native formulas (SUM, AVERAGE, XLOOKUP), auto-fit column widths, freeze panes, data filters, and zebra-striping without file corruption. |
 | [`fastapi-sqlite-production`](skills/fastapi-sqlite-production/SKILL.md) | Architect and implement production-grade asynchronous FastAPI services with concurrent SQLite persistence (WAL mode, busy_timeout), Pydantic V2 schemas, JWT auth with refresh tokens, and ultra-lean native execution (uv/venv, zero-Docker). |
-| [`observability-engineer`](skills/observability-engineer/SKILL.md) | Implement Observability-Driven Development (ODD) based on Charity Majors' Honeycomb standard. Enforces high-cardinality structured JSON logging, distributed tracing contexts (trace_id, span_id), duration metrics, and elimination of silent failures. |
 | [`pdf`](skills/pdf/SKILL.md) | Use this skill whenever the user wants to do anything with PDF files. This includes reading or extracting text/tables from PDFs, combining or merging multiple PDFs into one, splitting PDFs apart, rotating pages, adding watermarks, creating new PDFs, filling PDF forms, encrypting/decrypting PDFs, extracting images, and OCR on scanned PDFs to make them searchable. If the user mentions a .pdf file or asks to produce one, use this skill. |
+| [`postgresql-production-dba`](skills/postgresql-production-dba/SKILL.md) | Design, optimize, and manage production PostgreSQL databases. Covers 3NF relational modeling, B-Tree/GIN/GiST index tuning, EXPLAIN (ANALYZE, BUFFERS) query optimization, zero-downtime schema migrations (CREATE INDEX CONCURRENTLY, lock timeouts), connection pooling (PgBouncer), and modern ORMs/query builders (Drizzle, Prisma, SQLAlchemy). |
 | [`pptx`](skills/pptx/SKILL.md) | Use this skill any time a .pptx or .potx file is involved in any way — as input, output, or both. This includes: creating slide decks, pitch decks, or presentations; reading, parsing, or extracting text from any .pptx or .potx file (even if the extracted content will be used elsewhere, like in an email or summary); editing, modifying, or updating existing presentations; combining or splitting slide files; working with templates (.potx), layouts, speaker notes, or comments. Trigger whenever the user mentions \"deck,\" \"slides,\" \"presentation,\" or references a .pptx or .potx filename, regardless of what they plan to do with the content afterward. If a .pptx or .potx file needs to be opened, created, or touched, use this skill. |
 | [`python-pypi-package-builder`](skills/python-pypi-package-builder/SKILL.md) | End-to-end skill for building, testing, linting, versioning, and publishing a production-grade Python library to PyPI. Covers all four build backends (setuptools+setuptools_scm, hatchling, flit, poetry), PEP 440 versioning, semantic versioning, dynamic git-tag versioning, OOP/SOLID design, type hints (PEP 484/526/544/561), Trusted Publishing (OIDC), and the full PyPA packaging flow. Use for: creating Python packages, pip-installable SDKs, CLI tools, framework plugins, pyproject.toml setup, py.typed, setuptools_scm, semver, mypy, pre-commit, GitHub Actions CI/CD, or PyPI publishing. |
 | [`stealth-hybrid-scraper-architect`](skills/stealth-hybrid-scraper-architect/SKILL.md) | Architect and implement resilient anti-detection web scrapers for supermarket pricing (Colruyt, Delhaize, Carrefour). Enforces JA4 TLS fingerprint spoofing via curl_cffi, hybrid clearance cookie harvesting, and modular ETL pipelines. |
 
-### 🤖 Agent Architecture, Multi-Agent & WAT Paradigm
+### ☁️ Cloud, DevOps, IaC, SRE & Observabilité
+
+| Skill | Description |
+| :--- | :--- |
+| [`devops-infrastructure-as-code`](skills/devops-infrastructure-as-code/SKILL.md) | Architect and implement declarative Infrastructure as Code (IaC) and containerization using Terraform/OpenTofu, Docker multi-stage builds, and Kubernetes (K8s/Helm). Enforces immutable infrastructure, remote state locking, least-privilege non-root containers, health probes, resource limits, and production Kubernetes manifests. |
+| [`monorepo-release-engineering`](skills/monorepo-release-engineering/SKILL.md) | Manage monorepos, release automation, and software supply chains: Turborepo/Nx, pnpm workspaces, automated Semantic Versioning (SemVer), changelog generation, Software Bill of Materials (SBOM), and CI/CD secret management (Vault/SOPS). |
+| [`observability-engineer`](skills/observability-engineer/SKILL.md) | Implement Observability-Driven Development (ODD) based on Charity Majors' Honeycomb standard. Enforces high-cardinality structured JSON logging, distributed tracing contexts (trace_id, span_id), duration metrics, and elimination of silent failures. |
+| [`sre-observability-slos`](skills/sre-observability-slos/SKILL.md) | Design and manage Site Reliability Engineering (SRE) systems: SLI/SLO definition, error budget calculation and burn rates, Prometheus metric collectors & alerting rules, Grafana dashboard architecture, blameless incident post-mortems, and load testing with k6. |
+
+### 💳 Backend Architecture, APIs & SaaS Revenue Systems
+
+| Skill | Description |
+| :--- | :--- |
+| [`enterprise-i18n-localization`](skills/enterprise-i18n-localization/SKILL.md) | Architect and implement software internationalization (i18n) and localization (l10n). Covers ICU MessageFormat, plural and gender rules, Right-to-Left (RTL) layout mirroring (Arabic, Hebrew), locale-aware date/currency formatters, pseudo-localization testing, and multilingual SEO (hreflang). |
+| [`saas-backend-architecture`](skills/saas-backend-architecture/SKILL.md) | Design and implement production SaaS backend services: OAuth2/OIDC, JWT & RBAC/ABAC authorization, Stripe Checkout & Billing subscriptions, webhook HMAC signature verification with idempotency keys, Redis caching & rate limiting, background job queues (BullMQ/Celery), and transactional email delivery (Resend). |
+
+### 🤖 Agent Architecture, LLM Engineering & RAG
 
 | Skill | Description |
 | :--- | :--- |
@@ -204,6 +224,7 @@ chmod +x scripts/install.sh && ./scripts/install.sh
 | [`crewai-design-task`](skills/crewai-design-task/SKILL.md) | CrewAI task design and configuration. Use when creating, configuring, or debugging crewAI tasks — writing descriptions and expected_output, setting up task dependencies with context, configuring output formats (output_pydantic, output_json, output_file), using guardrails for validation, enabling human_input, async execution, markdown formatting, or debugging task execution issues. |
 | [`crewai-getting-started`](skills/crewai-getting-started/SKILL.md) | CrewAI architecture decisions and project scaffolding. Use when starting a new crewAI project, choosing between LLM.call() vs Agent.kickoff() vs Crew.kickoff() vs Flow, scaffolding with 'crewai create flow', setting up YAML config (agents.yaml, tasks.yaml), wiring @CrewBase crew.py, writing Flow main.py with @start/@listen, or using {variable} interpolation. |
 | [`mcp-builder`](skills/mcp-builder/SKILL.md) | Guide for creating high-quality MCP (Model Context Protocol) servers that enable LLMs to interact with external services through well-designed tools. Use when building MCP servers to integrate external APIs or services, whether in Python (FastMCP) or Node/TypeScript (MCP SDK). |
+| [`rag-vector-search-engineer`](skills/rag-vector-search-engineer/SKILL.md) | Design and implement production Retrieval-Augmented Generation (RAG) and semantic search architectures. Covers document chunking (semantic, recursive), vector embeddings, vector databases (pgvector, Qdrant), hybrid search (dense + BM25 sparse), Cohere/BGE reranking, and automated RAG evaluation (Ragas triad: faithfulness, answer relevance, context precision). |
 | [`rust-mcp-server-generator`](skills/rust-mcp-server-generator/SKILL.md) | Generate a complete Rust Model Context Protocol server project with tools, prompts, resources, and tests using the official rmcp SDK |
 | [`skill-creator`](skills/skill-creator/SKILL.md) | Create new skills, modify and improve existing skills, and measure skill performance. Use when users want to create a skill from scratch, edit, or optimize an existing skill, run evals to test a skill, benchmark skill performance with variance analysis, or optimize a skill's description for better triggering accuracy. |
 | [`unlazy`](skills/unlazy/SKILL.md) | Enforces completion discipline for substantial autonomous work by writing acceptance gates before execution, decomposing work with the Depth Tree, running approved checks, and re-verifying evidence before reporting. Use when an agent faces a long or multi-part task, work that has returned half-done, an exhaustive audit or build, parallel leaves or pipelines, or explicit triggers such as /unlazy, $unlazy, "tree N", "gates", and "do not stop until it is done". |
@@ -222,28 +243,24 @@ chmod +x scripts/install.sh && ./scripts/install.sh
 | [`swiftui-skills`](skills/swiftui-skills/SKILL.md) | Apple-authored SwiftUI, SwiftData, and Apple Platform architectural guidance extracted directly from Xcode. Enforces Apple-native patterns, zero hallucinations, and includes 20 authoritative Xcode documentation guides (Liquid Glass, FoundationModels on-device LLM, SwiftData inheritance, 3D Charts, Swift Concurrency, AlarmKit, WebKit, and visionOS widgets). |
 | [`swiftui-ui-patterns`](skills/swiftui-ui-patterns/SKILL.md) | Best practices and example-driven guidance for building SwiftUI views and components, including navigation hierarchies, custom view modifiers, and responsive layouts with stacks and grids. Use when creating or refactoring SwiftUI UI, designing tab architecture with TabView, composing screens with VStack/HStack, managing @State or @Binding, building declarative iOS interfaces, or needing component-specific patterns and examples. |
 
-### 🎬 Video Editing, Sound Design & Media
+### 🎬 Video Editing, Sound Design & Motion
 
 | Skill | Description |
 | :--- | :--- |
 | [`app-promo-reel`](skills/app-promo-reel/SKILL.md) | Generate beat-synced 30 s vertical (9:16) or feed (4:5) promo reels, or a silent seamless 16:9 web-hero loop, for a mobile app — music from ACE-Step 1.5, MusicGen or the user's own track, a kick-locked beat grid, the app's real UI rebuilt as HTML, HyperFrames render, loudness and sync checks. Use when the user asks for promo / social / showreel videos of an app. Generation only; it never posts or uploads anything. |
+| [`cinetic`](skills/cinetic/SKILL.md) | Direct, build and render premium cinematic motion design from code — launch films, product and feature videos, looping feature animations for landing pages and social, logo stings and reveals, UI walkthroughs, app demos, kinetic type, teasers, trailers, intros and promo clips. Use this whenever the user wants any video, animation, motion graphic or animated demo made with Remotion, HyperFrames, HTML/GSAP or React, or asks to storyboard, time, score, render, polish or critique one — even if they only say "make a video about X", "animate this feature" or "we need a launch clip". It supplies concept and copy discipline, type and colour taste that defers to a supplied brand, a beat-locked timeline that drives both picture and a code-made soundtrack, choreography and transition craft, real product UI in motion, film-grade finishing (true motion blur, no banding, BT.709, sync-checked mux) and a measured self-critique loop on contact sheets and renders. |
+| [`gsap-core`](skills/gsap-core/SKILL.md) | Comprehensive GSAP 3 Master Suite. Covers core engine (to, from, fromTo, easing, staggers), timelines (gsap.timeline, position parameter, nesting), gsap.utils (clamp, mapRange, snap, wrap, toArray), ScrollTrigger (pinning, scrub, snap, horizontal scroll), official React integration (@gsap/react useGSAP hook, cleanup, refs), and premium plugins (Flip, Draggable, SplitText, Inertia, ScrambleText). |
+| [`gsap-framer-scroll-animation`](skills/gsap-framer-scroll-animation/SKILL.md) | Use this skill whenever the user wants to build scroll animations, scroll effects, |
 | [`real-sound`](skills/real-sound/SKILL.md) | Build premium, realistic soundtracks for code-made videos and animations from real licensed recordings - launch films, product and feature videos, UI walkthroughs, logo stings, explainers, trailers and animated shorts made with Remotion, HyperFrames, three.js, GSAP or any renderer. Use this whenever a video or animation needs sound design, SFX, foley, ambience, music, a soundtrack, a score, UI click / whoosh / riser / impact / logo-sting sounds, or a music edit to picture; whenever a synthesized or "random" sounding soundtrack must be replaced with real recordings; or when the user asks to source, license, credit, mix, master, critique or mux audio for a film. It covers cue lists from the picture, sourcing from Freesound / Mixkit / composer libraries with licence checks, a music edit at bar lines, a JSON sound design rendered by a deterministic mixer, measured QA (clicks, masking, harshness, sync, loudness) plus earshot listening, a multi-agent critique, mastering, credits and the mux. |
 | [`reel-cut`](skills/reel-cut/SKILL.md) | End-to-end automated face-cam video production pipeline (derush, kinetic typography, camera moves, and SFX). Transcribes words via Whisper, detects silences with FFmpeg, curates best takes, cuts precisely at silence midpoints, and generates interactive HyperFrames DOM compositions with 0.12s lead verbatim subtitles, camera drifts/punch-ins, and synchronized zero-royalty audio SFX. Use when asked to "derush", "coupe les blancs", "monte mon reel", "ajoute des sous-titres", or "reel-cut". |
 | [`repurpose-youtube-video`](skills/repurpose-youtube-video/SKILL.md) | Repurpose YouTube videos into high-converting LinkedIn, Instagram, and X (Twitter) posts with platform-optimized visuals via the Blotato API, running post log tracking, and zero-leak credential handling. |
 
-### ⚡ GSAP & Advanced Motion Animation
-
-| Skill | Description |
-| :--- | :--- |
-| [`cinetic`](skills/cinetic/SKILL.md) | Direct, build and render premium cinematic motion design from code — launch films, product and feature videos, looping feature animations for landing pages and social, logo stings and reveals, UI walkthroughs, app demos, kinetic type, teasers, trailers, intros and promo clips. Use this whenever the user wants any video, animation, motion graphic or animated demo made with Remotion, HyperFrames, HTML/GSAP or React, or asks to storyboard, time, score, render, polish or critique one — even if they only say "make a video about X", "animate this feature" or "we need a launch clip". It supplies concept and copy discipline, type and colour taste that defers to a supplied brand, a beat-locked timeline that drives both picture and a code-made soundtrack, choreography and transition craft, real product UI in motion, film-grade finishing (true motion blur, no banding, BT.709, sync-checked mux) and a measured self-critique loop on contact sheets and renders. |
-| [`gsap-core`](skills/gsap-core/SKILL.md) | Comprehensive GSAP 3 Master Suite. Covers core engine (to, from, fromTo, easing, staggers), timelines (gsap.timeline, position parameter, nesting), gsap.utils (clamp, mapRange, snap, wrap, toArray), ScrollTrigger (pinning, scrub, snap, horizontal scroll), official React integration (@gsap/react useGSAP hook, cleanup, refs), and premium plugins (Flip, Draggable, SplitText, Inertia, ScrambleText). |
-| [`gsap-framer-scroll-animation`](skills/gsap-framer-scroll-animation/SKILL.md) | Use this skill whenever the user wants to build scroll animations, scroll effects, |
-
-### 📑 Formal Productivity & Web Automation
+### 📑 Product Management, Specifications & Enterprise Productivity
 
 | Skill | Description |
 | :--- | :--- |
 | [`brand`](skills/brand/SKILL.md) | Brand voice, visual identity, messaging frameworks, asset management, brand consistency. Activate for branded content, tone of voice, marketing assets, brand compliance, style guides. |
+| [`product-management-spec-engineer`](skills/product-management-spec-engineer/SKILL.md) | Author professional Product Requirements Documents (PRD), Technical Architecture RFCs, Architecture Decision Records (ADRs), and Agile sprint planning user stories with INVEST criteria and explicit acceptance tests. |
 | [`slides`](skills/slides/SKILL.md) | Create strategic HTML presentations with Chart.js, design tokens, responsive layouts, copywriting formulas, and contextual slide strategies. |
 | [`vibe-aso`](skills/vibe-aso/SKILL.md) | Full-funnel App Store Optimization for an iOS app — keyword research (popularity/difficulty driven), a keyword-led name/subtitle/keyword field, App Store metadata localized into up to 50 locales, localized screenshot headings burned over your mockups, worldwide territory pricing, and in-app string localization. Use when the user wants to "do the ASO", "find keywords", "localize my app / my App Store page / my screenshots", "pick a name and subtitle", "set worldwide prices", or is preparing an App Store submission. |
 | [`webapp-testing`](skills/webapp-testing/SKILL.md) | Toolkit for interacting with and testing local web applications using Playwright. Supports verifying frontend functionality, debugging UI behavior, capturing browser screenshots, and viewing browser logs. |
