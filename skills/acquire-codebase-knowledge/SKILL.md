@@ -2,172 +2,146 @@
 name: acquire-codebase-knowledge
 description: 'Use this skill when the user explicitly asks to map, document, or onboard into an existing codebase. Trigger for prompts like "map this codebase", "document this architecture", "onboard me to this repo", or "create codebase docs". Do not trigger for routine feature implementation, bug fixes, or narrow code edits unless the user asks for repository-level discovery.'
 license: MIT
-compatibility: 'Cross-platform. Requires Python 3.8+ and git. Run scripts/scan.py from the target project root.'
+compatibility: 'Cross-platform. Requires Python 3.8+ and git. Run scripts from the target project root.'
 metadata:
-  version: "1.3"
+  version: "2.0"
   enhancements:
     - Multi-language manifest detection (25+ languages supported)
-    - CI/CD pipeline detection (10+ platforms)
-    - Container & orchestration detection
-    - Code metrics by language
-    - Security & compliance config detection
-    - Performance testing markers
+    - Automated Mermaid architecture & data flow diagram generation
+    - Quantitative technical debt auditor (god files, git churn hotspots, circular imports)
+    - Automated contract validator for all 7 documentation files (Phase 4 validation loop)
+    - Full automated unit test suite
+    - Multi-platform CI/CD, container, security, and performance markers
 argument-hint: 'Optional: specific area to focus on, e.g. "architecture only", "testing and concerns"'
 ---
 
-# Acquire Codebase Knowledge
+# 🗺️ Acquire Codebase Knowledge & Software Archeology
 
-Produces seven populated documents in `docs/codebase/` covering everything needed to work effectively on the project. Only document what is verifiable from files or terminal output — never infer or assume.
+> **Standard :** Antigravity Agentic Knowledge Acquisition Standard  
+> **Core Axiom :** *"Never infer, never guess, never document wishful thinking. Ground every architectural claim in physical source files, verified configuration, or deterministic CLI diagnostics."*
 
-## Output Contract (Required)
+---
 
-Before finishing, all of the following must be true:
+## 🧒 1. Explication Pédagogique (Style 15 ans)
 
-1. Exactly these files exist in `docs/codebase/`: `STACK.md`, `STRUCTURE.md`, `ARCHITECTURE.md`, `CONVENTIONS.md`, `INTEGRATIONS.md`, `TESTING.md`, `CONCERNS.md`.
-2. Every claim is traceable to source files, config, or terminal output.
-3. Unknowns are marked as `[TODO]`; intent-dependent decisions are marked `[ASK USER]`.
-4. Every document includes a short "evidence" list with concrete file paths.
-5. Final response includes numbered `[ASK USER]` questions and intent-vs-reality divergences.
+Arriver sur un projet de 100 000 lignes de code qu'on ne connaît pas, c'est comme atterrir en parachute au milieu d'une immense ville inconnue sans GPS :
+- Si tu te mets à visiter chaque maison une par une (lire chaque fichier ligne par ligne), tu vas mettre des mois et avoir le cerveau complètement saturé.
+- Si tu te fies uniquement aux vieux panneaux de signalisation ou au plan touristique dessiné il y a trois ans (le fichier `README.md`), tu vas te perdre parce que la ville a changé depuis !
+- La bonne méthode, c'est **l'archéologie logicielle méthodique** :
+  1. Tu montes en hélicoptère pour voir la carte globale : quels langages, quelles autoroutes principales, quels conteneurs (`scan.py`).
+  2. Tu traces une voiture de livraison du début à la fin : comment une requête utilisateur traverse les couches pour aller chercher des données dans la base (`generate_architecture_diagram.py`).
+  3. Tu repères les quartiers dangereux et délabrés : les fichiers géants de plus de 500 lignes et ceux que les développeurs modifient constamment (`audit_codebase_debt.py`).
+  4. Tu rédiges 7 dossiers ultra-précis dans `docs/codebase/` et tu fais vérifier par un robot qu'aucune affirmation n'est inventée (`validate_codebase_docs.py`).
 
-## Workflow
+---
 
-Copy and track this checklist:
+## 📋 2. Le Contrat des 7 Documents Obligatoires
 
+Avant de considérer la mission comme terminée, **exactement ces 7 fichiers** doivent exister et être validés dans `docs/codebase/` :
+
+1. [STACK.md](assets/templates/STACK.md) — Langages, runtimes, dépendances de prod vs outillage dev, scripts de build.
+2. [STRUCTURE.md](assets/templates/STRUCTURE.md) — Arborescence, points d'entrée (`main`), rôles stricts des dossiers.
+3. [ARCHITECTURE.md](assets/templates/ARCHITECTURE.md) — Style architectural, diagrammes Mermaid, flux de données, responsabilités des couches.
+4. [CONVENTIONS.md](assets/templates/CONVENTIONS.md) — Normes de nommage, linters, gestion des erreurs, imports et frontières de modules.
+5. [INTEGRATIONS.md](assets/templates/INTEGRATIONS.md) — APIs tierces, bases de données, authentification, bus de messages, observabilité.
+6. [TESTING.md](assets/templates/TESTING.md) — Frameworks de test, organisation des suites, stratégie de mocks, couverture.
+7. [CONCERNS.md](assets/templates/CONCERNS.md) — Risques prioritaires, dette technique (God files, cycles), hotspots git, questions `[ASK USER]`.
+
+---
+
+## 🛠️ 3. La Boîte à Outils WAT Déterministe
+
+La compétence intègre 4 outils CLI natifs en pur Python (sans dépendances tierces) pour automatiser chaque phase :
+
+### 🔍 A. Scanner de Découverte Globale (`scan.py`)
+Scanne l'arborescence, les manifests, les points d'entrée, les variables d'environnement, les commits récents et les pipelines CI/CD.
+```bash
+# Générer le scan texte standard
+python scripts/scan.py --output docs/codebase/.codebase-scan.txt
+
+# Générer les données structurées en JSON pour exploitation automatisée
+python scripts/scan.py --json --output docs/codebase/.codebase-scan.json
 ```
-- [ ] Phase 1: Run scan, read intent documents
-- [ ] Phase 2: Investigate each documentation area
-- [ ] Phase 3: Populate all seven docs in docs/codebase/
-- [ ] Phase 4: Validate docs, present findings, resolve all [ASK USER] items
+
+### 📐 B. Générateur de Diagrammes d'Architecture Mermaid (`generate_architecture_diagram.py`)
+Analyse les imports et relations entre modules pour générer un `flowchart TD` des sous-systèmes et un `sequenceDiagram` du flux de commande, prêts à coller dans `ARCHITECTURE.md` :
+```bash
+# Générer le Markdown complet avec blocs Mermaid
+python scripts/generate_architecture_diagram.py --format markdown --output docs/codebase/DIAGRAMS.md
+
+# Sortie JSON structurée des dépendances inter-modules
+python scripts/generate_architecture_diagram.py --format json
 ```
 
-## Focus Area Mode
+### 📉 C. Auditeur de Dette Technique & Hotspots (`audit_codebase_debt.py`)
+Identifie mathématiquement les zones à haut risque de régression :
+- **God Files** : Fichiers dépassant le seuil de 500 lignes de code (SRP violé).
+- **Hotspots Git** : Fichiers à fort churn combiné à une haute complexité ($\text{Risk} = \text{churn} \times \frac{\text{LOC}}{100}$).
+- **Dépendances Cycliques** : Détection des cycles d'imports internes (A $\leftrightarrow$ B).
+- **Densité de TODOs** : Nombre d'annotations par millier de lignes.
+- **Score de Santé Global** : Calculé sur 100 points avec verdict (`HEALTHY`, `MODERATE_DEBT`, `HIGH_TECH_DEBT`).
 
-If the user supplies a focus area (for example: "architecture only" or "testing and concerns"):
+```bash
+python scripts/audit_codebase_debt.py --max-lines 500
+python scripts/audit_codebase_debt.py --json
+```
 
-1. Always run Phase 1 in full.
-2. Fully complete focus-area documents first.
-3. For non-focus documents not yet analyzed, keep required sections present and mark unknowns as `[TODO]`.
-4. Still run the Phase 4 validation loop on all seven documents before final output.
+### 🛡️ D. Moteur de Validation du Contrat (`validate_codebase_docs.py`)
+Valide automatiquement la Phase 4 avant livraison :
+- Présence des 7 documents obligatoires dans `docs/codebase/`.
+- Présence de toutes les sections requises par chaque template.
+- Zéro placeholder de template non rempli (`[item]`, `[path]`, `[risk]`, etc.).
+- Extraction automatique des `[TODO]` et des questions numérotées `[ASK USER]`.
+- **Vérification physique des preuves** : Contrôle que chaque chemin de fichier cité dans les sections *Evidence* existe réellement sur le disque !
 
-### Phase 1: Scan and Read Intent
-
-1. Run the scan script from the target project root:
-   ```bash
-   python3 "$SKILL_ROOT/scripts/scan.py" --output docs/codebase/.codebase-scan.txt
-   ```
-   Where `$SKILL_ROOT` is the absolute path to the skill folder. Works on Windows, macOS, and Linux.
-
-   **Quick start:** If you have the path inline:
-   ```bash
-   python3 /absolute/path/to/skills/acquire-codebase-knowledge/scripts/scan.py --output docs/codebase/.codebase-scan.txt
-   ```
-
-2. Search for `PRD`, `TRD`, `README`, `ROADMAP`, `SPEC`, `DESIGN` files and read them.
-3. Summarise the stated project intent before reading any source code.
-
-### Phase 2: Investigate
-
-Use the scan output to answer questions for each of the seven templates. Load [`references/inquiry-checkpoints.md`](references/inquiry-checkpoints.md) for the full per-template question list.
-
-If the stack is ambiguous (multiple manifest files, unfamiliar file types, no `package.json`), load [`references/stack-detection.md`](references/stack-detection.md).
-
-### Phase 3: Populate Templates
-
-Copy each template from `assets/templates/` into `docs/codebase/`. Fill in this order:
-
-1. [STACK.md](assets/templates/STACK.md) — language, runtime, frameworks, all dependencies
-2. [STRUCTURE.md](assets/templates/STRUCTURE.md) — directory layout, entry points, key files
-3. [ARCHITECTURE.md](assets/templates/ARCHITECTURE.md) — layers, patterns, data flow
-4. [CONVENTIONS.md](assets/templates/CONVENTIONS.md) — naming, formatting, error handling, imports
-5. [INTEGRATIONS.md](assets/templates/INTEGRATIONS.md) — external APIs, databases, auth, monitoring
-6. [TESTING.md](assets/templates/TESTING.md) — frameworks, file organization, mocking strategy
-7. [CONCERNS.md](assets/templates/CONCERNS.md) — tech debt, bugs, security risks, perf bottlenecks
-
-Use `[TODO]` for anything that cannot be determined from code. Use `[ASK USER]` where the right answer requires team intent.
-
-### Phase 4: Validate, Repair, Verify
-
-Run this mandatory validation loop before finalizing:
-
-1. Validate each doc against `references/inquiry-checkpoints.md`.
-2. For each non-trivial claim, confirm at least one evidence reference exists.
-3. If any required section is missing or unsupported:
-  - Fix the document.
-  - Re-run validation.
-4. Repeat until all seven docs pass.
-
-Then present a summary of all seven documents, list every `[ASK USER]` item as a numbered question, and highlight any Intent vs. Reality divergences from Phase 1.
-
-Validation pass criteria:
-
-- No unsupported claims.
-- No empty required sections.
-- Unknowns use `[TODO]` rather than assumptions.
-- Team-intent gaps are explicitly marked `[ASK USER]`.
+```bash
+python scripts/validate_codebase_docs.py --docs-dir docs/codebase --root .
+```
 
 ---
 
-## Gotchas
+## 🔄 4. Le Workflow en 4 Phases
 
-**Monorepos:** Root `package.json` may have no source — check for `workspaces`, `packages/`, or `apps/` directories. Each workspace may have independent dependencies and conventions. Map each sub-package separately.
+```text
+- [ ] Phase 1 : Exécuter scan.py, lire les fichiers d'intention (README, SPEC, PRD)
+- [ ] Phase 2 : Investiguer les 7 axes avec inquiry-checkpoints.md et les diagrammes
+- [ ] Phase 3 : Remplir les 7 documents dans docs/codebase/ depuis les templates
+- [ ] Phase 4 : Valider avec validate_codebase_docs.py, résoudre les [ASK USER]
+```
 
-**Outdated README:** README often describes intended architecture, not the current one. Cross-reference with actual file structure before treating any README claim as fact.
+### Phase 1 : Scan Déterministe & Alignement Intention
+1. Lancez `python scripts/scan.py --json --output docs/codebase/.codebase-scan.json`.
+2. Lisez `README.md`, `SPEC.md` ou `DESIGN.md` pour capturer l'intention initiale annoncée.
 
-**TypeScript path aliases:** `tsconfig.json` `paths` config means imports like `@/foo` don't map directly to the filesystem. Map aliases to real paths before documenting structure.
+### Phase 2 : Investigation & Modélisation
+1. Chargez [`references/inquiry-checkpoints.md`](references/inquiry-checkpoints.md) pour la grille de questions par template.
+2. Si la pile technique est ambiguë, consultez [`references/stack-detection.md`](references/stack-detection.md).
+3. Générez les flux avec `generate_architecture_diagram.py`.
+4. Évaluez la dette avec `audit_codebase_debt.py`.
 
-**Generated/compiled output:** Never document patterns from `dist/`, `build/`, `generated/`, `.next/`, `out/`, or `__pycache__/`. These are artefacts — document source conventions only.
+### Phase 3 : Rédaction des 7 Documents
+Copiez les modèles depuis `assets/templates/` vers `docs/codebase/` et complétez chaque section avec des preuves vérifiables.
 
-**`.env.example` reveals required config:** Secrets are never committed. Read `.env.example`, `.env.template`, or `.env.sample` to discover required environment variables.
-
-**`devDependencies` ≠ production stack:** Only `dependencies` (or equivalent, e.g. `[tool.poetry.dependencies]`) runs in production. Document linters, formatters, and test frameworks separately as dev tooling.
-
-**Test TODOs ≠ production debt:** TODOs inside `test/`, `tests/`, `__tests__/`, or `spec/` are coverage gaps, not production technical debt. Separate them in `CONCERNS.md`.
-
-**High-churn files = fragile areas:** Files appearing most in recent git history have the highest modification rate and likely hidden complexity. Always note them in `CONCERNS.md`.
-
----
-
-## Anti-Patterns
-
-| ❌ Don't | ✅ Do instead |
-|---------|--------------|
-| "Uses Clean Architecture with Domain/Data layers." (when no such directories exist) | State only what directory structure actually shows. |
-| "This is a Next.js project." (without checking `package.json`) | Check `dependencies` first. State what's actually there. |
-| Guess the database from a variable name like `dbUrl` | Check manifest for `pg`, `mysql2`, `mongoose`, `prisma`, etc. |
-| Document `dist/` or `build/` naming patterns as conventions | Source files only. |
+### Phase 4 : Validation Automatisée
+Exécutez `python scripts/validate_codebase_docs.py`. Répétez les corrections jusqu'à obtenir un score de 100% et le statut `PASS`.
 
 ---
 
-## Enhanced Scan Output Sections
+## 🚫 5. Anti-Patterns & Pièges Fréquents
 
-The `scan.py` script now produce the following sections in addition to the original output:
-
-- **CODE METRICS** — Total files, lines of code by language, largest files (complexity signals)
-- **CI/CD PIPELINES** — Detected GitHub Actions, GitLab CI, Jenkins, CircleCI, etc.
-- **CONTAINERS & ORCHESTRATION** — Docker, Docker Compose, Kubernetes, Vagrant configs
-- **SECURITY & COMPLIANCE** — Snyk, Dependabot, SECURITY.md, SBOM, security policies
-- **PERFORMANCE & TESTING** — Benchmark configs, profiling markers, load testing tools
-
-Use these sections during Phase 2 to inform investigation questions and identify tool-specific patterns.
+| ❌ À Ne Jamais Faire | ✅ Bonne Pratique |
+| :--- | :--- |
+| Inventer une architecture "Clean/DDD" alors qu'aucun répertoire ne la reflète | Documenter uniquement la structure physique réelle des dossiers |
+| Confondre `devDependencies` avec la pile de production | Séparer strictement ce qui tourne en production du tooling local |
+| Documenter les dossiers générés (`dist/`, `build/`, `.next/`, `Intermediate/`) | Exclure les artefacts de compilation et documenter le code source |
+| Traiter les `README.md` anciens comme une vérité absolue | Vérifier systématiquement que le code source concorde avec le README |
+| Laisser des placeholders bruts `[item]` ou `[path]` dans les documents finaux | Remplacer par des faits ou marquer explicitement `[TODO]` / `[ASK USER]` |
 
 ---
 
-## Bundled Assets
+## 📚 6. Ressources et Guides Embarqués
 
-| Asset | When to load |
-|-------|-------------|
-| [`scripts/scan.py`](scripts/scan.py) | Phase 1 — run first, before reading any code (Python 3.8+ required) |
-| [`references/inquiry-checkpoints.md`](references/inquiry-checkpoints.md) | Phase 2 — load for per-template investigation questions |
-| [`references/stack-detection.md`](references/stack-detection.md) | Phase 2 — only if stack is ambiguous |
-| [`assets/templates/STACK.md`](assets/templates/STACK.md) | Phase 3 step 1 |
-| [`assets/templates/STRUCTURE.md`](assets/templates/STRUCTURE.md) | Phase 3 step 2 |
-| [`assets/templates/ARCHITECTURE.md`](assets/templates/ARCHITECTURE.md) | Phase 3 step 3 |
-| [`assets/templates/CONVENTIONS.md`](assets/templates/CONVENTIONS.md) | Phase 3 step 4 |
-| [`assets/templates/INTEGRATIONS.md`](assets/templates/INTEGRATIONS.md) | Phase 3 step 5 |
-| [`assets/templates/TESTING.md`](assets/templates/TESTING.md) | Phase 3 step 6 |
-| [`assets/templates/CONCERNS.md`](assets/templates/CONCERNS.md) | Phase 3 step 7 |
-
-Template usage mode:
-
-- Default mode: complete only the "Core Sections (Required)" in each template.
-- Extended mode: add optional sections only when the repo complexity justifies them.
+- 📖 [Méthodologie d'Archéologie Logicielle](references/codebase_mapping_methodology.md)
+- ❓ [Points de Contrôle et Questions d'Enquête](references/inquiry-checkpoints.md)
+- 🔎 [Guide de Détection de Piles Exotiques](references/stack-detection.md)
+- 📁 Modèles de référence : [`STACK.md`](assets/templates/STACK.md), [`STRUCTURE.md`](assets/templates/STRUCTURE.md), [`ARCHITECTURE.md`](assets/templates/ARCHITECTURE.md), [`CONVENTIONS.md`](assets/templates/CONVENTIONS.md), [`INTEGRATIONS.md`](assets/templates/INTEGRATIONS.md), [`TESTING.md`](assets/templates/TESTING.md), [`CONCERNS.md`](assets/templates/CONCERNS.md).

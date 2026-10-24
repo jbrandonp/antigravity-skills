@@ -34,7 +34,7 @@ EXCLUDE_DIRS = {
     "node_modules", ".git", "dist", "build", "out", ".next", ".nuxt",
     "__pycache__", ".venv", "venv", ".tox", "target", "vendor",
     "coverage", ".nyc_output", "generated", ".cache", ".turbo",
-    ".yarn", ".pnp", "bin", "obj"
+    ".yarn", ".pnp", "bin", "obj", "Intermediate", "Saved", "Binaries"
 }
 
 MANIFESTS = [
@@ -195,6 +195,11 @@ def parse_args():
         "--output",
         type=str,
         help="Write output to FILE instead of stdout"
+    )
+    parser.add_argument(
+        "--json",
+        action="store_true",
+        help="Output discovery data as JSON"
     )
     return parser.parse_args()
 
@@ -565,6 +570,33 @@ def main():
         print(f"Writing output to: {args.output}", file=sys.stderr)
 
     try:
+        if getattr(args, "json", False):
+            data = {
+                "directory_tree": get_directory_tree(),
+                "manifests": find_manifest_files(),
+                "entry_points": find_entry_points(),
+                "lint_configs": find_lint_config(),
+                "env_templates": [name for name, _ in find_env_templates()],
+                "todos": search_todos(),
+                "git": {
+                    "is_repo": is_git_repo(),
+                    "recent_commits": get_git_commits() if is_git_repo() else [],
+                    "high_churn": get_git_churn() if is_git_repo() else []
+                },
+                "monorepo_signals": detect_monorepo(),
+                "code_metrics": collect_code_metrics(),
+                "ci_cd_pipelines": detect_ci_cd_pipelines(),
+                "containers": detect_containers(),
+                "security_configs": detect_security_configs(),
+                "performance_markers": detect_performance_markers()
+            }
+            json_str = json.dumps(data, indent=2)
+            if output_file:
+                output_file.write(json_str + "\n")
+            else:
+                print(json_str)
+            return 0
+
         # Directory tree
         print_section(
             f"DIRECTORY TREE (max depth {TREE_MAX_DEPTH}, source files only)",
