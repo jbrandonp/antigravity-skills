@@ -161,3 +161,13 @@ trivy image my-app:latest --severity HIGH,CRITICAL
 kubectl apply -f k8s/
 kubectl rollout status deployment/api-service
 ```
+
+---
+
+## 🛠️ 4. Linter Déterministe Dockerfile & Manifests Kubernetes
+
+Un script Python autonome est inclus pour auditer vos conteneurs et manifests Kubernetes avant déploiement :
+```bash
+python scripts/lint_k8s_docker.py path/to/Dockerfile_or_k8s_dir
+```
+Détecte l'absence d'instruction `USER` non-root, les tags `:latest` instables, l'absence de `resources.limits` et les sondes de vie/disponibilité manquantes.

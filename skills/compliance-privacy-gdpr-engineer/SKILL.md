@@ -92,3 +92,13 @@ Pour respecter la vie privée et se dispenser légalement des bannières de cook
 <!-- Script Plausible : Aucun cookie, aucune donnée personnelle stockée, 100% conforme RGPD sans bannière -->
 <script defer data-domain="yourdomain.com" src="https://plausible.io/js/script.js"></script>
 ```
+
+---
+
+## 🛠️ 6. Scanner Déterministe de Données Personnelles (PII)
+
+Un scanner Python est inclus pour auditer automatiquement vos modèles et schémas de code :
+```bash
+python scripts/scan_pii_fields.py src/
+```
+Détecte les champs à risque (SSN, IBAN, santé, biométrie) et les données personnelles (email, IP, téléphone), et rappelle la mise en place obligatoire du droit à l'effacement.

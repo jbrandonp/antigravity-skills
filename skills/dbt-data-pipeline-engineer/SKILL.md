@@ -136,3 +136,13 @@ dbt test
 dbt docs generate
 dbt docs serve
 ```
+
+---
+
+## 🛠️ 5. Validateur Déterministe d'Architecture dbt
+
+Un script Python autonome est inclus pour auditer l'arborescence et le nommage de vos modèles dbt :
+```bash
+python scripts/validate_dbt_models.py models/
+```
+Vérifie la présence des dossiers (`staging/`, `intermediate/`, `marts/`), les préfixes canoniques (`stg_`, `int_`, `fct_`, `dim_`), et signale l'usage dangereux de `SELECT *` dans les couches finales.

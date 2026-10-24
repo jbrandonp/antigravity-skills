@@ -107,3 +107,13 @@ Pour mesurer mathématiquement la qualité d'un pipeline RAG avant mise en produ
 1. **Fidélité (`Faithfulness`)** : Est-ce que chaque affirmation de la réponse découle strictement des documents fournis ? ($[0.0, 1.0]$, viser $\ge 0.90$).
 2. **Pertinence de la Réponse (`Answer Relevancy`)** : La réponse répond-elle directement à la question sans divaguer ? ($[0.0, 1.0]$, viser $\ge 0.85$).
 3. **Précision du Contexte (`Context Precision`)** : Les morceaux de texte utiles sont-ils bien classés en tête du prompt ? ($[0.0, 1.0]$, viser $\ge 0.85$).
+
+---
+
+## 🛠️ 6. Évaluateur Déterministe de Triade RAG
+
+Un outil de scoring Python est inclus pour évaluer automatiquement vos triplets {requête, contexte, réponse} :
+```bash
+python scripts/evaluate_rag_triad.py --query "..." --context "..." --answer "..."
+```
+Calcule le score de fidélité, de pertinence et de précision du contexte, et délivre un verdict PASS/WARN/FAIL.

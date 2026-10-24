@@ -135,3 +135,13 @@ async def check_rate_limit(client_ip: str, limit: int = 10, window_sec: int = 60
         await redis.expire(key, window_sec)
     return current <= limit
 ```
+
+---
+
+## 🛠️ 6. Testeur de Signatures Webhooks Stripe Hors-Ligne
+
+Un simulateur Python est fourni pour tester cryptographiquement la validation des webhooks Stripe en local :
+```bash
+python scripts/verify_stripe_webhook_payload.py --event checkout.session.completed
+```
+Génère un faux événement Stripe, calcule sa signature HMAC-SHA256 (`t=...,v1=...`), et vérifie la tolérance temporelle contre les attaques par rejeu.
