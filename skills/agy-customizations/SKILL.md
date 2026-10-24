@@ -1,107 +1,102 @@
 ---
 name: agy-customizations
 description: >-
-  Comprehensive guide and reference for the Antigravity Customization System.
+  Comprehensive guide and deterministic toolchain for the Antigravity Customization System.
   Use to explain how customizations work, their loading priority, discovery mechanisms,
-  and to guide the creation of skills, rules, plugins, hooks, and MCP servers.
+  audit environment integrity, and scaffold skills, rules, plugins, hooks, and MCP servers.
 ---
 
 # Antigravity Customization System Guide
 
-The Antigravity Customization System allows you to tailor the agent's behavior,
-teach it new workflows, enforce guidelines, and integrate it with external
-tools. By customizing the agent, you can transition it from a general-purpose
-assistant to an expert pair programmer specialized in your project's codebase
-and processes.
+The Antigravity Customization System allows you to tailor the agent's behavior, teach it new workflows, enforce guidelines, and integrate it with external tools. By customizing the agent, you transition it from a general-purpose assistant into an expert pair programmer specialized in your project's codebase and processes.
 
---------------------------------------------------------------------------------
+---
 
-## Customization Types: Quick Reference
+## 💡 Comprendre le Système Antigravity (Explication Simple)
 
-Choose the right customization type based on your goal:
+Imagine qu'Antigravity soit un **développeur junior ultra-rapide** qui débarque dans ton équipe :
+1. **Les Rules (`AGENTS.md`)** : C'est le **règlement intérieur** du bureau. "Ici, on ne commite jamais de mot de passe, on type toujours le code, et on écrit en français".
+2. **Les Skills (`SKILL.md` + scripts)** : Ce sont ses **fiches de compétences**. Au lieu de tout charger dans sa tête (ce qui saturerait sa mémoire immédiate), il regarde l'index de ses fiches. Quand tu lui dis "optimise cette base SQLite", il ouvre le classeur correspondant, lit la méthode et exécute les scripts.
+3. **Les Plugins (`plugin.json`)** : C'est une **boîte à outils complète** qui regroupe dans un même paquet des fiches (skills), des règles (rules) et des outils externes (MCP).
+4. **Les Lifecycle Hooks (`hooks.json`)** : Ce sont des **gardes du corps automatiques**. Dès que l'IA veut exécuter une commande bash, le hook s'interpose avant (`PreToolUse`) ou après (`PostToolUse`) pour vérifier que tout est sûr ou lancer un linter.
+5. **Les MCP Servers (`mcp_config.json`)** : Ce sont ses **bras articulés** pour se connecter à des bases de données réelles, des navigateurs ou des APIs.
 
-Type            | Config File/Folder           | Scope                     | Best For                                                                                | Learn More
-:-------------- | :--------------------------- | :------------------------ | :-------------------------------------------------------------------------------------- | :---------
-**Rules**       | `GEMINI.md`, `AGENTS.md`     | Contextual / Hierarchical | Enforcing coding styles, API restrictions, and local guidelines.                        | [Rules Guide](./docs/rules.md)
-**Skills**      | `skills/<name>/SKILL.md`     | On-Demand (Progressive)   | Teaching the agent multi-step procedures, runbooks, and tool workflows.                 | [Skills Guide](./docs/skills.md)
-**Plugins**     | `plugins/<name>/plugin.json` | Bundle                    | Packaging related skills, rules, and MCP configs into a single unit.                    | [Plugins Guide](./docs/plugins.md)
-**Hooks**       | `hooks.json`                 | Lifecycle Event           | Running scripts/commands at specific agent lifecycle points (e.g., pre-tool execution). | [Hooks Guide](./docs/hooks.md)
-**MCP Servers** | `mcp_config.json`            | Tool Integration          | Connecting the agent to external services and custom tool providers.                    | [MCP Guide](./docs/mcp_servers.md)
-**UI Plugins**  | `plugins/<name>/sidecars/`   | Auxiliary Panel UI        | Surfacing interactive web sidecars & chat pills via `sidecar://` URI scheme.            | [UI Plugins Guide](./docs/ui-plugins-navigation.md)
+---
 
---------------------------------------------------------------------------------
+## 🛠️ Outils Déterministes Inclus (WAT Framework)
 
-## Customization Discovery and Locations
+Le skill fournit une suite d'outils CLI Python déterministes situés dans `scripts/` :
 
-Antigravity automatically discovers your own customizations by traversing
-specific directories. Built-in customizations are not found this way: the agent
-config names the ones it mounts.
+### 1. Validateur d'Environnement Antigravity (`scripts/validate_agy_environment.py`)
+Scanne et valide l'intégrité de tous tes composants (skills, plugins, hooks, MCP) :
+```bash
+# Audit standard de ton dossier config
+python scripts/validate_agy_environment.py --config-dir ~/.gemini/config
 
-### Discovery Locations
+# Export des résultats en JSON pour intégration CI/CD
+python scripts/validate_agy_environment.py --config-dir ~/.gemini/config --json
+```
 
-1.  **Workspace Customizations** (Project-Specific):
-    *   Path: `.agents/` (or `.agent/`, `_agents/`, `_agent/`) at the root of
-        your project.
-    *   Use this to share customizations with your team by checking them into
-        version control (VCS).
-    *   The agent walks from your current working directory up to the repository
-        root (e.g., the folder containing `.git`) to find these directories.
-2.  **Directory & Project Rules** (Hierarchical):
-    *   Paths: `GEMINI.md`, `AGENTS.md`, `.agents/rules/*.md`
-    *   As you open or edit files, the agent walks up from the file's directory
-        to the repository root, loading all rules it finds.
-3.  **Global Configuration** (Machine-Local):
-    *   Path: `~/.gemini/config/`
-    *   Applies to all projects and workspaces run on your machine.
+### 2. Générateur de Customisations (`scripts/scaffold_agy_customization.py`)
+Génère instantanément des squelettes conformes aux standards Antigravity :
+```bash
+# Créer un nouveau Skill
+python scripts/scaffold_agy_customization.py --type skill --name mon-skill --desc "Description du skill" --output ./skills
 
---------------------------------------------------------------------------------
+# Créer un Plugin complet
+python scripts/scaffold_agy_customization.py --type plugin --name mon-plugin --output ./plugins
 
-## Loading Priority and Precedence
+# Créer un Hook de sécurité sur run_command
+python scripts/scaffold_agy_customization.py --type hook --name audit-cmd --event PreToolUse --matcher run_command --command "python guard.py" --output ./
 
-When multiple customizations are discovered, they are loaded and applied in a
-specific order. If there are naming conflicts (e.g., two skills with the same
-name), the higher-priority customization overrides the lower-priority one.
+# Créer une Règle d'architecture
+python scripts/scaffold_agy_customization.py --type rule --name clean-code-rules --output ./rules
 
-The priority order (from highest to lowest) is:
+# Déclarer un serveur MCP
+python scripts/scaffold_agy_customization.py --type mcp --name sqlite-db --command "uv run mcp-server-sqlite" --output ./
+```
 
-1.  **Workspace Project**: Hierarchical discovery walking up from the CWD to the
-    repository root.
-2.  **Declared Configurations**: Customizations explicitly listed in
-    `skills.json` or `plugins.json` in your workspace.
-3.  **Global Discovery**: `~/.gemini/config/`
-4.  **Built-in Customizations**: Default skills bundled with the application,
-    mounted by name rather than discovered.
-5.  **Global Declared Configurations**: Explicitly listed in global JSON
-    configs.
+### 3. Suite de Tests Automatisée (`scripts/tests/test_agy_customizations.py`)
+Vérifie 100% du comportement du validateur et du générateur :
+```bash
+python scripts/tests/test_agy_customizations.py
+```
 
---------------------------------------------------------------------------------
+---
 
-## How Customizations are Applied
+## 📑 Customization Types: Quick Reference
 
-### Progressive Disclosure (Skills and Rules)
+| Type | Config File/Folder | Scope | Best For | Reference Docs |
+| :--- | :--- | :--- | :--- | :--- |
+| **Rules** | `AGENTS.md`, `GEMINI.md` | Contextual / Hierarchical | Enforcing coding styles, API restrictions, and local guidelines. | [Rules Guide](./docs/rules.md) |
+| **Skills** | `skills/<name>/SKILL.md` | On-Demand (Progressive) | Teaching the agent multi-step procedures, runbooks, and tool workflows. | [Skills Guide](./docs/skills.md) |
+| **Plugins** | `plugins/<name>/plugin.json` | Bundle | Packaging related skills, rules, hooks, and MCP configs into a single unit. | [Plugins Guide](./docs/plugins.md) |
+| **Hooks** | `hooks.json` | Lifecycle Event | Running scripts/commands at specific agent lifecycle points (e.g., pre-tool execution). | [Hooks Guide](./docs/hooks.md) |
+| **MCP Servers** | `mcp_config.json` | Tool Integration | Connecting the agent to external services and custom tool providers. | [MCP Guide](./docs/mcp_servers.md) |
+| **UI Plugins** | `plugins/<name>/sidecars/` | Auxiliary Panel UI | Surfacing interactive web sidecars & chat pills via `sidecar://` URI scheme. | [UI Plugins Guide](./docs/ui-plugins-navigation.md) |
 
-To prevent overwhelming the model's context window, Antigravity uses
-**progressive disclosure**:
+---
 
-*   **Skills** are not loaded into the context window by default. Only their
-    names and descriptions are injected. The full content of a skill is only
-    loaded if the model (or the user) explicitly decides to activate it.
-*   **Rules** with `trigger: model_decision` behave similarly. Only `always_on`
-    rules are loaded unconditionally.
+## ⚡ Loading Priority and Precedence
 
-### Deduplication
+When multiple customizations are discovered, they are resolved following a strict 4-tier precedence hierarchy:
 
-All customizations (especially rules) are deduplicated by their resolved file
-paths. A rule file will never be injected more than once in a single
-conversation turn, even if it matches multiple trigger conditions.
+1. **Workspace Project** (`<workspace>/.agents/`): Highest priority, project-specific overrides.
+2. **Declared Configurations**: Customizations explicitly listed in `skills.json` or `plugins.json`.
+3. **Global User Root** (`~/.agents/` or `~/.gemini/config/`): User-wide tools and developer defaults.
+4. **Built-in Customizations**: Default skills bundled with the Antigravity application runtime.
 
---------------------------------------------------------------------------------
+### Component Collision Policies
+- **Skills**: First-hit wins (workspace overrides global).
+- **Rules**: Deep merged (global rules apply, followed by workspace rules).
+- **Hooks**: Sequential chaining (handlers executed in order of registration).
+- **MCP Servers**: Higher-tier configuration replaces matching server keys.
 
-## Advanced Management: JSON Configs
+---
 
-For customizations stored in non-standard locations, you can use `skills.json`
-and `plugins.json` to explicitly register them and inherit from shared
-configurations.
-
-*   Learn how to configure these in the
-    [JSON Configurations Guide](./docs/json_configs.md).
+## 📖 Architecture Deep Dive
+Pour une étude approfondie des protocoles JSON, des cycles de vie des hooks et des configurations avancées, consulte :
+- [Playbook Complet d'Architecture](./references/antigravity_customization_playbook.md)
+- [Documentation Hooks](./docs/hooks.md)
+- [Documentation Plugins](./docs/plugins.md)
+- [Documentation Configurations JSON](./docs/json_configs.md)
