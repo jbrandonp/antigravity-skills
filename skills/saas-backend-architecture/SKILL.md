@@ -83,6 +83,20 @@ async def stripe_webhook(
     return {"status": "success"}
 ```
 
+### Facturation à l'Usage (Stripe Billing Meters)
+Pour les applications SaaS / IA consommatrices de ressources (facturation au nombre de tokens ou d'appels API) :
+```python
+# Envoi d'un événement de consommation idempotent
+stripe.billing.MeterEvent.create(
+    event_name="ai_api_tokens",
+    payload={
+        "value": str(tokens_consumed),
+        "stripe_customer_id": customer_stripe_id,
+    },
+    identifier=request_unique_trace_id,  # Évite tout double comptage
+)
+```
+
 ---
 
 ## 📨 4. Envoi d'E-mails Transactionnels (Resend)

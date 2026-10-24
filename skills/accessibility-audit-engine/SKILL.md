@@ -32,11 +32,16 @@ Si ton bouton n'a pas de texte ou est un simple `<div>` sans rôle ARIA, le lect
  ├─────────────────────────────────────────────────────────────┤
  │ 3. Indicateur de Focus Visible (WCAG 2.2 Focus Appearance)  │
  ├─────────────────────────────────────────────────────────────┤
- │ 4. Taille de Cible Tactile : Minimum 24x24 px (Cibles web)  │
+ │ 4. Cibles Tactiles : Min 24x24 px (WCAG 2.2), 44x44 px (HIG)│
  ├─────────────────────────────────────────────────────────────┤
  │ 5. Régions Dynamiques : aria-live="polite" pour les alertes │
  └─────────────────────────────────────────────────────────────┘
 ```
+
+> **Normes des cibles tactiles (Touch Targets) :**
+> - **WCAG 2.2 (Critère 2.5.8 AA)** : 24x24 px CSS minimum avec espacement suffisant.
+> - **Apple Human Interface Guidelines (HIG)** : 44x44 pt minimum.
+> - **Google Material Design 3** : 48x48 dp minimum.
 
 ---
 

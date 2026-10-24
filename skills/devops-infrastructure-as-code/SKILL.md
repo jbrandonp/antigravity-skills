@@ -59,6 +59,13 @@ terraform {
     encrypt        = true
   }
 }
+
+# Refactoring sans destruction de ressource de production (Terraform 1.1+)
+# Évite de détruire et recréer une base de données lors d'un renommage
+moved {
+  from = aws_instance.legacy_web
+  to   = aws_instance.api_server
+}
 ```
 
 ### 2. Docker Multi-Stage Build : Ultra-Léger et Sans Privilèges Root

@@ -37,6 +37,10 @@ Une base de données de production comme PostgreSQL, c'est comme la **bibliothè
   ```sql
   CREATE INDEX CONCURRENTLY idx_users_metadata_gin ON users USING GIN (metadata);
   ```
+- **SARGability & Index Fonctionnels** : Ne JAMAIS envelopper une colonne indexée dans une fonction dans la clause `WHERE` (`WHERE LOWER(email) = ...` ou `WHERE DATE(created_at) = ...`), car cela annule l'index B-Tree et force un `Seq Scan`. Toujours écrire des requêtes SARGables (`WHERE created_at >= '2026-01-01' AND created_at < '2026-01-02'`), ou créer un index fonctionnel explicite :
+  ```sql
+  CREATE INDEX CONCURRENTLY idx_users_lower_email ON users (LOWER(email));
+  ```
 
 ### 2. Le Protocole de Migration Zéro-Downtime
 Ne JAMAIS exécuter un simple `CREATE INDEX` ou un `ALTER TABLE ADD COLUMN NOT NULL` sans valeur par défaut en production :
