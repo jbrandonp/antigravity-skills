@@ -76,8 +76,11 @@ apply only the steps affected by the change. User constraints override suggested
    landmarks, color meanings and readouts synchronized with the visible state. Check local deformation
    and attachments through relevant extremes, not just the resting silhouette.
 8. **Run and inspect the real output.** Build through the project's existing commands, then view
-   the artifact in an available authorized browser. Inspect overview, meaningful close-ups and the
-   important interactions. If automated capture is allowed, the optional shared command is:
+   the artifact in an available authorized browser. Audit WebGL / Three.js code against production standards:
+   ```sh
+   python3 scripts/audit_3d_scene.py -i templates/scaffold-vite-threejs/scene.js
+   ```
+   If automated capture is allowed, the optional shared command is:
    ```sh
    pnpm build
    python3 scripts/capture.py --dir dist --all-views --click "#control" --out captures
@@ -129,6 +132,7 @@ coverage gap, not an unavailable technique. No special justification is owed for
 - [Design synthesis](references/design-synthesis.md): a coherent visual system without uniform objects.
 - [Kits](templates/kits/README.md): reusable blueprints and scoped pipeline proofs.
 - [Blender/Three.js handoff](references/blender-threejs-handoff.md): tool responsibilities and asset transfer.
+- [Three.js PBR & Lighting Cheat Sheet](references/threejs_pbr_lighting_cheat_sheet.md): ACESFilmic tone mapping, shadow acne/bias tuning, and WebGL leak prevention.
 
 ## Small edits
 

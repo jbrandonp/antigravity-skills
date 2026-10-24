@@ -58,7 +58,12 @@ def cpu_info(system):
         match = re.search(r'model name\s*:\s*(.+)', run(['cat', '/proc/cpuinfo']) or '')
         brand = match.group(1).strip() if match else None
     elif system == 'Windows':
-        brand = first_line(run(['wmic', 'cpu', 'get', 'name', '/value']))
+        try:
+            import winreg
+            with winreg.OpenKey(winreg.HKEY_LOCAL_MACHINE, r"HARDWARE\DESCRIPTION\System\CentralProcessor\0") as key:
+                brand = winreg.QueryValueEx(key, "ProcessorNameString")[0].strip()
+        except Exception:
+            brand = first_line(run(['wmic', 'cpu', 'get', 'name', '/value'])) or platform.processor() or None
     return {'brand': brand, 'logical_cores': os.cpu_count()}
 
 
@@ -71,10 +76,29 @@ def memory_gb(system):
         match = re.search(r'MemTotal:\s+(\d+) kB', run(['cat', '/proc/meminfo']) or '')
         return round(int(match.group(1)) / 1024 ** 2, 1) if match else None
     elif system == 'Windows':
-        raw = re.sub(r'\D', '', run(['wmic', 'computersystem', 'get',
-                                     'TotalPhysicalMemory', '/value']) or '') or None
+        try:
+            import ctypes
+            class MEMORYSTATUSEX(ctypes.Structure):
+                _fields_ = [
+                    ("dwLength", ctypes.c_ulong),
+                    ("dwMemoryLoad", ctypes.c_ulong),
+                    ("ullTotalPhys", ctypes.c_ulonglong),
+                    ("ullAvailPhys", ctypes.c_ulonglong),
+                    ("ullTotalPageFile", ctypes.c_ulonglong),
+                    ("ullAvailPageFile", ctypes.c_ulonglong),
+                    ("ullTotalVirtual", ctypes.c_ulonglong),
+                    ("ullAvailVirtual", ctypes.c_ulonglong),
+                    ("sullAvailExtendedVirtual", ctypes.c_ulonglong),
+                ]
+            stat = MEMORYSTATUSEX()
+            stat.dwLength = ctypes.sizeof(MEMORYSTATUSEX)
+            if ctypes.windll.kernel32.GlobalMemoryStatusEx(ctypes.byref(stat)):
+                return round(stat.ullTotalPhys / (1024 ** 3), 1)
+        except Exception:
+            raw = re.sub(r'\D', '', run(['wmic', 'computersystem', 'get',
+                                         'TotalPhysicalMemory', '/value']) or '') or None
     try:
-        return round(int(raw) / 1024 ** 3, 1)
+        return round(int(raw) / 1024 ** 3, 1) if raw else None
     except (TypeError, ValueError):
         return None
 
@@ -108,12 +132,34 @@ def gpu_linux():
 
 
 def gpu_windows():
+    try:
+        import winreg
+        gpus = []
+        path = r"SYSTEM\CurrentControlSet\Control\Class\{4d36e968-e325-11ce-bfc1-08002be10318}"
+        with winreg.OpenKey(winreg.HKEY_LOCAL_MACHINE, path) as base_key:
+            for i in range(12):
+                try:
+                    with winreg.OpenKey(base_key, f"{i:04d}") as sub_key:
+                        name, _ = winreg.QueryValueEx(sub_key, "DriverDesc")
+                        if name and "basic" not in name.lower():
+                            gpus.append(name.strip())
+                except OSError:
+                    continue
+        if gpus:
+            discrete = [g for g in gpus if any(x in g.upper() for x in ("NVIDIA", "GEFORCE", "RTX", "GTX", "RADEON", "AMD"))]
+            chosen = discrete[0] if discrete else gpus[0]
+            vendor = "NVIDIA" if "NVIDIA" in chosen.upper() else ("AMD" if "AMD" in chosen.upper() or "RADEON" in chosen.upper() else "Intel")
+            return {'found': True, 'name': chosen, 'vendor': vendor, 'cores': None,
+                    'source': 'Windows Registry (DriverDesc)'}
+    except Exception:
+        pass
+
     text = run(['wmic', 'path', 'win32_VideoController', 'get', 'name'])
     names = [line.strip() for line in (text or '').splitlines()[1:] if line.strip()]
     if names:
         return {'found': True, 'name': names[0], 'vendor': None, 'cores': None,
                 'source': 'wmic path win32_VideoController get name'}
-    return {'found': False, 'source': 'wmic path win32_VideoController unavailable'}
+    return {'found': False, 'source': 'Windows Registry and wmic unavailable'}
 
 
 def gpu_info(system):
