@@ -3,7 +3,7 @@ name: anti-ui-slop
 description: 'Master Anti-UI Slop & UI Design Pro System. Eliminates generic AI-generated interfaces and builds production-grade software by combining UIZZE 800,000+ real web and iOS screens with 25+ foundational design laws across color theory (4-layer system, OKLCH, dark mode), layout, typography, cards, spacing, and micro-interactions. Use when designing, redesigning, polishing, critiquing, or pre-ship reviewing web or mobile apps. Trigger with "anti-ui-slop", "stop UI slop", "ui-design-pro", "ground this UI", "make it look professional", or "run the UI finish gate".'
 license: MIT
 metadata:
-  version: "2.0.0"
+  version: "2.1.0"
   author: "UIZZE and Design Pro Master Suite"
   compatibility: "Universal coding agent skill (Antigravity, Claude Code, Cursor, Copilot)"
   tags: "ui-design, design-system, design-laws, anti-slop, frontend, web-ui, ios-ui"
@@ -16,6 +16,53 @@ metadata:
 This skill transforms rough, AI-generated, or amateur UI into polished, production-grade software. It bridges two complementary paradigms:
 1. **Evidence-Based Real Screens**: Grounding UI in real, working product patterns (800,000+ screens via UIZZE).
 2. **Deterministic Design Laws**: 25+ mathematical and perceptual design rules encoded in `reference/design-laws.md` covering the 4-layer color system, OKLCH scales, typography hierarchies, card density, and micro-interactions.
+
+---
+
+## 💡 Comprendre l'Anti-UI Slop (Explication Simple pour un ado de 15 ans)
+
+L'IA génère souvent du code frontend qui "ressemble à du travail d'IA" (le fameux *UI Slop*). Comment le reconnaître et pourquoi il faut le bannir ?
+1. **Le Piège du Violet/Indigo** : Dès qu'une IA crée un site SaaS, elle met du violet (`indigo-600` ou `violet-500`) avec des cartes arrondies (`rounded-xl`) et une ombre floue partout. Au final, tous les sites se ressemblent comme deux gouttes d'eau.
+2. **Le Désastre du `transition-all`** : Mettre `transition-all` sur un bouton, c'est comme demander au moteur du navigateur de recalculer la position de tout l'écran à chaque milliseconde. Ça fait ramer la page ! On n'anime que les couleurs ou l'échelle (`transform`), jamais tout d'un coup.
+3. **Le Noir Pur Assassin (`#000000`)** : En mode sombre, les débutants mettent un fond noir absolu. Dans les vraies applications pros (comme Apple ou Linear), on utilise des gris très sombres et chauds (`#09090b`), et plus un élément est haut (une modale ou une carte), plus sa couleur s'éclaircit légèrement pour créer de la vraie profondeur.
+4. **Les Mots Creux du Marketing** : Les textes d'IA sont bourrés de *"Supercharge your workflow with next-gen AI"*. Dans le monde réel, un utilisateur veut des verbes d'action humains et clairs : *"Télécharger la facture PDF"*, *"Filtrer les stocks"*.
+5. **Les Chiffres qui Dansent** : Quand un compteur ou un prix défile sans la classe CSS `tabular-nums` ou une police mono, les chiffres bougent de gauche à droite parce que le chiffre "1" est moins large que le "8". Avec `tabular-nums`, tous les chiffres ont la même largeur et restent parfaitement alignés.
+
+---
+
+## 🛠️ Outils Déterministes Inclus (WAT Framework)
+
+Le skill intègre une suite d'outils CLI déterministes situés dans `scripts/` :
+
+### 1. Scanner Statique d'UI Slop (`scripts/scan_ui_slop.py`)
+Scanne tes fichiers HTML, JSX, TSX, Vue ou Svelte pour traquer automatiquement les tics d'IA et les violations de craft :
+```bash
+# Scanner un composant ou tout un dossier de projet :
+python scripts/scan_ui_slop.py ./src
+
+# Sortie structurée JSON pour intégration CI/CD :
+python scripts/scan_ui_slop.py ./src --json
+```
+
+### 2. Générateur de Design Tokens à 4 Couches (`scripts/generate_ui_tokens.py`)
+Génère une architecture de couleurs professionnelle (Canvas, Surface, Border, Accent) en CSS, Tailwind ou JSON :
+```bash
+# Générer les variables CSS (mode clair et sombre avec élévation) :
+python scripts/generate_ui_tokens.py --theme zinc-craft --format css
+
+# Exporter l'extension pour tailwind.config.js :
+python scripts/generate_ui_tokens.py --theme slate-enterprise --format tailwind
+```
+
+### 3. Suite de Tests Automatisée (`scripts/tests/test_anti_ui_slop.py`)
+Valide 8 tests unitaires de non-régression en 50ms :
+```bash
+python scripts/tests/test_anti_ui_slop.py
+```
+
+### 4. Playbook d'Excellence & Craftsmanship
+Pour les lois complètes d'atténuation du noir pur, courbes de Bézier pour micro-interactions, et hiérarchies typographiques :
+Consulte le [Playbook Anti-UI Slop](./references/anti_slop_craftsmanship_playbook.md).
 
 ---
 
