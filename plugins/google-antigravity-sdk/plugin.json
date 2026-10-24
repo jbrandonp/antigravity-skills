@@ -1,0 +1,19 @@
+{
+  "name": "google-antigravity-sdk",
+  "displayName": "Google Antigravity SDK",
+  "version": "2.0.0",
+  "description": "Design, implement, and orchestrate autonomous AI agents and multi-agent systems using the official Google Antigravity SDK.",
+  "author": {
+    "name": "Google Antigravity Team",
+    "url": "https://antigravity.google"
+  },
+  "license": "Apache-2.0",
+  "keywords": [
+    "antigravity",
+    "sdk",
+    "agents",
+    "multi-agent",
+    "orchestration",
+    "google"
+  ]
+}

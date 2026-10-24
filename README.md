@@ -2,17 +2,17 @@
 
 [![License: Apache 2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
 [![Google Antigravity](https://img.shields.io/badge/Antigravity-2.0%20Ready-4285F4.svg)](https://antigravity.google)
-[![Skills Count](https://img.shields.io/badge/Elite%20Skills-132%20Active-success.svg)](skills/)
+[![Skills Count](https://img.shields.io/badge/Elite%20Skills-135%20Active-success.svg)](skills/)
 [![DeepMind Science](https://img.shields.io/badge/DeepMind%20Science-41%20Skills-8A2BE2.svg)](plugins/science/)
 [![MCP Servers](https://img.shields.io/badge/MCP%20Servers-5%20Bundled-blue.svg)](mcp/)
-[![Total Tools](https://img.shields.io/badge/Total%20Tools-173%20Skills%20%2B%205%20MCP-orange.svg)](#)
+[![Total Tools](https://img.shields.io/badge/Total%20Tools-176%20Skills%20%2B%205%20MCP-orange.svg)](#)
 [![DeepMind Science](https://img.shields.io/badge/DeepMind%20Science-41%20Skills-8A2BE2.svg)](plugins/science/)
 [![Universal Agents](https://img.shields.io/badge/~%2F.agents%2Fskills-Compatible-orange.svg)](#-universal-agent-compatibility-agentsskills)
 [![Integrity Score](https://img.shields.io/badge/Audit%20Score-100%2F100-brightgreen.svg)](scripts/verify_skills.py)
 [![CI Status](https://img.shields.io/badge/CI-Passing-brightgreen.svg)](.github/workflows/validate-skills.yml)
 
 > **The Ultimate Production-Grade Skill & Customization Suite for [Google Antigravity](https://antigravity.google) and Modern AI Coding Agents.**  
-> Includes **132 audited elite skills**, **41 Google DeepMind Science skills** and **5 pre-bundled MCP servers**, the official **Google DeepMind Science toolkit** (41 skills + 3D Mol* interactive sidecar), custom Model Context Protocol (MCP) servers, full `~/.agents/skills` multi-agent support, and one-click installers.
+> Includes **135 audited elite skills**, **41 Google DeepMind Science skills** and **5 pre-bundled MCP servers**, the official **Google DeepMind Science toolkit** (41 skills + 3D Mol* interactive sidecar), custom Model Context Protocol (MCP) servers, full `~/.agents/skills` multi-agent support, and one-click installers.
 
 ---
 
@@ -21,7 +21,7 @@
 1. [Overview & Philosophy](#-overview--philosophy)
 2. [Universal Agent Compatibility (~/.agents/skills)](#-universal-agent-compatibility-agentsskills)
 3. [One-Click Installation](#-one-click-installation)
-4. [Elite Skills Catalog (132 Skills)](#-elite-skills-catalog-132-skills)
+4. [Elite Skills Catalog (135 Skills)](#-elite-skills-catalog-135-skills)
 5. [Google DeepMind Science Suite (41 Skills)](#-google-deepmind-science-suite-41-skills)
 6. [Plugins & MCP Architecture](#-plugins--mcp-architecture)
 7. [Zero-Trust Security & Sanitization](#-zero-trust-security--sanitization)
@@ -82,7 +82,14 @@ chmod +x scripts/install.sh && ./scripts/install.sh
 
 ---
 
-## 📦 Elite Skills Catalog (132 Skills)
+## 📦 Elite Skills Catalog (135 Skills)
+
+### 📐 Computer-Aided Design (CAD) & Parametric Engineering (2 Skills)
+
+| Skill | Description |
+| :--- | :--- |
+| [`fusion-360`](skills/fusion-360/SKILL.md) | Automate Autodesk Fusion parametric models with the Python API, inspect timeline features, and prepare CAM workflows for review. |
+| [`solidworks`](skills/solidworks/SKILL.md) | Automate SOLIDWORKS parts and assemblies with COM, Python, and VBA; inspect FeatureManager rebuild errors, configure mates, and batch-export CAD files. |
 
 ### 🌌 Google Antigravity & Agentic Customizations (11 Skills)
 
@@ -126,6 +133,7 @@ chmod +x scripts/install.sh && ./scripts/install.sh
 | [`ue5-metasound-procedural-audio`](skills/ue5-metasound-procedural-audio/SKILL.md) | Architect and implement Unreal Engine 5 MetaSound procedural audio graphs and World of Warcraft style 3D audio spatial ambience. Sample-accurate digital signal processing (DSP), dynamic combat audio, SoundEntries relationals with weighted random variation, surface-material footstep triggers, equal-power zone crossfading, music priority stacks with combat grace periods, and ducking compressors. |
 | [`ue5-nanite-substrate-chaos-pipeline`](skills/ue5-nanite-substrate-chaos-pipeline/SKILL.md) | Architect and implement next-generation Unreal Engine 5.5 - 5.8 rendering, materials, and physics. Unifies Nanite virtualized micro-polygon geometry (Hi-Z occlusion culling, meshlet cluster trees), Lumen dynamic Global Illumination (Surface Cache, Mesh Distance Fields), Substrate modular BSDF materials (Slab layers, energy conservation), and Chaos Physics (Voronoi Geometry Collections, strain damage thresholds, physics field impulses, and active physical ragdolls). |
 | [`ue5-pcg-world-generation`](skills/ue5-pcg-world-generation/SKILL.md) | Architect and implement Unreal Engine 5 Procedural Content Generation (PCG) Framework graphs. Generates massive open-world biomes, point grids, Poisson disk distributions, spline samplers, and integrates with World Partition. |
+| [`unity`](skills/unity/SKILL.md) | Automate Unity editor and runtime workflows with C#, Addressables, render pipelines, and batch builds. |
 
 ### 📱 Mobile Development (Expo, React Native, iOS, Android, EAS)
 

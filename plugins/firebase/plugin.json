@@ -1,3 +1,19 @@
 {
-  "name": "firebase"
+  "name": "firebase",
+  "displayName": "Firebase Suite",
+  "version": "1.0.0",
+  "description": "Full Firebase project lifecycle, Firestore, Auth, Cloud Functions, and security rules management.",
+  "author": {
+    "name": "Firebase Team",
+    "url": "https://firebase.google.com"
+  },
+  "license": "Apache-2.0",
+  "keywords": [
+    "firebase",
+    "firestore",
+    "cloud-functions",
+    "auth",
+    "security-rules",
+    "deployment"
+  ]
 }
