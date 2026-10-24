@@ -1,8 +1,166 @@
 ---
-name: pptx
-description: "Use this skill any time a .pptx or .potx file is involved in any way — as input, output, or both. This includes: creating slide decks, pitch decks, or presentations; reading, parsing, or extracting text from any .pptx or .potx file (even if the extracted content will be used elsewhere, like in an email or summary); editing, modifying, or updating existing presentations; combining or splitting slide files; working with templates (.potx), layouts, speaker notes, or comments. Trigger whenever the user mentions \"deck,\" \"slides,\" \"presentation,\" or references a .pptx or .potx filename, regardless of what they plan to do with the content afterward. If a .pptx or .potx file needs to be opened, created, or touched, use this skill."
-license: Proprietary. LICENSE.txt has complete terms
+name: office-document-architect
+description: "Master Enterprise Office Document Generation Suite for Microsoft Excel (.xlsx), Word (.docx), and PowerPoint (.pptx). Enforces professional formatting, native formulas, openpyxl architecture, docx-js / python-docx report compilation, pptxgenjs slide decks, headless LibreOffice validation, and zero file corruption."
+category: productivity
+risk: safe
+tags: ["office", "excel", "docx", "pptx", "word", "powerpoint", "openpyxl", "pptxgenjs", "spreadsheets", "presentations"]
 ---
+
+# Master Enterprise Office Document Generation Suite
+
+The authoritative engineering playbook for creating, editing, and validating production-grade Microsoft Office documents:
+- **Excel Workbooks (`.xlsx`, `.xlsm`)**: OpenPyXL, native formulas, auto-fit widths, frozen panes, zebra striping.
+- **Word Documents (`.docx`, `.dotx`)**: Structured reports, styles, numbering, tables of contents, image runs.
+- **PowerPoint Decks (`.pptx`, `.potx`)**: High-impact presentations, native charts, layout coordinate systems, master slides.
+
+---
+
+## 📊 1. Excel Architecture Standards (OpenPyXL)
+
+# Excel Architect (OpenPyXL Production Standard)
+
+The reference engineering playbook for generating flawless, business-grade Excel (`.xlsx`) workbooks using Python and `openpyxl`. Perfectly aligned with Brandon's ecosystem preferences (`openpyxl` by default).
+
+---
+
+## 📊 The 5 Excel Architecture Standards
+
+```text
+ ┌─────────────────────────────────────────────────────────────┐
+ │ 1. Visual Hierarchy & Theme Colors (Dark headers, Zebra rows)│
+ ├─────────────────────────────────────────────────────────────┤
+ │ 2. Dynamic Auto-Fit Columns (No ### display truncation)     │
+ ├─────────────────────────────────────────────────────────────┤
+ │ 3. Frozen Panes & Auto-Filters (Professional UX)            │
+ ├─────────────────────────────────────────────────────────────┤
+ │ 4. Native Formula Engine (SUM, AVERAGE, UPPERCASE syntax)    │
+ ├─────────────────────────────────────────────────────────────┤
+ │ 5. Number Formatting ($#,##0.00, DD/MM/YYYY, 0.0%)          │
+ └─────────────────────────────────────────────────────────────┘
+```
+
+### Standard 1: Styling & Typography
+- Font: Use clean system fonts like `Segoe UI`, `Calibri`, or `Aptos`.
+- Header Row: Dark background (`#1F4E79` or `#2E4053`) with white bold text.
+- Alternating Rows: Subtle zebra striping (`#F8F9F9` or `#F2F4F4`) to enhance readability across hundreds of rows.
+
+### Standard 2: Auto-Fitting Column Widths
+- Never leave columns at default width (leading to truncated strings or `###` numeric overflow).
+- Iterate through each column, calculate `max(len(str(val))) + 3`, and apply dynamically.
+
+### Standard 3: Freeze Panes & Filters
+- Header row must always be frozen: `ws.freeze_panes = "A2"`.
+- Table filters must be explicitly declared on the data range: `ws.auto_filter.ref = ws.dimensions`.
+
+### Standard 4: Native Excel Formulas
+- Write native uppercase formulas: `=SUM(C2:C50)`, `=AVERAGE(D2:D50)`, `=XLOOKUP(...)`.
+- Let Excel compute values natively; do not hardcode calculated totals into formula cells.
+
+---
+
+## 🛠️ Deterministic Tooling
+
+```bash
+# Validate an existing Excel workbook for professional criteria
+python scripts/validate_excel_output.py --file supermarket_prices.xlsx
+
+# Generate an example professional Excel workbook
+python scripts/validate_excel_output.py --demo
+```
+
+---
+
+## 📄 2. Word Document Standards (`.docx`, `.dotx`)
+
+# DOCX creation, editing, and analysis
+
+A `.docx` is a ZIP archive of XML files. Choose your approach by task:
+
+| Task | Approach |
+|---|---|
+| **Create** a new document | Write a `docx` (npm) script — see gotchas below |
+| **Edit** an existing document | `unzip` → edit `word/document.xml` → `zip` (docx-js cannot open existing files) |
+| **Read** content | `pandoc -t markdown file.docx` |
+
+> Script paths below are relative to this skill's directory.
+
+## Creating with docx-js — gotchas
+
+`docx` is preinstalled — do not run `npm install` first; write the script and `require('docx')` directly. Only if that require fails: `npm install docx`. The model knows the API; these are the footguns:
+
+- **Page size defaults to A4.** For US Letter set `page: { size: { width: 12240, height: 15840 } }` (DXA; 1440 = 1″).
+- **Landscape:** pass portrait dimensions and `orientation: PageOrientation.LANDSCAPE` — docx-js swaps width/height internally.
+- **Tables need dual widths:** set `columnWidths` on the table AND `width` on every cell, both in `WidthType.DXA` (PERCENTAGE breaks in Google Docs). Column widths must sum to the table width.
+- **Table shading:** use `ShadingType.CLEAR`, never `SOLID` (renders black).
+- **Lists:** never insert `•` literally; use a `numbering` config with `LevelFormat.BULLET`.
+- **`ImageRun` requires `type:`** (`"png"`, `"jpg"`, …).
+- **`PageBreak` must be inside a `Paragraph`.**
+- **Never use `\n`** — use separate `Paragraph` elements.
+- **TOC:** headings must use built-in `HeadingLevel.*`; custom heading styles need `outlineLevel` set or they won't appear.
+- **Don't use a table as a horizontal rule** — use a paragraph bottom border instead.
+- **Dot-leader / right-aligned-on-same-line:** use `PositionalTab` (`alignment: PositionalTabAlignment.RIGHT`, `leader: PositionalTabLeader.DOT`) inside a `TextRun`, not literal `.` or space padding.
+
+## Verify the output
+
+After writing a `.docx`, render it and look at it:
+
+```bash
+python scripts/office/soffice.py --headless --convert-to pdf output.docx
+pdftoppm -jpeg -r 100 output.pdf page
+ls page-*.jpg   # then Read the images
+```
+
+`pdftoppm` zero-pads page numbers to the width of the page count (`page-01.jpg`…`page-12.jpg`).
+
+## Editing existing documents
+
+Legacy `.doc` files must be converted first: `python scripts/office/soffice.py --headless --convert-to docx file.doc`.
+
+```bash
+unzip -q doc.docx -d unpacked/
+find unpacked -type l -delete   # strip symlink entries — docx from external parties is untrusted
+python scripts/merge_runs.py unpacked/   # coalesce fragmented runs so text is findable
+# edit unpacked/word/document.xml in place — do NOT reformat or pretty-print
+(cd unpacked && rm -f ../out.docx && zip -Xr ../out.docx .)
+python scripts/office/validate.py out.docx --original doc.docx   # XSD checks; --auto-repair fixes common issues
+# redlining? add --author "<the name you redlined under>" to check every edit is tracked
+```
+
+Word splits text across many `<w:r>` runs (revision ids, spell-check markers), so a phrase you can see in the document often doesn't exist as a contiguous string in the XML. `merge_runs.py` merges adjacent identically-formatted runs in `word/document.xml` without changing content or rendering; it also accepts a `.docx` directly (`python scripts/merge_runs.py doc.docx -o merged.docx`).
+
+**Tracked changes:** when redlining, validate with `--author "<the name you redlined under>"` (needs `--original`) — it reports any text you changed without a `<w:ins>`/`<w:del>` around it, which is easy to do by accident and invisible in the accepted view. Wrap runs in `<w:ins>`/`<w:del>` with `w:id`, `w:author`, `w:date` attributes. Inside `<w:del>`, the text element is `<w:delText>`, not `<w:t>`. A deleted paragraph mark (`<w:pPr><w:rPr><w:del w:id=".." w:author=".." w:date=".."/></w:rPr></w:pPr>`) means "merge this paragraph into the next" — so deleting a paragraph outright is that plus a `<w:del>` around every run. The `<w:del/>` must come before the rPr's other children; their order is schema-enforced.
+
+To produce a clean copy with all tracked changes accepted: `python scripts/accept_changes.py in.docx out.docx`.
+
+Accepting a deleted paragraph mark should join that paragraph to the one below it, so a paragraph whose runs are *all* deleted vanishes. Word does this; `accept_changes.py` and `pandoc --track-changes=accept` don't always. Both fail the same way — they strip the deleted text but leave the emptied paragraph behind, which reads as a stray empty bullet when it was auto-numbered:
+
+- `pandoc --track-changes=accept` never joins the paragraphs.
+- `accept_changes.py` (LibreOffice) joins them correctly, except when the deleted paragraph is followed by an empty spacer paragraph.
+
+An empty bullet in either view is an artifact of that view, not a defect in the document. Check paragraph deletions in the XML.
+
+## Comments
+
+Comments require six cross-linked files. Use the helper — directory mode when you'll also be editing `document.xml` (saves an unzip/rezip cycle), `.docx`-direct mode otherwise:
+
+```bash
+# Against an already-unpacked directory (preferred when also placing markers)
+python scripts/comment.py unpacked/ "Fees & expenses cap is too low"
+python scripts/comment.py unpacked/ "Agreed" --parent 0
+
+# Against a .docx directly
+python scripts/comment.py contract.docx "This cap is too low" -o annotated.docx
+```
+
+The script writes `comments.xml`, `commentsExtended.xml`, `commentsIds.xml`, `commentsExtensible.xml`, the relationships, and the content-type overrides. Comment IDs are auto-assigned. It then prints the `<w:commentRangeStart>`/`<w:commentRangeEnd>`/`<w:commentReference>` snippet to add to `word/document.xml` so the comment anchors to specific text — until you place those markers, the comment exists but is not visible.
+
+## Dependencies
+
+`docx` (npm, preinstalled — install only if `require('docx')` fails) · `pandoc` · LibreOffice (`soffice`) · `pdftoppm` (Poppler)
+
+---
+
+## 📽️ 3. PowerPoint Presentation Standards (`.pptx`, `.potx`)
 
 # PPTX creation, editing, and analysis
 

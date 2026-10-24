@@ -4,18 +4,18 @@
 [![Google Antigravity](https://img.shields.io/badge/Antigravity-2.0%20Ready-4285F4.svg)](https://antigravity.google)
 [![Claude Code Ready](https://img.shields.io/badge/Claude%20Code-Compatible-D97706.svg)](CLAUDE.md)
 [![Hermes Agent Ready](https://img.shields.io/badge/Hermes%20Agent-Compatible-10B981.svg)](hermes/)
-[![Elite Skills](https://img.shields.io/badge/Elite%20Skills-117%20Active-success.svg)](skills/)
+[![Elite Skills](https://img.shields.io/badge/Elite%20Skills-112%20Active-success.svg)](skills/)
 [![Hermes Mega-Suites](https://img.shields.io/badge/Hermes%20Mega--Suites-10%20Suites-FF6B6B.svg)](hermes/mega-suites/)
 [![Hermes Master-Suites](https://img.shields.io/badge/Hermes%20Master--Suites-50%20Suites-orange.svg)](hermes/master-suites/)
 [![DeepMind Science](https://img.shields.io/badge/DeepMind%20Science-41%20Skills-8A2BE2.svg)](plugins/science/)
 [![Google Stitch](https://img.shields.io/badge/Google%20Stitch-16%20Skills-4285F4.svg)](plugins/stitch-design/)
 [![MCP Servers](https://img.shields.io/badge/MCP%20Servers-8%20Bundled-blue.svg)](mcp/)
-[![Total Tools](https://img.shields.io/badge/Total%20Tools-234%20Skills%20%26%20Suites-brightgreen.svg)](#)
+[![Total Tools](https://img.shields.io/badge/Total%20Tools-229%20Skills%20%26%20Suites-brightgreen.svg)](#)
 [![Integrity Score](https://img.shields.io/badge/Audit%20Score-100%2F100-brightgreen.svg)](scripts/verify_skills.py)
 [![CI Status](https://img.shields.io/badge/CI-Passing-brightgreen.svg)](.github/workflows/validate-skills.yml)
 
 > **The Ultimate Production-Grade Skill & Customization Suite for [Google Antigravity](https://antigravity.google), [Anthropic Claude Code](CLAUDE.md), [Hermes Agent](hermes/), Cursor, and Modern AI Coding Agents.**  
-> Unifies **117 audited elite skills**, **10 Hermes Mega-Suites** (~330,000 words designed for autonomous marathon tasks), **50 Hermes Master-Suites** (330+ micro-skills consolidated with zero duplicate bloat), the official **Google DeepMind Science toolkit** (41 skills + 3D Mol* interactive sidecar), the **Google Labs Stitch design suite** (16 skills across 3 plugins), **8 pre-bundled MCP servers** (Blender, Cloud Run, Firebase, Genkit, Science Mol*, eBay, Vinted, Web Tools), and one-click installers.
+> Unifies **112 audited elite skills**, **10 Hermes Mega-Suites** (~330,000 words designed for autonomous marathon tasks), **50 Hermes Master-Suites** (330+ micro-skills consolidated with zero duplicate bloat), the official **Google DeepMind Science toolkit** (41 skills + 3D Mol* interactive sidecar), the **Google Labs Stitch design suite** (16 skills across 3 plugins), **8 pre-bundled MCP servers** (Blender, Cloud Run, Firebase, Genkit, Science Mol*, eBay, Vinted, Web Tools), and one-click installers.
 
 ---
 
@@ -28,7 +28,7 @@
    - [10 All-in-One Mega-Suites](#10-all-in-one-mega-suites-330000-words)
    - [50 Consolidated Master Suites](#50-consolidated-master-suites)
    - [Hermes MCP Servers & Autonomous Tools](#hermes-mcp-servers-autonomous-tools)
-5. [Elite Skills Catalog (117 Skills)](#elite-skills-catalog-117-skills)
+5. [Elite Skills Catalog (112 Skills)](#elite-skills-catalog-112-skills)
 6. [Google DeepMind Science Suite (41 Skills)](#google-deepmind-science-suite-41-skills)
 7. [Google Labs Stitch Design Suite (16 Skills)](#google-labs-stitch-design-suite-16-skills)
 8. [Plugins & MCP Architecture](#plugins-mcp-architecture)
@@ -188,25 +188,22 @@ Located in [`hermes/mcp-servers/`](hermes/mcp-servers/) and [`hermes/scripts/`](
 
 ---
 
-## 📦 Elite Skills Catalog (117 Skills)
+## 📦 Elite Skills Catalog (112 Skills)
 
-### 📐 Computer-Aided Design (CAD) & Parametric Engineering (2 Skills)
-
-| Skill | Description |
-| :--- | :--- |
-| [`fusion-360`](skills/fusion-360/SKILL.md) | Automate Autodesk Fusion parametric models with the Python API, inspect timeline features, and prepare CAM workflows for review. |
-| [`solidworks`](skills/solidworks/SKILL.md) | Automate SOLIDWORKS parts and assemblies with COM, Python, and VBA; inspect FeatureManager rebuild errors, configure mates, and batch-export CAD files. |
-
-### 🌌 Google Antigravity & Agentic Customizations (11 Skills)
+### 📐 Computer-Aided Design (CAD) & Parametric Engineering (1 Master Suite)
 
 | Skill | Description |
 | :--- | :--- |
-| [`agy-customizations`](skills/agy-customizations/SKILL.md) | Comprehensive guide and reference for the Antigravity Customization System: loading priority, discovery mechanisms, skills, rules, plugins, hooks, and MCP servers. |
+| [`cad-parametric-engineering-suite`](skills/cad-parametric-engineering-suite/SKILL.md) | Unified CAD/CAM and Parametric Engineering Master Suite for Autodesk Fusion and Dassault Systèmes SOLIDWORKS. Covers parametric feature modeling, timeline inspection, BOM/mass properties reports, CAM toolpaths, COM / Python API automation, and batch export (STEP, STL, DXF, PDF). |
+
+### 🌌 Google Antigravity & Agentic Customizations (9 Skills)
+
+| Skill | Description |
+| :--- | :--- |
+| [`antigravity-master-platform`](skills/antigravity-master-platform/SKILL.md) | Authoritative Google Antigravity (AGY) Platform & Customization Master Suite: Antigravity IDE, CLI (agy), Antigravity 2.0 app architecture, official Python SDK agent orchestration, and complete customization engine (skills, rules, plugins, lifecycle hooks, and MCP servers). |
 | [`android-cli`](skills/android-cli/SKILL.md) | Instructions for installing and using the `android` CLI: create projects, run apps, manage virtual devices, take screenshots, UI inspection, and SDK management. |
-| [`antigravity-guide`](skills/antigravity-guide/SKILL.md) | Authoritative reference and sitemap for Google Antigravity (AGY CLI, Antigravity 2.0, IDE, Python SDK, slash commands, keybindings, and customizations). |
 | [`automation`](skills/automation/SKILL.md) | Interactive guide to design and create scheduled background automations and recurring cron tasks. |
 | [`generative_ui`](skills/generative_ui/SKILL.md) | Render rich interactive HTML widgets inline in chat or as standalone artifacts (diagrams, data visualizations, controls, educational walkthroughs). |
-| [`google-antigravity-sdk`](skills/google-antigravity-sdk/SKILL.md) | Design, implement, and debug autonomous AI agents and multi-agent systems using the official Google Antigravity (AGY) SDK. |
 | [`crewai-orchestration-suite`](skills/crewai-orchestration-suite/SKILL.md) | Master CrewAI Multi-Agent Orchestration Suite: Architecture decisions, mandatory CLI scaffolding (crewai create flow), Agent design (Role-Goal-Backstory), Task design, Structured outputs, Flow state machines (@start/@listen), YAML configs, tool integration, and official documentation lookup via docs.crewai.com/llms.txt. Complete all-in-one suite. |
 | [`migrate-workflows`](skills/migrate-workflows/SKILL.md) | Automatically migrate legacy workflows to modern skills across global and workspace configurations. |
 | [`permissioned-github`](skills/permissioned-github/SKILL.md) | Guidelines for interacting with GitHub and requesting user permissions safely when commands fail due to sandbox restrictions. |
@@ -302,13 +299,11 @@ Located in [`hermes/mcp-servers/`](hermes/mcp-servers/) and [`hermes/scripts/`](
 | [`ast-grep`](skills/ast-grep/SKILL.md) | Searches and rewrites code by AST shape across 25 languages. Use when the target is a syntax pattern (every call/class/import shaped like X, a codemod, a YAML rule) rather than literal text; for plain strings, comments, or filenames, use rg. |
 | [`datasette-sqlite-detective`](skills/datasette-sqlite-detective/SKILL.md) | Investigate, profile, and audit SQLite databases using Simon Willison Datasette Detective standards, while guarding schema evolution without data loss. Validates WAL mode, foreign key integrity, missing indexes, query plan efficiency (EXPLAIN QUERY PLAN), table fragmentation, detects schema drift between code models and production databases, and generates reversible UP/DOWN migration scripts. |
 | [`dbt-data-pipeline-engineer`](skills/dbt-data-pipeline-engineer/SKILL.md) | Design, orchestrate, and test scalable data transformation pipelines using dbt (data build tool), modern orchestrators (Dagster, Prefect, Airflow), and cloud data warehouses (BigQuery, Snowflake). Covers staging/intermediate/marts modeling, lineage graphs, incremental models, and automated data quality tests. |
-| [`docx`](skills/docx/SKILL.md) | Use this skill whenever the user wants to create, read, edit, or manipulate Word documents (.docx files) or Word templates (.dotx files). Triggers include: any mention of 'Word doc', 'word document', '.docx', '.dotx', or requests to produce professional documents with formatting like tables of contents, headings, page numbers, or letterheads. Also use when extracting or reorganizing content from .docx or .dotx files, inserting or replacing images in documents, performing find-and-replace in Word files, working with tracked changes or comments, or converting content into a polished Word document. If the user asks for a 'report', 'memo', 'letter', 'template', or similar deliverable as a Word or .docx file, use this skill. Do NOT use for PDFs, spreadsheets, Google Docs, or general coding tasks unrelated to document generation. |
 | [`duckdb-parquet-analyst`](skills/duckdb-parquet-analyst/SKILL.md) | Perform high-performance columnar analytics, query Parquet datasets, and benchmark data pipelines using DuckDB, while enforcing dataset quality based on Andrew Ng Data-Centric AI standards (detecting duplicate records, missing fields, distribution skew, corrupted types, and statistical anomalies in scraped supermarket datasets). |
-| [`excel-architect`](skills/excel-architect/SKILL.md) | Design and generate production-grade Excel spreadsheets (.xlsx) using openpyxl. Enforces professional styling, native formulas (SUM, AVERAGE, XLOOKUP), auto-fit column widths, freeze panes, data filters, and zebra-striping without file corruption. |
+| [`office-document-architect`](skills/office-document-architect/SKILL.md) | Master Enterprise Office Document Generation Suite for Microsoft Excel (.xlsx), Word (.docx), and PowerPoint (.pptx). Enforces professional formatting, native formulas, openpyxl architecture, docx-js / python-docx report compilation, pptxgenjs slide decks, headless LibreOffice validation, and zero file corruption. |
 | [`fastapi-sqlite-production`](skills/fastapi-sqlite-production/SKILL.md) | Architect and implement production-grade asynchronous FastAPI services with concurrent SQLite persistence (WAL mode, busy_timeout), Pydantic V2 schemas, JWT auth with refresh tokens, and ultra-lean native execution (uv/venv, zero-Docker). |
 | [`pdf`](skills/pdf/SKILL.md) | Use this skill whenever the user wants to do anything with PDF files. This includes reading or extracting text/tables from PDFs, combining or merging multiple PDFs into one, splitting PDFs apart, rotating pages, adding watermarks, creating new PDFs, filling PDF forms, encrypting/decrypting PDFs, extracting images, and OCR on scanned PDFs to make them searchable. If the user mentions a .pdf file or asks to produce one, use this skill. |
 | [`postgresql-production-dba`](skills/postgresql-production-dba/SKILL.md) | Design, optimize, and manage production PostgreSQL databases. Covers 3NF relational modeling, B-Tree/GIN/GiST index tuning, EXPLAIN (ANALYZE, BUFFERS) query optimization, zero-downtime schema migrations (CREATE INDEX CONCURRENTLY, lock timeouts), connection pooling (PgBouncer), and modern ORMs/query builders (Drizzle, Prisma, SQLAlchemy). |
-| [`pptx`](skills/pptx/SKILL.md) | Use this skill any time a .pptx or .potx file is involved in any way — as input, output, or both. This includes: creating slide decks, pitch decks, or presentations; reading, parsing, or extracting text from any .pptx or .potx file (even if the extracted content will be used elsewhere, like in an email or summary); editing, modifying, or updating existing presentations; combining or splitting slide files; working with templates (.potx), layouts, speaker notes, or comments. Trigger whenever the user mentions \"deck,\" \"slides,\" \"presentation,\" or references a .pptx or .potx filename, regardless of what they plan to do with the content afterward. If a .pptx or .potx file needs to be opened, created, or touched, use this skill. |
 | [`python-pypi-package-builder`](skills/python-pypi-package-builder/SKILL.md) | End-to-end skill for building, testing, linting, versioning, and publishing a production-grade Python library to PyPI. Covers all four build backends (setuptools+setuptools_scm, hatchling, flit, poetry), PEP 440 versioning, semantic versioning, dynamic git-tag versioning, OOP/SOLID design, type hints (PEP 484/526/544/561), Trusted Publishing (OIDC), and the full PyPA packaging flow. Use for: creating Python packages, pip-installable SDKs, CLI tools, framework plugins, pyproject.toml setup, py.typed, setuptools_scm, semver, mypy, pre-commit, GitHub Actions CI/CD, or PyPI publishing. |
 | [`stealth-hybrid-scraper-architect`](skills/stealth-hybrid-scraper-architect/SKILL.md) | Architect and implement resilient anti-detection web scrapers for supermarket pricing (Colruyt, Delhaize, Carrefour). Enforces JA4 TLS fingerprint spoofing via curl_cffi, hybrid clearance cookie harvesting, and modular ETL pipelines. |
 
