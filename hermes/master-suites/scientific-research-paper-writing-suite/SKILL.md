@@ -14,7 +14,6 @@ merged_member_skills:
   - blogwatcher (01_Hermes_Skills_Core_Library\research\blogwatcher\SKILL.md)
   - llm-wiki (01_Hermes_Skills_Core_Library\research\llm-wiki\SKILL.md)
   - ml-paper-writing (01_Hermes_Skills_Core_Library\research\ml-paper-writing\SKILL.md)
-  - polymarket (01_Hermes_Skills_Core_Library\research\polymarket\SKILL.md)
   - research-paper-writing (01_Hermes_Skills_Core_Library\research\research-paper-writing\SKILL.md)
 ---
 
@@ -1834,10 +1833,6 @@ See [templates/README.md](templates/README.md) for detailed setup instructions.
 
 ---
 
-## Module 5: `polymarket`
-
-- **Origine :** `01_Hermes_Skills_Core_Library\research\polymarket\SKILL.md`
-- **Rôle / Objectif :** Query Polymarket prediction market data — search markets, get prices, orderbooks, and price history. Read-only via public REST APIs, no API key needed.
 
 ## Polymarket — Prediction Market Data
 

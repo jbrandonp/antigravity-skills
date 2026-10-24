@@ -4,6 +4,8 @@ description: >-
   Browser Automation, Data Consolidation & Interactive Data Science Suite: Headless browser automation harness, Jupyter live kernel workflows, automated data consolidation ETL, identity graph resolution, real-time webhook subscriptions, and LSP codebase indexing.
 version: 2.0.0
 tags:
+  - geolocation
+  - find-nearby
   - browser-automation
   - data-engineering
   - jupyter
@@ -12,6 +14,7 @@ tags:
   - webhooks
   - lsp-index
 merged_member_skills:
+  - find-nearby (scripts/find-nearby_find_nearby.py)
   - browser-harness (01_Hermes_Skills_Core_Library\browser-harness\SKILL.md)
   - data-consolidation-agent (01_Hermes_Skills_Core_Library\specialized\data-consolidation-agent\SKILL.md)
   - identity-graph-operator (01_Hermes_Skills_Core_Library\specialized\identity-graph-operator\SKILL.md)
@@ -1576,3 +1579,8 @@ If webhooks aren't working:
 
 
 ---
+
+
+## Module Addon: `find-nearby` (Geospatial Location Search)
+- **Role**: Search places, businesses, and points of interest (POI) by coordinates or bounding box via OpenStreetMap Nominatim and Overpass APIs.
+- **Script**: `scripts/find-nearby_find_nearby.py`

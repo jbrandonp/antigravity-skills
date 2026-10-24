@@ -4,6 +4,8 @@ description: >-
   Web3, Solidity & Zero-Knowledge Blockchain Suite: Production Solidity smart contract engineering, blockchain security auditing, zero-knowledge proofs (ZK Steward), and crypto social intelligence (Binance Square).
 version: 2.0.0
 tags:
+  - polymarket
+  - prediction-markets
   - web3
   - crypto
   - blockchain
@@ -12,6 +14,7 @@ tags:
   - security-audit
   - zk-proofs
 merged_member_skills:
+  - polymarket (scripts/polymarket_polymarket.py)
   - binance-square (01_Hermes_Skills_Core_Library\social-media\binance-square\SKILL.md)
   - binance-square-scraper (01_Hermes_Skills_Core_Library\browser-harness\binance-square-scraper\SKILL.md)
   - blockchain-security-auditor (01_Hermes_Skills_Core_Library\specialized\blockchain-security-auditor\SKILL.md)
@@ -1440,7 +1443,9 @@ main().catch((error) => {
 
 ```markdown
 type: Structure_Note
-tags: [LLM, AI-infrastructure, deep-learning]
+tags:
+  - polymarket
+  - prediction-markets [LLM, AI-infrastructure, deep-learning]
 links: ["[[Index_LLM_Stack]]", "[[Index_AI_Observations]]"]
 
 ## [标题] 结构笔记
@@ -1564,3 +1569,9 @@ ZK 管家的工作流引用了以下能力。它们不属于 The Agency 仓库�
 
 
 ---
+
+
+## Module Addon: `polymarket` (Decentralized Prediction Markets API)
+- **Role**: Query Polymarket prediction markets on Polygon, fetch contract orders, market odds, resolution dates, and liquidity data.
+- **Script**: `scripts/polymarket_polymarket.py`
+- **Reference**: `references/polymarket_api-endpoints.md`

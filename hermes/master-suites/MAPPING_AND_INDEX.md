@@ -18,10 +18,10 @@
 | 7 | [**`china-growth-marketing-suite`**](china-growth-marketing-suite/SKILL.md) | **8** | 4,249 | Complete Chinese digital acquisition and e-commerce suite: Xiaohongshu (RED), Douyin, Bilibili, Baid... |
 | 8 | [**`creative-code-generative-art-suite`**](creative-code-generative-art-suite/SKILL.md) | **5** | 8,763 | Generative Art, Motion Graphics & Visual Math Suite: p5.js algorithmic visual art, Manim mathematica... |
 | 9 | [**`creative-diagramming-suite`**](creative-diagramming-suite/SKILL.md) | **4** | 5,520 | Visual Architecture & Generative ASCII Suite: Dark-themed system architecture diagrams, Excalidraw J... |
-| 10 | [**`crypto-web3-blockchain-suite`**](crypto-web3-blockchain-suite/SKILL.md) | **5** | 4,149 | Web3, Solidity & Zero-Knowledge Blockchain Suite: Production Solidity smart contract engineering, bl... |
-| 11 | [**`data-engineering-browser-automation-suite`**](data-engineering-browser-automation-suite/SKILL.md) | **6** | 6,136 | Browser Automation, Data Consolidation & Interactive Data Science Suite: Headless browser automation... |
+| 10 | [**`crypto-web3-blockchain-suite`**](crypto-web3-blockchain-suite/SKILL.md) | **6** | 4,149 | Web3, Solidity & Zero-Knowledge Blockchain Suite: Production Solidity smart contract engineering, bl... |
+| 11 | [**`data-engineering-browser-automation-suite`**](data-engineering-browser-automation-suite/SKILL.md) | **7** | 6,136 | Browser Automation, Data Consolidation & Interactive Data Science Suite: Headless browser automation... |
 | 12 | [**`embedded-systems-suite`**](embedded-systems-suite/SKILL.md) | **3** | 1,883 | Bare-metal and Embedded Linux Systems Suite: C/C++ firmware engineering, Linux kernel device driver ... |
-| 13 | [**`enterprise-finance-risk-pricing-governance-suite`**](enterprise-finance-risk-pricing-governance-suite/SKILL.md) | **6** | 6,200 | Enterprise Accounts Payable, Dynamic Pricing & Risk Governance Suite: Automated accounts payable inv... |
+| 13 | [**`enterprise-finance-risk-pricing-governance-suite`**](enterprise-finance-risk-pricing-governance-suite/SKILL.md) | **5** | 6,200 | Enterprise Accounts Payable, Dynamic Pricing & Risk Governance Suite: Automated accounts payable inv... |
 | 14 | [**`enterprise-knowledge-pkm-collaboration-suite`**](enterprise-knowledge-pkm-collaboration-suite/SKILL.md) | **8** | 4,977 | Personal Knowledge Management (PKM), Meeting Intelligence & Developer Advocacy Suite: Obsidian markd... |
 | 15 | [**`enterprise-messaging-integration-suite`**](enterprise-messaging-integration-suite/SKILL.md) | **4** | 4,686 | Enterprise Messaging & Communication Integrations Suite: DingTalk bot webhooks, Feishu/Lark enterpri... |
 | 16 | [**`enterprise-support-operations-suite`**](enterprise-support-operations-suite/SKILL.md) | **7** | 7,086 | Customer Support & Operations Command Suite: Automated ticket response protocols, executive summarie... |
@@ -49,7 +49,7 @@
 | 38 | [**`project-management-agile-suite`**](project-management-agile-suite/SKILL.md) | **6** | 2,123 | Agile Project Leadership & Studio Production Suite: Jira sprint workflows, experiment tracking, game... |
 | 39 | [**`quality-assurance-testing-suite`**](quality-assurance-testing-suite/SKILL.md) | **8** | 5,348 | Comprehensive QA, Performance & Accessibility Testing Suite: Automated API testing, WCAG accessibili... |
 | 40 | [**`roblox-studio-suite`**](roblox-studio-suite/SKILL.md) | **3** | 2,781 | Roblox Studio Experience Architecture Suite: Luau systems scripting, custom avatar creation, and mul... |
-| 41 | [**`scientific-research-paper-writing-suite`**](scientific-research-paper-writing-suite/SKILL.md) | **6** | 23,996 | Scientific Research & Academic Publication Suite: arXiv literature mining, LaTeX paper drafting, ML ... |
+| 41 | [**`scientific-research-paper-writing-suite`**](scientific-research-paper-writing-suite/SKILL.md) | **5** | 23,996 | Scientific Research & Academic Publication Suite: arXiv literature mining, LaTeX paper drafting, ML ... |
 | 42 | [**`software-dev-methodology-superpowers-suite`**](software-dev-methodology-superpowers-suite/SKILL.md) | **7** | 7,696 | Elite Software Engineering Methodology Suite (SWE-bench & Superpowers): Systematic debugging (Eviden... |
 | 43 | [**`software-engineering-studio-suite`**](software-engineering-studio-suite/SKILL.md) | **10** | 7,008 | Comprehensive Software Engineering Suite: Enterprise backend architecture, database query optimizati... |
 | 44 | [**`spatial-computing-xr-visionos-suite`**](spatial-computing-xr-visionos-suite/SKILL.md) | **6** | 4,445 | Spatial Computing, Apple visionOS & XR Development Suite: Apple Vision Pro native spatial apps, Meta... |
@@ -65,7 +65,7 @@
 ## 🔍 Fiches Détaillées par Master Suite
 
 ### 1. `academic-humanities-suite` (6 compétences)
-- **Fichier SKILL.md :** [`00_Hermes_Merged_Master_Suites/academic-humanities-suite/SKILL.md`](file:///C:/Users/brand/Downloads/Hermes_Full_Ecosystem_Pack/00_Hermes_Merged_Master_Suites/academic-humanities-suite/SKILL.md)
+- **Fichier SKILL.md :** [`academic-humanities-suite/SKILL.md`](academic-humanities-suite/SKILL.md)
 - **Description :** Interdisciplinary Academic & Humanities Suite: Rigorous research methodologies across History, Human Geography, Anthropology, Narratology, Psychology, and competitive study planning.
 - **Volume :** 1,817 mots | Scripts embarqués : Non
 - **Membres unifiés :**
@@ -77,7 +77,7 @@
   - `academic-study-planner` (`01_Hermes_Skills_Core_Library\academic\academic-study-planner\SKILL.md`)
 
 ### 2. `advanced-software-architecture-security-suite` (8 compétences)
-- **Fichier SKILL.md :** [`00_Hermes_Merged_Master_Suites/advanced-software-architecture-security-suite/SKILL.md`](file:///C:/Users/brand/Downloads/Hermes_Full_Ecosystem_Pack/00_Hermes_Merged_Master_Suites/advanced-software-architecture-security-suite/SKILL.md)
+- **Fichier SKILL.md :** [`advanced-software-architecture-security-suite/SKILL.md`](advanced-software-architecture-security-suite/SKILL.md)
 - **Description :** Principal Software Architecture, Incident Response & Hardening Suite: Principal software architect guidance, senior developer code standards, incident response command (Sev-1/Sev-2), threat detection engineering, advanced Git branching workflows, minimal-change refactoring, and hardware FPGA digital design.
 - **Volume :** 6,442 mots | Scripts embarqués : Non
 - **Membres unifiés :**
@@ -91,7 +91,7 @@
   - `engineering-threat-detection-engineer` (`01_Hermes_Skills_Core_Library\engineering\engineering-threat-detection-engineer\SKILL.md`)
 
 ### 3. `ai-engineering-voice-iot-optimization-suite` (7 compétences)
-- **Fichier SKILL.md :** [`00_Hermes_Merged_Master_Suites/ai-engineering-voice-iot-optimization-suite/SKILL.md`](file:///C:/Users/brand/Downloads/Hermes_Full_Ecosystem_Pack/00_Hermes_Merged_Master_Suites/ai-engineering-voice-iot-optimization-suite/SKILL.md)
+- **Fichier SKILL.md :** [`ai-engineering-voice-iot-optimization-suite/SKILL.md`](ai-engineering-voice-iot-optimization-suite/SKILL.md)
 - **Description :** Production AI Engineering, Voice Agents & Smart IoT Suite: Production AI system architecture, voice AI pipeline integration, IoT connected solutions, autonomous self-optimization algorithms, AI training data remediation, smart lighting (Philips Hue OpenHue), and Karpathy neural network training principles.
 - **Volume :** 4,253 mots | Scripts embarqués : Non
 - **Membres unifiés :**
@@ -104,7 +104,7 @@
   - `openhue` (`01_Hermes_Skills_Core_Library\smart-home\openhue\SKILL.md`)
 
 ### 4. `ai-music-audio-media-suite` (5 compétences)
-- **Fichier SKILL.md :** [`00_Hermes_Merged_Master_Suites/ai-music-audio-media-suite/SKILL.md`](file:///C:/Users/brand/Downloads/Hermes_Full_Ecosystem_Pack/00_Hermes_Merged_Master_Suites/ai-music-audio-media-suite/SKILL.md)
+- **Fichier SKILL.md :** [`ai-music-audio-media-suite/SKILL.md`](ai-music-audio-media-suite/SKILL.md)
 - **Description :** Generative Audio, Music & Video Media Suite: AI songwriting, AudioCraft sound synthesis, SongSee audio analysis, Heartmula visualizers, and YouTube video workflows.
 - **Volume :** 4,936 mots | Scripts embarqués : Oui
 - **Membres unifiés :**
@@ -115,7 +115,7 @@
   - `youtube-content` (`01_Hermes_Skills_Core_Library\media\youtube-content\SKILL.md`)
 
 ### 5. `apple-ecosystem-suite` (4 compétences)
-- **Fichier SKILL.md :** [`00_Hermes_Merged_Master_Suites/apple-ecosystem-suite/SKILL.md`](file:///C:/Users/brand/Downloads/Hermes_Full_Ecosystem_Pack/00_Hermes_Merged_Master_Suites/apple-ecosystem-suite/SKILL.md)
+- **Fichier SKILL.md :** [`apple-ecosystem-suite/SKILL.md`](apple-ecosystem-suite/SKILL.md)
 - **Description :** Unified Apple macOS & iOS operational suite. Seamless CLI control for Apple Notes (memo), Reminders (remindctl), iMessage (imsg), and FindMy device tracking without GUI overhead.
 - **Volume :** 1,775 mots | Scripts embarqués : Non
 - **Membres unifiés :**
@@ -125,7 +125,7 @@
   - `imessage` (`01_Hermes_Skills_Core_Library\apple\imessage\SKILL.md`)
 
 ### 6. `b2b-sales-revenue-suite` (9 compétences)
-- **Fichier SKILL.md :** [`00_Hermes_Merged_Master_Suites/b2b-sales-revenue-suite/SKILL.md`](file:///C:/Users/brand/Downloads/Hermes_Full_Ecosystem_Pack/00_Hermes_Merged_Master_Suites/b2b-sales-revenue-suite/SKILL.md)
+- **Fichier SKILL.md :** [`b2b-sales-revenue-suite/SKILL.md`](b2b-sales-revenue-suite/SKILL.md)
 - **Description :** B2B Sales Acceleration & Revenue Engineering Suite: Account strategy, deal closing blueprints, discovery coaching, technical sales engineering, pipeline analytics, and high-conversion proposals.
 - **Volume :** 5,393 mots | Scripts embarqués : Non
 - **Membres unifiés :**
@@ -140,7 +140,7 @@
   - `sales-proposal-strategist` (`01_Hermes_Skills_Core_Library\sales\sales-proposal-strategist\SKILL.md`)
 
 ### 7. `china-growth-marketing-suite` (8 compétences)
-- **Fichier SKILL.md :** [`00_Hermes_Merged_Master_Suites/china-growth-marketing-suite/SKILL.md`](file:///C:/Users/brand/Downloads/Hermes_Full_Ecosystem_Pack/00_Hermes_Merged_Master_Suites/china-growth-marketing-suite/SKILL.md)
+- **Fichier SKILL.md :** [`china-growth-marketing-suite/SKILL.md`](china-growth-marketing-suite/SKILL.md)
 - **Description :** Complete Chinese digital acquisition and e-commerce suite: Xiaohongshu (RED), Douyin, Bilibili, Baidu SEO, Cross-border E-commerce, and market localization.
 - **Volume :** 4,249 mots | Scripts embarqués : Non
 - **Membres unifiés :**
@@ -154,7 +154,7 @@
   - `marketing-xiaohongshu-specialist` (`01_Hermes_Skills_Core_Library\marketing\marketing-xiaohongshu-specialist\SKILL.md`)
 
 ### 8. `creative-code-generative-art-suite` (5 compétences)
-- **Fichier SKILL.md :** [`00_Hermes_Merged_Master_Suites/creative-code-generative-art-suite/SKILL.md`](file:///C:/Users/brand/Downloads/Hermes_Full_Ecosystem_Pack/00_Hermes_Merged_Master_Suites/creative-code-generative-art-suite/SKILL.md)
+- **Fichier SKILL.md :** [`creative-code-generative-art-suite/SKILL.md`](creative-code-generative-art-suite/SKILL.md)
 - **Description :** Generative Art, Motion Graphics & Visual Math Suite: p5.js algorithmic visual art, Manim mathematical animation engine, GSAP 3 scroll-driven kinetic web animations, and curated contemporary web design patterns.
 - **Volume :** 8,763 mots | Scripts embarqués : Oui
 - **Membres unifiés :**
@@ -165,7 +165,7 @@
   - `popular-web-designs` (`01_Hermes_Skills_Core_Library\creative\popular-web-designs\SKILL.md`)
 
 ### 9. `creative-diagramming-suite` (4 compétences)
-- **Fichier SKILL.md :** [`00_Hermes_Merged_Master_Suites/creative-diagramming-suite/SKILL.md`](file:///C:/Users/brand/Downloads/Hermes_Full_Ecosystem_Pack/00_Hermes_Merged_Master_Suites/creative-diagramming-suite/SKILL.md)
+- **Fichier SKILL.md :** [`creative-diagramming-suite/SKILL.md`](creative-diagramming-suite/SKILL.md)
 - **Description :** Visual Architecture & Generative ASCII Suite: Dark-themed system architecture diagrams, Excalidraw JSON schematics, and pyfiglet/ASCII video pipelines.
 - **Volume :** 5,520 mots | Scripts embarqués : Oui
 - **Membres unifiés :**
@@ -174,8 +174,8 @@
   - `ascii-video` (`01_Hermes_Skills_Core_Library\creative\ascii-video\SKILL.md`)
   - `excalidraw` (`01_Hermes_Skills_Core_Library\creative\excalidraw\SKILL.md`)
 
-### 10. `crypto-web3-blockchain-suite` (5 compétences)
-- **Fichier SKILL.md :** [`00_Hermes_Merged_Master_Suites/crypto-web3-blockchain-suite/SKILL.md`](file:///C:/Users/brand/Downloads/Hermes_Full_Ecosystem_Pack/00_Hermes_Merged_Master_Suites/crypto-web3-blockchain-suite/SKILL.md)
+### 10. `crypto-web3-blockchain-suite` (6 compétences)
+- **Fichier SKILL.md :** [`crypto-web3-blockchain-suite/SKILL.md`](crypto-web3-blockchain-suite/SKILL.md)
 - **Description :** Web3, Solidity & Zero-Knowledge Blockchain Suite: Production Solidity smart contract engineering, blockchain security auditing, zero-knowledge proofs (ZK Steward), and crypto social intelligence (Binance Square).
 - **Volume :** 4,149 mots | Scripts embarqués : Non
 - **Membres unifiés :**
@@ -185,8 +185,8 @@
   - `engineering-solidity-smart-contract-engineer` (`01_Hermes_Skills_Core_Library\engineering\engineering-solidity-smart-contract-engineer\SKILL.md`)
   - `zk-steward` (`01_Hermes_Skills_Core_Library\specialized\zk-steward\SKILL.md`)
 
-### 11. `data-engineering-browser-automation-suite` (6 compétences)
-- **Fichier SKILL.md :** [`00_Hermes_Merged_Master_Suites/data-engineering-browser-automation-suite/SKILL.md`](file:///C:/Users/brand/Downloads/Hermes_Full_Ecosystem_Pack/00_Hermes_Merged_Master_Suites/data-engineering-browser-automation-suite/SKILL.md)
+### 11. `data-engineering-browser-automation-suite` (7 compétences)
+- **Fichier SKILL.md :** [`data-engineering-browser-automation-suite/SKILL.md`](data-engineering-browser-automation-suite/SKILL.md)
 - **Description :** Browser Automation, Data Consolidation & Interactive Data Science Suite: Headless browser automation harness, Jupyter live kernel workflows, automated data consolidation ETL, identity graph resolution, real-time webhook subscriptions, and LSP codebase indexing.
 - **Volume :** 6,136 mots | Scripts embarqués : Non
 - **Membres unifiés :**
@@ -198,7 +198,7 @@
   - `webhook-subscriptions` (`01_Hermes_Skills_Core_Library\devops\webhook-subscriptions\SKILL.md`)
 
 ### 12. `embedded-systems-suite` (3 compétences)
-- **Fichier SKILL.md :** [`00_Hermes_Merged_Master_Suites/embedded-systems-suite/SKILL.md`](file:///C:/Users/brand/Downloads/Hermes_Full_Ecosystem_Pack/00_Hermes_Merged_Master_Suites/embedded-systems-suite/SKILL.md)
+- **Fichier SKILL.md :** [`embedded-systems-suite/SKILL.md`](embedded-systems-suite/SKILL.md)
 - **Description :** Bare-metal and Embedded Linux Systems Suite: C/C++ firmware engineering, Linux kernel device driver development, register-level debugging, and embedded QA automation.
 - **Volume :** 1,883 mots | Scripts embarqués : Non
 - **Membres unifiés :**
@@ -206,20 +206,19 @@
   - `engineering-embedded-linux-driver-engineer` (`01_Hermes_Skills_Core_Library\engineering\engineering-embedded-linux-driver-engineer\SKILL.md`)
   - `testing-embedded-qa-engineer` (`01_Hermes_Skills_Core_Library\testing\testing-embedded-qa-engineer\SKILL.md`)
 
-### 13. `enterprise-finance-risk-pricing-governance-suite` (6 compétences)
-- **Fichier SKILL.md :** [`00_Hermes_Merged_Master_Suites/enterprise-finance-risk-pricing-governance-suite/SKILL.md`](file:///C:/Users/brand/Downloads/Hermes_Full_Ecosystem_Pack/00_Hermes_Merged_Master_Suites/enterprise-finance-risk-pricing-governance-suite/SKILL.md)
+### 13. `enterprise-finance-risk-pricing-governance-suite` (5 compétences)
+- **Fichier SKILL.md :** [`enterprise-finance-risk-pricing-governance-suite/SKILL.md`](enterprise-finance-risk-pricing-governance-suite/SKILL.md)
 - **Description :** Enterprise Accounts Payable, Dynamic Pricing & Risk Governance Suite: Automated accounts payable invoice matching & approval, dynamic SaaS pricing models, comprehensive enterprise risk assessment, AI ethics & safety policy writing, executive talent recruitment, and local business intelligence.
 - **Volume :** 6,200 mots | Scripts embarqués : Oui
 - **Membres unifiés :**
   - `accounts-payable-agent` (`01_Hermes_Skills_Core_Library\specialized\accounts-payable-agent\SKILL.md`)
-  - `find-nearby` (`01_Hermes_Skills_Core_Library\leisure\find-nearby\SKILL.md`)
   - `recruitment-specialist` (`01_Hermes_Skills_Core_Library\specialized\recruitment-specialist\SKILL.md`)
   - `specialized-ai-policy-writer` (`01_Hermes_Skills_Core_Library\specialized\specialized-ai-policy-writer\SKILL.md`)
   - `specialized-pricing-optimizer` (`01_Hermes_Skills_Core_Library\specialized\specialized-pricing-optimizer\SKILL.md`)
   - `specialized-risk-assessor` (`01_Hermes_Skills_Core_Library\specialized\specialized-risk-assessor\SKILL.md`)
 
 ### 14. `enterprise-knowledge-pkm-collaboration-suite` (8 compétences)
-- **Fichier SKILL.md :** [`00_Hermes_Merged_Master_Suites/enterprise-knowledge-pkm-collaboration-suite/SKILL.md`](file:///C:/Users/brand/Downloads/Hermes_Full_Ecosystem_Pack/00_Hermes_Merged_Master_Suites/enterprise-knowledge-pkm-collaboration-suite/SKILL.md)
+- **Fichier SKILL.md :** [`enterprise-knowledge-pkm-collaboration-suite/SKILL.md`](enterprise-knowledge-pkm-collaboration-suite/SKILL.md)
 - **Description :** Personal Knowledge Management (PKM), Meeting Intelligence & Developer Advocacy Suite: Obsidian markdown vault architecture & Zettelkasten linking, automated meeting minutes & action item extraction, enterprise report generation, automated report distribution pipelines, corporate training curriculum design, developer advocacy, and GIF/visual search communication.
 - **Volume :** 4,977 mots | Scripts embarqués : Non
 - **Membres unifiés :**
@@ -233,7 +232,7 @@
   - `xitter` (`01_Hermes_Skills_Core_Library\social-media\xitter\SKILL.md`)
 
 ### 15. `enterprise-messaging-integration-suite` (4 compétences)
-- **Fichier SKILL.md :** [`00_Hermes_Merged_Master_Suites/enterprise-messaging-integration-suite/SKILL.md`](file:///C:/Users/brand/Downloads/Hermes_Full_Ecosystem_Pack/00_Hermes_Merged_Master_Suites/enterprise-messaging-integration-suite/SKILL.md)
+- **Fichier SKILL.md :** [`enterprise-messaging-integration-suite/SKILL.md`](enterprise-messaging-integration-suite/SKILL.md)
 - **Description :** Enterprise Messaging & Communication Integrations Suite: DingTalk bot webhooks, Feishu/Lark enterprise integrations, intelligent email triage, and Himalaya CLI email client.
 - **Volume :** 4,686 mots | Scripts embarqués : Non
 - **Membres unifiés :**
@@ -243,7 +242,7 @@
   - `himalaya` (`01_Hermes_Skills_Core_Library\email\himalaya\SKILL.md`)
 
 ### 16. `enterprise-support-operations-suite` (7 compétences)
-- **Fichier SKILL.md :** [`00_Hermes_Merged_Master_Suites/enterprise-support-operations-suite/SKILL.md`](file:///C:/Users/brand/Downloads/Hermes_Full_Ecosystem_Pack/00_Hermes_Merged_Master_Suites/enterprise-support-operations-suite/SKILL.md)
+- **Fichier SKILL.md :** [`enterprise-support-operations-suite/SKILL.md`](enterprise-support-operations-suite/SKILL.md)
 - **Description :** Customer Support & Operations Command Suite: Automated ticket response protocols, executive summaries, infrastructure status monitoring, and support analytics reporting.
 - **Volume :** 7,086 mots | Scripts embarqués : Non
 - **Membres unifiés :**
@@ -256,7 +255,7 @@
   - `support-support-responder` (`01_Hermes_Skills_Core_Library\support\support-support-responder\SKILL.md`)
 
 ### 17. `enterprise-vertical-industry-consulting-suite` (9 compétences)
-- **Fichier SKILL.md :** [`00_Hermes_Merged_Master_Suites/enterprise-vertical-industry-consulting-suite/SKILL.md`](file:///C:/Users/brand/Downloads/Hermes_Full_Ecosystem_Pack/00_Hermes_Merged_Master_Suites/enterprise-vertical-industry-consulting-suite/SKILL.md)
+- **Fichier SKILL.md :** [`enterprise-vertical-industry-consulting-suite/SKILL.md`](enterprise-vertical-industry-consulting-suite/SKILL.md)
 - **Description :** Vertical Industry Operations & Advisory Suite: Healthcare patient services & marketing compliance, real estate deal management, loan origination underwriting, hospitality guest services, retail returns, Salesforce CRM architecture, and government presales.
 - **Volume :** 9,509 mots | Scripts embarqués : Non
 - **Membres unifiés :**
@@ -271,7 +270,7 @@
   - `specialized-salesforce-architect` (`01_Hermes_Skills_Core_Library\specialized\specialized-salesforce-architect\SKILL.md`)
 
 ### 18. `finance-corporate-suite` (9 compétences)
-- **Fichier SKILL.md :** [`00_Hermes_Merged_Master_Suites/finance-corporate-suite/SKILL.md`](file:///C:/Users/brand/Downloads/Hermes_Full_Ecosystem_Pack/00_Hermes_Merged_Master_Suites/finance-corporate-suite/SKILL.md)
+- **Fichier SKILL.md :** [`finance-corporate-suite/SKILL.md`](finance-corporate-suite/SKILL.md)
 - **Description :** End-to-End Corporate Finance, Modeling & Risk Suite: 3-Statement financial models, FP&A forecasting, automated bookkeeping, fraud detection, investment research, and strategic tax planning.
 - **Volume :** 7,004 mots | Scripts embarqués : Non
 - **Membres unifiés :**
@@ -286,7 +285,7 @@
   - `support-finance-tracker` (`01_Hermes_Skills_Core_Library\support\support-finance-tracker\SKILL.md`)
 
 ### 19. `frontend-mobile-cms-engineering-suite` (6 compétences)
-- **Fichier SKILL.md :** [`00_Hermes_Merged_Master_Suites/frontend-mobile-cms-engineering-suite/SKILL.md`](file:///C:/Users/brand/Downloads/Hermes_Full_Ecosystem_Pack/00_Hermes_Merged_Master_Suites/frontend-mobile-cms-engineering-suite/SKILL.md)
+- **Fichier SKILL.md :** [`frontend-mobile-cms-engineering-suite/SKILL.md`](frontend-mobile-cms-engineering-suite/SKILL.md)
 - **Description :** Cross-Platform Frontend, Mobile & CMS Engineering Suite: Modern React/Vue frontend architecture, cross-platform mobile app development, headless CMS engineering, mobile screenshot automation, UI copywriting templates, and open-source documentation curation.
 - **Volume :** 7,856 mots | Scripts embarqués : Oui
 - **Membres unifiés :**
@@ -298,7 +297,7 @@
   - `huashu-design` (`01_Hermes_Skills_Core_Library\design-tools\huashu-design\SKILL.md`)
 
 ### 20. `game-design-studio-suite` (5 compétences)
-- **Fichier SKILL.md :** [`00_Hermes_Merged_Master_Suites/game-design-studio-suite/SKILL.md`](file:///C:/Users/brand/Downloads/Hermes_Full_Ecosystem_Pack/00_Hermes_Merged_Master_Suites/game-design-studio-suite/SKILL.md)
+- **Fichier SKILL.md :** [`game-design-studio-suite/SKILL.md`](game-design-studio-suite/SKILL.md)
 - **Description :** Full Game Design Studio Suite: Core game mechanics, level layout architecture, narrative branching dialogue, adaptive game audio engineering, and technical art pipeline coordination.
 - **Volume :** 2,825 mots | Scripts embarqués : Non
 - **Membres unifiés :**
@@ -309,7 +308,7 @@
   - `technical-artist` (`01_Hermes_Skills_Core_Library\game-development\technical-artist\SKILL.md`)
 
 ### 21. `giga-factory-enterprise-suite` (5 compétences)
-- **Fichier SKILL.md :** [`00_Hermes_Merged_Master_Suites/giga-factory-enterprise-suite/SKILL.md`](file:///C:/Users/brand/Downloads/Hermes_Full_Ecosystem_Pack/00_Hermes_Merged_Master_Suites/giga-factory-enterprise-suite/SKILL.md)
+- **Fichier SKILL.md :** [`giga-factory-enterprise-suite/SKILL.md`](giga-factory-enterprise-suite/SKILL.md)
 - **Description :** Hermes Giga-Factory Enterprise Delivery Suite: High-conversion landing page design, brand identity systems, legal contracts & corporate governance, and end-to-end game production pipelines.
 - **Volume :** 13,702 mots | Scripts embarqués : Non
 - **Membres unifiés :**
@@ -320,7 +319,7 @@
   - `giga-legal-corporate` (`08_Hermes_GigaFactory_Skills\giga-legal-corporate\SKILL.md`)
 
 ### 22. `github-devops-automation-suite` (7 compétences)
-- **Fichier SKILL.md :** [`00_Hermes_Merged_Master_Suites/github-devops-automation-suite/SKILL.md`](file:///C:/Users/brand/Downloads/Hermes_Full_Ecosystem_Pack/00_Hermes_Merged_Master_Suites/github-devops-automation-suite/SKILL.md)
+- **Fichier SKILL.md :** [`github-devops-automation-suite/SKILL.md`](github-devops-automation-suite/SKILL.md)
 - **Description :** Enterprise GitHub DevOps & Repository Lifecycle Suite: Automated PR reviews, issue triage, branch protection, repository mining, authentication tokens, and codebase inspection.
 - **Volume :** 10,086 mots | Scripts embarqués : Oui
 - **Membres unifiés :**
@@ -333,7 +332,7 @@
   - `github-repo-mining` (`01_Hermes_Skills_Core_Library\github\github-repo-mining\SKILL.md`)
 
 ### 23. `global-marketing-growth-suite` (32 compétences)
-- **Fichier SKILL.md :** [`00_Hermes_Merged_Master_Suites/global-marketing-growth-suite/SKILL.md`](file:///C:/Users/brand/Downloads/Hermes_Full_Ecosystem_Pack/00_Hermes_Merged_Master_Suites/global-marketing-growth-suite/SKILL.md)
+- **Fichier SKILL.md :** [`global-marketing-growth-suite/SKILL.md`](global-marketing-growth-suite/SKILL.md)
 - **Description :** Master Growth Marketing & Acquisition Suite: Viral carousel design, content creation, Reddit community building, App Store Optimization (ASO), paid media audit, newsletter, and conversion optimization.
 - **Volume :** 17,447 mots | Scripts embarqués : Non
 - **Membres unifiés :**
@@ -371,7 +370,7 @@
   - `paid-media-tracking-specialist` (`01_Hermes_Skills_Core_Library\paid-media\paid-media-tracking-specialist\SKILL.md`)
 
 ### 24. `godot-engine-suite` (3 compétences)
-- **Fichier SKILL.md :** [`00_Hermes_Merged_Master_Suites/godot-engine-suite/SKILL.md`](file:///C:/Users/brand/Downloads/Hermes_Full_Ecosystem_Pack/00_Hermes_Merged_Master_Suites/godot-engine-suite/SKILL.md)
+- **Fichier SKILL.md :** [`godot-engine-suite/SKILL.md`](godot-engine-suite/SKILL.md)
 - **Description :** Complete Godot 4 Game Engine Suite: High-performance GDScript gameplay mechanics, multiplayer netcode (RPC/high-level networking), and custom GLSL shader development.
 - **Volume :** 3,026 mots | Scripts embarqués : Non
 - **Membres unifiés :**
@@ -380,7 +379,7 @@
   - `godot-shader-developer` (`01_Hermes_Skills_Core_Library\godot\godot-shader-developer\SKILL.md`)
 
 ### 25. `hermes-core-orchestration-suite` (12 compétences)
-- **Fichier SKILL.md :** [`00_Hermes_Merged_Master_Suites/hermes-core-orchestration-suite/SKILL.md`](file:///C:/Users/brand/Downloads/Hermes_Full_Ecosystem_Pack/00_Hermes_Merged_Master_Suites/hermes-core-orchestration-suite/SKILL.md)
+- **Fichier SKILL.md :** [`hermes-core-orchestration-suite/SKILL.md`](hermes-core-orchestration-suite/SKILL.md)
 - **Description :** Hermes Agent Master Orchestration Suite: Core agent runtime guidelines, prompt engineering, Kanban task management, roadmap planning, MCP ecosystem integration, and recursive self-evolution.
 - **Volume :** 20,343 mots | Scripts embarqués : Non
 - **Membres unifiés :**
@@ -398,7 +397,7 @@
   - `hermes-web-ui` (`01_Hermes_Skills_Core_Library\hermes\hermes-web-ui\SKILL.md`)
 
 ### 26. `human-resources-recruitment-suite` (3 compétences)
-- **Fichier SKILL.md :** [`00_Hermes_Merged_Master_Suites/human-resources-recruitment-suite/SKILL.md`](file:///C:/Users/brand/Downloads/Hermes_Full_Ecosystem_Pack/00_Hermes_Merged_Master_Suites/human-resources-recruitment-suite/SKILL.md)
+- **Fichier SKILL.md :** [`human-resources-recruitment-suite/SKILL.md`](human-resources-recruitment-suite/SKILL.md)
 - **Description :** Human Resources & Talent Acquisition Suite: Full-cycle talent recruiting, candidate evaluation rubrics, job offer design, and structured performance reviews.
 - **Volume :** 2,296 mots | Scripts embarqués : Non
 - **Membres unifiés :**
@@ -407,7 +406,7 @@
   - `hr-recruiter` (`01_Hermes_Skills_Core_Library\hr\hr-recruiter\SKILL.md`)
 
 ### 27. `hyperframes-web-animation-suite` (4 compétences)
-- **Fichier SKILL.md :** [`00_Hermes_Merged_Master_Suites/hyperframes-web-animation-suite/SKILL.md`](file:///C:/Users/brand/Downloads/Hermes_Full_Ecosystem_Pack/00_Hermes_Merged_Master_Suites/hyperframes-web-animation-suite/SKILL.md)
+- **Fichier SKILL.md :** [`hyperframes-web-animation-suite/SKILL.md`](hyperframes-web-animation-suite/SKILL.md)
 - **Description :** HyperFrames Web Animation & Composition Suite: High-performance canvas and DOM kinetic motion, HyperFrames CLI toolchain, component registry, and website-to-hyperframes capture.
 - **Volume :** 5,146 mots | Scripts embarqués : Non
 - **Membres unifiés :**
@@ -417,7 +416,7 @@
   - `website-to-hyperframes` (`01_Hermes_Skills_Core_Library\website-to-hyperframes\SKILL.md`)
 
 ### 28. `international-business-culture-translation-suite` (7 compétences)
-- **Fichier SKILL.md :** [`00_Hermes_Merged_Master_Suites/international-business-culture-translation-suite/SKILL.md`](file:///C:/Users/brand/Downloads/Hermes_Full_Ecosystem_Pack/00_Hermes_Merged_Master_Suites/international-business-culture-translation-suite/SKILL.md)
+- **Fichier SKILL.md :** [`international-business-culture-translation-suite/SKILL.md`](international-business-culture-translation-suite/SKILL.md)
 - **Description :** Global Business, Cultural Intelligence & Translation Suite: Technical and conversational translation across French, Korean, Chinese, and English; cross-cultural negotiation strategy, international academic admissions, and Gaokao college advising.
 - **Volume :** 6,719 mots | Scripts embarqués : Non
 - **Membres unifiés :**
@@ -430,7 +429,7 @@
   - `technical-translator-agent` (`01_Hermes_Skills_Core_Library\specialized\technical-translator-agent\SKILL.md`)
 
 ### 29. `legal-contracts-compliance-suite` (6 compétences)
-- **Fichier SKILL.md :** [`00_Hermes_Merged_Master_Suites/legal-contracts-compliance-suite/SKILL.md`](file:///C:/Users/brand/Downloads/Hermes_Full_Ecosystem_Pack/00_Hermes_Merged_Master_Suites/legal-contracts-compliance-suite/SKILL.md)
+- **Fichier SKILL.md :** [`legal-contracts-compliance-suite/SKILL.md`](legal-contracts-compliance-suite/SKILL.md)
 - **Description :** Legal Analysis, Contracts & Policy Suite: Contract review checklists, terms of service and privacy policy drafting, risk mitigation, and compliance auditing.
 - **Volume :** 4,440 mots | Scripts embarqués : Non
 - **Membres unifiés :**
@@ -442,7 +441,7 @@
   - `legal-policy-writer` (`01_Hermes_Skills_Core_Library\legal\legal-policy-writer\SKILL.md`)
 
 ### 30. `llm-structured-generation-eval-suite` (6 compétences)
-- **Fichier SKILL.md :** [`00_Hermes_Merged_Master_Suites/llm-structured-generation-eval-suite/SKILL.md`](file:///C:/Users/brand/Downloads/Hermes_Full_Ecosystem_Pack/00_Hermes_Merged_Master_Suites/llm-structured-generation-eval-suite/SKILL.md)
+- **Fichier SKILL.md :** [`llm-structured-generation-eval-suite/SKILL.md`](llm-structured-generation-eval-suite/SKILL.md)
 - **Description :** Structured LLM Generation, Quantization & Evaluation Suite: JSON/grammar constrained generation (Outlines, Guidance), LM Evaluation Harness, Weights & Biases telemetry, and GGUF quantization.
 - **Volume :** 10,000 mots | Scripts embarqués : Non
 - **Membres unifiés :**
@@ -454,7 +453,7 @@
   - `weights-and-biases` (`01_Hermes_Skills_Core_Library\mlops\evaluation\weights-and-biases\SKILL.md`)
 
 ### 31. `mcp-redteaming-gaming-meta-suite` (7 compétences)
-- **Fichier SKILL.md :** [`00_Hermes_Merged_Master_Suites/mcp-redteaming-gaming-meta-suite/SKILL.md`](file:///C:/Users/brand/Downloads/Hermes_Full_Ecosystem_Pack/00_Hermes_Merged_Master_Suites/mcp-redteaming-gaming-meta-suite/SKILL.md)
+- **Fichier SKILL.md :** [`mcp-redteaming-gaming-meta-suite/SKILL.md`](mcp-redteaming-gaming-meta-suite/SKILL.md)
 - **Description :** Model Context Protocol (MCP), Red-Teaming & Autonomous Game Agent Suite: Native MCP tool client & runner (mcporter, native-mcp), adversarial AI red-teaming & jailbreak audit (Godmode), Blender 3D addon tool engineering, Minecraft modpack server operations, autonomous Pokémon game playing agent, dogfood internal self-testing, and LM-Eval harness benchmarking.
 - **Volume :** 8,914 mots | Scripts embarqués : Oui
 - **Membres unifiés :**
@@ -467,7 +466,7 @@
   - `pokemon-player` (`01_Hermes_Skills_Core_Library\gaming\pokemon-player\SKILL.md`)
 
 ### 32. `meta-agent-governance-automation-suite` (9 compétences)
-- **Fichier SKILL.md :** [`00_Hermes_Merged_Master_Suites/meta-agent-governance-automation-suite/SKILL.md`](file:///C:/Users/brand/Downloads/Hermes_Full_Ecosystem_Pack/00_Hermes_Merged_Master_Suites/meta-agent-governance-automation-suite/SKILL.md)
+- **Fichier SKILL.md :** [`meta-agent-governance-automation-suite/SKILL.md`](meta-agent-governance-automation-suite/SKILL.md)
 - **Description :** Meta-Agent Orchestration, Governance & Protocol Suite: Multi-agent orchestrators, agentic identity and cryptographic trust, automation governance, prompt engineering rubrics, Model Context Protocol (MCP) tool creation, and executive Chief of Staff delegation.
 - **Volume :** 7,223 mots | Scripts embarqués : Non
 - **Membres unifiés :**
@@ -482,7 +481,7 @@
   - `specialized-workflow-architect` (`01_Hermes_Skills_Core_Library\specialized\specialized-workflow-architect\SKILL.md`)
 
 ### 33. `mlops-llm-fine-tuning-training-suite` (7 compétences)
-- **Fichier SKILL.md :** [`00_Hermes_Merged_Master_Suites/mlops-llm-fine-tuning-training-suite/SKILL.md`](file:///C:/Users/brand/Downloads/Hermes_Full_Ecosystem_Pack/00_Hermes_Merged_Master_Suites/mlops-llm-fine-tuning-training-suite/SKILL.md)
+- **Fichier SKILL.md :** [`mlops-llm-fine-tuning-training-suite/SKILL.md`](mlops-llm-fine-tuning-training-suite/SKILL.md)
 - **Description :** State-of-the-Art LLM Fine-Tuning & Training Suite: Axolotl, Unsloth 5x faster training, PEFT (LoRA/QLoRA), GRPO reinforcement learning from human/rule feedback, TRL, PyTorch FSDP multi-GPU, and DSPy declarative prompt optimization.
 - **Volume :** 30,221 mots | Scripts embarqués : Non
 - **Membres unifiés :**
@@ -495,7 +494,7 @@
   - `unsloth` (`01_Hermes_Skills_Core_Library\mlops\training\unsloth\SKILL.md`)
 
 ### 34. `mlops-llm-infrastructure-suite` (4 compétences)
-- **Fichier SKILL.md :** [`00_Hermes_Merged_Master_Suites/mlops-llm-infrastructure-suite/SKILL.md`](file:///C:/Users/brand/Downloads/Hermes_Full_Ecosystem_Pack/00_Hermes_Merged_Master_Suites/mlops-llm-infrastructure-suite/SKILL.md)
+- **Fichier SKILL.md :** [`mlops-llm-infrastructure-suite/SKILL.md`](mlops-llm-infrastructure-suite/SKILL.md)
 - **Description :** High-Throughput LLM & MLOps Infrastructure Suite: Low-latency inference with vLLM, serverless GPU scaling with Modal, HuggingFace Hub artifact governance, and quantized Llama.cpp deployment.
 - **Volume :** 3,750 mots | Scripts embarqués : Non
 - **Membres unifiés :**
@@ -505,7 +504,7 @@
   - `serving-llms-vllm` (`01_Hermes_Skills_Core_Library\mlops\inference\vllm\SKILL.md`)
 
 ### 35. `multi-agent-delegation-suite` (4 compétences)
-- **Fichier SKILL.md :** [`00_Hermes_Merged_Master_Suites/multi-agent-delegation-suite/SKILL.md`](file:///C:/Users/brand/Downloads/Hermes_Full_Ecosystem_Pack/00_Hermes_Merged_Master_Suites/multi-agent-delegation-suite/SKILL.md)
+- **Fichier SKILL.md :** [`multi-agent-delegation-suite/SKILL.md`](multi-agent-delegation-suite/SKILL.md)
 - **Description :** Cross-Platform Agent Delegation & CLI Orchestration Suite: Seamless handoff to Claude Code, OpenAI Codex, OpenCode, and autonomous browser agents.
 - **Volume :** 7,057 mots | Scripts embarqués : Non
 - **Membres unifiés :**
@@ -515,7 +514,7 @@
   - `opencode` (`01_Hermes_Skills_Core_Library\autonomous-ai-agents\opencode\SKILL.md`)
 
 ### 36. `multimodal-ai-vision-speech-suite` (4 compétences)
-- **Fichier SKILL.md :** [`00_Hermes_Merged_Master_Suites/multimodal-ai-vision-speech-suite/SKILL.md`](file:///C:/Users/brand/Downloads/Hermes_Full_Ecosystem_Pack/00_Hermes_Merged_Master_Suites/multimodal-ai-vision-speech-suite/SKILL.md)
+- **Fichier SKILL.md :** [`multimodal-ai-vision-speech-suite/SKILL.md`](multimodal-ai-vision-speech-suite/SKILL.md)
 - **Description :** Multimodal AI Vision & Speech Processing Suite: OpenAI Whisper automatic speech recognition, Stable Diffusion generative imagery, Segment Anything (SAM) zero-shot image segmentation, and CLIP zero-shot vision-text embedding.
 - **Volume :** 4,870 mots | Scripts embarqués : Non
 - **Membres unifiés :**
@@ -525,7 +524,7 @@
   - `whisper` (`01_Hermes_Skills_Core_Library\mlops\models\whisper\SKILL.md`)
 
 ### 37. `product-management-strategy-suite` (5 compétences)
-- **Fichier SKILL.md :** [`00_Hermes_Merged_Master_Suites/product-management-strategy-suite/SKILL.md`](file:///C:/Users/brand/Downloads/Hermes_Full_Ecosystem_Pack/00_Hermes_Merged_Master_Suites/product-management-strategy-suite/SKILL.md)
+- **Fichier SKILL.md :** [`product-management-strategy-suite/SKILL.md`](product-management-strategy-suite/SKILL.md)
 - **Description :** End-to-End Product Management & User Insights Suite: Sprint prioritization, user feedback synthesis, market trend forecasting, and behavioral nudge psychology.
 - **Volume :** 3,720 mots | Scripts embarqués : Non
 - **Membres unifiés :**
@@ -536,7 +535,7 @@
   - `product-trend-researcher` (`01_Hermes_Skills_Core_Library\product\product-trend-researcher\SKILL.md`)
 
 ### 38. `project-management-agile-suite` (6 compétences)
-- **Fichier SKILL.md :** [`00_Hermes_Merged_Master_Suites/project-management-agile-suite/SKILL.md`](file:///C:/Users/brand/Downloads/Hermes_Full_Ecosystem_Pack/00_Hermes_Merged_Master_Suites/project-management-agile-suite/SKILL.md)
+- **Fichier SKILL.md :** [`project-management-agile-suite/SKILL.md`](project-management-agile-suite/SKILL.md)
 - **Description :** Agile Project Leadership & Studio Production Suite: Jira sprint workflows, experiment tracking, game studio production timelines, team velocity management, and senior project stewardship.
 - **Volume :** 2,123 mots | Scripts embarqués : Non
 - **Membres unifiés :**
@@ -548,7 +547,7 @@
   - `project-manager-senior` (`01_Hermes_Skills_Core_Library\project-management\project-manager-senior\SKILL.md`)
 
 ### 39. `quality-assurance-testing-suite` (8 compétences)
-- **Fichier SKILL.md :** [`00_Hermes_Merged_Master_Suites/quality-assurance-testing-suite/SKILL.md`](file:///C:/Users/brand/Downloads/Hermes_Full_Ecosystem_Pack/00_Hermes_Merged_Master_Suites/quality-assurance-testing-suite/SKILL.md)
+- **Fichier SKILL.md :** [`quality-assurance-testing-suite/SKILL.md`](quality-assurance-testing-suite/SKILL.md)
 - **Description :** Comprehensive QA, Performance & Accessibility Testing Suite: Automated API testing, WCAG accessibility auditing, performance benchmarking, test result analysis, and evidence capture.
 - **Volume :** 5,348 mots | Scripts embarqués : Non
 - **Membres unifiés :**
@@ -562,7 +561,7 @@
   - `testing-workflow-optimizer` (`01_Hermes_Skills_Core_Library\testing\testing-workflow-optimizer\SKILL.md`)
 
 ### 40. `roblox-studio-suite` (3 compétences)
-- **Fichier SKILL.md :** [`00_Hermes_Merged_Master_Suites/roblox-studio-suite/SKILL.md`](file:///C:/Users/brand/Downloads/Hermes_Full_Ecosystem_Pack/00_Hermes_Merged_Master_Suites/roblox-studio-suite/SKILL.md)
+- **Fichier SKILL.md :** [`roblox-studio-suite/SKILL.md`](roblox-studio-suite/SKILL.md)
 - **Description :** Roblox Studio Experience Architecture Suite: Luau systems scripting, custom avatar creation, and multiplayer experience level design.
 - **Volume :** 2,781 mots | Scripts embarqués : Non
 - **Membres unifiés :**
@@ -570,20 +569,19 @@
   - `roblox-experience-designer` (`01_Hermes_Skills_Core_Library\roblox-studio\roblox-experience-designer\SKILL.md`)
   - `roblox-systems-scripter` (`01_Hermes_Skills_Core_Library\roblox-studio\roblox-systems-scripter\SKILL.md`)
 
-### 41. `scientific-research-paper-writing-suite` (6 compétences)
-- **Fichier SKILL.md :** [`00_Hermes_Merged_Master_Suites/scientific-research-paper-writing-suite/SKILL.md`](file:///C:/Users/brand/Downloads/Hermes_Full_Ecosystem_Pack/00_Hermes_Merged_Master_Suites/scientific-research-paper-writing-suite/SKILL.md)
-- **Description :** Scientific Research & Academic Publication Suite: arXiv literature mining, LaTeX paper drafting, ML paper formatting, LLM knowledge wikis, and prediction markets.
+### 41. `scientific-research-paper-writing-suite` (5 compétences)
+- **Fichier SKILL.md :** [`scientific-research-paper-writing-suite/SKILL.md`](scientific-research-paper-writing-suite/SKILL.md)
+- **Description :** Scientific Research & Academic Publication Suite: arXiv literature mining, LaTeX paper drafting, ML paper formatting, LLM knowledge wikis, and research publication workflows.
 - **Volume :** 23,996 mots | Scripts embarqués : Oui
 - **Membres unifiés :**
   - `arxiv` (`01_Hermes_Skills_Core_Library\research\arxiv\SKILL.md`)
   - `blogwatcher` (`01_Hermes_Skills_Core_Library\research\blogwatcher\SKILL.md`)
   - `llm-wiki` (`01_Hermes_Skills_Core_Library\research\llm-wiki\SKILL.md`)
   - `ml-paper-writing` (`01_Hermes_Skills_Core_Library\research\ml-paper-writing\SKILL.md`)
-  - `polymarket` (`01_Hermes_Skills_Core_Library\research\polymarket\SKILL.md`)
   - `research-paper-writing` (`01_Hermes_Skills_Core_Library\research\research-paper-writing\SKILL.md`)
 
 ### 42. `software-dev-methodology-superpowers-suite` (7 compétences)
-- **Fichier SKILL.md :** [`00_Hermes_Merged_Master_Suites/software-dev-methodology-superpowers-suite/SKILL.md`](file:///C:/Users/brand/Downloads/Hermes_Full_Ecosystem_Pack/00_Hermes_Merged_Master_Suites/software-dev-methodology-superpowers-suite/SKILL.md)
+- **Fichier SKILL.md :** [`software-dev-methodology-superpowers-suite/SKILL.md`](software-dev-methodology-superpowers-suite/SKILL.md)
 - **Description :** Elite Software Engineering Methodology Suite (SWE-bench & Superpowers): Systematic debugging (Evidence Gate), strict Test-Driven Development (TDD), subagent delegation, and structured writing plans.
 - **Volume :** 7,696 mots | Scripts embarqués : Non
 - **Membres unifiés :**
@@ -596,7 +594,7 @@
   - `writing-plans` (`01_Hermes_Skills_Core_Library\software-development\writing-plans\SKILL.md`)
 
 ### 43. `software-engineering-studio-suite` (10 compétences)
-- **Fichier SKILL.md :** [`00_Hermes_Merged_Master_Suites/software-engineering-studio-suite/SKILL.md`](file:///C:/Users/brand/Downloads/Hermes_Full_Ecosystem_Pack/00_Hermes_Merged_Master_Suites/software-engineering-studio-suite/SKILL.md)
+- **Fichier SKILL.md :** [`software-engineering-studio-suite/SKILL.md`](software-engineering-studio-suite/SKILL.md)
 - **Description :** Comprehensive Software Engineering Suite: Enterprise backend architecture, database query optimization, data engineering ETL pipelines, security audits, SRE observability, DevOps automation, and rigorous code reviews.
 - **Volume :** 7,008 mots | Scripts embarqués : Non
 - **Membres unifiés :**
@@ -612,7 +610,7 @@
   - `engineering-technical-writer` (`01_Hermes_Skills_Core_Library\engineering\engineering-technical-writer\SKILL.md`)
 
 ### 44. `spatial-computing-xr-visionos-suite` (6 compétences)
-- **Fichier SKILL.md :** [`00_Hermes_Merged_Master_Suites/spatial-computing-xr-visionos-suite/SKILL.md`](file:///C:/Users/brand/Downloads/Hermes_Full_Ecosystem_Pack/00_Hermes_Merged_Master_Suites/spatial-computing-xr-visionos-suite/SKILL.md)
+- **Fichier SKILL.md :** [`spatial-computing-xr-visionos-suite/SKILL.md`](spatial-computing-xr-visionos-suite/SKILL.md)
 - **Description :** Spatial Computing, Apple visionOS & XR Development Suite: Apple Vision Pro native spatial apps, Metal graphics pipelines, cockpit interactions, and immersive 3D XR UI architecture.
 - **Volume :** 4,445 mots | Scripts embarqués : Non
 - **Membres unifiés :**
@@ -624,7 +622,7 @@
   - `xr-interface-architect` (`01_Hermes_Skills_Core_Library\spatial-computing\xr-interface-architect\SKILL.md`)
 
 ### 45. `supply-chain-logistics-suite` (3 compétences)
-- **Fichier SKILL.md :** [`00_Hermes_Merged_Master_Suites/supply-chain-logistics-suite/SKILL.md`](file:///C:/Users/brand/Downloads/Hermes_Full_Ecosystem_Pack/00_Hermes_Merged_Master_Suites/supply-chain-logistics-suite/SKILL.md)
+- **Fichier SKILL.md :** [`supply-chain-logistics-suite/SKILL.md`](supply-chain-logistics-suite/SKILL.md)
 - **Description :** Logistics & Supply Chain Optimization Suite: Inventory demand forecasting, delivery route optimization algorithms, and vendor SLA evaluation.
 - **Volume :** 1,764 mots | Scripts embarqués : Non
 - **Membres unifiés :**
@@ -633,7 +631,7 @@
   - `supply-chain-vendor-evaluator` (`01_Hermes_Skills_Core_Library\supply-chain\supply-chain-vendor-evaluator\SKILL.md`)
 
 ### 46. `ui-ux-design-agency-suite` (7 compétences)
-- **Fichier SKILL.md :** [`00_Hermes_Merged_Master_Suites/ui-ux-design-agency-suite/SKILL.md`](file:///C:/Users/brand/Downloads/Hermes_Full_Ecosystem_Pack/00_Hermes_Merged_Master_Suites/ui-ux-design-agency-suite/SKILL.md)
+- **Fichier SKILL.md :** [`ui-ux-design-agency-suite/SKILL.md`](ui-ux-design-agency-suite/SKILL.md)
 - **Description :** Full-Service UI/UX Design Agency Suite: UI component design, UX information architecture, user research & usability testing, brand identity guidelines, visual storytelling, and accessibility auditing.
 - **Volume :** 4,438 mots | Scripts embarqués : Non
 - **Membres unifiés :**
@@ -646,7 +644,7 @@
   - `design-whimsy-injector` (`01_Hermes_Skills_Core_Library\design\design-whimsy-injector\SKILL.md`)
 
 ### 47. `unity-engine-suite` (4 compétences)
-- **Fichier SKILL.md :** [`00_Hermes_Merged_Master_Suites/unity-engine-suite/SKILL.md`](file:///C:/Users/brand/Downloads/Hermes_Full_Ecosystem_Pack/00_Hermes_Merged_Master_Suites/unity-engine-suite/SKILL.md)
+- **Fichier SKILL.md :** [`unity-engine-suite/SKILL.md`](unity-engine-suite/SKILL.md)
 - **Description :** Production Unity Engine Suite: Enterprise game architecture, custom Editor scripting & GUI tools, multiplayer synchronization (Netcode for GameObjects), and Shader Graph VFX.
 - **Volume :** 3,443 mots | Scripts embarqués : Non
 - **Membres unifiés :**
@@ -656,7 +654,7 @@
   - `unity-shader-graph-artist` (`01_Hermes_Skills_Core_Library\unity\unity-shader-graph-artist\SKILL.md`)
 
 ### 48. `unreal-engine-master-suite` (4 compétences)
-- **Fichier SKILL.md :** [`00_Hermes_Merged_Master_Suites/unreal-engine-master-suite/SKILL.md`](file:///C:/Users/brand/Downloads/Hermes_Full_Ecosystem_Pack/00_Hermes_Merged_Master_Suites/unreal-engine-master-suite/SKILL.md)
+- **Fichier SKILL.md :** [`unreal-engine-master-suite/SKILL.md`](unreal-engine-master-suite/SKILL.md)
 - **Description :** Complete Unreal Engine 5 production suite: Multiplayer netcode & replication, systems engineering (GAS/C++), technical art/lighting/nanite, and open-world building with PCG.
 - **Volume :** 3,514 mots | Scripts embarqués : Non
 - **Membres unifiés :**
@@ -666,7 +664,7 @@
   - `unreal-world-builder` (`01_Hermes_Skills_Core_Library\unreal-engine\unreal-world-builder\SKILL.md`)
 
 ### 49. `wechat-ecosystem-suite` (3 compétences)
-- **Fichier SKILL.md :** [`00_Hermes_Merged_Master_Suites/wechat-ecosystem-suite/SKILL.md`](file:///C:/Users/brand/Downloads/Hermes_Full_Ecosystem_Pack/00_Hermes_Merged_Master_Suites/wechat-ecosystem-suite/SKILL.md)
+- **Fichier SKILL.md :** [`wechat-ecosystem-suite/SKILL.md`](wechat-ecosystem-suite/SKILL.md)
 - **Description :** Comprehensive WeChat digital ecosystem suite: Mini-Program engineering, Official Account content curation, and community operations.
 - **Volume :** 1,401 mots | Scripts embarqués : Non
 - **Membres unifiés :**
@@ -675,7 +673,7 @@
   - `marketing-wechat-operator` (`01_Hermes_Skills_Core_Library\marketing\marketing-wechat-operator\SKILL.md`)
 
 ### 50. `workplace-productivity-documents-suite` (6 compétences)
-- **Fichier SKILL.md :** [`00_Hermes_Merged_Master_Suites/workplace-productivity-documents-suite/SKILL.md`](file:///C:/Users/brand/Downloads/Hermes_Full_Ecosystem_Pack/00_Hermes_Merged_Master_Suites/workplace-productivity-documents-suite/SKILL.md)
+- **Fichier SKILL.md :** [`workplace-productivity-documents-suite/SKILL.md`](workplace-productivity-documents-suite/SKILL.md)
 - **Description :** Workplace SaaS & Document Engineering Suite: Google Workspace automation, Linear issue tracking, Notion databases, Nano-PDF processing, PowerPoint slides, and OCR document parsing.
 - **Volume :** 6,548 mots | Scripts embarqués : Oui
 - **Membres unifiés :**

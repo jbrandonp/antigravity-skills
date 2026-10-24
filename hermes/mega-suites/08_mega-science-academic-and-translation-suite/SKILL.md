@@ -1852,10 +1852,6 @@ See [templates/README.md](templates/README.md) for detailed setup instructions.
 
 ---
 
-### Module 5: `polymarket`
-
-- **Origine :** `01_Hermes_Skills_Core_Library\research\polymarket\SKILL.md`
-- **Rôle / Objectif :** Query Polymarket prediction market data — search markets, get prices, orderbooks, and price history. Read-only via public REST APIs, no API key needed.
 
 ### Polymarket — Prediction Market Data
 

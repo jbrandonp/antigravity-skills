@@ -13,7 +13,6 @@ tags:
   - governance
 merged_member_skills:
   - accounts-payable-agent (01_Hermes_Skills_Core_Library\specialized\accounts-payable-agent\SKILL.md)
-  - find-nearby (01_Hermes_Skills_Core_Library\leisure\find-nearby\SKILL.md)
   - recruitment-specialist (01_Hermes_Skills_Core_Library\specialized\recruitment-specialist\SKILL.md)
   - specialized-ai-policy-writer (01_Hermes_Skills_Core_Library\specialized\specialized-ai-policy-writer\SKILL.md)
   - specialized-pricing-optimizer (01_Hermes_Skills_Core_Library\specialized\specialized-pricing-optimizer\SKILL.md)
@@ -256,10 +255,6 @@ return formatAPReport(report);
 
 ---
 
-## Module 2: `find-nearby`
-
-- **Origine :** `01_Hermes_Skills_Core_Library\leisure\find-nearby\SKILL.md`
-- **Rôle / Objectif :** Find nearby places (restaurants, cafes, bars, pharmacies, etc.) using OpenStreetMap. Works with coordinates, addresses, cities, zip codes, or Telegram location pins. No API keys needed.
 
 ## Find Nearby — Local Place Discovery
 

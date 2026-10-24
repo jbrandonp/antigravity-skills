@@ -7065,10 +7065,6 @@ return formatAPReport(report);
 
 ---
 
-### Module 2: `find-nearby`
-
-- **Origine :** `01_Hermes_Skills_Core_Library\leisure\find-nearby\SKILL.md`
-- **Rôle / Objectif :** Find nearby places (restaurants, cafes, bars, pharmacies, etc.) using OpenStreetMap. Works with coordinates, addresses, cities, zip codes, or Telegram location pins. No API keys needed.
 
 ### Find Nearby — Local Place Discovery
 
