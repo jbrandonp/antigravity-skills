@@ -1,21 +1,27 @@
 #!/usr/bin/env python3
-"""HTML Offline Accessibility (a11y) Scanner.
+"""HTML Offline Accessibility (a11y) Scanner (Enhanced V2).
 
 Validates HTML markup against core WCAG 2.2 Level AA requirements:
 - WCAG 1.1.1: Missing 'alt' on <img> or image inputs
+- WCAG 1.3.1: Skipped heading levels (e.g. h1 -> h3 skipping h2)
 - WCAG 1.3.1 / 4.1.2: Form controls without labels or ARIA labels
 - WCAG 2.4.2: Missing page <title>
 - WCAG 2.4.3: Focus order violations (positive tabindex)
 - WCAG 2.4.4 / 4.1.2: Empty interactive elements (<button>, <a>)
 - WCAG 2.5.8: Target size violations (< 24px)
 - WCAG 3.1.1: Missing 'lang' attribute on <html>
+- WCAG 4.1.1: Duplicate element IDs breaking label/aria associations
 """
+
+from __future__ import annotations
 
 import argparse
 from html.parser import HTMLParser
+import json
 from pathlib import Path
 import re
 import sys
+from typing import Sequence
 
 
 class A11yHTMLParser(HTMLParser):
@@ -30,6 +36,8 @@ class A11yHTMLParser(HTMLParser):
         self.current_interactive_line = 0
         self.interactive_has_text = False
         self.interactive_has_aria = False
+        self.seen_ids: set[str] = set()
+        self.last_heading_level = 0
 
     def handle_starttag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
         attr_dict = {k.lower(): (v or "") for k, v in attrs}
@@ -52,7 +60,33 @@ class A11yHTMLParser(HTMLParser):
         if tag == "title":
             self.has_title = True
 
-        # 3. Check <img> alt
+        # 3. Check duplicate IDs
+        if "id" in attr_dict:
+            elem_id = attr_dict["id"].strip()
+            if elem_id:
+                if elem_id in self.seen_ids:
+                    self.issues.append({
+                        "severity": "FAIL",
+                        "wcag": "4.1.1 (Level A)",
+                        "line": line,
+                        "msg": f"Duplicate element id='{elem_id}' breaks label and aria associations."
+                    })
+                else:
+                    self.seen_ids.add(elem_id)
+
+        # 4. Check heading hierarchy
+        if tag in ("h1", "h2", "h3", "h4", "h5", "h6"):
+            level = int(tag[1])
+            if self.last_heading_level > 0 and level > (self.last_heading_level + 1):
+                self.issues.append({
+                    "severity": "WARN",
+                    "wcag": "1.3.1 (Level A)",
+                    "line": line,
+                    "msg": f"Skipped heading level: <{tag}> directly follows <h{self.last_heading_level}>. Maintain sequential structure."
+                })
+            self.last_heading_level = level
+
+        # 5. Check <img> alt
         if tag == "img":
             if "alt" not in attr_dict:
                 self.issues.append({
@@ -62,7 +96,7 @@ class A11yHTMLParser(HTMLParser):
                     "msg": "<img> tag is missing an 'alt' attribute. Use alt='' for decorative images."
                 })
 
-        # 4. Check form controls
+        # 6. Check form controls
         if tag in ("input", "textarea", "select"):
             input_type = attr_dict.get("type", "text").lower()
             if input_type not in ("hidden", "submit", "button", "reset"):
@@ -79,7 +113,7 @@ class A11yHTMLParser(HTMLParser):
                         "msg": f"Form control <{tag}> has no 'aria-label', 'aria-labelledby', or 'id' for label matching."
                     })
 
-        # 5. Check positive tabindex
+        # 7. Check positive tabindex
         if "tabindex" in attr_dict:
             try:
                 t_val = int(attr_dict["tabindex"])
@@ -93,13 +127,24 @@ class A11yHTMLParser(HTMLParser):
             except ValueError:
                 pass
 
-        # 6. Check interactive buttons/links
+        # 8. Check interactive buttons/links
         if tag in ("button", "a"):
             self.in_interactive = True
             self.current_interactive_tag = tag
             self.current_interactive_line = line
             self.interactive_has_text = False
             self.interactive_has_aria = bool(attr_dict.get("aria-label") or attr_dict.get("aria-labelledby"))
+
+            # Check target="_blank"
+            if tag == "a" and attr_dict.get("target") == "_blank":
+                rel = attr_dict.get("rel", "").lower()
+                if "noopener" not in rel and "noreferrer" not in rel:
+                    self.issues.append({
+                        "severity": "WARN",
+                        "wcag": "Security/Usability",
+                        "line": line,
+                        "msg": "<a target='_blank'> missing rel='noopener noreferrer'."
+                    })
 
             # Check touch target inline dimensions
             style = attr_dict.get("style", "")
@@ -153,53 +198,64 @@ def audit_html_file(file_path: Path) -> list[dict[str, str | int]]:
     return parser.issues
 
 
-def main() -> None:
+def main(argv: Sequence[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description="HTML Accessibility (a11y) Scanner")
     parser.add_argument("path", help="Path to HTML file or directory to scan")
-    args = parser.parse_args()
+    parser.add_argument("--json", action="store_true", help="Output raw JSON report")
+    args = parser.parse_args(argv)
 
     target = Path(args.path)
     if not target.exists():
         print(f"Error: Path '{target}' not found.", file=sys.stderr)
-        sys.exit(1)
+        return 1
 
     files = [target] if target.is_file() else sorted(target.glob("**/*.html"))
     if not files:
         print(f"No HTML files found in '{target}'.")
-        sys.exit(0)
+        return 0
 
+    all_results = []
     total_fails = 0
     total_warns = 0
 
-    print("=" * 70)
-    print(" WCAG 2.2 Level AA Offline HTML Accessibility Audit")
-    print("=" * 70)
-
     for f in files:
         issues = audit_html_file(f)
-        if not issues:
-            print(f"[PASS] {f.name}")
-            continue
-
         fails = [i for i in issues if i["severity"] == "FAIL"]
         warns = [i for i in issues if i["severity"] == "WARN"]
         total_fails += len(fails)
         total_warns += len(warns)
 
-        status = "[FAIL]" if fails else "[WARN]"
-        print(f"{status} {f.name} ({len(fails)} errors, {len(warns)} warnings):")
-        for i in issues:
+        all_results.append({
+            "file": str(f),
+            "fails": len(fails),
+            "warnings": len(warns),
+            "issues": issues
+        })
+
+    if args.json:
+        print(json.dumps(all_results, indent=2))
+        return 0 if total_fails == 0 else 1
+
+    print("=" * 70)
+    print(" WCAG 2.2 Level AA Offline HTML Accessibility Audit")
+    print("=" * 70)
+
+    for res in all_results:
+        fpath = Path(res["file"]).name
+        status = "[PASS]" if res["fails"] == 0 and res["warnings"] == 0 else ("[FAIL]" if res["fails"] > 0 else "[WARN]")
+        print(f"{status:8} {fpath} ({res['fails']} errors, {res['warnings']} warnings):")
+        for i in res["issues"]:
             print(f"  Line {i['line']}: [{i['severity']}] [{i['wcag']}] {i['msg']}")
 
     print("-" * 70)
     print(f"Summary: {len(files)} files scanned | Errors: {total_fails} | Warnings: {total_warns}")
     if total_fails > 0:
         print("Verdict: REJECTED (Accessibility violations must be resolved)")
-        sys.exit(1)
+        return 1
     else:
         print("Verdict: APPROVED (Compliant with core WCAG 2.2 rules)")
-        sys.exit(0)
+        return 0
 
 
 if __name__ == "__main__":
-    main()
+    sys.exit(main())
