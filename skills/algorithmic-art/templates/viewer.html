@@ -423,8 +423,12 @@
             <!-- Actions Section (ALWAYS KEEP THIS) -->
             <div class="control-section">
                 <h3>Actions</h3>
-                <div class="button-row">
-                    <button class="button" onclick="resetParameters()">Reset</button>
+                <div class="button-row" style="display: flex; gap: 8px; flex-wrap: wrap;">
+                    <button class="button" onclick="initializeSystem()" style="flex: 1;">Regenerate</button>
+                    <button class="button secondary" onclick="resetParameters()" style="flex: 1;">Reset</button>
+                </div>
+                <div style="margin-top: 10px;">
+                    <button class="button" onclick="downloadArtwork()" style="width: 100%; background: var(--anthropic-dark); color: #fff;">Download PNG</button>
                 </div>
             </div>
         </div>
@@ -563,6 +567,10 @@
             params.seed = Math.floor(Math.random() * 999999) + 1;
             updateSeedDisplay();
             initializeSystem();
+        }
+
+        function downloadArtwork() {
+            saveCanvas('algorithmic_art_seed_' + params.seed, 'png');
         }
 
         function resetParameters() {
