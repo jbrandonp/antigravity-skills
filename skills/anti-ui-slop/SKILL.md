@@ -1,58 +1,73 @@
 ---
 name: anti-ui-slop
-description: 'Stop coding agents from shipping generic UI. Use UIZZE''s 800,000+ real web and iOS screens to build product-specific interfaces, define a design contract, cover required states, and run a hard finish gate. Use when designing, implementing, redesigning, critiquing, or pre-ship reviewing a web or iOS interface in Codex, Claude Code, Cursor, Copilot, or another coding agent. Trigger with "anti-ui-slop", "stop UI slop", "ground this UI in real screens", or "run the UI finish gate".'
+description: 'Master Anti-UI Slop & UI Design Pro System. Eliminates generic AI-generated interfaces and builds production-grade software by combining UIZZE 800,000+ real web and iOS screens with 25+ foundational design laws across color theory (4-layer system, OKLCH, dark mode), layout, typography, cards, spacing, and micro-interactions. Use when designing, redesigning, polishing, critiquing, or pre-ship reviewing web or mobile apps. Trigger with "anti-ui-slop", "stop UI slop", "ui-design-pro", "ground this UI", "make it look professional", or "run the UI finish gate".'
 license: MIT
 metadata:
-  version: "1.2.13"
-  author: "UIZZE <business@uizze.com>"
-  compatibility: "Designed for Claude Code, Codex, Cursor, and GitHub Copilot; works in any agent that can read project files and fetch a URL."
-  tags: "ui-design, design-system, design-review, frontend, web-ui, ios-ui"
+  version: "2.0.0"
+  author: "UIZZE and Design Pro Master Suite"
+  compatibility: "Universal coding agent skill (Antigravity, Claude Code, Cursor, Copilot)"
+  tags: "ui-design, design-system, design-laws, anti-slop, frontend, web-ui, ios-ui"
 ---
 
-> **Stop AI coding agents from shipping generic UI.**
+> **Stop AI coding agents from shipping generic UI. Build intentional, trustworthy software that converts.**
 
-# Stop Making UI Slop
+# Anti-UI-Slop & UI Design Pro Master Suite
 
-Build product-specific UI with 800,000+ real web and iOS screens via [UIZZE](https://uizze.com).
+This skill transforms rough, AI-generated, or amateur UI into polished, production-grade software. It bridges two complementary paradigms:
+1. **Evidence-Based Real Screens**: Grounding UI in real, working product patterns (800,000+ screens via UIZZE).
+2. **Deterministic Design Laws**: 25+ mathematical and perceptual design rules encoded in `reference/design-laws.md` covering the 4-layer color system, OKLCH scales, typography hierarchies, card density, and micro-interactions.
 
-![Stop Making UI Slop with UIZZE](https://uizze.com/landing/anti-ui-slop-skill-banner.png)
+---
 
-## Overview
+## 1. The 25 Actionable Design Laws (`reference/design-laws.md`)
 
-Use the product brief, existing UI, components, and local design system to make intentional interfaces. Uizze supplies focused design guidance and, when useful, a small number of relevant visual references.
+When designing, refining, or auditing any interface, enforce the foundational principles in `reference/design-laws.md`:
 
-## Prerequisites
+### Color Science & Contrast
+- **4-Layer Color System**: Distinguish canvas background, card surface, border definition, and accent actions. Never use pure black (`#000000`) or flat grey on white.
+- **Perceptual Uniformity (OKLCH)**: Maintain consistent perceived brightness across hues.
+- **Dark Mode Elevation**: Increase surface lightness with z-index elevation; do not invert blindly.
 
-- A screen or component to build, redesign, or review — a file path or a short description.
-- The product's existing components, design tokens, and visual language, so the build extends them instead of inventing a new system.
-- Optional access to the paid Uizze MCP for focused references and hosted materials.
+### Layout, Spacing & Density
+- **Consistent Spacing Scale**: Base layout on 4px/8px multiples (`gap-2`, `gap-4`, `gap-6`, `gap-8`).
+- **Visual Hierarchy**: Headlines guide, labels orient, body informs. Ensure minimum contrast ratios (WCAG 2.2 AA).
+- **Cards & Containers**: Avoid nested border soups; use subtle borders (`border-neutral-200 dark:border-neutral-800`) or elevation shadows, never harsh outlines.
 
-## Authentication
+### Micro-Interactions & Polish
+- **Active State Feedback**: Every clickable element requires hover, active, focus-visible, and disabled states.
+- **Predictable Transitions**: Keep durations between 150ms-250ms with `cubic-bezier(0.16, 1, 0.3, 1)`. Avoid generic `transition-all`.
 
-- The free skill and public catalogue work without an account, token, MCP connection, dependency, script, or executable.
-- The optional full UIZZE MCP may use the host's normal connection and authentication flow. Never claim it is connected without an actual host result.
+---
 
-## Work from the product
+## 2. Real-World Screen Playbooks (`reference/`)
 
-Read the brief, existing UI, components, tokens, and constraints before designing. They always outrank this skill. Keep familiar interaction conventions and make the product's own objects, workflow, and priorities visually clear. Do not add novelty for its own sake.
+Choose the specific playbook for your current task:
 
-## Load one playbook
+- **New Interface or Major Redesign**: `reference/new-work.md`
+- **Product, SaaS & Dashboard Work**: `reference/operate.md`
+- **Refinement, Elevation & Polish**: `reference/polish.md`
+- **Simplification & Distillation**: `reference/distill.md`
+- **Formal Interface Audit**: `reference/audit.md`
+- **Native iOS / Mobile Screens**: `reference/ios.md`
+- **Deep Design Laws & Tokens**: `reference/design-laws.md`
 
-Choose at most one file for the current request:
+Do not load multiple playbooks at once. Apply focused architectural judgment rather than treating checklists as mindless busywork.
 
-- New interface or major redesign: `reference/new-work.md`
-- Product or dashboard work: `reference/operate.md`
-- Refinement and polish: `reference/polish.md`
-- Simplification or distillation: `reference/distill.md`
-- Explicit audit: `reference/audit.md`
-- Native iOS work: `reference/ios.md`
+---
 
-Do not load a second playbook. Apply judgment rather than treating its examples as a checklist.
+## 3. Work from the Product Context
 
-## Optional Uizze evidence
+Always read the user brief, existing UI tokens, components, and brand guidelines before writing code. Existing product conventions outrank generic defaults.
+- Do not add novelty for its own sake.
+- Make the product's primary user journey obvious within 3 seconds of viewing.
+- Eliminate redundant badges, empty decorative cards, and generic stock illustrations.
 
-Read `references/uizze-reference-policy.md` before using the paid MCP. It exposes exactly `find_ui_references` and `find_ui_materials`. Use them only when a concrete unresolved visual or material question would benefit from evidence. If they return nothing, continue silently.
+---
 
-## Finish
+## 4. The UI Finish Gate
 
-Complete the requested scope. When the environment supports it, render and inspect once. Fix observable breakage such as clipping, overlap, distorted media, inaccessible controls, or inert interactions. Keep the handoff concise.
+Before completing any UI task:
+1. **Visual QA**: Inspect layout in desktop and mobile viewport widths.
+2. **Text Clipping**: Verify long strings and localized text do not overflow or truncate destructively.
+3. **Contrast Verification**: Ensure text meets 4.5:1 ratio against its immediate container background.
+4. **State Completeness**: Ensure loading skeleton, empty state, and error message states are defined.
