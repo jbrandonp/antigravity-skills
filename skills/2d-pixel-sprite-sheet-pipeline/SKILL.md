@@ -1,6 +1,6 @@
 ---
 name: 2d-pixel-sprite-sheet-pipeline
-description: "Architect and execute an end-to-end 2D pixel-art sprite production pipeline without mixels (sub-pixel artifacts). Covers South anchor discipline, deterministic 5-step Pixel Snap, directional anchors (NSEW), connected-component frame recovery, I2V walk cycles, size contracts (16/32/64/128/256), and runtime alignment."
+description: "Architect and execute an end-to-end 2D pixel-art sprite production pipeline without mixels (sub-pixel artifacts). Covers South anchor discipline, deterministic 5-step Pixel Snap, directional anchors (NSEW), connected-component frame recovery, I2V walk cycles, size contracts (16/32/64/128/256), runtime ground alignment, and the complete WAT deterministic CLI toolkit."
 ---
 
 # 2D Pixel-Snapped Game Spritesheet Pipeline
@@ -58,9 +58,9 @@ The south-facing candidate is the single source of truth from which all directio
 ---
 
 ### Stage 2: The Deterministic Pixel Snap Algorithm
-Pixel snap is **not an AI model** — it is a pure mathematical image-processing algorithm (ported from Sprite Fusion `spritefusion-pixel-snapper`). It eradicates mixels by recovering the latent grid and voting colors:
+Pixel snap is **not an AI model** — it is a pure mathematical image-processing algorithm. It eradicates mixels by recovering the latent grid and voting colors:
 
-1. **Palette Quantization**: Run K-means clustering ($k=256$ or target game palette) in CIELAB color space.
+1. **Palette Quantization**: Run K-means clustering ($k=256$ or target game palette) in CIELAB/RGB color space.
 2. **Edge-Gradient Profiling**: Compute horizontal and vertical Sobel gradient profiles:
    $$\nabla_x = |I * G_x|, \quad \nabla_y = |I * G_y|$$
 3. **Pitch Recovery**: Compute autocorrelation of 1D gradient projections to extract the median pixel cell pitch $P$ (typically 16px, 24px, or 32px within the 1024px canvas).
@@ -68,23 +68,19 @@ Pixel snap is **not an AI model** — it is a pure mathematical image-processing
 5. **Majority-Color Resampling**: In each grid cell $C_{i,j}$, replace all internal pixels with the mode color:
    $$\text{Color}(C_{i,j}) = \text{mode}\{c \in C_{i,j}\}$$
 
-```python
-# pixel_snap_core.py
-import numpy as np
-from PIL import Image
-from scipy.signal import find_peaks
+#### CLI Execution: `pixel_snap.py`
+```bash
+# Auto-detect pitch and snap to native grid with Pico-8 palette
+uv run scripts/pixel_snap.py -i raw_south_anchor.png -o snapped_south.png --palette pico-8 --scale 4
 
-def compute_cell_pitch(gradient_1d: np.ndarray, min_distance: int = 8) -> int:
-    """Finds the median spacing between sharp pixel edge peaks."""
-    peaks, _ = find_peaks(gradient_1d, distance=min_distance, prominence=np.max(gradient_1d) * 0.2)
-    diffs = np.diff(peaks)
-    return int(np.median(diffs)) if len(diffs) > 0 else 16
+# Snap with explicit 16px cell pitch and custom 32-color adaptive palette
+uv run scripts/pixel_snap.py -i raw_character.png -o snapped_char.png -p 16 --colors 32 --chroma "#00FF00"
 ```
 
 ---
 
 ### Stage 3: Directional Anchors (NSEW)
-Generate West and North anchors conditioned on the snapped South anchor. **East is always a horizontal flip of West** (`Image.FLIP_LEFT_RIGHT`) to preserve pixel symmetry.
+Generate West and North anchors conditioned on the snapped South anchor. **East is always a horizontal flip of West** (`flip_horizontal`) to preserve pixel symmetry.
 
 - **Dual-Image Input conditioning**:
   1. `Snapped Chroma South Anchor` (Identity reference).
@@ -105,36 +101,20 @@ Generate a multi-frame pose board (`2048 × 1536` PNG) containing 4 to 8 animati
 
 ---
 
-### Stage 5: Connected-Component Frame Recovery (Never Naive Grid Slicing!)
+### Stage 5: Connected-Component Frame Recovery
+Never use naive uniform grid slicing (e.g. slicing 512x512 tiles)! Naive grid cropping decapitates swinging weapons, follow-through capes, or stretched limbs that cross the cell threshold.
 
-> [!CAUTION]
-> **Never use naive uniform grid slicing (e.g. slicing 512x512 tiles).**
-> Naive grid cropping will decapitate swinging weapons, follow-through capes, or stretched limbs that cross the cell threshold.
-
-#### The Recovery Algorithm
-1. Mask out chroma background (`#00FF00` within tolerance $\Delta E < 10$).
-2. Morphological dilation ($3 \times 3$ kernel) to bridge weapon handles and floating spell particles to the main body.
+#### Recovery Workflow:
+1. Mask out chroma background (`#00FF00` within tolerance $\Delta E < 35$).
+2. Apply morphological dilation ($3 \times 3$ to $5 \times 5$ kernel) to bridge weapon handles and floating particles to the character body.
 3. Label connected components via `scipy.ndimage.label`.
 4. Filter out noise components ($\text{area} < 64$ pixels).
-5. Extract bounding boxes $[x_{\min}, y_{\min}, x_{\max}, y_{\max}]$, sorting left-to-right, top-to-bottom.
+5. Extract bounding boxes $[x_{\min}, y_{\min}, x_{\max}, y_{\max}]$, sorting in row-major reading order (top row left-to-right, then next row).
 
-```python
-# frame_recovery.py
-import numpy as np
-from scipy.ndimage import label, find_objects
-
-def recover_foreground_frames(rgba_image: np.ndarray) -> list[tuple[int, int, int, int]]:
-    alpha = rgba_image[:, :, 3] > 0
-    labeled, num_features = label(alpha)
-    slices = find_objects(labeled)
-    valid_boxes = []
-    for s in slices:
-        h = s[0].stop - s[0].start
-        w = s[1].stop - s[1].start
-        if w > 32 and h > 32:  # Filter dust/noise
-            valid_boxes.append((s[1].start, s[0].start, s[1].stop, s[0].stop))
-    # Sort primarily by row, then by column
-    return sorted(valid_boxes, key=lambda b: (b[1] // 300, b[0]))
+#### CLI Execution: `extract_sprite_frames.py`
+```bash
+# Extract frames from pose board with green despill and weapon bridging
+uv run scripts/extract_sprite_frames.py -i attack_pose_board.png -o output_frames/ --chroma "#00FF00" --bridge-gap 4 --debug-sheet debug_boxes.png
 ```
 
 ---
@@ -148,22 +128,59 @@ Still-image models consistently fail at walking cycles (feet slide, proportions 
 ---
 
 ### Stage 7: Per-Frame Chroma-Layout Snap
-Every recovered frame from Stage 5 or Stage 6 must undergo an **individual Pixel Snap pass**. Snapping the full multi-frame board in one pass creates bleed artifacts across cell borders. Snapping each isolated frame guarantees sharp boundaries.
+Every recovered frame from Stage 5 or Stage 6 must undergo an **individual Pixel Snap pass**. Snapping the full multi-frame board in one pass creates bleed artifacts across cell borders. Snapping each isolated frame guarantees razor-sharp boundaries.
+
+```bash
+for f in output_frames/frame_*.png; do
+  uv run scripts/pixel_snap.py -i "$f" -o "snapped_frames/$(basename "$f")" --palette endesga-32
+done
+```
 
 ---
 
 ### Stage 8: Runtime Normalization & Ground Aligner
+Stabilizes character animation ground contact (Y-baseline) and centers horizontal anchors, preventing character foot-sliding, head-bobbing jitter, and floor clipping in game engines.
+
 1. **Chroma Despeckle**: Remove single-pixel green fringes around the perimeter.
 2. **Ground-Truth Contact Alignment**:
    - Locate the lowest non-transparent pixel in each frame ($Y_{\text{contact}}$).
-   - Anchor all frames so their contact point aligns to $Y = \text{FrameHeight} - 16\text{px}$.
+   - Anchor all frames so their contact point aligns to $Y = \text{FrameHeight} - \text{margin}$.
 3. **Export Sheets**:
-   - Pack into uniform power-of-two spritesheets (`1024 × 512`, `1280 × 512`, or `2048 × 2048`).
-   - Export JSON metadata with frame coordinates and frame rates (e.g. 10 FPS for walk, 15 FPS for attack).
+   - Pack into uniform power-of-two spritesheets (`256 × 256`, `512 × 512`, `1024 × 512`).
+   - Export engine-ready JSON metadata with frame coordinates and frame rates (e.g. 10 FPS for walk, 15 FPS for attack).
+
+#### CLI Execution: `pack_spritesheet.py`
+```bash
+# Pack aligned frames into a power-of-two spritesheet with ground baseline locking
+uv run scripts/pack_spritesheet.py -i snapped_frames/ -o player_walk_sheet.png --align ground --margin 4 --fps 12
+```
 
 ---
 
-## 3. Anti-Patterns to Avoid
+## 3. Automated Quality Gate: Mixel & Alpha Auditor
+
+To verify that an asset or spritesheet is 100% compliant with retro game-engine standards, run `audit_pixel_art.py`.
+
+```bash
+uv run scripts/audit_pixel_art.py -i player_walk_sheet.png --max-colors 32
+```
+
+### Audited Metrics:
+- **Mixel Detection**: Identifies sub-pixel anti-aliasing smear and non-integer grid transitions.
+- **Alpha Purity**: Strict 1-bit binary alpha check ($0 < \alpha < 255$ is forbidden).
+- **Palette Cohesion**: Flags near-duplicate colors and palette bloat.
+- **Dimension Contract**: Conformance to 16/32/64/128/256 standards.
+
+---
+
+## 4. Playbooks & Reference Guides
+
+- [Pixel Art Craftsmanship & Palette Guidelines](references/pixel_art_guidelines.md): Pico-8, Endesga-32, NES, outline rules, cluster shading, and animation cadences.
+- [Game Engine Integration Guide](references/engine_integration.md): Zero-blur setup for Godot 4 (`Nearest`), Unity (`Point`), Unreal Engine 5 (`Paper2D`), and HTML5 Canvas.
+
+---
+
+## 5. Anti-Patterns to Avoid
 
 ❌ **Anti-pattern: Generating transparent PNGs directly from diffusion models.**
 - *Why bad*: Diffusion models produce semi-transparent anti-aliased alpha halos that break 16-bit retro aesthetics.
