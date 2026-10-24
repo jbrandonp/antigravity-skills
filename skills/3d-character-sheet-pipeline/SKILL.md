@@ -1,7 +1,6 @@
 ---
 name: 3d-character-sheet-pipeline
-description: >-
-  Turn a single 2D character concept image (any pose, any style) into a complete production-ready 3D reference package — strict-front A-pose sheet (2K, Nano Banana Pro), orthographic 3-projection visual reference sheet (GPT-Image-2.5), individually extracted parts in matching strict-front orientation (body, limbs, head, hair, accessories), vision-classifier anti-3/4 drift verification loop, and downstream routing to Tripo H3.1/P1, Rodin, and Patina PBR textures for Unreal Engine 5 and Unity.
+description: "Turn a single 2D character concept image (any pose, any style) into a complete production-ready 3D reference package — strict-front A-pose sheet (2K, Nano Banana Pro), orthographic 3-projection visual reference sheet (GPT-Image-2.5), individually extracted parts in matching strict-front orientation (body, limbs, head, hair, accessories), vision-classifier anti-3/4 drift verification loop, pre-flight 3D mesh validator, and downstream routing to Tripo H3.1/P1, Rodin, and Patina PBR textures for Unreal Engine 5 and Unity."
 ---
 
 # 🎨 3D Character Sheet Pipeline & Asset Routing (SOTA 2026)
@@ -54,61 +53,101 @@ character_pack/
 
 ---
 
-## 🔄 The 8-Stage Pipeline with 3 Human Gates
+## 🔄 The 8-Stage Pipeline with Deterministic WAT Tooling
 
-### Stage 1: Intake & Silhouette Analysis
+```mermaid
+flowchart TD
+    S1["1. Intake & Pack Scaffolding"] --> S2A["2A. Strict-Front A-Pose Sheet (2K)"]
+    S1 --> S2B["2B. Multi-View Composite (GPT-Image-2.5)"]
+    S2A --> S3["3. Gate 1 — Modular Parts Inventory"]
+    S3 --> S4["4. Parts Extraction (Torso, Limbs, Gear)"]
+    S4 --> S45["4.5. Symmetry & Anti-3/4 CV Verifier"]
+    S45 -- "Hard Fail" --> S4R["Escalated Prompt Retry Loop (Max 2)"]
+    S4R --> S4
+    S45 -- "Pass / Soft Fail" --> S5["5. Gate 2 — Multi-View Orthographic Pass"]
+    S5 --> S6["6. Gate 3 — 360 Orbit Video (Optional)"]
+    S6 --> S7["7. Tripo H3.1 Mesh Generation"]
+    S7 --> S8["8. Pre-Flight 3D Mesh Validator"]
+```
+
+---
+
+### Stage 1: Intake & Pack Scaffolding
 - **Input**: 1 character image (any pose, any lighting, any style).
 - **Brief**: Target art style (e.g., stylized fantasy, chunky silhouette, hand-painted albedo, no specular highlights), mandatory accessories, and forbidden elements.
-- **Analysis**: Detect silhouette type, race proportions, color palette (60/30/10 rule), gender, hair volume, and accessory count.
-- **Confirmation**: Present a 2-line summary to user before spending generation credits.
+- **Scaffold Package**: Run `scaffold_character_pack.py` to create the standard folder hierarchy and initialize `manifest.json`.
+
+```bash
+uv run scripts/scaffold_character_pack.py -d character_pack/ -n paladin_warrior -s stylized_pbr --accessories greatsword shield pauldrons
+```
+
+---
 
 ### Stage 2A: Strict-Front A-Pose Sheet (The Workhorse)
 - **Goal**: ONE clean full-body character sheet in A-pose at **dead-front camera angle (NOT 3/4)** on pure white/neutral-grey backdrop, flat lighting, no dramatic perspective distortion.
 - **Resolution**: 2K (2048×2048).
-- **Model Priority**: `Nano Banana Pro` (Primary) -> `Nano Banana 2` (Fallback). Never use GPT-Image-2.5 here (Nano Banana Pro provides superior character continuity in orthographic front views).
+- **Model Priority**: `Nano Banana Pro` (Primary) -> `Nano Banana 2` (Fallback). Never use GPT-Image-2.5 here.
 - **Prompt Reference**: See [`prompts/01a_apose_front.md`](prompts/01a_apose_front.md).
-- *This image is the single source of truth for all downstream extractions.*
+
+---
 
 ### Stage 2B: Supplementary Multi-View Sheet (Visual Aid)
 - **Goal**: ONE 16:9 composite sheet showing FRONT, SIDE, and BACK orthographic projections, plus accessories laid out neatly to the side.
-- **Model Priority**: `GPT-Image-2.5` (`openai/gpt-image-2.5/flare/*`). GPT-Image family excels at multi-panel spatial composition while maintaining character identity.
+- **Model Priority**: `GPT-Image-2.5` (`openai/gpt-image-2.5/flare/*`).
 - **Prompt Reference**: See [`prompts/01b_character_sheet.md`](prompts/01b_character_sheet.md).
 
+---
+
 ### Stage 3: Gate 1 — Confirm Modular Parts List
-Categorize all detected components:
+Categorize all detected components in `character_pack/parts_inventory.md`:
 1. `body-essential`: Torso, legs, arms, head. Must be strict front A-pose so assembly seams align.
 2. `paired`: Hands/gloves, boots/feet. Close-crop pair preserving identical strict-front orientation.
 3. `accessory`: Hat, weapon, shield, shoulder pauldrons, backpack, cloak. Front-facing default.
-4. `hair`: Isolated front view with soft alpha edges. (Default: always extract separately for modular hairstyle swapping).
-*Present numbered table to user and require explicit confirmation.*
+4. `hair`: Isolated front view with soft alpha edges.
+
+---
 
 ### Stage 4: Parts Extraction (Strict Front)
-Generate each approved part at 2K resolution, matching the exact orientation, scale, and lighting of Stage 2A:
+Generate each approved part at 2K resolution matching orientation, scale, and lighting of Stage 2A:
 - **Torso/Limbs**: [`prompts/02_parts_body.md`](prompts/02_parts_body.md)
 - **Hands/Boots**: [`prompts/03_parts_paired.md`](prompts/03_parts_paired.md)
 - **Accessories**: [`prompts/04_parts_accessory.md`](prompts/04_parts_accessory.md)
 - **Hair**: [`prompts/05_parts_hair.md`](prompts/05_parts_hair.md)
 
-### Stage 4.5: Vision-Classifier Verification & Anti-3/4 Retry Loop
-Immediately verify every Stage 2A and Stage 4 generation through a vision inspection check:
-- **Verification Rule**: Checks for shoulder symmetry, foot alignment, zero body twist, zero contrapposto, and zero "glamour/hero 3/4 angle".
-- **Three Verdicts**:
-  - `pass`: Both sides symmetrical, strict front confirmed. Accept and proceed.
-  - `soft_fail`: Minor micro-drift (<5°) but assembly seams intact. Accept with warning in manifest.
-  - `hard_fail`: Clear 3/4 rotation, hero angle, or limb foreshortening. **Reject immediately.**
-- **Bounded Retry Loop (Max 2 retries)**:
-  - *Retry 1*: Re-run primary model with escalated prompt prepending classifier feedback: *"PREVIOUS ATTEMPT REJECTED: Rotated ~20° to camera-right. THIS ATTEMPT MUST BE STRICT DEAD-FRONT."*
-  - *Retry 2*: Fallback to secondary model (`Nano Banana 2`) with escalated prompt.
-  - *Escalation*: If attempt 3 still fails, pause and ask user to choose or adjust prompt.
-- **Classifier Prompt**: See [`prompts/08_3q_classifier.md`](prompts/08_3q_classifier.md).
+---
+
+### Stage 4.5: Automated Computer Vision Symmetry & Anti-3/4 Verifier
+Run `verify_orthographic_symmetry.py` immediately on every generation to eliminate 3/4 drift and spinal tilt without relying solely on expensive multimodal LLM calls.
+
+```bash
+uv run scripts/verify_orthographic_symmetry.py -i character_pack/00_sheet/01a_apose_front.png --category body-essential --min-symmetry 0.80
+```
+
+#### Metrics Checked:
+- **Bilateral Symmetry (Dice / IoU)**: Computes horizontal silhouette reflection overlap.
+- **Spine Tilt**: Detects contrapposto body lean ($\theta_{\text{tilt}} \le 4^\circ$).
+- **Estimated Azimuth Drift**: Detects 3/4 camera angle ($|\theta_{\text{azimuth}}| \le 9^\circ$).
+- **Boundary Crop**: Ensures geometry is not clipped at image borders.
+
+#### Bounded Retry Loop:
+If the verifier outputs `HARD_FAIL`, use the generated `escalated_correction_prompt` (prepending the exact estimated rotation degrees) and retry (max 2 retries):
+- *Retry 1*: Primary model with escalated prompt.
+- *Retry 2*: Secondary model (`Nano Banana 2`) with escalated prompt.
+- *Prompt Rubric*: See [`prompts/08_3q_classifier.md`](prompts/08_3q_classifier.md).
+
+---
 
 ### Stage 5: Gate 2 — Multi-View Orthographic Pass
 - Propose side and back views for approved body-essential parts and hair.
 - Reference: [`prompts/06_multiview.md`](prompts/06_multiview.md).
 
+---
+
 ### Stage 6: Gate 3 — 360 Turntable Video (Optional)
 - Locked-camera orbit video (4-6s) using `Seedance 2.0` or `Kling`.
 - Reference: [`prompts/07_360_video.md`](prompts/07_360_video.md).
+
+---
 
 ### Stage 7: Downstream 3D Mesh Generation & Routing
 
@@ -120,14 +159,22 @@ Immediately verify every Stage 2A and Stage 4 generation through a vision inspec
 
 ---
 
-## ⚠️ Anti-Patterns & Pitfalls
-- ❌ **NEVER allow a 3/4 angle on body parts or accessories.** It completely breaks downstream modular rigging.
-- ❌ **NEVER bake strong directional shadows or ambient occlusion into reference images.** Lighting must be flat neutral studio lighting so normal generation doesn't misinterpret shadow as depth.
-- ❌ **NEVER generate weapons held in hands.** Generate weapons floating, isolated, blade-front on white.
-- ❌ **NEVER rely on Meshy-7 or Hunyuan raw meshes without decimation.** Raw 1.5M polygon meshes crash real-time game viewports. Enforce 8,000 to 25,000 face limits.
+### Stage 8: Pre-Flight 3D Mesh & Texture Validation
+Before rigging in Blender or importing into Unreal Engine 5 / Unity, validate the raw `.glb` mesh with `validate_3d_character_mesh.py`:
+
+```bash
+uv run scripts/validate_3d_character_mesh.py -i character_pack/04_mesh_raw/character.glb --max-tris 45000
+```
+
+- **Checks**:
+  - Triangle budget ($< 45,000$ tris for hero, $< 10,000$ for props).
+  - Ground pivot alignment ($Z=0$ or $Y=0$ floor coordinate).
+  - PBR textures (BaseColor, Normal, Metallic-Roughness).
 
 ---
 
-## 🔗 Related Skills in Antigravity
-- [`blender-game-rigging-animation`](../blender-game-rigging-animation/SKILL.md): Ingests the output GLB meshes, re-centers pivots to bottom-center, binds the Mixamo skeleton, and bakes animations.
+## 📚 References & Playbooks
+
+- [Orthographic 3D Reference Playbook](references/orthographic_pipeline_playbook.md): Strict A-pose joint angles, modular seam alignment planes, and engine routing matrices.
+- [`blender-game-rigging-animation`](../blender-game-rigging-animation/SKILL.md): Ingests GLB meshes, re-centers pivots, binds Mixamo skeleton, and bakes animations.
 - [`mixamo-animation-library-engine`](../mixamo-animation-library-engine/SKILL.md): Supplies 90+ standard humanoid animation clips to drive the character.
