@@ -4,15 +4,15 @@
 [![Google Antigravity](https://img.shields.io/badge/Antigravity-2.0%20Ready-4285F4.svg)](https://antigravity.google)
 [![Skills Count](https://img.shields.io/badge/Elite%20Skills-135%20Active-success.svg)](skills/)
 [![DeepMind Science](https://img.shields.io/badge/DeepMind%20Science-41%20Skills-8A2BE2.svg)](plugins/science/)
+[![Google Stitch](https://img.shields.io/badge/Google%20Stitch-16%20Skills-4285F4.svg)](plugins/stitch-design/)
+[![Plugins Count](https://img.shields.io/badge/Plugins-9%20Bundled-blue.svg)](plugins/)
 [![MCP Servers](https://img.shields.io/badge/MCP%20Servers-5%20Bundled-blue.svg)](mcp/)
-[![Total Tools](https://img.shields.io/badge/Total%20Tools-176%20Skills%20%2B%205%20MCP-orange.svg)](#)
-[![DeepMind Science](https://img.shields.io/badge/DeepMind%20Science-41%20Skills-8A2BE2.svg)](plugins/science/)
-[![Universal Agents](https://img.shields.io/badge/~%2F.agents%2Fskills-Compatible-orange.svg)](#-universal-agent-compatibility-agentsskills)
+[![Total Tools](https://img.shields.io/badge/Total%20Tools-192%20Skills%20%2B%205%20MCP-orange.svg)](#)
 [![Integrity Score](https://img.shields.io/badge/Audit%20Score-100%2F100-brightgreen.svg)](scripts/verify_skills.py)
 [![CI Status](https://img.shields.io/badge/CI-Passing-brightgreen.svg)](.github/workflows/validate-skills.yml)
 
 > **The Ultimate Production-Grade Skill & Customization Suite for [Google Antigravity](https://antigravity.google) and Modern AI Coding Agents.**  
-> Includes **135 audited elite skills**, **41 Google DeepMind Science skills** and **5 pre-bundled MCP servers**, the official **Google DeepMind Science toolkit** (41 skills + 3D Mol* interactive sidecar), custom Model Context Protocol (MCP) servers, full `~/.agents/skills` multi-agent support, and one-click installers.
+> Includes **135 audited elite skills**, the official **Google DeepMind Science toolkit** (41 skills + 3D Mol* interactive sidecar), the **Google Labs Stitch design suite** (16 skills across 3 plugins), **5 pre-bundled MCP servers** (Blender, Cloud Run, Firebase, Genkit, Science Mol*), and one-click installers.
 
 ---
 

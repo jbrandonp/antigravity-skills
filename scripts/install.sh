@@ -18,7 +18,7 @@ if [ "$TARGET" = "All" ] || [ "$TARGET" = "Antigravity" ]; then
     echo "--> Copying skills to ${DEST_SKILLS}..."
     cp -R "${SCRIPT_DIR}/skills/"* "${DEST_SKILLS}/"
 
-    echo "--> Copying plugins to ${DEST_PLUGINS}..."
+    echo "--> Copying plugins (Science, Stitch, Android, Firebase, etc.) to ${DEST_PLUGINS}..."
     cp -R "${SCRIPT_DIR}/plugins/"* "${DEST_PLUGINS}/"
 
     if [ -d "${SCRIPT_DIR}/mcp" ]; then
@@ -43,7 +43,7 @@ if [ "$TARGET" = "All" ] || [ "$TARGET" = "Agents" ]; then
     echo "=== Installing Universal Agent Skills (~/.agents/skills) ==="
     mkdir -p "${DEST_AGENTS}"
 
-    echo "--> Deploying skills to ${DEST_AGENTS} for Claude Code, Cursor, Copilot & npx skills..."
+    echo "--> Deploying core skills to ${DEST_AGENTS} for Claude Code, Cursor, Copilot & npx skills..."
     cp -R "${SCRIPT_DIR}/skills/"* "${DEST_AGENTS}/"
 
     SCIENCE_SKILLS="${SCRIPT_DIR}/plugins/science/skills"
@@ -55,6 +55,16 @@ if [ "$TARGET" = "All" ] || [ "$TARGET" = "Agents" ]; then
             cp -R "$d" "${DEST_AGENTS}/${canonical}"
         done
     fi
+
+    for p in "${SCRIPT_DIR}/plugins"/stitch-*; do
+        if [ -d "$p/skills" ]; then
+            echo "--> Deploying $(basename "$p") skills into ${DEST_AGENTS}..."
+            for d in "$p/skills"/*/; do
+                dirname=$(basename "$d")
+                cp -R "$d" "${DEST_AGENTS}/stitch-${dirname}"
+            done
+        fi
+    done
 fi
 
-echo "✓ Installation complete! All skills, plugins, and MCP servers are active and ready."
+echo "✓ Installation complete! All 192 skills, 9 plugins, and 5 MCP servers are active and ready."
