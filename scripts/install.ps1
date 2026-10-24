@@ -23,6 +23,9 @@ if ($Target -eq "All" -or $Target -eq "Antigravity") {
 
     Write-Host "--> Copying skills to $DestSkills..." -ForegroundColor Yellow
     Copy-Item -Path (Join-Path $ScriptDir "skills\*") -Destination $DestSkills -Recurse -Force
+    Write-Host "--> Deploying Hermes Master-Suites (50) and Mega-Suites (10) into $DestSkills..." -ForegroundColor Yellow
+    Copy-Item -Path (Join-Path $ScriptDir "hermes\master-suites\*") -Destination $DestSkills -Recurse -Force
+    Copy-Item -Path (Join-Path $ScriptDir "hermes\mega-suites\*") -Destination $DestSkills -Recurse -Force
 
     Write-Host "--> Copying plugins (Science, Stitch, Android, Firebase, etc.) to $DestPlugins..." -ForegroundColor Yellow
     Copy-Item -Path (Join-Path $ScriptDir "plugins\*") -Destination $DestPlugins -Recurse -Force
