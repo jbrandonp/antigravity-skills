@@ -21,19 +21,20 @@
 
 ## 📑 Table of Contents
 
-1. [Overview & Philosophy](#-overview--philosophy)
-2. [Universal Multi-Agent Compatibility](#-universal-multi-agent-compatibility)
-3. [One-Click Installation](#-one-click-installation)
-4. [Hermes Autonomous Agent Ecosystem](#-hermes-autonomous-agent-ecosystem)
-   - [10 All-in-One Mega-Suites](#-10-all-in-one-mega-suites-330000-words)
-   - [50 Consolidated Master Suites](#-50-consolidated-master-suites)
-   - [Hermes MCP Servers & Autonomous Tools](#-hermes-mcp-servers--autonomous-tools)
-5. [Elite Skills Catalog (117 Skills)](#-elite-skills-catalog-117-skills)
-6. [Google DeepMind Science Suite (41 Skills)](#-google-deepmind-science-suite-41-skills)
-7. [Plugins & MCP Architecture](#-plugins--mcp-architecture)
-8. [Zero-Trust Security & Sanitization](#-zero-trust-security--sanitization)
-9. [Automated CI & Validation](#-automated-ci--validation)
-10. [License & Credits](#-license--credits)
+1. [Overview & Philosophy](#overview-philosophy)
+2. [Universal Multi-Agent Compatibility](#universal-multi-agent-compatibility)
+3. [One-Click Installation](#one-click-installation)
+4. [Hermes Autonomous Agent Ecosystem](#hermes-autonomous-agent-ecosystem)
+   - [10 All-in-One Mega-Suites](#10-all-in-one-mega-suites-330000-words)
+   - [50 Consolidated Master Suites](#50-consolidated-master-suites)
+   - [Hermes MCP Servers & Autonomous Tools](#hermes-mcp-servers-autonomous-tools)
+5. [Elite Skills Catalog (117 Skills)](#elite-skills-catalog-117-skills)
+6. [Google DeepMind Science Suite (41 Skills)](#google-deepmind-science-suite-41-skills)
+7. [Google Labs Stitch Design Suite (16 Skills)](#google-labs-stitch-design-suite-16-skills)
+8. [Plugins & MCP Architecture](#plugins-mcp-architecture)
+9. [Zero-Trust Security & Sanitization](#zero-trust-security-sanitization)
+10. [Automated CI & Validation](#automated-ci-validation)
+11. [License & Credits](#license-credits)
 
 ---
 
@@ -44,22 +45,21 @@ In modern agentic AI development, probabilistic language models frequently suffe
 2. **Hallucinated Execution**: Agents guessing CLI flags, imaginary timestamps, or non-existent APIs.
 
 The **Antigravity Super Suite & Hermes Ecosystem** solves this through the **WAT (Workflows, Agents, Tools) architecture** and a strict **100% Audit Score**:
-- **Zero Collision Architecture**: Antigravity elite engineering skills (skills/) and Hermes autonomous agency suites (hermes/) are structured to prevent naming collisions while sharing standard formats.
+- **Zero Collision Architecture**: Antigravity elite engineering skills (`skills/`) and Hermes autonomous agency suites (`hermes/`) are structured to prevent naming collisions while sharing standard formats.
 - **Consolidated Master Suites**: 330+ fragmented micro-skills from the Hermes ecosystem have been merged into 50 authoritative Master Suites and 10 All-in-One Mega-Suites.
-- **Multi-Agent Interoperability**: Fully compatible out-of-the-box with **Google Antigravity**, **Anthropic Claude Code**, **Hermes Agent**, **Cursor**, and any agent supporting ~/.agents/skills/.
-- **Hermetic Tool Execution**: Uses Python PEP 723 metadata with uv for sub-second, isolated CLI executions without polluting global environments.
+- **Multi-Agent Interoperability**: Fully compatible out-of-the-box with **Google Antigravity**, **Anthropic Claude Code**, **Hermes Agent**, **Cursor**, and any agent supporting `~/.agents/skills/`.
+- **Hermetic Tool Execution**: Uses Python PEP 723 metadata with `uv` for sub-second, isolated CLI executions without polluting global environments.
 
 ---
 
 ## 🔄 Universal Multi-Agent Compatibility
 
-This suite natively supports the **open-standard multi-agent specification** (~/.agents/skills/), ensuring that all skills and suites work seamlessly across:
-- **Google Antigravity IDE & CLI (gy)**: Deployed to ~/.gemini/config/skills/ and ~/.gemini/antigravity/mcp/.
-- **Anthropic Claude Code**: Documented in [CLAUDE.md](CLAUDE.md), deployed to ~/.claude/skills/ or ~/.agents/skills/.
-- **Hermes Agent**: Deployed to ~/.hermes/skills/ and ~/.hermes/mcp/.
-- **Cursor & GitHub Copilot**: Deployed via .cursor/skills/ or universal ~/.agents/skills/.
-- **Open-Source Agent CLI (
-px skills)**: Automatically discovers all tools in ~/.agents/skills/.
+This suite natively supports the **open-standard multi-agent specification** (`~/.agents/skills/`), ensuring that all skills and suites work seamlessly across:
+- **Google Antigravity IDE & CLI (`agy`)**: Deployed to `~/.gemini/config/skills/` and `~/.gemini/antigravity/mcp/`.
+- **Anthropic Claude Code**: Documented in [`CLAUDE.md`](CLAUDE.md), deployed to `~/.claude/skills/` or `~/.agents/skills/`.
+- **Hermes Agent**: Deployed to `~/.hermes/skills/` and `~/.hermes/mcp/`.
+- **Cursor & GitHub Copilot**: Deployed via `.cursor/skills/` or universal `~/.agents/skills/`.
+- **Open-Source Agent CLI (`npx skills`)**: Automatically discovers all tools in `~/.agents/skills/`.
 
 ---
 
@@ -67,55 +67,55 @@ px skills)**: Automatically discovers all tools in ~/.agents/skills/.
 
 ### Windows (PowerShell)
 Open PowerShell and run:
-`powershell
+```powershell
 # Install everything (Antigravity + Hermes + Claude + Universal Agents)
 irm https://raw.githubusercontent.com/jbrandonp/antigravity-skills/main/scripts/install.ps1 | iex
-`
+```
 *Or clone the repo and choose your target:*
-`powershell
+```powershell
 git clone https://github.com/jbrandonp/antigravity-skills.git
 cd antigravity-skills
 
 # Options: -Target All | Antigravity | Hermes | Claude | Agents
 .\scripts\install.ps1 -Target All
-`
+```
 
 ### Linux / macOS (Bash)
-`ash
+```bash
 # Install everything
 curl -fsSL https://raw.githubusercontent.com/jbrandonp/antigravity-skills/main/scripts/install.sh | bash
-`
+```
 *Or clone the repo and choose your target:*
-`ash
+```bash
 git clone https://github.com/jbrandonp/antigravity-skills.git
 cd antigravity-skills
 chmod +x scripts/install.sh
 
 # Options: ./scripts/install.sh [All|Antigravity|Hermes|Claude|Agents]
 ./scripts/install.sh All
-`
+```
 
 ---
 
 ## 🏛️ Hermes Autonomous Agent Ecosystem
 
-The [hermes/](hermes/) directory integrates the complete, consolidated Hermes ecosystem:
+The [`hermes/`](hermes/) directory integrates the complete, consolidated Hermes ecosystem:
 
 ### 🌟 10 All-in-One Mega-Suites (~330,000 Words)
 For long-running autonomous marathon sessions where an agent requires deep, comprehensive domain mastery without token-swapping:
 
 | Mega-Suite | Scope & Capabilities |
 | :--- | :--- |
-| [01_mega-game-development-and-3d-suite](hermes/mega-suites/01_mega-game-development-and-3d-suite/SKILL.md) | All-in-one Game Development powerhouse: Unreal Engine 5 (GAS, replication, PCG), Unity C# (Netcode, Shader Graph), Godot 4 GDScript, Roblox Luau Studio, Blender DCC pipeline, and complete Game Design studio roles. |
-| [02_mega-ai-mlops-and-llm-engineering-suite](hermes/mega-suites/02_mega-ai-mlops-and-llm-engineering-suite/SKILL.md) | Comprehensive Generative AI & MLOps Suite: SOTA fine-tuning (Axolotl, Unsloth, PEFT, LoRA, GRPO, TRL, FSDP, DSPy), low-latency inference (vLLM, Modal, Llama.cpp), structured generation (Outlines, Guidance), and multimodal vision-speech (Whisper, Stable Diffusion, SAM, CLIP). |
-| [03_mega-software-engineering-and-devops-suite](hermes/mega-suites/03_mega-software-engineering-and-devops-suite/SKILL.md) | Principal Software Engineering & Production DevOps Suite: Enterprise backend architecture, SQL query tuning, SRE observability, GitHub lifecycle automation, SWE-bench debugging, strict TDD, Sev-1 incident response, threat detection, and bare-metal embedded Linux. |
-| [04_mega-growth-marketing-and-ecommerce-suite](hermes/mega-suites/04_mega-growth-marketing-and-ecommerce-suite/SKILL.md) | Universal Digital Marketing & Customer Acquisition Suite: Viral carousel generation, Reddit community growth, App Store Optimization (ASO), paid media audit, newsletters, Chinese acquisition (Xiaohongshu RED, Douyin, Bilibili, Baidu SEO), and WeChat ecosystem. |
-| [05_mega-finance-sales-and-legal-suite](hermes/mega-suites/05_mega-finance-sales-and-legal-suite/SKILL.md) | Enterprise Business & Revenue Engineering Suite: 3-statement financial modeling, FP&A forecasting, fraud detection, accounts payable automation, B2B deal closing, contract review checklists, SaaS dynamic pricing, and Giga-Factory enterprise operations. |
-| [06_mega-workplace-pkm-and-os-automation-suite](hermes/mega-suites/06_mega-workplace-pkm-and-os-automation-suite/SKILL.md) | Personal Knowledge Management & Operating System Automation Suite: Apple macOS/iOS CLI control (Notes, Reminders, iMessage, FindMy), Obsidian markdown vault (Zettelkasten), Google Workspace, Linear, Notion, PowerPoint, OCR, and DingTalk/Feishu messaging. |
-| [07_mega-creative-arts-and-visual-motion-suite](hermes/mega-suites/07_mega-creative-arts-and-visual-motion-suite/SKILL.md) | Visual Design & Kinetic Code Suite: Full UI/UX design agency, dark-themed system architecture diagrams, Excalidraw, ASCII video, p5.js generative art, Manim math animation, GSAP 3 scroll kinetics, HyperFrames DOM compositions, and AI music generation. |
-| [08_mega-science-academic-and-translation-suite](hermes/mega-suites/08_mega-science-academic-and-translation-suite/SKILL.md) | Academic Research & Global Cultural Intelligence Suite: arXiv scientific literature mining, LaTeX drafting, interdisciplinary humanities research (History, Geography, Psychology, Narratology), and technical translation across French, Korean, Chinese, and English. |
-| [09_mega-spatial-computing-and-web3-suite](hermes/mega-suites/09_mega-spatial-computing-and-web3-suite/SKILL.md) | Next-Gen Spatial & Decentralized Technology Suite: Apple Vision Pro native spatial computing (visionOS/Metal), immersive XR UI, Solidity smart contracts, blockchain vulnerability auditing, zero-knowledge proofs (ZK), and crypto social intelligence. |
-| [10_mega-autonomous-agents-and-mcp-orchestration-suite](hermes/mega-suites/10_mega-autonomous-agents-and-mcp-orchestration-suite/SKILL.md) | Autonomous Agent Governance & Protocol Engine Suite: Hermes Agent core runtime & self-evolution, cross-platform delegation (Claude Code, Codex, OpenCode), native Model Context Protocol (MCP) toolchain, red-teaming & jailbreak audits (Godmode), and browser automation harness. |
+| [`01_mega-game-development-and-3d-suite`](hermes/mega-suites/01_mega-game-development-and-3d-suite/SKILL.md) | All-in-one Game Development powerhouse: Unreal Engine 5 (GAS, replication, PCG), Unity C# (Netcode, Shader Graph), Godot 4 GDScript, Roblox Luau Studio, Blender DCC pipeline, and complete Game Design studio roles. |
+| [`02_mega-ai-mlops-and-llm-engineering-suite`](hermes/mega-suites/02_mega-ai-mlops-and-llm-engineering-suite/SKILL.md) | Comprehensive Generative AI & MLOps Suite: SOTA fine-tuning (Axolotl, Unsloth, PEFT, LoRA, GRPO, TRL, FSDP, DSPy), low-latency inference (vLLM, Modal, Llama.cpp), structured generation (Outlines, Guidance), and multimodal vision-speech (Whisper, Stable Diffusion, SAM, CLIP). |
+| [`03_mega-software-engineering-and-devops-suite`](hermes/mega-suites/03_mega-software-engineering-and-devops-suite/SKILL.md) | Principal Software Engineering & Production DevOps Suite: Enterprise backend architecture, SQL query tuning, SRE observability, GitHub lifecycle automation, SWE-bench debugging, strict TDD, Sev-1 incident response, threat detection, and bare-metal embedded Linux. |
+| [`04_mega-growth-marketing-and-ecommerce-suite`](hermes/mega-suites/04_mega-growth-marketing-and-ecommerce-suite/SKILL.md) | Universal Digital Marketing & Customer Acquisition Suite: Viral carousel generation, Reddit community growth, App Store Optimization (ASO), paid media audit, newsletters, Chinese acquisition (Xiaohongshu RED, Douyin, Bilibili, Baidu SEO), and WeChat ecosystem. |
+| [`05_mega-finance-sales-and-legal-suite`](hermes/mega-suites/05_mega-finance-sales-and-legal-suite/SKILL.md) | Enterprise Business & Revenue Engineering Suite: 3-statement financial modeling, FP&A forecasting, fraud detection, accounts payable automation, B2B deal closing, contract review checklists, SaaS dynamic pricing, and Giga-Factory enterprise operations. |
+| [`06_mega-workplace-pkm-and-os-automation-suite`](hermes/mega-suites/06_mega-workplace-pkm-and-os-automation-suite/SKILL.md) | Personal Knowledge Management & Operating System Automation Suite: Apple macOS/iOS CLI control (Notes, Reminders, iMessage, FindMy), Obsidian markdown vault (Zettelkasten), Google Workspace, Linear, Notion, PowerPoint, OCR, and DingTalk/Feishu messaging. |
+| [`07_mega-creative-arts-and-visual-motion-suite`](hermes/mega-suites/07_mega-creative-arts-and-visual-motion-suite/SKILL.md) | Visual Design & Kinetic Code Suite: Full UI/UX design agency, dark-themed system architecture diagrams, Excalidraw, ASCII video, p5.js generative art, Manim math animation, GSAP 3 scroll kinetics, HyperFrames DOM compositions, and AI music generation. |
+| [`08_mega-science-academic-and-translation-suite`](hermes/mega-suites/08_mega-science-academic-and-translation-suite/SKILL.md) | Academic Research & Global Cultural Intelligence Suite: arXiv scientific literature mining, LaTeX drafting, interdisciplinary humanities research (History, Geography, Psychology, Narratology), and technical translation across French, Korean, Chinese, and English. |
+| [`09_mega-spatial-computing-and-web3-suite`](hermes/mega-suites/09_mega-spatial-computing-and-web3-suite/SKILL.md) | Next-Gen Spatial & Decentralized Technology Suite: Apple Vision Pro native spatial computing (visionOS/Metal), immersive XR UI, Solidity smart contracts, blockchain vulnerability auditing, zero-knowledge proofs (ZK), and crypto social intelligence. |
+| [`10_mega-autonomous-agents-and-mcp-orchestration-suite`](hermes/mega-suites/10_mega-autonomous-agents-and-mcp-orchestration-suite/SKILL.md) | Autonomous Agent Governance & Protocol Engine Suite: Hermes Agent core runtime & self-evolution, cross-platform delegation (Claude Code, Codex, OpenCode), native Model Context Protocol (MCP) toolchain, red-teaming & jailbreak audits (Godmode), and browser automation harness. |
 
 ---
 
@@ -124,67 +124,67 @@ For long-running autonomous marathon sessions where an agent requires deep, comp
 
 | Master Suite | Domain & Core Focus |
 | :--- | :--- |
-| [academic-humanities-suite](hermes/master-suites/academic-humanities-suite/SKILL.md) | Interdisciplinary Academic & Humanities Suite: Rigorous research methodologies across History, Human Geography, Anthropology, Narratology, Psychology, and competitive study planning. |
-| [advanced-software-architecture-security-suite](hermes/master-suites/advanced-software-architecture-security-suite/SKILL.md) | Principal Software Architecture, Incident Response & Hardening Suite: Principal software architect guidance, senior developer code standards, incident response command (Sev-1/Sev-2), threat detection engineering, advanced Git branching workflows, minimal-change refactoring, and hardware FPGA digital design. |
-| [ai-engineering-voice-iot-optimization-suite](hermes/master-suites/ai-engineering-voice-iot-optimization-suite/SKILL.md) | Production AI Engineering, Voice Agents & Smart IoT Suite: Production AI system architecture, voice AI pipeline integration, IoT connected solutions, autonomous self-optimization algorithms, AI training data remediation, smart lighting (Philips Hue OpenHue), and Karpathy neural network training principles. |
-| [ai-music-audio-media-suite](hermes/master-suites/ai-music-audio-media-suite/SKILL.md) | Generative Audio, Music & Video Media Suite: AI songwriting, AudioCraft sound synthesis, SongSee audio analysis, Heartmula visualizers, and YouTube video workflows. |
-| [apple-ecosystem-suite](hermes/master-suites/apple-ecosystem-suite/SKILL.md) | Unified Apple macOS & iOS operational suite. Seamless CLI control for Apple Notes (memo), Reminders (remindctl), iMessage (imsg), and FindMy device tracking without GUI overhead. |
-| [b2b-sales-revenue-suite](hermes/master-suites/b2b-sales-revenue-suite/SKILL.md) | B2B Sales Acceleration & Revenue Engineering Suite: Account strategy, deal closing blueprints, discovery coaching, technical sales engineering, pipeline analytics, and high-conversion proposals. |
-| [china-growth-marketing-suite](hermes/master-suites/china-growth-marketing-suite/SKILL.md) | Complete Chinese digital acquisition and e-commerce suite: Xiaohongshu (RED), Douyin, Bilibili, Baidu SEO, Cross-border E-commerce, and market localization. |
-| [creative-code-generative-art-suite](hermes/master-suites/creative-code-generative-art-suite/SKILL.md) | Generative Art, Motion Graphics & Visual Math Suite: p5.js algorithmic visual art, Manim mathematical animation engine, GSAP 3 scroll-driven kinetic web animations, and curated contemporary web design patterns. |
-| [creative-diagramming-suite](hermes/master-suites/creative-diagramming-suite/SKILL.md) | Visual Architecture & Generative ASCII Suite: Dark-themed system architecture diagrams, Excalidraw JSON schematics, and pyfiglet/ASCII video pipelines. |
-| [crypto-web3-blockchain-suite](hermes/master-suites/crypto-web3-blockchain-suite/SKILL.md) | Web3, Solidity & Zero-Knowledge Blockchain Suite: Production Solidity smart contract engineering, blockchain security auditing, zero-knowledge proofs (ZK Steward), and crypto social intelligence (Binance Square). |
-| [data-engineering-browser-automation-suite](hermes/master-suites/data-engineering-browser-automation-suite/SKILL.md) | Browser Automation, Data Consolidation & Interactive Data Science Suite: Headless browser automation harness, Jupyter live kernel workflows, automated data consolidation ETL, identity graph resolution, real-time webhook subscriptions, and LSP codebase indexing. |
-| [embedded-systems-suite](hermes/master-suites/embedded-systems-suite/SKILL.md) | Bare-metal and Embedded Linux Systems Suite: C/C++ firmware engineering, Linux kernel device driver development, register-level debugging, and embedded QA automation. |
-| [enterprise-finance-risk-pricing-governance-suite](hermes/master-suites/enterprise-finance-risk-pricing-governance-suite/SKILL.md) | Enterprise Accounts Payable, Dynamic Pricing & Risk Governance Suite: Automated accounts payable invoice matching & approval, dynamic SaaS pricing models, comprehensive enterprise risk assessment, AI ethics & safety policy writing, executive talent recruitment, and local business intelligence. |
-| [enterprise-knowledge-pkm-collaboration-suite](hermes/master-suites/enterprise-knowledge-pkm-collaboration-suite/SKILL.md) | Personal Knowledge Management (PKM), Meeting Intelligence & Developer Advocacy Suite: Obsidian markdown vault architecture & Zettelkasten linking, automated meeting minutes & action item extraction, enterprise report generation, automated report distribution pipelines, corporate training curriculum design, developer advocacy, and GIF/visual search communication. |
-| [enterprise-messaging-integration-suite](hermes/master-suites/enterprise-messaging-integration-suite/SKILL.md) | Enterprise Messaging & Communication Integrations Suite: DingTalk bot webhooks, Feishu/Lark enterprise integrations, intelligent email triage, and Himalaya CLI email client. |
-| [enterprise-support-operations-suite](hermes/master-suites/enterprise-support-operations-suite/SKILL.md) | Customer Support & Operations Command Suite: Automated ticket response protocols, executive summaries, infrastructure status monitoring, and support analytics reporting. |
-| [enterprise-vertical-industry-consulting-suite](hermes/master-suites/enterprise-vertical-industry-consulting-suite/SKILL.md) | Vertical Industry Operations & Advisory Suite: Healthcare patient services & marketing compliance, real estate deal management, loan origination underwriting, hospitality guest services, retail returns, Salesforce CRM architecture, and government presales. |
-| [finance-corporate-suite](hermes/master-suites/finance-corporate-suite/SKILL.md) | End-to-End Corporate Finance, Modeling & Risk Suite: 3-Statement financial models, FP&A forecasting, automated bookkeeping, fraud detection, investment research, and strategic tax planning. |
-| [frontend-mobile-cms-engineering-suite](hermes/master-suites/frontend-mobile-cms-engineering-suite/SKILL.md) | Cross-Platform Frontend, Mobile & CMS Engineering Suite: Modern React/Vue frontend architecture, cross-platform mobile app development, headless CMS engineering, mobile screenshot automation, UI copywriting templates, and open-source documentation curation. |
-| [game-design-studio-suite](hermes/master-suites/game-design-studio-suite/SKILL.md) | Full Game Design Studio Suite: Core game mechanics, level layout architecture, narrative branching dialogue, adaptive game audio engineering, and technical art pipeline coordination. |
-| [giga-factory-enterprise-suite](hermes/master-suites/giga-factory-enterprise-suite/SKILL.md) | Hermes Giga-Factory Enterprise Delivery Suite: High-conversion landing page design, brand identity systems, legal contracts & corporate governance, and end-to-end game production pipelines. |
-| [github-devops-automation-suite](hermes/master-suites/github-devops-automation-suite/SKILL.md) | Enterprise GitHub DevOps & Repository Lifecycle Suite: Automated PR reviews, issue triage, branch protection, repository mining, authentication tokens, and codebase inspection. |
-| [global-marketing-growth-suite](hermes/master-suites/global-marketing-growth-suite/SKILL.md) | Master Growth Marketing & Acquisition Suite: Viral carousel design, content creation, Reddit community building, App Store Optimization (ASO), paid media audit, newsletter, and conversion optimization. |
-| [godot-engine-suite](hermes/master-suites/godot-engine-suite/SKILL.md) | Complete Godot 4 Game Engine Suite: High-performance GDScript gameplay mechanics, multiplayer netcode (RPC/high-level networking), and custom GLSL shader development. |
-| [hermes-core-orchestration-suite](hermes/master-suites/hermes-core-orchestration-suite/SKILL.md) | Hermes Agent Master Orchestration Suite: Core agent runtime guidelines, prompt engineering, Kanban task management, roadmap planning, MCP ecosystem integration, and recursive self-evolution. |
-| [human-resources-recruitment-suite](hermes/master-suites/human-resources-recruitment-suite/SKILL.md) | Human Resources & Talent Acquisition Suite: Full-cycle talent recruiting, candidate evaluation rubrics, job offer design, and structured performance reviews. |
-| [hyperframes-web-animation-suite](hermes/master-suites/hyperframes-web-animation-suite/SKILL.md) | HyperFrames Web Animation & Composition Suite: High-performance canvas and DOM kinetic motion, HyperFrames CLI toolchain, component registry, and website-to-hyperframes capture. |
-| [international-business-culture-translation-suite](hermes/master-suites/international-business-culture-translation-suite/SKILL.md) | Global Business, Cultural Intelligence & Translation Suite: Technical and conversational translation across French, Korean, Chinese, and English; cross-cultural negotiation strategy, international academic admissions, and Gaokao college advising. |
-| [legal-contracts-compliance-suite](hermes/master-suites/legal-contracts-compliance-suite/SKILL.md) | Legal Analysis, Contracts & Policy Suite: Contract review checklists, terms of service and privacy policy drafting, risk mitigation, and compliance auditing. |
-| [llm-structured-generation-eval-suite](hermes/master-suites/llm-structured-generation-eval-suite/SKILL.md) | Structured LLM Generation, Quantization & Evaluation Suite: JSON/grammar constrained generation (Outlines, Guidance), LM Evaluation Harness, Weights & Biases telemetry, and GGUF quantization. |
-| [mcp-redteaming-gaming-meta-suite](hermes/master-suites/mcp-redteaming-gaming-meta-suite/SKILL.md) | Model Context Protocol (MCP), Red-Teaming & Autonomous Game Agent Suite: Native MCP tool client & runner (mcporter, native-mcp), adversarial AI red-teaming & jailbreak audit (Godmode), Blender 3D addon tool engineering, Minecraft modpack server operations, autonomous Pokémon game playing agent, dogfood internal self-testing, and LM-Eval harness benchmarking. |
-| [meta-agent-governance-automation-suite](hermes/master-suites/meta-agent-governance-automation-suite/SKILL.md) | Meta-Agent Orchestration, Governance & Protocol Suite: Multi-agent orchestrators, agentic identity and cryptographic trust, automation governance, prompt engineering rubrics, Model Context Protocol (MCP) tool creation, and executive Chief of Staff delegation. |
-| [mlops-llm-fine-tuning-training-suite](hermes/master-suites/mlops-llm-fine-tuning-training-suite/SKILL.md) | State-of-the-Art LLM Fine-Tuning & Training Suite: Axolotl, Unsloth 5x faster training, PEFT (LoRA/QLoRA), GRPO reinforcement learning from human/rule feedback, TRL, PyTorch FSDP multi-GPU, and DSPy declarative prompt optimization. |
-| [mlops-llm-infrastructure-suite](hermes/master-suites/mlops-llm-infrastructure-suite/SKILL.md) | High-Throughput LLM & MLOps Infrastructure Suite: Low-latency inference with vLLM, serverless GPU scaling with Modal, HuggingFace Hub artifact governance, and quantized Llama.cpp deployment. |
-| [multi-agent-delegation-suite](hermes/master-suites/multi-agent-delegation-suite/SKILL.md) | Cross-Platform Agent Delegation & CLI Orchestration Suite: Seamless handoff to Claude Code, OpenAI Codex, OpenCode, and autonomous browser agents. |
-| [multimodal-ai-vision-speech-suite](hermes/master-suites/multimodal-ai-vision-speech-suite/SKILL.md) | Multimodal AI Vision & Speech Processing Suite: OpenAI Whisper automatic speech recognition, Stable Diffusion generative imagery, Segment Anything (SAM) zero-shot image segmentation, and CLIP zero-shot vision-text embedding. |
-| [product-management-strategy-suite](hermes/master-suites/product-management-strategy-suite/SKILL.md) | End-to-End Product Management & User Insights Suite: Sprint prioritization, user feedback synthesis, market trend forecasting, and behavioral nudge psychology. |
-| [project-management-agile-suite](hermes/master-suites/project-management-agile-suite/SKILL.md) | Agile Project Leadership & Studio Production Suite: Jira sprint workflows, experiment tracking, game studio production timelines, team velocity management, and senior project stewardship. |
-| [quality-assurance-testing-suite](hermes/master-suites/quality-assurance-testing-suite/SKILL.md) | Comprehensive QA, Performance & Accessibility Testing Suite: Automated API testing, WCAG accessibility auditing, performance benchmarking, test result analysis, and evidence capture. |
-| [roblox-studio-suite](hermes/master-suites/roblox-studio-suite/SKILL.md) | Roblox Studio Experience Architecture Suite: Luau systems scripting, custom avatar creation, and multiplayer experience level design. |
-| [scientific-research-paper-writing-suite](hermes/master-suites/scientific-research-paper-writing-suite/SKILL.md) | Scientific Research & Academic Publication Suite: arXiv literature mining, LaTeX paper drafting, ML paper formatting, LLM knowledge wikis, and prediction markets. |
-| [software-dev-methodology-superpowers-suite](hermes/master-suites/software-dev-methodology-superpowers-suite/SKILL.md) | Elite Software Engineering Methodology Suite (SWE-bench & Superpowers): Systematic debugging (Evidence Gate), strict Test-Driven Development (TDD), subagent delegation, and structured writing plans. |
-| [software-engineering-studio-suite](hermes/master-suites/software-engineering-studio-suite/SKILL.md) | Comprehensive Software Engineering Suite: Enterprise backend architecture, database query optimization, data engineering ETL pipelines, security audits, SRE observability, DevOps automation, and rigorous code reviews. |
-| [spatial-computing-xr-visionos-suite](hermes/master-suites/spatial-computing-xr-visionos-suite/SKILL.md) | Spatial Computing, Apple visionOS & XR Development Suite: Apple Vision Pro native spatial apps, Metal graphics pipelines, cockpit interactions, and immersive 3D XR UI architecture. |
-| [supply-chain-logistics-suite](hermes/master-suites/supply-chain-logistics-suite/SKILL.md) | Logistics & Supply Chain Optimization Suite: Inventory demand forecasting, delivery route optimization algorithms, and vendor SLA evaluation. |
-| [ui-ux-design-agency-suite](hermes/master-suites/ui-ux-design-agency-suite/SKILL.md) | Full-Service UI/UX Design Agency Suite: UI component design, UX information architecture, user research & usability testing, brand identity guidelines, visual storytelling, and accessibility auditing. |
-| [unity-engine-suite](hermes/master-suites/unity-engine-suite/SKILL.md) | Production Unity Engine Suite: Enterprise game architecture, custom Editor scripting & GUI tools, multiplayer synchronization (Netcode for GameObjects), and Shader Graph VFX. |
-| [unreal-engine-master-suite](hermes/master-suites/unreal-engine-master-suite/SKILL.md) | Complete Unreal Engine 5 production suite: Multiplayer netcode & replication, systems engineering (GAS/C++), technical art/lighting/nanite, and open-world building with PCG. |
-| [wechat-ecosystem-suite](hermes/master-suites/wechat-ecosystem-suite/SKILL.md) | Comprehensive WeChat digital ecosystem suite: Mini-Program engineering, Official Account content curation, and community operations. |
-| [workplace-productivity-documents-suite](hermes/master-suites/workplace-productivity-documents-suite/SKILL.md) | Workplace SaaS & Document Engineering Suite: Google Workspace automation, Linear issue tracking, Notion databases, Nano-PDF processing, PowerPoint slides, and OCR document parsing. |
+| [`academic-humanities-suite`](hermes/master-suites/academic-humanities-suite/SKILL.md) | Interdisciplinary Academic & Humanities Suite: Rigorous research methodologies across History, Human Geography, Anthropology, Narratology, Psychology, and competitive study planning. |
+| [`advanced-software-architecture-security-suite`](hermes/master-suites/advanced-software-architecture-security-suite/SKILL.md) | Principal Software Architecture, Incident Response & Hardening Suite: Principal software architect guidance, senior developer code standards, incident response command (Sev-1/Sev-2), threat detection engineering, advanced Git branching workflows, minimal-change refactoring, and hardware FPGA digital design. |
+| [`ai-engineering-voice-iot-optimization-suite`](hermes/master-suites/ai-engineering-voice-iot-optimization-suite/SKILL.md) | Production AI Engineering, Voice Agents & Smart IoT Suite: Production AI system architecture, voice AI pipeline integration, IoT connected solutions, autonomous self-optimization algorithms, AI training data remediation, smart lighting (Philips Hue OpenHue), and Karpathy neural network training principles. |
+| [`ai-music-audio-media-suite`](hermes/master-suites/ai-music-audio-media-suite/SKILL.md) | Generative Audio, Music & Video Media Suite: AI songwriting, AudioCraft sound synthesis, SongSee audio analysis, Heartmula visualizers, and YouTube video workflows. |
+| [`apple-ecosystem-suite`](hermes/master-suites/apple-ecosystem-suite/SKILL.md) | Unified Apple macOS & iOS operational suite. Seamless CLI control for Apple Notes (memo), Reminders (remindctl), iMessage (imsg), and FindMy device tracking without GUI overhead. |
+| [`b2b-sales-revenue-suite`](hermes/master-suites/b2b-sales-revenue-suite/SKILL.md) | B2B Sales Acceleration & Revenue Engineering Suite: Account strategy, deal closing blueprints, discovery coaching, technical sales engineering, pipeline analytics, and high-conversion proposals. |
+| [`china-growth-marketing-suite`](hermes/master-suites/china-growth-marketing-suite/SKILL.md) | Complete Chinese digital acquisition and e-commerce suite: Xiaohongshu (RED), Douyin, Bilibili, Baidu SEO, Cross-border E-commerce, and market localization. |
+| [`creative-code-generative-art-suite`](hermes/master-suites/creative-code-generative-art-suite/SKILL.md) | Generative Art, Motion Graphics & Visual Math Suite: p5.js algorithmic visual art, Manim mathematical animation engine, GSAP 3 scroll-driven kinetic web animations, and curated contemporary web design patterns. |
+| [`creative-diagramming-suite`](hermes/master-suites/creative-diagramming-suite/SKILL.md) | Visual Architecture & Generative ASCII Suite: Dark-themed system architecture diagrams, Excalidraw JSON schematics, and pyfiglet/ASCII video pipelines. |
+| [`crypto-web3-blockchain-suite`](hermes/master-suites/crypto-web3-blockchain-suite/SKILL.md) | Web3, Solidity & Zero-Knowledge Blockchain Suite: Production Solidity smart contract engineering, blockchain security auditing, zero-knowledge proofs (ZK Steward), and crypto social intelligence (Binance Square). |
+| [`data-engineering-browser-automation-suite`](hermes/master-suites/data-engineering-browser-automation-suite/SKILL.md) | Browser Automation, Data Consolidation & Interactive Data Science Suite: Headless browser automation harness, Jupyter live kernel workflows, automated data consolidation ETL, identity graph resolution, real-time webhook subscriptions, and LSP codebase indexing. |
+| [`embedded-systems-suite`](hermes/master-suites/embedded-systems-suite/SKILL.md) | Bare-metal and Embedded Linux Systems Suite: C/C++ firmware engineering, Linux kernel device driver development, register-level debugging, and embedded QA automation. |
+| [`enterprise-finance-risk-pricing-governance-suite`](hermes/master-suites/enterprise-finance-risk-pricing-governance-suite/SKILL.md) | Enterprise Accounts Payable, Dynamic Pricing & Risk Governance Suite: Automated accounts payable invoice matching & approval, dynamic SaaS pricing models, comprehensive enterprise risk assessment, AI ethics & safety policy writing, executive talent recruitment, and local business intelligence. |
+| [`enterprise-knowledge-pkm-collaboration-suite`](hermes/master-suites/enterprise-knowledge-pkm-collaboration-suite/SKILL.md) | Personal Knowledge Management (PKM), Meeting Intelligence & Developer Advocacy Suite: Obsidian markdown vault architecture & Zettelkasten linking, automated meeting minutes & action item extraction, enterprise report generation, automated report distribution pipelines, corporate training curriculum design, developer advocacy, and GIF/visual search communication. |
+| [`enterprise-messaging-integration-suite`](hermes/master-suites/enterprise-messaging-integration-suite/SKILL.md) | Enterprise Messaging & Communication Integrations Suite: DingTalk bot webhooks, Feishu/Lark enterprise integrations, intelligent email triage, and Himalaya CLI email client. |
+| [`enterprise-support-operations-suite`](hermes/master-suites/enterprise-support-operations-suite/SKILL.md) | Customer Support & Operations Command Suite: Automated ticket response protocols, executive summaries, infrastructure status monitoring, and support analytics reporting. |
+| [`enterprise-vertical-industry-consulting-suite`](hermes/master-suites/enterprise-vertical-industry-consulting-suite/SKILL.md) | Vertical Industry Operations & Advisory Suite: Healthcare patient services & marketing compliance, real estate deal management, loan origination underwriting, hospitality guest services, retail returns, Salesforce CRM architecture, and government presales. |
+| [`finance-corporate-suite`](hermes/master-suites/finance-corporate-suite/SKILL.md) | End-to-End Corporate Finance, Modeling & Risk Suite: 3-Statement financial models, FP&A forecasting, automated bookkeeping, fraud detection, investment research, and strategic tax planning. |
+| [`frontend-mobile-cms-engineering-suite`](hermes/master-suites/frontend-mobile-cms-engineering-suite/SKILL.md) | Cross-Platform Frontend, Mobile & CMS Engineering Suite: Modern React/Vue frontend architecture, cross-platform mobile app development, headless CMS engineering, mobile screenshot automation, UI copywriting templates, and open-source documentation curation. |
+| [`game-design-studio-suite`](hermes/master-suites/game-design-studio-suite/SKILL.md) | Full Game Design Studio Suite: Core game mechanics, level layout architecture, narrative branching dialogue, adaptive game audio engineering, and technical art pipeline coordination. |
+| [`giga-factory-enterprise-suite`](hermes/master-suites/giga-factory-enterprise-suite/SKILL.md) | Hermes Giga-Factory Enterprise Delivery Suite: High-conversion landing page design, brand identity systems, legal contracts & corporate governance, and end-to-end game production pipelines. |
+| [`github-devops-automation-suite`](hermes/master-suites/github-devops-automation-suite/SKILL.md) | Enterprise GitHub DevOps & Repository Lifecycle Suite: Automated PR reviews, issue triage, branch protection, repository mining, authentication tokens, and codebase inspection. |
+| [`global-marketing-growth-suite`](hermes/master-suites/global-marketing-growth-suite/SKILL.md) | Master Growth Marketing & Acquisition Suite: Viral carousel design, content creation, Reddit community building, App Store Optimization (ASO), paid media audit, newsletter, and conversion optimization. |
+| [`godot-engine-suite`](hermes/master-suites/godot-engine-suite/SKILL.md) | Complete Godot 4 Game Engine Suite: High-performance GDScript gameplay mechanics, multiplayer netcode (RPC/high-level networking), and custom GLSL shader development. |
+| [`hermes-core-orchestration-suite`](hermes/master-suites/hermes-core-orchestration-suite/SKILL.md) | Hermes Agent Master Orchestration Suite: Core agent runtime guidelines, prompt engineering, Kanban task management, roadmap planning, MCP ecosystem integration, and recursive self-evolution. |
+| [`human-resources-recruitment-suite`](hermes/master-suites/human-resources-recruitment-suite/SKILL.md) | Human Resources & Talent Acquisition Suite: Full-cycle talent recruiting, candidate evaluation rubrics, job offer design, and structured performance reviews. |
+| [`hyperframes-web-animation-suite`](hermes/master-suites/hyperframes-web-animation-suite/SKILL.md) | HyperFrames Web Animation & Composition Suite: High-performance canvas and DOM kinetic motion, HyperFrames CLI toolchain, component registry, and website-to-hyperframes capture. |
+| [`international-business-culture-translation-suite`](hermes/master-suites/international-business-culture-translation-suite/SKILL.md) | Global Business, Cultural Intelligence & Translation Suite: Technical and conversational translation across French, Korean, Chinese, and English; cross-cultural negotiation strategy, international academic admissions, and Gaokao college advising. |
+| [`legal-contracts-compliance-suite`](hermes/master-suites/legal-contracts-compliance-suite/SKILL.md) | Legal Analysis, Contracts & Policy Suite: Contract review checklists, terms of service and privacy policy drafting, risk mitigation, and compliance auditing. |
+| [`llm-structured-generation-eval-suite`](hermes/master-suites/llm-structured-generation-eval-suite/SKILL.md) | Structured LLM Generation, Quantization & Evaluation Suite: JSON/grammar constrained generation (Outlines, Guidance), LM Evaluation Harness, Weights & Biases telemetry, and GGUF quantization. |
+| [`mcp-redteaming-gaming-meta-suite`](hermes/master-suites/mcp-redteaming-gaming-meta-suite/SKILL.md) | Model Context Protocol (MCP), Red-Teaming & Autonomous Game Agent Suite: Native MCP tool client & runner (mcporter, native-mcp), adversarial AI red-teaming & jailbreak audit (Godmode), Blender 3D addon tool engineering, Minecraft modpack server operations, autonomous Pokémon game playing agent, dogfood internal self-testing, and LM-Eval harness benchmarking. |
+| [`meta-agent-governance-automation-suite`](hermes/master-suites/meta-agent-governance-automation-suite/SKILL.md) | Meta-Agent Orchestration, Governance & Protocol Suite: Multi-agent orchestrators, agentic identity and cryptographic trust, automation governance, prompt engineering rubrics, Model Context Protocol (MCP) tool creation, and executive Chief of Staff delegation. |
+| [`mlops-llm-fine-tuning-training-suite`](hermes/master-suites/mlops-llm-fine-tuning-training-suite/SKILL.md) | State-of-the-Art LLM Fine-Tuning & Training Suite: Axolotl, Unsloth 5x faster training, PEFT (LoRA/QLoRA), GRPO reinforcement learning from human/rule feedback, TRL, PyTorch FSDP multi-GPU, and DSPy declarative prompt optimization. |
+| [`mlops-llm-infrastructure-suite`](hermes/master-suites/mlops-llm-infrastructure-suite/SKILL.md) | High-Throughput LLM & MLOps Infrastructure Suite: Low-latency inference with vLLM, serverless GPU scaling with Modal, HuggingFace Hub artifact governance, and quantized Llama.cpp deployment. |
+| [`multi-agent-delegation-suite`](hermes/master-suites/multi-agent-delegation-suite/SKILL.md) | Cross-Platform Agent Delegation & CLI Orchestration Suite: Seamless handoff to Claude Code, OpenAI Codex, OpenCode, and autonomous browser agents. |
+| [`multimodal-ai-vision-speech-suite`](hermes/master-suites/multimodal-ai-vision-speech-suite/SKILL.md) | Multimodal AI Vision & Speech Processing Suite: OpenAI Whisper automatic speech recognition, Stable Diffusion generative imagery, Segment Anything (SAM) zero-shot image segmentation, and CLIP zero-shot vision-text embedding. |
+| [`product-management-strategy-suite`](hermes/master-suites/product-management-strategy-suite/SKILL.md) | End-to-End Product Management & User Insights Suite: Sprint prioritization, user feedback synthesis, market trend forecasting, and behavioral nudge psychology. |
+| [`project-management-agile-suite`](hermes/master-suites/project-management-agile-suite/SKILL.md) | Agile Project Leadership & Studio Production Suite: Jira sprint workflows, experiment tracking, game studio production timelines, team velocity management, and senior project stewardship. |
+| [`quality-assurance-testing-suite`](hermes/master-suites/quality-assurance-testing-suite/SKILL.md) | Comprehensive QA, Performance & Accessibility Testing Suite: Automated API testing, WCAG accessibility auditing, performance benchmarking, test result analysis, and evidence capture. |
+| [`roblox-studio-suite`](hermes/master-suites/roblox-studio-suite/SKILL.md) | Roblox Studio Experience Architecture Suite: Luau systems scripting, custom avatar creation, and multiplayer experience level design. |
+| [`scientific-research-paper-writing-suite`](hermes/master-suites/scientific-research-paper-writing-suite/SKILL.md) | Scientific Research & Academic Publication Suite: arXiv literature mining, LaTeX paper drafting, ML paper formatting, LLM knowledge wikis, and prediction markets. |
+| [`software-dev-methodology-superpowers-suite`](hermes/master-suites/software-dev-methodology-superpowers-suite/SKILL.md) | Elite Software Engineering Methodology Suite (SWE-bench & Superpowers): Systematic debugging (Evidence Gate), strict Test-Driven Development (TDD), subagent delegation, and structured writing plans. |
+| [`software-engineering-studio-suite`](hermes/master-suites/software-engineering-studio-suite/SKILL.md) | Comprehensive Software Engineering Suite: Enterprise backend architecture, database query optimization, data engineering ETL pipelines, security audits, SRE observability, DevOps automation, and rigorous code reviews. |
+| [`spatial-computing-xr-visionos-suite`](hermes/master-suites/spatial-computing-xr-visionos-suite/SKILL.md) | Spatial Computing, Apple visionOS & XR Development Suite: Apple Vision Pro native spatial apps, Metal graphics pipelines, cockpit interactions, and immersive 3D XR UI architecture. |
+| [`supply-chain-logistics-suite`](hermes/master-suites/supply-chain-logistics-suite/SKILL.md) | Logistics & Supply Chain Optimization Suite: Inventory demand forecasting, delivery route optimization algorithms, and vendor SLA evaluation. |
+| [`ui-ux-design-agency-suite`](hermes/master-suites/ui-ux-design-agency-suite/SKILL.md) | Full-Service UI/UX Design Agency Suite: UI component design, UX information architecture, user research & usability testing, brand identity guidelines, visual storytelling, and accessibility auditing. |
+| [`unity-engine-suite`](hermes/master-suites/unity-engine-suite/SKILL.md) | Production Unity Engine Suite: Enterprise game architecture, custom Editor scripting & GUI tools, multiplayer synchronization (Netcode for GameObjects), and Shader Graph VFX. |
+| [`unreal-engine-master-suite`](hermes/master-suites/unreal-engine-master-suite/SKILL.md) | Complete Unreal Engine 5 production suite: Multiplayer netcode & replication, systems engineering (GAS/C++), technical art/lighting/nanite, and open-world building with PCG. |
+| [`wechat-ecosystem-suite`](hermes/master-suites/wechat-ecosystem-suite/SKILL.md) | Comprehensive WeChat digital ecosystem suite: Mini-Program engineering, Official Account content curation, and community operations. |
+| [`workplace-productivity-documents-suite`](hermes/master-suites/workplace-productivity-documents-suite/SKILL.md) | Workplace SaaS & Document Engineering Suite: Google Workspace automation, Linear issue tracking, Notion databases, Nano-PDF processing, PowerPoint slides, and OCR document parsing. |
 
 ---
 
 ### 🛠️ Hermes MCP Servers & Autonomous Tools
-Located in [hermes/mcp-servers/](hermes/mcp-servers/) and [hermes/scripts/](hermes/scripts/):
+Located in [`hermes/mcp-servers/`](hermes/mcp-servers/) and [`hermes/scripts/`](hermes/scripts/):
 - **eBay MCP Server**: Search, filter, and track auction and buy-it-now marketplace listings via the official eBay REST API.
 - **Vinted MCP Server**: Live marketplace crawler for fashion and pre-owned goods with automatic currency conversion.
 - **Web Tools MCP Server**: Wayback Machine archive search, SerpAPI web search, Reddit thread scraper, HackerNews feeds.
-- **Agent-to-Agent (A2A) Bus**: High-speed message bus for autonomous subagent coordination.
+- **Agent-to-Agent (A2A) Bus**: High-speed message bus for autonomous subagent coordination (`a2a_bus_server.py`).
 - **Security Audit Engine**: Automated vulnerability scanner and credential detection with Gitleaks.
-- **Autonomous Self-Evolution**: Continuous research, memory distillation, and self-improving agent prompts in [hermes/self-evolution/](hermes/self-evolution/).
+- **Autonomous Self-Evolution**: Continuous research, memory distillation, and self-improving agent prompts in [`hermes/self-evolution/`](hermes/self-evolution/).
 
 ---
 
@@ -375,28 +375,103 @@ Located in [hermes/mcp-servers/](hermes/mcp-servers/) and [hermes/scripts/](herm
 
 ---
 
+---
+
 ## 🔬 Google DeepMind Science Suite (41 Skills)
 
-Included in [`plugins/science/`](plugins/science/), the official scientific toolkit by Google DeepMind empowers AI agents to conduct rigorous biomedical, chemical, and genomic research:
+Included in [`plugins/science/`](plugins/science/), the official scientific research toolkit developed by Google DeepMind empowers AI agents to conduct rigorous biomedical, chemical, and genomic investigations:
 
-- **Structural Biology**: AlphaFold structure fetcher, Foldseek 3D structural alignment, PDB coordinates parser.
-- **Interactive 3D Sidecar**: Built-in Mol* biomolecular viewer with native MCP server (`biomolecular_structure_viewer_mcp`).
-- **Genomics & Clinical Trials**: ClinVar pathogenicity, dbSNP short variants, GTEx gene expression, ENCODE cCREs, gnomAD allele frequencies.
-- **Cheminformatics**: PubChem chemical resolution, ChEMBL bioactivity search, OpenTargets drug discovery.
-- **Literature Search**: OpenAlex scholarly graphs, PubMed API, bioRxiv/medRxiv preprints, arXiv search.
+| Skill | Description & Target Database |
+| :--- | :--- |
+| [`alphafold_database_fetch_and_analyze`](plugins/science/skills/alphafold_database_fetch_and_analyze/SKILL.md) | > Retrieve and analyze AlphaFold predicted structures for a protein. Use when the user provides a specific UniProt Accession ID and wants structural confidence metrics (pLDDT), domain boundary analysis, or disorder assessment. Do not use if the user only has a protein name, gene name, or amino acid sequence — ask for a UniProt ID first. |
+| [`alphagenome_atlas_website_links`](plugins/science/skills/alphagenome_atlas_website_links/SKILL.md) | Constructs deep-links and URLs for the AlphaGenome Atlas website. Supports generating single-variant exploration links (1-based VCF-style coordinates), genomic locus views (1-based closed chr:start-end), candidate summary tables, and AlphaGenome reference vs. alternate predictions. Use when visualizing, exploring, charting, or linking genetic variants and genomic loci on the AlphaGenome Atlas, or when asked to inspect, view, or link predictions for a genomic variant. Don't use for computing raw AlphaGenome variant predictions directly without Atlas URLs (use alphagenome-single-variant-analysis or alphagenome-variant-impact-score). |
+| [`alphagenome_single_variant_analysis`](plugins/science/skills/alphagenome_single_variant_analysis/SKILL.md) | > Analyzes genetic variant effects on gene expression (RNA-seq), chromatin accessibility (DNASE), histone marks (ChIP), and transcription factors using the AlphaGenome API. Use when the user asks about non-coding variant effects, pathogenicity, clinical significance, disease associations, functional effects, gene expression changes, splicing disruption, or regulatory effects in promoters and enhancers. Also use for resolving biological terms to tissue/cell-type ontologies (UBERON/CL) or analyzing variants in chr:pos:ref>alt format. |
+| [`alphagenome_variant_impact_score`](plugins/science/skills/alphagenome_variant_impact_score/SKILL.md) | Score, annotate, and analyze the functional impact of genetic variants using AlphaGenome Variant Impact (AVI) scores. Query variants in chr:pos:ref>alt format, annotate VCF/tabular callsets, perform saturation mutagenesis window scans (1-based closed chr:start-end), and extract GENCODE v46 GTF gene/exon/junction coordinates all via the AlphaGenome Atlas API. |
+| [`biomolecular_structure_viewer`](plugins/science/skills/biomolecular_structure_viewer/SKILL.md) | > Interactive 3D biomolecular structure viewer via Mol*. Renders 3D molecular structures from local workspace files (.cif, .mmcif, .pdb) or conversation artifacts, and manages user 3D annotations and highlighted residues. Use when the user asks to visualise a protein or nucleic acid, display a 3D structure, or asks about 3D biomolecular structure annotations and highlighted residues. |
+| [`chembl_database`](plugins/science/skills/chembl_database/SKILL.md) | > Query the ChEMBL database for bioactive molecules, drug targets, bioactivity data, approved drugs, and chemical structures. Use when the user asks about compounds, targets, IC50/Ki values, drug mechanisms, or structure searches. |
+| [`clinical_trials_database`](plugins/science/skills/clinical_trials_database/SKILL.md) | > Query ClinicalTrials.gov via APIv2. Use when you want to search for trials by condition, drug, location, status, or phase; retrieve trial details by NCT ID; check eligibility/inclusion criteria; count trials across conditions or time periods; identify a sponsor's trial portfolio; find recruiting trials for patient matching. |
+| [`clinvar_database`](plugins/science/skills/clinvar_database/SKILL.md) | > Use when needing clinical significance, pathogenicity classifications (e.g., Pathogenic, Benign, VUS), clinical evidence rationales, or finding "hard positive" benchmark controls for human genomic variants. |
+| [`credentials`](plugins/science/skills/credentials/SKILL.md) | Instructions for handling API keys and credentials safely, verifying their presence, and prompting the user to add them if missing using a safe protocol. |
+| [`dbsnp_database`](plugins/science/skills/dbsnp_database/SKILL.md) | > Use when you want to look up, map, and search for short genetic variants (SNPs, indels) in NCBI's dbSNP database. Resolves between rsIDs, genomic coordinates in VCF format, and HGVS strings. For an rsID, returns variant type, gene associations, clinical significance, allele frequencies, and genomic coordinates (GRCh38). |
+| [`embl_ebi_ols`](plugins/science/skills/embl_ebi_ols/SKILL.md) | > Query and search the EMBL-EBI Ontology Lookup Service (OLS) for biomedical ontology terms, definitions, and hierarchies across 250+ ontologies (e.g., GO, DOID, HP). Use when the user asks to search for terms, retrieve details, navigate hierarchies (parents, children, ancestors), look up properties and individuals, get autocomplete suggestions, or access ontology metadata and statistics. |
+| [`encode_ccres_database`](plugins/science/skills/encode_ccres_database/SKILL.md) | > Query the ENCODE Registry of cis-Regulatory Elements (cCREs) via the SCREEN GraphQL API, or make custom queries to the ENCODE Portal REST API for experiments and files (ChIP-seq peaks, etc.). Use when you want to query regulatory annotations or raw experimental data across human cell types. |
+| [`ensembl_database`](plugins/science/skills/ensembl_database/SKILL.md) | > Query the Ensembl database to resolve gene, transcript, and protein IDs, fetch genomic or protein sequences, retrieve gene structures (exons), and get variant consequence and effect predictions (VEP). Use this skill as a primary ID translator, genomic sequence database and variant effect prediction tool. |
+| [`foldseek_structural_search`](plugins/science/skills/foldseek_structural_search/SKILL.md) | > Performs 3D structural searches of proteins against various databases (PDB, AlphaFold, CATH, MGnify, etc.) using the Foldseek API. Use ONLY when the user provides a physical 3D coordinate file (.cif, .mmcif, or .pdb) and wants to find structurally similar proteins. Do NOT use if the user only provides a protein sequence, gene name, or UniProt ID. |
+| [`gnomad_database`](plugins/science/skills/gnomad_database/SKILL.md) | > Query the Genome Aggregation Database (gnomAD). Use when determining the rarity or allele frequency of specific genetic variants, retrieving gene constraint metrics (pLI, LOEUF) to assess loss-of-function intolerance, finding variants in a genomic region or gene, or querying structural variants. Don't use for analyzing individual patient genomes, tracking somatic mutations in cancer (use COSMIC), or requesting raw sequencing reads (use ENA). |
+| [`gtex_database`](plugins/science/skills/gtex_database/SKILL.md) | > Use when you want to retrieve quantitative RNA expression data and variant eQTL information from the GTEx (Genotype-Tissue Expression) Project across 54 non-diseased tissue sites. |
+| [`human_protein_atlas_database`](plugins/science/skills/human_protein_atlas_database/SKILL.md) | > Use when you want to retrieve semi-quantitative protein expression and spatial localisation data from the Human Protein Atlas (HPA). |
+| [`interpro_database`](plugins/science/skills/interpro_database/SKILL.md) | > Identify domains, families, and sites in proteins; find all proteins in a family or sharing a domain; explore species distribution for a domain; annotate genomes with protein families and GO terms. InterPro combines 14 databases (e.g., Pfam, CDD) into one searchable resource. InterPro-N significantly expands annotation and sequence coverage with deep learning. Includes domain architecture (IDA) search. |
+| [`jaspar_database`](plugins/science/skills/jaspar_database/SKILL.md) | > Query the JASPAR database for Transcription Factor (TF) binding profiles. Use when retrieving Position Frequency Matrices (PFMs) or Position Weight Matrices (PWMs) for specific TFs, resolving gene symbols to JASPAR Matrix IDs, or getting TF metadata. Supports multiple output formats (MEME, TRANSFAC, PFM, JASPAR, YAML). |
+| [`literature_search_arxiv`](plugins/science/skills/literature_search_arxiv/SKILL.md) | > Search for scientific papers, preprints, and publications on arXiv. Extract metadata, abstracts, and download full-text PDFs or HTML versions of papers. Use when the user asks to find research papers, literature, or specific arXiv IDs. |
+| [`literature_search_biorxiv`](plugins/science/skills/literature_search_biorxiv/SKILL.md) | > Browse and filter life sciences, biology, and medical preprints from bioRxiv and medRxiv. Supports fetching paper metadata by DOI, and browsing by date range with category and keyword filters. Keyword filtering is local, so date ranges MUST be narrow (1-4 weeks) with a category to prevent timeouts. |
+| [`literature_search_europepmc`](plugins/science/skills/literature_search_europepmc/SKILL.md) | > Search Europe PMC for scientific literature and download open-access full texts and PDFs. Retrieve full-text XML/plain text by PMCID, get citation lists and bibliography. |
+| [`literature_search_openalex`](plugins/science/skills/literature_search_openalex/SKILL.md) | > Query the OpenAlex scholarly database for research papers, authors, institutions, topics, sources, publishers, funders, geo-locations, and keywords. Use when searching academic papers, resolving DOIs, downloading open-access PDFs, finding an author's publications, aggregating bibliometric data (citation counts, h-index, impact factor), exploring the research taxonomies, or performing DOI lookups. |
+| [`ncbi_sequence_fetch`](plugins/science/skills/ncbi_sequence_fetch/SKILL.md) | > Retrieve protein and nucleotide sequences from NCBI databases using E-utilities. Supports direct accession lookup, CDS translation, gene+organism search, locus lookup, PubMed-linked sequences, patent protein extraction, and organism+length fallback search. Use when you need to fetch biological sequences by accession, gene name, locus tag, PubMed ID, or patent number. |
+| [`openfda_database`](plugins/science/skills/openfda_database/SKILL.md) | > Query, search, and download data from the openFDA API for drugs, devices, foods, tobacco, cosmetics, animal and veterinary products, substances, and transparency data. Use for FDA adverse events, recalls, labeling, approvals, shortages, 510(k) clearances, NDC lookups, and any FDA safety or regulatory data query across all 28 API endpoints. |
+| [`opentargets_database`](plugins/science/skills/opentargets_database/SKILL.md) | > Query Open Targets Platform for target-disease associations, drug target discovery, tractability/safety data, genetics/omics evidence, known drugs, for therapeutic target identification. |
+| [`pdb_database`](plugins/science/skills/pdb_database/SKILL.md) | > Use when you want to search for or download experimentally-determined 3D structures for biomolecules (proteins, nucleic acids, bound ligands). Supports searching by sequence similarity, structure similarity, chemical and other attributes. Also use to get metadata about biomolecular structure experiments. |
+| [`predictingthepast`](plugins/science/skills/predictingthepast/SKILL.md) | > Ancient text restoration, attribution, dating, contextualization, and embedding via Aeneas (Latin) / Ithaca (Ancient Greek). Use when asked to "restore", "attribute", "date", "contextualize", "find parallels", "where was it written", "when was it written", "embed", or "analyze" an ancient text, inscription, or epigraphic document, or when the user mentions "Aeneas", or "Ithaca". |
+| [`protein_sequence_msa`](plugins/science/skills/protein_sequence_msa/SKILL.md) | > Performs multiple sequence alignment of proteins with EBI Clustal Omega. Use when you need to align multiple sequences to assess similarity, domain conservation, or key residue conservation. Supports up to 4000 sequences and a maximum file size of 4 MB. Do not use to search for homologous proteins in a database (use MMseqs2, BLAST), align non-protein sequences (DNA, RNA), perform structural alignment (use Foldseek, PyMOL), or if you only have a single sequence. |
+| [`protein_sequence_similarity_search`](plugins/science/skills/protein_sequence_similarity_search/SKILL.md) | > Searches for homologous protein sequences using MMseqs2 (fast, default) or BLAST (comprehensive, fallback). Trigger this whenever the user provides a protein sequence or FASTA file and asks to find homologues, sequence matches, or wants to infer protein function based on sequence similarity, but not when the user wants to infer protein function based on structural similarity. |
+| [`pubchem_database`](plugins/science/skills/pubchem_database/SKILL.md) | > Query PubChem, search by name/CID/SMILES, retrieve properties, similarity/substructure searches, bioactivity, for cheminformatics. Use when a user asks about a specific chemical, drug, or molecule. |
+| [`pubmed_database`](plugins/science/skills/pubmed_database/SKILL.md) | Search PubMed for scientific literature, including published clinical trials. Fetch abstracts and full text. Link published research to biological databases (gene, protein, nucleotide, PubChem) to discover associations between papers and specific compounds or genes. Verify medical spelling, match raw citations, and cache result sets for bulk processing. Interfaces NCBI E-utilities and PMC BioC APIs. |
+| [`pymol`](plugins/science/skills/pymol/SKILL.md) | > Visualize, analyze, and render protein and molecular structures using PyMOL. Use when the user wants to create images of protein structures, perform structural alignments or superposition, measure distances or contacts, highlight binding sites or active site residues, color by B-factor/pLDDT, or analyze protein-ligand interactions. Do not use for docking, molecular dynamics, or sequence-only analysis. |
+| [`quickgo_database`](plugins/science/skills/quickgo_database/SKILL.md) | > Query the QuickGO and Evidence & Conclusion Ontology (ECO) REST API. Use this when you need to map genes to biological processes, molecular functions, or cellular components, find genes associated with a specific pathway/GO term, or explore the Gene Ontology hierarchy. Do not use for querying drug targets (use OpenTargets) or mechanistic signaling pathway diagrams (use KEGG). |
+| [`reactome_database`](plugins/science/skills/reactome_database/SKILL.md) | > Query the Reactome database (Analysis and Content Services). Use when the user asks about pathway analysis, gene list enrichment, retrieving results by token, finding unmapped or not-found identifiers, mapping identifiers, reaction participants (inputs, outputs), pathway hierarchy (including top-level pathways), diagram export, cross-reference mapping, or searching the knowledgebase. |
+| [`string_database`](plugins/science/skills/string_database/SKILL.md) | > Query the STRING database for protein-protein interactions (PPIs), functional enrichment, and homology. Use when the user asks about interactions between specific proteins, interaction evidence, confidence scores, protein interaction partners, or pathway enrichments. |
+| [`ucsc_conservation_and_tfbs`](plugins/science/skills/ucsc_conservation_and_tfbs/SKILL.md) | > Fetch Evolutionary Conservation scores (phyloP, phastCons) and Transcription Factor Binding Sites (TFBS) from the UCSC Genome Browser. Use when analyzing whether genomic variants or regions are evolutionarily conserved, functionally important, or bounded by TF regulators across major projects (ENCODE, JASPAR, ReMap). |
+| [`unibind_database`](plugins/science/skills/unibind_database/SKILL.md) | Queries the UniBind database for experimentally validated transcription factor (TF) binding sites. Use when retrieving direct TF-DNA interaction datasets, downloading binding site coordinates (BED/FASTA) for local analysis, or listing available datasets by species, cell line, or TF name. Don't use to query specific intervals, locations, genes, motif models or expression data. |
+| [`uniprot_database`](plugins/science/skills/uniprot_database/SKILL.md) | Access protein metadata, function, taxonomy, and sequences across UniProtKB, UniParc, and UniRef. Use when searching for proteins, mapping identifiers, or retrieving functional annotations and publications. Don't use for sequence alignment, protein folding, or sequence similarity search (use specialized skills for those tasks). |
+| [`uv`](plugins/science/skills/uv/SKILL.md) | Checks whether the uv Python package manager is installed and installs it if missing. Ensures uv is on PATH. Use when another skill requires uv as a prerequisite. |
+| [`workflow_skill_creator`](plugins/science/skills/workflow_skill_creator/SKILL.md) | > Distills a completed user workflow or interaction into a reusable agent skill. Use when the user asks to turn their workflow, interaction, or multi-step process into a skill, or when they say "make this a skill", "create a skill from what we just did", "package this workflow" or similar. Do not use for creating skills from scratch without an existing workflow (use a generic skill-creator for that). |
+
+---
+
+## 🎨 Google Labs Stitch Design Suite (16 Skills)
+
+Included across three modular plugins in [`plugins/`](plugins/), Google Labs Stitch provides an autonomous design-to-code feedback loop for modern web and mobile user interfaces:
+
+| Skill | Plugin Bundle | Description |
+| :--- | :--- | :--- |
+| [`react-components`](plugins/stitch-build/skills/react-components/SKILL.md) | `stitch-build` | Converts Stitch designs into modular Vite and React components, or syncs/updates existing React components to align with the latest Stitch designs, using system-level networking and AST-based validation. allowed-tools: - "stitch*:*" - "Bash" - "Read" - "Write" - "web_fetch" |
+| [`react-native`](plugins/stitch-build/skills/react-native/SKILL.md) | `stitch-build` | Convert Stitch HTML designs to React Native components, or syncs/updates existing native components to align with the latest Stitch designs, using StyleSheet. allowed-tools: - "stitch*:*" - "Bash" - "Read" - "Write" - "web_fetch" |
+| [`react-vite-dashboard`](plugins/stitch-build/skills/react-vite-dashboard/SKILL.md) | `stitch-build` | Convert Stitch designs into production React + Vite dashboards with TanStack Query, accessible tokens from DESIGN.md, and Web3-ready patterns (ethers/viem). allowed-tools: - "stitch*:*" - "Read" - "Write" - "Bash" - "web_fetch" |
+| [`remotion`](plugins/stitch-build/skills/remotion/SKILL.md) | `stitch-build` | Generate walkthrough videos from Stitch projects using Remotion with smooth transitions, zooming, and text overlays allowed-tools: - "stitch*:*" - "remotion*:*" - "Bash" - "Read" - "Write" - "web_fetch" |
+| [`shadcn-ui`](plugins/stitch-build/skills/shadcn-ui/SKILL.md) | `stitch-build` | Expert guidance for integrating and building applications with shadcn/ui components, including component discovery, installation, customization, and best practices. allowed-tools: - "shadcn*:*" - "mcp_shadcn*" - "Read" - "Write" - "Bash" - "web_fetch" |
+| [`code-to-design`](plugins/stitch-design/skills/code-to-design/SKILL.md) | `stitch-design` | Convert frontend code (Vite, React, Angular, Vue, etc.) to a Stitch Design by chaining static HTML extraction, design system extraction, and file upload. **ALWAYS** use this skill when the user's intent is to move existing web apps or React/Angular/Vue components into Stitch (e.g., requests to "save", "migrate", or "upload"). You must use this skill even for simple "save" operations, as it is the only way to ensure the design system is extracted and assets are properly linked. allowed-tools: - "stitch*:*" - "Bash" - "Read" - "Write" - "web_fetch" |
+| [`extract-design-md`](plugins/stitch-design/skills/extract-design-md/SKILL.md) | `stitch-design` | Extract a comprehensive design system (DESIGN.md) directly from frontend source code — React, Vue, Svelte, Angular, plain HTML/CSS, or any web framework. Analyzes component files, stylesheets, Tailwind configs, theme definitions, and design tokens to produce a rich, Stitch-compatible design system document. Use this skill whenever the user wants to reverse-engineer a design system from an existing codebase, audit the visual language of a project, extract design tokens from source files, or understand the styling patterns in a frontend repo — even if they just say "what does this app look like?" or "pull out the design from this code." allowed-tools: - "stitch*:*" - "Bash" - "Read" - "Write" - "web_fetch" |
+| [`extract-static-html`](plugins/stitch-design/skills/extract-static-html/SKILL.md) | `stitch-design` | Extract self-contained static HTML from a built web application or React components by inlining CSS and images. Use this skill whenever you need to capture a specific UI state, share a static version of a page, or prepare assets for Stitch upload, even if the user just asks to 'save the HTML' or 'mock the view'. allowed-tools: - "stitch*:*" - "Bash" - "Read" - "Write" - "web_fetch" |
+| [`generate-design`](plugins/stitch-design/skills/generate-design/SKILL.md) | `stitch-design` | Generate new screens from text prompts or images, edit existing screens with prompts and design system tokens, and generate design variants using Stitch MCP. Includes prompt enhancement pipeline, design mappings, professional UI/UX terminology, design tokens and theme system capabilities. allowed-tools: - "stitch*:*" - "Bash" - "Read" - "Write" - "web_fetch" |
+| [`manage-design-system`](plugins/stitch-design/skills/manage-design-system/SKILL.md) | `stitch-design` | Manage design systems in Stitch using MCP tools. Includes retrieval of assets, creating/updating design systems in Stitch, and applying them to screens. allowed-tools: - "stitch*:*" - "Bash" - "Read" - "Write" - "web_fetch" |
+| [`upload-to-stitch`](plugins/stitch-design/skills/upload-to-stitch/SKILL.md) | `stitch-design` | Upload local assets (images, mockups, extracted HTML, design markdown) to a Stitch project. ALWAYS use this skill when you need to upload visual assets, HTML pages, or design docs to Stitch, particularly when direct MCP tool calls fail or truncate due to base64 token limits. allowed-tools: - "stitch*:*" - "Bash" - "Read" - "Write" - "web_fetch" |
+| [`design-md`](plugins/stitch-utilities/skills/design-md/SKILL.md) | `stitch-utilities` | Analyze Stitch projects and synthesize a semantic design system into DESIGN.md files allowed-tools: - "stitch*:*" - "Read" - "Write" - "web_fetch" |
+| [`enhance-prompt`](plugins/stitch-utilities/skills/enhance-prompt/SKILL.md) | `stitch-utilities` | Transforms vague UI ideas into polished, Stitch-optimized prompts. Enhances specificity, adds UI/UX keywords, injects design system context, and structures output for better generation results. allowed-tools: - "Read" - "Write" |
+| [`site-md`](plugins/stitch-utilities/skills/site-md/SKILL.md) | `stitch-utilities` | Analyze a project description or site requirements and synthesize a project constitution into SITE.md for the Stitch Build Loop allowed-tools: - "Read" - "Write" - "web_fetch" |
+| [`stitch-loop`](plugins/stitch-utilities/skills/stitch-loop/SKILL.md) | `stitch-utilities` | Teaches agents to iteratively build websites using Stitch with an autonomous baton-passing loop pattern allowed-tools: - "stitch*:*" - "chrome*:*" - "Read" - "Write" - "Bash" |
+| [`taste-design`](plugins/stitch-utilities/skills/taste-design/SKILL.md) | `stitch-utilities` | Semantic Design System Skill for Google Stitch. Generates agent-friendly DESIGN.md files that enforce premium, anti-generic UI standards — strict typography, calibrated color, asymmetric layouts, perpetual micro-motion, and hardware-accelerated performance. allowed-tools: - "StitchMCP" - "Read" - "Write" |
 
 ---
 
 ## 🔌 Plugins & MCP Architecture
 
-This repository includes turnkey templates for Antigravity's native plugin and Model Context Protocol engines:
+This repository includes turnkey templates and native implementations for **8 Model Context Protocol (MCP) servers** and Antigravity plugins:
 
+### 🌐 Bundled MCP Servers (8 Servers)
+
+| MCP Server | Location / Engine | Purpose & Tool Capabilities |
+| :--- | :--- | :--- |
+| **`blender`** | Headless via `uvx` | 3D mesh rigging, skinning, centering, asset sanitization, and export to Unreal Engine / Unity. |
+| **`cloudrun`** | Google Cloud CLI | Direct deployment and management of containerized microservices on Google Cloud Run. |
+| **`firebase-mcp-server`** | Google Firebase | Administer Firestore databases, Firebase Authentication, security rules, and Cloud Functions. |
+| **`genkit-mcp-server`** | Google Genkit | Multi-model orchestration, flow execution, trace analysis, and runtime management. |
+| **`science_biomolecular_structure_viewer_mcp`** | DeepMind Mol* Sidecar | Interactive 3D molecular visualization, residue highlighting, and structural annotations. |
+| **`ebay`** | [`hermes/mcp-servers/ebay`](hermes/mcp-servers/ebay/) | Real-time querying, price comparisons, and item tracking via the official eBay REST API. |
+| **`vinted`** | [`hermes/mcp-servers/vinted`](hermes/mcp-servers/vinted/) | Live second-hand market search, price distribution scoring, and product scraping. |
+| **`web-tools`** | [`hermes/mcp-servers/web_tools`](hermes/mcp-servers/web_tools/) | Deep web research via Wayback Machine, SerpAPI search, Reddit discussions, and HackerNews. |
+
+### ⚙️ Quick Configuration Templates
 1. **`config/config.template.json`**: Enable official plugins (`science`, `android-cli-plugin`, `firebase`, `chrome-devtools`).
-2. **`config/mcp_config.template.json`**:
-   - `blender`: Headless Blender 3D rigging, skinning, and asset generation via `uvx`.
-   - `cloudrun`: Deploy microservices and APIs directly to Google Cloud Run.
-   - `firebase-mcp-server`: Manage Firestore, Auth, and Cloud Functions.
-   - `genkit-mcp-server`: Orchestrate generative AI flows with Google Genkit.
+2. **`config/mcp_config.template.json`**: Pre-configured JSON template with environment variables for instant MCP startup.
 
 ---
 
@@ -405,7 +480,7 @@ This repository includes turnkey templates for Antigravity's native plugin and M
 Every file in this repository has been audited against BridgeMind BridgeSecurity standards:
 - **Zero Credentials**: Absolutely no API keys, private tokens, or secrets are committed.
 - **Zero Personal Paths**: All hardcoded local paths have been sanitized to standard portable environment variables (`$HOME` / `~`).
-- **Clean Git State**: No `__pycache__`, compiled bytecode, or extraneous files.
+- **Clean Git State**: No `__pycache__`, compiled bytecode (`.pyc`), or executable binaries (`.exe`, `.zip`).
 
 ---
 
