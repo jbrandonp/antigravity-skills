@@ -2,17 +2,17 @@
 
 [![License: Apache 2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
 [![Google Antigravity](https://img.shields.io/badge/Antigravity-2.0%20Ready-4285F4.svg)](https://antigravity.google)
-[![Skills Count](https://img.shields.io/badge/Elite%20Skills-122%20Active-success.svg)](skills/)
+[![Skills Count](https://img.shields.io/badge/Elite%20Skills-117%20Active-success.svg)](skills/)
 [![DeepMind Science](https://img.shields.io/badge/DeepMind%20Science-41%20Skills-8A2BE2.svg)](plugins/science/)
 [![Google Stitch](https://img.shields.io/badge/Google%20Stitch-16%20Skills-4285F4.svg)](plugins/stitch-design/)
 [![Plugins Count](https://img.shields.io/badge/Plugins-9%20Bundled-blue.svg)](plugins/)
 [![MCP Servers](https://img.shields.io/badge/MCP%20Servers-5%20Bundled-blue.svg)](mcp/)
-[![Total Tools](https://img.shields.io/badge/Total%20Tools-179%20Skills%20%2B%205%20MCP-orange.svg)](#)
+[![Total Tools](https://img.shields.io/badge/Total%20Tools-174%20Skills%20%2B%205%20MCP-orange.svg)](#)
 [![Integrity Score](https://img.shields.io/badge/Audit%20Score-100%2F100-brightgreen.svg)](scripts/verify_skills.py)
 [![CI Status](https://img.shields.io/badge/CI-Passing-brightgreen.svg)](.github/workflows/validate-skills.yml)
 
 > **The Ultimate Production-Grade Skill & Customization Suite for [Google Antigravity](https://antigravity.google) and Modern AI Coding Agents.**  
-> Includes **122 audited elite skills**, the official **Google DeepMind Science toolkit** (41 skills + 3D Mol* interactive sidecar), the **Google Labs Stitch design suite** (16 skills across 3 plugins), **5 pre-bundled MCP servers** (Blender, Cloud Run, Firebase, Genkit, Science Mol*), and one-click installers.
+> Includes **117 audited elite skills**, the official **Google DeepMind Science toolkit** (41 skills + 3D Mol* interactive sidecar), the **Google Labs Stitch design suite** (16 skills across 3 plugins), **5 pre-bundled MCP servers** (Blender, Cloud Run, Firebase, Genkit, Science Mol*), and one-click installers.
 
 ---
 
@@ -21,7 +21,7 @@
 1. [Overview & Philosophy](#-overview--philosophy)
 2. [Universal Agent Compatibility (~/.agents/skills)](#-universal-agent-compatibility-agentsskills)
 3. [One-Click Installation](#-one-click-installation)
-4. [Elite Skills Catalog (122 Skills)](#-elite-skills-catalog-135-skills)
+4. [Elite Skills Catalog (117 Skills)](#-elite-skills-catalog-135-skills)
 5. [Google DeepMind Science Suite (41 Skills)](#-google-deepmind-science-suite-41-skills)
 6. [Plugins & MCP Architecture](#-plugins--mcp-architecture)
 7. [Zero-Trust Security & Sanitization](#-zero-trust-security--sanitization)
@@ -82,7 +82,7 @@ chmod +x scripts/install.sh && ./scripts/install.sh
 
 ---
 
-## 📦 Elite Skills Catalog (122 Skills)
+## 📦 Elite Skills Catalog (117 Skills)
 
 ### 📐 Computer-Aided Design (CAD) & Parametric Engineering (2 Skills)
 
@@ -106,7 +106,6 @@ chmod +x scripts/install.sh && ./scripts/install.sh
 | [`permissioned-github`](skills/permissioned-github/SKILL.md) | Guidelines for interacting with GitHub and requesting user permissions safely when commands fail due to sandbox restrictions. |
 | [`plugin`](skills/plugin/SKILL.md) | Create and manage Antigravity plugins — namespaced bundles of skills, agents, rules, MCP servers and hooks. |
 | [`run-workflow`](skills/run-workflow/SKILL.md) | Author and run dynamic workflow scripts with the `run_workflow` automation engine. |
-| [`ui-plugin-navigation`](skills/ui-plugin-navigation/SKILL.md) | Discover UI plugin panels relevant to the current task and surface a one-click pill in chat to toggle them in the side pane. |
 
 
 ### 🎮 Game Development, 3D & Shaders
@@ -142,7 +141,6 @@ chmod +x scripts/install.sh && ./scripts/install.sh
 | [`jetpack-compose-suite`](skills/jetpack-compose-suite/SKILL.md) | Comprehensive Android Jetpack Compose Master Suite: Architecture, Modern Authoring, Navigation 3, Lifecycle Coroutines, and Automated Diagnostic Auditing & Scoring (Kotlin 2.0+ / Strong Skipping Mode). |
 | [`eas-app-stores`](skills/eas-app-stores/SKILL.md) | Build and submit iOS and Android apps with EAS to TestFlight, the App Store, or Google Play. Supports Expo and other React Native projects, plus existing native apps. Use for eas.json setup, release pipelines, signing, app versions and build numbers, store submissions, and listing metadata. For Expo websites and API routes, use eas-hosting; for adding React Native screens to a native app, use expo-brownfield. |
 | [`eas-hosting`](skills/eas-hosting/SKILL.md) | Deploy Expo websites and Expo Router API routes to EAS Hosting - export the web bundle, run eas deploy for production and PR preview URLs, manage environment secrets and custom domains, and work within the Cloudflare Workers runtime. Also covers authoring API routes (+api.ts handlers, HTTP methods, request handling, CORS). Use when deploying an Expo web app or API routes, setting up EAS Hosting, or configuring hosting environments and domains. Not for native builds or store releases - use the eas-app-stores skill for those. |
-| [`eas-observe`](skills/eas-observe/SKILL.md) | Use for anything related to EAS Observe - adding `expo-observe` to an Expo project (AppMetricsRoot/ObserveRoot HOC, markInteractive and ObserveInteractiveMarker, the useObserve hook, the Expo Router / React Navigation integrations for per-route metrics, user-defined events via `Observe.logEvent`, error reporting via ObserveErrorBoundary and `Observe.reportError`, native crash reporting, source map upload for symbolicated stack traces, and runtime config such as sampleRate and dispatchInDebug), querying via the EAS CLI (`eas observe:metrics-summary`, `observe:metrics`, `observe:routes`, `observe:events`, `observe:session`, `observe:versions`, `observe:errors`, `observe:event`), interpreting the resulting metrics (cold/warm launch, TTR, TTI, navigation cold/warm TTR, update download, and the TTI frameRate/device/network params for triaging slow startups), or shipping an Observe integration inside a third-party package. |
 | [`eas-update`](skills/eas-update/SKILL.md) | Configure and use EAS Update for over-the-air JavaScript and asset updates with expo-updates and EAS CLI. Use when setting up OTA updates, running eas update:configure or eas update, publishing to preview/staging/production channels, explaining branches/channels/runtime versions, testing updates, or debugging why an installed build still shows old code. Load for TestFlight, preview, or production updates that do not appear, including questions about cold launches or reopening the app. Not for update health metrics; use eas-update-insights for adoption, crashes, and rollout monitoring. |
 | [`eas-workflows`](skills/eas-workflows/SKILL.md) | Helps understand and write EAS workflow YAML files for Expo projects. Use this skill when the user asks about CI/CD or workflows in an Expo or EAS context, mentions .eas/workflows/, or wants help with EAS build pipelines or deployment automation. |
 | [`expo-animation`](skills/expo-animation/SKILL.md) | Build animations in React Native and Expo, making the decisions in the order that determines whether they feel right — should it animate, which thread it runs on, which properties, spring or timing, how the gesture hands off, how it degrades. Writes the implementation with Reanimated, Gesture Handler, Expo Router and expo-haptics. Use when animating anything in an Expo app, adding gestures, sheets, screen transitions, press feedback or haptics, or fixing motion that stutters on device. For web animation use `animate`. |
@@ -151,7 +149,6 @@ chmod +x scripts/install.sh && ./scripts/install.sh
 | [`expo-data-fetching`](skills/expo-data-fetching/SKILL.md) | Use when implementing or debugging ANY network request, API call, or data fetching. Covers fetch API, React Query, SWR, error handling, caching, offline support, loading/empty/error screen states, and Expo Router data loaders (`useLoaderData`). |
 | [`expo-module`](skills/expo-module/SKILL.md) | Guide for creating and writing Expo native modules and views using the Expo Modules API (Swift, Kotlin, TypeScript). Covers module definition DSL, native views, shared objects, config plugins, lifecycle hooks, autolinking, and type system. Use when building or modifying native modules for Expo. Not for migrating an existing Swift module from the definition DSL to the Expo Modules API 2.0 macros; use expo-migrate-module (from the expo-experiments plugin) for that. |
 | [`expo-native-ui`](skills/expo-native-ui/SKILL.md) | Build beautiful, native-feeling Expo screens. Covers Apple HIG styling, semantic colors, native controls, SF Symbols, media, visual effects, gradients, storage, and responsive layout. For routing and navigation, use the expo-router skill; for motion and animation, use the expo-animation skill. |
-| [`expo-project-structure`](skills/expo-project-structure/SKILL.md) | Folder structure for a new Expo app. Use when scaffolding or laying out a new Expo project with Expo Router, or deciding where a file should live in one. For new projects only — never restructure an existing app to match. |
 | [`expo-router`](skills/expo-router/SKILL.md) | Navigation and routing for Expo Router. Covers file-based routes, groups and dynamic routes, folder organization, Link with previews and context menus, native Stack, page titles, modals and form sheets, NativeTabs, headers and toolbars, and header search bars. |
 | [`expo-upgrade`](skills/expo-upgrade/SKILL.md) | Guidelines for upgrading Expo SDK versions and fixing dependency issues |
 | [`expo-web-to-native`](skills/expo-web-to-native/SKILL.md) | Migrate an existing web React app to a native iOS/Android app with Expo. Use when the user wants to turn a website into a mobile app, port a Next.js/Vite/CRA React codebase to React Native, reuse web code on native incrementally, or asks how web idioms (the DOM, CSS, React Router, localStorage, window) map to native. This is the end-to-end migration guide; use the `expo-dom` skill for the DOM-component mechanism itself. |
@@ -196,7 +193,6 @@ chmod +x scripts/install.sh && ./scripts/install.sh
 
 | Skill | Description |
 | :--- | :--- |
-| [`api-reverse-engineer`](skills/api-reverse-engineer/SKILL.md) | Reverse-engineer private mobile and web APIs by analyzing HTTP Archive (.har) files, network captures, or decompiled Android application source trees (APKs/JADX). Extracts endpoints, headers, authentication tokens, GraphQL operations, Retrofit interfaces, and generates executable Python curl_cffi / httpx snippets (JA4 TLS fingerprinting & HTTP/2). |
 | [`ast-grep`](skills/ast-grep/SKILL.md) | Searches and rewrites code by AST shape across 25 languages. Use when the target is a syntax pattern (every call/class/import shaped like X, a codemod, a YAML rule) rather than literal text; for plain strings, comments, or filenames, use rg. |
 | [`datasette-sqlite-detective`](skills/datasette-sqlite-detective/SKILL.md) | Investigate, profile, and audit SQLite databases using Simon Willison Datasette Detective standards, while guarding schema evolution without data loss. Validates WAL mode, foreign key integrity, missing indexes, query plan efficiency (EXPLAIN QUERY PLAN), table fragmentation, detects schema drift between code models and production databases, and generates reversible UP/DOWN migration scripts. |
 | [`dbt-data-pipeline-engineer`](skills/dbt-data-pipeline-engineer/SKILL.md) | Design, orchestrate, and test scalable data transformation pipelines using dbt (data build tool), modern orchestrators (Dagster, Prefect, Airflow), and cloud data warehouses (BigQuery, Snowflake). Covers staging/intermediate/marts modeling, lineage graphs, incremental models, and automated data quality tests. |
@@ -248,7 +244,6 @@ chmod +x scripts/install.sh && ./scripts/install.sh
 | [`math-rigor-tutor`](skills/math-rigor-tutor/SKILL.md) | Use this skill when the user asks to explain, verify, or solve mathematical concepts, analysis, functions, limits, proofs, calculus, linear algebra, or LaTeX mathematical notation. |
 | [`minecraft-plugin-development`](skills/minecraft-plugin-development/SKILL.md) | Complete Paper, Spigot, and Bukkit Minecraft plugin suite. Covers plugin.yml, event listeners, schedulers, custom commands, player persistent data, minigame state machines, Adventure/MiniMessage text, plus French localization and i18n translation preserving placeholders (%player%, {0}) and YAML structure for plugins like KingdomsX. |
 | [`rust-engineer`](skills/rust-engineer/SKILL.md) | Use this skill when the user asks to develop, debug, or optimize Rust code, Cargo crates, Bevy game components, memory-safe data structures, or systems algorithms. |
-| [`swift-concurrency-expert`](skills/swift-concurrency-expert/SKILL.md) | Swift Concurrency review and remediation for Swift 6.2+. Use when asked to review Swift Concurrency usage, improve concurrency compliance, or fix Swift concurrency compiler errors in a feature or file. Concrete actions include adding Sendable conformance, applying @MainActor annotations, resolving actor isolation warnings, fixing data race diagnostics, and migrating completion handlers to async/await. |
 | [`swiftui-skills`](skills/swiftui-skills/SKILL.md) | Comprehensive Apple SwiftUI Master Suite. Unifies Apple-authored architectural guidance extracted directly from Xcode (Liquid Glass, on-device LLMs, SwiftData inheritance, 3D Charts, Swift Concurrency) with complete UI component patterns and navigation recipes (TabView, NavigationStack, forms, sheets, lists, async state, focus, theming). |
 
 ### 🎬 Video Editing, Sound Design & Motion

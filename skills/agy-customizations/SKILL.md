@@ -27,6 +27,7 @@ Type            | Config File/Folder           | Scope                     | Bes
 **Plugins**     | `plugins/<name>/plugin.json` | Bundle                    | Packaging related skills, rules, and MCP configs into a single unit.                    | [Plugins Guide](./docs/plugins.md)
 **Hooks**       | `hooks.json`                 | Lifecycle Event           | Running scripts/commands at specific agent lifecycle points (e.g., pre-tool execution). | [Hooks Guide](./docs/hooks.md)
 **MCP Servers** | `mcp_config.json`            | Tool Integration          | Connecting the agent to external services and custom tool providers.                    | [MCP Guide](./docs/mcp_servers.md)
+**UI Plugins**  | `plugins/<name>/sidecars/`   | Auxiliary Panel UI        | Surfacing interactive web sidecars & chat pills via `sidecar://` URI scheme.            | [UI Plugins Guide](./docs/ui-plugins-navigation.md)
 
 --------------------------------------------------------------------------------
 

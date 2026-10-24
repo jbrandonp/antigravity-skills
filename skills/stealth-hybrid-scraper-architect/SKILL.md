@@ -1,7 +1,7 @@
 ---
 name: stealth-hybrid-scraper-architect
 description: >-
-  Architect and implement resilient anti-detection web scrapers for supermarket pricing (Colruyt, Delhaize, Carrefour). Enforces JA4 TLS fingerprint spoofing via curl_cffi, hybrid clearance cookie harvesting, and modular ETL pipelines.
+  Master Web Scraping & Reverse Engineering Suite: Architect resilient anti-detection scrapers and reverse-engineer private mobile/web APIs. Covers HTTP Archive (.har) analysis, JA4 TLS fingerprint spoofing via curl_cffi, hybrid clearance cookie harvesting (Cloudflare/DataDome), and modular ETL pipelines for supermarket pricing.
 ---
 
 # 🤖 OLYMPUS PRO : STEALTH HYBRID SCRAPER ARCHITECT (2026 SOTA)
@@ -59,3 +59,14 @@ Utilisez cette compétence lorsque l'utilisateur demande de concevoir, déboguer
 - **Normalisation Prix :** 100% des produits possèdent un prix unitaire standardisé.
 - **Lint / Types :** 0 erreur mypy/pylint/clippy.
 - **Traçabilité :** Enregistrement continu de la session dans le coffre Obsidian (Eager Logging).
+---
+
+## 🔍 Reverse Engineering Mobile & Web APIs (HAR Ingestion)
+
+When reverse-engineering dynamic single-page applications (SPAs) or mobile apps:
+- Record an HTTP Archive (`.har`) file during app operation.
+- Use `scripts/parse_har_endpoints.py` to strip images/fonts and generate executable `curl_cffi` scripts with JA4 fingerprint spoofing:
+  ```bash
+  python scripts/parse_har_endpoints.py network.har -o scraper_client.py
+  ```
+- See `./references/api-reverse-engineering-pipeline.md` for step-by-step guidance on classifying GraphQL queries, bearer tokens, and pagination tokens.

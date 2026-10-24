@@ -95,3 +95,14 @@ eferences/theming.md: Color semantic tokens, dark mode adaptivity, dynamic type 
 3. **Availability Guards**: Always wrap APIs introduced in recent SDKs with @available(iOS 18, *) or similar.
 4. **Composition First**: Keep view bodies small, extract reusable subviews, and avoid monolithic view trees.
 5. **Swift 6 Strict Concurrency**: Ensure all view state operations respect @MainActor isolation.
+
+---
+
+## ⚡ Swift 6.2+ Strict Concurrency & Actor Isolation Remediation
+
+When diagnosing or fixing compiler concurrency errors, Sendable protocol warnings, or actor isolation issues:
+- **UI-bound Types**: Apply `@MainActor` to views, view models, and UI observable classes.
+- **Protocol Conformance**: Use isolated conformance: `extension MyModel: @MainActor SomeProtocol`.
+- **Background Tasks**: Offload CPU-heavy operations using `nonisolated` functions or dedicated actors.
+- **Sendable Safety**: Prefer immutable value types (`struct`, `enum`). Avoid `@unchecked Sendable` unless thread safety is mathematically verified.
+- **Detailed Remediation Playbook**: See `./references/swift-concurrency-remediation.md`.

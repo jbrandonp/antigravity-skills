@@ -1,6 +1,6 @@
 ---
 name: eas-update
-description: "Configure and use EAS Update for over-the-air JavaScript and asset updates with expo-updates and EAS CLI. Use when setting up OTA updates, running eas update:configure or eas update, publishing to preview/staging/production channels, explaining branches/channels/runtime versions, testing updates, or debugging why an installed build still shows old code. Load for TestFlight, preview, or production updates that do not appear, including questions about cold launches or reopening the app. Not for update health metrics; use eas-update-insights for adoption, crashes, and rollout monitoring."
+description: "Master EAS Update & Observability Suite: Deliver over-the-air (OTA) JavaScript and asset updates with expo-updates, configure runtime versions and channels, monitor update download performance, error reporting, and startup telemetry via EAS Observe."
 version: 1.0.0
 license: MIT
 allowed-tools: "Bash(npx expo *), Bash(npx *eas-cli@*), Bash(eas *)"
@@ -167,3 +167,20 @@ eas analytics:view
 - **Crash Rate**: Compare crash frequency on the new update versus the embedded baseline.
 - **Payload Size**: Keep updates lean to ensure rapid downloads on cellular networks.
 - **Embedded vs OTA Split**: Monitor adoption percentage across active app sessions.
+
+---
+
+## 📊 Runtime Observability & Error Reporting (EAS Observe)
+
+EAS Observe tracks startup, navigation, custom events, and JavaScript/native crash errors from production Expo apps:
+- **Wrap Root Layout**: Use `ObserveRoot` (SDK 56+) or `AppMetricsRoot` (SDK 55).
+- **Mark App Interactive**: Use `useObserve()` hook or `<ObserveInteractiveMarker />`.
+- **Query Metrics via EAS CLI**:
+  ```bash
+  eas observe:metrics-summary
+  eas observe:errors
+  ```
+- **Reference Guides**:
+  - Setup & Configuration: `./references/observability/setup.md`
+  - CLI Queries: `./references/observability/queries.md`
+  - Metrics & Diagnostic Patterns: `./references/observability/metrics.md`
