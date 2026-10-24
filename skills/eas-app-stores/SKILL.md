@@ -1,6 +1,6 @@
 ---
 name: eas-app-stores
-description: Build and submit iOS and Android apps with EAS to TestFlight, the App Store, or Google Play. Supports Expo and other React Native projects, plus existing native apps. Use for eas.json setup, release pipelines, signing, app versions and build numbers, store submissions, and listing metadata. For Expo websites and API routes, use eas-hosting; for adding React Native screens to a native app, use expo-brownfield.
+description: "Master EAS Build & App Store Distribution Suite: Build and submit iOS and Android apps for development testing (Expo development clients) and production store releases (TestFlight, Apple App Store, Google Play Store). Covers eas.json setup, credentials & signing, release pipelines, versioning, and listing metadata."
 version: 1.1.0
 license: MIT
 ---
@@ -174,3 +174,31 @@ npx --yes @expo/agent-cli@latest feedback --category skills --subject "eas-app-s
 ```
 Only submit when you have something specific and actionable to report. Include as much relevant context as possible.
 If an agent repeatedly fails at an Expo task or the user has to step in, submit a brief report of the task, expected result, and what went wrong using `--category evals` and the relevant Expo package or command as `--subject`.
+
+---
+
+## 🛠️ Development Builds & Internal Testing (`expo-dev-client`)
+
+Development builds replace Expo Go when using custom native modules, config plugins, or custom push notification credentials:
+
+```json
+// eas.json configuration for development builds
+{
+  "build": {
+    "development": {
+      "developmentClient": true,
+      "distribution": "internal"
+    },
+    "preview": {
+      "distribution": "internal"
+    },
+    "production": {
+      "autoIncrement": true
+    }
+  }
+}
+```
+
+- Run locally: `npx expo run:ios` or `npx expo run:android`
+- Run via EAS Cloud: `eas build --profile development --platform all`
+- Detailed setup guide: `./references/development-builds.md`

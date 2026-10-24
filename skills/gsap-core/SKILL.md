@@ -1,6 +1,6 @@
 ---
 name: gsap-core
-description: Comprehensive GSAP 3 Master Suite. Covers core engine (to, from, fromTo, easing, staggers), timelines (gsap.timeline, position parameter, nesting), gsap.utils (clamp, mapRange, snap, wrap, toArray), ScrollTrigger (pinning, scrub, snap, horizontal scroll), official React integration (@gsap/react useGSAP hook, cleanup, refs), and premium plugins (Flip, Draggable, SplitText, Inertia, ScrambleText).
+description: Master Web Animation Suite: Complete GSAP 3 engine, ScrollTrigger, @gsap/react, official plugins (Flip, Draggable, SplitText), and Framer Motion / Motion v12 scroll-driven pipelines (useScroll, useTransform, whileInView, parallax, pinned sections). Covers vanilla JS, React, and Next.js.
 license: MIT
 ---
 
@@ -107,3 +107,23 @@ gsap.to(".progress-bar", {
 - `gsap.utils.snap(increment, value)`
 - `gsap.utils.wrap(min, max, index)`
 - `gsap.utils.toArray(selector)`
+---
+
+## 🌊 Framer Motion & Motion v12 Scroll Architecture
+
+When building scroll animations in React or Next.js with Framer Motion:
+- **`useScroll` & `useTransform`**: Map viewport scroll progress to element transforms without re-rendering:
+  ```tsx
+  import { motion, useScroll, useTransform } from "framer-motion";
+  
+  export function ParallaxHero() {
+    const { scrollYProgress } = useScroll();
+    const y = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
+    const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
+    return <motion.div style={{ y, opacity }} className="hero" />;
+  }
+  ```
+- **`whileInView`**: Trigger entrance animations when an element enters the viewport with `viewport={{ once: true, margin: "-100px" }}`.
+- **Reference Guides**:
+  - Framer Motion recipes: `./references/framer-motion-scroll.md`
+  - GSAP ScrollTrigger recipes: `./references/gsap-scroll-recipes.md`

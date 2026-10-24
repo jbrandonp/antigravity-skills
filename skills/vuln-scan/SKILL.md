@@ -289,3 +289,21 @@ exclusions, per-finding confidence pass, and
 `exploit_scenario`/`recommendation` output fields are adapted from
 [`anthropics/claude-code-security-review`](https://github.com/anthropics/claude-code-security-review)'s
 `/security-review` command.
+
+---
+
+## 🛡️ Automated Static Vulnerability & Secret Scanner CLI
+
+This suite includes an automated security scanner in `scripts/scan_codebase_vulnerabilities.py`:
+
+```bash
+# Scan entire project directory for hardcoded secrets, SQLi, and command injection
+python scripts/scan_codebase_vulnerabilities.py .
+
+# Output: VULN-FINDINGS.json and severity breakdown
+```
+
+## 🗺️ STRIDE Threat Modeling Architecture
+
+Before performing deep code reviews, establish the application's attack surface using the four-question framework:
+- See `./references/threat-modeling-guide.md` for complete interview modes (`bootstrap`, `interview`, `bootstrap-then-interview`) and `THREAT_MODEL.md` schemas.

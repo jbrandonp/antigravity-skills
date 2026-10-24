@@ -57,3 +57,11 @@ Utilisez cette compétence lorsque l'utilisateur demande de concevoir, implémen
 - **Pente Maximale :** 0 végétal spawner sur pente $> \theta_{\text{max}}$.
 - **Lint / Types :** 0 erreur mypy/pylint/clippy.
 - **Traçabilité :** Enregistrement continu de la session dans le coffre Obsidian (Eager Logging).
+## 🛠️ Automated PCG Biome & VRAM Sizing CLI
+
+Calculate exact Poisson disk instance counts, spatial partition grid sizes, and transform memory bounds before generating graphs:
+
+`ash
+# Calculate distribution for 2.5 km^2 forest with 5m-10m tree spacing
+python scripts/calc_pcg_distribution.py --area 2.5 --min-radius 5 --max-radius 10
+`
