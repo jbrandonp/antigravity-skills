@@ -16,9 +16,9 @@ Author: Antigravity Agentic Super Suite
 import sys
 import json
 import argparse
-from typing import Dict, Any
+from typing import Dict
 
-THEMES: Dict[str, Dict[str, Any]] = {
+THEMES: Dict[str, Dict[str, Dict[str, str]]] = {
     "zinc-craft": {
         "light": {
             "bg_canvas": "#fafafa",

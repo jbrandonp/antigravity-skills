@@ -19,7 +19,7 @@ import re
 import json
 import argparse
 from pathlib import Path
-from typing import List, Dict, Any, Optional, Tuple
+from typing import List, Dict, Optional, Tuple
 
 
 def parse_bounds(bounds_str: str) -> Optional[Tuple[int, int, int, int]]:
@@ -44,7 +44,7 @@ def calculate_center(bounds: Tuple[int, int, int, int]) -> Tuple[int, int]:
     return (min_x + max_x) // 2, (min_y + max_y) // 2
 
 
-def flatten_layout(data: Any) -> List[Dict[str, Any]]:
+def flatten_layout(data: Union[Dict[str, object], List[object], object]) -> List[Dict[str, object]]:
     """Normalize hierarchical or flat layout JSON into a list of element dicts."""
     elements = []
     if isinstance(data, list):
@@ -59,12 +59,12 @@ def flatten_layout(data: Any) -> List[Dict[str, Any]]:
 
 
 def find_elements(
-    elements: List[Dict[str, Any]],
+    elements: List[Dict[str, object]],
     text_query: Optional[str] = None,
     id_query: Optional[str] = None,
     desc_query: Optional[str] = None,
     clickable_only: bool = False
-) -> List[Dict[str, Any]]:
+) -> List[Dict[str, object]]:
     """Filter layout elements matching criteria."""
     matches = []
     for el in elements:
@@ -92,7 +92,7 @@ def find_elements(
     return matches
 
 
-def audit_layout_accessibility(elements: List[Dict[str, Any]]) -> Dict[str, Any]:
+def audit_layout_accessibility(elements: List[Dict[str, object]]) -> Dict[str, object]:
     """Audit accessibility and touch targets for UI elements."""
     findings = []
     checked_count = 0
@@ -138,9 +138,9 @@ def audit_layout_accessibility(elements: List[Dict[str, Any]]) -> Dict[str, Any]
     }
 
 
-def diff_layouts(prev_elements: List[Dict[str, Any]], curr_elements: List[Dict[str, Any]]) -> Dict[str, Any]:
+def diff_layouts(prev_elements: List[Dict[str, object]], curr_elements: List[Dict[str, object]]) -> Dict[str, object]:
     """Diff two layout trees by element identifiers/signatures."""
-    def elem_sig(e: Dict[str, Any]) -> str:
+    def elem_sig(e: Dict[str, object]) -> str:
         return f"{e.get('resourceId', '')}|{e.get('text', '')}|{e.get('bounds', '')}"
 
     prev_sigs = {elem_sig(e): e for e in prev_elements}

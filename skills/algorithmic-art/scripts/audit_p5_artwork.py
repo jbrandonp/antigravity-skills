@@ -16,10 +16,10 @@ import re
 import json
 import argparse
 from pathlib import Path
-from typing import List, Dict, Any
+from typing import List, Dict, Union
 
 
-def audit_artwork(html_path: Path) -> Dict[str, Any]:
+def audit_artwork(html_path: Path) -> Dict[str, Union[str, int, List[Dict[str, str]]]]:
     """Audit a p5.js HTML artwork file against production generative art standards."""
     if not html_path.exists():
         return {

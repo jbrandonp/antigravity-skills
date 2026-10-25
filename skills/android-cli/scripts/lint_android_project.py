@@ -122,7 +122,7 @@ def audit_gradle(gradle_path: Path) -> List[Dict[str, str]]:
     return findings
 
 
-def audit_project(target: Path) -> Dict[str, Any]:
+def audit_project(target: Path) -> Dict[str, Union[str, int, List[str], List[Dict[str, str]]]]:
     """Audit project directory or specific file."""
     all_findings: List[Dict[str, str]] = []
     files_audited: List[str] = []

@@ -152,14 +152,14 @@ def scaffold_hook(name: str, event: str, matcher: str, command: str, output_dir:
     output_dir.mkdir(parents=True, exist_ok=True)
     hooks_file = output_dir if output_dir.suffix == ".json" else output_dir / "hooks.json"
     
-    hooks_data: Dict[str, Any] = {}
+    hooks_data: Dict[str, object] = {}
     if hooks_file.exists():
         try:
             hooks_data = json.loads(hooks_file.read_text(encoding="utf-8"))
         except Exception:
             hooks_data = {}
 
-    hook_entry: Dict[str, Any] = hooks_data.get(name, {})
+    hook_entry: Dict[str, object] = hooks_data.get(name, {}) if isinstance(hooks_data.get(name), dict) else {}
     cmd = command or "echo 'Hook triggered'"
 
     if event in ["PreToolUse", "PostToolUse"]:
@@ -221,7 +221,7 @@ def scaffold_mcp(name: str, command: str, output_dir: Path, force: bool = False)
     output_dir.mkdir(parents=True, exist_ok=True)
     config_file = output_dir if output_dir.suffix == ".json" else output_dir / "mcp_config.json"
 
-    data: Dict[str, Any] = {"mcpServers": {}}
+    data: Dict[str, object] = {"mcpServers": {}}
     if config_file.exists():
         try:
             data = json.loads(config_file.read_text(encoding="utf-8"))

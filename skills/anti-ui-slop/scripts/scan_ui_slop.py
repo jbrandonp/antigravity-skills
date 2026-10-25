@@ -36,7 +36,7 @@ AI_BUZZWORDS = [
 ]
 
 
-def scan_file(file_path: Path) -> List[Dict[str, Any]]:
+def scan_file(file_path: Path) -> List[Dict[str, Union[str, int]]]:
     """Scan a single file for UI slop anti-patterns."""
     findings = []
     try:
@@ -118,9 +118,9 @@ def scan_file(file_path: Path) -> List[Dict[str, Any]]:
     return findings
 
 
-def scan_path(target: Path) -> Dict[str, Any]:
+def scan_path(target: Path) -> Dict[str, Union[int, Dict[str, List[Dict[str, Union[str, int]]]]]]:
     """Scan a file or directory recursively."""
-    results: Dict[str, List[Dict[str, Any]]] = {}
+    results: Dict[str, List[Dict[str, Union[str, int]]]] = {}
     total_files = 0
 
     if target.is_file():

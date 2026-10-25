@@ -22,7 +22,7 @@ import os
 import argparse
 import json
 from pathlib import Path
-from typing import List, Dict, Any
+from typing import List, Dict
 
 # Import palette generator if present
 try:
@@ -35,7 +35,7 @@ except ImportError:
 TOPOLOGIES = ["flow-field", "strange-attractor", "phyllotaxis", "minimal"]
 
 
-def get_topology_code(topology: str, palette_colors: List[str]) -> Dict[str, Any]:
+def get_topology_code(topology: str, palette_colors: List[str]) -> Dict[str, str]:
     """Return parameters, controls HTML, and p5.js code for the given topology."""
     c1 = palette_colors[0] if len(palette_colors) > 0 else "#2e3440"
     c2 = palette_colors[1] if len(palette_colors) > 1 else "#88c0d0"

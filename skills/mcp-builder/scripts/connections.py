@@ -2,7 +2,7 @@
 
 from abc import ABC, abstractmethod
 from contextlib import AsyncExitStack
-from typing import Any
+# strict typing without Any
 
 from mcp import ClientSession, StdioServerParameters
 from mcp.client.sse import sse_client
@@ -52,7 +52,7 @@ class MCPConnection(ABC):
         self.session = None
         self._stack = None
 
-    async def list_tools(self) -> list[dict[str, Any]]:
+    async def list_tools(self) -> list[dict[str, object]]:
         """Retrieve available tools from the MCP server."""
         response = await self.session.list_tools()
         return [
@@ -64,7 +64,7 @@ class MCPConnection(ABC):
             for tool in response.tools
         ]
 
-    async def call_tool(self, tool_name: str, arguments: dict[str, Any]) -> Any:
+    async def call_tool(self, tool_name: str, arguments: dict[str, object]) -> object:
         """Call a tool on the MCP server with provided arguments."""
         result = await self.session.call_tool(tool_name, arguments=arguments)
         return result.content

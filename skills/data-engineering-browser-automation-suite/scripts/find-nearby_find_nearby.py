@@ -33,13 +33,13 @@ USER_AGENT = "HermesAgent/1.0 (find-nearby skill)"
 TIMEOUT = 15
 
 
-def _http_get(url: str) -> Any:
+def _http_get(url: str) -> object:
     req = urllib.request.Request(url, headers={"User-Agent": USER_AGENT})
     with urllib.request.urlopen(req, timeout=TIMEOUT) as r:
         return json.loads(r.read())
 
 
-def _http_post(url: str, data: str) -> Any:
+def _http_post(url: str, data: str) -> object:
     req = urllib.request.Request(
         url, data=data.encode(), headers={"User-Agent": USER_AGENT}
     )

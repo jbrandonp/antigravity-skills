@@ -12,7 +12,7 @@ import time
 import traceback
 import xml.etree.ElementTree as ET
 from pathlib import Path
-from typing import Any
+from connections import MCPConnection
 
 from anthropic import Anthropic
 
@@ -53,7 +53,7 @@ Response Requirements:
 - Your response should go last"""
 
 
-def parse_evaluation_file(file_path: Path) -> list[dict[str, Any]]:
+def parse_evaluation_file(file_path: Path) -> list[dict[str, str]]:
     """Parse XML evaluation file with qa_pair elements."""
     try:
         tree = ET.parse(file_path)
@@ -87,9 +87,9 @@ async def agent_loop(
     client: Anthropic,
     model: str,
     question: str,
-    tools: list[dict[str, Any]],
-    connection: Any,
-) -> tuple[str, dict[str, Any]]:
+    tools: list[dict[str, object]],
+    connection: MCPConnection,
+) -> tuple[str, dict[str, object]]:
     """Run the agent loop with MCP tools."""
     messages = [{"role": "user", "content": question}]
 
@@ -154,11 +154,11 @@ async def agent_loop(
 async def evaluate_single_task(
     client: Anthropic,
     model: str,
-    qa_pair: dict[str, Any],
-    tools: list[dict[str, Any]],
-    connection: Any,
+    qa_pair: dict[str, str],
+    tools: list[dict[str, object]],
+    connection: MCPConnection,
     task_index: int,
-) -> dict[str, Any]:
+) -> dict[str, object]:
     """Evaluate a single QA pair with the given tools."""
     start_time = time.time()
 
@@ -219,7 +219,7 @@ TASK_TEMPLATE = """
 
 async def run_evaluation(
     eval_path: Path,
-    connection: Any,
+    connection: MCPConnection,
     model: str = "claude-3-7-sonnet-20250219",
 ) -> str:
     """Run evaluation with MCP server tools."""

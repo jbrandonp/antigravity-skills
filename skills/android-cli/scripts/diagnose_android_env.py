@@ -66,9 +66,9 @@ def get_java_home() -> Optional[Path]:
     return None
 
 
-def diagnose_environment() -> Dict[str, Any]:
+def diagnose_environment() -> Dict[str, Union[str, Dict[str, Union[str, bool, int, List[str]]], List[str], List[Dict[str, str]]]] :
     """Perform comprehensive audit of Android development environment."""
-    report: Dict[str, Any] = {
+    report: Dict[str, Union[str, Dict[str, Union[str, bool, int, List[str]]], List[str], List[Dict[str, str]]]] = {
         "platform": sys.platform,
         "sdk": {},
         "java": {},
