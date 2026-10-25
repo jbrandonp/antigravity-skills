@@ -15,7 +15,7 @@
 [![CI Status](https://img.shields.io/badge/CI-Passing-brightgreen.svg)](.github/workflows/validate-skills.yml)
 
 > **The Ultimate Production-Grade Skill & Customization Suite for [Google Antigravity](https://antigravity.google), [Anthropic Claude Code](CLAUDE.md), [Hermes Agent](hermes/), Cursor, and Modern AI Coding Agents.**  
-> Unifies **168 audited elite skills**, **10 Hermes Mega-Suites** (~330,000 words designed for autonomous marathon tasks), **50 Hermes Master-Suites** (330+ micro-skills consolidated with zero duplicate bloat), the official **Google DeepMind Science toolkit** (41 skills + 3D Mol* interactive sidecar), the **Google Labs Stitch design suite** (16 skills across 3 plugins), **8 pre-bundled MCP servers** (Blender, Cloud Run, Firebase, Genkit, Science Mol*, eBay, Vinted, Web Tools), and one-click installers.
+> Unifies **170 audited elite skills**, **10 Hermes Mega-Suites** (~330,000 words designed for autonomous marathon tasks), **50 Hermes Master-Suites** (330+ micro-skills consolidated with zero duplicate bloat), the official **Google DeepMind Science toolkit** (41 skills + 3D Mol* interactive sidecar), the **Google Labs Stitch design suite** (16 skills across 3 plugins), **8 pre-bundled MCP servers** (Blender, Cloud Run, Firebase, Genkit, Science Mol*, eBay, Vinted, Web Tools), and one-click installers.
 
 ---
 
@@ -28,7 +28,7 @@
    - [10 All-in-One Mega-Suites](#10-all-in-one-mega-suites-330000-words)
    - [50 Consolidated Master Suites](#50-consolidated-master-suites)
    - [Hermes MCP Servers & Autonomous Tools](#hermes-mcp-servers-autonomous-tools)
-5. [Elite Skills Catalog (168 Skills)](#elite-skills-catalog-165-skills)
+5. [Elite Skills Catalog (170 Skills)](#elite-skills-catalog-165-skills)
 6. [Google DeepMind Science Suite (41 Skills)](#google-deepmind-science-suite-41-skills)
 7. [Google Labs Stitch Design Suite (16 Skills)](#google-labs-stitch-design-suite-16-skills)
 8. [Plugins & MCP Architecture](#plugins-mcp-architecture)
@@ -188,7 +188,7 @@ Located in [`hermes/mcp-servers/`](hermes/mcp-servers/) and [`hermes/scripts/`](
 
 ---
 
-## 📦 Elite Skills Catalog (168 Skills)
+## 📦 Elite Skills Catalog (170 Skills)
 
 ### 📐 Computer-Aided Design (CAD), CAE & Multiphysics Engineering (8 Skills)
 
@@ -210,6 +210,8 @@ Located in [`hermes/mcp-servers/`](hermes/mcp-servers/) and [`hermes/scripts/`](
 | [`techdraw-drafting-engineer`](skills/techdraw-drafting-engineer/SKILL.md) | Architect and implement 2D technical drawing generation (TechDraw), Sub-segmentary Hidden Line Removal (HLR), GD&T geometric tolerancing (ASME Y14.5 / ISO 1101), associative dimensioning, and sheet metal unfolding (K-factor, bend deduction). |
 | [`test-time-program-synthesizer`](skills/test-time-program-synthesizer/SKILL.md) | Synthesize, evaluate, and iteratively refine executable programs and CAD scripts at inference time using Test-Time Compute (TTC) and algebraic verification oracles inspired by François Chollet and Andrej Karpathy. Eliminates single-shot hallucinations. |
 | [`zero-alloc-systems-craftsman`](skills/zero-alloc-systems-craftsman/SKILL.md) | Architect and implement zero-allocation pipelines, high-performance C-contiguous NumPy buffer sharing, GPU VBO streaming, and C++/nanobind memory lifecycle management inspired by Armin Ronacher and Mitchell Hashimoto. Eliminates GC spikes, pointer copies, and memory leaks. |
+| [`bim-ifc-cad-architect`](skills/bim-ifc-cad-architect/SKILL.md) | Building Information Modeling (BIM) pipelines, ISO 16739 IFC4 / IFC2X3 schemas, IfcOpenShell automation, spatial decomposition trees (IfcProject to IfcSpace), geometric representation (IfcExtrudedAreaSolid, CSG booleans), material associations, and IDS data validation. |
+| [`additive-manufacturing-slicer-craftsman`](skills/additive-manufacturing-slicer-craftsman/SKILL.md) | Additive manufacturing pipelines, 3D printing DFM rules (overhangs >45°, bridging limits, minimum wall thicknesses), G-code generation, slicer automation (OrcaSlicer CLI, PrusaSlicer, Bambu Studio), support structure strategies (tree vs organic), infill geometry (gyroid, cubic), and extrusion temperature audits. |
 
 ### 🎮 Game Development, 3D Engines & Shaders (25 Skills)
 
