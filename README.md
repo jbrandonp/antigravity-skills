@@ -15,7 +15,7 @@
 [![CI Status](https://img.shields.io/badge/CI-Passing-brightgreen.svg)](.github/workflows/validate-skills.yml)
 
 > **The Ultimate Production-Grade Skill & Customization Suite for [Google Antigravity](https://antigravity.google), [Anthropic Claude Code](CLAUDE.md), [Hermes Agent](hermes/), Cursor, and Modern AI Coding Agents.**  
-> Unifies **165 audited elite skills**, **10 Hermes Mega-Suites** (~330,000 words designed for autonomous marathon tasks), **50 Hermes Master-Suites** (330+ micro-skills consolidated with zero duplicate bloat), the official **Google DeepMind Science toolkit** (41 skills + 3D Mol* interactive sidecar), the **Google Labs Stitch design suite** (16 skills across 3 plugins), **8 pre-bundled MCP servers** (Blender, Cloud Run, Firebase, Genkit, Science Mol*, eBay, Vinted, Web Tools), and one-click installers.
+> Unifies **168 audited elite skills**, **10 Hermes Mega-Suites** (~330,000 words designed for autonomous marathon tasks), **50 Hermes Master-Suites** (330+ micro-skills consolidated with zero duplicate bloat), the official **Google DeepMind Science toolkit** (41 skills + 3D Mol* interactive sidecar), the **Google Labs Stitch design suite** (16 skills across 3 plugins), **8 pre-bundled MCP servers** (Blender, Cloud Run, Firebase, Genkit, Science Mol*, eBay, Vinted, Web Tools), and one-click installers.
 
 ---
 
@@ -28,7 +28,7 @@
    - [10 All-in-One Mega-Suites](#10-all-in-one-mega-suites-330000-words)
    - [50 Consolidated Master Suites](#50-consolidated-master-suites)
    - [Hermes MCP Servers & Autonomous Tools](#hermes-mcp-servers-autonomous-tools)
-5. [Elite Skills Catalog (165 Skills)](#elite-skills-catalog-165-skills)
+5. [Elite Skills Catalog (168 Skills)](#elite-skills-catalog-165-skills)
 6. [Google DeepMind Science Suite (41 Skills)](#google-deepmind-science-suite-41-skills)
 7. [Google Labs Stitch Design Suite (16 Skills)](#google-labs-stitch-design-suite-16-skills)
 8. [Plugins & MCP Architecture](#plugins-mcp-architecture)
@@ -188,7 +188,7 @@ Located in [`hermes/mcp-servers/`](hermes/mcp-servers/) and [`hermes/scripts/`](
 
 ---
 
-## 📦 Elite Skills Catalog (165 Skills)
+## 📦 Elite Skills Catalog (168 Skills)
 
 ### 📐 Computer-Aided Design (CAD), CAE & Multiphysics Engineering (8 Skills)
 
@@ -202,6 +202,14 @@ Located in [`hermes/mcp-servers/`](hermes/mcp-servers/) and [`hermes/scripts/`](
 | [`taichi-xpbd-cloth-simulation`](skills/taichi-xpbd-cloth-simulation/SKILL.md) | Architect, implement, and harden high-performance GPU-accelerated textile and membrane simulations using Miles Macklin Extended Position Based Dynamics (XPBD) compiled via Taichi Lang JIT kernels. Covers isometric dihedral bending constraints, GPU spatial hashing self-collisions, aerodynamic wind forces, Coulomb friction, and graph-colored parallel execution. |
 | [`threejs-rtc-cad-viewport`](skills/threejs-rtc-cad-viewport/SKILL.md) | Architect, implement, and harden high-precision Relative-To-Center (RTC) and Camera-Relative 3D viewports in Three.js and WebGL/WebGPU for CAD assemblies, large-scale GIS, and microscopic precision inspection. Covers double-precision CPU coordinate handling, floating origin OrbitControls, RTC raycasting, B-Rep edge silhouette shaders, logarithmic depth buffer chunks, and WebGL context loss recovery. |
 | [`molecular-dynamics-simulation`](skills/molecular-dynamics-simulation/SKILL.md) | Architect, configure, execute, and analyze production molecular dynamics (MD) simulations of proteins, nucleic acids, and protein-ligand complexes using OpenMM, PDBFixer, OpenFF, and MDTraj. Covers small-molecule ligand parametrization (GAFF2/OpenFF), Hydrogen Mass Repartitioning (HMR for 4 fs timesteps), disulfide bond detection, NPT ensembles, checkpointing, and MM-GBSA binding free energy. |
+| [`brep-kernel-architect`](skills/brep-kernel-architect/SKILL.md) | Exact Boundary Representation (B-Rep) topological data structures, Euler-Poincaré invariants (V - E + F = 2(1 - g)), half-edge / BRepGraph adjacency queries, Cox-de Boor NURBS curves and surfaces, Coons patches, Surface-Surface Intersection (SSI) solvers, and topological sewing/healing. |
+| [`cad-studio-engineer`](skills/cad-studio-engineer/SKILL.md) | Architect and implement full-stack CAD Studio / Mono features, computational geometry kernels (hybrid B-Rep / Manifold3D), 2D sketch constraint solvers (PlaneGCS), zero-copy assembly links, shape healing, adaptive tessellation, CAM toolpaths, FEA/CFD decks, and high-performance PySide6/OpenGL CAD viewports. |
+| [`industrial-cam-engineer`](skills/industrial-cam-engineer/SKILL.md) | Architect and implement 5-axis CNC machining pipelines, RTCP kinematics (Rotation Tool Center Point), G-code post-processors (Fanuc, Heidenhain, Siemens), toolpath collision gouge checking, metrology CMM inspection, and automated fiber placement (AFP). |
+| [`neurosymbolic-cad-copilot`](skills/neurosymbolic-cad-copilot/SKILL.md) | Translate natural language prompts into parametric CAD models, generate mechanical parts (gears, heat sinks, brackets, enclosures) via CADAIBridge, validate generative CAD scripts with AST sandboxing (cad_validator), and orchestrate multi-step AI design synthesis with automated rollback. |
+| [`spec-driven-cad-architect`](skills/spec-driven-cad-architect/SKILL.md) | Author mathematical specifications, engineering contracts, invariant matrices, pre-conditions, post-conditions, and characterization test suites before implementing complex CAD, CAM, or geometric algorithms. Eliminates 'vibe coding' regressions and cognitive debt. |
+| [`techdraw-drafting-engineer`](skills/techdraw-drafting-engineer/SKILL.md) | Architect and implement 2D technical drawing generation (TechDraw), Sub-segmentary Hidden Line Removal (HLR), GD&T geometric tolerancing (ASME Y14.5 / ISO 1101), associative dimensioning, and sheet metal unfolding (K-factor, bend deduction). |
+| [`test-time-program-synthesizer`](skills/test-time-program-synthesizer/SKILL.md) | Synthesize, evaluate, and iteratively refine executable programs and CAD scripts at inference time using Test-Time Compute (TTC) and algebraic verification oracles inspired by François Chollet and Andrej Karpathy. Eliminates single-shot hallucinations. |
+| [`zero-alloc-systems-craftsman`](skills/zero-alloc-systems-craftsman/SKILL.md) | Architect and implement zero-allocation pipelines, high-performance C-contiguous NumPy buffer sharing, GPU VBO streaming, and C++/nanobind memory lifecycle management inspired by Armin Ronacher and Mitchell Hashimoto. Eliminates GC spikes, pointer copies, and memory leaks. |
 
 ### 🎮 Game Development, 3D Engines & Shaders (25 Skills)
 
@@ -287,7 +295,7 @@ Located in [`hermes/mcp-servers/`](hermes/mcp-servers/) and [`hermes/scripts/`](
 | [`python-pypi-package-builder`](skills/python-pypi-package-builder/SKILL.md) | End-to-end skill for building, testing, linting, versioning, and publishing a production-grade Python library to PyPI. Covers all four build backends (setuptools+setuptools_scm, hatchling, flit, poetry), PEP 440 versioning, semantic versioning, dynamic git-tag versioning, OOP/SOLID design, type hints (PEP 484/526/544/561), Trusted Publishing (OIDC), and the full PyPA packaging flow. Use for: creating Python packages, pip-installable SDKs, CLI tools, framework plugins, pyproject.toml setup, py.typed, setuptools_scm, semver, mypy, pre-commit, GitHub Actions CI/CD, or PyPI publishing. |
 | [`unlazy`](skills/unlazy/SKILL.md) | Enforces completion discipline for substantial autonomous work by writing acceptance gates before execution, decomposing work with the Depth Tree, running approved checks, and re-verifying evidence before reporting. Use when an agent faces a long or multi-part task, work that has returned half-done, an exhaustive audit or build, parallel leaves or pipelines, or explicit triggers such as /unlazy, $unlazy, "tree N", "gates", and "do not stop until it is done". |
 
-### 🎨 Frontend Engineering, Design Systems & Visual Arts (22 Skills)
+### 🎨 Frontend Engineering, Design Systems & Visual Arts (21 Skills)
 
 | Skill | Description |
 | :--- | :--- |
@@ -311,7 +319,6 @@ Located in [`hermes/mcp-servers/`](hermes/mcp-servers/) and [`hermes/scripts/`](
 | [`slides`](skills/slides/SKILL.md) | Create strategic HTML presentations with Chart.js, design tokens, responsive layouts, copywriting formulas, and contextual slide strategies. |
 | [`image-to-code`](skills/image-to-code/SKILL.md) | Elite website image-to-code skill for Codex. For visually important web tasks, it must first generate the design image(s) itself, deeply analyze them, then implement the website to match them as closely as possible. In Codex, it must prefer large, readable, section-specific images instead of tiny compressed boards, generate fresh standalone images for sections or detail views instead of cropping old ones, avoid lazy under-generation, avoid cards-inside-cards-inside-cards UI, and keep the hero clean, spacious, readable, and visible on a small laptop. |
 | [`algorithmic-art`](skills/algorithmic-art/SKILL.md) | Creating algorithmic art using p5.js with seeded randomness and interactive parameter exploration. Use this when users request creating art using code, generative art, algorithmic art, flow fields, or particle systems. Create original algorithmic art rather than copying existing artists' work to avoid copyright violations. |
-| [`generative_ui`](skills/generative_ui/SKILL.md) | How to render rich interactive HTML widgets inline in the chat or as standalone artifacts. Use this skill when you want to show the user diagrams, data visualizations, interactive controls, educational walkthroughs, or any rich visual content beyond plain text and markdown. |
 | [`accessibility-audit-engine`](skills/accessibility-audit-engine/SKILL.md) | Automated and manual accessibility testing engine enforcing WCAG 2.2 Level AA/AAA and European Accessibility Act (EAA) compliance. Integrates axe-core, Pa11y CLI, ARIA pattern validation, keyboard focus trap detection, and screen reader compatibility audits. |
 
 ### 📱 Mobile & Spatial Computing (Expo, Apple, Android & VisionOS) (19 Skills)
@@ -349,7 +356,7 @@ Located in [`hermes/mcp-servers/`](hermes/mcp-servers/) and [`hermes/scripts/`](
 | [`compliance-privacy-gdpr-engineer`](skills/compliance-privacy-gdpr-engineer/SKILL.md) | Audit and implement software privacy compliance, GDPR/RGPD regulations, open-source license compatibility, and European AI Act requirements. Enforces privacy-by-design, cookie consent architectures, right-to-erasure workflows, data processing registers, and license risk triage. |
 | [`crypto-web3-blockchain-suite`](skills/crypto-web3-blockchain-suite/SKILL.md) | Web3, Solidity & Zero-Knowledge Blockchain Suite: Production Solidity smart contract engineering, blockchain security auditing, zero-knowledge proofs (ZK Steward), and crypto social intelligence (Binance Square). |
 
-### 🏢 Enterprise, Growth Marketing, Science & Automation (41 Skills)
+### 🏢 Enterprise, Growth Marketing, Science & Automation (37 Skills)
 
 | Skill | Description |
 | :--- | :--- |
@@ -388,10 +395,6 @@ Located in [`hermes/mcp-servers/`](hermes/mcp-servers/) and [`hermes/scripts/`](
 | [`product-management-spec-engineer`](skills/product-management-spec-engineer/SKILL.md) | Author professional Product Requirements Documents (PRD), Technical Architecture RFCs, Architecture Decision Records (ADRs), and Agile sprint planning user stories with INVEST criteria and explicit acceptance tests. |
 | [`product-management-strategy-suite`](skills/product-management-strategy-suite/SKILL.md) | End-to-End Product Management & User Insights Suite: Sprint prioritization, user feedback synthesis, market trend forecasting, and behavioral nudge psychology. |
 | [`project-management-agile-suite`](skills/project-management-agile-suite/SKILL.md) | Agile Project Leadership & Studio Production Suite: Jira sprint workflows, experiment tracking, game studio production timelines, team velocity management, and senior project stewardship. |
-| [`automation`](skills/automation/SKILL.md) | Interactive guide to design and create a scheduled background automation. Use this skill when the user wants to create an automated or recurring scheduled task (e.g. "summarize my emails every morning", "every Monday send me a to-do list"). Also triggered by the /automation slash command. |
-| [`migrate-workflows`](skills/migrate-workflows/SKILL.md) | Automatically migrate legacy workflows to modern skills across global and workspace configurations. Scans for existing workflows, creates target SKILL.md files, and safely archives old workflow files. |
-| [`plugin`](skills/plugin/SKILL.md) | How to manage and create plugins — namespaced bundles of skills, agents, rules, MCP servers and hooks that install, enable and disable as a single unit. Use this skill when the user wants to enable, disable, install or uninstall a plugin, when they want to create a new plugin, or when a new customization should be packaged into a plugin rather than left loose. Also triggered by the /plugin slash command. Don't use for the underlying customization system itself — discovery roots, loading priority, or authoring a standalone skill, agent, rule, hook or MCP server outside a plugin; see the customizations guide skill for those. |
-| [`run-workflow`](skills/run-workflow/SKILL.md) | How to write and run a dynamic workflow script with the `run_workflow` tool: a Python script that orchestrates many agents with `agent`, `parallel`, `pipeline`, and `phase`. Use when a task splits into many independent or staged pieces of agent work (fan out over files, modules, bugs, or review angles, then aggregate), or when the user asks for a workflow. Don't use for a single delegated task (use a subagent) or for legacy workflow files (see migrate-workflows). |
 | [`enterprise-i18n-localization`](skills/enterprise-i18n-localization/SKILL.md) | Architect and implement software internationalization (i18n) and localization (l10n). Covers ICU MessageFormat, plural and gender rules, Right-to-Left (RTL) layout mirroring (Arabic, Hebrew), locale-aware date/currency formatters, pseudo-localization testing, and multilingual SEO (hreflang). |
 | [`reel-cut`](skills/reel-cut/SKILL.md) | End-to-end automated face-cam video production pipeline (derush, kinetic typography, camera moves, and SFX). Transcribes words via Whisper, detects silences with FFmpeg, curates best takes, cuts precisely at silence midpoints, and generates interactive HyperFrames DOM compositions with 0.12s lead verbatim subtitles, camera drifts/punch-ins, and synchronized zero-royalty audio SFX. Use when asked to "derush", "coupe les blancs", "monte mon reel", "ajoute des sous-titres", or "reel-cut". |
 
