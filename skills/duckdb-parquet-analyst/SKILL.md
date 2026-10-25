@@ -1,7 +1,7 @@
 ---
 name: duckdb-parquet-analyst
 description: >-
-  Perform high-performance columnar analytics, query Parquet datasets, and benchmark data pipelines using DuckDB, while enforcing dataset quality based on Andrew Ng Data-Centric AI standards (detecting duplicate records, missing fields, distribution skew, corrupted types, and statistical anomalies in scraped supermarket datasets).
+  Perform high-performance columnar analytics, query Parquet datasets, and benchmark data pipelines using DuckDB, while enforcing dataset quality based on Andrew Ng Data-Centric AI standards (detecting duplicate records, missing fields, distribution skew, corrupted types, and statistical anomalies in scraped supermarket datasets). For transactional SQLite query plan auditing, use datasette-sqlite-detective.
 ---
 
 # DuckDB Parquet Analyst (Columnar Analytics Standard)

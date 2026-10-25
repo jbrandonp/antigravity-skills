@@ -1,7 +1,7 @@
 ---
 name: software-dev-methodology-superpowers-suite
 description: >-
-  Elite Software Engineering Methodology Suite (SWE-bench & Superpowers): Systematic debugging (Evidence Gate), strict Test-Driven Development (TDD), subagent delegation, and structured writing plans.
+  Elite Software Engineering Methodology Suite (SWE-bench & Superpowers): Systematic debugging (Evidence Gate), strict Test-Driven Development (TDD), property-based fuzzing invariants, subagent delegation, and structured writing plans.
 version: 2.0.0
 tags:
   - methodology
@@ -1790,3 +1790,33 @@ Frequent commits
 
 
 ---
+
+
+---
+
+## 🚦 Strict Test-Driven Development (TDD) & Property-Based Fuzzing Tools
+
+Règle d'or absolue : **N'écrire aucun code de production sans disposer au préalable d'un test automatisé en échec qui démontre le manque ou le bogue.**
+
+```text
+ ┌─────────────────────────────────────────────────────────────────┐
+ │ 1. RED Phase: Écrire le test minimal qui ÉCHOUE pour la bonne raison│
+ ├─────────────────────────────────────────────────────────────────┤
+ │ 2. GREEN Phase: Écrire le code de production MINIMAL            │
+ ├─────────────────────────────────────────────────────────────────┤
+ │ 3. REFACTOR Phase: Nettoyer, typage fort, DRY, zéro régression │
+ └─────────────────────────────────────────────────────────────────┘
+```
+
+### Outils Déterministes Embarqués
+1. **Contrôleur de Cycle TDD (`tdd_cycle_checker.py`)** :
+   ```bash
+   python scripts/tdd_cycle_checker.py tests/
+   ```
+   Valide les phases d'échec initial et de succès après implémentation.
+
+2. **Générateur de Tests par Propriétés & Fuzzer d'Invariants (`run_property_fuzzer.py`)** :
+   ```bash
+   python scripts/run_property_fuzzer.py --iterations 500
+   ```
+   Génère des entrées extrêmes aléatoires (Unicode non assigné, surrogates, grands entiers, chaînes vides, structures récursives) pour traquer les failles aux limites.

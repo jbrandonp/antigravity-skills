@@ -1,6 +1,7 @@
 ---
 name: gsap-core
-description: Master Web Animation Suite: Complete GSAP 3 engine, ScrollTrigger, @gsap/react, official plugins (Flip, Draggable, SplitText), and Framer Motion / Motion v12 scroll-driven pipelines (useScroll, useTransform, whileInView, parallax, pinned sections). Covers vanilla JS, React, and Next.js.
+description: >-
+  Master Web Animation Suite: Complete GSAP 3 engine, ScrollTrigger, @gsap/react, official plugins (Flip, Draggable, SplitText), and Framer Motion / Motion v12 scroll-driven pipelines (useScroll, useTransform, whileInView, parallax, pinned sections). Covers vanilla JS, React, and Next.js.
 license: MIT
 ---
 

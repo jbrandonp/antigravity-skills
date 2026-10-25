@@ -9,12 +9,10 @@ description: Comprehensive Apple SwiftUI Master Suite. Unifies Apple-authored ar
 
 A comprehensive, self-contained suite for Apple platform engineering. It unifies:
 1. **Apple Official Architecture (docs/)**: Authoritative documentation pre-bundled from Xcode covering Liquid Glass design, on-device LLMs, SwiftData inheritance, 3D charts, Swift 6 strict concurrency, and visionOS widgets.
-2. **UI Component Patterns & Recipes (
-eferences/)**: 30 production-ready reference guides for building views, navigation flows, sheets, async state handling, focus, and haptics.
+2. **UI Component Patterns & Recipes (rreferences/)**: 30 production-ready reference guides for building views, navigation flows, sheets, async state handling, focus, and haptics.
 3. **Specialized Prompts (prompts/)**: Role-specific prompts for generation, reviewing, refactoring, and documentation routing.
 
-All 20 official documentation guides in docs/ and 30 component references in 
-eferences/ are pre-bundled directly, providing full cross-platform capability across Windows, macOS, and Linux without requiring a local Xcode installation.
+All 20 official documentation guides in docs/ and 30 component references in rreferences/ are pre-bundled directly, providing full cross-platform capability across Windows, macOS, and Linux without requiring a local Xcode installation.
 
 ---
 
@@ -45,46 +43,44 @@ All factual architectural claims, API signatures, and design patterns must be st
 
 ---
 
-## 2. UI Component Patterns & Navigation (
-eferences/)
+## 2. UI Component Patterns & Navigation (rreferences/)
 
-For view implementation, component composition, and navigation scaffolding, consult the dedicated guides in 
-eferences/:
+For view implementation, component composition, and navigation scaffolding, consult the dedicated guides in rreferences/:
 
 ### App Scaffolding & Routing
 - 
-eferences/app-wiring.md: Scaffold root TabView + NavigationStack + sheets routing.
+references/app-wiring.md: Scaffold root TabView + NavigationStack + sheets routing.
 - 
-eferences/navigationstack.md: Type-safe path navigation, deep linking, and stack resets.
+references/navigationstack.md: Type-safe path navigation, deep linking, and stack resets.
 - 
-eferences/tabview.md: Standard tabs, badge counters, and programmatic tab switching.
+references/tabview.md: Standard tabs, badge counters, and programmatic tab switching.
 - 
-eferences/sheets.md: Modal presentations, detents (medium/large), and dismiss flows.
+references/sheets.md: Modal presentations, detents (medium/large), and dismiss flows.
 - 
-eferences/split-views.md: Three-column and two-column layouts for iPadOS and macOS.
+references/split-views.md: Three-column and two-column layouts for iPadOS and macOS.
 
 ### Data Flow & Component Layout
 - 
-eferences/async-state.md: Async tasks, .task, cancellation, debounce, loading & error states.
+references/async-state.md: Async tasks, .task, cancellation, debounce, loading & error states.
 - 
-eferences/list.md: Performance-optimized lists, swipe actions, pull-to-refresh, reordering.
+references/list.md: Performance-optimized lists, swipe actions, pull-to-refresh, reordering.
 - 
-eferences/grids.md: Adaptive, fixed, and flexible LazyVGrid / LazyHGrid layouts.
+references/grids.md: Adaptive, fixed, and flexible LazyVGrid / LazyHGrid layouts.
 - 
-eferences/form.md: Form sections, validation state, picker integration, and keyboard dismissal.
+references/form.md: Form sections, validation state, picker integration, and keyboard dismissal.
 - 
-eferences/components-index.md: Master index of all UI components.
+references/components-index.md: Master index of all UI components.
 
 ### Interactions, Focus & Polish
 - 
-eferences/focus.md: @FocusState, keyboard progression, hardware keyboard navigation.
+references/focus.md: @FocusState, keyboard progression, hardware keyboard navigation.
 - 
-eferences/scrollview.md & 
-eferences/scroll-reveal.md: Dynamic scroll offset tracking and reveal effects.
+references/scrollview.md & 
+references/scroll-reveal.md: Dynamic scroll offset tracking and reveal effects.
 - 
-eferences/haptics.md: Sensory feedback integration (UIImpactFeedbackGenerator).
+references/haptics.md: Sensory feedback integration (UIImpactFeedbackGenerator).
 - 
-eferences/theming.md: Color semantic tokens, dark mode adaptivity, dynamic type scaling.
+references/theming.md: Color semantic tokens, dark mode adaptivity, dynamic type scaling.
 
 ---
 
@@ -105,4 +101,23 @@ When diagnosing or fixing compiler concurrency errors, Sendable protocol warning
 - **Protocol Conformance**: Use isolated conformance: `extension MyModel: @MainActor SomeProtocol`.
 - **Background Tasks**: Offload CPU-heavy operations using `nonisolated` functions or dedicated actors.
 - **Sendable Safety**: Prefer immutable value types (`struct`, `enum`). Avoid `@unchecked Sendable` unless thread safety is mathematically verified.
-- **Detailed Remediation Playbook**: See `./references/swift-concurrency-remediation.md`.
+- **Detailed Remediation Playbook**: See `./rreferences/swift-concurrency-remediation.md`.
+
+---
+
+## 🧒 Explication Pédagogique (Style 15 ans)
+
+Créer une application iPhone avec SwiftUI, c'est comme empiler des briques LEGO intelligentes :
+1. **La Déclaration plutôt que le Bricolage (Declarative UI)** :
+   Au lieu de dire "va chercher l'élément bouton, change sa couleur en bleu, puis ajoute un texte", tu décris simplement l'état final : `Button("Valider") { action() }.tint(.blue)`. L'iPhone se charge de l'afficher instantanément.
+2. **Le Détecteur de Mouvements (@State & @Observable)** :
+   Si ton personnage de jeu a 3 vies, tu marques cette variable avec `@State var lives = 3`. Dès que le nombre passe à 2, SwiftUI redessine automatiquement l'écran sans que tu aies besoin de forcer un rafraîchissement manuel.
+3. **Le Respect des Doigts Humains (Taille Tactile >= 44pt)** :
+   Apple exige que chaque bouton soit assez grand pour que le pouce puisse appuyer dessus facilement sans déraper sur le voisin.
+
+---
+
+## 🛠️ Outil Déterministe : `validate_swiftui_view.py`
+```bash
+python scripts/validate_swiftui_view.py Views/HomeView.swift
+```

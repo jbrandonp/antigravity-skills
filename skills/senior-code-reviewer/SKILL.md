@@ -1,7 +1,7 @@
 ---
 name: senior-code-reviewer
 description: >-
-  Conduct structured senior-level code reviews and anti-bloat architectural audits following Google, Anthropic, and Swyx's Smol Architect standards. Classifies findings by strict severity tiers (Critical, Major, Minor, Nit), audits logic flaws, eliminates speculative generality, prunes dead code, and inlines single-use indirections.
+  Conduct structured senior-level code reviews, anti-bloat architectural audits (Google, Anthropic, Smol Architect), and exhaustive 9-dimension technical debt audits producing TECH_DEBT_AUDIT.md. Classifies findings by strict severity tiers (Critical, Major, Minor, Nit), eliminates speculative generality, and audits codebase health.
 ---
 
 # 🧐 Senior Code Reviewer & Smol Architecture Auditor (SOTA 2026)
@@ -83,4 +83,46 @@ python scripts/audit_pull_request_quality.py --demo
 
 # 2. Auditer l'espace de travail pour traquer le code mort et le bloat architectural
 python scripts/audit_code_bloat.py --scan-dir .
+```
+
+
+---
+
+## 🏛️ 6. Protocole d'Audit de Dette Technique Globale (`TECH_DEBT_AUDIT.md`)
+
+Quand l'utilisateur demande un audit de santé de base de code (*codebase health check*, *tech debt audit*, *architecture review*), exécuter l'audit selon les **9 dimensions fondamentales** et consigner les résultats dans `TECH_DEBT_AUDIT.md` à la racine :
+
+### Les 9 Dimensions d'Audit
+1. **Code Churn & Hotspots** : Fichiers modifiés le plus fréquemment (`git log --oneline -200`).
+2. **God Objects & Taille Fichiers** : Détection des fichiers monolithiques (>300 lignes).
+3. **Complexité Cyclomatique** : Calcul $M = E - N + 2P$, fonctions avec imbrications profondes (>4 niveaux).
+4. **Santé des Dépendances** : Bibliothèques obsolètes, vulnérables ou redondantes.
+5. **Couverture de Tests (Test Gap)** : Modules critiques dépourvus de tests unitaires/intégration.
+6. **Rigueur du Typage** : Chasse absolue au type `any` ou équivalents, fonctions non typées.
+7. **Bloat Spéculatif (Smol Architect)** : Abstractions prématurées, indirections à usage unique.
+8. **Secrets & Sécurité** : Détection de clés API ou tokens codés en dur.
+9. **Dérive Documentaire** : Docstrings ou README en décalage avec le code réel.
+
+### Structure Obligatoire de l'Artéfact `TECH_DEBT_AUDIT.md`
+```markdown
+# Rapport d'Audit de Dette Technique
+
+## 1. Executive Summary
+- Santé globale de la base de code (3-5 phrases).
+- Dimension la plus critique et nombre de victoires rapides (*quick wins*).
+
+## 2. Modèle Mental de l'Architecture
+- Architecture du dépôt en 1 paragraphe (stack, frontières modulaires).
+
+## 3. Tableau des Constats (Findings Table)
+| ID | Catégorie | Fichier:Ligne | Sévérité ([CRITICAL]/[MAJOR]/[MINOR]/[NIT]) | Effort (h) | Description | Recommandation |
+
+## 4. Top 5 des Priorités
+- Classées par ratio d'impact/effort.
+
+## 5. Quick Wins (<30 minutes chacune)
+- [ ] Tâche rapide 1
+
+## 6. "Semble Suspect mais Intentionnel" (False Positives)
+- Justification des motifs inhabituels mais légitimes.
 ```

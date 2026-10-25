@@ -829,7 +829,18 @@ Key metrics to monitor:
 Use Docker for consistent deployment:
 
 ```bash
-## Run vLLM in Docker
+
+### 🚀 Native Direct Execution (Zero-Docker Preferred for Local Workstations)
+To conserve RAM and eliminate virtualization overhead, run vLLM and llama.cpp directly as native Windows processes:
+```bash
+# 1. Native vLLM OpenAI-Compatible Server (Native Python uv)
+uv run python -m vllm.entrypoints.openai.api_server --model Qwen/Qwen2.5-Coder-7B-Instruct --port 8000 --dtype bfloat16
+
+# 2. Native llama.cpp Server (Direct .exe Binary)
+llama-server.exe -m models/qwen2.5-coder-7b-instruct-q4_k_m.gguf -c 8192 --port 8080 --host 127.0.0.1
+```
+
+## Run vLLM in Docker (Remote Cloud Servers Only)
 docker run --gpus all -p 8000:8000 \
   vllm/vllm-openai:latest \
   --model meta-llama/Llama-3-8B-Instruct \

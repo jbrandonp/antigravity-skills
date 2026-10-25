@@ -1,6 +1,6 @@
 ---
 name: game-engine
-description: 'Expert skill for building web-based game engines and games using HTML5, Canvas, WebGL, and JavaScript. Use when asked to create games, build game engines, implement game physics, handle collision detection, set up game loops, manage sprites, add game controls, or work with 2D/3D rendering. Covers techniques for platformers, breakout-style games, maze games, tilemaps, audio, multiplayer via WebRTC, and publishing games.'
+description: 'Expert skill for building web-based game engines and games using HTML5, Canvas, WebGL, and JavaScript. Use when asked to create lightweight browser games, build canvas game engines (Phaser, Three.js, Babylon.js), implement collision detection, game loops, or 2D tilemaps. Do NOT use for native desktop game engines like Unreal Engine 5 (use unreal-engine-master-suite), Unity (use unity-engine-suite), or Godot (use godot-engine-suite).'
 ---
 
 # Game Engine Skill

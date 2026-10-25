@@ -149,3 +149,19 @@ If any check fails — fix the response or ask the user for the missing detail.
 - You need to verify a language feature or behavior that isn't clearly covered in the other references
 - The user is asking for a comprehensive explanation of Slang features or usage patterns
 - The user is asking for examples of Slang code that demonstrate specific features or best practices
+
+
+---
+
+## 🧒 Explication Pédagogique (Style 15 ans)
+
+Imagine que ta carte graphique (le GPU) est une immense usine avec des millions de petits ouvriers ultra-rapides :
+1. **Qu'est-ce qu'un Shader ?** C'est la notice de fabrication distribuée à chaque ouvrier. Un ouvrier s'occupe de placer un sommet 3D sur l'écran (**Vertex Shader**), un autre décide de la couleur exacte d'un pixel (**Pixel Shader**), et un troisième fait des calculs mathématiques lourds en parallèle (**Compute Shader**).
+2. **Pourquoi le langage Slang ?** Historiquement, chaque constructeur et chaque console avait son propre dialecte (HLSL pour DirectX, GLSL/SPIR-V pour Vulkan, Metal pour Mac, CUDA pour Nvidia). Slang est le traducteur universel moderne : tu écris une seule fois un code propre et élégant (avec des types génériques et des modules comme en Rust ou C#), et Slang le compile parfaitement pour toutes les cartes graphiques du monde !
+
+---
+
+## 🛠️ Outil Déterministe : `validate_slang_shader.py`
+```bash
+python scripts/validate_slang_shader.py shaders/my_kernel.slang
+```

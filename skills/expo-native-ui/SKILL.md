@@ -1,6 +1,7 @@
 ---
 name: expo-native-ui
-description: Master Expo Native UI Suite: Native @expo/ui components (SwiftUI & Jetpack Compose), Apple HIG styling, controls, and layout. Covers Apple HIG styling, semantic colors, native controls, SF Symbols, media, visual effects, gradients, storage, and responsive layout. For routing and navigation, use the expo-router skill; for motion and animation, use the expo-animation skill.
+description: >-
+  Master Expo Native UI Suite: Native @expo/ui components (SwiftUI & Jetpack Compose), Apple HIG styling, controls, and layout. Covers Apple HIG styling, semantic colors, native controls, SF Symbols, media, visual effects, gradients, storage, and responsive layout. For routing and navigation, use the expo-router skill; for motion and animation, use the expo-animation skill.
 version: 1.1.1
 license: MIT
 ---

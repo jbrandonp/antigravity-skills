@@ -84,3 +84,20 @@ When checking cutting-edge features, new method signatures, or specific telemetr
 | **MCP Server Integration** | `./references/mcp-servers.md` |
 | **Built-in Tools Catalog** | `./references/tools-catalog.md` |
 | **Live Docs & Troubleshooting** | `./references/docs-lookup.md` |
+
+
+---
+
+## 🧒 Explication Pédagogique (Style 15 ans)
+
+Imagine que tu dois monter un film pour un festival de cinéma au lycée :
+1. **L'Équipe d'Agents (Crew)** : Tu as un scénariste, un cadreur et un monteur. Au lieu de demander à une seule personne de tout faire d'un coup en s'emmêlant les pinceaux, chaque agent a un rôle très précis (**Role**), un but clair (**Goal**) et une personnalité experte (**Backstory**).
+2. **Le Contrat de Mission (Tasks)** : Tu ne dis pas juste "fais le montage". Tu donnes une consigne millimétrée (**Description**) et tu décris exactement ce que tu veux recevoir sur ta table (**Expected Output** : un fichier MP4 de 3 minutes avec des sous-titres jaunes).
+3. **Le Chef d'Orchestre (Flow)** : C'est le planning qui dit : "Tant que le scénario n'est pas validé, le cadreur ne sort pas la caméra".
+
+---
+
+## 🛠️ Outil Déterministe : `validate_crewai_config.py`
+```bash
+python scripts/validate_crewai_config.py my_crew_project/
+```

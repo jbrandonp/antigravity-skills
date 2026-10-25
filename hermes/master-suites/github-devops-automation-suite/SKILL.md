@@ -1,7 +1,7 @@
 ---
 name: github-devops-automation-suite
 description: >-
-  Enterprise GitHub DevOps & Repository Lifecycle Suite: Automated PR reviews, issue triage, branch protection, repository mining, authentication tokens, and codebase inspection.
+  Enterprise GitHub DevOps & Repository Lifecycle Suite: Automated PR reviews, issue triage, branch protection, repository mining, authentication tokens, codebase inspection, and strict gh CLI permission governance.
 version: 2.0.0
 tags:
   - github
@@ -2403,3 +2403,37 @@ Diminishing returns kick in after ~150 repos for niche topics.
 
 
 ---
+
+
+---
+
+## 🔒 Directives d'Interaction Sécurisée GitHub & Protocole de Permissions (gh CLI)
+
+Pour interagir avec GitHub dans un environnement d'agent restreint :
+- **Toujours utiliser le CLI `gh`** avec le paramètre explicite `-R ORG/REPO`.
+- **Ne jamais utiliser de requêtes `curl` brutes** ou de scripts contactant l'API GitHub directement sans passer par `gh`.
+- **Opérations Git de branche** : Utiliser `git` sur protocole HTTPS (pas SSH).
+
+### Format Standard des Demandes de Permission
+Si une commande échoue par manque de privilèges, demander l'autorisation explicite sous le format standard :
+```shell
+<command-binary>.<action>(<resource_json>)
+```
+
+Exemples canoniques :
+1. **Création d'Issue** : `gh issue create --title "..." --body "..." -R myorg/myrepo`  
+   Permission : `gh.create({"org": "myorg", "repo": "myrepo", "issue": "*"})`
+2. **Commentaire sur PR** : `gh pr comment 123 --body "..." -R myorg/myrepo`  
+   Permission : `gh.update({"org": "myorg", "repo": "myrepo", "pr": "123"})`
+3. **Approbation de PR** : `gh pr review 123 --approve -R myorg/myrepo`  
+   Permission : `gh.approve({"org": "myorg", "repo": "myrepo", "pr": "123"})`
+4. **Push de Branche Existante** : `git push origin feature/name`  
+   Permission : `git.update({"org": "myorg", "repo": "myrepo", "branch": "feature/name"})`
+5. **Création de Nouvelle Branche** : `git push origin feature/new`  
+   Permission : `git.create({"org": "myorg", "repo": "myrepo", "branch": "feature/new"})`
+6. **Recherche de Code** : `gh search code -R myorg/myrepo "func main"`  
+   Permission : `git.read({"org": "myorg", "repo": "myrepo", "contents": "*"})`
+7. **Déclenchement de Workflow CI** : `gh workflow run ci.yml --ref main -R myorg/myrepo`  
+   Permission : `workflow.dispatch({"org": "myorg", "repo": "myrepo", "path": "ci.yml", "ref": "main"})`
+
+> ⚠️ **Règle d'or :** Ne demander des permissions que si la commande a effectivement échoué avec une erreur d'autorisation. Ne jamais tenter de piper ou rediriger la sortie de la commande `gh`.

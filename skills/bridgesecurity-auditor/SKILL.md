@@ -1,7 +1,7 @@
 ---
 name: bridgesecurity-auditor
 description: >-
-  Perform senior-level security audits, input defense, and Zero-Trust secrets governance based on BridgeMind BridgeSecurity standards. Scans for OWASP Top 10, CWE Top 25, high-entropy secrets and API keys, actively defends against prompt-injections during web scraping, enforces age/SOPS envelope encryption in Git, ephemeral environment injection, and native in-memory secret masking (Zero-Docker).
+  Perform senior-level security audits, input defense, and Zero-Trust secrets governance based on BridgeMind BridgeSecurity standards. Scans for OWASP Top 10, CWE Top 25, high-entropy secrets and API keys, actively defends against prompt-injections during web scraping, enforces age/SOPS envelope encryption in Git, ephemeral environment injection, and native in-memory secret masking (Zero-Docker). For auditing third-party agent skills/plugins, use skill-security-auditor.
 ---
 
 # 🛡️ BridgeSecurity & Zero-Trust Defense Master (SOTA 2026)

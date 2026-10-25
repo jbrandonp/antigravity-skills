@@ -1,7 +1,7 @@
 ---
 name: saas-backend-architecture
 description: >-
-  Design and implement production SaaS backend services: OAuth2/OIDC, JWT & RBAC/ABAC authorization, Stripe Checkout & Billing subscriptions, webhook HMAC signature verification with idempotency keys, Redis caching & rate limiting, background job queues (BullMQ/Celery), and transactional email delivery (Resend).
+  Design and implement production SaaS backend services: OAuth2/OIDC, JWT & RBAC/ABAC authorization, Stripe Checkout & Billing subscriptions, webhook HMAC signature verification with idempotency keys, Redis caching & rate limiting, background job queues (BullMQ/Celery), and transactional email delivery (Resend). For local ultra-lean single-node FastAPI + SQLite production setups, use fastapi-sqlite-production.
 ---
 
 # 💳 SaaS Backend Architecture & Revenue Systems

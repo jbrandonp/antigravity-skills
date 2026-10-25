@@ -147,3 +147,19 @@ When building these designs as React artifacts or HTML:
 - Apply `backdrop-blur` for glassmorphism effects where appropriate
 
 For deeper guidance on industry-specific conventions and emotional design patterns, read `references/industry-conventions.md`.
+
+
+---
+
+## 🧒 Explication Pédagogique (Style 15 ans)
+
+Concevoir une interface mobile, ce n'est pas rétrécir un site pour ordinateur, c'est concevoir pour des doigts réels :
+1. **La Zone du Pouce (Thumb Zone)** : Quand tu tiens ton téléphone à une main, ton pouce atteint facilement le tiers inférieur de l'écran. C'est là que doivent vivre les boutons principaux et la barre de navigation. Les actions destructrices ou secondaires se placent en haut pour éviter les clics accidentels.
+2. **La Hiérarchie Visuelle** : Sur un écran de 6 pouces, l'utilisateur scanne en un clin d'œil. Un écran = une action principale mise en valeur, et des actions secondaires discrètes.
+
+---
+
+## 🛠️ Outil Déterministe : `audit_mobile_ergonomics.py`
+```bash
+python scripts/audit_mobile_ergonomics.py src/screens/ProfileScreen.tsx
+```

@@ -1,7 +1,7 @@
 ---
 name: datasette-sqlite-detective
 description: >-
-  Investigate, profile, and audit SQLite databases using Simon Willison Datasette Detective standards, while guarding schema evolution without data loss. Validates WAL mode, foreign key integrity, missing indexes, query plan efficiency (EXPLAIN QUERY PLAN), table fragmentation, detects schema drift between code models and production databases, and generates reversible UP/DOWN migration scripts.
+  Investigate, profile, and audit SQLite databases using Simon Willison Datasette Detective standards, while guarding schema evolution without data loss. Validates WAL mode, foreign key integrity, missing indexes, query plan efficiency (EXPLAIN QUERY PLAN), table fragmentation, detects schema drift between code models and production databases, and generates reversible UP/DOWN migration scripts. For columnar analytics or Parquet datasets, use duckdb-parquet-analyst.
 ---
 
 # Datasette SQLite Detective (Simon Willison Standard)

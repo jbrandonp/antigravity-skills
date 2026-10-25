@@ -152,3 +152,19 @@ When the user asks for an artistic poster, fine-art design piece, or visual mani
 - **Two-Step Protocol**:
   1. **Artistic Philosophy**: Generate a cohesive visual manifesto naming the movement (e.g. *Brutalist Joy*, *Chromatic Silence*, *Metabolist Dreams*) defining space, color, rhythm, and scale (see `./references/canvas-art-manifesto.md`).
   2. **Visual Canvas Expression**: Render the piece as a standalone `.png`, `.pdf`, or high-resolution HTML/SVG canvas (90% visual geometry/composition, 10% essential typography).
+
+
+---
+
+## 🧒 Explication Pédagogique (Style 15 ans)
+
+Créer une bannière pour YouTube, Twitter ou LinkedIn, c'est comme concevoir une affiche de concert :
+1. **La Zone de Sécurité (Safe Zone)** : Sur smartphone, l'image est souvent rognée sur les bords ou masquée par la photo de profil ronde. Si tu écris ton texte tout en bas à gauche, personne ne pourra le lire. Il faut toujours centrer les éléments importants dans la zone protégée.
+2. **Le Contraste et la Typographie** : Une bonne bannière se comprend en une demi-seconde avec un titre fort et un fond contrasté.
+
+---
+
+## 🛠️ Outil Déterministe : `generate_banner_html.py`
+```bash
+python scripts/generate_banner_html.py --preset og --title "Mon Super Titre" --out preview.html
+```

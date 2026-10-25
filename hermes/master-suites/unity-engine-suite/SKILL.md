@@ -1,7 +1,7 @@
 ---
 name: unity-engine-suite
 description: >-
-  Production Unity Engine Suite: Enterprise game architecture, custom Editor scripting & GUI tools, multiplayer synchronization (Netcode for GameObjects), and Shader Graph VFX.
+  Production Unity Engine Suite: Enterprise game architecture, Editor scripting & batch builds (-batchmode), Addressables content pipelines, multiplayer synchronization (Netcode for GameObjects), Shader Graph VFX, and automated C# architecture linter.
 version: 2.0.0
 tags:
   - unity
@@ -1123,3 +1123,15 @@ ALU 指令
 
 
 ---
+
+
+---
+
+## 🛠️ Build Automation & Architecture Safety Linter
+Ce module intègre un linter déterministe pour auditer le code C# Unity et les fichiers `.asmdef` :
+```bash
+python scripts/validate_unity_build.py Assets/Scripts/
+```
+- Vérifie la séparation des frontières Editor/Runtime (`#if UNITY_EDITOR`)
+- Détecte les appels coûteux (`GetComponent`, `Find`) dans `Update()` et `FixedUpdate()`
+- Valide l'épinglage de version du projet dans `ProjectSettings/ProjectVersion.txt`

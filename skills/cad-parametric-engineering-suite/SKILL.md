@@ -1,6 +1,6 @@
 ---
 name: cad-parametric-engineering-suite
-description: "Unified CAD/CAM and Parametric Engineering Master Suite for Autodesk Fusion and Dassault Systèmes SOLIDWORKS. Covers parametric feature modeling, timeline inspection, BOM/mass properties reports, CAM toolpaths, COM / Python API automation, and batch export (STEP, STL, DXF, PDF)."
+description: "Unified CAD/CAM and Parametric Engineering Master Suite for Autodesk Fusion and Dassault Systèmes SOLIDWORKS. Covers parametric feature modeling, timeline inspection, BOM/mass properties reports, CAM toolpaths, COM / Python API automation, and batch export (STEP, STL, DXF, PDF). Use ONLY for proprietary commercial CAD suites Autodesk Fusion and Dassault Systèmes SOLIDWORKS via Windows COM / desktop APIs. Do NOT use for Python CAD-as-Code (use build123d-ecip-cad-engineer instead) or 2D sketch constraint solving (use planegcs-sketch-solver instead)."
 category: cad
 risk: safe
 tags: ["cad", "fusion-360", "solidworks", "parametric", "cam", "step", "com", "python-api"]

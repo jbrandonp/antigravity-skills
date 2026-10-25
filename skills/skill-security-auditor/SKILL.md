@@ -1,7 +1,7 @@
 ---
 name: skill-security-auditor
 description: >-
-  Audit and verify third-party AI agent skills and plugins before installation. Detects prompt injections in markdown/docstrings, dangerous tool permissions (raw shell execution, network exfiltration, arbitrary file system writes), dependency supply-chain risks, and issues a deterministic PASS / WARN / FAIL security verdict.
+  Audit and verify third-party AI agent skills and plugins before installation. Detects prompt injections in markdown/docstrings, dangerous tool permissions (raw shell execution, network exfiltration, arbitrary file system writes), dependency supply-chain risks, and issues a deterministic PASS / WARN / FAIL security verdict. For general source-code application vulnerability scanning, use bridgesecurity-auditor or vuln-scan.
 ---
 
 # 🛡️ Skill Security Auditor & Zero-Trust Governance

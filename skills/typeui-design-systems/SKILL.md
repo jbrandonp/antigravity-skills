@@ -128,3 +128,20 @@ For presentation slide decks, PDF reports, or executive documents, reference the
 8. **Sunset Warmth**: Plum `#581c87`, amber `#f59e0b`, rose `#f43f5e` (Creative, Media, Marketing).
 9. **Forest Canopy**: Deep pine `#064e3b`, sage `#10b981`, warm sand `#fef3c7` (Sustainability, Nature).
 10. **Cyberpunk Violet**: Dark purple `#2e1065`, fuchsia `#d946ef`, cyan `#06b6d4` (Gaming, Web3, Creative).
+
+
+---
+
+## 🧒 Explication Pédagogique (Style 15 ans)
+
+Un Système de Design (*Design System*), c'est la charte graphique complète d'un jeu vidéo ou d'une marque :
+1. **La Cohérence Visuelle** : Si ton bouton "Valider" a des coins arrondis doux et du bleu pastel, ton bouton "Annuler" ne doit pas être un rectangle noir agressif avec des ombres dures. Tout doit parler la même langue visuelle.
+2. **Les 67 Thèmes Prêts à l'Emploi** : Chaque thème a une personnalité : le style **Bento** ressemble aux cartes élégantes d'Apple, le **Neobrutalisme** ressemble à une bande dessinée punk avec des contours noirs épais et des ombres tranchées, et le **Glassmorphism** ressemble à du verre dépoli semi-transparent.
+
+---
+
+## 🛠️ Outil Déterministe : `export_theme_css.py`
+Exporte instantanément les variables CSS d'un thème sans dépendance externe :
+```bash
+python scripts/export_theme_css.py --theme bento --out src/theme.css
+```

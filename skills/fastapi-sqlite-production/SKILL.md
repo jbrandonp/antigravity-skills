@@ -1,7 +1,7 @@
 ---
 name: fastapi-sqlite-production
 description: >-
-  Architect and implement production-grade asynchronous FastAPI services with concurrent SQLite persistence (WAL mode, busy_timeout), Pydantic V2 schemas, JWT auth with refresh tokens, and ultra-lean native execution (uv/venv, zero-Docker).
+  Architect and implement production-grade asynchronous FastAPI services with concurrent SQLite persistence (WAL mode, busy_timeout), Pydantic V2 schemas, JWT auth with refresh tokens, and ultra-lean native execution (uv/venv, zero-Docker). For multi-tenant SaaS subscription billing or Redis background job queues, see saas-backend-architecture.
 ---
 
 # ⚡ FastAPI & Concurrent SQLite Production Architect
