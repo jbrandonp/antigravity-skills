@@ -104,8 +104,8 @@ def main() -> None:
     parser.add_argument("--client", "-c", default="Entreprise", help="Nom du client prospect")
     parser.add_argument("--quotes", "-q", type=int, default=10, help="Nombre de devis/offres envoyés par mois")
     parser.add_argument("--amount", "-a", type=float, default=3200.0, help="Panier moyen hors TVA d'une offre")
-    parser.add_argument("--loss-rate", type=float, default=0.30, help="Taux estimé d'offres sans suite (défaut: 30%)")
-    parser.add_argument("--win-rate", type=float, default=0.40, help="Taux de signature des offres relancées (défaut: 40%)")
+    parser.add_argument("--loss-rate", type=float, default=0.30, help="Taux estimé d'offres sans suite (défaut: 30%%)")
+    parser.add_argument("--win-rate", type=float, default=0.40, help="Taux de signature des offres relancées (défaut: 40%%)")
     parser.add_argument("--pack", "-p", type=float, default=350.0, help="Prix du pack d'installation")
 
     args = parser.parse_args()
