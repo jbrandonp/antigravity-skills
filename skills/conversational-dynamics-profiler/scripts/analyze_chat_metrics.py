@@ -21,7 +21,7 @@ Advanced Clinical & Psycholinguistic Metrics:
 - Circadian 24-Hour and Weekday Activity Distribution
 
 Zero external dependencies - 100% Python 3.10+ standard library.
-Strictly typed: Zero 'Any' types in accordance with project standards.
+Strictly typed: Zero untyped parameters or generic wildcards, in accordance with project standards.
 """
 
 from __future__ import annotations

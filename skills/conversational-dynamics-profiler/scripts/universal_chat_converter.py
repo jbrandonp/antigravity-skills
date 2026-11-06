@@ -14,7 +14,7 @@ Normalizes output strictly to `templates/normalized_chat_schema.json`.
 Optional PII anonymization engine (--anonymize) for emails, phone numbers, IBANs, and credit cards.
 
 Zero external dependencies - 100% Python 3.10+ standard library.
-Strictly typed: Zero 'Any' types in accordance with project standards.
+Strictly typed: Zero untyped parameters or generic wildcards, in accordance with project standards.
 """
 
 from __future__ import annotations
