@@ -96,14 +96,16 @@ def main():
         sys.stderr.reconfigure(encoding="utf-8")
 
     parser = argparse.ArgumentParser(description="Unified Interactive Terminal Cockpit.")
+    parser.add_argument("input_pos", nargs="?", default="", help="Input chat file (positional)")
     parser.add_argument("--run-all", action="store_true", help="Execute entire end-to-end pipeline in batch mode")
-    parser.add_argument("--input", "-i", type=str, default="", help="Input chat file")
+    parser.add_argument("--input", "-i", dest="input_flag", type=str, default="", help="Input chat file")
     parser.add_argument("--output-prefix", "-o", type=str, default="audit_output", help="Prefix for output artifacts")
     parser.add_argument("--anonymize", "-a", action="store_true", help="Enable PII anonymization")
     args = parser.parse_args()
 
-    if args.run_all and args.input:
-        run_pipeline_all(args.input, args.output_prefix, args.anonymize)
+    target_input = args.input_flag or args.input_pos
+    if args.run_all and target_input:
+        run_pipeline_all(target_input, args.output_prefix, args.anonymize)
         return
 
     print_banner()
@@ -112,7 +114,7 @@ def main():
     while True:
         try:
             menu()
-            choice = input("Votre choix [0-6] : ").strip()
+            choice = input("Votre choix [0-7] : ").strip()
 
             if choice == "0":
                 print("\nFermeture du terminal. À bientôt !")
@@ -142,7 +144,10 @@ def main():
                 if sub == "2":
                     subprocess.run([sys.executable, "-B", os.path.join(SCRIPTS_DIR, "simulate_conversational_scenarios.py"), "--state-machine"])
                 else:
-                    print("Scénarios disponibles : unannounced_silence, laconism_thumbs_up, boundary_leak, construction_stress")
+                    print("Scénarios disponibles (12 scénarios cliniques) :")
+                    print("  • unannounced_silence | laconism_thumbs_up | boundary_leak | construction_stress")
+                    print("  • demand_withdraw     | stonewalling       | triangulation | bids_missed")
+                    print("  • gaslighting         | hyperactivation    | reassurance_trap | vicious_cycle")
                     scen = input("Scénario [ou Entrée pour tous] : ").strip()
                     cmd = [sys.executable, "-B", os.path.join(SCRIPTS_DIR, "simulate_conversational_scenarios.py")]
                     if scen:

@@ -46,11 +46,13 @@ python scripts/generate_relationship_report.py --input normalized.json --output 
 python scripts/export_html_dashboard.py --input normalized.json --output dashboard.html
 
 # 5. Simulateur Prédictif, Machine à États Markoviens & Reformulateur CNV
-python scripts/simulate_conversational_scenarios.py --scenario unannounced_silence
+# 5. Simulateur Prédictif (12 scénarios de crise), Machine à États & CNV
+python scripts/simulate_conversational_scenarios.py --scenario demand_withdraw
+python scripts/simulate_conversational_scenarios.py unannounced_silence
 python scripts/simulate_conversational_scenarios.py --state-machine
 python scripts/simulate_conversational_scenarios.py --cnv-reframe "Tu es toujours en retard, tu penses jamais à moi !"
 
-# 6. Exécution de la Suite de Tests Automatisée (15 tests unitaires validés)
+# 6. Exécution de la Suite de Tests Automatisée (17 tests unitaires validés)
 python tests/test_conversational_suite.py
 ```
 
@@ -58,7 +60,7 @@ python tests/test_conversational_suite.py
 
 ## 🏗️ L'Architecture Intégrale en 7 Couches
 
-Consulter la spécification détaillée dans [`references/full_architecture_specification.md`](file:///c:/Users/brand/.agents/skills/conversational-dynamics-profiler/references/full_architecture_specification.md).
+Consulter la spécification détaillée dans [`references/full_architecture_specification.md`](references/full_architecture_specification.md).
 
 ```text
  ┌────────────────────────────────────────────────────────────────────────┐
