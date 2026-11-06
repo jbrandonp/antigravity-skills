@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "NormalizedConversationalCorpus",
+  "description": "Standardized canonical schema for multi-platform chat message dumps.",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": ["sender", "timestamp", "text"],
+    "properties": {
+      "sender": {
+        "type": "string",
+        "description": "Unique identifier or display name of the message author."
+      },
+      "timestamp": {
+        "type": "string",
+        "format": "date-time",
+        "description": "ISO 8601 formatted timestamp in UTC (e.g. 2026-11-06T21:49:00Z)."
+      },
+      "text": {
+        "type": "string",
+        "description": "The textual body of the message."
+      },
+      "type": {
+        "type": "string",
+        "enum": ["text", "voice", "media", "reaction", "share", "system", "other"],
+        "default": "text",
+        "description": "Modality of the communication event."
+      },
+      "metadata": {
+        "type": "object",
+        "properties": {
+          "duration_seconds": { "type": "number" },
+          "reactions": { "type": "array", "items": { "type": "string" } },
+          "platform": { 
+            "type": "string", 
+            "enum": ["instagram", "messenger", "meta", "whatsapp", "telegram", "discord", "imessage", "csv", "jsonl", "generic"] 
+          }
+        }
+      }
+    }
+  }
+}

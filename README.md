@@ -4,18 +4,18 @@
 [![Google Antigravity](https://img.shields.io/badge/Antigravity-2.0%20Ready-4285F4.svg)](https://antigravity.google)
 [![Claude Code Ready](https://img.shields.io/badge/Claude%20Code-Compatible-D97706.svg)](CLAUDE.md)
 [![Hermes Agent Ready](https://img.shields.io/badge/Hermes%20Agent-Compatible-10B981.svg)](hermes/)
-[![Elite Skills](https://img.shields.io/badge/Elite%20Skills-172%20Active-success.svg)](skills/)
+[![Elite Skills](https://img.shields.io/badge/Elite%20Skills-173%20Active-success.svg)](skills/)
 [![Hermes Mega-Suites](https://img.shields.io/badge/Hermes%20Mega--Suites-10%20Suites-FF6B6B.svg)](hermes/mega-suites/)
 [![Hermes Master-Suites](https://img.shields.io/badge/Hermes%20Master--Suites-50%20Suites-orange.svg)](hermes/master-suites/)
 [![DeepMind Science](https://img.shields.io/badge/DeepMind%20Science-41%20Skills-8A2BE2.svg)](plugins/science/)
 [![Google Stitch](https://img.shields.io/badge/Google%20Stitch-16%20Skills-4285F4.svg)](plugins/stitch-design/)
 [![MCP Servers](https://img.shields.io/badge/MCP%20Servers-8%20Bundled-blue.svg)](mcp/)
-[![Total Tools](https://img.shields.io/badge/Total%20Tools-296%20Skills%20%26%20Suites-brightgreen.svg)](#)
+[![Total Tools](https://img.shields.io/badge/Total%20Tools-297%20Skills%20%26%20Suites-brightgreen.svg)](#)
 [![Integrity Score](https://img.shields.io/badge/Audit%20Score-100%2F100-brightgreen.svg)](scripts/verify_skills.py)
 [![CI Status](https://img.shields.io/badge/CI-Passing-brightgreen.svg)](.github/workflows/validate-skills.yml)
 
 > **The Ultimate Production-Grade Skill & Customization Suite for [Google Antigravity](https://antigravity.google), [Anthropic Claude Code](CLAUDE.md), [Hermes Agent](hermes/), Cursor, and Modern AI Coding Agents.**  
-> Unifies **172 audited elite skills**, **10 Hermes Mega-Suites** (~330,000 words designed for autonomous marathon tasks), **50 Hermes Master-Suites** (330+ micro-skills consolidated with zero duplicate bloat), the official **Google DeepMind Science toolkit** (41 skills + 3D Mol* interactive sidecar), the **Google Labs Stitch design suite** (16 skills across 3 plugins), **8 pre-bundled MCP servers** (Blender, Cloud Run, Firebase, Genkit, Science Mol*, eBay, Vinted, Web Tools), and one-click installers.
+> Unifies **173 audited elite skills**, **10 Hermes Mega-Suites** (~330,000 words designed for autonomous marathon tasks), **50 Hermes Master-Suites** (330+ micro-skills consolidated with zero duplicate bloat), the official **Google DeepMind Science toolkit** (41 skills + 3D Mol* interactive sidecar), the **Google Labs Stitch design suite** (16 skills across 3 plugins), **8 pre-bundled MCP servers** (Blender, Cloud Run, Firebase, Genkit, Science Mol*, eBay, Vinted, Web Tools), and one-click installers.
 
 ---
 
@@ -28,7 +28,7 @@
    - [10 All-in-One Mega-Suites](#10-all-in-one-mega-suites-330000-words)
    - [50 Consolidated Master Suites](#50-consolidated-master-suites)
    - [Hermes MCP Servers & Autonomous Tools](#hermes-mcp-servers-autonomous-tools)
-5. [Elite Skills Catalog (172 Skills)](#elite-skills-catalog-172-skills)
+5. [Elite Skills Catalog (173 Skills)](#elite-skills-catalog-173-skills)
 6. [Google DeepMind Science Suite (41 Skills)](#google-deepmind-science-suite-41-skills)
 7. [Google Labs Stitch Design Suite (16 Skills)](#google-labs-stitch-design-suite-16-skills)
 8. [Plugins & MCP Architecture](#plugins-mcp-architecture)
@@ -188,7 +188,7 @@ Located in [`hermes/mcp-servers/`](hermes/mcp-servers/) and [`hermes/scripts/`](
 
 ---
 
-## 📦 Elite Skills Catalog (172 Skills)
+## 📦 Elite Skills Catalog (173 Skills)
 
 ### 📐 Computer-Aided Design (CAD), CAE & Multiphysics Engineering (8 Skills)
 
@@ -243,7 +243,7 @@ Located in [`hermes/mcp-servers/`](hermes/mcp-servers/) and [`hermes/scripts/`](
 | [`mixamo-animation-library-engine`](skills/mixamo-animation-library-engine/SKILL.md) | Programmatic, zero-credential animation acquisition of 90+ production-ready humanoid FBX clips directly from Hugging Face (Linzhan/Mixamo-Animations-Characters). Features automated SHA-256 integrity verification, categorized core animation catalog (locomotion, 1H sword & shield, 2H greatsword, archery, magic casting, hit reactions, deaths, social emotes), and seamless integration into Unreal Engine 5 and Unity animation state machines. |
 | [`game-engine`](skills/game-engine/SKILL.md) | Expert skill for building web-based game engines and games using HTML5, Canvas, WebGL, and JavaScript. Use when asked to create lightweight browser games, build canvas game engines (Phaser, Three.js, Babylon.js), implement collision detection, game loops, or 2D tilemaps. Do NOT use for native desktop game engines like Unreal Engine 5 (use unreal-engine-master-suite), Unity (use unity-engine-suite), or Godot (use godot-engine-suite). |
 
-### 🤖 Artificial Intelligence, MLOps & Autonomous Agents (20 Skills)
+### 🤖 Artificial Intelligence, MLOps & Autonomous Agents (21 Skills)
 
 | Skill | Description |
 | :--- | :--- |
@@ -267,6 +267,7 @@ Located in [`hermes/mcp-servers/`](hermes/mcp-servers/) and [`hermes/scripts/`](
 | [`antigravity-master-platform`](skills/antigravity-master-platform/SKILL.md) | Authoritative Google Antigravity (AGY) Platform & Customization Master Suite: Antigravity IDE, CLI (agy), Antigravity 2.0 app architecture, official Python SDK agent orchestration, and complete customization engine (skills, rules, plugins, lifecycle hooks, and MCP servers). |
 | [`skill-creator`](skills/skill-creator/SKILL.md) | Create new skills, modify and improve existing skills, and measure skill performance. Use when users want to create a skill from scratch, edit, or optimize an existing skill, run evals to test a skill, benchmark skill performance with variance analysis, or optimize a skill's description for better triggering accuracy. |
 | [`mcp-builder`](skills/mcp-builder/SKILL.md) | Guide for creating high-quality MCP (Model Context Protocol) servers that enable LLMs to interact with external services through well-designed tools. Use when building MCP servers to integrate external APIs or services, whether in Python (FastMCP) or Node/TypeScript (MCP SDK). |
+| [`conversational-dynamics-profiler`](skills/conversational-dynamics-profiler/SKILL.md) | Deep psychological profiling, interpersonal relationship intelligence, and behavioral dynamics auditing from raw chat archives (WhatsApp, Meta, Telegram, Discord, CSV). Computes RTT latency, burstiness, Shannon entropy, Gottman 5:1 golden ratio, Bids for Connection, Markov state transitions, and Non-Violent Communication (CNV) reframing. |
 
 ### 💻 Software Engineering, Testing, Databases & DevOps (24 Skills)
 
