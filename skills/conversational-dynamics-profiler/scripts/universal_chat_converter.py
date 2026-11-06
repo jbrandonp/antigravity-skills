@@ -391,17 +391,27 @@ def main():
         sys.stderr.reconfigure(encoding="utf-8")
 
     parser = argparse.ArgumentParser(description="Universal Conversational Ingestion & Normalizer.")
-    parser.add_argument("--input", "-i", type=str, required=True, help="Input export file (Meta JSON, WhatsApp TXT, Telegram, Discord, CSV)")
-    parser.add_argument("--output", "-o", type=str, required=True, help="Output normalized canonical JSON file")
+    parser.add_argument("input_pos", nargs="?", default="", help="Input export file (Meta JSON, WhatsApp TXT, Telegram, Discord, CSV)")
+    parser.add_argument("--input", "-i", dest="input_flag", type=str, default="", help="Input export file")
+    parser.add_argument("--output", "-o", type=str, default="", help="Output normalized canonical JSON file")
     parser.add_argument("--anonymize", "-a", action="store_true", help="Redact emails, phone numbers, IBANs, and credit cards")
     args = parser.parse_args()
 
-    normalized_data = UniversalConverter.convert_file(args.input, anonymize=args.anonymize)
+    input_file = args.input_flag or args.input_pos
+    if not input_file:
+        parser.error("Please provide an input file (e.g. python universal_chat_converter.py <file> [-o <out.json>])")
 
-    with open(args.output, "w", encoding="utf-8") as f:
+    output_path = args.output
+    if not output_path:
+        base = os.path.splitext(os.path.basename(input_file))[0]
+        output_path = f"{base}_normalized.json"
+
+    normalized_data = UniversalConverter.convert_file(input_file, anonymize=args.anonymize)
+
+    with open(output_path, "w", encoding="utf-8") as f:
         json.dump(normalized_data, f, indent=2, ensure_ascii=False)
 
-    print(f"Successfully normalized {len(normalized_data)} messages to: {args.output}")
+    print(f"Successfully normalized {len(normalized_data)} messages to: {output_path}")
 
 
 if __name__ == "__main__":

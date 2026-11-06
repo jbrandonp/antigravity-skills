@@ -368,15 +368,25 @@ def main():
         sys.stderr.reconfigure(encoding="utf-8")
 
     parser = argparse.ArgumentParser(description="Standalone HTML Dashboard Generator for Chat Dynamics.")
-    parser.add_argument("--input", "-i", type=str, required=True, help="Path to chat export (JSON, WhatsApp TXT, Meta JSON, CSV)")
-    parser.add_argument("--output", "-o", type=str, default="dashboard.html", help="Path to output HTML file")
+    parser.add_argument("input_pos", nargs="?", default="", help="Path to chat export (JSON, WhatsApp TXT, Meta JSON, CSV)")
+    parser.add_argument("--input", "-i", dest="input_flag", type=str, default="", help="Path to chat export")
+    parser.add_argument("--output", "-o", type=str, default="", help="Path to output HTML file")
     args = parser.parse_args()
 
-    messages = ChatParser.parse_file(args.input)
+    input_file = args.input_flag or args.input_pos
+    if not input_file:
+        parser.error("Please provide an input file (e.g. python export_html_dashboard.py <file> or -i <file>)")
+
+    output_path = args.output
+    if not output_path:
+        base = os.path.splitext(os.path.basename(input_file))[0]
+        output_path = f"{base}_dashboard.html"
+
+    messages = ChatParser.parse_file(input_file)
     engine = AdvancedConversationalEngine(messages)
     analytics = engine.analyze()
 
-    generate_html_dashboard(analytics, args.output)
+    generate_html_dashboard(analytics, output_path)
 
 
 if __name__ == "__main__":

@@ -904,18 +904,26 @@ def main():
         sys.stderr.reconfigure(encoding="utf-8")
 
     parser = argparse.ArgumentParser(description="Multi-format conversational psychology & metrics engine.")
-    parser.add_argument("--input", "-i", type=str, required=True, help="Path to chat export (JSON, WhatsApp TXT, Meta JSON, CSV)")
+    parser.add_argument("input_pos", nargs="?", default="", help="Path to chat export (JSON, WhatsApp TXT, Meta JSON, CSV)")
+    parser.add_argument("--input", "-i", dest="input_flag", type=str, default="", help="Path to chat export")
     parser.add_argument("--output", "-o", type=str, default="", help="Path to output report")
     parser.add_argument("--format", "-f", choices=["markdown", "json"], default="markdown", help="Report format")
+    parser.add_argument("--json", action="store_true", help="Shortcut for --format json")
     parser.add_argument("--session-gap", type=float, default=4.0, help="Inactivity gap to define a new session (hours)")
     parser.add_argument("--silence-gap", type=float, default=24.0, help="Threshold for major conversational silence (hours)")
     args = parser.parse_args()
 
-    messages = ChatParser.parse_file(args.input)
+    input_file = args.input_flag or args.input_pos
+    if not input_file:
+        parser.error("Please provide an input file (e.g. python analyze_chat_metrics.py <file> or -i <file>)")
+
+    messages = ChatParser.parse_file(input_file)
     engine = AdvancedConversationalEngine(messages, session_gap_hours=args.session_gap, silence_gap_hours=args.silence_gap)
     results = engine.analyze()
 
-    if args.format == "markdown":
+    if args.json:
+        args.format = 'json'
+    if args.format == 'markdown':
         output = engine.format_markdown(results)
     else:
         output = json.dumps(results, indent=2, ensure_ascii=False)

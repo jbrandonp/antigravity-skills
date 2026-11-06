@@ -95,6 +95,87 @@ def get_base_scenarios(p1: str = "Partenaire A", p2: str = "Partenaire B") -> Di
             },
             "risk_level": "🟡 SAIN SI BIEN GUIDÉ (Opportunité majeure de renforcement du couple)",
             "antidote": "Adopter la posture du Roc & Coach : Écouter sans dicter la solution, valider sa compétence, et offrir un espace de détente et de réconfort."
+        },
+        "demand_withdraw": {
+            "title": "Scénario 5 : Cycle Demande-Retrait (Demand-Withdraw Cascade)",
+            "trigger": f"{p1} intensifie les demandes de communication face à un silence, provoquant le repli de {p2}.",
+            "predicted_reaction": {
+                "immediate": "Augmentation de la pression verbale (messages répétés, reproches déguisés).",
+                "at_6h": f"{p2} se mure dans le silence pour réguler son anxiété, interprété comme du désamour.",
+                "at_24h": "Escalade conflictuelle à la réouverture ou rupture de communication prolongée."
+            },
+            "risk_level": "🔴 TRÈS ÉLEVÉ (Structurellement le plus prédictif de dissolution selon Gottman)",
+            "antidote": "Désamorçage asymétrique : Remplacer l'insistance par une invitation sécurisante sans date butoir punitive."
+        },
+        "stonewalling": {
+            "title": "Scénario 6 : Retrait Défensif 'Mur de Pierre' (Stonewalling Dorsal)",
+            "trigger": f"Au milieu d'une tension, {p2} cesse toute réaction verbale et ignore les sollicitations.",
+            "predicted_reaction": {
+                "immediate": "Surchauffe cardiaque chez le partenaire (dépassant 100 bpm), sentiment d'impuissance.",
+                "consequence": "Activation du système nerveux dorsal : paralysie relationnelle et sidération affective."
+            },
+            "risk_level": "🔴 CRITIQUE (Signe d'inondation émotionnelle somatique)",
+            "antidote": "Pause physiologique de 20 minutes minimum avec accord mutuel avant reprise calme."
+        },
+        "triangulation": {
+            "title": "Scénario 7 : Le Piège de la Triangulation de Karpman",
+            "trigger": "Introduction d'un tiers (famille, ami, collègue) comme arbitre ou validation d'un reproche.",
+            "predicted_reaction": {
+                "immediate": "Passage immédiat dans les rôles Persécuteur / Victime / Sauveteur.",
+                "consequence": "Destruction de la confidentialité de la 'Bulle du Couple' (Stan Tatkin)."
+            },
+            "risk_level": "🟠 ÉLEVÉ (Érosion insidieuse de la sécurité d'attachement)",
+            "antidote": "Sanctuarisation stricte : Bannir les comparaisons tierces et refocaliser uniquement sur le duo."
+        },
+        "bids_missed": {
+            "title": "Scénario 8 : L'Accumulation d'Appels de Contact Manqués (Missed Bids)",
+            "trigger": f"{p1} partage 3 anecdotes ou questions personnelles consécutives sans obtenir d'engagement.",
+            "predicted_reaction": {
+                "immediate": "Baisse de l'enthousiasme conversationnel, diminution de la longueur des messages.",
+                "at_48h": "Extinction opérante : arrêt progressif des initiatives spontanées."
+            },
+            "risk_level": "🟡 MODÉRÉ À FORT (Mort à petit feu de l'intimité quotidienne)",
+            "antidote": "Appliquer la règle des Bids : Accueillir activement au moins 5 appels de contact sur 6."
+        },
+        "gaslighting": {
+            "title": "Scénario 9 : La Dénégation Épistémique & Confusion de Réalité (Gaslighting)",
+            "trigger": f"Face à un fait précis mentionné par {p1}, {p2} affirme que l'événement n'a jamais eu lieu ('Tu inventes').",
+            "predicted_reaction": {
+                "immediate": "Choc cognitif, sentiment de perte de repères et doute de soi somatique.",
+                "consequence": "Perte de confiance épistémique, sur-vérification compulsive des historiques de messages."
+            },
+            "risk_level": "🔴 CRITIQUE (Destructeur de la sécurité psychologique)",
+            "antidote": "Ancrage factuel calme : Refuser la surenchère et réaffirmer son ressenti sans agressivité."
+        },
+        "hyperactivation": {
+            "title": "Scénario 10 : L'Hyper-activation Anxieuse (Double-Pings en Rafale)",
+            "trigger": f"{p1} n'obtient pas de réponse après 4h et envoie 5 messages successifs de plus en plus anxieux.",
+            "predicted_reaction": {
+                "immediate": "Inondation du canal de discussion, sentiment d'étouffement chez {p2}.",
+                "consequence": "Retrait prolongé de {p2} pour retrouver son calme, amplifiant l'angoisse de {p1}."
+            },
+            "risk_level": "🟠 ÉLEVÉ (Cercle vicieux classique Anxieux-Évitant)",
+            "antidote": "Régulation somatique autonome : Poser le téléphone 1h et respirer par le ventre avant d'écrire."
+        },
+        "reassurance_trap": {
+            "title": "Scénario 11 : Le Piège de la Rassurance Compulsive",
+            "trigger": f"{p1} demande de façon répétée : 'Est-ce que tout va bien entre nous ? Tu es sûr(e) ?'",
+            "predicted_reaction": {
+                "immediate": "Fatigue décisionnelle chez {p2}, irritation sourde.",
+                "consequence": "La rassurance verbale soulage 5 minutes mais alimente le doute de fond."
+            },
+            "risk_level": "🟡 MODÉRÉ (Épuisement affectif progressif du partenaire)",
+            "antidote": "Pacte de transparence : 'Si quelque chose ne va pas, je te le dirai directement. Quand je ne dis rien, tout va bien.'"
+        },
+        "vicious_cycle": {
+            "title": "Scénario 12 : L'Engrenage de la Boucle d'Escalade et Rupture",
+            "trigger": "Succession de silences défensifs, reproches croisés et refus d'admettre ses torts.",
+            "predicted_reaction": {
+                "immediate": "Activation simultanée des systèmes de survie sympathique et dorsal.",
+                "consequence": "Rupture temporaire du lien, blocage mutuel."
+            },
+            "risk_level": "🔴 EXTRÊME (Crise majeure du couple)",
+            "antidote": "Protocole de Corégulation en 4 Étapes (EFT) : Arrêt immédiat de l'écrit, présence physique ou vocale douce."
         }
     }
 
@@ -194,12 +275,16 @@ def main():
         sys.stderr.reconfigure(encoding="utf-8")
 
     parser = argparse.ArgumentParser(description="Conversational Stress-Testing, State-Machine Simulator & CNV Reframer.")
+    parser.add_argument("scenario_pos", nargs="?", default="", help="Optional scenario name (positional)")
     parser.add_argument("--input", "-i", type=str, default="", help="Optional chat dump to personalize participant identities")
-    parser.add_argument("--scenario", "-s", choices=["unannounced_silence", "laconism_thumbs_up", "boundary_leak", "construction_stress"], default=None, help="Specific scenario to simulate")
+    parser.add_argument("--scenario", "-s", dest="scenario_flag", choices=['unannounced_silence', 'laconism_thumbs_up', 'boundary_leak', 'construction_stress', 'demand_withdraw', 'stonewalling', 'triangulation', 'bids_missed', 'gaslighting', 'hyperactivation', 'reassurance_trap', 'vicious_cycle', 'all'], default=None, help="Specific scenario to simulate")
+    parser.add_argument("--turns", "-t", type=int, default=3, help="Simulated interaction turns (optional)")
     parser.add_argument("--state-machine", action="store_true", help="Display the Markovian dyadic autonomic state transitions")
     parser.add_argument("--cnv-reframe", type=str, default="", help="Translate a critical/abrasive raw text into Non-Violent Communication (OSBD)")
     parser.add_argument("--output", "-o", type=str, default="", help="Path to save simulation report")
     args = parser.parse_args()
+
+    chosen_scenario = args.scenario_flag or (args.scenario_pos if args.scenario_pos in ['unannounced_silence', 'laconism_thumbs_up', 'boundary_leak', 'construction_stress', 'demand_withdraw', 'stonewalling', 'triangulation', 'bids_missed', 'gaslighting', 'hyperactivation', 'reassurance_trap', 'vicious_cycle', 'all'] else None)
 
     # 1. CNV Reframer mode
     if args.cnv_reframe:
@@ -241,7 +326,7 @@ def main():
         except Exception:
             pass
 
-    results = run_simulation(args.scenario, p1, p2)
+    results = run_simulation(chosen_scenario if chosen_scenario != 'all' else None, p1, p2)
     md_output = format_markdown_simulation(results)
 
     if args.output:

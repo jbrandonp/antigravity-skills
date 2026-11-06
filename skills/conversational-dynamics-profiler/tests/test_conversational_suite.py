@@ -391,6 +391,37 @@ Merci chaton 🥰
         self.assertIn("suggested_reformulation", cnv_res)
         self.assertIn("« Quand", cnv_res["suggested_reformulation"])
 
+    def test_all_twelve_stress_scenarios(self):
+        """Validates all 12 relational crisis simulation scenarios and markdown formatting."""
+        from simulate_conversational_scenarios import run_simulation, format_markdown_simulation, get_base_scenarios
+
+        base = get_base_scenarios("Brandon", "Tatiana")
+        self.assertEqual(len(base), 12)
+        for key in base:
+            sim = run_simulation(key, "Brandon", "Tatiana")
+            self.assertIn(key, sim)
+            md = format_markdown_simulation(sim)
+            self.assertIn(base[key]["title"], md)
+            self.assertIn(base[key]["risk_level"], md)
+
+    def test_cli_positional_arguments_and_json_shortcut(self):
+        """Validates that CLI positional arguments and --json shortcut work cleanly."""
+        import subprocess
+
+        sample_file = os.path.join(tempfile.gettempdir(), "test_cli_pos.json")
+        try:
+            with open(sample_file, "w", encoding="utf-8") as f:
+                json.dump({"participants": ["A", "B"], "messages": [{"timestamp": "2026-11-06T12:00:00", "sender": "A", "text": "Salut"}]}, f)
+
+            cmd = [sys.executable, os.path.join(SCRIPTS_DIR, "analyze_chat_metrics.py"), sample_file, "--json"]
+            res = subprocess.run(cmd, capture_output=True, text=True, encoding="utf-8")
+            self.assertEqual(res.returncode, 0)
+            data = json.loads(res.stdout)
+            self.assertIn("summary", data)
+        finally:
+            if os.path.exists(sample_file):
+                os.remove(sample_file)
+
 
 if __name__ == "__main__":
     if hasattr(sys.stdout, "reconfigure"):
