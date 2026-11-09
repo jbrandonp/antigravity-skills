@@ -1,0 +1,38 @@
+{
+  "skill_name": "competitive-intelligence-os",
+  "evals": [
+    {
+      "id": 1,
+      "name": "kiq-router-lost-deals",
+      "prompt": "Pourquoi perdons-nous 40% de nos devis face à Obat et Tolteck pour notre logiciel BTP en Belgique ? Fais une analyse Porter.",
+      "expected_output": "Le skill doit formellement REFUSER d'utiliser Porter pour ce problème, expliquer pourquoi Porter est inadapté à la perte d'affaires, et aiguiller immédiatement vers une Win/Loss Analysis débiaisée et un audit de Time-to-Value.",
+      "assertions": [
+        "refuses_porter_for_deal_losses",
+        "redirects_to_win_loss_debiasing",
+        "identifies_time_to_value_and_peppol_compliance"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "battlecard-8-seconds-generator",
+      "prompt": "Génère une battlecard commerciale utilisable au téléphone contre Batappli pour un artisan électricien belge.",
+      "expected_output": "Doit produire une fiche scannable en 8 secondes chrono : un pitch d'attaque de 3 secondes, et 2 objections chiffrées avec preuves vérifiables (attestation TVA 6% et lenteur de mise en place).",
+      "assertions": [
+        "respects_8_second_rule",
+        "contains_exact_killer_quote",
+        "cites_verifiable_proof_url"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "firmographic-inflexion-detection",
+      "prompt": "Un concurrent passe de 10 à 60 offres d'emploi d'ingénieurs en 3 mois. Que prépare-t-il et comment réagir ?",
+      "expected_output": "Doit identifier un signal firmographique d'inflexion majeure à 6-12 mois (refonte produit ou passage à l'IA), classer l'alerte en CRITICAL, et recommander une contre-mesure d'anticipation.",
+      "assertions": [
+        "detects_firmographic_inflexion",
+        "estimates_6_to_12_months_lead_time",
+        "provides_proactive_counter_measure"
+      ]
+    }
+  ]
+}

@@ -4,18 +4,18 @@
 [![Google Antigravity](https://img.shields.io/badge/Antigravity-2.0%20Ready-4285F4.svg)](https://antigravity.google)
 [![Claude Code Ready](https://img.shields.io/badge/Claude%20Code-Compatible-D97706.svg)](CLAUDE.md)
 [![Hermes Agent Ready](https://img.shields.io/badge/Hermes%20Agent-Compatible-10B981.svg)](hermes/)
-[![Elite Skills](https://img.shields.io/badge/Elite%20Skills-173%20Active-success.svg)](skills/)
+[![Elite Skills](https://img.shields.io/badge/Elite%20Skills-174%20Active-success.svg)](skills/)
 [![Hermes Mega-Suites](https://img.shields.io/badge/Hermes%20Mega--Suites-10%20Suites-FF6B6B.svg)](hermes/mega-suites/)
 [![Hermes Master-Suites](https://img.shields.io/badge/Hermes%20Master--Suites-50%20Suites-orange.svg)](hermes/master-suites/)
 [![DeepMind Science](https://img.shields.io/badge/DeepMind%20Science-41%20Skills-8A2BE2.svg)](plugins/science/)
 [![Google Stitch](https://img.shields.io/badge/Google%20Stitch-16%20Skills-4285F4.svg)](plugins/stitch-design/)
 [![MCP Servers](https://img.shields.io/badge/MCP%20Servers-8%20Bundled-blue.svg)](mcp/)
-[![Total Tools](https://img.shields.io/badge/Total%20Tools-297%20Skills%20%26%20Suites-brightgreen.svg)](#)
+[![Total Tools](https://img.shields.io/badge/Total%20Tools-298%20Skills%20%26%20Suites-brightgreen.svg)](#)
 [![Integrity Score](https://img.shields.io/badge/Audit%20Score-100%2F100-brightgreen.svg)](scripts/verify_skills.py)
 [![CI Status](https://img.shields.io/badge/CI-Passing-brightgreen.svg)](.github/workflows/validate-skills.yml)
 
 > **The Ultimate Production-Grade Skill & Customization Suite for [Google Antigravity](https://antigravity.google), [Anthropic Claude Code](CLAUDE.md), [Hermes Agent](hermes/), Cursor, and Modern AI Coding Agents.**  
-> Unifies **173 audited elite skills**, **10 Hermes Mega-Suites** (~330,000 words designed for autonomous marathon tasks), **50 Hermes Master-Suites** (330+ micro-skills consolidated with zero duplicate bloat), the official **Google DeepMind Science toolkit** (41 skills + 3D Mol* interactive sidecar), the **Google Labs Stitch design suite** (16 skills across 3 plugins), **8 pre-bundled MCP servers** (Blender, Cloud Run, Firebase, Genkit, Science Mol*, eBay, Vinted, Web Tools), and one-click installers.
+> Unifies **174 audited elite skills**, **10 Hermes Mega-Suites** (~330,000 words designed for autonomous marathon tasks), **50 Hermes Master-Suites** (330+ micro-skills consolidated with zero duplicate bloat), the official **Google DeepMind Science toolkit** (41 skills + 3D Mol* interactive sidecar), the **Google Labs Stitch design suite** (16 skills across 3 plugins), **8 pre-bundled MCP servers** (Blender, Cloud Run, Firebase, Genkit, Science Mol*, eBay, Vinted, Web Tools), and one-click installers.
 
 ---
 
@@ -28,7 +28,7 @@
    - [10 All-in-One Mega-Suites](#10-all-in-one-mega-suites-330000-words)
    - [50 Consolidated Master Suites](#50-consolidated-master-suites)
    - [Hermes MCP Servers & Autonomous Tools](#hermes-mcp-servers-autonomous-tools)
-5. [Elite Skills Catalog (173 Skills)](#elite-skills-catalog-173-skills)
+5. [Elite Skills Catalog (174 Skills)](#elite-skills-catalog-174-skills)
 6. [Google DeepMind Science Suite (41 Skills)](#google-deepmind-science-suite-41-skills)
 7. [Google Labs Stitch Design Suite (16 Skills)](#google-labs-stitch-design-suite-16-skills)
 8. [Plugins & MCP Architecture](#plugins-mcp-architecture)
@@ -188,7 +188,7 @@ Located in [`hermes/mcp-servers/`](hermes/mcp-servers/) and [`hermes/scripts/`](
 
 ---
 
-## 📦 Elite Skills Catalog (173 Skills)
+## 📦 Elite Skills Catalog (174 Skills)
 
 ### 📐 Computer-Aided Design (CAD), CAE & Multiphysics Engineering (8 Skills)
 
@@ -359,11 +359,12 @@ Located in [`hermes/mcp-servers/`](hermes/mcp-servers/) and [`hermes/scripts/`](
 | [`compliance-privacy-gdpr-engineer`](skills/compliance-privacy-gdpr-engineer/SKILL.md) | Audit and implement software privacy compliance, GDPR/RGPD regulations, open-source license compatibility, and European AI Act requirements. Enforces privacy-by-design, cookie consent architectures, right-to-erasure workflows, data processing registers, and license risk triage. |
 | [`crypto-web3-blockchain-suite`](skills/crypto-web3-blockchain-suite/SKILL.md) | Web3, Solidity & Zero-Knowledge Blockchain Suite: Production Solidity smart contract engineering, blockchain security auditing, zero-knowledge proofs (ZK Steward), and crypto social intelligence (Binance Square). |
 
-### 🏢 Enterprise, Growth Marketing, Science & Automation (39 Skills)
+### 🏢 Enterprise, Growth Marketing, Science & Automation (40 Skills)
 
 | Skill | Description |
 | :--- | :--- |
 | [`digital-office-architect`](skills/digital-office-architect/SKILL.md) | Universal SME & Technical Trades Digital Office Architecture Suite. Master architectural and operational framework for designing, deploying, auditing, and maintaining a lightweight administrative office, anti-SaaS pipeline, and legal shield for ANY small business across 6 sector profiles (BTP J+14, Services J+7, Garages J+3, Healthcare J+5, Retail J+5, Real Estate J+10). Enforces Belgian/European socio-fiscal engineering (Smart Coop, INASTI 2026, Peppol XML UBL 2.1), 1-page contracting with 9 CGV clauses, and 8 production CLI tools with zero 'Any' typing. |
+| [`competitive-intelligence-os`](skills/competitive-intelligence-os/SKILL.md) | Professional Competitive Intelligence, Market Warfare, Win/Loss Forensics, and Operational Benchmarking Operating System. Fortune 500, SCIP, and McKinsey-grade strategic intelligence suite: KIQ decision router, Altman Z'-Score SME financial distress, Wardley mapping, Gartner Magic Quadrant vector SVG, Disruption Vulnerability Index (DVI 0-100), 8-second living battlecards, Win-Wire real-time sales alert publisher, and native CLI tooling. |
 | [`btp-digital-office-architect`](skills/btp-digital-office-architect/SKILL.md) | Master architectural and operational framework for launching, scaling, and auditing a digital administrative office (Bureau Numérique BTP) for construction craftspeople and technical SMEs in Belgium and Europe. Solves forgotten quotes with the "Devis sans oubli" protected Excel engine, Belgian socio-fiscal optimization (Smart CP 200, INASTI 2026, Peppol B2B UBL 2026), 7:00 AM supplier counter guerrilla sales, 9 CGV protection clauses, and automated CLI tooling. |
 | [`global-marketing-growth-suite`](skills/global-marketing-growth-suite/SKILL.md) | Master Growth Marketing & Acquisition Suite: Viral carousel design, content creation, Reddit community building, App Store Optimization (ASO), paid media audit, newsletter, and conversion optimization. |
 | [`china-growth-marketing-suite`](skills/china-growth-marketing-suite/SKILL.md) | Complete Chinese digital acquisition and e-commerce suite: Xiaohongshu (RED), Douyin, Bilibili, Baidu SEO, Cross-border E-commerce, and market localization. |
