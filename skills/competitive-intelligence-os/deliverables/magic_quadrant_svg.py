@@ -91,8 +91,8 @@ class MagicQuadrantSVGGenerator:
             f'  <line x1="{mid_x}" y1="{margin}" x2="{mid_x}" y2="{height - margin}" stroke="#64748b" stroke-width="1.5" stroke-dasharray="4,4" />',
             f'  <line x1="{margin}" y1="{mid_y}" x2="{width - margin}" y2="{mid_y}" stroke="#64748b" stroke-width="1.5" stroke-dasharray="4,4" />',
             # Libellés des axes
-            f'  <text x="{width / 2}" y="{height - 30}" font-size="13" font-weight="600" fill="#cbd5e1" text-anchor="middle">Exhaustivité de la Vision (Completeness of Vision) &rarr;</text>',
-            f'  <text x="30" y="{height / 2}" font-size="13" font-weight="600" fill="#cbd5e1" text-anchor="middle" transform="rotate(-90, 30, {height / 2})">Capacité d\'Exécution (Ability to Execute) &rarr;</text>',
+            f'  <text x="{width / 2}" y="{height - 30}" font-size="13" font-weight="600" fill="#cbd5e1" text-anchor="middle">Exhaustivité de la Vision (Completeness of Vision) &#8594;</text>',
+            f'  <text x="30" y="{height / 2}" font-size="13" font-weight="600" fill="#cbd5e1" text-anchor="middle" transform="rotate(-90, 30, {height / 2})">Capacité d\'Exécution (Ability to Execute) &#8594;</text>',
         ]
 
         # Tracé des acteurs
