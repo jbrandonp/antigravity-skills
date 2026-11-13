@@ -19,11 +19,14 @@ consolidated_master_suites:
   - creative-code-generative-art-suite
   - hyperframes-web-animation-suite
   - ai-music-audio-media-suite
+  - diagram-design-svg
+  - isometric-anatomy-svg
+  - impeccable-design-engine
 ---
 
 # Mega Creative Arts, Design & Visual Motion Suite
 
-> **Mega-Suite All-in-One :** Unifie **5 Master Suites** en un unique centre opérationnel autonome.
+> **Mega-Suite All-in-One :** Unifie **8 Master Suites** en un unique centre opérationnel autonome.
 
 
 ## 🎯 Quand Déclencher ce Mega-Pilier (Triggers)
@@ -36,6 +39,9 @@ Activez ce méga-module dès qu'une tâche complexe nécessite l'orchestration t
 3. [**creative-code-generative-art-suite**](#suite-3-creative-code-generative-art-suite)
 4. [**hyperframes-web-animation-suite**](#suite-4-hyperframes-web-animation-suite)
 5. [**ai-music-audio-media-suite**](#suite-5-ai-music-audio-media-suite)
+6. [**diagram-design-svg**](#suite-6-diagram-design-svg)
+7. [**isometric-anatomy-svg**](#suite-7-isometric-anatomy-svg)
+8. [**impeccable-design-engine**](#suite-8-impeccable-design-engine)
 
 ---
 
@@ -6596,3 +6602,138 @@ After fetching the transcript, format it based on what the user asks for:
 
 
 ---
+
+
+---
+
+## Suite 6: diagram-design-svg
+
+# 📊 Diagram Design SVG: Zero-Dependency Editorial Diagrams
+
+> **Inspiration :** Cathryn Lavery (`cathrynlavery/diagram-design` - 66k+ ⭐).  
+> **Axiome Central :** Les schémas Mermaid sont souvent laids, difficiles à personnaliser et nécessitent des visualiseurs tiers. Ce skill génère du code HTML et SVG autonome, élégant, réactif, supportant nativement les thèmes clair/sombre via CSS, sans aucune dépendance JS externe.
+
+---
+
+## 🎨 Caractéristiques & Types Supportés
+
+- **Zéro Dépendance Externe :** Aucun CDN, aucune bibliothèque JavaScript requise. Rendu instantané dans n'importe quel navigateur ou webview.
+- **Support Thème Sombre & Clair Automatique :** Couleurs gérées via variables CSS `@media (prefers-color-scheme: dark)`.
+- **Typographie Éditoriale :** Polices système modernes (`-apple-system`, `BlinkMacSystemFont`, `Segoe UI`, `Roboto`), contrastes nets et marges aérées.
+- **Catalogue de Types :**
+  1. *Architecture Système Multi-Couches* (Client -> Passerelle -> Services -> Persistance).
+  2. *Diagrammes de Séquence Temporelle* (Acteurs, lignes de vie, messages asynchrones).
+  3. *Matrices 2x2 & Quadrants Stratégiques* (Effort vs Impact, Sécurité vs Vélocité).
+  4. *Modèles Entité-Association (ERD)* et flux de données.
+
+---
+
+## 💻 Commandes d'Utilisation
+
+```bash
+# Générer un diagramme d'architecture système complet
+python skills/diagram-design-svg/scripts/svg_generator.py \
+  --type architecture \
+  --title "Microservice Scraping & SQLite FTS5 Pipeline" \
+  --output docs/architecture.html
+
+# Générer un diagramme de séquence
+python skills/diagram-design-svg/scripts/svg_generator.py \
+  --type sequence \
+  --title "Context-Mode Buffer Sequence" \
+  --output docs/sequence.html
+```
+
+---
+
+## Suite 7: isometric-anatomy-svg
+
+# 📐 Isometric Anatomy SVG: Exploded Technical Illustrations
+
+> **Inspiration :** Ryan Dahl / `wheresryan22/anatomy`  
+> **Axiome Central :** Les architectures complexes méritent des représentations visuelles éclatées, techniques et mécaniques plutôt que de simples boîtes plates reliées par des flèches en 2D.
+
+---
+
+## 🎨 Capacités Visuelles
+
+```text
+ ┌─────────────────────────────────────────────────────────────┐
+ │ 1. ISOMETRIC PROJECTION (30° Angle): Vraie perspective 3D   │
+ ├─────────────────────────────────────────────────────────────┤
+ │ 2. EXPLODED LAYERS: Niveaux étagés (Data, App, Infra, Net)  │
+ ├─────────────────────────────────────────────────────────────┤
+ │ 3. MECHANICAL CUTAWAYS: Pistons, engrenages, bus de données │
+ ├─────────────────────────────────────────────────────────────┤
+ │ 4. STANDALONE SVG: Zéro dépendance, CSS vectoriel intégré   │
+ └─────────────────────────────────────────────────────────────┘
+```
+
+---
+
+## 💻 Utilisation du Compilateur Isométrique
+
+Le skill fournit un générateur Python autonome :
+
+```bash
+# Générer un diagramme isométrique à 3 couches (Database, Backend, Client)
+python skills/isometric-anatomy-svg/scripts/isometric_compiler.py \
+  --title "Scraper Pipeline Architecture" \
+  --layers "Raw Scrapers,SQLite FTS5 Buffer,Agentic Core" \
+  --output scraper-anatomy.svg
+
+# Mode vue éclatée (Exploded View) avec espacement vertical accentué
+python skills/isometric-anatomy-svg/scripts/isometric_compiler.py \
+  --title "Autonomous Robot Controller" \
+  --layers "Sensors & IMU,Sim-to-Real Policy,Motor Actuators" \
+  --exploded \
+  --output robot-anatomy.svg
+```
+
+---
+
+## Suite 8: impeccable-design-engine
+
+# 🎨 Impeccable Design Engine: 62-Rule Frontend Linter & Polisher
+
+> **Inspiration :** Paul Bakaus (`pbakaus/impeccable`).  
+> **Axiome Central :** L'AI Slop frontend (contrastes illisibles, boutons sans états de focus, valeurs arbitraires `text-[13px]`, mise en page bancale) doit être intercepté en local par des règles heuristiques déterministes sans dépenser de tokens d'API.
+
+---
+
+## 📐 Les 5 Fondations du Design Impeccable
+
+```text
+ ┌─────────────────────────────────────────────────────────────┐
+ │ 1. Rythme Vertical & Espacements: Grille stricte 4px / 8px  │
+ ├─────────────────────────────────────────────────────────────┤
+ │ 2. Échelle Typographique: Tailles proportionnées (12/16/24) │
+ ├─────────────────────────────────────────────────────────────┤
+ │ 3. États Interactifs: :hover, :active, :focus-visible       │
+ ├─────────────────────────────────────────────────────────────┤
+ │ 4. Accessibilité WCAG: Contrastes 4.5:1 & aria-label        │
+ ├─────────────────────────────────────────────────────────────┤
+ │ 5. Thème Cohérent: Tokens CSS sémantiques vs hexadécimal    │
+ └─────────────────────────────────────────────────────────────┘
+```
+
+---
+
+## 🛠️ Commandes & Outils
+
+### 1. `/impeccable audit` (Linter Local)
+Exécute le moteur de scan statique sur l'ensemble des fichiers HTML, JSX, TSX, CSS ou Vue :
+```bash
+python skills/impeccable-design-engine/scripts/design_audit.py src/
+```
+
+### 2. `/impeccable polish`
+Règles de correction automatique appliquées par l'agent :
+- Remplacer les espacements arbitraires (`p-[7px]`) par les équivalents de la grille Tailwind (`p-2`).
+- Ajouter les états d'accessibilité manquants (`focus-visible:ring-2 focus-visible:ring-offset-2`).
+- Assurer un fallback propre des polices système pour éviter les sursauts visuels (CLS).
+
+### 3. `/impeccable critique`
+Revue critique d'interface :
+- Vérifier que la hiérarchie visuelle guide le regard vers l'appel à l'action (CTA) principal en moins de 3 secondes.
+- Éliminer les dégradés et ombres plates génériques ("AI purple slop") au profit d'une palette typée et contrastée.

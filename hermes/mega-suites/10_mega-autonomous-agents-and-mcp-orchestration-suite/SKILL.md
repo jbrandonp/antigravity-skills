@@ -17,11 +17,14 @@ consolidated_master_suites:
   - meta-agent-governance-automation-suite
   - ai-redteaming-adversarial-security-suite
   - data-engineering-browser-automation-suite
+  - context-mode
+  - caveman-compress
+  - ecc-agent-shield
 ---
 
 # Mega Autonomous Agents & MCP Orchestration Suite
 
-> **Mega-Suite All-in-One :** Unifie **5 Master Suites** en un unique centre opérationnel autonome.
+> **Mega-Suite All-in-One :** Unifie **8 Master Suites** en un unique centre opérationnel autonome.
 
 
 ## 🎯 Quand Déclencher ce Mega-Pilier (Triggers)
@@ -34,6 +37,9 @@ Activez ce méga-module dès qu'une tâche complexe nécessite l'orchestration t
 3. [**meta-agent-governance-automation-suite**](#suite-3-meta-agent-governance-automation-suite)
 4. [**ai-redteaming-adversarial-security-suite**](#suite-4-ai-redteaming-adversarial-security-suite)
 5. [**data-engineering-browser-automation-suite**](#suite-5-data-engineering-browser-automation-suite)
+6. [**context-mode**](#suite-6-context-mode)
+7. [**caveman-compress**](#suite-7-caveman-compress)
+8. [**ecc-agent-shield**](#suite-8-ecc-agent-shield)
 
 ---
 
@@ -10846,3 +10852,144 @@ If webhooks aren't working:
 
 
 ---
+
+
+---
+
+## Suite 6: context-mode
+
+# 🧠 Context-Mode: SQLite FTS5 Terminal Output Reducer
+
+> **Inspiration :** `mksglu/context-mode`  
+> **Axiome Central :** Ne jamais laisser 5 000 lignes de logs bruts, de traces de tests ou de dumps de scrapers saturer la fenêtre de contexte de l'agent. Isoler la sortie dans une base SQLite FTS5 locale et requêter chirurgicalement avec BM25.
+
+---
+
+## 🎯 Pourquoi ce Skill ?
+
+Les sorties de terminal volumineuses (`pytest -v`, `npm test`, `git log`, scrapers HTTP) font exploser le coût en tokens et provoquent le "context drift" (dérive cognitive de l'agent). En interceptant les commandes lourdes :
+1. **L'agent ne reçoit que 3 à 5 lignes** : code de retour, nombre de lignes capturées, durée, et aperçu compact.
+2. **La donnée brute reste accessible** sur disque (`~/.antigravity/context_buffer.db`).
+3. **L'agent interroge par mots-clés** : `search` extrait les snippets exacts via l'algorithme BM25 de SQLite.
+
+---
+
+## 💻 Commandes d'Utilisation
+
+### 1. Exécuter une commande lourde dans le bac à sable
+```bash
+python skills/context-mode/scripts/ctx_buffer.py run -- pytest tests/
+python skills/context-mode/scripts/ctx_buffer.py run -- npm test
+python skills/context-mode/scripts/ctx_buffer.py run -s scraper-run -- python scraper.py
+```
+
+### 2. Rechercher chirurgicalement dans les logs (FTS5 / BM25)
+```bash
+python skills/context-mode/scripts/ctx_buffer.py search "AssertionError"
+python skills/context-mode/scripts/ctx_buffer.py search -s scraper-run "403 Forbidden"
+```
+
+### 3. Afficher les N dernières lignes d'une session
+```bash
+python skills/context-mode/scripts/ctx_buffer.py tail <session_id> -n 50
+```
+
+### 4. Vider le tampon de contexte
+```bash
+python skills/context-mode/scripts/ctx_buffer.py clear
+```
+
+---
+
+## 🛡️ Règles Comportementales pour l'Agent
+- Dès qu'une commande risque de générer plus de 50 lignes, passer systématiquement par `ctx_buffer.py run`.
+- En cas d'échec (`exit code != 0`), inspecter d'abord les 10 lignes de tail fournies avant de lancer un `search` ciblé sur l'erreur.
+- Ne jamais ré-exécuter une commande aveuglément sans avoir diagnostiqué la cause via FTS5.
+
+---
+
+## Suite 7: caveman-compress
+
+# 🪓 Caveman: Telegraphic Token Economy & Prompt Compressor
+
+> **Inspiration :** `JuliusBrussee/caveman` (100k+ ⭐)  
+> **Axiome Central :** Les politesses, flatteries et périphrases gaspillent la mémoire de l'agent. Communiquer en style télégraphique machine-to-machine réduit de 65% les tokens de sortie et de 46% les tokens de contexte système.
+
+---
+
+## 🎯 Les 3 Niveaux de Concision
+
+### 1. Mode `/caveman lite`
+- Supprime les salutations ("Bonjour", "Avec plaisir", "Certainement").
+- Supprime les résumés redondants en début de réponse.
+- Conserve les explications techniques normales en français direct.
+
+### 2. Mode `/caveman full`
+- Style télégraphique strict.
+- Phrases courtes sans fioritures.
+- Listes à puces denses au lieu de paragraphes narratifs.
+- Diffs de code minimaux uniquement.
+
+### 3. Mode `/caveman ultra` (Machine-to-Machine)
+- Sortie purement technique : syntaxe, commandes shell, chemins de fichiers, diffs unifiés.
+- Zéro phrase d'accompagnement.
+
+---
+
+## 🛠️ Outil d'Automatisation : `/caveman-compress`
+
+Le script compagnon `compressor.py` nettoie automatiquement les fichiers de configuration système (`CLAUDE.md`, `.cursorrules`, `SKILL.md`, prompts système) pour diviser par deux leur coût d'ingestion permanent :
+
+```bash
+# Mesurer le gain potentiel sur un fichier d'instructions
+python skills/caveman-compress/scripts/compressor.py CLAUDE.md --stats-only
+
+# Compresser le fichier sur place
+python skills/caveman-compress/scripts/compressor.py CLAUDE.md --in-place
+
+# Mode agressif
+python skills/caveman-compress/scripts/compressor.py rules.md -i --aggressive
+```
+
+---
+
+## 📋 Directives Comportementales
+- En mode révision de PR ou commit review, produire un compte rendu en une seule ligne : `type(scope): exact fix`.
+- Bannir les transitions d'excuses ("Je m'excuse pour cette erreur, voici le correctif"). Diagnostiquer directement la cause et appliquer le patch.
+
+---
+
+## Suite 8: ecc-agent-shield
+
+# 🛡️ ECC AgentShield: Execution Safety Gate & Continuous Learning
+
+> **Inspiration :** Affaan Mustafa (`affaan-m/ECC` - Everything Claude Code)  
+> **Axiome Central :** L'agent doit disposer d'un bouclier déterministe pré-exécution pour interdire les catastrophes système (`rm -rf`, écrasements aveugles) et d'un mécanisme de mémorisation permanente (*Instincts*) pour ne jamais répéter deux fois la même erreur.
+
+---
+
+## 🔒 Les Deux Modules Clés
+
+```text
+ ┌─────────────────────────────────────────────────────────────┐
+ │ 1. AGENT SHIELD: Linter temps réel des commandes shell      │
+ ├─────────────────────────────────────────────────────────────┤
+ │ 2. INSTINCT ENGINE: Compilation des bugs résolus en règles  │
+ └─────────────────────────────────────────────────────────────┘
+```
+
+---
+
+## 💻 Utilisation CLI
+
+```bash
+# Vérifier si une commande shell est sûre avant de l'exécuter
+python skills/ecc-agent-shield/scripts/agent_shield.py audit-cmd --cmd "rm -rf /var/log"
+# Sortie: BLOCKED: Destructive command pattern 'rm -rf /' detected!
+
+# Compiler une leçon apprise lors d'un bug en instinct permanent
+python skills/ecc-agent-shield/scripts/agent_shield.py learn-instinct \
+  --title "SQLite WAL Lock Prevention" \
+  --trigger "sqlite3.OperationalError: database is locked" \
+  --rule "Toujours positionner busy_timeout=5000 et pragma journal_mode=WAL dès l'ouverture de la connexion."
+```

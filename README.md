@@ -6,16 +6,16 @@
 [![Hermes Agent Ready](https://img.shields.io/badge/Hermes%20Agent-Compatible-10B981.svg)](hermes/)
 [![Elite Skills](https://img.shields.io/badge/Elite%20Skills-187%20Active-success.svg)](skills/)
 [![Hermes Mega-Suites](https://img.shields.io/badge/Hermes%20Mega--Suites-11%20Suites-FF6B6B.svg)](hermes/mega-suites/)
-[![Hermes Master-Suites](https://img.shields.io/badge/Hermes%20Master--Suites-63%20Suites-orange.svg)](hermes/master-suites/)
+[![Hermes Master-Suites](https://img.shields.io/badge/Hermes%20Master--Suites-75%20Suites-orange.svg)](hermes/master-suites/)
 [![DeepMind Science](https://img.shields.io/badge/DeepMind%20Science-41%20Skills-8A2BE2.svg)](plugins/science/)
 [![Google Stitch](https://img.shields.io/badge/Google%20Stitch-16%20Skills-4285F4.svg)](plugins/stitch-design/)
 [![MCP Servers](https://img.shields.io/badge/MCP%20Servers-8%20Bundled-blue.svg)](mcp/)
-[![Total Tools](https://img.shields.io/badge/Total%20Tools-313%20Skills%20%26%20Suites-brightgreen.svg)](#)
+[![Total Tools](https://img.shields.io/badge/Total%20Tools-325%20Skills%20%26%20Suites-brightgreen.svg)](#)
 [![Integrity Score](https://img.shields.io/badge/Audit%20Score-100%2F100-brightgreen.svg)](scripts/verify_skills.py)
 [![CI Status](https://img.shields.io/badge/CI-Passing-brightgreen.svg)](.github/workflows/validate-skills.yml)
 
 > **The Ultimate Production-Grade Skill & Customization Suite for [Google Antigravity](https://antigravity.google), [Anthropic Claude Code](CLAUDE.md), [Hermes Agent](hermes/), Cursor, and Modern AI Coding Agents.**  
-> Unifies **187 audited elite skills**, **11 Hermes Mega-Suites** (~350,000 words designed for autonomous marathon tasks), **63 Hermes Master-Suites** (including the new Hetzner-shielded `hermes-omni-stealth-powerhouse`), the official **Google DeepMind Science toolkit** (41 skills + 3D Mol* interactive sidecar), the **Google Labs Stitch design suite** (16 skills across 3 plugins), **8 pre-bundled MCP servers** (Blender, Cloud Run, Firebase, Genkit, Science Mol*, eBay, Vinted, Web Tools), and one-click installers.
+> Unifies **187 audited elite skills**, **11 Hermes Mega-Suites** (~350,000 words designed for autonomous marathon tasks), **75 Hermes Master-Suites** (including the new Hetzner-shielded `hermes-omni-stealth-powerhouse`), the official **Google DeepMind Science toolkit** (41 skills + 3D Mol* interactive sidecar), the **Google Labs Stitch design suite** (16 skills across 3 plugins), **8 pre-bundled MCP servers** (Blender, Cloud Run, Firebase, Genkit, Science Mol*, eBay, Vinted, Web Tools), and one-click installers.
 
 ---
 
@@ -26,7 +26,7 @@
 3. [One-Click Installation](#one-click-installation)
 4. [Hermes Autonomous Agent Ecosystem](#hermes-autonomous-agent-ecosystem)
    - [11 All-in-One Mega-Suites](#11-all-in-one-mega-suites-350000-words)
-   - [63 Consolidated Master Suites](#63-consolidated-master-suites)
+   - [75 Consolidated Master Suites](#63-consolidated-master-suites)
    - [Hermes MCP Servers & Autonomous Tools](#hermes-mcp-servers-autonomous-tools)
    - [1-Click Deployment for Hermes Agent (Telegram / Hetzner)](#-1-click-deployment-for-hermes-agent-telegram--hetzner)
 5. [Elite Skills Catalog (184 Skills)](#elite-skills-catalog-184-skills)

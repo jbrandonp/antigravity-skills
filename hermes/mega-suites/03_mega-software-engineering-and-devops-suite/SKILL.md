@@ -21,11 +21,17 @@ consolidated_master_suites:
   - quality-assurance-testing-suite
   - embedded-systems-suite
   - frontend-mobile-cms-engineering-suite
+  - karpathy-guidelines
+  - socratic-spec-architect
+  - gstack-startup-pack
+  - graphify-ast-knowledge
+  - trail-of-bits-security-engine
+  - cloudflare-adversarial-audit
 ---
 
 # Mega Software Engineering & DevOps Suite
 
-> **Mega-Suite All-in-One :** Unifie **7 Master Suites** en un unique centre opérationnel autonome.
+> **Mega-Suite All-in-One :** Unifie **13 Master Suites** en un unique centre opérationnel autonome.
 
 
 ## 🎯 Quand Déclencher ce Mega-Pilier (Triggers)
@@ -40,6 +46,12 @@ Activez ce méga-module dès qu'une tâche complexe nécessite l'orchestration t
 5. [**quality-assurance-testing-suite**](#suite-5-quality-assurance-testing-suite)
 6. [**embedded-systems-suite**](#suite-6-embedded-systems-suite)
 7. [**frontend-mobile-cms-engineering-suite**](#suite-7-frontend-mobile-cms-engineering-suite)
+8. [**karpathy-guidelines**](#suite-8-karpathy-guidelines)
+9. [**socratic-spec-architect**](#suite-9-socratic-spec-architect)
+10. [**gstack-startup-pack**](#suite-10-gstack-startup-pack)
+11. [**graphify-ast-knowledge**](#suite-11-graphify-ast-knowledge)
+12. [**trail-of-bits-security-engine**](#suite-12-trail-of-bits-security-engine)
+13. [**cloudflare-adversarial-audit**](#suite-13-cloudflare-adversarial-audit)
 
 ---
 
@@ -14949,3 +14961,311 @@ Skill 路径引用均采用**相对本 skill 根目录**的形式（`references/
 
 
 ---
+
+
+---
+
+## Suite 8: karpathy-guidelines
+
+# 🧘 Karpathy Guidelines & Ponytail Anti-Overengineering
+
+> **Inspirations :** Andrej Karpathy (`multica-ai/andrej-karpathy-skills`) & Dietrich Gebert (`DietrichGebert/ponytail`).  
+> **Axiome Central :** *"La meilleure ligne de code est celle que tu n'as pas besoin d'écrire. Ne touche jamais à 200 lignes pour corriger un bug de 2 lignes."*
+
+---
+
+## 🏛️ Les 4 Piliers Inviolables d'Andrej Karpathy
+
+```text
+ ┌─────────────────────────────────────────────────────────────┐
+ │ 1. THINK BEFORE CODING: Verbaliser les hypothèses d'abord   │
+ ├─────────────────────────────────────────────────────────────┤
+ │ 2. SIMPLICITY FIRST: Zéro abstraction spéculative           │
+ ├─────────────────────────────────────────────────────────────┤
+ │ 3. SURGICAL CHANGES: Diffs ciblés, interdiction de réécrire │
+ ├─────────────────────────────────────────────────────────────┤
+ │ 4. GOAL-DRIVEN: S'arrêter dès que l'objectif est prouvé     │
+ └─────────────────────────────────────────────────────────────┘
+```
+
+### 1. Think Before Coding (Réfléchir Avant d'Écrire)
+- L'agent doit obligatoirement expliciter son raisonnement en 2-3 phrases avant de modifier un fichier.
+- Vérifier les préconditions et identifier les effets de bord potentiels sur les composants appelants.
+
+### 2. Simplicity First (Simplicité Radicale)
+- **Interdiction formelle de sur-architecturer** : pas de Factory, de Singleton ou de pattern générique pour un besoin à usage unique.
+- **Priorité absolue à la bibliothèque standard** (`sqlite3`, `pathlib`, `re`, `subprocess`, `dataclasses`, `typing`) avant d'envisager d'ajouter une dépendance externe.
+- Si une fonction de 15 lignes résout le problème, refuser d'installer un package externe de 20 Mo.
+
+### 3. Surgical Changes (Modifications Chirurgicales)
+- **Interdiction absolue d'écraser des fichiers entiers** lorsqu'un remplacement partiel suffit.
+- Utiliser uniquement des modifications localisées (`edit_file` / diffs précis).
+- Préserver scrupuleusement les commentaires préexistants, la mise en forme et les conventions de nommage du projet.
+
+### 4. Goal-Driven Execution (Exécution Axée sur le But)
+- Définir un critère d'achèvement formel et mesurable avant d'exécuter la tâche (un test unitaire qui passe, un code de retour 0).
+- Dès que le critère de réussite est atteint, **arrêter immédiatement les modifications**. Ne pas continuer à "refactorer pour le plaisir".
+
+---
+
+## ✂️ Heuristiques "Ponytail" (L'Ingénieur Senior Pragmatique)
+
+- **YAGNI (You Aren't Gonna Need It)** : Ne code jamais ce dont tu *pourrais* avoir besoin plus tard. Code ce dont tu as besoin *maintenant*.
+- **Dead Code Elimination** : Tout code commenté, toute fonction devenue orpheline ou toute importation inutilisée doit être supprimée immédiatement.
+- **Inlining des Indirections Simples** : Si une fonction n'est appelée qu'à un seul endroit dans tout le codebase et ne fait que 2 lignes, élimine l'intermédiaire et intègre la logique directement.
+
+---
+
+## Suite 9: socratic-spec-architect
+
+# 🧐 Socratic Spec Architect & Session Handoff Engine
+
+> **Inspiration :** Matt Pocock (`mattpocock/skills` - "Skills for Real Engineers").  
+> **Axiome Central :** Zéro code écrit à l'aveugle. L'agent bloque le clavier, pose des questions incisives sur les ambiguïtés architecturales, génère un graphe de tickets bloquants et compresse la session pour les passages de relais.
+
+---
+
+## 🔄 Le Cycle "Idea-to-Ship" de Matt Pocock
+
+```text
+ ┌─────────────────────────────────────────────────────────────┐
+ │ 1. /grill-me & /grill-with-docs : L'interview socratique    │
+ ├─────────────────────────────────────────────────────────────┤
+ │ 2. /to-spec : Compilation de la discussion en SPEC.md       │
+ ├─────────────────────────────────────────────────────────────┤
+ │ 3. /to-tickets : Graphe de tickets atomiques (DAG)          │
+ ├─────────────────────────────────────────────────────────────┤
+ │ 4. /implement : Exécution par sous-agents en TDD            │
+ ├─────────────────────────────────────────────────────────────┤
+ │ 5. /handoff : Compression pour nouvelle session propre      │
+ └─────────────────────────────────────────────────────────────┘
+```
+
+---
+
+## 🛠️ Commandes & Protocoles
+
+### 1. `/grill-me` & `/grill-with-docs`
+* **Comportement :** L'agent refuse d'écrire du code. Il analyse la documentation locale, les types et la demande de l'utilisateur, puis pose 3 à 5 questions critiques pour forcer les arbitrages :
+  - *Quels sont les cas d'erreur attendus (timeout, rate limit, schéma corrompu) ?*
+  - *Quels sont les types stricts d'entrée et de sortie ?*
+  - *Quelle est la politique de rétention ou de synchronisation ?*
+* Met à jour automatiquement un `GLOSSARY.md` et consigne les décisions dans `_DECISIONS.md`.
+
+### 2. `/to-spec` & `/to-tickets`
+* Transforme la conversation validée en une spécification formelle (`SPEC.md`).
+* Découpe la spécification en tickets atomiques indépendants de 2 à 5 minutes avec dépendances :
+  ```markdown
+  - [x] Ticket #1: Créer le schéma de base de données (Prérequis: Aucun)
+  - [ ] Ticket #2: Implémenter l'adaptateur de requêtes (Prérequis: #1)
+  - [ ] Ticket #3: Ajouter les tests de validation (Prérequis: #2)
+  ```
+
+### 3. `/handoff` (Générateur de Relais)
+* Lorsque la session commence à devenir longue ou que le contexte se dégrade, l'agent génère un document de transfert propre pour démarrer une nouvelle session à blanc :
+  ```bash
+  python skills/socratic-spec-architect/scripts/handoff_generator.py \
+    --title "Multi-Store Scraper Upgrade" \
+    --summary "Added SQLite FTS5 buffer and updated Delhaize parser." \
+    --next "Implement Colruyt dynamic category traversal" \
+    --next "Add rate-limit backoff handler" \
+    --output HANDOFF.md
+  ```
+
+---
+
+## Suite 10: gstack-startup-pack
+
+# 🚀 GStack Startup Pack: YC Founder & Product Delivery Suite
+
+> **Inspiration :** Garry Tan, Président & CEO de Y Combinator (`garrytan/gstack` - 141k+ ⭐).  
+> **Axiome Central :** Ne code pas comme un exécutant isolé. Adopte tour à tour le regard d'un CEO fondateur, d'un VP Engineering, d'un lead designer et d'un release manager pour expédier de la vraie valeur rapidement.
+
+---
+
+## 👥 Les 5 Personas Virtuels
+
+```text
+ ┌─────────────────────────────────────────────────────────────┐
+ │ 1. CEO REVIEW (/plan-ceo-review): Valeur, MVP, Rétention    │
+ ├─────────────────────────────────────────────────────────────┤
+ │ 2. DESIGN REVIEW (/plan-design-review): Clarté & Ergonomie  │
+ ├─────────────────────────────────────────────────────────────┤
+ │ 3. ENG REVIEW (/plan-eng-review): Résilience & Scalabilité  │
+ ├─────────────────────────────────────────────────────────────┤
+ │ 4. VERIFY (/verify): Tests end-to-end automatisés           │
+ ├─────────────────────────────────────────────────────────────┤
+ │ 5. SHIP (/ship): Release notes, tag Git et déploiement      │
+ └─────────────────────────────────────────────────────────────┘
+```
+
+---
+
+## 🎯 Commandes & Rôles
+
+### 1. `/plan-ceo-review` (Le Filtre YC)
+- Pose la question fondamentale : *"Est-ce que cette fonctionnalité résout un problème urgent pour l'utilisateur ?"*
+- Coupe systématiquement 50% de la complexité initiale pour concevoir un MVP radical livrable en 24-48 heures.
+- Élimine le "feature creep" (accumulation inutile de fonctionnalités gadgets).
+
+### 2. `/plan-design-review` & `/design-shotgun`
+- Évalue la hiérarchie visuelle, la lisibilité et l'accès direct aux actions principales.
+- `/design-shotgun` : Génère 3 variantes d'interface ou de flux utilisateur (minimaliste, axé données, dense) avec les pour/contre avant tout développement.
+
+### 3. `/plan-eng-review`
+- Audite la robustesse technique : temps de réponse, risques de verrous de base de données (deadlocks SQLite), consommation mémoire et gestion des pannes réseau.
+- Vérifie que le code reste maintenable sans ajouter de briques d'infrastructure superflues.
+
+### 4. `/verify`
+- Lance la suite complète de vérification :
+  - Tests unitaires et d'intégration
+  - Linter et typage strict (zéro `any`)
+  - Vérification de l'absence de régression dans les journaux
+  - Validation visuelle si des composants UI sont touchés
+
+### 5. `/ship`
+- Compile les changements en un changelog propre et lisible pour l'humain.
+- Crée un commit Git au format conventionnel `feat(...)` ou `fix(...)`.
+- Prépare le tag de version et valide que la branche est prête pour la mise en production.
+
+---
+
+## Suite 11: graphify-ast-knowledge
+
+# 🕸️ Graphify AST: Deterministic Codebase Knowledge Graph
+
+> **Inspiration :** `Graphify-Labs/graphify`  
+> **Axiome Central :** Les recherches textuelles `grep` sont aveugles aux relations fonctionnelles. Construire un graphe AST déterministe en local permet à l'agent de traverser instantanément les dépendances réelles sans gaspiller des dizaines de milliers de tokens en lectures répétées.
+
+---
+
+## 🎯 Avantages Clés
+1. **100% Local & Déterministe :** S'exécute directement sur l'AST Python sans aucun appel de modèle LLM ni base vectorielle externe.
+2. **Double Export :**
+   - `graph.json` : Structure normalisée des nœuds (fichiers, classes, fonctions, tables) et des arêtes (contient, importe, appelle).
+   - `graph.html` : Interface visuelle moderne, autonome (zéro CDN, zéro dépendance JS externe) explorable dans tout navigateur.
+3. **Réduction Drastique de Tokens :** L'agent interroge le graphe avec `--query` pour savoir immédiatement qui appelle une méthode ou quel fichier importe un module.
+
+---
+
+## 💻 Commandes d'Utilisation
+
+### 1. Construire le graphe de la base de code
+```bash
+python skills/graphify-ast-knowledge/scripts/graph_builder.py --root . --json graph.json --html graph.html
+```
+
+### 2. Interroger directement un symbole depuis le terminal
+```bash
+python skills/graphify-ast-knowledge/scripts/graph_builder.py --query "parse_product"
+python skills/graphify-ast-knowledge/scripts/graph_builder.py --query "SQLiteManager"
+```
+
+### 3. Explorer visuellement
+Ouvrir le fichier `graph.html` généré dans un navigateur pour naviguer dans l'arborescence des appels et des dépendances.
+
+---
+
+## Suite 12: trail-of-bits-security-engine
+
+# 🛡️ Trail of Bits Security Engine: Formal Static Analysis & AST Auditing
+
+> **Inspiration :** Trail of Bits security consulting methodology, Semgrep Rulesets, CodeQL query models, and Constant-Time Cryptographic Auditing.  
+> **Axiome Central :** Ne confie pas l'analyse de sécurité critique aux seules hallucinations stochastiques d'un LLM. Utilise des analyseurs statiques déterministes, inspecte le flux de données (*taint analysis*) et vérifie l'absence de fuites temporelles.
+
+---
+
+## 🔍 Mécanismes Internes & Capacités
+
+```text
+ ┌─────────────────────────────────────────────────────────────┐
+ │ 1. CONSTANT-TIME VERIFICATION: Détection des failles timing │
+ ├─────────────────────────────────────────────────────────────┤
+ │ 2. AST TAINT TRACKING: Traque des entrées non assainies     │
+ ├─────────────────────────────────────────────────────────────┤
+ │ 3. DANGEROUS SINKS: Éradication de eval(), shell=True, SQL  │
+ ├─────────────────────────────────────────────────────────────┤
+ │ 4. SUPPLY CHAIN AUDIT: Détection de paquets typosquattés    │
+ └─────────────────────────────────────────────────────────────┘
+```
+
+---
+
+## 💻 Utilisation du Moteur Déterministe
+
+Le skill inclut un moteur d'analyse statique autonome en Python standard :
+
+```bash
+# Scanner un répertoire ou un fichier source
+python skills/trail-of-bits-security-engine/scripts/static_analyzer.py --target src/
+
+# Scanner avec sortie au format JSON machine-readable
+python skills/trail-of-bits-security-engine/scripts/static_analyzer.py --target src/ --format json --output audit-report.json
+
+# Mode paranoïaque (arrête le build si score de sécurité < 90)
+python skills/trail-of-bits-security-engine/scripts/static_analyzer.py --target src/ --strict
+```
+
+---
+
+## 📋 Règles Vérifiées par Défaut
+
+1. **Vérification Constant-Time :**
+   - Interdiction de comparer des tokens d'authentification ou des signatures HMAC avec l'opérateur d'égalité direct `==` (vulnérable aux attaques temporelles).
+   - Obligation d'utiliser `hmac.compare_digest()` ou équivalent à temps constant.
+
+2. **Éradication des Puits Dangereux (Dangerous Sinks) :**
+   - Détection d'appels à `eval()`, `exec()`, `pickle.loads()`, `yaml.unsafe_load()`.
+   - Détection de `subprocess.run(..., shell=True)` recevant des variables externes non filtrées.
+
+3. **Injection SQL & Échappement :**
+   - Détection des requêtes SQL concaténées avec f-strings ou `%s` au lieu de requêtes paramétrées avec tuples `?`.
+
+---
+
+## Suite 13: cloudflare-adversarial-audit
+
+# 🛡️ Cloudflare Adversarial Security Audit Gate
+
+> **Inspiration :** Cloudflare AI Security Research (`cloudflare/security-audit-skill`).  
+> **Axiome Central :** Les LLMs hallucinent des failles imaginaires. **L'agent qui découvre une vulnérabilité potentielle n'a PAS le droit de la valider.** Seul un second agent vérificateur distinct, jouant le rôle d'avocat du diable, doit tenter activement de démolir la preuve avant toute confirmation.
+
+---
+
+## 🔬 Le Cycle d'Audit en 6 Phases
+
+```text
+ ┌─────────────────────────────────────────────────────────────┐
+ │ Phase 1: Reconnaissance (Frontières de confiance & surfaces)│
+ ├─────────────────────────────────────────────────────────────┤
+ │ Phase 2: Hunting (Sous-agents traqueurs en parallèle)       │
+ ├─────────────────────────────────────────────────────────────┤
+ │ Phase 3: Validation Adversariale (L'avocat du diable teste) │
+ ├─────────────────────────────────────────────────────────────┤
+ │ Phase 4: Enregistrement Structuré (findings.json strict)    │
+ ├─────────────────────────────────────────────────────────────┤
+ │ Phase 5: Re-vérification des Lignes & Schémas               │
+ ├─────────────────────────────────────────────────────────────┤
+ │ Phase 6: Rapport Définitif (REPORT.md & FINDINGS-DETAIL.md) │
+ └─────────────────────────────────────────────────────────────┘
+```
+
+---
+
+## 📋 La Règle Inviolable d'Indépendance
+
+Pour chaque vulnérabilité candidate :
+1. **L'Agent A (Hunter)** isole le fichier, la ligne suspecte, la classe CWE et formule une hypothèse d'exploit.
+2. **L'Agent B (Adversarial Verifier)** reçoit le cas sans avoir accès aux conclusions subjectives de l'Agent A. Sa mission est d'essayer de **prouver que la faille est impossible à exploiter** (ex: assainissement amont, validation de type, barrière réseau).
+3. **Verdict Déterministe** :
+   - Si l'Agent B parvient à exécuter l'exploit ou à contourner la défense ➔ La faille est **VALIDÉE** et signée par les deux agents.
+   - Si l'Agent B démontre que l'exploit échoue ou est bloqué ➔ La faille est **REJETÉE** comme faux positif.
+
+---
+
+## 🛠️ Outil de Validation du Schéma & Compilation de Rapport
+
+```bash
+# Vérifier et filtrer les vulnérabilités validées contradictoirement
+python skills/cloudflare-adversarial-audit/scripts/adversarial_gate.py --findings findings.json --report REPORT.md
+```
