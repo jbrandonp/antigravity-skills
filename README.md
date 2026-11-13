@@ -4,18 +4,18 @@
 [![Google Antigravity](https://img.shields.io/badge/Antigravity-2.0%20Ready-4285F4.svg)](https://antigravity.google)
 [![Claude Code Ready](https://img.shields.io/badge/Claude%20Code-Compatible-D97706.svg)](CLAUDE.md)
 [![Hermes Agent Ready](https://img.shields.io/badge/Hermes%20Agent-Compatible-10B981.svg)](hermes/)
-[![Elite Skills](https://img.shields.io/badge/Elite%20Skills-184%20Active-success.svg)](skills/)
+[![Elite Skills](https://img.shields.io/badge/Elite%20Skills-187%20Active-success.svg)](skills/)
 [![Hermes Mega-Suites](https://img.shields.io/badge/Hermes%20Mega--Suites-11%20Suites-FF6B6B.svg)](hermes/mega-suites/)
 [![Hermes Master-Suites](https://img.shields.io/badge/Hermes%20Master--Suites-63%20Suites-orange.svg)](hermes/master-suites/)
 [![DeepMind Science](https://img.shields.io/badge/DeepMind%20Science-41%20Skills-8A2BE2.svg)](plugins/science/)
 [![Google Stitch](https://img.shields.io/badge/Google%20Stitch-16%20Skills-4285F4.svg)](plugins/stitch-design/)
 [![MCP Servers](https://img.shields.io/badge/MCP%20Servers-8%20Bundled-blue.svg)](mcp/)
-[![Total Tools](https://img.shields.io/badge/Total%20Tools-310%20Skills%20%26%20Suites-brightgreen.svg)](#)
+[![Total Tools](https://img.shields.io/badge/Total%20Tools-313%20Skills%20%26%20Suites-brightgreen.svg)](#)
 [![Integrity Score](https://img.shields.io/badge/Audit%20Score-100%2F100-brightgreen.svg)](scripts/verify_skills.py)
 [![CI Status](https://img.shields.io/badge/CI-Passing-brightgreen.svg)](.github/workflows/validate-skills.yml)
 
 > **The Ultimate Production-Grade Skill & Customization Suite for [Google Antigravity](https://antigravity.google), [Anthropic Claude Code](CLAUDE.md), [Hermes Agent](hermes/), Cursor, and Modern AI Coding Agents.**  
-> Unifies **184 audited elite skills**, **11 Hermes Mega-Suites** (~350,000 words designed for autonomous marathon tasks), **63 Hermes Master-Suites** (including the new Hetzner-shielded `hermes-omni-stealth-powerhouse`), the official **Google DeepMind Science toolkit** (41 skills + 3D Mol* interactive sidecar), the **Google Labs Stitch design suite** (16 skills across 3 plugins), **8 pre-bundled MCP servers** (Blender, Cloud Run, Firebase, Genkit, Science Mol*, eBay, Vinted, Web Tools), and one-click installers.
+> Unifies **187 audited elite skills**, **11 Hermes Mega-Suites** (~350,000 words designed for autonomous marathon tasks), **63 Hermes Master-Suites** (including the new Hetzner-shielded `hermes-omni-stealth-powerhouse`), the official **Google DeepMind Science toolkit** (41 skills + 3D Mol* interactive sidecar), the **Google Labs Stitch design suite** (16 skills across 3 plugins), **8 pre-bundled MCP servers** (Blender, Cloud Run, Firebase, Genkit, Science Mol*, eBay, Vinted, Web Tools), and one-click installers.
 
 ---
 
@@ -267,10 +267,13 @@ redis-cli SET hermes:skill:hermes-omni-stealth-powerhouse:path "$HOME/.hermes/sk
 | [`mixamo-animation-library-engine`](skills/mixamo-animation-library-engine/SKILL.md) | Programmatic, zero-credential animation acquisition of 90+ production-ready humanoid FBX clips directly from Hugging Face (Linzhan/Mixamo-Animations-Characters). Features automated SHA-256 integrity verification, categorized core animation catalog (locomotion, 1H sword & shield, 2H greatsword, archery, magic casting, hit reactions, deaths, social emotes), and seamless integration into Unreal Engine 5 and Unity animation state machines. |
 | [`game-engine`](skills/game-engine/SKILL.md) | Expert skill for building web-based game engines and games using HTML5, Canvas, WebGL, and JavaScript. Use when asked to create lightweight browser games, build canvas game engines (Phaser, Three.js, Babylon.js), implement collision detection, game loops, or 2D tilemaps. Do NOT use for native desktop game engines like Unreal Engine 5 (use unreal-engine-master-suite), Unity (use unity-engine-suite), or Godot (use godot-engine-suite). |
 
-### 🤖 Artificial Intelligence, MLOps & Autonomous Agents (21 Skills)
+### 🤖 Artificial Intelligence, MLOps & Autonomous Agents (24 Skills)
 
 | Skill | Description |
 | :--- | :--- |
+| [ecc-agent-shield](skills/ecc-agent-shield/SKILL.md) | Agent harness security gate and continuous learning engine inspired by affaan-m/ECC. Intercepts destructive commands and compiles resolved bugs into persistent instinct rules. |
+| [context-mode](skills/context-mode/SKILL.md) | Terminal execution sandbox with local SQLite FTS5 full-text indexing. Captures tool and test outputs into an indexed database, returning only concise summaries (90-99% token reduction). |
+| [caveman-compress](skills/caveman-compress/SKILL.md) | Extreme token economy engine and telegraphic communication suite. Strips conversational filler, cuts output tokens by up to 65%, and compresses prompt/system instructions by ~46%. |
 | [`mlops-llm-fine-tuning-training-suite`](skills/mlops-llm-fine-tuning-training-suite/SKILL.md) | State-of-the-Art LLM Fine-Tuning & Training Suite: Axolotl, Unsloth 5x faster training, PEFT (LoRA/QLoRA), GRPO reinforcement learning from human/rule feedback, TRL, PyTorch FSDP multi-GPU, and DSPy declarative prompt optimization. |
 | [`mlops-llm-infrastructure-suite`](skills/mlops-llm-infrastructure-suite/SKILL.md) | High-Throughput LLM & MLOps Infrastructure Suite: Low-latency inference with vLLM, serverless GPU scaling with Modal, HuggingFace Hub artifact governance, and quantized Llama.cpp deployment. |
 | [`llm-structured-generation-eval-suite`](skills/llm-structured-generation-eval-suite/SKILL.md) | Structured LLM Generation, Quantization & Evaluation Suite: JSON/grammar constrained generation (Outlines, Guidance), LM Evaluation Harness, Weights & Biases telemetry, and GGUF quantization. |
@@ -293,10 +296,14 @@ redis-cli SET hermes:skill:hermes-omni-stealth-powerhouse:path "$HOME/.hermes/sk
 | [`mcp-builder`](skills/mcp-builder/SKILL.md) | Guide for creating high-quality MCP (Model Context Protocol) servers that enable LLMs to interact with external services through well-designed tools. Use when building MCP servers to integrate external APIs or services, whether in Python (FastMCP) or Node/TypeScript (MCP SDK). |
 | [`conversational-dynamics-profiler`](skills/conversational-dynamics-profiler/SKILL.md) | Deep psychological profiling, interpersonal relationship intelligence, and behavioral dynamics auditing from raw chat archives (WhatsApp, Meta, Telegram, Discord, CSV). Computes RTT latency, burstiness, Shannon entropy, Gottman 5:1 golden ratio, Bids for Connection, Markov state transitions, and Non-Violent Communication (CNV) reframing. |
 
-### 💻 Software Engineering, Testing, Databases & DevOps (25 Skills)
+### 💻 Software Engineering, Testing, Databases & DevOps (29 Skills)
 
 | Skill | Description |
 | :--- | :--- |
+| [karpathy-guidelines](skills/karpathy-guidelines/SKILL.md) | Andrej Karpathy 4 foundational laws (Think, Simplicity, Surgical, Goal-Driven) combined with Ponytail anti-overengineering and dead-code elimination. |
+| [gstack-startup-pack](skills/gstack-startup-pack/SKILL.md) | Full Y Combinator product delivery and startup leadership suite inspired by Garry Tan (gstack). Deploys specialized personas (/plan-ceo-review, /plan-eng-review, /ship). |
+| [socratic-spec-architect](skills/socratic-spec-architect/SKILL.md) | Matt Pocock Socratic engineering methodology for AI agents. Enforces relentless clarifying interviews (/grill-me, /grill-with-docs) before code, and structured session handoffs (/handoff). |
+| [graphify-ast-knowledge](skills/graphify-ast-knowledge/SKILL.md) | Deterministic Tree-Sitter and AST codebase knowledge graph builder. Maps symbols, dependencies, and routes into queryable graph.json and interactive graph.html (-80% exploration tokens). |
 | [`hermes-omni-stealth-powerhouse`](skills/hermes-omni-stealth-powerhouse/SKILL.md) | Universal Stealth Web & Anti-Ban Powerhouse Suite for Linux VPS (v5.5 Armor Edition): Immunized against datacenter IP bans, Hetzner abuse notices (abuse@hetzner.com), SSRF attacks, WebRTC IP leaks, and RAM saturation via 8 Zero-Trust shields (Dual-Stack IPv4/IPv6, 3xx redirect interceptor, V8 256MB cap, serialized flock, per-domain rate limiting, and prompt injection demarcation). |
 | [`software-engineering-studio-suite`](skills/software-engineering-studio-suite/SKILL.md) | Comprehensive Software Engineering Suite: Enterprise backend architecture, database query optimization, data engineering ETL pipelines, security audits, SRE observability, DevOps automation, and rigorous code reviews. |
 | [`software-dev-methodology-superpowers-suite`](skills/software-dev-methodology-superpowers-suite/SKILL.md) | Elite Software Engineering Methodology Suite (SWE-bench & Superpowers): Systematic debugging (Evidence Gate), strict Test-Driven Development (TDD), property-based fuzzing invariants, subagent delegation, and structured writing plans. |
@@ -323,10 +330,13 @@ redis-cli SET hermes:skill:hermes-omni-stealth-powerhouse:path "$HOME/.hermes/sk
 | [`python-pypi-package-builder`](skills/python-pypi-package-builder/SKILL.md) | End-to-end skill for building, testing, linting, versioning, and publishing a production-grade Python library to PyPI. Covers all four build backends (setuptools+setuptools_scm, hatchling, flit, poetry), PEP 440 versioning, semantic versioning, dynamic git-tag versioning, OOP/SOLID design, type hints (PEP 484/526/544/561), Trusted Publishing (OIDC), and the full PyPA packaging flow. Use for: creating Python packages, pip-installable SDKs, CLI tools, framework plugins, pyproject.toml setup, py.typed, setuptools_scm, semver, mypy, pre-commit, GitHub Actions CI/CD, or PyPI publishing. |
 | [`unlazy`](skills/unlazy/SKILL.md) | Enforces completion discipline for substantial autonomous work by writing acceptance gates before execution, decomposing work with the Depth Tree, running approved checks, and re-verifying evidence before reporting. Use when an agent faces a long or multi-part task, work that has returned half-done, an exhaustive audit or build, parallel leaves or pipelines, or explicit triggers such as /unlazy, $unlazy, "tree N", "gates", and "do not stop until it is done". |
 
-### 🎨 Frontend Engineering, Design Systems & Visual Arts (21 Skills)
+### 🎨 Frontend Engineering, Design Systems & Visual Arts (24 Skills)
 
 | Skill | Description |
 | :--- | :--- |
+| [diagram-design-svg](skills/diagram-design-svg/SKILL.md) | Editorial technical diagram generator producing 45+ types of standalone HTML+SVG architecture diagrams with zero external JavaScript or CDN dependencies. |
+| [isometric-anatomy-svg](skills/isometric-anatomy-svg/SKILL.md) | Interactive, standalone isometric SVG technical illustrations and mechanical system cutaways inspired by wheresryan22/anatomy. Visualizes complex architectures as 3D exploded diagrams. |
+| [impeccable-design-engine](skills/impeccable-design-engine/SKILL.md) | 62-rule local frontend design linter and polish engine (zero API token cost) inspired by Paul Bakaus. Enforces strict typographic scale, 4px/8px rhythm, and WCAG contrast. |
 | [`frontend-mobile-cms-engineering-suite`](skills/frontend-mobile-cms-engineering-suite/SKILL.md) | Cross-Platform Frontend, Mobile & CMS Engineering Suite: Modern React/Vue frontend architecture, cross-platform mobile app development, headless CMS engineering, mobile screenshot automation, UI copywriting templates, and open-source documentation curation. |
 | [`frontend-reference-match`](skills/frontend-reference-match/SKILL.md) | Exact reference-matching frontend reproduction pipeline. Enforces strict visual matching, local serving (http://localhost:3000), multi-round Puppeteer screenshot diffing, and anti-generic craft guardrails (banning default Tailwind palettes, flat shadows, and transition-all). |
 | [`anti-ui-slop`](skills/anti-ui-slop/SKILL.md) | Master Anti-UI Slop & UI Design Pro System. Eliminates generic AI-generated interfaces and builds production-grade software by combining UIZZE 800,000+ real web and iOS screens with 25+ foundational design laws across color theory (4-layer system, OKLCH, dark mode), layout, typography, cards, spacing, and micro-interactions. Use when designing, redesigning, polishing, critiquing, or pre-ship reviewing web or mobile apps. Trigger with "anti-ui-slop", "stop UI slop", "ui-design-pro", "ground this UI", "make it look professional", or "run the UI finish gate". |
@@ -373,10 +383,12 @@ redis-cli SET hermes:skill:hermes-omni-stealth-powerhouse:path "$HOME/.hermes/sk
 | [`material-3`](skills/material-3/SKILL.md) | Implement Google's Material Design 3 (Material You) UI system. Primary: Jetpack Compose Material3 (MaterialTheme, components, adaptive layout). Also Flutter and limited web (@material/web, maintenance mode). Covers tokens, 30+ components, layout, theming, M3 Expressive (platform matrix), and accessibility. Use when: "material design", "MD3", "material you", "Jetpack Compose", "MaterialTheme", "material component", "md3 button". |
 | [`spatial-computing-xr-visionos-suite`](skills/spatial-computing-xr-visionos-suite/SKILL.md) | Spatial Computing, Apple visionOS & XR Development Suite: Apple Vision Pro native spatial apps, Metal graphics pipelines, cockpit interactions, and immersive 3D XR UI architecture. |
 
-### 🔒 Cybersecurity, Privacy & Smart Contracts (6 Skills)
+### 🔒 Cybersecurity, Privacy & Smart Contracts (8 Skills)
 
 | Skill | Description |
 | :--- | :--- |
+| [cloudflare-adversarial-audit](skills/cloudflare-adversarial-audit/SKILL.md) | Cloudflare 6-phase security auditing protocol with mandatory adversarial falsification. Requires an independent skeptic verifier agent to actively attempt to disprove findings before logging. |
+| [	rail-of-bits-security-engine](skills/trail-of-bits-security-engine/SKILL.md) | Trail of Bits software security methodology and static analysis orchestrator. Enforces automated AST taint tracking, constant-time arithmetic verification, and supply chain audits. |
 | [`bridgesecurity-auditor`](skills/bridgesecurity-auditor/SKILL.md) | Perform senior-level security audits, input defense, and Zero-Trust secrets governance based on BridgeMind BridgeSecurity standards. Scans for OWASP Top 10, CWE Top 25, high-entropy secrets and API keys, actively defends against prompt-injections during web scraping, enforces age/SOPS envelope encryption in Git, ephemeral environment injection, and native in-memory secret masking (Zero-Docker). For auditing third-party agent skills/plugins, use skill-security-auditor. |
 | [`skill-security-auditor`](skills/skill-security-auditor/SKILL.md) | Audit and verify third-party AI agent skills and plugins before installation. Detects prompt injections in markdown/docstrings, dangerous tool permissions (raw shell execution, network exfiltration, arbitrary file system writes), dependency supply-chain risks, and issues a deterministic PASS / WARN / FAIL security verdict. For general source-code application vulnerability scanning, use bridgesecurity-auditor or vuln-scan. |
 | [`vuln-scan`](skills/vuln-scan/SKILL.md) | Static source-code vulnerability scan. Reads a target directory (and THREAT_MODEL.md if present), spawns parallel review subagents per focus area, and writes VULN-FINDINGS.json + .md for /triage to consume. Read-only — no building, running, or network. For execution-verified crashes, use vuln-pipeline instead. Use when asked to "scan for vulns", "review this code for security issues", "find bugs in <dir>", or as the step between /threat-model and /triage. |
