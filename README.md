@@ -4,18 +4,18 @@
 [![Google Antigravity](https://img.shields.io/badge/Antigravity-2.0%20Ready-4285F4.svg)](https://antigravity.google)
 [![Claude Code Ready](https://img.shields.io/badge/Claude%20Code-Compatible-D97706.svg)](CLAUDE.md)
 [![Hermes Agent Ready](https://img.shields.io/badge/Hermes%20Agent-Compatible-10B981.svg)](hermes/)
-[![Elite Skills](https://img.shields.io/badge/Elite%20Skills-175%20Active-success.svg)](skills/)
-[![Hermes Mega-Suites](https://img.shields.io/badge/Hermes%20Mega--Suites-10%20Suites-FF6B6B.svg)](hermes/mega-suites/)
+[![Elite Skills](https://img.shields.io/badge/Elite%20Skills-184%20Active-success.svg)](skills/)
+[![Hermes Mega-Suites](https://img.shields.io/badge/Hermes%20Mega--Suites-11%20Suites-FF6B6B.svg)](hermes/mega-suites/)
 [![Hermes Master-Suites](https://img.shields.io/badge/Hermes%20Master--Suites-63%20Suites-orange.svg)](hermes/master-suites/)
 [![DeepMind Science](https://img.shields.io/badge/DeepMind%20Science-41%20Skills-8A2BE2.svg)](plugins/science/)
 [![Google Stitch](https://img.shields.io/badge/Google%20Stitch-16%20Skills-4285F4.svg)](plugins/stitch-design/)
 [![MCP Servers](https://img.shields.io/badge/MCP%20Servers-8%20Bundled-blue.svg)](mcp/)
-[![Total Tools](https://img.shields.io/badge/Total%20Tools-300%20Skills%20%26%20Suites-brightgreen.svg)](#)
+[![Total Tools](https://img.shields.io/badge/Total%20Tools-310%20Skills%20%26%20Suites-brightgreen.svg)](#)
 [![Integrity Score](https://img.shields.io/badge/Audit%20Score-100%2F100-brightgreen.svg)](scripts/verify_skills.py)
 [![CI Status](https://img.shields.io/badge/CI-Passing-brightgreen.svg)](.github/workflows/validate-skills.yml)
 
 > **The Ultimate Production-Grade Skill & Customization Suite for [Google Antigravity](https://antigravity.google), [Anthropic Claude Code](CLAUDE.md), [Hermes Agent](hermes/), Cursor, and Modern AI Coding Agents.**  
-> Unifies **175 audited elite skills**, **10 Hermes Mega-Suites** (~330,000 words designed for autonomous marathon tasks), **63 Hermes Master-Suites** (including the new Hetzner-shielded `hermes-omni-stealth-powerhouse`), the official **Google DeepMind Science toolkit** (41 skills + 3D Mol* interactive sidecar), the **Google Labs Stitch design suite** (16 skills across 3 plugins), **8 pre-bundled MCP servers** (Blender, Cloud Run, Firebase, Genkit, Science Mol*, eBay, Vinted, Web Tools), and one-click installers.
+> Unifies **184 audited elite skills**, **11 Hermes Mega-Suites** (~350,000 words designed for autonomous marathon tasks), **63 Hermes Master-Suites** (including the new Hetzner-shielded `hermes-omni-stealth-powerhouse`), the official **Google DeepMind Science toolkit** (41 skills + 3D Mol* interactive sidecar), the **Google Labs Stitch design suite** (16 skills across 3 plugins), **8 pre-bundled MCP servers** (Blender, Cloud Run, Firebase, Genkit, Science Mol*, eBay, Vinted, Web Tools), and one-click installers.
 
 ---
 
@@ -25,11 +25,11 @@
 2. [Universal Multi-Agent Compatibility](#universal-multi-agent-compatibility)
 3. [One-Click Installation](#one-click-installation)
 4. [Hermes Autonomous Agent Ecosystem](#hermes-autonomous-agent-ecosystem)
-   - [10 All-in-One Mega-Suites](#10-all-in-one-mega-suites-330000-words)
+   - [11 All-in-One Mega-Suites](#11-all-in-one-mega-suites-350000-words)
    - [63 Consolidated Master Suites](#63-consolidated-master-suites)
    - [Hermes MCP Servers & Autonomous Tools](#hermes-mcp-servers-autonomous-tools)
    - [1-Click Deployment for Hermes Agent (Telegram / Hetzner)](#-1-click-deployment-for-hermes-agent-telegram--hetzner)
-5. [Elite Skills Catalog (175 Skills)](#elite-skills-catalog-175-skills)
+5. [Elite Skills Catalog (184 Skills)](#elite-skills-catalog-184-skills)
 6. [Google DeepMind Science Suite (41 Skills)](#google-deepmind-science-suite-41-skills)
 7. [Google Labs Stitch Design Suite (16 Skills)](#google-labs-stitch-design-suite-16-skills)
 8. [Plugins & MCP Architecture](#plugins-mcp-architecture)
@@ -102,7 +102,7 @@ chmod +x scripts/install.sh
 
 The [`hermes/`](hermes/) directory integrates the complete, consolidated Hermes ecosystem:
 
-### 🌟 10 All-in-One Mega-Suites (~330,000 Words)
+### 🌟 11 All-in-One Mega-Suites (~350,000 Words)
 For long-running autonomous marathon sessions where an agent requires deep, comprehensive domain mastery without token-swapping:
 
 | Mega-Suite | Scope & Capabilities |
@@ -117,6 +117,7 @@ For long-running autonomous marathon sessions where an agent requires deep, comp
 | [`08_mega-science-academic-and-translation-suite`](hermes/mega-suites/08_mega-science-academic-and-translation-suite/SKILL.md) | Academic Research & Global Cultural Intelligence Suite: arXiv scientific literature mining, LaTeX drafting, interdisciplinary humanities research (History, Geography, Psychology, Narratology), and technical translation across French, Korean, Chinese, and English. |
 | [`09_mega-spatial-computing-and-web3-suite`](hermes/mega-suites/09_mega-spatial-computing-and-web3-suite/SKILL.md) | Next-Gen Spatial & Decentralized Technology Suite: Apple Vision Pro native spatial computing (visionOS/Metal), immersive XR UI, Solidity smart contracts, blockchain vulnerability auditing, zero-knowledge proofs (ZK), and crypto social intelligence. |
 | [`10_mega-autonomous-agents-and-mcp-orchestration-suite`](hermes/mega-suites/10_mega-autonomous-agents-and-mcp-orchestration-suite/SKILL.md) | Autonomous Agent Governance & Protocol Engine Suite: Hermes Agent core runtime & self-evolution, cross-platform delegation (Claude Code, Codex, OpenCode), native Model Context Protocol (MCP) toolchain, red-teaming & jailbreak audits (Godmode), and browser automation harness. |
+| [`11_mega-narrative-worldbuilding-and-cinematic-suite`](hermes/mega-suites/11_mega-narrative-worldbuilding-and-cinematic-suite/SKILL.md) | Universal Master Narrative, Worldbuilding, Fiction & AI Cinematic Video Suite (v3.0): 24 story skills, deterministic continuity compilation (story check), South Park causal plotting (Therefore/But), Pixar spine, Obsidian lore matrix, anti-slop prose styling, Slate coverage, and automated FFmpeg video production. |
 
 ---
 

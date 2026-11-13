@@ -4,7 +4,7 @@
 
 > **Deux Niveaux d'Intégration Disponibles :**
 
-> 1. **10 Mega-Suites All-in-One** (`00_Hermes_Mega_Suites_All_In_One/`) : 10 dossiers massifs regroupant tous les métiers.
+> 1. **11 Mega-Suites All-in-One** (`00_Hermes_Mega_Suites_All_In_One/` ou `hermes/mega-suites/`) : 11 dossiers massifs regroupant tous les métiers de l'ingénierie, du marketing, de la finance, du design et de la narration/cinéma IA.
 
 > 2. **50 Master Suites Spécialisées** (`00_Hermes_Merged_Master_Suites/`) : Découpage modulaire par framework et spécialité.
 

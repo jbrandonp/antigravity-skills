@@ -1,11 +1,11 @@
-# 🏛️ Les 10 Mega-Piliers Stratégiques Hermes Agent (All-in-One)
+# 🏛️ Les 11 Mega-Piliers Stratégiques Hermes Agent (All-in-One)
 
-> **Niveau Ultime de Consolidation :** Les 50 Master Suites et les 330+ micro-compétences ont été fusionnées en **10 Méga-Suites Stratégiques** complètes.
+> **Niveau Ultime de Consolidation :** Les Master Suites et micro-compétences ont été fusionnées en **11 Méga-Suites Stratégiques** complètes.
 
-> **Idéal pour l'intégration :** Copiez simplement l'un de ces 10 dossiers dans Antigravity (`~/.gemini/config/skills/`) pour charger en une seule fois l'intégralité du pôle métier correspondant.
+> **Idéal pour l'intégration :** Copiez simplement l'un de ces 11 dossiers dans Antigravity (`~/.gemini/config/skills/`) ou Claude (`~/.agents/skills/`) pour charger en une seule fois l'intégralité du pôle métier correspondant.
 
 
-## 📊 Tableau de Bord des 10 Mega-Suites
+## 📊 Tableau de Bord des 11 Mega-Suites
 
 | N° | Mega-Pilier | Master Suites Incluses | Volume (Mots) | Thématique Couverte |
 |:---:|---|:---:|:---:|---|
@@ -19,10 +19,11 @@
 | 08 | [**`08_mega-science-academic-and-translation-suite`**](08_mega-science-academic-and-translation-suite/SKILL.md) | **13** | 32,477 | Academic Research & Global Cultural Intelligence Suite: arXiv scientific literature mining, LaTeX drafting, in... |
 | 09 | [**`09_mega-spatial-computing-and-web3-suite`**](09_mega-spatial-computing-and-web3-suite/SKILL.md) | **9** | 8,590 | Next-Gen Spatial & Decentralized Technology Suite: Apple Vision Pro native spatial computing (visionOS/Metal),... |
 | 10 | [**`10_mega-autonomous-agents-and-mcp-orchestration-suite`**](10_mega-autonomous-agents-and-mcp-orchestration-suite/SKILL.md) | **21** | 49,451 | Autonomous Agent Governance & Protocol Engine Suite: Hermes Agent core runtime & self-evolution, cross-platfor... |
+| 11 | [**`11_mega-narrative-worldbuilding-and-cinematic-suite`**](11_mega-narrative-worldbuilding-and-cinematic-suite/SKILL.md) | **5** | 16,500 | Universal Master Narrative, Worldbuilding, Fiction & AI Cinematic Video Suite: 24 story skills, continuity compiler, South Park causal plotting, Pixar spine, Obsidian lore matrix, anti-slop prose styling, Slate coverage, and automated FFmpeg video production. |
 
 ---
 
-## 🔍 Détail Architectural des 10 Piliers
+## 🔍 Détail Architectural des 11 Piliers
 
 ### 1. `01_mega-game-development-and-3d-suite`
 - **Chemin SKILL.md :** [`01_mega-game-development-and-3d-suite/SKILL.md`](01_mega-game-development-and-3d-suite/SKILL.md)
@@ -73,3 +74,9 @@
 - **Chemin SKILL.md :** [`10_mega-autonomous-agents-and-mcp-orchestration-suite/SKILL.md`](10_mega-autonomous-agents-and-mcp-orchestration-suite/SKILL.md)
 - **Nombre de Master Suites fusionnées :** 21
 - **Master Suites incluses :** `autonomous-agents-and-mcp-orchestration-suite`, `hermes-core-orchestration-suite`, `multi-agent-delegation-suite`, `meta-agent-governance-automation-suite`, `mcp-redteaming-gaming-meta-suite`, `data-engineering-browser-automation-suite`, `core-orchestration-suite`, `1-hermes-core-orchestration-suite`, `agent-delegation-suite`, `2-multi-agent-delegation-suite`, `agent-governance-automation-suite`, `3-meta-agent-governance-automation-suite`, `redteaming-gaming-meta-suite`, `4-mcp-redteaming-gaming-meta-suite`, `engineering-browser-automation-suite`, `5-data-engineering-browser-automation-suite`, `core-orchestration-suite`, `agent-delegation-suite`, `agent-governance-automation-suite`, `redteaming-gaming-meta-suite`, `engineering-browser-automation-suite`
+
+### 11. `11_mega-narrative-worldbuilding-and-cinematic-suite`
+- **Chemin SKILL.md :** [`11_mega-narrative-worldbuilding-and-cinematic-suite/SKILL.md`](11_mega-narrative-worldbuilding-and-cinematic-suite/SKILL.md)
+- **Nombre de Master Suites fusionnées :** 5 (regroupant 13 frameworks d'Agent Skills majeurs, dont les 24 story-skills)
+- **Master Suites incluses :** `story-skills-continuity-compiler`, `writers-room-causal-engine`, `causal-worldbuilding-obsidian-matrix`, `anti-slop-muse-and-prose-craft`, `cinematic-slate-and-video-production`
+- **Outils Python inclus :** `story_continuity_compiler.py` (linter et compilateur de continuité), `story_bible_manager.py` (gestionnaire Obsidian Dataview), `cinematic_prompt_compiler.py` (prompt studio IA multi-modèles), `ffmpeg_story_assembler.py` (pipeline de montage automatique).

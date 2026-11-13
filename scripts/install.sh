@@ -106,4 +106,4 @@ if [ "$TARGET" = "All" ] || [ "$TARGET" = "Claude" ]; then
     cp -R "${SCRIPT_DIR}/hermes/mega-suites/"* "${DEST_CLAUDE_SKILLS}/"
 fi
 
-echo "✓ Installation complete! 172 skills & suites (112 elite, 10 mega-suites, 50 master suites, 41 science, 16 stitch) and 8 MCP servers are active and ready."
+echo "✓ Installation complete! 258 skills & suites (184 elite, 11 mega-suites, 63 master suites, 41 science, 16 stitch) and 8 MCP servers are active and ready."

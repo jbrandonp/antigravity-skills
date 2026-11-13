@@ -120,4 +120,4 @@ if ($Target -eq "All" -or $Target -eq "Claude") {
     Copy-Item -Path (Join-Path $ScriptDir "hermes\mega-suites\*") -Destination $DestClaudeSkills -Recurse -Force
 }
 
-Write-Host "[OK] Installation complete! 172 skills and suites (112 elite, 10 mega-suites, 50 master suites, 41 science, 16 stitch) and 8 MCP servers are active and ready." -ForegroundColor Green
+Write-Host "[OK] Installation complete! 258 skills and suites (184 elite, 11 mega-suites, 63 master suites, 41 science, 16 stitch) and 8 MCP servers are active and ready." -ForegroundColor Green
