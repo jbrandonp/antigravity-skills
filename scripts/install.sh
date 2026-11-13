@@ -17,7 +17,7 @@ if [ "$TARGET" = "All" ] || [ "$TARGET" = "Antigravity" ]; then
 
     echo "--> Copying skills to ${DEST_SKILLS}..."
     cp -R "${SCRIPT_DIR}/skills/"* "${DEST_SKILLS}/"
-    echo "--> Deploying Hermes Master-Suites (50) and Mega-Suites (10) into ${DEST_SKILLS}..."
+    echo "--> Deploying Hermes Master-Suites (63) and Mega-Suites (11) into ${DEST_SKILLS}..."
     cp -R "${SCRIPT_DIR}/hermes/master-suites/"* "${DEST_SKILLS}/"
     cp -R "${SCRIPT_DIR}/hermes/mega-suites/"* "${DEST_SKILLS}/"
 

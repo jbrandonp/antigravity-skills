@@ -11,13 +11,13 @@ This repository is organized into distinct, modular layers designed for multi-ag
 
 ```
 antigravity-skills/
-├── skills/                  ← 117 Audited Antigravity Elite Skills
+├── skills/                  ← 187 Audited Antigravity Elite Skills
 ├── plugins/                 ← 9 Turnkey Plugins (DeepMind Science, Stitch, Android, Firebase)
 │   ├── science/             ← 41 DeepMind Science Skills + Mol* 3D Sidecar
 │   └── stitch-*/            ← 16 Google Labs Stitch Design Skills
 ├── hermes/                  ← Hermes Autonomous Agent Ecosystem
-│   ├── mega-suites/         ← 10 All-in-One Mega-Suites (~330,000 words total)
-│   ├── master-suites/       ← 50 Consolidated Master Suites (330+ micro-skills unified)
+│   ├── mega-suites/         ← 11 All-in-One Mega-Suites (~350,000 words total)
+│   ├── master-suites/       ← 63 Consolidated Master Suites (330+ micro-skills unified)
 │   ├── mcp-servers/         ← eBay, Vinted, Web Tools MCP servers
 │   ├── scripts/             ← A2A Bus, Security Audits, DB Sync, Forecast
 │   ├── security-tools/      ← Gitleaks secret detection configs
@@ -31,7 +31,7 @@ antigravity-skills/
 ## 🧭 How Claude Code Should Navigate Skills
 
 ### 1. Broad Autonomous Agency → Hermes Mega-Suites (`hermes/mega-suites/`)
-When the user asks for end-to-end autonomous marathon work, use the **10 Hermes Mega-Suites**:
+When the user asks for end-to-end autonomous marathon work, use the **11 Hermes Mega-Suites**:
 1. [`hermes-mega-fullstack-web-desktop`](hermes/mega-suites/hermes-mega-fullstack-web-desktop/SKILL.md): Complete web & desktop lifecycle.
 2. [`hermes-mega-devops-cloud-infrastructure`](hermes/mega-suites/hermes-mega-devops-cloud-infrastructure/SKILL.md): K8s, Terraform, Docker, CI/CD, SRE.
 3. [`hermes-mega-cybersecurity-pentesting-defense`](hermes/mega-suites/hermes-mega-cybersecurity-pentesting-defense/SKILL.md): OWASP, CTF, hardening, OSINT, red/blue teaming.
@@ -42,9 +42,10 @@ When the user asks for end-to-end autonomous marathon work, use the **10 Hermes 
 8. [`hermes-mega-autonomous-agents-tools`](hermes/mega-suites/hermes-mega-autonomous-agents-tools/SKILL.md): Self-evolution, orchestration, multi-agent teams.
 9. [`hermes-mega-product-business-enterprise`](hermes/mega-suites/hermes-mega-product-business-enterprise/SKILL.md): Specs, architecture, finance, marketing, legal.
 10. [`hermes-mega-specialized-domains-languages`](hermes/mega-suites/hermes-mega-specialized-domains-languages/SKILL.md): Rust, Go, C++, reverse engineering, hardware/IoT.
+11. [`11_mega-narrative-worldbuilding-and-cinematic-suite`](hermes/mega-suites/11_mega-narrative-worldbuilding-and-cinematic-suite/SKILL.md): Universal narrative, worldbuilding, fiction & AI cinematic video suite.
 
 ### 2. Targeted Execution & Clean Patterns → Antigravity Elite Skills (`skills/`)
-For specific engineering patterns, consult the **117 Antigravity Elite Skills** (e.g. `fastapi-sqlite-production`, `bridgesecurity-auditor`, `duckdb-parquet-analyst`, `shadcn`, `expo-router`).
+For specific engineering patterns, consult the **187 Antigravity Elite Skills** (e.g. `fastapi-sqlite-production`, `bridgesecurity-auditor`, `duckdb-parquet-analyst`, `shadcn`, `expo-router`, `context-mode`, `trail-of-bits-security-engine`).
 
 ### 3. Scientific & Biomedical Research → DeepMind Science (`plugins/science/`)
 For AlphaFold structures, ClinVar genetics, ChEMBL pharmacology, or arXiv literature queries, leverage the DeepMind Science suite.
@@ -62,7 +63,7 @@ python scripts/verify_skills.py
 The script audits:
 - YAML frontmatter validity (`name`, `description`).
 - Folder name and skill `name` exact match.
-- Syntax validation of 430+ companion Python scripts.
+- Syntax validation of 518+ companion Python scripts and automated execution via scripts/test_companion_scripts.py.
 - MCP JSON tool schema integrity.
 - Absence of `__pycache__` and `.pyc` bytecode pollution.
 

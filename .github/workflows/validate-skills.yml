@@ -15,5 +15,7 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - name: Verify Skills Frontmatters
+      - name: Verify Skills Frontmatters & Integrity Gate
         run: python scripts/verify_skills.py
+      - name: Run Functional Companion Scripts Test Suite
+        run: python scripts/test_companion_scripts.py

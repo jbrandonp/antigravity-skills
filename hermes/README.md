@@ -6,15 +6,15 @@
 
 > 1. **11 Mega-Suites All-in-One** (`00_Hermes_Mega_Suites_All_In_One/` ou `hermes/mega-suites/`) : 11 dossiers massifs regroupant tous les métiers de l'ingénierie, du marketing, de la finance, du design et de la narration/cinéma IA.
 
-> 2. **50 Master Suites Spécialisées** (`00_Hermes_Merged_Master_Suites/`) : Découpage modulaire par framework et spécialité.
+> 2. **63 Master Suites Spécialisées** (`hermes/master-suites/`) : Découpage modulaire par framework et spécialité (incluant `hermes-omni-stealth-powerhouse` v5.5).
 
 
 ## 🗂️ Arborescence Finale du Répertoire
 
 ```text
 Hermes_Full_Ecosystem_Pack/
-├── 00_Hermes_Mega_Suites_All_In_One/   ← LES 10 MÉGA-PILIERS STRATÉGIQUES ALL-IN-ONE
-│   ├── MEGA_SUITES_INDEX.md            ← Index et guide des 10 Méga-Suites
+├── 00_Hermes_Mega_Suites_All_In_One/   ← LES 11 MÉGA-PILIERS STRATÉGIQUES ALL-IN-ONE
+│   ├── MEGA_SUITES_INDEX.md            ← Index et guide des 11 Méga-Suites
 │   ├── 01_mega-game-development-and-3d-suite/
 │   ├── 02_mega-ai-mlops-and-llm-engineering-suite/
 │   ├── 03_mega-software-engineering-and-devops-suite/
@@ -24,8 +24,9 @@ Hermes_Full_Ecosystem_Pack/
 │   ├── 07_mega-creative-arts-and-visual-motion-suite/
 │   ├── 08_mega-science-academic-and-translation-suite/
 │   ├── 09_mega-spatial-computing-and-web3-suite/
-│   └── 10_mega-autonomous-agents-and-mcp-orchestration-suite/
-├── 00_Hermes_Merged_Master_Suites/     ← LES 50 MASTER SUITES SPÉCIALISÉES (100% AUDITÉES & CORRIGÉES)
+│   ├── 10_mega-autonomous-agents-and-mcp-orchestration-suite/
+│   └── 11_mega-narrative-worldbuilding-and-cinematic-suite/
+├── 00_Hermes_Merged_Master_Suites/     ← LES 63 MASTER SUITES SPÉCIALISÉES (100% AUDITÉES & CORRIGÉES)
 │   ├── MAPPING_AND_INDEX.md            ← L'index détaillé des 50 suites et de leurs 330+ membres
 ├── 01_Hermes_Skills_Core_Library/      ← Bibliothèque originale de 309 skills unitaires
 ├── 02_Grok_Hermes_Skills/              ← Skills d'orchestration Grok / Hermes originaux
