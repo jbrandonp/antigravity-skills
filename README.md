@@ -6,7 +6,7 @@
 [![Hermes Agent Ready](https://img.shields.io/badge/Hermes%20Agent-Compatible-10B981.svg)](hermes/)
 [![Elite Skills](https://img.shields.io/badge/Elite%20Skills-187%20Active-success.svg)](skills/)
 [![Hermes Mega-Suites](https://img.shields.io/badge/Hermes%20Mega--Suites-11%20Suites-FF6B6B.svg)](hermes/mega-suites/)
-[![Hermes Master-Suites](https://img.shields.io/badge/Hermes%20Master--Suites-78%20Suites-orange.svg)](hermes/master-suites/)
+[![Hermes Master-Suites](https://img.shields.io/badge/Hermes%20Master--Suites-76%20Suites-orange.svg)](hermes/master-suites/)
 [![DeepMind Science](https://img.shields.io/badge/DeepMind%20Science-41%20Skills-8A2BE2.svg)](plugins/science/)
 [![Google Stitch](https://img.shields.io/badge/Google%20Stitch-16%20Skills-4285F4.svg)](plugins/stitch-design/)
 [![MCP Servers](https://img.shields.io/badge/MCP%20Servers-8%20Bundled-blue.svg)](mcp/)
@@ -15,7 +15,7 @@
 [![CI Status](https://img.shields.io/badge/CI-Passing-brightgreen.svg)](.github/workflows/validate-skills.yml)
 
 > **The Ultimate Production-Grade Skill & Customization Suite for [Google Antigravity](https://antigravity.google), [Anthropic Claude Code](CLAUDE.md), [Hermes Agent](hermes/), Cursor, and Modern AI Coding Agents.**  
-> Unifies **170 audited elite skills**, **11 Hermes Mega-Suites** (~350,000 words designed for autonomous marathon tasks), **78 Hermes Master-Suites** (including the new Hetzner-shielded `hermes-omni-stealth-powerhouse`), the official **Google DeepMind Science toolkit** (41 skills + 3D Mol* interactive sidecar), the **Google Labs Stitch design suite** (16 skills across 3 plugins), **8 pre-bundled MCP servers** (Blender, Cloud Run, Firebase, Genkit, Science Mol*, eBay, Vinted, Web Tools), and one-click installers.
+> Unifies **167 audited elite skills**, **11 Hermes Mega-Suites** (~350,000 words designed for autonomous marathon tasks), **76 Hermes Master-Suites** (including the new Hetzner-shielded `hermes-omni-stealth-powerhouse`), the official **Google DeepMind Science toolkit** (41 skills + 3D Mol* interactive sidecar), the **Google Labs Stitch design suite** (16 skills across 3 plugins), **8 pre-bundled MCP servers** (Blender, Cloud Run, Firebase, Genkit, Science Mol*, eBay, Vinted, Web Tools), and one-click installers.
 
 ---
 
@@ -29,7 +29,7 @@
    - [75 Consolidated Master Suites](#63-consolidated-master-suites)
    - [Hermes MCP Servers & Autonomous Tools](#hermes-mcp-servers-autonomous-tools)
    - [1-Click Deployment for Hermes Agent (Telegram / Hetzner)](#-1-click-deployment-for-hermes-agent-telegram--hetzner)
-5. [Elite Skills Catalog (170 Skills)](#elite-skills-catalog-170-skills)
+5. [Elite Skills Catalog (167 Skills)](#elite-skills-catalog-167-skills)
 6. [Google DeepMind Science Suite (41 Skills)](#google-deepmind-science-suite-41-skills)
 7. [Google Labs Stitch Design Suite (16 Skills)](#google-labs-stitch-design-suite-16-skills)
 8. [Plugins & MCP Architecture](#plugins-mcp-architecture)
@@ -295,7 +295,6 @@ redis-cli SET hermes:skill:hermes-omni-stealth-powerhouse:path "$HOME/.hermes/sk
 
 | Skill | Description |
 | :--- | :--- |
-| [karpathy-guidelines](skills/karpathy-guidelines/SKILL.md) | Andrej Karpathy 4 foundational laws (Think, Simplicity, Surgical, Goal-Driven) combined with Ponytail anti-overengineering and dead-code elimination. |
 | [gstack-startup-pack](skills/gstack-startup-pack/SKILL.md) | Full Y Combinator product delivery and startup leadership suite inspired by Garry Tan (gstack). Deploys specialized personas (/plan-ceo-review, /plan-eng-review, /ship). |
 | [socratic-spec-architect](skills/socratic-spec-architect/SKILL.md) | Matt Pocock Socratic engineering methodology for AI agents. Enforces relentless clarifying interviews (/grill-me, /grill-with-docs) before code, and structured session handoffs (/handoff). |
 | [graphify-ast-knowledge](skills/graphify-ast-knowledge/SKILL.md) | Deterministic Tree-Sitter and AST codebase knowledge graph builder. Maps symbols, dependencies, and routes into queryable graph.json and interactive graph.html (-80% exploration tokens). |
@@ -304,7 +303,6 @@ redis-cli SET hermes:skill:hermes-omni-stealth-powerhouse:path "$HOME/.hermes/sk
 | [`software-dev-methodology-superpowers-suite`](skills/software-dev-methodology-superpowers-suite/SKILL.md) | Elite Software Engineering Methodology Suite (SWE-bench & Superpowers): Systematic debugging (Evidence Gate), strict Test-Driven Development (TDD), property-based fuzzing invariants, subagent delegation, and structured writing plans. |
 | [`github-devops-automation-suite`](skills/github-devops-automation-suite/SKILL.md) | Enterprise GitHub DevOps & Repository Lifecycle Suite: Automated PR reviews, issue triage, branch protection, repository mining, authentication tokens, codebase inspection, and strict gh CLI permission governance. |
 | [`senior-code-reviewer`](skills/senior-code-reviewer/SKILL.md) | Conduct structured senior-level code reviews, anti-bloat architectural audits (Google, Anthropic, Smol Architect), and exhaustive 9-dimension technical debt audits producing TECH_DEBT_AUDIT.md. Classifies findings by strict severity tiers (Critical, Major, Minor, Nit), eliminates speculative generality, and audits codebase health. |
-| [`systematic-debugging`](skills/systematic-debugging/SKILL.md) | Investigate and resolve complex bugs using the Anthropic SWE-bench Systematic Debugging standard. Enforces root-cause investigation, deterministic reproduction scripts, difference analysis, and regression guards before applying code fixes. |
 | [`advanced-software-architecture-security-suite`](skills/advanced-software-architecture-security-suite/SKILL.md) | Principal Software Architecture, Incident Response & Hardening Suite: Principal software architect guidance, senior developer code standards, incident response command (Sev-1/Sev-2), threat detection engineering, advanced Git branching workflows, minimal-change refactoring, and hardware FPGA digital design. |
 | [`quality-assurance-testing-suite`](skills/quality-assurance-testing-suite/SKILL.md) | Comprehensive QA, Performance & Accessibility Testing Suite: Automated API testing, WCAG accessibility auditing, performance benchmarking, test result analysis, and evidence capture. |
 | [`embedded-systems-suite`](skills/embedded-systems-suite/SKILL.md) | Bare-metal and Embedded Linux Systems Suite: C/C++ firmware engineering, Linux kernel device driver development, register-level debugging, and embedded QA automation. |
@@ -386,7 +384,6 @@ redis-cli SET hermes:skill:hermes-omni-stealth-powerhouse:path "$HOME/.hermes/sk
 | :--- | :--- |
 | [`digital-office-architect`](skills/digital-office-architect/SKILL.md) | Universal SME & Technical Trades Digital Office Architecture Suite. Master architectural and operational framework for designing, deploying, auditing, and maintaining a lightweight administrative office, anti-SaaS pipeline, and legal shield for ANY small business across 6 sector profiles (BTP J+14, Services J+7, Garages J+3, Healthcare J+5, Retail J+5, Real Estate J+10). Enforces Belgian/European socio-fiscal engineering (Smart Coop, INASTI 2026, Peppol XML UBL 2.1), 1-page contracting with 9 CGV clauses, and 8 production CLI tools with zero 'Any' typing. |
 | [`competitive-intelligence-os`](skills/competitive-intelligence-os/SKILL.md) | Professional Competitive Intelligence, Market Warfare, Win/Loss Forensics, and Operational Benchmarking Operating System. Fortune 500, SCIP, and McKinsey-grade strategic intelligence suite: KIQ decision router, Altman Z'-Score SME financial distress, Wardley mapping, Gartner Magic Quadrant vector SVG, Disruption Vulnerability Index (DVI 0-100), 8-second living battlecards, Win-Wire real-time sales alert publisher, and native CLI tooling. |
-| [`btp-digital-office-architect`](skills/btp-digital-office-architect/SKILL.md) | Master architectural and operational framework for launching, scaling, and auditing a digital administrative office (Bureau Numérique BTP) for construction craftspeople and technical SMEs in Belgium and Europe. Solves forgotten quotes with the "Devis sans oubli" protected Excel engine, Belgian socio-fiscal optimization (Smart CP 200, INASTI 2026, Peppol B2B UBL 2026), 7:00 AM supplier counter guerrilla sales, 9 CGV protection clauses, and automated CLI tooling. |
 | [`global-marketing-growth-suite`](skills/global-marketing-growth-suite/SKILL.md) | Master Growth Marketing & Acquisition Suite: Viral carousel design, content creation, Reddit community building, App Store Optimization (ASO), paid media audit, newsletter, and conversion optimization. |
 | [`china-growth-marketing-suite`](skills/china-growth-marketing-suite/SKILL.md) | Complete Chinese digital acquisition and e-commerce suite: Xiaohongshu (RED), Douyin, Bilibili, Baidu SEO, Cross-border E-commerce, and market localization. |
 | [`wechat-ecosystem-suite`](skills/wechat-ecosystem-suite/SKILL.md) | Comprehensive WeChat digital ecosystem suite: Mini-Program engineering, Official Account content curation, and community operations. |
