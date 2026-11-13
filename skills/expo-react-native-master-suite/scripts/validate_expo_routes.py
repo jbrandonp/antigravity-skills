@@ -85,6 +85,10 @@ def validate_expo_project(project_root: Path) -> bool:
         return True
 
 def main():
+    if len(sys.argv) > 1 and sys.argv[1] in ("-h", "--help"):
+        print("Usage: python validate_expo_routes.py [PROJECT_ROOT]")
+        print("Audits Expo apps for file-based routing conventions and layout hierarchies.")
+        sys.exit(0)
     target = Path(sys.argv[1]) if len(sys.argv) > 1 else Path(".")
     success = validate_expo_project(target)
     sys.exit(0 if success else 1)

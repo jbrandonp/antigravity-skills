@@ -653,15 +653,19 @@
   - `unity-multiplayer-engineer` (`01_Hermes_Skills_Core_Library\unity\unity-multiplayer-engineer\SKILL.md`)
   - `unity-shader-graph-artist` (`01_Hermes_Skills_Core_Library\unity\unity-shader-graph-artist\SKILL.md`)
 
-### 48. `unreal-engine-master-suite` (4 compétences)
+### 48. `unreal-engine-master-suite` (8 compétences)
 - **Fichier SKILL.md :** [`unreal-engine-master-suite/SKILL.md`](unreal-engine-master-suite/SKILL.md)
-- **Description :** Complete Unreal Engine 5 production suite: Multiplayer netcode & replication, systems engineering (GAS/C++), technical art/lighting/nanite, and open-world building with PCG.
-- **Volume :** 3,514 mots | Scripts embarqués : Non
+- **Description :** Complete Unreal Engine 5 production suite: Multiplayer netcode & replication, systems engineering (GAS/C++), technical art/lighting/nanite, open-world building with PCG, MetaSound DSP audio, Substrate BSDF materials, Chaos destruction, and MCP AI editor automation.
+- **Volume :** 8,200 mots | Scripts embarqués : Oui (8 scripts compagnons)
 - **Membres unifiés :**
-  - `unreal-multiplayer-architect` (`01_Hermes_Skills_Core_Library\unreal-engine\unreal-multiplayer-architect\SKILL.md`)
-  - `unreal-systems-engineer` (`01_Hermes_Skills_Core_Library\unreal-engine\unreal-systems-engineer\SKILL.md`)
-  - `unreal-technical-artist` (`01_Hermes_Skills_Core_Library\unreal-engine\unreal-technical-artist\SKILL.md`)
-  - `unreal-world-builder` (`01_Hermes_Skills_Core_Library\unreal-engine\unreal-world-builder\SKILL.md`)
+  - `unreal-multiplayer-architect`
+  - `unreal-systems-engineer`
+  - `unreal-technical-artist`
+  - `unreal-world-builder`
+  - `ue5-mcp-automation`
+  - `ue5-nanite-substrate-chaos-pipeline`
+  - `ue5-metasound-procedural-audio`
+  - `ue5-pcg-world-generation`
 
 ### 49. `wechat-ecosystem-suite` (3 compétences)
 - **Fichier SKILL.md :** [`wechat-ecosystem-suite/SKILL.md`](wechat-ecosystem-suite/SKILL.md)
@@ -683,3 +687,39 @@
   - `notion` (`01_Hermes_Skills_Core_Library\productivity\notion\SKILL.md`)
   - `ocr-and-documents` (`01_Hermes_Skills_Core_Library\productivity\ocr-and-documents\SKILL.md`)
   - `powerpoint` (`01_Hermes_Skills_Core_Library\productivity\powerpoint\SKILL.md`)
+
+---
+
+### 51. `eas-master-suite` (4 compétences)
+- **Fichier SKILL.md :** [`eas-master-suite/SKILL.md`](eas-master-suite/SKILL.md)
+- **Description :** Master EAS (Expo Application Services) Platform Suite: Unified end-to-end cloud builds, App Store & Google Play Store distribution, EAS Hosting, EAS Update, and EAS Workflows CI/CD YAML automation.
+- **Volume :** 6,400 mots | Scripts embarqués : Oui (fetch.js, 11 guides de référence)
+- **Membres unifiés :**
+  - `eas-app-stores`
+  - `eas-hosting`
+  - `eas-update`
+  - `eas-workflows`
+
+### 52. `expo-react-native-master-suite` (9 compétences)
+- **Fichier SKILL.md :** [`expo-react-native-master-suite/SKILL.md`](expo-react-native-master-suite/SKILL.md)
+- **Description :** Complete Expo & React Native Engineering Suite: File-based routing (Expo Router), native UI (SwiftUI & Jetpack Compose), 60fps animations (Reanimated 3), data fetching (TanStack Query), custom native modules, brownfield native embedding, iOS App Clips, SDK upgrades, and web-to-native porting.
+- **Volume :** 12,800 mots | Scripts embarqués : Oui (validate_expo_routes.py, list-components.js, 44 guides de référence)
+- **Membres unifiés :**
+  - `expo-router`
+  - `expo-native-ui`
+  - `expo-animation`
+  - `expo-data-fetching`
+  - `expo-module`
+  - `expo-brownfield`
+  - `expo-app-clip`
+  - `expo-upgrade`
+  - `expo-web-to-native`
+
+### 53. `context-token-optimization-suite` (3 compétences)
+- **Fichier SKILL.md :** [`context-token-optimization-suite/SKILL.md`](context-token-optimization-suite/SKILL.md)
+- **Description :** Unified Context Window & Token Optimization Suite: Architectural context engineering, Anthropic/Gemini prompt caching, terminal output reduction via SQLite FTS5 buffer (context-mode), and semantic prompt rule compression (caveman-compress).
+- **Volume :** 5,900 mots | Scripts embarqués : Oui (compressor.py, ctx_buffer.py, profile_context_budget.py, simulate_prompt_cache_hit_rate.py)
+- **Membres unifiés :**
+  - `context-engineering`
+  - `context-mode`
+  - `caveman-compress`

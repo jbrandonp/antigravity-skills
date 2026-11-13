@@ -775,7 +775,7 @@ Then the frame budget is 8ms, not 16. This is also why a UI-thread animation mat
 
 ## Recipes
 
-For ready-to-build implementations — press feedback, drag-to-dismiss sheet, swipe-to-delete, collapsing header, list entrances, keyboard-synced UI, tab indicator, screen transitions — see [RECIPES.md](RECIPES.md). Load it whenever the request matches one; start from the recipe rather than from a blank file.
+For ready-to-build implementations — press feedback, drag-to-dismiss sheet, swipe-to-delete, collapsing header, list entrances, keyboard-synced UI, tab indicator, screen transitions — see [RECIPES.md](references/RECIPES.md). Load it whenever the request matches one; start from the recipe rather than from a blank file.
 
 ## Never Ship
 
@@ -1105,7 +1105,7 @@ const getValidToken = async (): Promise<string> => {
 
 ### 5. Offline Support
 
-Network-status detection with NetInfo and offline-first React Query setup: see [./references/offline-and-cancellation.md](./references/offline-and-cancellation.md).
+Network-status detection with NetInfo and offline-first React Query setup: see [./references/offline-and-cancellation.md](./references/data-fetching\offline-and-cancellation.md).
 
 ---
 
@@ -1196,7 +1196,7 @@ export {};
 
 ### 7. Request Cancellation
 
-AbortController on unmount (React Query cancels automatically): see [./references/offline-and-cancellation.md](./references/offline-and-cancellation.md).
+AbortController on unmount (React Query cancels automatically): see [./references/offline-and-cancellation.md](./references/data-fetching\offline-and-cancellation.md).
 
 ---
 
@@ -1337,7 +1337,7 @@ Prefer `create-expo-module` over manually creating native module files and direc
 
 If an existing Expo module only needs another platform, use `create-expo-module add-platform-support` instead of manually copying native directories.
 
-See [references/create-expo-module.md](references/create-expo-module.md) before scaffolding or extending a module. It covers:
+See [references/create-expo-module.md](references/module\create-expo-module.md) before scaffolding or extending a module. It covers:
 
 - local vs standalone modules
 - `--platform`, `--features`, `--barrel`, `--package-manager`, and non-interactive mode
@@ -1468,7 +1468,7 @@ Expo supports two distinct ways to add React Native to a brownfield project:
 | **Isolated**   | Prebuilt AAR / XCFramework                                          | Native team doesn't need Node or RN tooling; RN code can live in a separate repo |
 | **Integrated** | React Native sources added to the existing Gradle / CocoaPods build | One team owns everything; comfortable with RN tooling; wants a single build      |
 
-For the full decision matrix, see [./references/comparison.md](./references/comparison.md).
+For the full decision matrix, see [./references/comparison.md](./references/brownfield\comparison.md).
 
 ## Pick an approach
 
@@ -1502,11 +1502,11 @@ The iOS build environment needs Xcode and CocoaPods (use the project's Gemfile/B
 
 For an existing Expo/RN project, keep its selected SDK and use `npx expo install` to align dependencies. Do not upgrade it just to follow this skill. For a new producer, use the **current stable SDK** compatible with the host's OS support, dependencies, and build toolchain; confirm the release is stable before selecting it.
 
-Before native setup, read [./references/version-compatibility.md](./references/version-compatibility.md) for matching native templates, toolchain/OS requirements, and build defaults across SDK versions. A purely native consumer has no Expo SDK version to pin, but must satisfy the artifact's requirements.
+Before native setup, read [./references/version-compatibility.md](./references/brownfield\version-compatibility.md) for matching native templates, toolchain/OS requirements, and build defaults across SDK versions. A purely native consumer has no Expo SDK version to pin, but must satisfy the artifact's requirements.
 
 ## Verify the feature in the host
 
-Open the RN screen with input, return a result to native, dismiss, and reopen with fresh input. Check listener cleanup and the host's original navigation. Then build the host in Release with a Release artifact and Metro stopped. Rendering only in Expo Go or the producer's example app does not validate the integration. See [./references/feature-integration.md](./references/feature-integration.md) for the complete acceptance scenario.
+Open the RN screen with input, return a result to native, dismiss, and reopen with fresh input. Check listener cleanup and the host's original navigation. Then build the host in Release with a Release artifact and Metro stopped. Rendering only in Expo Go or the producer's example app does not validate the integration. See [./references/feature-integration.md](./references/brownfield\feature-integration.md) for the complete acceptance scenario.
 
 ## Submitting Feedback
 If you encounter errors, misleading or outdated information in this skill, report it so Expo can improve:
@@ -1792,7 +1792,7 @@ Once Apple invokes the Clip from a URL on the domain, iOS opens `targets/clip/`'
 
 To let JS detect when it's running inside an App Clip and present an install prompt for the full app, create a local Expo module (`bunx create-expo-module --local`) that exposes `navigator.appClip.prompt()`.
 
-See [./references/native-module.md](./references/native-module.md) for the Swift module, TypeScript interface, and usage.
+See [./references/native-module.md](./references/module\native-module.md) for the Swift module, TypeScript interface, and usage.
 
 ## References
 
@@ -1977,17 +1977,17 @@ flowchart TD
 - **Migrate, don't rewrite.** Never big-bang it; every step keeps the app shippable.
 - **Ship on day one.** The web UI runs in a DOM-component shell (step 3) before anything is nativized — that's the milestone; everything after is polish.
 - **Strangle by value.** Nativize the hot screens; leave the rest in the webview. Each DOM screen carries a ~2 MB web runtime — reason enough not to ship everything as DOM.
-- **Nativize means redesign, not reskin.** A strangled screen should look like Apple/Google shipped it, not the web page reskinned. **Reach for `@expo/ui` first** - it renders real SwiftUI/Compose, so it feels *exactly* like the OS; styled RN primitives are the fallback for custom layouts only. Plus platform navigation (`expo-router`: NativeTabs, large titles), liquid glass and native components via `@expo/ui`, and mobile UX (sheets, swipe, haptics). The web→native pattern map is [`./references/native-patterns.md`](./references/native-patterns.md). If it still feels like a website, you ported instead of redesigned.
+- **Nativize means redesign, not reskin.** A strangled screen should look like Apple/Google shipped it, not the web page reskinned. **Reach for `@expo/ui` first** - it renders real SwiftUI/Compose, so it feels *exactly* like the OS; styled RN primitives are the fallback for custom layouts only. Plus platform navigation (`expo-router`: NativeTabs, large titles), liquid glass and native components via `@expo/ui`, and mobile UX (sheets, swipe, haptics). The web→native pattern map is [`./references/native-patterns.md`](./references/web-to-native\native-patterns.md). If it still feels like a website, you ported instead of redesigned.
 - **Verify by running, not compiling.** A clean build proves nothing (a blank webview compiles fine). Run each screen — but judge *content and behavior* against the web original, not pixels (a nativized screen should look more native, not identical).
-- **Orchestrate, don't reinvent.** Each step routes into an existing skill. The value here is the *order* and the *gotchas* — the idiom-by-idiom mappings live in [`./references/false-friends.md`](./references/false-friends.md).
+- **Orchestrate, don't reinvent.** Each step routes into an existing skill. The value here is the *order* and the *gotchas* — the idiom-by-idiom mappings live in [`./references/false-friends.md`](./references/web-to-native\false-friends.md).
 
 ## Run it as a loop (recommended)
 
-The migration is a long repeat-until-done loop, so the first move is to **write the goal objective and launch it** — not to grind screens by hand. Fill the objective in [`./references/run-as-goal.md`](./references/run-as-goal.md) for this app and present it; it **re-reads this skill every iteration**, so each `/goal` turn reloads the playbook + worklist and drives the next screen (it even self-bootstraps the assess step). Then run `/goal` with it — or, if the harness can't loop, write it to `migration-goal.md` and have the user launch it. The steps below are what each iteration does; run them by hand only if you're not looping.
+The migration is a long repeat-until-done loop, so the first move is to **write the goal objective and launch it** — not to grind screens by hand. Fill the objective in [`./references/run-as-goal.md`](./references/web-to-native\run-as-goal.md) for this app and present it; it **re-reads this skill every iteration**, so each `/goal` turn reloads the playbook + worklist and drives the next screen (it even self-bootstraps the assess step). Then run `/goal` with it — or, if the harness can't loop, write it to `migration-goal.md` and have the user launch it. The steps below are what each iteration does; run them by hand only if you're not looping.
 
 ## The migration
 
-> **No repo to migrate** - just building native fresh as a web dev? You don't need these steps: use `expo-router`, and keep [`./references/false-friends.md`](./references/false-friends.md) open for the web→native idiom map. Everything below assumes an existing web app.
+> **No repo to migrate** - just building native fresh as a web dev? You don't need these steps: use `expo-router`, and keep [`./references/false-friends.md`](./references/web-to-native\false-friends.md) open for the web→native idiom map. Everything below assumes an existing web app.
 
 ### 1. Assess → write the worklist
 
@@ -2008,7 +2008,7 @@ Bring every screen over as a DOM component (`'use dom'`, per the `expo-dom` skil
 
 ### 4. Strangle screens to native — by value
 
-Walk `migration-progress.md` top-down. For each screen, *redesign* it native - don't port the web layout. Reach for **`@expo/ui` first** (real SwiftUI/Compose - buttons, lists, sheets, pickers, sliders; [`./references/native-patterns.md`](./references/native-patterns.md) maps which web pattern becomes which native component), then platform navigation (`expo-router` - NativeTabs, large titles) and mobile UX (swipe, haptics, momentum/inverted scroll); RN primitives only for custom layouts. Consult [`./references/false-friends.md`](./references/false-friends.md) for each idiom. `@expo/ui` and DOM components both run in **Expo Go** (SDK 56+) - a dev build (the `expo-dev-client` skill) is only needed for *custom* native modules. Verify *content and behavior* against the running web original (the look should become more native), then check it off. One screen per pass, app shippable throughout. It's a loop over a durable worklist, so it can run unattended - hand it to a goal loop ([`./references/run-as-goal.md`](./references/run-as-goal.md)).
+Walk `migration-progress.md` top-down. For each screen, *redesign* it native - don't port the web layout. Reach for **`@expo/ui` first** (real SwiftUI/Compose - buttons, lists, sheets, pickers, sliders; [`./references/native-patterns.md`](./references/web-to-native\native-patterns.md) maps which web pattern becomes which native component), then platform navigation (`expo-router` - NativeTabs, large titles) and mobile UX (swipe, haptics, momentum/inverted scroll); RN primitives only for custom layouts. Consult [`./references/false-friends.md`](./references/web-to-native\false-friends.md) for each idiom. `@expo/ui` and DOM components both run in **Expo Go** (SDK 56+) - a dev build (the `expo-dev-client` skill) is only needed for *custom* native modules. Verify *content and behavior* against the running web original (the look should become more native), then check it off. One screen per pass, app shippable throughout. It's a loop over a durable worklist, so it can run unattended - hand it to a goal loop ([`./references/run-as-goal.md`](./references/web-to-native\run-as-goal.md)).
 
 ### 5. Wire data, auth, and storage
 
@@ -2025,14 +2025,14 @@ A green `expo export` proves a screen *bundles*, not that it *renders* — a scr
 - **Web original** — capture it with **`agent-browser`** (vercel-labs CLI): `open` the route, `snapshot --json` the accessibility tree, `screenshot`.
 - **Native** — drive the simulator with **`argent`**: `describe` / `debugger-component-tree` for structure, `flow` to replay the check each pass.
 
-Pass on parity of **content and behavior** — not pixels: a nativized screen should look *more* native than the web, never identical (the DOM-shell stage is the exception — there it *is* the web UI, so it should match). Feel is part of native and can't be screenshotted — for screens with transitions or gestures, capture a short recording, not just a still (see `native-patterns.md` → Feel). This loop is **opinionated about its tooling**: if `agent-browser` or `argent` isn't installed, ask the user and install it before proceeding — don't fall back to manual screenshots. Full recipe and setup in [`./references/verify-on-device.md`](./references/verify-on-device.md).
+Pass on parity of **content and behavior** — not pixels: a nativized screen should look *more* native than the web, never identical (the DOM-shell stage is the exception — there it *is* the web UI, so it should match). Feel is part of native and can't be screenshotted — for screens with transitions or gestures, capture a short recording, not just a still (see `native-patterns.md` → Feel). This loop is **opinionated about its tooling**: if `agent-browser` or `argent` isn't installed, ask the user and install it before proceeding — don't fall back to manual screenshots. Full recipe and setup in [`./references/verify-on-device.md`](./references/web-to-native\verify-on-device.md).
 
 ## References
 
-- [`./references/false-friends.md`](./references/false-friends.md) — web idiom → native equivalent + the gotcha for each. The lookup for steps 3–5, and for any web dev unlearning idioms.
-- [`./references/native-patterns.md`](./references/native-patterns.md) — web UX *pattern* → native redesign (`@expo/ui`-first). The step-4 redesign playbook so screens feel OS-native, not reskinned.
-- [`./references/verify-on-device.md`](./references/verify-on-device.md) — the two-agent parity recipe: drive the web app (browser agent) and the native app (argent), open the same route, compare.
-- [`./references/run-as-goal.md`](./references/run-as-goal.md) — a ready-shaped, migration-specific goal objective for driving step 4 unattended (re-reads this skill each iteration).
+- [`./references/false-friends.md`](./references/web-to-native\false-friends.md) — web idiom → native equivalent + the gotcha for each. The lookup for steps 3–5, and for any web dev unlearning idioms.
+- [`./references/native-patterns.md`](./references/web-to-native\native-patterns.md) — web UX *pattern* → native redesign (`@expo/ui`-first). The step-4 redesign playbook so screens feel OS-native, not reskinned.
+- [`./references/verify-on-device.md`](./references/web-to-native\verify-on-device.md) — the two-agent parity recipe: drive the web app (browser agent) and the native app (argent), open the same route, compare.
+- [`./references/run-as-goal.md`](./references/web-to-native\run-as-goal.md) — a ready-shaped, migration-specific goal objective for driving step 4 unattended (re-reads this skill each iteration).
 - [Expo — From Web to Native with React](https://expo.dev/blog/from-web-to-native-with-react) — the canonical guide this skill operationalizes.
 
 ## Submitting Feedback
@@ -2071,7 +2071,7 @@ eferences/router/ - Route structure, tabs, toolbars, form sheets, search params,
 - 
 eferences/ui/ - SwiftUI/Compose component bridge, visual effects, controls, media, icons, and storage.
 - 
-eferences/animation/ - Reanimated 3 animation recipes and shared element transitions (RECIPES.md).
+eferences/animation/ - Reanimated 3 animation recipes and shared element transitions (references/RECIPES.md).
 - 
 eferences/data-fetching/ - Offline persistence, query cancellation, and Expo Router data loaders.
 - 
