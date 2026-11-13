@@ -1,8 +1,8 @@
 ---
 name: unreal-engine-master-suite
 description: >-
-  Complete Unreal Engine 5 production suite: Multiplayer netcode & replication, systems engineering (GAS/C++), technical art/lighting/nanite, and open-world building with PCG.
-version: 2.0.0
+  Complete Unreal Engine 5 production suite: Multiplayer netcode & replication, systems engineering (GAS/C++), technical art/lighting/nanite, open-world building with PCG, MetaSound DSP audio, Substrate BSDF materials, Chaos destruction, and MCP AI editor automation.
+version: 3.0.0
 tags:
   - unreal-engine
   - ue5
@@ -10,11 +10,22 @@ tags:
   - systems-engineering
   - tech-art
   - world-building
+  - nanite
+  - lumen
+  - substrate
+  - chaos
+  - metasound
+  - pcg
+  - mcp-automation
 merged_member_skills:
   - unreal-multiplayer-architect (01_Hermes_Skills_Core_Library\unreal-engine\unreal-multiplayer-architect\SKILL.md)
   - unreal-systems-engineer (01_Hermes_Skills_Core_Library\unreal-engine\unreal-systems-engineer\SKILL.md)
   - unreal-technical-artist (01_Hermes_Skills_Core_Library\unreal-engine\unreal-technical-artist\SKILL.md)
   - unreal-world-builder (01_Hermes_Skills_Core_Library\unreal-engine\unreal-world-builder\SKILL.md)
+  - ue5-mcp-automation
+  - ue5-nanite-substrate-chaos-pipeline
+  - ue5-metasound-procedural-audio
+  - ue5-pcg-world-generation
 ---
 
 # Unreal Engine Master Suite
@@ -33,6 +44,10 @@ Chaque module peut être exécuté individuellement ou orchestré en séquence s
 2. **[unreal-systems-engineer](#module-2-unreal-systems-engineer)** : 性能与混合架构专家——精通 C++/Blueprint 边界、Nanite 几何体、Lumen GI 和 Gameplay Ability System，面向 AAA 级 Unreal Engine 项目
 3. **[unreal-technical-artist](#module-3-unreal-technical-artist)** : Unreal Engine 视觉管线专家——精通材质编辑器、Niagara 特效、程序化内容生成和 UE5 项目的美术到引擎管线
 4. **[unreal-world-builder](#module-4-unreal-world-builder)** : 开放世界与环境专家——精通 UE5 World Partition、Landscape、程序化植被、HLOD 和大规模关卡流式加载，打造无缝开放世界体验
+5. **[ue5-mcp-automation](#module-5-ue5-mcp-automation)** : Pilotage programmatique d'Unreal Engine 5 via MCP et bridge socket TCP 55557 (manipulation d'actors, génération Blueprint, câblage de node graphs, viewport capture).
+6. **[ue5-nanite-substrate-chaos-pipeline](#module-6-ue5-nanite-substrate-chaos-pipeline)** : Rendu nouvelle génération UE 5.5-5.8 (clusters Nanite & occlusion Hi-Z, Lumen Surface Cache multi-rebonds, Substrate modular BSDF avec conservation d'énergie, Chaos destruction Voronoi).
+7. **[ue5-metasound-procedural-audio](#module-7-ue5-metasound-procedural-audio)** : Synthèse DSP et spatialisation 3D (MetaSound à précision d'échantillon, filtres biquadratiques, crossfades equal-power, ducking & combat music priority stack).
+8. **[ue5-pcg-world-generation](#module-8-ue5-pcg-world-generation)** : Génération procédurale de mondes ouverts (PCG Framework graphs, échantillonnage Poisson Disk, filtrage spatial par pente et intégration World Partition).
 
 ---
 
@@ -1198,3 +1213,570 @@ PCG
 
 
 ---
+
+
+---
+
+## Module 5: ue5-mcp-automation
+
+# Unreal Engine 5 MCP Automation Pipeline
+
+Use this skill when an AI agent needs to programmatically inspect, manipulate, or construct assets inside an active Unreal Engine 5 editor session via the Model Context Protocol (MCP).
+
+Based on the battle-tested `unreal-mcp` architecture (2,100+ stars), this bridge connects LLMs and coding agents directly to the Unreal Engine 5 editor through an internal TCP socket bridge (`127.0.0.1:55557`), eliminating manual editor clicks and enabling rapid autonomous level prototyping, Blueprint creation, node graph wiring, and viewport capture.
+
+---
+
+## 1. System Architecture & Prerequisites
+
+The bridge consists of two communicating layers:
+1. **Unreal MCP Host (Python stdio MCP server)**: Runs as an MCP server registered in Antigravity / Claude Code / Cursor. Translates standardized tool calls into JSON-RPC socket payloads.
+2. **Unreal Engine Plugin / Editor Listener (C++ / Python Remote Execution)**: Listens on TCP port `55557` inside Unreal Engine 5.5 - 5.8, executing operations on the main editor thread via `FSlateApplication` or Python Remote Execution.
+
+```
++-----------------------------------+       stdio JSON-RPC       +-----------------------------------+
+|      AI Coding Agent (AGY)        | <------------------------> |     unreal-mcp Server (Python)    |
++-----------------------------------+                            +-----------------------------------+
+                                                                                   |
+                                                                       TCP Socket (127.0.0.1:55557)
+                                                                                   v
+                                                                 +-----------------------------------+
+                                                                 |  Unreal Engine 5 Editor (Plugin)  |
+                                                                 |   - World / Level Actors          |
+                                                                 |   - Blueprint Node Graphs         |
+                                                                 |   - Viewport & Screenshot Buffers |
+                                                                 +-----------------------------------+
+```
+
+### Installation & MCP Configuration
+Add the MCP server to your Antigravity or workspace MCP configuration (`mcp.json` or `claude_desktop_config.json`):
+
+```json
+{
+  "mcpServers": {
+    "unreal-mcp": {
+      "command": "python",
+      "args": ["-m", "unreal_mcp_server"],
+      "env": {
+        "UNREAL_HOST": "127.0.0.1",
+        "UNREAL_PORT": "55557"
+      }
+    }
+  }
+}
+```
+
+---
+
+## 2. Core Tool Catalog
+
+### 2.1 — Level & Actor Tools (`actor_tools`)
+
+| Tool | Parameters | Description |
+|---|---|---|
+| `get_actors_in_level` | None | Returns JSON array of all actors in current world with classes and transforms. |
+| `find_actors_by_name` | `pattern: str` | Regex/substring match on actor label or internal name. |
+| `create_actor` | `name: str, type: str, location: [float, 3], rotation: [float, 3], scale: [float, 3]` | Spawns primitive (CUBE, SPHERE, CYLINDER) or engine Actor class. |
+| `set_actor_transform` | `name: str, location: [float, 3], rotation: [float, 3], scale: [float, 3]` | Updates World Transform coordinates with millimeter precision. |
+| `delete_actor` | `name: str` | Removes an actor and cleans hierarchy dependencies. |
+| `set_actor_material` | `actor_name: str, material_path: str, slot_index: int = 0` | Assigns Material / Material Instance (`/Game/...`) to mesh slot. |
+| `attach_actor_to_actor` | `child_name: str, parent_name: str, socket_name: str = ""` | Attaches hierarchy maintaining world or relative offset. |
+
+#### Example: Spawning an Arena Platform
+```json
+{
+  "tool": "create_actor",
+  "arguments": {
+    "name": "ArenaFloor_01",
+    "type": "CUBE",
+    "location": [0.0, 0.0, -50.0],
+    "rotation": [0.0, 0.0, 0.0],
+    "scale": [50.0, 50.0, 1.0]
+  }
+}
+```
+
+---
+
+### 2.2 — Blueprint Creation & Manipulation (`blueprint_tools`)
+
+| Tool | Parameters | Description |
+|---|---|---|
+| `create_blueprint` | `name: str, parent_class: str, path: str = "/Game/Blueprints"` | Generates a new `UBlueprint` asset derived from `Actor`, `Character`, `GameModeBase`, etc. |
+| `add_component_to_blueprint` | `blueprint_name: str, component_type: str, component_name: str, location: [float, 3], rotation: [float, 3], scale: [float, 3], component_properties: dict` | Adds `StaticMeshComponent`, `BoxComponent`, `NiagaraComponent`, etc. |
+| `set_component_properties` | `blueprint_name: str, component_name: str, properties: dict` | Mutates component reflection properties (e.g. `CollisionProfileName: "BlockAll"`). |
+| `spawn_blueprint_actor` | `blueprint_path: str, name: str, location: [float, 3], rotation: [float, 3]` | Instantiates a compiled Blueprint asset into the active level. |
+| `compile_blueprint` | `blueprint_name: str` | Triggers `FKismetEditorUtilities::CompileBlueprint` and returns compilation errors. |
+
+#### Example: Creating a Hazard Trigger Blueprint
+```json
+{
+  "tool": "create_blueprint",
+  "arguments": {
+    "name": "BP_LavaHazard",
+    "parent_class": "Actor",
+    "path": "/Game/Gameplay/Hazards"
+  }
+}
+```
+
+---
+
+### 2.3 — Node Graph & Wiring Tools (`node_tools`)
+
+The most powerful capability: programmatically constructing Blueprint Visual Scripting graphs without manually dragging wires.
+
+| Tool | Parameters | Description |
+|---|---|---|
+| `add_blueprint_event_node` | `blueprint_name: str, event_type: str, node_position: [int, 2]` | Adds lifecycle event (`BeginPlay`, `Tick`, `OnActorBeginOverlap`, `Destroyed`). |
+| `add_blueprint_input_action_node` | `blueprint_name: str, action_name: str, node_position: [int, 2]` | Creates an Enhanced Input action event node (`IA_Jump`). |
+| `add_blueprint_function_node` | `blueprint_name: str, function_name: str, target_class: str, node_position: [int, 2]` | Instantiates standard engine functions (`PrintString`, `ApplyDamage`, `SpawnEmitterAtLocation`). |
+| `add_blueprint_variable` | `blueprint_name: str, variable_name: str, variable_type: str, default_value: any` | Adds typed variable (`Boolean`, `Integer`, `Float`, `Vector`, `Transform`, `ObjectReference`). |
+| `connect_blueprint_nodes` | `blueprint_name: str, source_node_id: str, source_pin: str, target_node_id: str, target_pin: str` | Connects execution pins (`exec`) or data pins with schema validation. |
+| `disconnect_blueprint_pins` | `blueprint_name: str, source_node_id: str, source_pin: str, target_node_id: str, target_pin: str` | Breaks specific pin links in the graph. |
+
+#### Blueprint Graph Wiring Flow
+```
+[Event BeginPlay] (Output: then)
+       |
+       v
+[Print String] (Input: execute, InString: "Hello UE5 MCP!")
+```
+
+```json
+// Step 1: Create BeginPlay Event Node
+{
+  "tool": "add_blueprint_event_node",
+  "arguments": {
+    "blueprint_name": "BP_LavaHazard",
+    "event_type": "BeginPlay",
+    "node_position": [100, 100]
+  }
+} // Returns node_id: "K2Node_Event_0"
+
+// Step 2: Create Print String Function Node
+{
+  "tool": "add_blueprint_function_node",
+  "arguments": {
+    "blueprint_name": "BP_LavaHazard",
+    "function_name": "PrintString",
+    "target_class": "KismetSystemLibrary",
+    "node_position": [400, 100]
+  }
+} // Returns node_id: "K2Node_CallFunction_1"
+
+// Step 3: Wire Execution Pin
+{
+  "tool": "connect_blueprint_nodes",
+  "arguments": {
+    "blueprint_name": "BP_LavaHazard",
+    "source_node_id": "K2Node_Event_0",
+    "source_pin": "then",
+    "target_node_id": "K2Node_CallFunction_1",
+    "target_pin": "execute"
+  }
+}
+```
+
+---
+
+### 2.4 — Editor & Viewport Automation (`editor_tools`)
+
+| Tool | Parameters | Description |
+|---|---|---|
+| `focus_viewport` | `target: str = None, location: [float, 3] = None, distance: float = 1000.0, orientation: [float, 3] = [0, 0, 0]` | Positions editor viewport camera to inspect spawned geometry. |
+| `take_screenshot` | `filename: str = "screenshot.png", show_ui: bool = false, resolution: [int, 2] = [1920, 1080]` | Captures viewport buffer and saves PNG for visual verification. |
+| `execute_console_command` | `command: str` | Sends command directly to UE5 editor console (`stat fps`, `viewmode unlit`, `r.Nanite 1`). |
+| `run_python_script` | `script_content: str` | Directly executes raw `unreal.py` Python automation inside Unreal editor runtime. |
+
+---
+
+## 3. Autonomous Level-Building Workflow
+
+When generating a game level or testing gameplay slices:
+
+1. **Verify Socket Connectivity**:
+   - Call `focus_viewport` or `get_actors_in_level`. If socket timeout occurs (`ECONNREFUSED 127.0.0.1:55557`), instruct user to launch Unreal Engine with the UnrealMCP plugin enabled.
+2. **Greybox Construction**:
+   - Spawn level boundaries, floor slabs, cover objects, and player starts using `create_actor`.
+   - Use strict spatial coordinates ($X$ forward, $Y$ right, $Z$ up in UE5 centimeters).
+3. **Blueprint Wiring**:
+   - Create interactive actors (`create_blueprint`).
+   - Add collision volumes and static meshes (`add_component_to_blueprint`).
+   - Wire event logic (`add_blueprint_event_node`, `connect_blueprint_nodes`).
+   - Compile and verify error-free compilation (`compile_blueprint`).
+4. **Visual Ground-Truth Verification**:
+   - Align camera with `focus_viewport(target="BP_LavaHazard", distance=600)`.
+   - Capture render using `take_screenshot(filename="audit_hazard.png")`.
+   - Inspect screenshot to verify actor alignment and lighting.
+
+---
+
+## 4. Safety Guardrails & Anti-Patterns
+
+❌ **Anti-pattern: Sending raw C++ code to editor console without compilation.**
+- *Fix*: Use `run_python_script` for dynamic script execution, or compile C++ modules using `Build.bat` before calling MCP tools.
+
+❌ **Anti-pattern: Spawning actors without coordinate spacing (Z-fighting / stacking).**
+- *Fix*: Always calculate bounding boxes and assign explicit non-zero transform offsets.
+
+❌ **Anti-pattern: Forgetting to call `compile_blueprint` after modifying node pins.**
+- *Fix*: Blueprint node modifications remain dirty until explicitly compiled. Always end Blueprint edits with `compile_blueprint`.
+
+❌ **Anti-pattern: Blocking the main editor UI thread with synchronous long-running Python loops.**
+- *Fix*: Offload batch processing to incremental ticks or asynchronous editor background tasks.
+
+---
+
+## Module 6: ue5-nanite-substrate-chaos-pipeline
+
+# 🌌 Unreal Engine 5 Next-Gen Graphics & Physics Core (SOTA 2026)
+
+> **Inspirations & Provenance :** Epic Games UE 5.5 / 5.6 / 5.8 Architectural Standards, Nanite & Lumen Engineering, Substrate (Strata) Shading System, Chaos Destruction Engine.  
+> **Core Axiom :** *"A photorealistic game scene requires an integrated pipeline: Nanite eliminates polycount budgets, Lumen dynamically illuminates micro-surfaces, Substrate conserves physical optical energy, and Chaos fractures geometry deterministically upon impact."*
+
+---
+
+## 🧒 1. Explication Pédagogique (Style 15 ans)
+
+Imagine que tu construis un château médiéval ultra-détaillé dans Unreal Engine 5 :
+1. **Nanite (Les Micro-Polygones Invisibles)** :
+   Au lieu de créer 5 versions simplifiées d'un mur (LODs) pour soulager la carte graphique, tu importes le mur directement avec 10 millions de polygones ! Nanite découpe automatiquement la pierre en petits paquets de 128 triangles (*clusters*). Si le mur est loin, Nanite n'affiche que les paquets visibles. S'il est caché derrière une tour, le tampon Hi-Z l'efface instantanément avant même de calculer la moindre couleur.
+2. **Lumen (La Lumière Qui Rebondit Partout)** :
+   Le soleil tape sur une bannière rouge vif à l'entrée du château. La lumière ne s'arrête pas là : elle rebondit sur la pierre grise qui prend une teinte rose chaleureuse (*Global Illumination*). Lumen fait cela en temps réel sans que tu aies besoin de "cuire" la lumière pendant des heures.
+3. **Substrate (Les Vrais Matériaux Physiques)** :
+   Une armure de chevalier n'est pas juste "grise et brillante". C'est une plaque d'acier brut recouverte d'une fine couche de vernis protecteur, avec des traces de poussière mate et des rayures. Substrate te permet d'empiler ces couches physiques comme un mille-feuille (*Slabs*), tout en respectant une loi de la physique inviolable : la lumière réfléchie ne peut jamais être plus puissante que la lumière reçue (*Conservation d'Énergie*).
+4. **Chaos (La Destruction Spectaculaire)** :
+   Une catapulte tire un rocher sur la tour. Au lieu de remplacer magiquement la tour par un tas de cailloux précalculé, Chaos calcule l'onde de choc (*Strain Energy*). Si l'impact dépasse la résistance de la pierre, les joints se brisent le long de fractures géométriques de Voronoi. Les morceaux deviennent de vrais objets physiques qui tombent, s'entrechoquent et soulèvent de la poussière.
+
+---
+
+## 🏛️ 2. Nanite : Géométrie Virtualisée & Tampon Hi-Z
+
+### Arbre de Clusters de Meshlets
+- Chaque maillage Nanite est subdivisé en clusters de **128 triangles** partageant des sommets voisins.
+- Un arbre hiérarchique de boîtes englobantes permet de streamer uniquement les nœuds du niveau de détail (LOD) requis par la taille en pixels à l'écran.
+
+### Rendu Occlusion Culling en Deux Passes (Hi-Z)
+1. **Passe 1 (Hi-Z Initial)** : Rendu des clusters visibles à la frame précédente $\to$ mise à jour du tampon Hi-Z (Hierarchical Z-Buffer).
+2. **Passe 2 (Validation)** : Test de tous les autres clusters contre le tampon Hi-Z $\to$ élimination intégrale des clusters masqués avant shading.
+- Élimine $98\%$ du surcoût de shading sur les scènes denses (villes, forêts touffues).
+
+---
+
+## 💡 3. Lumen : Illumination Globale Dynamique & Cache de Surface
+
+### Cartes d'Atlas du Surface Cache
+- Lumen génère un atlas de cartes de réflectance et de normales pour chaque objet statique :
+  - **Cartes Plates (Cards)** : Projections 2D basse résolution capturant l'albedo et l'émissivité.
+  - **Mesh Distance Fields (MDF)** : Représentation volumétrique de distance signée permettant de tracer des rayons logiciels (*Software Ray Tracing*) à coût fixe sans GPU RTX dédié.
+
+### Radiance Caching Multi-Rebonds
+- Les rayons de lumière effectuent jusqu'à **3 rebonds dynamiques** dans la scène.
+- Permet des intérieurs de châteaux sombres naturellement éclairés par la lumière entrant par une fenêtre ouverte.
+
+---
+
+## 🎨 4. Substrate : Matériaux Modulaires BSDF & Slabs
+
+### Composition Verticale de Couches (Vertical Layering)
+Superposition rigoureuse d'un vernis diélectrique sur un substrat métallique :
+```
+Top Layer: Clear Coat Slab (IOR = 1.5, Roughness = 0.05, Metallic = 0.0)
+     │   (Reflects F_top, Transmits 1.0 - F_top)
+     ▼
+Bottom Layer: Brushed Steel Slab (Albedo = Silver, Roughness = 0.35, Metallic = 1.0)
+```
+
+### Règle d'Or : Conservation Mathématique de l'Énergie
+$$\int_{\Omega^+} \left( f_d(\omega_i, \omega_o) + f_s(\omega_i, \omega_o) \right) (\omega_i \cdot \mathbf{n}) \, d\omega_i \le 1.0$$
+- Substrate déduit automatiquement l'énergie réfléchie par la couche supérieure de celle transmise aux couches inférieures.
+- Empêche les matériaux d'émettre magiquement de la lumière parasite (artéfacts de "glow" blanc).
+
+---
+
+## 💥 5. Chaos : Physique & Destruction Voronoi
+
+### Hiérarchie des Geometry Collections
+- **Niveau 0 (Root)** : Structure complète intacte.
+- **Niveau 1 (Macro Chunks)** : Poutres maîtresses, piliers, linteaux.
+- **Niveau 2 (Micro Debris)** : Briques, éclats de pierre et gravats.
+
+### Seuil de Rupture par Contrainte (Strain Damage Threshold)
+- Chaque liaison physique entre fragments possède un seuil de résistance :
+  - Si l'énergie de l'impact $E_{\text{impact}} > \text{StrainThreshold}$, le lien est rompu.
+  - Les fragments désolidarisés deviennent des corps rigides dynamiques soumis à la gravité.
+- **Champs d'Ancrage (Anchor Fields)** : Fixent les fondations au sol avec une masse infinie pour éviter l'envol des bâtiments.
+
+---
+
+## 🛠️ 6. Suite Déterministe d'Outils Compagnons
+
+Les scripts d'évaluation et de benchmark se trouvent dans `scripts/` :
+```bash
+# 1. Auditer la densité des clusters Nanite et le ratio de triangles
+python scripts/audit_nanite_clusters.py --demo
+
+# 2. Benchmarker le temps de couverture du Surface Cache Lumen
+python scripts/benchmark_lumen_surface_cache.py --demo
+
+# 3. Valider la conservation d'énergie d'un matériau Substrate multi-couches
+python scripts/validate_substrate_bsdf_energy.py --demo
+
+# 4. Simuler l'onde de choc et la fracturation Voronoi Chaos avec ancrage
+python scripts/simulate_chaos_fracture.py
+```
+
+---
+
+## Module 7: ue5-metasound-procedural-audio
+
+# 🤖 OLYMPUS PRO : UNREAL ENGINE 5 METASOUND AUDIO DSP ARCHITECT
+
+> **Standard :** OLYMPUS System v6.0 / Epic Games UE 5.5 / 5.6++ MetaSound Standard  
+> **Rôle :** Expert en synthèse sonore procédurale et traitement de signal numérique (DSP) temps réel sous Unreal Engine 5, remplaçant les Sound Cues obsolètes par des graphes MetaSound à précision d'échantillon.
+
+---
+
+## 🎯 Déclenchement & Cas d'Usage
+Utilisez cette compétence lorsque l'utilisateur demande de concevoir, implémenter ou optimiser des graphes MetaSound dans Unreal Engine 5, générer des bruits de moteurs de véhicules procéduraux, des synthétiseurs FM/granulaires en temps réel, moduler des paramètres audio selon la vélocité ou la santé, ou programmer des filtres DSP interactifs.
+
+---
+
+## 📋 Protocole d'Exécution Séquentiel (Les 4 Phases)
+
+### Phase 1: Définition de l'Horloge & Traitement par Blocs (Buffer DSP)
+- Configurer la fréquence d'échantillonnage de référence ($48\text{ kHz}$) et la taille de bloc audio (Audio Block Size $= 64$ échantillons $\approx 1.33\text{ ms}$).
+- Gérer les entrées de contrôle : triggers d'événements `OnPlay`, paramètres scalaires normalisés ($[0.0, 1.0]$) pour le pitch, le volume et le filtre.
+- Bannir les sautes de phase : utiliser des oscillateurs à phase continue sans clic à la réinitialisation.
+
+### Phase 2: Synthèse Procédurale & Modulation (FM / Granulaire)
+- Modéliser la chaîne de synthèse : oscillateurs sinusoidaux, en dents de scie ou bruit blanc filtré.
+- Implémenter la modulation de fréquence (FM) ou la synthèse granulaire pour les impacts mécaniques et les régimes moteurs :
+  $$y(t) = A(t) \sin\left(2\pi f_c t + I(t) \sin(2\pi f_m t)\right)$$
+- Appliquer des courbes d'atténuation d'enveloppe ADSR (Attack, Decay, Sustain, Release) précises à l'échantillon près.
+
+### Phase 3: Filtrage Numérique & Égalisation Dynamique
+- Connecter des filtres biquadratiques (Biquad Filter : LowPass, HighPass, BandPass) avec contrôle de fréquence de coupure ($f_{\text{cut}}$) et de résonance ($Q$).
+- Adapter le filtre passe-bas en fonction de l'occlusion acoustique (murs, obstacles détectés par raycast).
+- Intégrer les bus de réverbération spatiale et de compression dynamique du master.
+
+### Phase 4: Profiling & Optimisation CPU des Graphes Audio
+- Auditer l'utilisation des voix MetaSound simultanées : budget audio global $< 5\%$ du temps frame CPU.
+- Activer la virtualisation audio sur les sources distantes non perceptibles par le joueur.
+- Explication claire de la synthèse audio procédurale pour un utilisateur de 15 ans.
+
+---
+
+## 🏛️ Règles d'Or OLYMPUS & Architecture Propre
+1. **Typage Fort et Zéro Any :** Aucun type `any`, `unknown` ou non typé n'est accepté. Le code doit être rigoureusement défini.
+2. **Nommage Explicite :** Bannir les variables à une lettre (`x`, `temp`, `data`). Le nom d'une variable ou fonction doit expliciter sa finalité.
+3. **Complexité Cyclomatique :** Viser $M \le 15$. Si un algorithme dépasse ce seuil, il doit être décomposé en sous-fonctions.
+4. **Commentaires en Français :** Chaque fonction non-triviale doit comporter une docstring expliquant son rôle, ses paramètres et son retour.
+5. **Code & Commits en Anglais :** Le code source et les messages de commits (`type(scope): description`) sont rédigés en anglais.
+6. **Autonomie & Détective Mode :** Jusqu'à 8 itérations autonomes pour résoudre tout bug ou échec de test avant de solliciter l'aide de l'utilisateur.
+7. **Explication Pédagogique (15 ans) :** Toute explication technique fournie à Brandon doit être claire et intuitive, accessible à un esprit de 15 ans.
+
+---
+
+## 📊 Critères de Validation Obligatoires (Gate Score S $\ge 65\%$)
+- **Stabilité de Phase :** 0 distorsion ou clic de saut de phase à la modulation.
+- **Budget Voix Audio :** Exécution sous $1.5\text{ ms}$ pour 32 flux DSP actifs.
+- **Lint / Types :** 0 erreur mypy/pylint/clippy.
+- **Traçabilité :** Enregistrement continu de la session dans le coffre Obsidian (Eager Logging).
+
+---
+
+## 🎵 Module Complémentaire : Ambiance Spatiale 3D, Mixage de Zones & Compresseur de Ducking
+
+# Universal 3D Spatial Audio, Dynamic Music & Surface Footsteps Engine
+
+## 📌 Executive Overview
+This skill provides production-grade architectural guidance and reference implementations for the 3D spatial audio, continuous zone ambience, and dynamic combat music pipeline inspired by World of Warcraft (WotLK 3.3.5a / TrinityCore / Miles Sound System specifications).
+
+In World of Warcraft, audio is entirely data-driven: metadata tables (`SoundEntries.dbc`, `FootstepTerrainLookup.dbc`, `AreaTable.dbc`) drive weighted variation selection, surface footstep resolution, equal-power acoustic zone crossfades, ducking prioritization, and anti-flapping combat music state machines.
+
+---
+
+## 🌐 Universal Cross-Genre & Engine Application
+
+This engine provides relational audio data management, weighted variation selection, surface-material footstep triggers, equal-power zone crossfading, and combat music state machines for ANY game:
+
+| Game Genre | Concrete Application |
+| :--- | :--- |
+| **Stealth & Tactical Games (Hitman, MGS, Splinter Cell)** | Footsteps varying based on walking on gravel, metal walkways, water puddles, or carpets; audio cone directivity. |
+| **Action & Adventure (Uncharted, Tomb Raider, Dark Souls)** | Seamless zone ambience crossfading (cos/sin equal-power), combat music kicking in with grace periods to prevent stutter. |
+| **Horror Games (Resident Evil, Dead Space)** | 3D distance attenuation, sudden stinger priorities ducking ambient wind, procedural pitch/volume jitter on creature noises. |
+| **FPS & Battle Royale (Apex, Counter-Strike)** | Distinct surface footstep material sounds, directional weapon fire cone attenuation, voice line ducking over explosions. |
+| **MMORPGs & Open Worlds** | Continuous regional background ambiences, day/night ambient track swapping, boss encounter music priority override. |
+
+### Engine Integration Matrix:
+- **Unreal Engine 5** : Feeds MetaSounds graphs, Sound Cues, and Audio Gameplay Volumes.
+- **Godot 4.x** : Controls AudioStreamPlayer3D, AudioServer bus effects, and Raycast ground material probing.
+- **Bevy Engine (Rust)** : Interfaces with bevy_kira_audio or FMOD/Wwise Rust bindings.
+- **Custom C++ / Python** : Pure data model driving OpenAL, MiniAudio, or SDL_mixer.
+
+---
+
+## 🗄️ 1. Relational Sound Schema (`SoundEntries.dbc`)
+
+Every sound event (spell impact, footstep, UI click, creature roar, zone music) is registered with up to 10 weighted audio file variations:
+
+```
+SoundEntries.dbc Binary Record:
+├── uint32 id                    -> Unique Sound Entry ID
+├── uint32 sound_type            -> Category (1=Spells, 2=UI, 3=Footsteps, 4=Weapons, 19=Music, 25=Ambience)
+├── string name                  -> Identifier name (e.g. SPELL_Fireball_Impact)
+├── string file_paths[10]        -> Up to 10 file variants (.wav, .ogg, .mp3)
+├── uint32 file_weights[10]      -> Relative stochastic weight (0..100)
+├── float base_volume            -> Default volume gain (0.0..1.0)
+├── uint32 flags                 -> Bitmask (0x01=3D World, 0x02=Pitch Jitter, 0x200=Looping)
+├── float min_distance           -> Near-field radius in yards (100% volume, 0 attenuation)
+└── float distance_cutoff        -> Far-field cutoff radius in yards (voice killed beyond this distance)
+```
+
+### Weighted Random Variation Selection:
+To eliminate mechanical audio fatigue when firing rapid spells or weapon swings, a file is picked probabilistically:
+$$R \in [0, \sum w_i) \implies \text{Index } k \text{ where } \sum_{i=0}^{k-1} w_i \le R < \sum_{i=0}^k w_i$$
+With subtle micro-variations applied dynamically:
+$$\text{PitchMultipler} = 1.0 + \mathcal{U}(-0.05, +0.05), \quad \text{GainMultiplier} = \text{BaseGain} \times 10^{\frac{\mathcal{U}(-1.0, +1.0)}{20}}$$
+
+---
+
+## 👣 2. Physical Footstep Engine & Terrain Material Resolution
+
+Footsteps are triggered by animation markers (`$FTL`, `$FTR`) in M2 models and resolve against the physical ground:
+
+1. **Fluid Test**: If feet are submerged in fluid ($Z_{\text{feet}} \le Z_{\text{water}}$), emit `FootstepWaterSplash`.
+2. **Object Mesh (WMO / M2)**: If standing on an architectural polygon, query the material flag in `MOPY` (`Wood`, `Stone`, `Metal`, `Snow`).
+3. **Terrain Tile (ADT)**: On ground terrain, sample the dominant alpha weight in `MCAL` and convert via `TerrainType.dbc` (`Grass`, `Dirt`, `Sand`, `Rock`, `Snow`).
+4. **Lookup**: `FootstepTerrainLookup.dbc` takes `(Race/ShoeType, MaterialID)` and returns the specific `SoundEntryID`.
+
+---
+
+## 🌲 3. Equal-Power Zone Ambience Crossfading
+
+When crossing from zone $A$ to zone $B$ over crossfade duration $T_{\text{crossfade}} \in [2.5\text{s}, 4.0\text{s}]$:
+$$\tau = \frac{t - t_{\text{start}}}{T_{\text{crossfade}}} \in [0, 1]$$
+$$\text{Gain}_A(\tau) = \cos\left(\frac{\pi}{2} \cdot \tau\right), \quad \text{Gain}_B(\tau) = \sin\left(\frac{\pi}{2} \cdot \tau\right)$$
+
+This maintains constant perceived acoustic energy ($\text{Gain}_A^2 + \text{Gain}_B^2 = \cos^2 + \sin^2 = 1.0$), eliminating the perceived $-3\text{ dB}$ volume drop that plagues naive linear crossfades.
+
+---
+
+## ⚔️ 4. Dynamic Music Priority Stack & Combat Grace Period
+
+Music playback is governed by a strict hierarchical priority stack:
+
+```
+[Priority 100] Cinematic / In-Engine Cutscene
+      ▲
+[Priority 80]  Raid Boss Encounter Theme
+      ▲
+[Priority 60]  Dynamic Combat Music Loop
+      ▲
+[Priority 40]  Zone Discovery Intro Fanfare
+      ▲
+[Priority 20]  Zone Exploration Ambient Playlist (with silent rest pauses)
+```
+
+### Anti-Flapping Combat Grace Period:
+When the active threat list drops to zero upon slaying a creature, the engine does not abruptly cut combat music. It enters a **Combat Grace Period** ($5.0\text{s}$ to $8.0\text{s}$). If another monster is pulled during this grace window, the timer resets and combat music continues seamlessly. If the timer elapses with zero threat, it executes a smooth $3.0\text{s}$ crossfade back to exploration music.
+
+---
+
+## 🔊 5. 3D Spatial Attenuation, Directivity Cones & Ducking
+
+### 5.1 — Clamped Inverse Distance Attenuation:
+For distance $d \in [\text{MinDistance}, \text{DistanceCutoff}]$:
+$$\text{Atten}(d) = \text{clamp}\left(\frac{\text{MinDistance}}{\text{MinDistance} + (d - \text{MinDistance})}, 0.0, 1.0\right)$$
+Beyond $\text{DistanceCutoff}$, voice processing is culled to save CPU cycles.
+
+### 5.2 — Directional Audio Cone:
+For emitters with forward orientation (e.g. dragon breath, boss voice):
+- Within inner cone angle ($\theta \le \theta_{\text{inner}}$): Attenuation $= 1.0$.
+- Between inner and outer cone ($\theta_{\text{inner}} < \theta < \theta_{\text{outer}}$): Linearly drops to $\text{OuterVolumeGain}$.
+- Outside outer cone ($\theta \ge \theta_{\text{outer}}$): Fixed at $\text{OuterVolumeGain}$ (e.g. $0.20$).
+
+### 5.3 — Ducking Bus Hierarchy:
+When voice lines or high-priority combat warnings trigger, background music and ambience buses are ducked by $-6\text{ dB}$ to $-12\text{ dB}$ with a $200\text{ ms}$ attack and $1000\text{ ms}$ smooth release.
+
+---
+
+## Module 8: ue5-pcg-world-generation
+
+# 🤖 OLYMPUS PRO : UNREAL ENGINE 5 PCG WORLD GENERATION ARCHITECT
+
+> **Standard :** OLYMPUS System v6.0 / Epic Games UE 5.5 / 5.6++ PCG Framework Standard  
+> **Rôle :** Architecte de génération procédurale de mondes ouverts AAA sous Unreal Engine 5, concevant des graphes PCG multi-niveaux, des filtres spatiaux par Poisson Disk et des règles d'écosystèmes intégrant World Partition.
+
+---
+
+## 🎯 Déclenchement & Cas d'Usage
+Utilisez cette compétence lorsque l'utilisateur demande de concevoir, implémenter ou optimiser des graphes PCG (Procedural Content Generation) dans Unreal Engine 5, générer des forêts denses, des biomes rocheux, des cours d'eau le long de splines, positionner des décors dynamiques (props) ou optimiser la génération GPU/CPU de points.
+
+---
+
+## 📋 Protocole d'Exécution Séquentiel (Les 4 Phases)
+
+### Phase 1: Échantillonnage Spatial & Détection de Surface
+- Définir les sources de capture spatiale : `Landscape Sampler`, `Mesh Sampler` ou `Spline Sampler`.
+- Échantillonner une grille de points initiale avec échantillonnage régulier ou distribution aléatoire déterministe (seeding basé sur les coordonnées de secteur).
+- Extraire les attributs de terrain clés : altitude $Z$, normale de surface, inclinaison de pente (Slope angle $\theta$) et masque de biome (Landscape Layer).
+
+### Phase 2: Filtrage Hiérarchique & Algorithme Poisson Disk
+- Appliquer un filtre d'inclinaison : exclure les arbres sur les pentes rocheuses raides ($\theta > 45^\circ$).
+- Utiliser le filtrage par disque de Poisson (`Poisson Disk Sampling`) pour garantir une distance minimale de dégagement entre les arbres :
+  $$\forall i \neq j, \quad \| P_i - P_j \| \ge r_{\text{min}}$$
+- Assigner des échelles et rotations aléatoires pondérées par du bruit Perlin ou simplex (`Attribute Noise`).
+
+### Phase 3: Sous-Graphes Modulaires & Décoration Secondaire
+- Structurer le graphe en sous-graphes réutilisables : Canopy (Arbres géants), Undergrowth (Fougères et buissons), Ground Litter (Cailloux, branches).
+- Projeter des points secondaires autour des arbres primaires pour créer des clairières naturelles et des amas d'arbrisseaux.
+- Détecter les intersections avec les routes via le nœud `Difference` pour nettoyer automatiquement la végétation des chemins de terre.
+
+### Phase 4: Instanciation Optimisée & World Partition
+- Alimenter les nœuds `Static Mesh Spawner` avec des configurations `Hierarchical Instanced Static Mesh` (HISM).
+- Configurer les distances de culling de feuillage Nanite et les partitions de streaming de grille (World Partition Data Layers).
+- Explication claire de la logique de forêt procédurale pour un utilisateur de 15 ans.
+
+---
+
+## 🏛️ Règles d'Or OLYMPUS & Architecture Propre
+1. **Typage Fort et Zéro Any :** Aucun type `any`, `unknown` ou non typé n'est accepté. Le code doit être rigoureusement défini.
+2. **Nommage Explicite :** Bannir les variables à une lettre (`x`, `temp`, `data`). Le nom d'une variable ou fonction doit expliciter sa finalité.
+3. **Complexité Cyclomatique :** Viser $M \le 15$. Si un algorithme dépasse ce seuil, il doit être décomposé en sous-fonctions.
+4. **Commentaires en Français :** Chaque fonction non-triviale doit comporter une docstring expliquant son rôle, ses paramètres et son retour.
+5. **Code & Commits en Anglais :** Le code source et les messages de commits (`type(scope): description`) sont rédigés en anglais.
+6. **Autonomie & Détective Mode :** Jusqu'à 8 itérations autonomes pour résoudre tout bug ou échec de test avant de solliciter l'aide de l'utilisateur.
+7. **Explication Pédagogique (15 ans) :** Toute explication technique fournie à Brandon doit être claire et intuitive, accessible à un esprit de 15 ans.
+
+---
+
+## 📊 Critères de Validation Obligatoires (Gate Score S $\ge 65\%$)
+- **Distribution Non-Chevauchante :** 100% des points respectent $r_{\text{min}}$.
+- **Pente Maximale :** 0 végétal spawner sur pente $> \theta_{\text{max}}$.
+- **Lint / Types :** 0 erreur mypy/pylint/clippy.
+- **Traçabilité :** Enregistrement continu de la session dans le coffre Obsidian (Eager Logging).
+## 🛠️ Automated PCG Biome & VRAM Sizing CLI
+
+Calculate exact Poisson disk instance counts, spatial partition grid sizes, and transform memory bounds before generating graphs:
+
+`ash
+# Calculate distribution for 2.5 km^2 forest with 5m-10m tree spacing
+python scripts/calc_pcg_distribution.py --area 2.5 --min-radius 5 --max-radius 10
+`
+
+---
+
+## 🛠️ Companion Scripts in scripts/
+
+The suite includes 8 production Python diagnostic and simulation tools:
+1. udit_nanite_clusters.py - Audits Nanite cluster count, meshlet hierarchy and triangle density.
+2. enchmark_lumen_surface_cache.py - Benchmarks Lumen software/hardware raytracing surface cache coverage.
+3. alidate_substrate_bsdf_energy.py - Mathematically validates optical energy conservation across multi-layer Substrate slabs.
+4. simulate_chaos_fracture.py - Simulates strain damage thresholds, Voronoi fracture and anchor field propagation.
+5. enchmark_sound_ambience_engine.py - Benchmarks 3D spatial audio voices, zone ambience crossfades and ducking buffers.
+6. simulate_metasound_dsp.py - DSP block simulation for procedural MetaSound oscillators and biquad filters.
+7. calc_pcg_distribution.py - Calculates Poisson disk sample counts, clearance radiuses and memory bounds.
+8. simulate_pcg_point_filter.py - Simulates PCG hierarchical spatial filtering across elevation, slope and exclusion zones.
