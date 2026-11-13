@@ -44,3 +44,9 @@ Hermes_Full_Ecosystem_Pack/
 - **Option A (Recommandée - Vision Tout-en-un) :** Choisissez l'un des 10 dossiers dans `00_Hermes_Mega_Suites_All_In_One/` et copiez-le dans `C:\Users\brand\.gemini\config\skills\`.
 
 - **Option B (Modulaire - Vision Précise) :** Choisissez parmi les 50 dossiers de `00_Hermes_Merged_Master_Suites/` et copiez uniquement les briques souhaitées.
+
+## 🌐 Master Suite Furtive VPS & Anti-Ban Hetzner
+- **`hermes-omni-stealth-powerhouse`** : Moteur d'accès web furtif et scraping durci (v5.5 Armor Edition) 100% conforme Hetzner AUP, avec 8 boucliers intégrés (SSRF multi-stack, anti-WebRTC leak, confinement RAM V8 à 256 Mo, anti-redirect 3xx, Kill-Switch proxy résidentiel et rate limiter SQLite).
+  - Dossier : [`master-suites/hermes-omni-stealth-powerhouse/`](master-suites/hermes-omni-stealth-powerhouse/)
+  - Installation 1-clic : `chmod +x install_linux.sh && ./install_linux.sh`
+

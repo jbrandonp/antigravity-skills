@@ -4,18 +4,18 @@
 [![Google Antigravity](https://img.shields.io/badge/Antigravity-2.0%20Ready-4285F4.svg)](https://antigravity.google)
 [![Claude Code Ready](https://img.shields.io/badge/Claude%20Code-Compatible-D97706.svg)](CLAUDE.md)
 [![Hermes Agent Ready](https://img.shields.io/badge/Hermes%20Agent-Compatible-10B981.svg)](hermes/)
-[![Elite Skills](https://img.shields.io/badge/Elite%20Skills-174%20Active-success.svg)](skills/)
+[![Elite Skills](https://img.shields.io/badge/Elite%20Skills-175%20Active-success.svg)](skills/)
 [![Hermes Mega-Suites](https://img.shields.io/badge/Hermes%20Mega--Suites-10%20Suites-FF6B6B.svg)](hermes/mega-suites/)
-[![Hermes Master-Suites](https://img.shields.io/badge/Hermes%20Master--Suites-50%20Suites-orange.svg)](hermes/master-suites/)
+[![Hermes Master-Suites](https://img.shields.io/badge/Hermes%20Master--Suites-63%20Suites-orange.svg)](hermes/master-suites/)
 [![DeepMind Science](https://img.shields.io/badge/DeepMind%20Science-41%20Skills-8A2BE2.svg)](plugins/science/)
 [![Google Stitch](https://img.shields.io/badge/Google%20Stitch-16%20Skills-4285F4.svg)](plugins/stitch-design/)
 [![MCP Servers](https://img.shields.io/badge/MCP%20Servers-8%20Bundled-blue.svg)](mcp/)
-[![Total Tools](https://img.shields.io/badge/Total%20Tools-298%20Skills%20%26%20Suites-brightgreen.svg)](#)
+[![Total Tools](https://img.shields.io/badge/Total%20Tools-300%20Skills%20%26%20Suites-brightgreen.svg)](#)
 [![Integrity Score](https://img.shields.io/badge/Audit%20Score-100%2F100-brightgreen.svg)](scripts/verify_skills.py)
 [![CI Status](https://img.shields.io/badge/CI-Passing-brightgreen.svg)](.github/workflows/validate-skills.yml)
 
 > **The Ultimate Production-Grade Skill & Customization Suite for [Google Antigravity](https://antigravity.google), [Anthropic Claude Code](CLAUDE.md), [Hermes Agent](hermes/), Cursor, and Modern AI Coding Agents.**  
-> Unifies **174 audited elite skills**, **10 Hermes Mega-Suites** (~330,000 words designed for autonomous marathon tasks), **50 Hermes Master-Suites** (330+ micro-skills consolidated with zero duplicate bloat), the official **Google DeepMind Science toolkit** (41 skills + 3D Mol* interactive sidecar), the **Google Labs Stitch design suite** (16 skills across 3 plugins), **8 pre-bundled MCP servers** (Blender, Cloud Run, Firebase, Genkit, Science Mol*, eBay, Vinted, Web Tools), and one-click installers.
+> Unifies **175 audited elite skills**, **10 Hermes Mega-Suites** (~330,000 words designed for autonomous marathon tasks), **63 Hermes Master-Suites** (including the new Hetzner-shielded `hermes-omni-stealth-powerhouse`), the official **Google DeepMind Science toolkit** (41 skills + 3D Mol* interactive sidecar), the **Google Labs Stitch design suite** (16 skills across 3 plugins), **8 pre-bundled MCP servers** (Blender, Cloud Run, Firebase, Genkit, Science Mol*, eBay, Vinted, Web Tools), and one-click installers.
 
 ---
 
@@ -26,9 +26,10 @@
 3. [One-Click Installation](#one-click-installation)
 4. [Hermes Autonomous Agent Ecosystem](#hermes-autonomous-agent-ecosystem)
    - [10 All-in-One Mega-Suites](#10-all-in-one-mega-suites-330000-words)
-   - [50 Consolidated Master Suites](#50-consolidated-master-suites)
+   - [63 Consolidated Master Suites](#63-consolidated-master-suites)
    - [Hermes MCP Servers & Autonomous Tools](#hermes-mcp-servers-autonomous-tools)
-5. [Elite Skills Catalog (174 Skills)](#elite-skills-catalog-174-skills)
+   - [1-Click Deployment for Hermes Agent (Telegram / Hetzner)](#-1-click-deployment-for-hermes-agent-telegram--hetzner)
+5. [Elite Skills Catalog (175 Skills)](#elite-skills-catalog-175-skills)
 6. [Google DeepMind Science Suite (41 Skills)](#google-deepmind-science-suite-41-skills)
 7. [Google Labs Stitch Design Suite (16 Skills)](#google-labs-stitch-design-suite-16-skills)
 8. [Plugins & MCP Architecture](#plugins-mcp-architecture)
@@ -149,6 +150,7 @@ For long-running autonomous marathon sessions where an agent requires deep, comp
 | [`global-marketing-growth-suite`](hermes/master-suites/global-marketing-growth-suite/SKILL.md) | Master Growth Marketing & Acquisition Suite: Viral carousel design, content creation, Reddit community building, App Store Optimization (ASO), paid media audit, newsletter, and conversion optimization. |
 | [`godot-engine-suite`](hermes/master-suites/godot-engine-suite/SKILL.md) | Complete Godot 4 Game Engine Suite: High-performance GDScript gameplay mechanics, multiplayer netcode (RPC/high-level networking), and custom GLSL shader development. |
 | [`hermes-core-orchestration-suite`](hermes/master-suites/hermes-core-orchestration-suite/SKILL.md) | Hermes Agent Master Orchestration Suite: Core agent runtime guidelines, prompt engineering, Kanban task management, roadmap planning, MCP ecosystem integration, and recursive self-evolution. |
+| [`hermes-omni-stealth-powerhouse`](hermes/master-suites/hermes-omni-stealth-powerhouse/SKILL.md) | Universal Stealth Web & Anti-Ban Powerhouse Suite (v5.5 Armor Edition): 100% Hetzner AUP compliant, multi-tier web extraction, anonymous search, biometric browser interactions, and zero-leak proxy kill-switch. |
 | [`human-resources-recruitment-suite`](hermes/master-suites/human-resources-recruitment-suite/SKILL.md) | Human Resources & Talent Acquisition Suite: Full-cycle talent recruiting, candidate evaluation rubrics, job offer design, and structured performance reviews. |
 | [`hyperframes-web-animation-suite`](hermes/master-suites/hyperframes-web-animation-suite/SKILL.md) | HyperFrames Web Animation & Composition Suite: High-performance canvas and DOM kinetic motion, HyperFrames CLI toolchain, component registry, and website-to-hyperframes capture. |
 | [`international-business-culture-translation-suite`](hermes/master-suites/international-business-culture-translation-suite/SKILL.md) | Global Business, Cultural Intelligence & Translation Suite: Technical and conversational translation across French, Korean, Chinese, and English; cross-cultural negotiation strategy, international academic admissions, and Gaokao college advising. |
@@ -188,7 +190,28 @@ Located in [`hermes/mcp-servers/`](hermes/mcp-servers/) and [`hermes/scripts/`](
 
 ---
 
-## 📦 Elite Skills Catalog (174 Skills)
+### 🤖 1-Click Deployment for Hermes Agent (Telegram / Hetzner)
+
+If you control your **Hermes Agent** through Telegram or CLI on a Hetzner Linux VPS, send Hermes this autonomous deployment brief:
+
+```bash
+# 1. Update / clone repository on VPS
+git clone https://github.com/jbrandonp/antigravity-skills.git ~/antigravity-skills || (cd ~/antigravity-skills && git pull)
+
+# 2. Install the Omni-Stealth Powerhouse skill into Hermes
+mkdir -p ~/.hermes/skills
+cp -r ~/antigravity-skills/hermes/master-suites/hermes-omni-stealth-powerhouse ~/.hermes/skills/
+cd ~/.hermes/skills/hermes-omni-stealth-powerhouse
+chmod +x install_linux.sh && ./install_linux.sh
+
+# 3. (Optional) Register in Redis if your Hermes stack uses Redis registry:
+redis-cli SADD hermes:active_skills "hermes-omni-stealth-powerhouse"
+redis-cli SET hermes:skill:hermes-omni-stealth-powerhouse:path "$HOME/.hermes/skills/hermes-omni-stealth-powerhouse"
+```
+
+---
+
+## 📦 Elite Skills Catalog (175 Skills)
 
 ### 📐 Computer-Aided Design (CAD), CAE & Multiphysics Engineering (8 Skills)
 
@@ -269,10 +292,11 @@ Located in [`hermes/mcp-servers/`](hermes/mcp-servers/) and [`hermes/scripts/`](
 | [`mcp-builder`](skills/mcp-builder/SKILL.md) | Guide for creating high-quality MCP (Model Context Protocol) servers that enable LLMs to interact with external services through well-designed tools. Use when building MCP servers to integrate external APIs or services, whether in Python (FastMCP) or Node/TypeScript (MCP SDK). |
 | [`conversational-dynamics-profiler`](skills/conversational-dynamics-profiler/SKILL.md) | Deep psychological profiling, interpersonal relationship intelligence, and behavioral dynamics auditing from raw chat archives (WhatsApp, Meta, Telegram, Discord, CSV). Computes RTT latency, burstiness, Shannon entropy, Gottman 5:1 golden ratio, Bids for Connection, Markov state transitions, and Non-Violent Communication (CNV) reframing. |
 
-### 💻 Software Engineering, Testing, Databases & DevOps (24 Skills)
+### 💻 Software Engineering, Testing, Databases & DevOps (25 Skills)
 
 | Skill | Description |
 | :--- | :--- |
+| [`hermes-omni-stealth-powerhouse`](skills/hermes-omni-stealth-powerhouse/SKILL.md) | Universal Stealth Web & Anti-Ban Powerhouse Suite for Linux VPS (v5.5 Armor Edition): Immunized against datacenter IP bans, Hetzner abuse notices (abuse@hetzner.com), SSRF attacks, WebRTC IP leaks, and RAM saturation via 8 Zero-Trust shields (Dual-Stack IPv4/IPv6, 3xx redirect interceptor, V8 256MB cap, serialized flock, per-domain rate limiting, and prompt injection demarcation). |
 | [`software-engineering-studio-suite`](skills/software-engineering-studio-suite/SKILL.md) | Comprehensive Software Engineering Suite: Enterprise backend architecture, database query optimization, data engineering ETL pipelines, security audits, SRE observability, DevOps automation, and rigorous code reviews. |
 | [`software-dev-methodology-superpowers-suite`](skills/software-dev-methodology-superpowers-suite/SKILL.md) | Elite Software Engineering Methodology Suite (SWE-bench & Superpowers): Systematic debugging (Evidence Gate), strict Test-Driven Development (TDD), property-based fuzzing invariants, subagent delegation, and structured writing plans. |
 | [`github-devops-automation-suite`](skills/github-devops-automation-suite/SKILL.md) | Enterprise GitHub DevOps & Repository Lifecycle Suite: Automated PR reviews, issue triage, branch protection, repository mining, authentication tokens, codebase inspection, and strict gh CLI permission governance. |
