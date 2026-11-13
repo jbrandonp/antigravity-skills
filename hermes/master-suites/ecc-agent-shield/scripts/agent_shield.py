@@ -9,6 +9,7 @@ import argparse
 import os
 import re
 import sys
+from datetime import datetime
 from pathlib import Path
 
 DESTRUCTIVE_PATTERNS = [
@@ -37,11 +38,12 @@ def learn_instinct(title: str, trigger: str, rule: str, vault_dir: Path = None):
     slug = re.sub(r'[^a-zA-Z0-9_\-]', '_', title.lower()).strip('_')
     file_path = instinct_dir / f"instinct_{slug}.md"
 
+    now_iso = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     content = f"""---
 title: "{title}"
 type: agent-instinct
 trigger: "{trigger}"
-created_at: "$(date)"
+created_at: "{now_iso}"
 status: active
 ---
 

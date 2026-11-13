@@ -54,14 +54,24 @@ def main():
     print("     ANTIGRAVITY SUPER SUITE — FUNCTIONAL SCRIPTS TEST SUITE      ")
     print("==================================================================")
 
-    # 1. context-mode
-    ctx_script = SKILLS / "context-mode" / "scripts" / "ctx_buffer.py"
+    # 1. context-mode (inside context-token-optimization-suite or context-mode)
+    ctx_candidates = [
+        SKILLS / "context-token-optimization-suite" / "scripts" / "ctx_buffer.py",
+        SKILLS / "context-mode" / "scripts" / "ctx_buffer.py",
+        ROOT / "hermes" / "master-suites" / "context-token-optimization-suite" / "scripts" / "ctx_buffer.py"
+    ]
+    ctx_script = next((p for p in ctx_candidates if p.exists()), ctx_candidates[0])
     run_test("context-mode --help", [str(ctx_script), "--help"])
     run_test("context-mode run command", [str(ctx_script), "run", "echo", "hello"])
     run_test("context-mode search", [str(ctx_script), "search", "hello"])
 
-    # 2. caveman-compress
-    caveman_script = SKILLS / "caveman-compress" / "scripts" / "compressor.py"
+    # 2. caveman-compress (inside context-token-optimization-suite or caveman-compress)
+    caveman_candidates = [
+        SKILLS / "context-token-optimization-suite" / "scripts" / "compressor.py",
+        SKILLS / "caveman-compress" / "scripts" / "compressor.py",
+        ROOT / "hermes" / "master-suites" / "context-token-optimization-suite" / "scripts" / "compressor.py"
+    ]
+    caveman_script = next((p for p in caveman_candidates if p.exists()), caveman_candidates[0])
     run_test("caveman-compress --help", [str(caveman_script), "--help"])
     with tempfile.NamedTemporaryFile("w+", suffix=".md", delete=False) as f:
         f.write("# Rules\nYou must always ensure that you do not fail.\nPlease be polite.\n")
@@ -74,7 +84,11 @@ def main():
             os.remove(f_path)
 
     # 3. karpathy-guidelines
-    karpathy_script = SKILLS / "karpathy-guidelines" / "scripts" / "surgical_checker.py"
+    karpathy_candidates = [
+        SKILLS / "karpathy-guidelines" / "scripts" / "surgical_checker.py",
+        ROOT / "hermes" / "master-suites" / "karpathy-guidelines" / "scripts" / "surgical_checker.py"
+    ]
+    karpathy_script = next((p for p in karpathy_candidates if p.exists()), karpathy_candidates[0])
     run_test("karpathy-guidelines --help", [str(karpathy_script), "--help"])
     run_test("karpathy-guidelines check clean state", [str(karpathy_script)])
 

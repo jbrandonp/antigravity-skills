@@ -4,7 +4,7 @@
 [![Google Antigravity](https://img.shields.io/badge/Antigravity-2.0%20Ready-4285F4.svg)](https://antigravity.google)
 [![Claude Code Ready](https://img.shields.io/badge/Claude%20Code-Compatible-D97706.svg)](CLAUDE.md)
 [![Hermes Agent Ready](https://img.shields.io/badge/Hermes%20Agent-Compatible-10B981.svg)](hermes/)
-[![Elite Skills](https://img.shields.io/badge/Elite%20Skills-187%20Active-success.svg)](skills/)
+[![Elite Skills](https://img.shields.io/badge/Elite%20Skills-168%20Active-success.svg)](skills/)
 [![Hermes Mega-Suites](https://img.shields.io/badge/Hermes%20Mega--Suites-11%20Suites-FF6B6B.svg)](hermes/mega-suites/)
 [![Hermes Master-Suites](https://img.shields.io/badge/Hermes%20Master--Suites-76%20Suites-orange.svg)](hermes/master-suites/)
 [![DeepMind Science](https://img.shields.io/badge/DeepMind%20Science-41%20Skills-8A2BE2.svg)](plugins/science/)
@@ -15,7 +15,7 @@
 [![CI Status](https://img.shields.io/badge/CI-Passing-brightgreen.svg)](.github/workflows/validate-skills.yml)
 
 > **The Ultimate Production-Grade Skill & Customization Suite for [Google Antigravity](https://antigravity.google), [Anthropic Claude Code](CLAUDE.md), [Hermes Agent](hermes/), Cursor, and Modern AI Coding Agents.**  
-> Unifies **167 audited elite skills**, **11 Hermes Mega-Suites** (~350,000 words designed for autonomous marathon tasks), **76 Hermes Master-Suites** (including the new Hetzner-shielded `hermes-omni-stealth-powerhouse`), the official **Google DeepMind Science toolkit** (41 skills + 3D Mol* interactive sidecar), the **Google Labs Stitch design suite** (16 skills across 3 plugins), **8 pre-bundled MCP servers** (Blender, Cloud Run, Firebase, Genkit, Science Mol*, eBay, Vinted, Web Tools), and one-click installers.
+> Unifies **168 audited elite skills**, **11 Hermes Mega-Suites** (~350,000 words designed for autonomous marathon tasks), **76 Hermes Master-Suites** (including the new Hetzner-shielded `hermes-omni-stealth-powerhouse`), the official **Google DeepMind Science toolkit** (41 skills + 3D Mol* interactive sidecar), the **Google Labs Stitch design suite** (16 skills across 3 plugins), **8 pre-bundled MCP servers** (Blender, Cloud Run, Firebase, Genkit, Science Mol*, eBay, Vinted, Web Tools), and one-click installers.
 
 ---
 
@@ -29,7 +29,7 @@
    - [75 Consolidated Master Suites](#63-consolidated-master-suites)
    - [Hermes MCP Servers & Autonomous Tools](#hermes-mcp-servers-autonomous-tools)
    - [1-Click Deployment for Hermes Agent (Telegram / Hetzner)](#-1-click-deployment-for-hermes-agent-telegram--hetzner)
-5. [Elite Skills Catalog (167 Skills)](#elite-skills-catalog-167-skills)
+5. [Elite Skills Catalog (168 Skills)](#elite-skills-catalog-167-skills)
 6. [Google DeepMind Science Suite (41 Skills)](#google-deepmind-science-suite-41-skills)
 7. [Google Labs Stitch Design Suite (16 Skills)](#google-labs-stitch-design-suite-16-skills)
 8. [Plugins & MCP Architecture](#plugins-mcp-architecture)
@@ -295,6 +295,7 @@ redis-cli SET hermes:skill:hermes-omni-stealth-powerhouse:path "$HOME/.hermes/sk
 
 | Skill | Description |
 | :--- | :--- |
+| [karpathy-guidelines](skills/karpathy-guidelines/SKILL.md) | Andrej Karpathy 4 foundational laws (Think, Simplicity, Surgical, Goal-Driven) combined with Ponytail anti-overengineering and dead-code elimination. |
 | [gstack-startup-pack](skills/gstack-startup-pack/SKILL.md) | Full Y Combinator product delivery and startup leadership suite inspired by Garry Tan (gstack). Deploys specialized personas (/plan-ceo-review, /plan-eng-review, /ship). |
 | [socratic-spec-architect](skills/socratic-spec-architect/SKILL.md) | Matt Pocock Socratic engineering methodology for AI agents. Enforces relentless clarifying interviews (/grill-me, /grill-with-docs) before code, and structured session handoffs (/handoff). |
 | [graphify-ast-knowledge](skills/graphify-ast-knowledge/SKILL.md) | Deterministic Tree-Sitter and AST codebase knowledge graph builder. Maps symbols, dependencies, and routes into queryable graph.json and interactive graph.html (-80% exploration tokens). |
