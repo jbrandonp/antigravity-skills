@@ -15,11 +15,11 @@ The authoritative engineering playbook for creating, editing, and validating pro
 
 ---
 
-## 📊 1. Excel Architecture Standards (OpenPyXL)
-
-# Excel Architect (OpenPyXL Production Standard)
+## 📊 1. Excel Architecture Standards (OpenPyXL & Mega Excel Master Suite)
 
 The reference engineering playbook for generating flawless, business-grade Excel (`.xlsx`) workbooks using Python and `openpyxl`. Perfectly aligned with Brandon's ecosystem preferences (`openpyxl` by default).
+
+> 🚀 **Supreme Excel Engine :** For advanced financial modeling (DCF, LBO, 3-Statement, Debt Schedules), headless LibreOffice recalculation, reference-aware AST row/col shifting, dirty ERP zero-loss reconciliation, or native MCP server execution, use the dedicated **`mega-excel-master-suite`** located at `c:\Users\brand\.agents\skills\mega-excel-master-suite\`.
 
 ---
 
@@ -43,6 +43,7 @@ The reference engineering playbook for generating flawless, business-grade Excel
 - Font: Use clean system fonts like `Segoe UI`, `Calibri`, or `Aptos`.
 - Header Row: Dark background (`#1F4E79` or `#2E4053`) with white bold text.
 - Alternating Rows: Subtle zebra striping (`#F8F9F9` or `#F2F4F4`) to enhance readability across hundreds of rows.
+- Wall Street Convention: Blue (`#0000FF`) for inputs/assumptions, Black (`#000000`) for formulas, Green (`#008000`) for inter-sheet links.
 
 ### Standard 2: Auto-Fitting Column Widths
 - Never leave columns at default width (leading to truncated strings or `###` numeric overflow).
@@ -66,6 +67,10 @@ python scripts/validate_excel_output.py --file supermarket_prices.xlsx
 
 # Generate an example professional Excel workbook
 python scripts/validate_excel_output.py --demo
+
+# Or call the Unified Supreme Engine from mega-excel-master-suite:
+python c:\Users\brand\.agents\skills\mega-excel-master-suite\scripts\excel_master.py audit supermarket_prices.xlsx
+python c:\Users\brand\.agents\skills\mega-excel-master-suite\scripts\excel_master.py recalc supermarket_prices.xlsx
 ```
 
 ---
