@@ -4,18 +4,18 @@
 [![Google Antigravity](https://img.shields.io/badge/Antigravity-2.0%20Ready-4285F4.svg)](https://antigravity.google)
 [![Claude Code Ready](https://img.shields.io/badge/Claude%20Code-Compatible-D97706.svg)](CLAUDE.md)
 [![Hermes Agent Ready](https://img.shields.io/badge/Hermes%20Agent-Compatible-10B981.svg)](hermes/)
-[![Elite Skills](https://img.shields.io/badge/Elite%20Skills-169%20Active-success.svg)](skills/)
+[![Elite Skills](https://img.shields.io/badge/Elite%20Skills-170%20Active-success.svg)](skills/)
 [![Hermes Mega-Suites](https://img.shields.io/badge/Hermes%20Mega--Suites-11%20Suites-FF6B6B.svg)](hermes/mega-suites/)
-[![Hermes Master-Suites](https://img.shields.io/badge/Hermes%20Master--Suites-77%20Suites-orange.svg)](hermes/master-suites/)
+[![Hermes Master-Suites](https://img.shields.io/badge/Hermes%20Master--Suites-78%20Suites-orange.svg)](hermes/master-suites/)
 [![DeepMind Science](https://img.shields.io/badge/DeepMind%20Science-41%20Skills-8A2BE2.svg)](plugins/science/)
 [![Google Stitch](https://img.shields.io/badge/Google%20Stitch-16%20Skills-4285F4.svg)](plugins/stitch-design/)
 [![MCP Servers](https://img.shields.io/badge/MCP%20Servers-8%20Bundled-blue.svg)](mcp/)
-[![Total Tools](https://img.shields.io/badge/Total%20Tools-317%2B%20Skills%20%26%20Suites-brightgreen.svg)](#)
+[![Total Tools](https://img.shields.io/badge/Total%20Tools-318%2B%20Skills%20%26%20Suites-brightgreen.svg)](#)
 [![Integrity Score](https://img.shields.io/badge/Audit%20Score-100%2F100-brightgreen.svg)](scripts/verify_skills.py)
 [![CI Status](https://img.shields.io/badge/CI-Passing-brightgreen.svg)](.github/workflows/validate-skills.yml)
 
 > **The Ultimate Production-Grade Skill & Customization Suite for [Google Antigravity](https://antigravity.google), [Anthropic Claude Code](CLAUDE.md), [Hermes Agent](hermes/), Cursor, and Modern AI Coding Agents.**  
-> Unifies **169 audited elite skills**, **11 Hermes Mega-Suites** (~350,000 words designed for autonomous marathon tasks), **77 Hermes Master-Suites** (including the new Hetzner-shielded `hermes-omni-stealth-powerhouse`), the official **Google DeepMind Science toolkit** (41 skills + 3D Mol* interactive sidecar), the **Google Labs Stitch design suite** (16 skills across 3 plugins), **8 pre-bundled MCP servers** (Blender, Cloud Run, Firebase, Genkit, Science Mol*, eBay, Vinted, Web Tools), and one-click installers.
+> Unifies **170 audited elite skills**, **11 Hermes Mega-Suites** (~350,000 words designed for autonomous marathon tasks), **78 Hermes Master-Suites** (including the new Hetzner-shielded `hermes-omni-stealth-powerhouse` and `brivael-twitter-system`), the official **Google DeepMind Science toolkit** (41 skills + 3D Mol* interactive sidecar), the **Google Labs Stitch design suite** (16 skills across 3 plugins), **8 pre-bundled MCP servers** (Blender, Cloud Run, Firebase, Genkit, Science Mol*, eBay, Vinted, Web Tools), and one-click installers.
 
 ---
 
@@ -26,10 +26,10 @@
 3. [One-Click Installation](#one-click-installation)
 4. [Hermes Autonomous Agent Ecosystem](#hermes-autonomous-agent-ecosystem)
    - [11 All-in-One Mega-Suites](#11-all-in-one-mega-suites-350000-words)
-   - [75 Consolidated Master Suites](#63-consolidated-master-suites)
+   - [78 Consolidated Master Suites](#63-consolidated-master-suites)
    - [Hermes MCP Servers & Autonomous Tools](#hermes-mcp-servers-autonomous-tools)
    - [1-Click Deployment for Hermes Agent (Telegram / Hetzner)](#-1-click-deployment-for-hermes-agent-telegram--hetzner)
-5. [Elite Skills Catalog (169 Skills)](#elite-skills-catalog-169-skills)
+5. [Elite Skills Catalog (170 Skills)](#elite-skills-catalog-170-skills)
 6. [Google DeepMind Science Suite (41 Skills)](#google-deepmind-science-suite-41-skills)
 7. [Google Labs Stitch Design Suite (16 Skills)](#google-labs-stitch-design-suite-16-skills)
 8. [Plugins & MCP Architecture](#plugins-mcp-architecture)
@@ -149,6 +149,7 @@ For long-running autonomous marathon sessions where an agent requires deep, comp
 | [`giga-factory-enterprise-suite`](hermes/master-suites/giga-factory-enterprise-suite/SKILL.md) | Hermes Giga-Factory Enterprise Delivery Suite: High-conversion landing page design, brand identity systems, legal contracts & corporate governance, and end-to-end game production pipelines. |
 | [`github-devops-automation-suite`](hermes/master-suites/github-devops-automation-suite/SKILL.md) | Enterprise GitHub DevOps & Repository Lifecycle Suite: Automated PR reviews, issue triage, branch protection, repository mining, authentication tokens, and codebase inspection. |
 | [`global-marketing-growth-suite`](hermes/master-suites/global-marketing-growth-suite/SKILL.md) | Master Growth Marketing & Acquisition Suite: Viral carousel design, content creation, Reddit community building, App Store Optimization (ASO), paid media audit, newsletter, and conversion optimization. |
+| [`brivael-twitter-system`](hermes/master-suites/brivael-twitter-system/SKILL.md) | Production-grade Claude Skill synthesizing the cognitive framework, rhetorical biomechanics, and writing pipeline of Brivael Le Pogam (@brivael, CEO & CTO Argil AI, YC S24). Enforces the hybrid cognitive-lever model, staccato punctuation, zero-slop constraints, and automated verification. |
 | [`godot-engine-suite`](hermes/master-suites/godot-engine-suite/SKILL.md) | Complete Godot 4 Game Engine Suite: High-performance GDScript gameplay mechanics, multiplayer netcode (RPC/high-level networking), and custom GLSL shader development. |
 | [`hermes-core-orchestration-suite`](hermes/master-suites/hermes-core-orchestration-suite/SKILL.md) | Hermes Agent Master Orchestration Suite: Core agent runtime guidelines, prompt engineering, Kanban task management, roadmap planning, MCP ecosystem integration, and recursive self-evolution. |
 | [`hermes-omni-stealth-powerhouse`](hermes/master-suites/hermes-omni-stealth-powerhouse/SKILL.md) | Universal Stealth Web & Anti-Ban Powerhouse Suite (v5.5 Armor Edition): 100% Hetzner AUP compliant, multi-tier web extraction, anonymous search, biometric browser interactions, and zero-leak proxy kill-switch. |
@@ -379,13 +380,14 @@ redis-cli SET hermes:skill:hermes-omni-stealth-powerhouse:path "$HOME/.hermes/sk
 | [`compliance-privacy-gdpr-engineer`](skills/compliance-privacy-gdpr-engineer/SKILL.md) | Audit and implement software privacy compliance, GDPR/RGPD regulations, open-source license compatibility, and European AI Act requirements. Enforces privacy-by-design, cookie consent architectures, right-to-erasure workflows, data processing registers, and license risk triage. |
 | [`crypto-web3-blockchain-suite`](skills/crypto-web3-blockchain-suite/SKILL.md) | Web3, Solidity & Zero-Knowledge Blockchain Suite: Production Solidity smart contract engineering, blockchain security auditing, zero-knowledge proofs (ZK Steward), and crypto social intelligence (Binance Square). |
 
-### 🏢 Enterprise, Growth Marketing, Science & Automation (41 Skills)
+### 🏢 Enterprise, Growth Marketing, Science & Automation (42 Skills)
 
 | Skill | Description |
 | :--- | :--- |
 | [`digital-office-architect`](skills/digital-office-architect/SKILL.md) | Universal SME & Technical Trades Digital Office Architecture Suite. Master architectural and operational framework for designing, deploying, auditing, and maintaining a lightweight administrative office, anti-SaaS pipeline, and legal shield for ANY small business across 6 sector profiles (BTP J+14, Services J+7, Garages J+3, Healthcare J+5, Retail J+5, Real Estate J+10). Enforces Belgian/European socio-fiscal engineering (Smart Coop, INASTI 2026, Peppol XML UBL 2.1), 1-page contracting with 9 CGV clauses, and 8 production CLI tools with zero 'Any' typing. |
 | [`competitive-intelligence-os`](skills/competitive-intelligence-os/SKILL.md) | Professional Competitive Intelligence, Market Warfare, Win/Loss Forensics, and Operational Benchmarking Operating System. Fortune 500, SCIP, and McKinsey-grade strategic intelligence suite: KIQ decision router, Altman Z'-Score SME financial distress, Wardley mapping, Gartner Magic Quadrant vector SVG, Disruption Vulnerability Index (DVI 0-100), 8-second living battlecards, Win-Wire real-time sales alert publisher, and native CLI tooling. |
 | [`global-marketing-growth-suite`](skills/global-marketing-growth-suite/SKILL.md) | Master Growth Marketing & Acquisition Suite: Viral carousel design, content creation, Reddit community building, App Store Optimization (ASO), paid media audit, newsletter, and conversion optimization. |
+| [`brivael-twitter-system`](skills/brivael-twitter-system/SKILL.md) | Production-grade Claude Skill synthesizing the cognitive framework, rhetorical biomechanics, and writing pipeline of Brivael Le Pogam (@brivael, CEO & CTO Argil AI, YC S24). Enforces the hybrid cognitive-lever model, staccato punctuation, zero-slop constraints, and automated verification. |
 | [`china-growth-marketing-suite`](skills/china-growth-marketing-suite/SKILL.md) | Complete Chinese digital acquisition and e-commerce suite: Xiaohongshu (RED), Douyin, Bilibili, Baidu SEO, Cross-border E-commerce, and market localization. |
 | [`wechat-ecosystem-suite`](skills/wechat-ecosystem-suite/SKILL.md) | Comprehensive WeChat digital ecosystem suite: Mini-Program engineering, Official Account content curation, and community operations. |
 | [`finance-corporate-suite`](skills/finance-corporate-suite/SKILL.md) | End-to-End Corporate Finance, Modeling & Risk Suite: 3-Statement financial models, FP&A forecasting, automated bookkeeping, fraud detection, investment research, and strategic tax planning. |

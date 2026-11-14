@@ -169,6 +169,12 @@ def main():
         run_test("socratic-spec-architect --help", [str(socratic_script), "--help"])
         run_test("socratic-spec-architect generate", [str(socratic_script), "--title", "Antigravity Handoff", "--summary", "All tests passed", "--output", str(out_handoff)])
 
+    # 13. brivael-twitter-system
+    brivael_harness = SKILLS / "brivael-twitter-system" / "scripts" / "test_harness.py"
+    brivael_linter = SKILLS / "brivael-twitter-system" / "scripts" / "verify_brivael_post.py"
+    run_test("brivael-twitter-system --help", [str(brivael_linter), "--help"])
+    run_test("brivael-twitter-system test-harness", [str(brivael_harness)])
+
     print("==================================================================")
     print(f"TEST RESULTS: {tests_passed} passed, {tests_failed} failed.")
     print("==================================================================")

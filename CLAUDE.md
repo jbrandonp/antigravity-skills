@@ -11,13 +11,13 @@ This repository is organized into distinct, modular layers designed for multi-ag
 
 ```
 antigravity-skills/
-├── skills/                  ← 168 Audited Antigravity Elite Skills
+├── skills/                  ← 170 Audited Antigravity Elite Skills
 ├── plugins/                 ← 9 Turnkey Plugins (DeepMind Science, Stitch, Android, Firebase)
 │   ├── science/             ← 41 DeepMind Science Skills + Mol* 3D Sidecar
 │   └── stitch-*/            ← 16 Google Labs Stitch Design Skills
 ├── hermes/                  ← Hermes Autonomous Agent Ecosystem
 │   ├── mega-suites/         ← 11 All-in-One Mega-Suites (~350,000 words total)
-│   ├── master-suites/       ← 75 Consolidated Master Suites (330+ micro-skills unified)
+│   ├── master-suites/       ← 78 Consolidated Master Suites (330+ micro-skills unified)
 │   ├── mcp-servers/         ← eBay, Vinted, Web Tools MCP servers
 │   ├── scripts/             ← A2A Bus, Security Audits, DB Sync, Forecast
 │   ├── security-tools/      ← Gitleaks secret detection configs
@@ -45,7 +45,7 @@ When the user asks for end-to-end autonomous marathon work, use the **11 Hermes 
 11. [`11_mega-narrative-worldbuilding-and-cinematic-suite`](hermes/mega-suites/11_mega-narrative-worldbuilding-and-cinematic-suite/SKILL.md): Universal narrative, worldbuilding, fiction & AI cinematic video suite.
 
 ### 2. Targeted Execution & Clean Patterns → Antigravity Elite Skills (`skills/`)
-For specific engineering patterns, consult the **168 Antigravity Elite Skills** (e.g. `fastapi-sqlite-production`, `bridgesecurity-auditor`, `duckdb-parquet-analyst`, `shadcn`, `expo-router`, `context-mode`, `trail-of-bits-security-engine`).
+For specific engineering patterns, consult the **170 Antigravity Elite Skills** (e.g. `fastapi-sqlite-production`, `bridgesecurity-auditor`, `duckdb-parquet-analyst`, `shadcn`, `expo-router`, `context-mode`, `trail-of-bits-security-engine`, `brivael-twitter-system`).
 
 ### 3. Scientific & Biomedical Research → DeepMind Science (`plugins/science/`)
 For AlphaFold structures, ClinVar genetics, ChEMBL pharmacology, or arXiv literature queries, leverage the DeepMind Science suite.
