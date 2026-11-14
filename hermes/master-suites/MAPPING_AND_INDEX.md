@@ -1,11 +1,11 @@
-# Index Exhaustif des 50 Master Suites Consolidées Hermes Agent
+# Index Exhaustif des 77 Master Suites Consolidées Hermes Agent
 
-> **Statut de Consolidation Intégrale :** 50 Master Suites opérationnelles, regroupant **100 % des compétences** (330+ configurations de compétences).
+> **Statut de Consolidation Intégrale :** 77 Master Suites opérationnelles, regroupant **100 % des compétences** (330+ configurations de compétences).
 
 > **Zéro Perte :** Chaque Master Suite conserve l'intégralité du code, des prompts, des rôles et des scripts de ses membres.
 
 
-## 📊 Tableau Général des 50 Master Suites
+## 📊 Tableau Général des 77 Master Suites
 
 | N° | Master Suite | Membres | Mots | Rôle & Description Principale |
 |:---:|---|:---:|:---:|---|
@@ -59,6 +59,33 @@
 | 48 | [**`unreal-engine-master-suite`**](unreal-engine-master-suite/SKILL.md) | **4** | 3,514 | Complete Unreal Engine 5 production suite: Multiplayer netcode & replication, systems engineering (G... |
 | 49 | [**`wechat-ecosystem-suite`**](wechat-ecosystem-suite/SKILL.md) | **3** | 1,401 | Comprehensive WeChat digital ecosystem suite: Mini-Program engineering, Official Account content cur... |
 | 50 | [**`workplace-productivity-documents-suite`**](workplace-productivity-documents-suite/SKILL.md) | **6** | 6,548 | Workplace SaaS & Document Engineering Suite: Google Workspace automation, Linear issue tracking, Not... |
+| 51 | [**`banner-design`**](banner-design/SKILL.md) | **1** | 1,248 | Master Visual Design Suite: Design multi-format banners, posters, display ads, website her... |
+| 52 | [**`build123d-ecip-cad-engineer`**](build123d-ecip-cad-engineer/SKILL.md) | **1** | 943 | Architect, implement, and harden production CAD-as-Code models using build123d (0.13+), OC... |
+| 53 | [**`cadengbench-predicates-dfm`**](cadengbench-predicates-dfm/SKILL.md) | **1** | 1,302 | Execute deterministic CADEngBench mathematical gates (L0-L3), industrial DFM checks (local... |
+| 54 | [**`cloudflare-adversarial-audit`**](cloudflare-adversarial-audit/SKILL.md) | **1** | 329 | Cloudflare 6-phase security auditing protocol with mandatory adversarial falsification. Pr... |
+| 55 | [**`context-token-optimization-suite`**](context-token-optimization-suite/SKILL.md) | **1** | 1,887 | Unified Context Window & Token Optimization Suite: Architectural context engineering, Anth... |
+| 56 | [**`crewai-orchestration-suite`**](crewai-orchestration-suite/SKILL.md) | **1** | 638 | Master CrewAI Multi-Agent Orchestration Suite: Architecture decisions, mandatory CLI scaff... |
+| 57 | [**`diagram-design-svg`**](diagram-design-svg/SKILL.md) | **1** | 259 | Editorial technical diagram generator producing 45+ types of standalone HTML+SVG architect... |
+| 58 | [**`eas-master-suite`**](eas-master-suite/SKILL.md) | **1** | 5,121 | Master EAS (Expo Application Services) Platform Suite: Unified end-to-end cloud builds, Ap... |
+| 59 | [**`ecc-agent-shield`**](ecc-agent-shield/SKILL.md) | **1** | 216 | Agent harness security gate and continuous learning engine inspired by affaan-m/ECC (Every... |
+| 60 | [**`expo-react-native-master-suite`**](expo-react-native-master-suite/SKILL.md) | **1** | 13,448 | Complete Expo & React Native Engineering Suite: File-based routing (Expo Router), native U... |
+| 61 | [**`gmsh-calculix-fea`**](gmsh-calculix-fea/SKILL.md) | **1** | 982 | Prepare CAD models via OpenCASCADE defeaturing, generate second-order quadratic tetrahedra... |
+| 62 | [**`graphify-ast-knowledge`**](graphify-ast-knowledge/SKILL.md) | **1** | 257 | Deterministic Tree-Sitter and AST codebase knowledge graph builder. Maps symbols, dependen... |
+| 63 | [**`gstack-startup-pack`**](gstack-startup-pack/SKILL.md) | **1** | 400 | Full Y Combinator product delivery and startup leadership suite inspired by Garry Tan (gst... |
+| 64 | [**`hermes-omni-stealth-powerhouse`**](hermes-omni-stealth-powerhouse/SKILL.md) | **1** | 635 | Super-Skill d'élite (v5.5 Armor Edition) pour Hermes Agent sur VPS Hetzner (Debian / Ubunt... |
+| 65 | [**`impeccable-design-engine`**](impeccable-design-engine/SKILL.md) | **1** | 296 | 62-rule local frontend design linter and polish engine (zero API token cost) inspired by P... |
+| 66 | [**`isometric-anatomy-svg`**](isometric-anatomy-svg/SKILL.md) | **1** | 220 | Generates interactive, standalone isometric SVG technical illustrations and mechanical sys... |
+| 67 | [**`karpathy-guidelines`**](karpathy-guidelines/SKILL.md) | **1** | 434 | Enforces Andrej Karpathy's 4 foundational software development laws (Think Before Coding, ... |
+| 68 | [**`mega-excel-master-suite`**](mega-excel-master-suite/SKILL.md) | **1** | 1,038 | Universal Master Enterprise Excel (.xlsx, .xlsm) & Headless Spreadsheet Engineering Suite ... |
+| 69 | [**`molecular-dynamics-simulation`**](molecular-dynamics-simulation/SKILL.md) | **1** | 1,000 | Architect, configure, execute, and analyze production molecular dynamics (MD) simulations ... |
+| 70 | [**`planegcs-sketch-solver`**](planegcs-sketch-solver/SKILL.md) | **1** | 1,282 | Integrate FreeCAD PlaneGCS 2D sketch constraint solver algorithms (Powell DogLeg, Levenber... |
+| 71 | [**`senior-code-reviewer`**](senior-code-reviewer/SKILL.md) | **1** | 1,026 | Conduct structured senior-level code reviews, anti-bloat architectural audits (Google, Ant... |
+| 72 | [**`slang-shader-engineer`**](slang-shader-engineer/SKILL.md) | **1** | 1,107 | Use when working with Slang shaders, shader modules, HLSL-compatible GPU code, graphics pi... |
+| 73 | [**`socratic-spec-architect`**](socratic-spec-architect/SKILL.md) | **1** | 403 | The Matt Pocock Socratic engineering methodology for AI agents. Enforces relentless clarif... |
+| 74 | [**`taichi-xpbd-cloth-simulation`**](taichi-xpbd-cloth-simulation/SKILL.md) | **1** | 1,415 | Architect, implement, and harden high-performance GPU-accelerated textile and membrane sim... |
+| 75 | [**`threejs-rtc-cad-viewport`**](threejs-rtc-cad-viewport/SKILL.md) | **1** | 1,225 | Architect, implement, and harden high-precision Relative-To-Center (RTC) and Camera-Relati... |
+| 76 | [**`trail-of-bits-security-engine`**](trail-of-bits-security-engine/SKILL.md) | **1** | 327 | Trail of Bits software security methodology and static analysis orchestrator. Enforces aut... |
+| 77 | [**`typeui-design-systems`**](typeui-design-systems/SKILL.md) | **1** | 1,307 | Curated registry of 67 distinct design system themes (bento, brutalism, neobrutalism, clay... |
 
 ---
 
