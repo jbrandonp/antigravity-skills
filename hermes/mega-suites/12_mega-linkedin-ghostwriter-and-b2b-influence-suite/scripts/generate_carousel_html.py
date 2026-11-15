@@ -205,10 +205,10 @@ def generate_carousel(
 
 def parse_markdown_slides(md_text: str) -> List[Dict[str, str]]:
     """Parses a markdown document separated by '---' or headings into carousel slides."""
-    raw_slides = [s.strip() for s in re.split(r"\n\s*---\s*\n", md_text.strip()) if s.strip()]
+    raw_slides = [s.strip() for s in re.split(r"\r?\n\s*---\s*\r?\n", md_text.strip()) if s.strip()]
     slides: List[Dict[str, str]] = []
     for raw in raw_slides:
-        lines = [line.strip() for line in raw.split("\n") if line.strip()]
+        lines = [line.strip() for line in raw.splitlines() if line.strip()]
         if not lines:
             continue
         title = ""

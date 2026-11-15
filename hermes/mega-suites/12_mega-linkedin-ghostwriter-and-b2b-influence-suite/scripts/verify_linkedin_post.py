@@ -69,8 +69,8 @@ ENGLISH_SLOP_WORDS: List[str] = [
 ]
 
 FRENCH_SLOP_PATTERNS: List[Tuple[str, str]] = [
-    (r"ce\s+n'est\s+pas\s+seulement.+c'est", "Fausse opposition 'ce n'est pas seulement X, c'est Y'"),
-    (r"il\s+ne\s+s'agit\s+pas\s+(?:seulement\s+)?de.+mais\s+de", "Fausse opposition 'il ne s'agit pas de X, mais de Y'"),
+    (r"ce\s+n'est\s+pas\s+seulement\b[\s\S]{1,160}?c'est\b", "Fausse opposition 'ce n'est pas seulement X, c'est Y'"),
+    (r"il\s+ne\s+s'agit\s+pas\s+(?:seulement\s+)?de\b[\s\S]{1,160}?mais\s+de\b", "Fausse opposition 'il ne s'agit pas de X, mais de Y'"),
     (r"^dans\s+un\s+monde\s+où", "Ouverture cosmique clichée 'dans un monde où'"),
     (r"^à\s+l'heure\s+où", "Ouverture convenue 'à l'heure où'"),
     (r"et\s+si\s+la\s+vraie\s+question", "Question rhétorique scolaire 'et si la vraie question'"),

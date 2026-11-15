@@ -103,8 +103,8 @@ ENGLISH_SLOP_WORDS: List[str] = [
 
 # Banned structural cliches (French & English)
 STRUCTURAL_PATTERNS: List[Tuple[str, str]] = [
-    (r"ce\s+n'est\s+pas\s+seulement.+c'est", "Fausse opposition 'ce n'est pas seulement X, c'est Y'"),
-    (r"il\s+ne\s+s'agit\s+pas\s+(?:seulement\s+)?de.+mais\s+de", "Fausse opposition 'il ne s'agit pas de X, mais de Y'"),
+    (r"ce\s+n'est\s+pas\s+seulement\b[\s\S]{1,160}?c'est\b", "Fausse opposition 'ce n'est pas seulement X, c'est Y'"),
+    (r"il\s+ne\s+s'agit\s+pas\s+(?:seulement\s+)?de\b[\s\S]{1,160}?mais\s+de\b", "Fausse opposition 'il ne s'agit pas de X, mais de Y'"),
     (r"^dans\s+un\s+monde\s+où", "Ouverture cosmique 'dans un monde où'"),
     (r"^à\s+l'heure\s+où", "Ouverture convenue 'à l'heure où'"),
     (r"^dans\s+le\s+paysage\s+(?:actuel|numérique|technologique)", "Ouverture clichée 'dans le paysage...'"),
@@ -113,8 +113,8 @@ STRUCTURAL_PATTERNS: List[Tuple[str, str]] = [
     (r"spoiler\s+alert\s*:", "Méta-annonce 'spoiler alert :'"),
     (r"voici\s+pourquoi\s*:", "Méta-annonce de liste 'voici pourquoi :'"),
     (r"plongeons\s+dans", "Traduction littérale de 'let's dive in'"),
-    (r"not\s+just\s+.+,\s+it's\s+", "English false opposition 'not just X, it's Y'"),
-    (r"it's\s+not\s+.+,\s+it's\s+", "English false opposition 'it's not X, it's Y'"),
+    (r"not\s+just\b[\s\S]{1,160}?,?\s+it's\b", "English false opposition 'not just X, it's Y'"),
+    (r"it's\s+not\b[\s\S]{1,160}?,?\s+it's\b", "English false opposition 'it's not X, it's Y'"),
     (r"let's\s+dive\s+in", "English staged run-up 'let's dive in'"),
     (r"read\s+that\s+again", "Arrogant one-line closer 'read that again'"),
     (r"let\s+that\s+sink\s+in", "Arrogant one-line closer 'let that sink in'"),
@@ -175,8 +175,11 @@ def clean_text(raw_text: str) -> Tuple[str, List[str]]:
     em_dashes = cleaned.count("—")
     if em_dashes > 1:
         parts = cleaned.split("—")
-        # Keep only the first em-dash, convert others to commas/colons
-        cleaned = parts[0] + "—" + ", ".join(parts[1:])
+        first_part = parts[0].rstrip()
+        rest_parts = [p.strip() for p in parts[1:]]
+        cleaned = f"{first_part} — {rest_parts[0]}"
+        if len(rest_parts) > 1:
+            cleaned += ", " + ", ".join(rest_parts[1:])
         actions.append(f"Normalisation de {em_dashes - 1} tiret(s) cadratin(s) excessif(s)")
 
     return cleaned.strip(), actions
