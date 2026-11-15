@@ -52,8 +52,10 @@ description: Universal Master LinkedIn Ghostwriting, Executive Influence & B2B C
 3. **Le Mécanisme Réel (2 à 3 étapes concrètes)** : Comment exactement cela a été exécuté ?
 4. **Le Takeaway / Conclusion Nette** : Quelle est la vérité pragmatique pour le lecteur ?
 
-### Sélection parmi les 20 Formules de Hooks Élite (2026) :
-Consultez [references/hook-formulas.md](references/hook-formulas.md) et proposez d'abord 3 à 5 accroches coupées **AVANT 210 caractères** (F1 Risque de Plateforme, F2 Obituary, F3 Pivot Annuel, F5 Registre Financier, F7 Curiosity Gap, F8 Faux Binaire, F10 Asymétrie Junior/Senior).
+### Sélection parmi les Formules de Hooks Élite & Nuances Culturelles :
+Consultez [references/hook-formulas.md](references/hook-formulas.md) et le catalogue étendu [references/hook-formulas-bilingual-f1-f30.md](references/hook-formulas-bilingual-f1-f30.md) (30 formules bilingues EN/FR appuyées par les benchmarks Outbrain +63% CTR).
+Appliquez impérativement les nuances culturelles de [references/anglophone-vs-francophone.md](references/anglophone-vs-francophone.md) pour adapter le registre (Slippery Slide américain vs Attaque Journalistique française, suppression du "vous" agressif, neutralisation de la réactance culturelle).
+Proposez d'abord 3 à 5 accroches coupées **AVANT 210 caractères** (F1 Risque de Plateforme, F2 Obituary, F3 Pivot Annuel, F5 Registre Financier, F7 Curiosity Gap, F8 Faux Binaire, F10 Asymétrie Junior/Senior).
 
 ---
 
@@ -100,6 +102,7 @@ Consultez [references/comment-and-reply-playbook.md](references/comment-and-repl
    - `PEER` : Échange d'égal à égal.
    - `SUPPORT` : Remerciement sobre de 4 mots.
    - `NOISE` : Ne rien répondre (anti-reach).
+3. **Stratégie de CTA & Leviers de Persuasion** : Consultez [references/cta-archetypes-and-mechanisms.md](references/cta-archetypes-and-mechanisms.md) et [references/cta-conversion-matrix.md](references/cta-conversion-matrix.md) pour sélectionner l'un des 11 archétypes de CTA (A à K) et des 8 leviers psychologiques, avec placement impératif des liens en 1er commentaire (zéro lien dans le corps du post).
 
 ---
 
@@ -171,12 +174,14 @@ Consultez [references/profile-optimization-rubric.md](references/profile-optimiz
 
 ## 🛡️ MODE 12 : Linter Anti-Slop, Décapage des Filigranes & Formats Multiples
 
-Consultez [references/anti-slop-dictionary.md](references/anti-slop-dictionary.md) :
-1. Décapage automatique des **17 classes de filigranes invisibles Unicode** (`\u200B`, BOM, joiners).
-2. Éradication des **38 tics français** (*crucial, notamment, également, décryptage, incontournable, catalyseur, révolutionner, fausses oppositions "ce n'est pas seulement X, c'est Y"*).
-3. Éradication des **26 tics anglais** (*delve, tapestry, leverage, foster, not X but Y, dramatic fragments*).
-4. Application du **Zombie Test** (voix active obligatoire).
-5. Validation multi-formats via le script universel [`scripts/verify_and_humanize.py`](scripts/verify_and_humanize.py).
+Consultez [references/anti-slop-dictionary.md](references/anti-slop-dictionary.md), [references/french-humanizer-deep-rules.md](references/french-humanizer-deep-rules.md) et [references/five-layers-of-prose.md](references/five-layers-of-prose.md) :
+1. Application de la **Règle des 80%** (ne pas sur-nettoyer pour éviter une nouvelle uniformité artificielle) et de la **Règle des 3 signaux** (seuil de co-occurrence toxique).
+2. Respect absolu des **registres de langue** : ne jamais abaisser un texte soutenu vers le familier ; supprimer la formule sans affaiblir la pensée.
+3. Décapage automatique des **17 classes de filigranes invisibles Unicode** (`\u200B`, BOM, joiners).
+4. Éradication des **38 tics français** (*crucial, notamment, également, décryptage, incontournable, catalyseur, révolutionner, participes en -ant, fausses oppositions "ce n'est pas seulement X, c'est Y"*).
+5. Éradication des **26 tics anglais** (*delve, tapestry, leverage, foster, not X but Y, dramatic fragments*).
+6. Application du **Zombie Test** (voix active obligatoire).
+7. Validation multi-formats via le script universel [`scripts/verify_and_humanize.py`](scripts/verify_and_humanize.py).
 
 ---
 
