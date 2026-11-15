@@ -11,6 +11,7 @@ Fuses the best heuristics from:
 from __future__ import annotations
 
 import argparse
+import csv
 import math
 import re
 import sys
@@ -542,6 +543,133 @@ def print_profile_rubric() -> None:
     print("==================================================================")
 
 
+def audit_csv(csv_path: str) -> int:
+    """Audits a LinkedIn Content Analytics CSV export and categorizes posts into 4 diagnostic quadrants."""
+    try:
+        with open(csv_path, "r", encoding="utf-8-sig", errors="ignore") as f:
+            content = f.read()
+    except Exception as e:
+        print(f"Error reading CSV file '{csv_path}': {e}", file=sys.stderr)
+        return 1
+
+    delimiter = ";" if ";" in content.split("\n")[0] else ","
+    reader = csv.DictReader(content.splitlines(), delimiter=delimiter)
+    raw_rows = list(reader)
+
+    if not raw_rows:
+        print("[CRITICAL] Empty CSV file or missing headers.", file=sys.stderr)
+        return 1
+
+    posts: List[Dict[str, object]] = []
+    for r in raw_rows:
+        title = ""
+        for k in r:
+            if any(w in k.lower() for w in ["title", "text", "description", "content", "post"]):
+                title = r[k].strip()
+                break
+
+        def parse_num(keys: List[str]) -> float:
+            for k in r:
+                if any(w in k.lower() for w in keys):
+                    val = r[k].replace("%", "").replace(",", ".").replace(" ", "").strip()
+                    try:
+                        return float(val)
+                    except ValueError:
+                        continue
+            return 0.0
+
+        impr = parse_num(["impression", "view"])
+        react = parse_num(["reaction", "like"])
+        comm = parse_num(["comment"])
+        repost = parse_num(["repost", "share"])
+        eng_rate = parse_num(["engagement"])
+
+        if eng_rate == 0.0 and impr > 0:
+            eng_rate = ((react + comm + repost) / impr) * 100
+        elif 0.0 < eng_rate <= 1.0:
+            eng_rate = eng_rate * 100
+
+        if impr > 0 or react > 0 or comm > 0:
+            posts.append({
+                "title": title or "Post sans titre",
+                "impressions": impr,
+                "reactions": react,
+                "comments": comm,
+                "reposts": repost,
+                "eng_rate": round(eng_rate, 2),
+                "hook_len": len(title.split("\n\n")[0]) if title else 0,
+            })
+
+    if not posts:
+        print("[CRITICAL] No valid post metric rows found in CSV.", file=sys.stderr)
+        return 1
+
+    total_posts = len(posts)
+    total_impr = sum(p["impressions"] for p in posts)  # type: ignore[misc]
+    avg_eng = sum(p["eng_rate"] for p in posts) / total_posts  # type: ignore[misc]
+    impr_values = sorted([p["impressions"] for p in posts])  # type: ignore[misc]
+    median_impr = impr_values[total_posts // 2]
+
+    q1_outliers: List[Dict[str, object]] = []
+    q2_reach: List[Dict[str, object]] = []
+    q3_niche: List[Dict[str, object]] = []
+    q4_flops: List[Dict[str, object]] = []
+
+    for p in posts:
+        er = p["eng_rate"]  # type: ignore[operator]
+        imp = p["impressions"]  # type: ignore[operator]
+        if er >= avg_eng and imp >= median_impr:
+            q1_outliers.append(p)
+        elif er < avg_eng and imp >= median_impr:
+            q2_reach.append(p)
+        elif er >= avg_eng and imp < median_impr:
+            q3_niche.append(p)
+        else:
+            q4_flops.append(p)
+
+    q1_outliers.sort(key=lambda x: x["eng_rate"], reverse=True)  # type: ignore[arg-type,return-value]
+    q4_flops.sort(key=lambda x: x["eng_rate"])  # type: ignore[arg-type,return-value]
+
+    avg_hook_q1 = (
+        sum(p["hook_len"] for p in q1_outliers) / len(q1_outliers)  # type: ignore[misc]
+        if q1_outliers
+        else 0
+    )
+    avg_hook_q4 = (
+        sum(p["hook_len"] for p in q4_flops) / len(q4_flops)  # type: ignore[misc]
+        if q4_flops
+        else 0
+    )
+
+    print("==================================================================")
+    print("      LINKEDIN CONTENT ANALYTICS AUDIT — FORENSIC REPORT          ")
+    print("==================================================================")
+    print(f"Publications Analysées :   {total_posts}")
+    print(f"Impressions Cumulées :     {int(total_impr):,}".replace(",", " "))
+    print(f"Taux d'Engagement Moyen :  {avg_eng:.2f} %")
+    print(f"Médiane d'Impressions :    {int(median_impr):,}".replace(",", " "))
+    print("------------------------------------------------------------------")
+    print(f"⭐ QUADRANT 1 (Outliers & Vainqueurs) :  {len(q1_outliers)} posts")
+    if q1_outliers:
+        top_p = q1_outliers[0]
+        print(f"   Top Post: \"{top_p['title'][:55]}...\"")
+        print(f"   Metrics:  {top_p['impressions']} impr, {top_p['eng_rate']}% engagement, {top_p['comments']} comm")
+    print(f"📈 QUADRANT 2 (Portée Algorithmique) :   {len(q2_reach)} posts")
+    print(f"💎 QUADRANT 3 (Pépites de Niche B2B) :   {len(q3_niche)} posts")
+    print(f"📉 QUADRANT 4 (Flops & Sous-Performances): {len(q4_flops)} posts")
+    print("------------------------------------------------------------------")
+    print("MÉTRIQUES DE HOOK COMPARATIVES :")
+    print(f"• Longueur moyenne d'accroche (Gagnants) : {int(avg_hook_q1)} caractères")
+    print(f"• Longueur moyenne d'accroche (Flops)    : {int(avg_hook_q4)} caractères")
+    print("------------------------------------------------------------------")
+    print("RECOMMANDATIONS TACTIQUES :")
+    print("1. Recycler les posts du Quadrant 1 en carrousels PDF 1080x1350 (Mode 4).")
+    print("2. Rester attentif aux Quadrant 3 : fort engagement malgré faible portée = acheteurs qualifiés.")
+    print("3. Pour le Quadrant 4, couper l'accroche avant 210 caractères et bannir les liens dans le corps.")
+    print("==================================================================")
+    return 0
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description="Unified LinkedIn Ghostwriting Quality & Anti-Slop Audit Engine.")
     parser.add_argument("file", nargs="?", help="Path to text file containing the draft")
@@ -563,7 +691,14 @@ def main() -> int:
         action="store_true",
         help="Display the 100-point LinkedIn Profile Optimization Rubric",
     )
+    parser.add_argument(
+        "--csv-audit",
+        help="Path to LinkedIn Content Analytics CSV export to generate an executive diagnostic report",
+    )
     args = parser.parse_args()
+
+    if args.csv_audit:
+        return audit_csv(args.csv_audit)
 
     if args.rubric_profile:
         print_profile_rubric()

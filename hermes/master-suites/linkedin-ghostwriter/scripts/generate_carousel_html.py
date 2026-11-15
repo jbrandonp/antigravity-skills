@@ -13,6 +13,49 @@ import json
 import sys
 from typing import Dict, List, Optional
 
+THEMES: Dict[str, Dict[str, str]] = {
+    "developer-dark": {
+        "bg_cover": "radial-gradient(circle at top right, #0284c7, #0f172a 70%)",
+        "bg_slide": "radial-gradient(circle at top right, #1e293b, #0f172a)",
+        "accent": "#38bdf8",
+        "text_title": "#ffffff",
+        "text_body": "#cbd5e1",
+        "footer_color": "#64748b",
+        "border_color": "rgba(255, 255, 255, 0.1)",
+        "font_family": '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
+    },
+    "clean-light": {
+        "bg_cover": "linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%)",
+        "bg_slide": "#ffffff",
+        "accent": "#2563eb",
+        "text_title": "#0f172a",
+        "text_body": "#334155",
+        "footer_color": "#94a3b8",
+        "border_color": "rgba(0, 0, 0, 0.08)",
+        "font_family": '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
+    },
+    "brutalist": {
+        "bg_cover": "#000000",
+        "bg_slide": "#09090b",
+        "accent": "#ccff00",
+        "text_title": "#ffffff",
+        "text_body": "#f4f4f5",
+        "footer_color": "#71717a",
+        "border_color": "#27272a",
+        "font_family": 'ui-monospace, "SF Mono", Menlo, Consolas, monospace',
+    },
+    "executive-slate": {
+        "bg_cover": "radial-gradient(circle at top right, #3f3f46, #18181b 75%)",
+        "bg_slide": "radial-gradient(circle at top right, #27272a, #18181b)",
+        "accent": "#f59e0b",
+        "text_title": "#fafafa",
+        "text_body": "#d4d4d8",
+        "footer_color": "#71717a",
+        "border_color": "rgba(255, 255, 255, 0.08)",
+        "font_family": 'Georgia, Cambria, "Times New Roman", Times, serif',
+    },
+}
+
 
 def build_slide_html(
     slide_num: int,
@@ -23,35 +66,33 @@ def build_slide_html(
     author: str = "@jbrandonp",
     is_cover: bool = False,
     is_recap: bool = False,
+    theme: str = "developer-dark",
 ) -> str:
     """Builds a single 1080x1350 slide section."""
-    bg_gradient = (
-        "radial-gradient(circle at top right, #1e293b, #0f172a)"
-        if not is_cover
-        else "radial-gradient(circle at top right, #0284c7, #0f172a 70%)"
-    )
+    th = THEMES.get(theme, THEMES["developer-dark"])
+    bg_gradient = th["bg_cover"] if is_cover else th["bg_slide"]
     title_size = "68px" if is_cover else ("48px" if is_recap else "56px")
-    accent_color = "#38bdf8" if not is_cover else "#7dd3fc"
+    accent_color = th["accent"]
 
     escaped_title = html.escape(title)
     escaped_body = html.escape(body).replace("\n", "<br>")
 
     recap_extra = ""
     if is_recap:
-        recap_extra = "<div style='margin-top:20px; font-size:24px; color:#38bdf8;'>📸 Capturez cette slide pour plus tard</div>"
+        recap_extra = f"<div style='margin-top:20px; font-size:24px; color:{accent_color};'>📸 Capturez cette slide pour plus tard</div>"
 
     return f"""
-  <section class="slide" style="background: {bg_gradient};">
+  <section class="slide" style="background: {bg_gradient}; font-family: {th['font_family']};">
     <div class="slide-header" style="color: {accent_color};">
       <span>{html.escape(category)}</span>
       <span>{slide_num}/{total_slides}</span>
     </div>
     <div class="slide-content">
-      <h1 style="font-size: {title_size};">{escaped_title}</h1>
-      <p>{escaped_body}</p>
+      <h1 style="font-size: {title_size}; color: {th['text_title']};">{escaped_title}</h1>
+      <p style="color: {th['text_body']};">{escaped_body}</p>
       {recap_extra}
     </div>
-    <div class="slide-footer">
+    <div class="slide-footer" style="color: {th['footer_color']}; border-color: {th['border_color']};">
       <span>{html.escape(author)}</span>
       <span>{'→' if slide_num < total_slides else 'FIN'}</span>
     </div>
@@ -63,6 +104,7 @@ def generate_carousel(
     slides_data: List[Dict[str, str]],
     author: str = "@jbrandonp",
     category: str = "INGÉNIERIE & CODE",
+    theme: str = "developer-dark",
 ) -> str:
     """Generates the complete multi-slide HTML document."""
     total = len(slides_data)
@@ -81,6 +123,7 @@ def generate_carousel(
                 author=author,
                 is_cover=is_cov,
                 is_recap=is_rec,
+                theme=theme,
             )
         )
 
@@ -165,6 +208,12 @@ def main() -> int:
     parser.add_argument("--output", "-o", default="carousel.html", help="Output HTML file path")
     parser.add_argument("--author", default="@jbrandonp", help="Author handle on footer")
     parser.add_argument("--category", default="ARCHITECTURE LOGICIELLE", help="Category tag on header")
+    parser.add_argument(
+        "--theme",
+        choices=["developer-dark", "clean-light", "brutalist", "executive-slate"],
+        default="developer-dark",
+        help="Visual theme styling for slides (default: developer-dark)",
+    )
     args = parser.parse_args()
 
     slides: List[Dict[str, str]] = []
@@ -207,7 +256,7 @@ def main() -> int:
             },
         ]
 
-    html_content = generate_carousel(slides, author=args.author, category=args.category)
+    html_content = generate_carousel(slides, author=args.author, category=args.category, theme=args.theme)
     try:
         with open(args.output, "w", encoding="utf-8") as f:
             f.write(html_content)

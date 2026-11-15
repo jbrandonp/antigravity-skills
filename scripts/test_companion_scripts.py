@@ -188,6 +188,20 @@ def main():
             "linkedin-ghostwriter generate carousel html",
             [str(li_carousel), "--output", str(out_carousel)],
         )
+        out_carousel_theme = Path(tmpdir) / "carousel_light.html"
+        run_test(
+            "linkedin-ghostwriter carousel themes",
+            [str(li_carousel), "--theme", "clean-light", "--output", str(out_carousel_theme)],
+        )
+        sample_csv = Path(tmpdir) / "sample_analytics.csv"
+        sample_csv.write_text(
+            'Title,Impressions,Reactions,Comments,Reposts\n"Post 1",1000,50,10,2\n"Post 2",500,5,1,0\n',
+            encoding="utf-8",
+        )
+        run_test(
+            "linkedin-ghostwriter csv audit",
+            [str(li_humanizer), "--csv-audit", str(sample_csv)],
+        )
     run_test(
         "linkedin-ghostwriter audit clean post",
         [
