@@ -117,6 +117,8 @@ STRUCTURAL_PATTERNS: List[Tuple[str, str]] = [
     (r"let's\s+dive\s+in", "English staged run-up 'let's dive in'"),
     (r"read\s+that\s+again", "Arrogant one-line closer 'read that again'"),
     (r"let\s+that\s+sink\s+in", "Arrogant one-line closer 'let that sink in'"),
+    (r"témoigne\s+de|un\s+rappel\s+cuisant|ouvre\s+la\s+voie\s+à", "Cliché d'emphase dramatique (FR)"),
+    (r"serves\s+as\s+a\s+testament|a\s+stark\s+reminder|paves\s+the\s+way\s+for", "Inflated significance cliché (EN)"),
 ]
 
 LAZY_CLOSINGS: List[Tuple[str, str]] = [
@@ -246,6 +248,11 @@ def audit_post(text: str) -> Dict[str, object]:
         violations.append(f"[MAJOR] Line-initial bullet emoji spam ({bullet_emoji_count} lines). Use '-' or numbers.")
         penalties += 15
 
+    bold_bullet_count = len(re.findall(r"^\s*(?:[-*•]|\d+[\.\)])?\s*\*\*[^*\n]+?[:\s]*\*\*\s*[:—–-]?", clean_draft, re.MULTILINE))
+    if bold_bullet_count >= 3:
+        violations.append(f"[MAJOR] Found {bold_bullet_count} bold label bullet prefixes. Unnatural AI formatting pattern.")
+        penalties += 15
+
     # PANEL 3 : Slop Lexicon Density (FR & EN)
     text_lower = clean_draft.lower()
     for word in FRENCH_SLOP_WORDS:
@@ -270,6 +277,10 @@ def audit_post(text: str) -> Dict[str, object]:
         if re.search(regex_pat, text_lower):
             violations.append(f"[MAJOR] Lazy generic ending: {desc}.")
             penalties += 20
+
+    if re.search(r"https?://\S+", clean_draft):
+        violations.append("[WARN] External link detected in post body (-40% to -60% reach penalty). Place URLs in 1st comment.")
+        penalties += 10
 
     # PANEL 5 : Specificity, Burstiness & Substance
     has_numbers = bool(re.search(r"\b\d+(?:[.,]\d+)?%?\b", clean_draft))
