@@ -175,6 +175,27 @@ def main():
     run_test("brivael-twitter-system --help", [str(brivael_linter), "--help"])
     run_test("brivael-twitter-system test-harness", [str(brivael_harness)])
 
+    # 14. linkedin-ghostwriter
+    li_linter = SKILLS / "linkedin-ghostwriter" / "scripts" / "verify_linkedin_post.py"
+    run_test("linkedin-ghostwriter --help", [str(li_linter), "--help"])
+    run_test(
+        "linkedin-ghostwriter audit clean post",
+        [
+            str(li_linter),
+            "--text",
+            "On a divisé notre coût d'acquisition par 3 en 6 semaines. Pas en augmentant le budget, mais en supprimant notre page la plus vue.\n\nLe formulaire bloquait les conversions. On l'a simplifié et le taux a grimpé de 1.8% à 5.4%.",
+        ],
+    )
+    run_test(
+        "linkedin-ghostwriter block slop post",
+        [
+            str(li_linter),
+            "--text",
+            "Dans un monde où l'IA transforme tout, il convient de faire un décryptage incontournable ! Ce n'est pas seulement un outil, c'est une révolution. Et vous, qu'en pensez-vous ?",
+        ],
+        expect_code=2,
+    )
+
     print("==================================================================")
     print(f"TEST RESULTS: {tests_passed} passed, {tests_failed} failed.")
     print("==================================================================")

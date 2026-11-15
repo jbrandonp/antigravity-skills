@@ -45,7 +45,7 @@ When the user asks for end-to-end autonomous marathon work, use the **11 Hermes 
 11. [`11_mega-narrative-worldbuilding-and-cinematic-suite`](hermes/mega-suites/11_mega-narrative-worldbuilding-and-cinematic-suite/SKILL.md): Universal narrative, worldbuilding, fiction & AI cinematic video suite.
 
 ### 2. Targeted Execution & Clean Patterns → Antigravity Elite Skills (`skills/`)
-For specific engineering patterns, consult the **170 Antigravity Elite Skills** (e.g. `fastapi-sqlite-production`, `bridgesecurity-auditor`, `duckdb-parquet-analyst`, `shadcn`, `expo-router`, `context-mode`, `trail-of-bits-security-engine`, `brivael-twitter-system`).
+For specific engineering patterns, consult the **171 Antigravity Elite Skills** (e.g. `fastapi-sqlite-production`, `bridgesecurity-auditor`, `duckdb-parquet-analyst`, `shadcn`, `expo-router`, `context-mode`, `trail-of-bits-security-engine`, `brivael-twitter-system`, `linkedin-ghostwriter`).
 
 ### 3. Scientific & Biomedical Research → DeepMind Science (`plugins/science/`)
 For AlphaFold structures, ClinVar genetics, ChEMBL pharmacology, or arXiv literature queries, leverage the DeepMind Science suite.
