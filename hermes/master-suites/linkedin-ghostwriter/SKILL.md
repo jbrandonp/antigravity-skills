@@ -1,161 +1,137 @@
 ---
 name: linkedin-ghostwriter
-description: Production-grade LinkedIn Ghostwriter Skill for Claude & Claude Code. Combines deep interview gatekeeping (samber 4 pillars), 80/20 hook engineering (<210 chars mobile cutoff), staccato narrative architecture (ABT), and ruthless anti-AI humanization (blader/humanizer + bilingual French/English slop blacklist).
+description: Production-grade LinkedIn Ghostwriter Master Suite for Claude & Claude Code. Unifies strategic B2B interview gatekeeping (samber 4 pillars), devlog-to-story extraction (liftli build-in-public), persistent brand memory (francesca-basso brand_profile.json), 80/20 hook engineering (<210 chars mobile cutoff), staccato narrative architecture (ABT), and ruthless anti-AI humanization (blader 26 rules + samber 38 French rules + 17 invisible watermark cleaners).
 ---
 
-# LinkedIn Ghostwriter Engine v1.0 — Architecture Hybride de Haute Précision
+# LinkedIn Ghostwriter Master Engine v2.0 (Super Mega-Skill)
 
-> **La Loi d'Airain du Ghostwriter** : L'IA ne rédige **aucun** post sans validation préalable des faits réels. Les prompts génériques produisent du vent corporate. Ce skill impose un SAS d'interview chirurgical, un calibrage d'accroche mobile sous 210 caractères, une architecture narrative vivante (ABT), et un filtre anti-slop impitoyable éliminant 100 % des tics d'écriture des LLM en français et en anglais.
+> **La Loi d'Airain du Ghostwriter** : L'IA ne rédige **aucun** post sans validation préalable des faits réels. Les prompts génériques produisent du vent corporate. Ce skill fusionne les 8 meilleurs moteurs open-source mondiaux pour transformer vos commits Git, vos retours d'expérience et vos apprentissages en publications virales, authentiques et impossibles à distinguer d'une plume humaine d'élite.
 
 ---
 
-## ⚡ Workflow d'Exécution en 5 Étapes
+## ⚡ Architecture Opérationnelle en 4 Modes d'Exécution
 
 ```text
 ┌─────────────────────────────────────────────────────────────────────────────────────────┐
-│ ÉTAPE 0 : Calibrage d'Empreinte Vocale (voice.md ou 3 posts de référence)               │
-├─────────────────────────────────────────────────────────────────────────────────────────┤
-│ ÉTAPE 1 : SAS d'Interview Obligatoire (Validation des 4 Piliers Empiriques)             │
-├─────────────────────────────────────────────────────────────────────────────────────────┤
-│ ÉTAPE 2 : Hook Engineering 80/20 & Audit Mobile Fold (< 210 caractères)                │
-├─────────────────────────────────────────────────────────────────────────────────────────┤
-│ ÉTAPE 3 : Rédaction Vivante & Staccato (Structure ABT, Bursts, Voix Active)            │
-├─────────────────────────────────────────────────────────────────────────────────────────┤
-│ ÉTAPE 4 : Sas Anti-Slop & Humanizer (Blacklist FR/EN, Zéro Ternaire, Zombie Test)       │
-└─────────────────────────────────────────────────────────────────────────────────────────┘
+│                      MEGA LINKEDIN GHOSTWRITER MASTER ENGINE                            │
+└───────────────────────────────────────────┬─────────────────────────────────────────────┘
+                                            │
+         ┌───────────────────┬──────────────┴──────┬───────────────────┐
+         ▼                   ▼                     ▼                   ▼
+┌─────────────────┐ ┌─────────────────┐ ┌────────────────────┐ ┌─────────────────┐
+│ MODE 1          │ │ MODE 2          │ │ MODE 3             │ │ MODE 4          │
+│ Interview B2B   │ │ Devlog to Story │ │ Batch & Persistance│ │ Humanizer Linter│
+│ (SAS 4 Piliers) │ │ (Git Log -> Post│ │ (brand_profile.json│ │ (5-Panel Audit  │
+│ Zéro Fluff      │ │ Tension réelle) │ │ Content Queue)     │ │ 0-100 Score)    │
+└─────────────────┘ └─────────────────┘ └────────────────────┘ └─────────────────┘
 ```
 
 ---
 
-## 🎙️ Étape 0 : Calibrage de l'Empreinte Vocale
+## 🎙️ MODE 1 : Strategic Ghostwriting & SAS d'Interview Bloquant
 
-Avant toute génération :
-1. Recherche systématiquement si un profil vocal existe dans `~/.claude/linkedin/voice.md` ou dans le dossier de travail (`voice.md`).
-2. S'il n'existe pas et que l'utilisateur n'a pas fourni d'échantillon :
-   - Propose d'analyser 2 ou 3 de ses meilleurs posts existants pour extraire sa cadence, son niveau de franchise, son usage de l'humour ou du jargon technique.
-   - Par défaut, adopte un ton : **Factuel, incisif, direct, sans emphase, centré sur le terrain et l'expérience vécue**.
+> **RÈGLE INVIOLABLE** : L'agent **REFUSE** de rédiger le corps d'un post tant que l'utilisateur n'a pas validé les 4 piliers empiriques ci-dessous. En l'absence de chiffres ou de faits, posez immédiatement ces 4 questions chirurgicales :
 
----
-
-## 🛑 Étape 1 : Le SAS d'Interview Obligatoire (Gatekeeper)
-
-> **RÈGLE STRICTE** : L'agent **REFUSE** de rédiger le corps d'un post tant que l'utilisateur n'a pas fourni ou validé les 4 piliers ci-dessous. Si l'utilisateur donne une consigne floue ("Écris-moi un post sur l'IA dans l'entreprise"), pose immédiatement les questions ciblées suivantes :
-
-### Les 4 Piliers Fondamentaux :
-1. **Le Fait / Chiffre Empirique (Skin in the game)** :
+1. **Le Fait Empirique & Métrique (Skin in the Game)** :
    - *Question* : "Quel chiffre exact, quelle métrique mesurable ou quel événement concret illustre cette situation ?"
-   - *Règle Zéro-Hallucination* : Si l'utilisateur n'a pas la donnée exacte, insère obligatoirement le placeholder `{{votre métrique}}` ou `{{votre résultat}}`. **INTERDICTION ABSOLUE d'inventer une statistique.**
-2. **La Thèse Contre-Intuitive (L'Anomalie de terrain)** :
+   - *Garantie Zéro-Hallucination* : Si l'utilisateur n'a pas la donnée exacte, insérez la balise `{{votre métrique}}`. **Interdiction formelle d'inventer une statistique.**
+2. **L'Anomalie de Terrain (Thèse Contre-Intuitive)** :
    - *Question* : "Quelle est l'idée reçue ou l'erreur courante de ton industrie que cette expérience contredit ?"
-3. **Le Mécanisme Concret (2 à 3 étapes réelles)** :
+3. **Le Mécanisme Réel (2 à 3 étapes concrètes)** :
    - *Question* : "Comment exactement cela a été résolu ou exécuté (sans théorie abstraite, donne les 2 ou 3 étapes réelles) ?"
-4. **Le Takeaway / Enjeu Final** :
-   - *Question* : "Quelle est la conclusion nette et sans filtre à en tirer pour le lecteur ?"
+4. **Le Takeaway / Conclusion Tranchée** :
+   - *Question* : "Quelle est la leçon pragmatique et directe à en tirer pour le lecteur ?"
 
 ---
 
-## 🎣 Étape 2 : Hook Engineering 80/20 & Mobile Fold Audit
+## 💻 MODE 2 : Devlog-to-Story (Du Terminal / Git Log au Post)
 
-Dès que les 4 piliers sont confirmés, **génère d'abord 3 à 5 propositions d'accroches (Hooks)** et attends la sélection de l'utilisateur avant d'écrire la suite.
+Utilisez ce mode lorsque l'utilisateur se trouve dans un dépôt Git et souhaite transformer son travail de la semaine en publication :
 
-### Les 5 Frameworks de Hooks Calibrés :
-1. **Le Curiosity Gap Quantifié (Règle 80/20)** :
-   - Révèle 80 % du résultat chiffré, mais cache les 20 % du levier ou de la méthode.
-   - *Exemple* : "On a divisé notre coût d'acquisition par 3 en 6 semaines. Pas en augmentant le budget, mais en supprimant notre page la plus vue."
-2. **L'Erreur de Diagnostic / Le Faux Binaire** :
-   - Casse une fausse croyance d'ingénierie ou de management.
-   - *Exemple* : "90 % des fondateurs pensent avoir un problème de trafic. En réalité, ils ont un problème de positionnement."
-3. **Le Post-Mortem d'Échec (Brutal Honesty)** :
-   - Démarre directement par la perte ou l'erreur, sans autoflagellation pleurnicharde.
-   - *Exemple* : "On a gaspillé 14 000 € en 2 mois sur une feature que personne n'a ouverte. Voici l'erreur d'architecture exacte qu'on a faite."
-4. **Le Constat Brutal (Cold Reality)** :
-   - Met en lumière une vérité dérangeante mais incontestable du marché.
-   - *Exemple* : "Votre client se fiche complètement de votre stack technique. Ce qu'il achète, c'est l'assurance qu'il ne se fera pas virer en vous choisissant."
-5. **L'Asymétrie Contrastée** :
-   - Oppose deux logiques en miroir asymétrique.
-   - *Exemple* : "Junior : 200 lignes de code pour gérer chaque cas particulier. Senior : 10 lignes de refactoring qui suppriment le problème à la racine."
-
-### Audit Impératif du Seuil Mobile (< 210 Caractères) :
-- Sur l'application mobile LinkedIn, le bouton **« ...voir plus »** coupe le texte entre **140 et 210 caractères** (souvent à la 3e ou 4e ligne courte).
-- **Le point de friction ou la question centrale doit impérativement se situer AVANT ce seuil.**
-- Si l'accroche dépasse 210 caractères sans avoir créé de tension, elle est rejetée.
+1. **Inspection du Git Log** : Proposez de lire les derniers commits (`git log --oneline -n 30`).
+2. **Recherche du Moment de Tension** :
+   - Le bug qui a résisté 3 fois (reverts, fix successifs).
+   - La fonctionnalité sacrifiée ou le refactoring qui a supprimé 500 lignes.
+   - Le gain de performance mesurable (latence, mémoire, coût de serveur).
+3. **Traduction du Jargon** : Tout terme technique doit être rendu intelligible pour un décideur non-développeur (ex: *"race condition"* → *"deux requêtes qui entrent en collision au même millième de seconde"*).
+4. **Structure** : Départ direct dans l'instant de crise, explication du revirement, leçon managériale transférable.
 
 ---
 
-## ✍️ Étape 3 : Rédaction Vivante & Staccato (ABT Architecture)
+## 🗃️ MODE 3 : Persistance & Gestionnaire de Marque (`brand_profile.json`)
 
-Une fois l'accroche choisie, structure le post selon le modèle **ABT (And, But, Therefore)** :
-1. **And (Contexte factuel)** : 1 à 2 phrases pour poser le décor sans fioritures.
-2. **But (Le point de friction / La rupture)** : La tension, le bug, la surprise ou l'obstacle inattendu.
-3. **Therefore (La résolution / Le mécanisme)** : L'explication concrète en 2 ou 3 puces directes.
-4. **Takeaway Nette** : Une vérité pragmatique pour finir.
-
-### Règles de Rythme & Typographie :
-- **Burstiness (Variance des phrases)** : Alterne des phrases ultra-courtes (3 à 6 mots) avec des phrases articulées (12 à 18 mots max). Ne laisse jamais 3 phrases consécutives avoir la même longueur.
-- **Respiration visuelle** : Paragraphes de **1 à 2 phrases maximum**. Zéro pavé indigeste.
-- **Pas de "Broetry" ridicule** : Ne saute pas une ligne après chaque mot. Groupe les idées par blocs cohérents de 1 à 3 lignes.
-- **Gras Unicode mesuré** : Utilise le gras (`𝗯𝗼𝗹𝗱`) avec parcimonie (sur 1 terme clé ou chiffre pivot par section). Jamais de titres entiers en faux gras Unicode qui agressent la lecture.
-
----
-
-## 🛡️ Étape 4 : Sas Anti-Slop Francophone & Anglophone (Humanizer)
-
-> **C'est ici que 99 % des posts IA échouent.** Le texte doit passer les filtres suivants avant d'être validé :
-
-### 1. La Blacklist Francophone Impitoyable (Zero-Tolerance)
-Bannis formellement les tics de langage suivants :
-- **Mots corporate / vent** :
-  - *décryptage, incontournable, catalyseur, révolutionner, holistique, synergie, pierre angulaire, force motrice, gage de, s'avérer, écosystème, à l'ère de, enjeu crucial, indéniable, il convient de, force est de constater, vecteur, résilience, pépite, maestro, ovni, game-changer*.
-- **Structures de phrases robotiques** :
-  - ❌ *"Ce n'est pas seulement X, c'est Y"* (ou *"Il ne s'agit pas de X, mais de Y"*) → Remplacer par une affirmation directe.
-  - ❌ *"Dans un monde où..."* ou *"À l'heure où..."* → Supprimer et démarrer directement dans le sujet.
-  - ❌ *"Et si la vraie question était..."* → Poser le problème directement.
-  - ❌ *"La clé ? ..."* ou *"Le secret ? ..."* → Trop convenu.
-  - ❌ *"Spoiler alert : ..."* / *"Voici pourquoi :"* / *"Explications en 3 points :"* → Supprimer la méta-annonce.
-- **Rythmes ternaires artificiels** :
-  - Interdiction des énumérations symétriques de 3 adjectifs ou verbes ("rapide, fiable et innovant" ; "écouter, comprendre et agir").
-- **Conclusions paresseuses interdites** :
-  - ❌ *"Et vous, qu'en pensez-vous en commentaires ?"*
-  - ❌ *"Et vous, c'est quoi votre plus grand défi ?"*
-  - ❌ *"L'important, c'est l'humain."*
-  - ✅ **Remplacer par** : Une prise de position affirmée, un conseil pragmatique, un lien vers une ressource en commentaire, ou un appel franc ("Si vous rencontrez ce bug en production, mon DM est ouvert.").
-
-### 2. La Blacklist Anglophone (si rédaction en anglais)
-- Mots bannis : *delve, tapestry, leverage, foster, harness, crucial, realm, navigate, testament, game-changer, unlock, robust, paradigm shift, holistic, beacon, multifaceted, pivotal, bespoke*.
-
-### 3. Règles d'Invariants Formels :
-- **Zéro point d'exclamation (`!`)** : Suggère l'enthousiasme forcé ou l'angoisse de validation. Un post solide s'affirme avec des points (`.`).
-- **Tirets cadratins (`—`)** : Maximum 1 seul par post. Les LLMs en abusent maladivement.
-- **Emojis** :
-  - Interdiction stricte des puces décoratives en début de chaque ligne (`👉`, `💡`, `🚀`, `🔥`, `✨`, `🔹`).
-  - Utilise des tirets simples (`-`) ou une numérotation classique (`1.`, `2.`, `3.`).
-  - Maximum 1 à 2 emojis dans tout le post, placés avec pertinence ou zéro emoji.
-- **The Zombie Test (Voix Active)** :
-  - Si tu peux ajouter "par des zombies" après le verbe (ex: "Le projet a été abandonné [par des zombies]"), la voix est passive. Transforme immédiatement en voix active : "On a abandonné le projet."
+1. **Vérification de Profil** :
+   - Recherche systématiquement l'existence de `~/.claude/linkedin/brand_profile.json` ou `~/.claude/linkedin/voice.md`.
+2. **Onboarding Express (si aucun profil n'existe)** :
+   - Collecte en 4 questions rapides :
+     - *Positionnement* (qui vous êtes en 2 phrases).
+     - *3 Proof Points* (3 faits vérifiables dont vous êtes fier).
+     - *Sujets Phares vs Sujets Interdits* (ce dont vous refusez de parler).
+     - *Spicy Factor* (Conservateur / Équilibré / Sans filtre).
+   - Sauvegarde dans `brand_profile.json` pour les sessions futures.
+3. **File d'Attente de Contenu (Content Queue)** : Capacité de générer des lots de 3 à 5 publications coordonnées autour d'un même pilier thématique.
 
 ---
 
-## 🛠️ Outils & Scripts Compagnons
+## 🎣 ÉTAPE COMMUNE : Hook Engineering 80/20 & Seuil Mobile (< 210 Caractères)
 
-Le skill inclut un outillage automatisé de vérification :
+Avant toute rédaction complète, proposez **3 à 5 variantes d'accroches** basées sur les frameworks de [references/hook-frameworks.md](references/hook-frameworks.md) :
+1. *Curiosity Gap Quantifié* : 80% du résultat chiffré révélé, 20% du mécanisme masqué.
+2. *Signal Coûteux (Costly Signal)* : Affichage de l'effort ou de la perte (heures, sueur, argent).
+3. *Erreur de Diagnostic / Faux Consensus* : Démolition d'un cliché de l'industrie.
+4. *Post-Mortem d'Échec* : Récit direct d'une erreur coûteuse et de sa leçon.
+5. *Asymétrie Contrastée* : Approche débutant vs approche expert.
+6. *Constat d'Inconfort (Cold Reality)* : Énonciation sans fard d'une vérité passée sous silence.
+
+> **CONTRÔLE MOBILE STRICT** : Le hook doit obligatoirement créer sa tension **AVANT 210 caractères** (la zone où LinkedIn mobile tronque avec le bouton « ...voir plus »).
+
+---
+
+## 🛡️ MODE 4 : Moteur Unifié Humanizer & Anti-Slop (FR & EN)
+
+Le texte rédigé doit passer les filtres stricts de [references/anti-slop-dictionary.md](references/anti-slop-dictionary.md) :
+
+1. **Éradication des 38 Tics Français** :
+   - *Bannissement absolu* : crucial, notamment, également, décryptage, incontournable, catalyseur, révolutionner, holistique, synergie, pierre angulaire, s'avérer, écosystème, à l'ère de, dans un monde où.
+   - *Suppression des fausses oppositions* : *"Ce n'est pas seulement X, c'est Y"* ou *"Il ne s'agit pas de X, mais de Y"*.
+   - *Suppression des participes présents en chaîne* (`-ant`).
+   - *Casser les rythmes ternaires* : pas d'énumérations systématiques de 3 adjectifs ou 3 verbes.
+   - *Suppression des fins paresseuses* : interdiction formelle de *"Et vous, qu'en pensez-vous en commentaires ?"*.
+2. **Nettoyage des 17 Caractères Invisibles & Filigranes** : Élimination automatique des Zero-Width Spaces (`\u200B`), BOMs (`\uFEFF`) et formats directionnels.
+3. **The Zombie Test (Voix Active)** : Si l'on peut ajouter *« par des zombies »* après le verbe, la phrase est passive et doit être reformulée.
+4. **Burstiness Staccato** : Alterner des phrases courtes de 3 à 6 mots avec des phrases denses de 15 mots maximum. L'écart-type de longueur doit être $\ge 3.5$.
+5. **Formatage Sobre & Unicode** :
+   - 0 point d'exclamation (`!`).
+   - 1 tiret cadratin (`—`) maximum dans tout le post.
+   - 0 liste verticale avec emojis répétitifs (`👉`, `💡`, `🚀`). Remplacer par des tirets simples (`-`) ou des chiffres.
+   - Gras mathématique Unicode (`𝗯𝗼𝗹𝗱`) réservé à 1 ou 2 termes clés par section.
+
+---
+
+## 🛠️ Outil Compagnon de Vérification Automatisée
+
+Le skill intègre un moteur CLI d'audit et de nettoyage automatique :
 
 ```bash
-# Vérifier la conformité d'un post (longueur mobile, slop FR/EN, score humanizer)
-python scripts/verify_linkedin_post.py "mon_post.txt"
+# Auditer un post et obtenir son score 5-panels (0 à 100)
+python scripts/verify_and_humanize.py "mon_post.txt"
+
+# Nettoyer automatiquement un texte (supprime filigranes, résidus de chat et normalise les tirets)
+python scripts/verify_and_humanize.py "mon_post.txt" --clean
 
 # Tester directement une chaîne de texte
-python scripts/verify_linkedin_post.py --text "Voici mon ébauche de post..."
+python scripts/verify_and_humanize.py --text "On a fait passer notre scraper de 40% de blocages à 0%..."
 ```
 
 ---
 
-## 📋 Checklist Finale de Validation (Auto-Contrôle)
+## 📋 Checklist d'Auto-Évaluation Avant Publication
 
-Avant de livrer le post à l'utilisateur, vérifie :
-- [ ] Le post repose-t-il sur une donnée concrète ou un événement réel fourni par l'utilisateur ?
-- [ ] La coupure mobile (< 210 caractères) est-elle captivante et non tronquée au mauvais endroit ?
+Avant de valider le post final, vérifiez :
+- [ ] Le post repose-t-il sur un fait, une métrique ou un échec réel ?
+- [ ] L'accroche fait-elle moins de 210 caractères et déclenche-t-elle le besoin de cliquer ?
 - [ ] Zéro terme de la blacklist FR ou EN n'est présent ?
-- [ ] Les structures ternaires et les oppositions "Il ne s'agit pas de..." ont-elles été éliminées ?
-- [ ] Le Zombie Test est-il validé (voix active prédominante) ?
-- [ ] Aucun point d'exclamation n'a été inséré ?
-- [ ] La fin évite-t-elle la question bateau ("Et vous, qu'en pensez-vous ?") ?
+- [ ] La structure évite-t-elle les fausses oppositions et les rythmes ternaires ?
+- [ ] Toutes les phrases sont-elles en voix active (Zombie Test validé) ?
+- [ ] Le post se termine-t-il par un takeaway solide ou un lien en 1er commentaire (et JAMAIS par une question de débat mou) ?
+- [ ] Le score `verify_and_humanize.py` atteint-il **PASS (>= 80/100)** ?

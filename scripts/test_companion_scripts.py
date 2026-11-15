@@ -177,7 +177,9 @@ def main():
 
     # 14. linkedin-ghostwriter
     li_linter = SKILLS / "linkedin-ghostwriter" / "scripts" / "verify_linkedin_post.py"
+    li_humanizer = SKILLS / "linkedin-ghostwriter" / "scripts" / "verify_and_humanize.py"
     run_test("linkedin-ghostwriter --help", [str(li_linter), "--help"])
+    run_test("linkedin-ghostwriter verify_and_humanize --help", [str(li_humanizer), "--help"])
     run_test(
         "linkedin-ghostwriter audit clean post",
         [
@@ -194,6 +196,23 @@ def main():
             "Dans un monde où l'IA transforme tout, il convient de faire un décryptage incontournable ! Ce n'est pas seulement un outil, c'est une révolution. Et vous, qu'en pensez-vous ?",
         ],
         expect_code=2,
+    )
+    run_test(
+        "linkedin-ghostwriter clean text watermark",
+        [
+            str(li_humanizer),
+            "--clean",
+            "--text",
+            "Voici le post :\n\nOn a fait passer notre scraper de 40% de blocages à 0%.\nSans proxies à 500€/mois.",
+        ],
+    )
+    run_test(
+        "linkedin-ghostwriter humanizer audit pass",
+        [
+            str(li_humanizer),
+            "--text",
+            "On a fait passer notre scraper de 40% de blocages à 0%.\nSans acheter de proxies résidentiels à 500€/mois.\n\nL'erreur courante est de croire que l'IP est bloquée. En réalité, le serveur vérifie les ciphers TLS.",
+        ],
     )
 
     print("==================================================================")
