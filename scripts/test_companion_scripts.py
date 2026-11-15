@@ -178,8 +178,16 @@ def main():
     # 14. linkedin-ghostwriter
     li_linter = SKILLS / "linkedin-ghostwriter" / "scripts" / "verify_linkedin_post.py"
     li_humanizer = SKILLS / "linkedin-ghostwriter" / "scripts" / "verify_and_humanize.py"
+    li_carousel = SKILLS / "linkedin-ghostwriter" / "scripts" / "generate_carousel_html.py"
     run_test("linkedin-ghostwriter --help", [str(li_linter), "--help"])
     run_test("linkedin-ghostwriter verify_and_humanize --help", [str(li_humanizer), "--help"])
+    run_test("linkedin-ghostwriter generate_carousel_html --help", [str(li_carousel), "--help"])
+    with tempfile.TemporaryDirectory() as tmpdir:
+        out_carousel = Path(tmpdir) / "carousel.html"
+        run_test(
+            "linkedin-ghostwriter generate carousel html",
+            [str(li_carousel), "--output", str(out_carousel)],
+        )
     run_test(
         "linkedin-ghostwriter audit clean post",
         [

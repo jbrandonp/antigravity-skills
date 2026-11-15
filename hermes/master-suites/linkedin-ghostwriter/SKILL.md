@@ -1,137 +1,123 @@
 ---
 name: linkedin-ghostwriter
-description: Production-grade LinkedIn Ghostwriter Master Suite for Claude & Claude Code. Unifies strategic B2B interview gatekeeping (samber 4 pillars), devlog-to-story extraction (liftli build-in-public), persistent brand memory (francesca-basso brand_profile.json), 80/20 hook engineering (<210 chars mobile cutoff), staccato narrative architecture (ABT), and ruthless anti-AI humanization (blader 26 rules + samber 38 French rules + 17 invisible watermark cleaners).
+description: Production-grade LinkedIn Ghostwriter Super Mega-Suite for Claude & Claude Code. Unifies 8 world-class engines into a single powerhouse: strategic B2B interview (samber 4 pillars), devlog-to-story extraction (liftli build-in-public), high-dwell document carousels (1080x1350 HTML generator), 20 hook formulas 2026 (sergebulaev F1-F20), authority comment drafter (9 types), reply doubler (lead triage), 6-part repurposing matrix, 12-point profile optimization rubric, and ruthless anti-AI humanization (blader 26 rules + samber 38 French rules + 17 invisible watermark cleaners).
 ---
 
-# LinkedIn Ghostwriter Master Engine v2.0 (Super Mega-Skill)
+# LinkedIn Ghostwriter Super Mega-Suite v3.0 (Omni-Engine)
 
-> **La Loi d'Airain du Ghostwriter** : L'IA ne rédige **aucun** post sans validation préalable des faits réels. Les prompts génériques produisent du vent corporate. Ce skill fusionne les 8 meilleurs moteurs open-source mondiaux pour transformer vos commits Git, vos retours d'expérience et vos apprentissages en publications virales, authentiques et impossibles à distinguer d'une plume humaine d'élite.
+> **L'Autorité Absolue du Ghostwriting B2B & Tech** : Ce skill unifie l'intégralité des 8 meilleurs dépôts mondiaux de Ghostwriting LinkedIn pour Claude en une seule infrastructure modulaire, sans doublon, sans aucun appel vers un SaaS payant, et parfaitement bilingue (Français & Anglais).
 
 ---
 
-## ⚡ Architecture Opérationnelle en 4 Modes d'Exécution
+## ⚡ Routeur d'Exécution : 7 Modes Opérationnels
 
 ```text
 ┌─────────────────────────────────────────────────────────────────────────────────────────┐
-│                      MEGA LINKEDIN GHOSTWRITER MASTER ENGINE                            │
+│                    MEGA LINKEDIN GHOSTWRITER MASTER SUITE (OMNI-ENGINE)                 │
 └───────────────────────────────────────────┬─────────────────────────────────────────────┘
                                             │
-         ┌───────────────────┬──────────────┴──────┬───────────────────┐
-         ▼                   ▼                     ▼                   ▼
-┌─────────────────┐ ┌─────────────────┐ ┌────────────────────┐ ┌─────────────────┐
-│ MODE 1          │ │ MODE 2          │ │ MODE 3             │ │ MODE 4          │
-│ Interview B2B   │ │ Devlog to Story │ │ Batch & Persistance│ │ Humanizer Linter│
-│ (SAS 4 Piliers) │ │ (Git Log -> Post│ │ (brand_profile.json│ │ (5-Panel Audit  │
-│ Zéro Fluff      │ │ Tension réelle) │ │ Content Queue)     │ │ 0-100 Score)    │
-└─────────────────┘ └─────────────────┘ └────────────────────┘ └─────────────────┘
+         ┌───────────────────┬──────────────┼──────────────┬───────────────────┐
+         ▼                   ▼              ▼              ▼                   ▼
+┌─────────────────┐ ┌─────────────────┐ ┌──────────────┐ ┌─────────────────┐ ┌─────────────────┐
+│ MODE 1 : POST   │ │ MODE 2 : DEVLOG │ │ MODE 3 : PDF │ │ MODE 4 : ENGAGE │ │ MODE 5 : REPURP │
+│ Interview SAS   │ │ Git Log -> Post │ │ Carrousel    │ │ Commentaires &  │ │ Découpage en    │
+│ 4 Piliers       │ │ Tension & Code  │ │ 1080x1350    │ │ Tri des Réponses│ │ 5 Posts Semaine │
+└─────────────────┘ └─────────────────┘ └──────────────┘ └─────────────────┘ └─────────────────┘
+                                            │
+         ┌──────────────────────────────────┴──────────────────────────────────┐
+         ▼                                                                     ▼
+┌─────────────────────────────────┐                   ┌─────────────────────────────────┐
+│ MODE 6 : PROFILE OPTIMIZER      │                   │ MODE 7 : ANTI-SLOP LINTER       │
+│ Grille 12 Critères (Note /100)  │                   │ 5 Panels, 17 Watermarks purgés  │
+│ Titre, About, Sélection mobile  │                   │ Score d'Authenticité CLI (0-100)│
+└─────────────────────────────────┘                   └─────────────────────────────────┘
 ```
 
 ---
 
-## 🎙️ MODE 1 : Strategic Ghostwriting & SAS d'Interview Bloquant
+## 🎙️ MODE 1 : Ghostwriting Stratégique & SAS d'Interview Bloquant
 
-> **RÈGLE INVIOLABLE** : L'agent **REFUSE** de rédiger le corps d'un post tant que l'utilisateur n'a pas validé les 4 piliers empiriques ci-dessous. En l'absence de chiffres ou de faits, posez immédiatement ces 4 questions chirurgicales :
+> **RÈGLE INVIOLABLE** : L'agent **REFUSE** de rédiger le corps d'un post tant que l'utilisateur n'a pas validé les 4 piliers empiriques ci-dessous :
 
-1. **Le Fait Empirique & Métrique (Skin in the Game)** :
-   - *Question* : "Quel chiffre exact, quelle métrique mesurable ou quel événement concret illustre cette situation ?"
-   - *Garantie Zéro-Hallucination* : Si l'utilisateur n'a pas la donnée exacte, insérez la balise `{{votre métrique}}`. **Interdiction formelle d'inventer une statistique.**
-2. **L'Anomalie de Terrain (Thèse Contre-Intuitive)** :
-   - *Question* : "Quelle est l'idée reçue ou l'erreur courante de ton industrie que cette expérience contredit ?"
-3. **Le Mécanisme Réel (2 à 3 étapes concrètes)** :
-   - *Question* : "Comment exactement cela a été résolu ou exécuté (sans théorie abstraite, donne les 2 ou 3 étapes réelles) ?"
-4. **Le Takeaway / Conclusion Tranchée** :
-   - *Question* : "Quelle est la leçon pragmatique et directe à en tirer pour le lecteur ?"
+1. **Le Fait Empirique & Métrique (Skin in the Game)** : Quel chiffre exact ou résultat vérifiable illustre la situation ? *(En cas d'absence, insérer `{{votre métrique}}`)*.
+2. **L'Anomalie de Terrain (Thèse Contre-Intuitive)** : Quelle idée reçue de l'industrie est contredite ?
+3. **Le Mécanisme Réel (2 à 3 étapes concrètes)** : Comment exactement cela a été exécuté ?
+4. **Le Takeaway / Conclusion Nette** : Quelle est la vérité pragmatique pour le lecteur ?
+
+### Sélection parmi les 20 Formules de Hooks Élite (2026) :
+Consultez [references/hook-formulas.md](references/hook-formulas.md) et proposez d'abord 3 à 5 accroches coupées **AVANT 210 caractères** (F1 Risque de Plateforme, F2 Obituary, F3 Pivot Annuel, F5 Registre Financier, F7 Curiosity Gap, F8 Faux Binaire, F10 Asymétrie Junior/Senior).
 
 ---
 
-## 💻 MODE 2 : Devlog-to-Story (Du Terminal / Git Log au Post)
+## 💻 MODE 2 : Devlog-to-Story (Du Terminal au Post)
 
-Utilisez ce mode lorsque l'utilisateur se trouve dans un dépôt Git et souhaite transformer son travail de la semaine en publication :
-
-1. **Inspection du Git Log** : Proposez de lire les derniers commits (`git log --oneline -n 30`).
-2. **Recherche du Moment de Tension** :
-   - Le bug qui a résisté 3 fois (reverts, fix successifs).
-   - La fonctionnalité sacrifiée ou le refactoring qui a supprimé 500 lignes.
-   - Le gain de performance mesurable (latence, mémoire, coût de serveur).
-3. **Traduction du Jargon** : Tout terme technique doit être rendu intelligible pour un décideur non-développeur (ex: *"race condition"* → *"deux requêtes qui entrent en collision au même millième de seconde"*).
-4. **Structure** : Départ direct dans l'instant de crise, explication du revirement, leçon managériale transférable.
+Consultez [references/devlog-to-story.md](references/devlog-to-story.md) :
+1. Proposez de lire les 30 derniers commits Git du projet (`git log --oneline -n 30`).
+2. Isolez **le moment de tension réelle** : le bug qui a résisté 3 fois, la suppression de 500 lignes de dette technique, ou le gain mesuré de performance/coût.
+3. Traduisez le jargon pour un décideur non-dev et appliquez la structure **ABT** (*And-But-Therefore*).
 
 ---
 
-## 🗃️ MODE 3 : Persistance & Gestionnaire de Marque (`brand_profile.json`)
+## 📄 MODE 3 : Carrousels Documentaires (Highest Dwell Time)
 
-1. **Vérification de Profil** :
-   - Recherche systématiquement l'existence de `~/.claude/linkedin/brand_profile.json` ou `~/.claude/linkedin/voice.md`.
-2. **Onboarding Express (si aucun profil n'existe)** :
-   - Collecte en 4 questions rapides :
-     - *Positionnement* (qui vous êtes en 2 phrases).
-     - *3 Proof Points* (3 faits vérifiables dont vous êtes fier).
-     - *Sujets Phares vs Sujets Interdits* (ce dont vous refusez de parler).
-     - *Spicy Factor* (Conservateur / Équilibré / Sans filtre).
-   - Sauvegarde dans `brand_profile.json` pour les sessions futures.
-3. **File d'Attente de Contenu (Content Queue)** : Capacité de générer des lots de 3 à 5 publications coordonnées autour d'un même pilier thématique.
+Consultez [references/carousel-frameworks.md](references/carousel-frameworks.md) :
+1. Structure en **8 à 12 slides** au ratio **1080x1350 (4:5)**.
+2. Slide 1 : Titre choc (< 6 mots) + promesse.
+3. Slides intermédiaires : 1 seule idée par slide, **moins de 25 mots de texte**.
+4. Slide N+1 : La synthèse récapitulative conçue pour la capture d'écran.
+5. Génération automatique du code HTML via le script compagnon [`scripts/generate_carousel_html.py`](scripts/generate_carousel_html.py) pour impression PDF sans marge.
 
 ---
 
-## 🎣 ÉTAPE COMMUNE : Hook Engineering 80/20 & Seuil Mobile (< 210 Caractères)
+## 💬 MODE 4 : Engagement d'Autorité & Tri des Réponses
 
-Avant toute rédaction complète, proposez **3 à 5 variantes d'accroches** basées sur les frameworks de [references/hook-frameworks.md](references/hook-frameworks.md) :
-1. *Curiosity Gap Quantifié* : 80% du résultat chiffré révélé, 20% du mécanisme masqué.
-2. *Signal Coûteux (Costly Signal)* : Affichage de l'effort ou de la perte (heures, sueur, argent).
-3. *Erreur de Diagnostic / Faux Consensus* : Démolition d'un cliché de l'industrie.
-4. *Post-Mortem d'Échec* : Récit direct d'une erreur coûteuse et de sa leçon.
-5. *Asymétrie Contrastée* : Approche débutant vs approche expert.
-6. *Constat d'Inconfort (Cold Reality)* : Énonciation sans fard d'une vérité passée sous silence.
-
-> **CONTRÔLE MOBILE STRICT** : Le hook doit obligatoirement créer sa tension **AVANT 210 caractères** (la zone où LinkedIn mobile tronque avec le bouton « ...voir plus »).
-
----
-
-## 🛡️ MODE 4 : Moteur Unifié Humanizer & Anti-Slop (FR & EN)
-
-Le texte rédigé doit passer les filtres stricts de [references/anti-slop-dictionary.md](references/anti-slop-dictionary.md) :
-
-1. **Éradication des 38 Tics Français** :
-   - *Bannissement absolu* : crucial, notamment, également, décryptage, incontournable, catalyseur, révolutionner, holistique, synergie, pierre angulaire, s'avérer, écosystème, à l'ère de, dans un monde où.
-   - *Suppression des fausses oppositions* : *"Ce n'est pas seulement X, c'est Y"* ou *"Il ne s'agit pas de X, mais de Y"*.
-   - *Suppression des participes présents en chaîne* (`-ant`).
-   - *Casser les rythmes ternaires* : pas d'énumérations systématiques de 3 adjectifs ou 3 verbes.
-   - *Suppression des fins paresseuses* : interdiction formelle de *"Et vous, qu'en pensez-vous en commentaires ?"*.
-2. **Nettoyage des 17 Caractères Invisibles & Filigranes** : Élimination automatique des Zero-Width Spaces (`\u200B`), BOMs (`\uFEFF`) et formats directionnels.
-3. **The Zombie Test (Voix Active)** : Si l'on peut ajouter *« par des zombies »* après le verbe, la phrase est passive et doit être reformulée.
-4. **Burstiness Staccato** : Alterner des phrases courtes de 3 à 6 mots avec des phrases denses de 15 mots maximum. L'écart-type de longueur doit être $\ge 3.5$.
-5. **Formatage Sobre & Unicode** :
-   - 0 point d'exclamation (`!`).
-   - 1 tiret cadratin (`—`) maximum dans tout le post.
-   - 0 liste verticale avec emojis répétitifs (`👉`, `💡`, `🚀`). Remplacer par des tirets simples (`-`) ou des chiffres.
-   - Gras mathématique Unicode (`𝗯𝗼𝗹𝗱`) réservé à 1 ou 2 termes clés par section.
+Consultez [references/comment-and-reply-playbook.md](references/comment-and-reply-playbook.md) :
+1. **Commenter sous les posts de tiers (9 archétypes)** : Rédiger des commentaires d'autorité (Ajout d'une donnée, Cas particulier, Désaccord respectueux, Le reçu du terrain, Le recadrage) pour capter du trafic sans flagornerie.
+2. **Répondre sous vos propres posts (Tri en 5 paniers)** :
+   - `LEAD` : Réponse publique détaillée + porte entrouverte vers les DMs.
+   - `SUBSTANCE` : La réponse la plus longue pour doper le temps de lecture.
+   - `PEER` : Échange d'égal à égal.
+   - `SUPPORT` : Remerciement sobre de 4 mots.
+   - `NOISE` : Ne rien répondre (anti-reach).
 
 ---
 
-## 🛠️ Outil Compagnon de Vérification Automatisée
+## ⛏️ MODE 5 : Recyclage & Découpage Multi-Posts (Repurposing)
 
-Le skill intègre un moteur CLI d'audit et de nettoyage automatique :
+Consultez [references/repurpose-matrix.md](references/repurpose-matrix.md) :
+Transformez un README GitHub, une vidéo ou une documentation en **5 publications hebdomadaires autonomes** :
+- *Lundi* : Prise de position forte (F8 Faux Binaire).
+- *Mardi* : Post-Mortem d'un échec coûteux (F5 Registre Financier).
+- *Mercredi* : Carrousel ou mécanisme étape par étape (F7 Curiosity Gap).
+- *Jeudi* : Asymétrie Junior vs Senior (F10).
+- *Vendredi* : La leçon d'ingénierie ou de management (F4 Confession).
 
+---
+
+## 🗃️ MODE 6 : Optimisation de Profil (Landing Page LinkedIn)
+
+Consultez [references/profile-optimization-rubric.md](references/profile-optimization-rubric.md) :
+1. Audit du profil sur **100 points** à travers 12 critères impératifs.
+2. Réécriture du **Titre (220 car.)** : `{Problème réglé pour qui} | {Preuve} | {Action}`.
+3. Réécriture des **2 premières lignes de l'About** (visibles sur mobile sans clic).
+4. Sélection stratégique des éléments mis en avant (*Featured*).
+
+---
+
+## 🛡️ MODE 7 : Linter Anti-Slop, Décapage des Filigranes & Zombie Test
+
+Consultez [references/anti-slop-dictionary.md](references/anti-slop-dictionary.md) :
+1. Décapage automatique des **17 classes de filigranes invisibles Unicode** (`\u200B`, BOM, joiners).
+2. Éradication des **38 tics français** (*crucial, notamment, également, décryptage, incontournable, catalyseur, révolutionner, fausses oppositions "ce n'est pas seulement X, c'est Y"*).
+3. Éradication des **26 tics anglais** (*delve, tapestry, leverage, foster, not X but Y, dramatic fragments*).
+4. Application du **Zombie Test** (voix active obligatoire).
+5. Mesure de la variance de phrase (**Burstiness $\sigma \ge 3.5$**) et de la coupure mobile (< 210 car.).
+
+### Commande CLI Universelle :
 ```bash
-# Auditer un post et obtenir son score 5-panels (0 à 100)
-python scripts/verify_and_humanize.py "mon_post.txt"
-
-# Nettoyer automatiquement un texte (supprime filigranes, résidus de chat et normalise les tirets)
+# Nettoyer et dé-slopifier automatiquement un post
 python scripts/verify_and_humanize.py "mon_post.txt" --clean
 
-# Tester directement une chaîne de texte
-python scripts/verify_and_humanize.py --text "On a fait passer notre scraper de 40% de blocages à 0%..."
+# Lancer l'audit de détection 5 panels avec score sur 100
+python scripts/verify_and_humanize.py "mon_post.txt"
 ```
-
----
-
-## 📋 Checklist d'Auto-Évaluation Avant Publication
-
-Avant de valider le post final, vérifiez :
-- [ ] Le post repose-t-il sur un fait, une métrique ou un échec réel ?
-- [ ] L'accroche fait-elle moins de 210 caractères et déclenche-t-elle le besoin de cliquer ?
-- [ ] Zéro terme de la blacklist FR ou EN n'est présent ?
-- [ ] La structure évite-t-elle les fausses oppositions et les rythmes ternaires ?
-- [ ] Toutes les phrases sont-elles en voix active (Zombie Test validé) ?
-- [ ] Le post se termine-t-il par un takeaway solide ou un lien en 1er commentaire (et JAMAIS par une question de débat mou) ?
-- [ ] Le score `verify_and_humanize.py` atteint-il **PASS (>= 80/100)** ?
