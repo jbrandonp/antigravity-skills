@@ -462,6 +462,75 @@ def audit_thread(text: str) -> Dict[str, object]:
     }
 
 
+def to_unicode_char(c: str, style: str = "bold") -> str:
+    """Converts a single alphanumeric character to styled mathematical Unicode."""
+    if style == "bold":
+        if "A" <= c <= "Z":
+            return chr(0x1D5D4 + ord(c) - ord("A"))
+        if "a" <= c <= "z":
+            return chr(0x1D5EE + ord(c) - ord("a"))
+        if "0" <= c <= "9":
+            return chr(0x1D7EC + ord(c) - ord("0"))
+    elif style == "italic":
+        if "A" <= c <= "Z":
+            return chr(0x1D608 + ord(c) - ord("A"))
+        if "a" <= c <= "z":
+            return chr(0x1D622 + ord(c) - ord("a"))
+    elif style == "mono":
+        if "A" <= c <= "Z":
+            return chr(0x1D670 + ord(c) - ord("A"))
+        if "a" <= c <= "z":
+            return chr(0x1D68A + ord(c) - ord("a"))
+        if "0" <= c <= "9":
+            return chr(0x1D7F6 + ord(c) - ord("0"))
+    return c
+
+
+def to_unicode_text(text: str, style: str = "bold") -> str:
+    """Converts an entire text string to styled mathematical Unicode."""
+    return "".join(to_unicode_char(c, style) for c in text)
+
+
+def format_to_unicode(text: str, default_style: str = "bold") -> str:
+    """Parses markdown syntax (**bold**, *italic*, `code`) into Unicode characters, or converts the whole text."""
+    has_markdown = bool(re.search(r"\*\*.+?\*\*|\*[^*]+?\*|`[^`]+?`", text))
+    if has_markdown:
+        res = re.sub(r"\*\*(.+?)\*\*", lambda m: to_unicode_text(m.group(1), "bold"), text)
+        res = re.sub(r"\*([^*]+?)\*", lambda m: to_unicode_text(m.group(1), "italic"), res)
+        res = re.sub(r"`([^`]+?)`", lambda m: to_unicode_text(m.group(1), "mono"), res)
+        return res
+    return to_unicode_text(text, default_style)
+
+
+PROFILE_RUBRIC_ITEMS: List[Tuple[str, int, str]] = [
+    ("headline", 12, "States who you help & outcome; carries proof; under 220c; front-loaded before 65c."),
+    ("about_open", 10, "First 2 lines visible before 'see more' name reader's problem. No 'passionate about'."),
+    ("about_body", 10, "Addressed to 1 person in 2nd person: problem, mechanism, 1 number proof, clear CTA (<1,400c)."),
+    ("featured", 8, "Top 3 assets: highest-performing post, verified case study asset, booking/contact link."),
+    ("banner", 6, "1 clear line of positioning + 1 way to reach you. No generic gradient or stock skyline."),
+    ("photo", 6, "Face occupies ~60% of frame, eyes visible, recent professional high-contrast headshot."),
+    ("current_role", 10, "1 line of scope + 2-3 quantified outcome bullets with numbers. Outcomes over duties."),
+    ("experience_depth", 8, "Last 2 roles detailed with hard metrics. Everything > 10 years old compressed to 1 line."),
+    ("skills", 6, "Top 3 endorsed skills match the exact core service you sell. The other 47 are noise."),
+    ("recommendations", 8, "At least 3 received in the last 2 years, naming specific outcomes rather than character."),
+    ("activity", 10, "Posted or commented thoughtfully in the last 7 days. Demonstrates an active presence."),
+    ("contact", 6, "Custom URL, verified email or booking link in contact info, consistent handle across platforms."),
+]
+
+
+def print_profile_rubric() -> None:
+    """Displays the structured 100-point LinkedIn Profile Optimization Rubric."""
+    print("==================================================================")
+    print("      LINKEDIN PROFILE OPTIMIZATION RUBRIC (100 POINTS)          ")
+    print("==================================================================")
+    total_pts = sum(pts for _, pts, _ in PROFILE_RUBRIC_ITEMS)
+    for section, pts, check in PROFILE_RUBRIC_ITEMS:
+        print(f"[{pts:2d} pts] {section:<17} : {check}")
+    print("------------------------------------------------------------------")
+    print(f"Total Target Score: {total_pts}/100 (Passing Threshold: >= 85/100)")
+    print("==================================================================")
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description="Unified LinkedIn Ghostwriting Quality & Anti-Slop Audit Engine.")
     parser.add_argument("file", nargs="?", help="Path to text file containing the draft")
@@ -473,7 +542,21 @@ def main() -> int:
         default="post",
         help="Type of content to audit (default: post)",
     )
+    parser.add_argument(
+        "--to-unicode",
+        choices=["bold", "italic", "mono"],
+        help="Convert markdown formatting or text into styled Unicode characters",
+    )
+    parser.add_argument(
+        "--rubric-profile",
+        action="store_true",
+        help="Display the 100-point LinkedIn Profile Optimization Rubric",
+    )
     args = parser.parse_args()
+
+    if args.rubric_profile:
+        print_profile_rubric()
+        return 0
 
     content = ""
     if args.text:
@@ -490,6 +573,11 @@ def main() -> int:
     else:
         parser.print_help()
         return 1
+
+    if args.to_unicode:
+        converted = format_to_unicode(content, args.to_unicode)
+        print(converted)
+        return 0
 
     if args.type == "dm":
         result = audit_dm(content)

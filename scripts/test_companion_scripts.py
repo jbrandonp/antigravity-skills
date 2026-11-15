@@ -252,6 +252,23 @@ def main():
             "1/ Most teams think scrapers fail due to IP bans. In reality, 70% fail due to silent DOM mutation.\n---\n2/ Decouple the headless crawler from the parser via SQLite.\n---\n3/ Bookmark this thread.",
         ],
     )
+    run_test(
+        "linkedin-ghostwriter rubric profile",
+        [
+            str(li_humanizer),
+            "--rubric-profile",
+        ],
+    )
+    run_test(
+        "linkedin-ghostwriter to-unicode bold",
+        [
+            str(li_humanizer),
+            "--to-unicode",
+            "bold",
+            "--text",
+            "Scaling **SQLite** to 10k writes/sec.",
+        ],
+    )
 
     print("==================================================================")
     print(f"TEST RESULTS: {tests_passed} passed, {tests_failed} failed.")
