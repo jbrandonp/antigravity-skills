@@ -13,7 +13,7 @@ Contrarian posts work because they create unresolved tension in the feed. Howeve
 
 ### Archetype 2: The Hidden Cost of Best Practices
 *Demonstrates that a standard industry recommendation carries ruinous overhead in specific contexts.*
-- **Formula:** *"Best practice X is great for [Big Tech company], but it quietly costs startups $Y in hidden maintenance."*
+- **Formula:** *"Best practice X is great for [Big Tech company], but it quietly costs startups \$Y in hidden maintenance."*
 - **Example:** *"Microservices are an organizational scaling tool for 500-person engineering teams. Adopting them with 5 engineers is technical suicide."*
 
 ### Archetype 3: The Premature Optimization Trap
@@ -29,7 +29,7 @@ Contrarian posts work because they create unresolved tension in the feed. Howeve
 ### Archetype 5: The Skill Obsoleted by Modern Architecture
 *Challenges nostalgic attachments to outdated engineering practices.*
 - **Formula:** *"X used to require a senior specialist. Today, modern tooling makes it a 3-line configuration."*
-- **Example:** *"Managing dedicated Redis clusters for basic session caching is legacy baggage. Modern SQLite WAL handles 10,000 writes/sec on a single $10 VPS."*
+- **Example:** *"Managing dedicated Redis clusters for basic session caching is legacy baggage. Modern SQLite WAL handles 10,000 writes/sec on a single \$10 VPS."*
 
 ### Archetype 6: The Boundary Condition
 *Clarifies exactly where conventional wisdom breaks down.*

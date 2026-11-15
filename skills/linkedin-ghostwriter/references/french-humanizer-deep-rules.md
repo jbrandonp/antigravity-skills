@@ -14,7 +14,7 @@ Ce document formalise les règles avancées de dé-robotisation de la langue fra
 ### 2. La Règle des Trois Signaux (Three-Signal Rule)
 - Un marqueur isolé est du simple bruit statistique (la plupart des mots signalés existent dans le français normal).
 - **Le Seuil Critique :** C'est la co-occurrence de **3 marqueurs ou plus dans le même paragraphe** qui fait tiquer le lecteur et déclenche l'alarme anti-IA.
-- *Exemple toxique :* « Dans un paysage en mutation *(signal 1)*, cet outil constitue un jalon décisif *(signal 2)*, ouvrant la voie à une résilience accrue *(signal 3)*. » $\rightarrow$ Rejet immédiat.
+- *Exemple toxique :* « Dans un paysage en mutation *(signal 1)*, cet outil constitue un jalon décisif *(signal 2)*, ouvrant la voie à une résilience accrue *(signal 3)*. » → Rejet immédiat.
 
 ---
 
@@ -43,16 +43,16 @@ Les modèles entraînés en anglais traduisent littéralement les propositions p
 
 ### 3. Les Anglicismes de Modèles Entraînés en Anglais
 Décalques sémantiques qui sonnent faux à l'oreille d'un francophone natif :
-- *Faire du sens* $\rightarrow$ **Avoir du sens**.
-- *Adresser un problème* $\rightarrow$ **Traiter, résoudre, s'attaquer à un problème**.
-- *Délivrer de la valeur* $\rightarrow$ **Apporter des résultats, enrichir**.
-- *À la fin de la journée* $\rightarrow$ **En fin de compte, au bout du compte**.
-- *Focaliser sur* $\rightarrow$ **Se concentrer sur**.
+- *Faire du sens* → **Avoir du sens**.
+- *Adresser un problème* → **Traiter, résoudre, s'attaquer à un problème**.
+- *Délivrer de la valeur* → **Apporter des résultats, enrichir**.
+- *À la fin de la journée* → **En fin de compte, au bout du compte**.
+- *Focaliser sur* → **Se concentrer sur**.
 
 ### 4. Les Rituels Didactiques et Équilibres Paresseux
 - **La fausse dissertation académique :** Forcer un plan *Thèse / Antithèse / Synthèse* sur un sujet d'ingénierie direct.
 - **La conclusion résumée automatique :** Phrases d'ouverture de conclusion (*"En somme", "Pour conclure", "En fin de compte"*).
-- **La question de clôture feinte :** *"Et vous, qu'en pensez-vous ? Partagez vos avis en commentaire !"* $\rightarrow$ Supprimer purement et simplement.
+- **La question de clôture feinte :** *"Et vous, qu'en pensez-vous ? Partagez vos avis en commentaire !"* → Supprimer purement et simplement.
 
 ---
 

@@ -20,17 +20,17 @@ When analyzing a transcript or notes, scan for these three patterns:
 ### Archetype A: The Reframing Quote
 *A prospect describes a common reality in an unexpected, startling way.*
 - **Example Quote:** *"We don't lack leads. We lack the courage to tell 80% of them they aren't qualified."*
-- **Narrative Arc:** Quote $\rightarrow$ The standard industry assumption $\rightarrow$ The real cost of that assumption $\rightarrow$ The 3-step qualification filter $\rightarrow$ Takeaway.
+- **Narrative Arc:** Quote → The standard industry assumption → The real cost of that assumption → The 3-step qualification filter → Takeaway.
 
 ### Archetype B: The Universal Objection
 *A prospect hesitates to buy or adopt due to an unspoken fear.*
 - **Example Objection:** *"If we automate this, will our team lose their connection to the customer?"*
-- **Narrative Arc:** The hesitation $\rightarrow$ Why it seems rational $\rightarrow$ Why avoiding it actually causes the exact problem they fear $\rightarrow$ The hybrid human-in-the-loop framework $\rightarrow$ Dialogue prompt.
+- **Narrative Arc:** The hesitation → Why it seems rational → Why avoiding it actually causes the exact problem they fear → The hybrid human-in-the-loop framework → Dialogue prompt.
 
 ### Archetype C: The Surprising Metric
 *A client thought their problem was X, but data proved it was Y.*
 - **Example Metric:** *"They thought their onboarding took 2 weeks. The audit revealed the customer was blocked for 9 days waiting for a single API key."*
-- **Narrative Arc:** The perceived problem $\rightarrow$ The forensic audit $\rightarrow$ The real bottleneck $\rightarrow$ The 24h fix $\rightarrow$ Lesson for operators.
+- **Narrative Arc:** The perceived problem → The forensic audit → The real bottleneck → The 24h fix → Lesson for operators.
 
 ---
 
@@ -38,10 +38,10 @@ When analyzing a transcript or notes, scan for these three patterns:
 
 Before any draft is generated, apply these 5 redaction rules:
 1. **Names & Companies:** Replace with generalized buyer personas (e.g., *"A Series B Fintech CTO in London"*, *"A 50-person logistics operator"*).
-2. **Proprietary Metrics:** Convert absolute private revenues/margins into relative ratios or percentages (e.g., replace *"$1.42M ARR"* with *"+34% ARR velocity in 90 days"*).
+2. **Proprietary Metrics:** Convert absolute private revenues/margins into relative ratios or percentages (e.g., replace *"\$1.42M ARR"* with *"+34% ARR velocity in 90 days"*).
 3. **Internal Product Codename:** Replace with the functional category (e.g., replace *"Project Zeus"* with *"our real-time indexing pipeline"*).
 4. **Third-Party Vendors:** Redact vendor names unless publicly disclosed or benchmarked neutrally.
-5. **Timeline & Geography:** Jitter dates (e.g., *"last Tuesday"* $\rightarrow$ *"earlier this quarter"*).
+5. **Timeline & Geography:** Jitter dates (e.g., *"last Tuesday"* → *"earlier this quarter"*).
 
 ---
 

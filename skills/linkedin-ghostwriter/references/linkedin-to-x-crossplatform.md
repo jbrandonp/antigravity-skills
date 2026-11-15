@@ -30,7 +30,7 @@ When converting a validated LinkedIn publication into X content, generate 3 dist
 
 ### Format 3: The Spicy Quote-Bait Variant
 *Designed to provoke replies, debate, and quote-retweets from industry peers.*
-- **Structure:** State a widely accepted best practice $\rightarrow$ Call it premature optimization or obsolete $\rightarrow$ Present the lean alternative.
+- **Structure:** State a widely accepted best practice → Call it premature optimization or obsolete → Present the lean alternative.
 - **Example:**
   > *"Unpopular opinion in AI engineering:*  
   >  

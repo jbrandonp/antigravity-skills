@@ -38,7 +38,7 @@ La syntaxe dicte l'effort cognitif requis pour lire.
    - En B2B et en écriture technique, la voix active SVO préserve l'énergie mentale du lecteur.
    - *Passif :* "Une baisse de 40% de la latence a été mesurée par l'équipe."
    - *Actif SVO :* "Notre équipe a réduit la latence de 40%."
-2. **Profondeur de Clause (Clause Depth $\le 2$) :**
+2. **Profondeur de Clause (Clause Depth ≤ 2) :**
    - Interdiction formelle d'empiler plus de 2 niveaux de propositions relatives ("Le système *qui* utilise la base *qui* a été configurée par...").
    - Solution : Découper en deux propositions indépendantes coordonnées ou séparées par un point.
 3. **Le Test du Zombie :**
@@ -54,7 +54,7 @@ La monotonie est la signature la plus évidente des modèles de langage (LLMs). 
    - **Phrase Courte (Impact) :** 3 à 6 mots (*"Zéro corruption. Facture divisée par trois."*).
    - **Phrase Moyenne (Explication) :** 10 à 15 mots (*"En activant le mode WAL, les requêtes de lecture ne bloquent plus les écritures concurrentes."*).
    - **Phrase Longue (Nuance) :** 18 à 25 mots (*"Même sous une charge de 10 000 écritures par seconde, la latence médiane reste stable parce que les données sont écrites séquentiellement dans un journal séparé."*).
-2. **L'Indice de Burstiness ($\sigma \ge 3.5$) :**
+2. **L'Indice de Burstiness (σ ≥ 3.5) :**
    - L'écart-type de la longueur des phrases doit dépasser 3,5 mots pour garantir une voix vivante et humaine.
 
 ---

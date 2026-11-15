@@ -21,7 +21,7 @@ A comprehensive reference for character limits, input maximums, and visual trunc
 | **Experience Bullet** | 2,000 chars | 5 lines per role | 400–600 chars | Quantified outcomes over listed duties. |
 | **Recommendation** | 3,000 chars | Fully visible | 500–800 chars | Concrete projects, numbers delivered, and team impact. |
 | **Company Page Tagline** | 120 chars | Fully visible | 80–110 chars | One-sentence company positioning statement. |
-| **Company Page About** | 2,000 chars | ~200 chars | 800–1,200 chars | Customer problem $\rightarrow$ solution $\rightarrow$ career link. |
+| **Company Page About** | 2,000 chars | ~200 chars | 800–1,200 chars | Customer problem → solution → career link. |
 
 ---
 

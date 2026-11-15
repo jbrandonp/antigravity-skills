@@ -34,7 +34,7 @@ Sweep 7: Falsifiability & Data  (Replace vague adjectives with verified numbers)
 
 ### Sweep 3: Rhythm & Burstiness (The Staccato Balance)
 - **Question:** Are all sentences the same length (12–15 words)? If yes, it sounds like an LLM.
-- **Rule:** Standard deviation of sentence length must be $\sigma \ge 3.5$ words.
+- **Rule:** Standard deviation of sentence length must be σ ≥ 3.5 words.
 - **Pattern:**
   > *We tested 4 scrapers.* (4 words)  
   > *None of them survived the new Cloudflare TLS fingerprinting challenge.* (10 words)  
@@ -45,7 +45,7 @@ Sweep 7: Falsifiability & Data  (Replace vague adjectives with verified numbers)
 
 ### Sweep 4: Verbs & Active Voice (The Zombie Test)
 - **Question:** Can you insert *"by zombies"* after the verb? If yes, it is passive voice.
-  - *Example:* *"The database was locked [by zombies]"* $\rightarrow$ **Active:** *"The unindexed migration locked the database."*
+  - *Example:* *"The database was locked [by zombies]"* → **Active:** *"The unindexed migration locked the database."*
 - **Action:** Convert nominalizations into strong verbs:
   - *Weak:* *"We conducted an optimization of the queries."*
   - *Strong:* *"We optimized the queries."*
@@ -63,7 +63,7 @@ Sweep 7: Falsifiability & Data  (Replace vague adjectives with verified numbers)
 
 ### Sweep 6: Mobile Fold Geometry & Whitespace
 - **Checklist:**
-  - Measure characters before the first double linebreak. Must be **$\le 210$ characters** (optimally 140–180 chars).
+  - Measure characters before the first double linebreak. Must be **≤ 210 characters** (optimally 140–180 chars).
   - No dense 8-line blocks of unbroken text.
   - No 1-sentence paragraph spam ("broetry"). Group thoughts in 2-3 logical lines.
 

@@ -53,7 +53,7 @@ Ce fichier définit la structure de persistance pour que Claude conserve la mém
     {
       "id": "story_01",
       "topic": "Scraping",
-      "hook_metric": "0% de blocage sans proxies à 500$/mois",
+      "hook_metric": "0% de blocage sans proxies à 500 €/mois",
       "cost_paid": "4 nuits de debug TLS et d'analyse Wireshark",
       "counter_intuitive_truth": "Les sites bloquent l'ordre des headers HTTP/2 et les ciphers TLS, pas votre IP."
     }

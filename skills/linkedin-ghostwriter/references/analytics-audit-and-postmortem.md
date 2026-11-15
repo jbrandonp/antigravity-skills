@@ -6,7 +6,7 @@ The only objective benchmark of what works on your account is your own historica
 
 ## 1. Exporting Raw LinkedIn Data
 
-1. Navigate to: **LinkedIn $\rightarrow$ Analytics $\rightarrow$ Content $\rightarrow$ Export**.
+1. Navigate to: **LinkedIn → Analytics → Content → Export**.
 2. Download the CSV export containing impressions, unique views, clicks, reactions, comments, and reposts.
 3. Sort your last 30 to 50 publications by **Engagement Rate (%)**:
    $$\text{Engagement Rate} = \frac{\text{Reactions} + \text{Comments} + \text{Reposts}}{\text{Impressions}} \times 100$$

@@ -146,8 +146,8 @@ Consultez [references/inbox-and-dm-playbook.md](references/inbox-and-dm-playbook
 
 Consultez [references/poll-architecture.md](references/poll-architecture.md) :
 1. **Contraintes Strictes 2026** :
-   - Question : $\le 140$ caractères.
-   - 3 à 4 Options : $\le 30$ caractères par option.
+   - Question : ≤ 140 caractères.
+   - 3 à 4 Options : ≤ 30 caractères par option.
    - Post d'introduction (400-600 car.) prenant position pour déclencher les commentaires.
 2. **Tunnel de Conversion** : Recontacter en DM les votants ayant choisi l'option « Point de Douleur » avec une ressource technique ciblée.
 
@@ -156,8 +156,8 @@ Consultez [references/poll-architecture.md](references/poll-architecture.md) :
 ## 🐦 MODE 10 : Déclinaison Trans-Plateforme vers X (Twitter)
 
 Consultez [references/linkedin-to-x-crossplatform.md](references/linkedin-to-x-crossplatform.md) :
-1. **Post Unique Incisif** : $\le 280$ caractères, suppression du décorum corporatif, staccato pur.
-2. **Thread d'Autorité en 4 à 6 Tweets** : Tweet d'accroche $\rightarrow$ Tension $\rightarrow$ Preuve de code/architecture $\rightarrow$ Benchmark $\rightarrow$ CTA de mise en favoris.
+1. **Post Unique Incisif** : ≤ 280 caractères, suppression du décorum corporatif, staccato pur.
+2. **Thread d'Autorité en 4 à 6 Tweets** : Tweet d'accroche → Tension → Preuve de code/architecture → Benchmark → CTA de mise en favoris.
 3. **Quote-Bait Épicé** : Dénonciation d'un consensus mou de l'industrie.
 
 ---
@@ -217,10 +217,10 @@ Consultez [references/defensible-contrarian-takes.md](references/defensible-cont
 
 Consultez [references/analytics-audit-and-postmortem.md](references/analytics-audit-and-postmortem.md) :
 Analysez automatiquement l'export CSV officiel des statistiques de contenu LinkedIn (`--csv-audit`) pour classer les publications en 4 quadrants :
-- **Quadrant 1 (Gagnants d'Échelle)** : Fortes impressions + fort engagement $\rightarrow$ À décliner en carrousel et en série thématique.
-- **Quadrant 2 (Faux Positifs Viraux)** : Fortes impressions + faible engagement $\rightarrow$ Hook sensationnaliste sans substance, à ne pas reproduire.
-- **Quadrant 3 (Pépites de Niche)** : Faibles impressions + fort engagement qualitatif $\rightarrow$ Sujet hyper pointu, cible idéale pour la prospection DM.
-- **Quadrant 4 (Flops Didactiques)** : Faibles impressions + faible engagement $\rightarrow$ Problème d'accroche ou horaire manqué, à recycler sous un autre hook.
+- **Quadrant 1 (Gagnants d'Échelle)** : Fortes impressions + fort engagement → À décliner en carrousel et en série thématique.
+- **Quadrant 2 (Faux Positifs Viraux)** : Fortes impressions + faible engagement → Hook sensationnaliste sans substance, à ne pas reproduire.
+- **Quadrant 3 (Pépites de Niche)** : Faibles impressions + fort engagement qualitatif → Sujet hyper pointu, cible idéale pour la prospection DM.
+- **Quadrant 4 (Flops Didactiques)** : Faibles impressions + faible engagement → Problème d'accroche ou horaire manqué, à recycler sous un autre hook.
 
 ---
 

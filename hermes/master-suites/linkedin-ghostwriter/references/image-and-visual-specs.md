@@ -16,7 +16,7 @@ Before attaching an image to any LinkedIn publication, audit it across these 5 c
 | **4. Standalone Value Density** | 5 pts | Can a practitioner learn something from the image alone? | Complete standalone mental model, flow chart, or before/after code diff. | Decorative banner that adds zero new information. |
 | **5. Mobile Aspect Ratio** | 5 pts | Screen real estate occupied on mobile devices. | **Vertical 4:5 ($1200 \times 1500$ px)** or **Square 1:1 ($1200 \times 1200$ px)**. | **Horizontal 16:9 ($1200 \times 627$ px)** — wastes 60% of vertical mobile viewport. |
 
-*Passing Score: $\ge 20/25$. Anything below 18/25 should either be improved or published as text-only.*
+*Passing Score: ≥ 20/25. Anything below 18/25 should either be improved or published as text-only.*
 
 ---
 

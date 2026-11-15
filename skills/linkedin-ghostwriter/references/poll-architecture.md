@@ -16,8 +16,8 @@ How to construct LinkedIn polls that generate genuine debate, qualified lead seg
 
 | Parameter | Hard Limit | Optimal Practice |
 | :--- | :--- | :--- |
-| **Poll Question** | $\le 140$ characters | 60–90 characters. Clear, binary or multi-path question. |
-| **Option Length** | $\le 30$ characters each | 15–25 characters. 3 or 4 options. **No filler options** (e.g., avoid "Just want to see results"). |
+| **Poll Question** | ≤ 140 characters | 60–90 characters. Clear, binary or multi-path question. |
+| **Option Length** | ≤ 30 characters each | 15–25 characters. 3 or 4 options. **No filler options** (e.g., avoid "Just want to see results"). |
 | **Accompanying Post** | 400–800 characters | Sets context, reveals author's stance, asks "Why?" in comments. |
 | **Poll Duration** | 1, 3, 7, or 14 days | **7 days** gives the widest algorithmic distribution window. |
 
