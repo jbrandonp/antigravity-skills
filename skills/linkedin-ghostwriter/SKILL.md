@@ -1,15 +1,15 @@
 ---
 name: linkedin-ghostwriter
-description: Universal Master LinkedIn Ghostwriting, Executive Influence & B2B Content Engine (v3.5 Omni-Engine). Unifies 8 world-class repos (118 micro-skills consolidated): strategic B2B interview (samber 4 pillars), devlog-to-story extraction (liftli build-in-public), client meeting/transcript miner, 200-char connection note & DM playbook, 5-bucket inbox triage, poll architecture (140c/30c limits), 1080x1350 HTML carousel engine, 20 hook formulas 2026 (sergebulaev F1-F20), 4-bucket content calendar, cross-platform LinkedIn-to-X translator, 12-point profile optimization rubric, and ruthless anti-AI humanization (blader 26 rules + samber 38 French rules + 17 invisible watermark cleaners).
+description: Universal Master LinkedIn Ghostwriting, Executive Influence & B2B Content Engine (v4.0 Omni-Engine). Unifies 8 world-class repos (118 micro-skills consolidated across 19 operational modes): strategic B2B interview (samber 4 pillars), devlog-to-story extraction (liftli build-in-public), client meeting miner, 200-char connection note & DM playbook, 5-bucket inbox triage, poll architecture (140c/30c limits), 1080x1350 HTML/PDF carousel generator, 20 hook formulas 2026 (sergebulaev F1-F20), 4-bucket content calendar, cross-platform LinkedIn-to-X translator, 12-point profile rubric, 7-sweep copy-editing (Corey Haines & Smol standards), defensible contrarian takes, CSV analytics audit, 65-char search cutoff headline architecture, employee advocacy multiplier (8x), stealth polishing, and ruthless anti-AI humanization (blader 26 rules + samber 38 French rules + 17 invisible watermark cleaners).
 ---
 
-# LinkedIn Ghostwriter Super Mega-Suite v3.5 (Omni-Engine)
+# LinkedIn Ghostwriter Super Mega-Suite v4.0 (Omni-Engine)
 
 > **L'Autorité Absolue du Ghostwriting B2B & Tech** : Ce skill unifie l'intégralité des 8 meilleurs dépôts mondiaux de Ghostwriting LinkedIn pour Claude en une seule infrastructure modulaire, sans doublon, sans aucun appel vers un SaaS payant, et parfaitement bilingue (Français & Anglais).
 
 ---
 
-## ⚡ Routeur d'Exécution : 12 Modes Opérationnels
+## ⚡ Routeur d'Exécution : 19 Modes Opérationnels
 
 ```text
 ┌───────────────────────────────────────────────────────────────────────────────────────────┐
@@ -178,12 +178,97 @@ Consultez [references/anti-slop-dictionary.md](references/anti-slop-dictionary.m
 4. Application du **Zombie Test** (voix active obligatoire).
 5. Validation multi-formats via le script universel [`scripts/verify_and_humanize.py`](scripts/verify_and_humanize.py).
 
+---
+
+## ✍️ MODE 13 : Le Pipeline de Relecture en 7 Balayages (Seven Sweeps)
+
+Consultez [references/seven-sweeps-copy-editing.md](references/seven-sweeps-copy-editing.md) :
+Appliquez les 7 balayages séquentiels (standards Corey Haines & Smol Architect) :
+1. *Clarté & Compression* : Découper les phrases de plus de 25 mots, tailler 20% du gras.
+2. *Rythme & Burstiness* : Alterner une phrase courte (3-6 mots), une moyenne (12 mots), une longue (20 mots).
+3. *Spécificité Numérique* : Remplacer tout adjectif flou ("beaucoup", "rapide") par un chiffre ou un delta concret.
+4. *Désarmement & Crédibilité* : Remplacer les certitudes absolues par une concession mesurée.
+5. *Balayage Zombie (Voix Active)* : Appliquer le Zombie Test ("par les zombies") pour supprimer le passif.
+6. *Mise en Page Mobile* : Paragraphes de 1 à 3 lignes max, aération visuelle stricte.
+7. *Suppression des Tics IA* : Vérifier l'absence totale de phrases ternaires et de métaphores grandiloquentes.
+
+---
+
+## 🧠 MODE 14 : Prises de Position à Contre-Courant & Châssis Steelman
+
+Consultez [references/defensible-contrarian-takes.md](references/defensible-contrarian-takes.md) :
+1. Choisissez parmi les 6 archétypes défendables :
+   - *L'Erreur d'Échelle* : Pourquoi ce qui marche chez Google tue une startup de 10 personnes.
+   - *Le Coût Caché de l'Outil Star* : La dette invisible du choix technologique populaire.
+   - *La Mort d'un Rôle Traditionnel* : Pourquoi telle spécialité disparaît au profit d'ingénieurs généralistes.
+   - *L'Éloge de la Solution Barbante* : Pourquoi SQLite, Postgres ou bash battent les architectures complexes.
+   - *L'Échec Délibéré* : Ce qu'on refuse sciemment de faire et pourquoi ça nous enrichit.
+   - *Le Piège du Consensus Mou* : Dénoncer une bonne pratique qui n'est qu'un rituel sans valeur.
+2. Appliquez le **Protocole Steelman** : Présentez le meilleur argument possible de la thèse adverse avant de la démonter par des faits d'expérience vécue.
+
+---
+
+## 📈 MODE 15 : Diagnostic Post-Mortem & Audit CSV des Analytics LinkedIn
+
+Consultez [references/analytics-audit-and-postmortem.md](references/analytics-audit-and-postmortem.md) :
+Analysez automatiquement l'export CSV officiel des statistiques de contenu LinkedIn (`--csv-audit`) pour classer les publications en 4 quadrants :
+- **Quadrant 1 (Gagnants d'Échelle)** : Fortes impressions + fort engagement $\rightarrow$ À décliner en carrousel et en série thématique.
+- **Quadrant 2 (Faux Positifs Viraux)** : Fortes impressions + faible engagement $\rightarrow$ Hook sensationnaliste sans substance, à ne pas reproduire.
+- **Quadrant 3 (Pépites de Niche)** : Faibles impressions + fort engagement qualitatif $\rightarrow$ Sujet hyper pointu, cible idéale pour la prospection DM.
+- **Quadrant 4 (Flops Didactiques)** : Faibles impressions + faible engagement $\rightarrow$ Problème d'accroche ou horaire manqué, à recycler sous un autre hook.
+
+---
+
+## 🏷️ MODE 16 : Architecture du Titre (Coupure 65 car.) & About Landing Page
+
+Consultez [references/headline-and-about-architecture.md](references/headline-and-about-architecture.md) :
+1. **La Règle des 65 Caractères** : Sur mobile et dans les commentaires, le titre est tronqué après 65 caractères. Placez le persona et la valeur avant ce point de rupture.
+2. **Structure Landing Page de la section About (2 600 car.)** :
+   - Accroche visible mobile (120 car.)
+   - Le Diagnostic & Thèse Centrale (300 car.)
+   - L'Arsenal & Preuves d'Ingénierie (600 car.)
+   - Pour Qui / Pas Pour Qui (400 car.)
+   - L'Appel à l'Action Sobre (200 car.)
+
+---
+
+## 👥 MODE 17 : Plaidoyer Salarié (Employee Advocacy) & Multiplicateur x8
+
+Consultez [references/employee-advocacy-playbook.md](references/employee-advocacy-playbook.md) :
+1. **L'Asymétrie de Reach (8x)** : Les profils personnels génèrent en moyenne 8 fois plus de portée organique et 561% d'engagement supplémentaire par rapport aux pages entreprises.
+2. **Programme de Lancement en 14 Jours** : Modèles prêts à l'emploi par rôle (fondateur, tech lead, product designer, customer success) avec garde-fous de conformité et zéro jargon corporate forcé.
+
+---
+
+## 🥷 MODE 18 : Polissage Furtif, 3 Modes d'Édition & Suppression des Listes Bold-Label
+
+Consultez [references/edit-modes-and-stealth-polishing.md](references/edit-modes-and-stealth-polishing.md) :
+1. **3 Modes d'Intervention** :
+   - *Mode Aiguisage Furtif (Stealth)* : Zéro modification de la voix d'origine, correction invisible des coupures mobiles et suppression des tics.
+   - *Mode Rénovation Modérée* : Réorganisation selon un framework F1-F20 en conservant les faits et le vocabulaire de l'auteur.
+   - *Mode Reconstruction Radicale* : Extraction de l'idée brute et recréation complète pour un impact maximal.
+2. **Détection des Listes à Puces Bold-Label** : Interdire les listes où chaque élément commence systématiquement par un mot en gras suivi de deux-points (`**Mot :** ...`), signature classique des brouillons de LLM.
+
+---
+
+## 📐 MODE 19 : Matrice Définitive des Limites de Caractères 2026 (15 Surfaces)
+
+Consultez [references/character-limits-2026.md](references/character-limits-2026.md) :
+Tableau de référence absolu pour 15 surfaces LinkedIn :
+- Post texte : 3 000 car. (Zone idéale : 900 à 1 300)
+- Hook mobile : 210 car. (Coupure "...voir plus")
+- Titre profil : 220 car. (Coupure recherche : 65 car.)
+- Note d'invitation : 200 car.
+- Question sondage : 140 car. / Options sondage : 30 car.
+
+---
+
 ### Commandes CLI Universelles :
 ```bash
 # 1. Audit complet d'un post LinkedIn standard
 python scripts/verify_and_humanize.py "mon_post.txt"
 
-# 2. Nettoyer et dé-slopifier automatiquement un post
+# 2. Nettoyer et dé-slopifier automatiquement un post (filigranes invisibles + syntaxe)
 python scripts/verify_and_humanize.py "mon_post.txt" --clean
 
 # 3. Vérifier une note d'invitation ou DM (limite 200 car. + détection de cold-pitch)
@@ -194,4 +279,19 @@ python scripts/verify_and_humanize.py --type poll --text "Votre question ?\n- Op
 
 # 5. Vérifier un thread X converti (chaque tweet <= 280 car.)
 python scripts/verify_and_humanize.py --type thread --text "1/ Tweet 1...\n---\n2/ Tweet 2..."
+
+# 6. Audit de profil complet avec la grille officielle sur 100 points
+python scripts/verify_and_humanize.py --rubric-profile
+
+# 7. Formater des mots-clés en Unicode gras ou italique sans casser l'indexation
+python scripts/verify_and_humanize.py --to-unicode bold --text "Scaling **SQLite** to 10k writes/sec."
+
+# 8. Diagnostic post-mortem d'un export CSV officiel de LinkedIn Content Analytics
+python scripts/verify_and_humanize.py --csv-audit "export_analytics.csv"
+
+# 9. Générer un carrousel HTML/PDF depuis un fichier Markdown avec thème brutalist
+python scripts/generate_carousel_html.py --markdown "slides.md" --theme brutalist -o "slides.html"
+
+# 10. Générer un carrousel directement depuis une chaîne Markdown
+python scripts/generate_carousel_html.py --markdown-text "# Titre 1\nCorps\n---\n# Titre 2\nCorps" --theme clean-light
 ```

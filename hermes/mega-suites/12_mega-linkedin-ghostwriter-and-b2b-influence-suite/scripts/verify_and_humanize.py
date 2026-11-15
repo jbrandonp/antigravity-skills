@@ -202,6 +202,15 @@ def calculate_burstiness(sentences: List[str]) -> Tuple[float, float]:
     return mean, math.sqrt(variance)
 
 
+def make_gauge(val: int, max_val: int, width: int = 10) -> str:
+    """Renders a visual ASCII progress gauge like [████░░░░░░]."""
+    if max_val <= 0:
+        return "░" * width
+    ratio = min(1.0, max(0.0, val / float(max_val)))
+    filled = int(round(ratio * width))
+    return "█" * filled + "░" * (width - filled)
+
+
 def audit_post(text: str) -> Dict[str, object]:
     """Runs a 5-panel forensic audit of the LinkedIn draft."""
     clean_draft, clean_actions = clean_text(text)
@@ -305,12 +314,15 @@ def audit_post(text: str) -> Dict[str, object]:
     final_score = max(0, 100 - penalties)
     verdict = "PASS" if final_score >= 80 and not any("[CRITICAL]" in v for v in violations) else "FAIL"
 
+    est_reading_sec = max(5, int(total_words / 3.2))
+
     return {
         "score": final_score,
         "verdict": verdict,
         "total_chars": total_chars,
         "total_words": total_words,
         "hook_chars": hook_len,
+        "estimated_reading_seconds": est_reading_sec,
         "sentence_count": len(sentences),
         "avg_words_per_sentence": round(avg_words, 1),
         "burstiness_std_dev": round(std_words, 1),
@@ -744,14 +756,23 @@ def main() -> int:
     print(f"Verdict:              {result['verdict']}")
     print(f"Score d'Authenticité: {result['score']}/100")
     if "total_chars" in result:
-        print(f"Longueur Totale:      {result['total_chars']} caractères")
+        tc = int(result["total_chars"])  # type: ignore[arg-type]
+        gauge_post = make_gauge(tc, 3000)
+        print(f"Longueur Totale:      [{gauge_post}] {tc}/3,000 car. (Zone idéale : 900 à 1,300)")
     if "hook_chars" in result:
-        print(f"Longueur du Hook:     {result['hook_chars']} caractères (Cible mobile: 140 à 210)")
+        hc = int(result["hook_chars"])  # type: ignore[arg-type]
+        gauge_hook = make_gauge(hc, 210)
+        h_status = "OK Mobile Fold" if hc <= 210 else "DÉPASSEMENT"
+        print(f"Longueur du Hook:     [{gauge_hook}] {hc}/210 car. ({h_status})")
+    if "estimated_reading_seconds" in result:
+        print(f"Dwell Time Estimé:    ~{result['estimated_reading_seconds']} secondes de lecture mobile")
     if "sentence_count" in result:
         print(f"Phrases & Rythme:     {result['sentence_count']} phrases, moyenne {result['avg_words_per_sentence']} mots/phrase")
         print(f"Indice de Burstiness: {result['burstiness_std_dev']} (Variance de cadence, cible: >= 3.5)")
     if "question_chars" in result:
-        print(f"Question du Sondage:  {result['question_chars']} caractères (Limite: 140)")
+        qc = int(result["question_chars"])  # type: ignore[arg-type]
+        gauge_q = make_gauge(qc, 140)
+        print(f"Question du Sondage:  [{gauge_q}] {qc}/140 car. (Limite: 140)")
         print(f"Nombre d'Options:     {result['options_count']} (Limite: 2 à 4, <= 30 chars)")
     if "tweets_count" in result:
         print(f"Nombre de Tweets:     {result['tweets_count']} (Chaque tweet <= 280 chars)")

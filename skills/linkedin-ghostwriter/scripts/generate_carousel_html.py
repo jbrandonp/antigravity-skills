@@ -10,6 +10,7 @@ from __future__ import annotations
 import argparse
 import html
 import json
+import re
 import sys
 from typing import Dict, List, Optional
 
@@ -202,9 +203,34 @@ def generate_carousel(
 """
 
 
+def parse_markdown_slides(md_text: str) -> List[Dict[str, str]]:
+    """Parses a markdown document separated by '---' or headings into carousel slides."""
+    raw_slides = [s.strip() for s in re.split(r"\n\s*---\s*\n", md_text.strip()) if s.strip()]
+    slides: List[Dict[str, str]] = []
+    for raw in raw_slides:
+        lines = [line.strip() for line in raw.split("\n") if line.strip()]
+        if not lines:
+            continue
+        title = ""
+        body_lines: List[str] = []
+        for line in lines:
+            if not title and (line.startswith("# ") or line.startswith("## ") or line.startswith("### ")):
+                title = re.sub(r"^#+\s*", "", line)
+            elif not title and len(lines) > 1 and not line.startswith("-") and not line.startswith("*"):
+                title = line
+            else:
+                body_lines.append(line)
+        if not title and body_lines:
+            title = body_lines.pop(0)
+        slides.append({"title": title, "body": "\n".join(body_lines)})
+    return slides
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description="Generate a 1080x1350 LinkedIn carousel HTML.")
     parser.add_argument("--slides", help="JSON file or raw JSON string defining slides")
+    parser.add_argument("--markdown", "-m", help="Markdown file containing slides separated by '---'")
+    parser.add_argument("--markdown-text", help="Direct markdown string containing slides separated by '---'")
     parser.add_argument("--output", "-o", default="carousel.html", help="Output HTML file path")
     parser.add_argument("--author", default="@jbrandonp", help="Author handle on footer")
     parser.add_argument("--category", default="ARCHITECTURE LOGICIELLE", help="Category tag on header")
@@ -217,7 +243,16 @@ def main() -> int:
     args = parser.parse_args()
 
     slides: List[Dict[str, str]] = []
-    if args.slides:
+    if args.markdown_text:
+        slides = parse_markdown_slides(args.markdown_text)
+    elif args.markdown:
+        try:
+            with open(args.markdown, "r", encoding="utf-8") as f:
+                slides = parse_markdown_slides(f.read())
+        except Exception as e:
+            print(f"Error reading markdown slides file '{args.markdown}': {e}", file=sys.stderr)
+            return 1
+    elif args.slides:
         try:
             with open(args.slides, "r", encoding="utf-8") as f:
                 slides = json.loads(f.read())

@@ -193,6 +193,27 @@ def main():
             "linkedin-ghostwriter carousel themes",
             [str(li_carousel), "--theme", "clean-light", "--output", str(out_carousel_theme)],
         )
+        sample_md = Path(tmpdir) / "slides.md"
+        sample_md.write_text(
+            "# Pourquoi SQLite bat Postgres\nEn local pour les outils internes.\n---\n# Le mode WAL\nÉcritures non bloquantes.\n",
+            encoding="utf-8",
+        )
+        out_carousel_md = Path(tmpdir) / "carousel_md.html"
+        run_test(
+            "linkedin-ghostwriter carousel markdown file",
+            [str(li_carousel), "--markdown", str(sample_md), "--output", str(out_carousel_md)],
+        )
+        out_carousel_mdtext = Path(tmpdir) / "carousel_mdtext.html"
+        run_test(
+            "linkedin-ghostwriter carousel markdown-text",
+            [
+                str(li_carousel),
+                "--markdown-text",
+                "# Slide 1\nContenu slide 1\n---\n# Slide 2\nContenu slide 2",
+                "--output",
+                str(out_carousel_mdtext),
+            ],
+        )
         sample_csv = Path(tmpdir) / "sample_analytics.csv"
         sample_csv.write_text(
             'Title,Impressions,Reactions,Comments,Reposts\n"Post 1",1000,50,10,2\n"Post 2",500,5,1,0\n',
