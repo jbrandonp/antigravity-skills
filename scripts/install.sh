@@ -17,7 +17,7 @@ if [ "$TARGET" = "All" ] || [ "$TARGET" = "Antigravity" ]; then
 
     echo "--> Copying skills to ${DEST_SKILLS}..."
     cp -R "${SCRIPT_DIR}/skills/"* "${DEST_SKILLS}/"
-    echo "--> Deploying Hermes Master-Suites (75) and Mega-Suites (11) into ${DEST_SKILLS}..."
+    echo "--> Deploying Hermes Master-Suites (79) and Mega-Suites (12) into ${DEST_SKILLS}..."
     cp -R "${SCRIPT_DIR}/hermes/master-suites/"* "${DEST_SKILLS}/"
     cp -R "${SCRIPT_DIR}/hermes/mega-suites/"* "${DEST_SKILLS}/"
 
@@ -87,7 +87,7 @@ if [ "$TARGET" = "All" ] || [ "$TARGET" = "Hermes" ]; then
     echo "=== Installing Hermes Autonomous Suite (~/.hermes) ==="
     mkdir -p "${DEST_HERMES_SKILLS}" "${DEST_HERMES_MCP}"
 
-    echo "--> Copying Hermes Mega-Suites (10) and Master-Suites (50) to ${DEST_HERMES_SKILLS}..."
+    echo "--> Copying Hermes Mega-Suites (12) and Master-Suites (79) to ${DEST_HERMES_SKILLS}..."
     cp -R "${SCRIPT_DIR}/hermes/mega-suites/"* "${DEST_HERMES_SKILLS}/"
     cp -R "${SCRIPT_DIR}/hermes/master-suites/"* "${DEST_HERMES_SKILLS}/"
 
@@ -106,4 +106,4 @@ if [ "$TARGET" = "All" ] || [ "$TARGET" = "Claude" ]; then
     cp -R "${SCRIPT_DIR}/hermes/mega-suites/"* "${DEST_CLAUDE_SKILLS}/"
 fi
 
-echo "✓ Installation complete! 258 skills & suites (184 elite, 11 mega-suites, 63 master suites, 41 science, 16 stitch) and 8 MCP servers are active and ready."
+echo "✓ Installation complete! 262 skills and suites (171 elite, 12 mega-suites, 79 master-suites) and 8 MCP servers are active and ready."

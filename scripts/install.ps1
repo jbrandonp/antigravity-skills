@@ -23,7 +23,7 @@ if ($Target -eq "All" -or $Target -eq "Antigravity") {
 
     Write-Host "--> Copying skills to $DestSkills..." -ForegroundColor Yellow
     Copy-Item -Path (Join-Path $ScriptDir "skills\*") -Destination $DestSkills -Recurse -Force
-    Write-Host "--> Deploying Hermes Master-Suites (75) and Mega-Suites (11) into $DestSkills..." -ForegroundColor Yellow
+    Write-Host "--> Deploying Hermes Master-Suites (79) and Mega-Suites (12) into $DestSkills..." -ForegroundColor Yellow
     Copy-Item -Path (Join-Path $ScriptDir "hermes\master-suites\*") -Destination $DestSkills -Recurse -Force
     Copy-Item -Path (Join-Path $ScriptDir "hermes\mega-suites\*") -Destination $DestSkills -Recurse -Force
 
@@ -101,7 +101,7 @@ if ($Target -eq "All" -or $Target -eq "Hermes") {
     New-Item -ItemType Directory -Force -Path $DestHermesSkills | Out-Null
     New-Item -ItemType Directory -Force -Path $DestHermesMcp | Out-Null
 
-    Write-Host "--> Copying Hermes Mega-Suites (10) and Master-Suites (50) to $DestHermesSkills..." -ForegroundColor Yellow
+    Write-Host "--> Copying Hermes Mega-Suites (12) and Master-Suites (79) to $DestHermesSkills..." -ForegroundColor Yellow
     Copy-Item -Path (Join-Path $ScriptDir "hermes\mega-suites\*") -Destination $DestHermesSkills -Recurse -Force
     Copy-Item -Path (Join-Path $ScriptDir "hermes\master-suites\*") -Destination $DestHermesSkills -Recurse -Force
 
@@ -120,4 +120,4 @@ if ($Target -eq "All" -or $Target -eq "Claude") {
     Copy-Item -Path (Join-Path $ScriptDir "hermes\mega-suites\*") -Destination $DestClaudeSkills -Recurse -Force
 }
 
-Write-Host "[OK] Installation complete! 258 skills and suites (184 elite, 11 mega-suites, 63 master suites, 41 science, 16 stitch) and 8 MCP servers are active and ready." -ForegroundColor Green
+Write-Host "[OK] Installation complete! 262 skills and suites (171 elite, 12 mega-suites, 79 master-suites) and 8 MCP servers are active and ready." -ForegroundColor Green
