@@ -222,6 +222,36 @@ def main():
             "On a fait passer notre scraper de 40% de blocages à 0%.\nSans acheter de proxies résidentiels à 500€/mois.\n\nL'erreur courante est de croire que l'IP est bloquée. En réalité, le serveur vérifie les ciphers TLS.",
         ],
     )
+    run_test(
+        "linkedin-ghostwriter dm audit pass",
+        [
+            str(li_humanizer),
+            "--type",
+            "dm",
+            "--text",
+            "Loved your take on decoupling SQLite writes. Testing WAL mode on our ingestion engine today. Would love to stay connected here.",
+        ],
+    )
+    run_test(
+        "linkedin-ghostwriter poll audit pass",
+        [
+            str(li_humanizer),
+            "--type",
+            "poll",
+            "--text",
+            "What is your biggest bottleneck when shipping production AI agents?\n- Context window bloat\n- Evaluation reliability\n- Latency / Inference costs\n- Tool calling failures",
+        ],
+    )
+    run_test(
+        "linkedin-ghostwriter thread audit pass",
+        [
+            str(li_humanizer),
+            "--type",
+            "thread",
+            "--text",
+            "1/ Most teams think scrapers fail due to IP bans. In reality, 70% fail due to silent DOM mutation.\n---\n2/ Decouple the headless crawler from the parser via SQLite.\n---\n3/ Bookmark this thread.",
+        ],
+    )
 
     print("==================================================================")
     print(f"TEST RESULTS: {tests_passed} passed, {tests_failed} failed.")
