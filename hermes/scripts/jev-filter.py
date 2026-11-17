@@ -14,6 +14,7 @@ ENV = os.path.expanduser("~/.litellm/litellm.env")
 
 SEUIL_GARDER = 1.5   # score >= 1.5/3 → candidat pour traitement GLM complet
 SEUIL_PAR_MODE = {"tenders": 1.3}  # appels d'offres : seuil assoupli (rare, coûteux à rater)
+BORDIF_MIN, BORDIF_MAX = 1.2, 1.8  # zone borderline : best-of-2 pour réduire la variance ±0.4
 
 PROFIL = ("Brandon Louis Palhano Machado, 25 ans, Saint-Nicolas (Liège, Belgique). "
           "Étudiant CESS, builder IA (agents autonomes, Hermes, VPS Hetzner, OpenRouter, LiteLLM). "
@@ -107,6 +108,15 @@ def run(items, mode="articles"):
         a = res["answers"]
         score = a["pertinent"]["score"]
         total_cost += res.get("usage", {}).get("cost", 0)
+        # Best-of-2 : les scores fluctuent ±0.4 dans la zone borderline →
+        # re-questionner une fois et moyenner (précision accrue, coût marginal)
+        if BORDIF_MIN <= score <= BORDIF_MAX:
+            res2 = decide(state)
+            if "error" not in res2:
+                score2 = res2["answers"]["pertinent"]["score"]
+                total_cost += res2.get("usage", {}).get("cost", 0)
+                score = (score + score2) / 2
+                a = res2["answers"] if abs(score2 - SEUIL_GARDER) < abs(score - SEUIL_GARDER) else a
         results.append({**it, "score_jev": round(score, 2), "action": a["action"]["noul"] > 0.5,
                         "garder": score >= seuil})
     keep = [r for r in results if r.get("garder")]
