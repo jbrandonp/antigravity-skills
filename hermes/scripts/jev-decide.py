@@ -132,6 +132,10 @@ PHISHING_SIGNALS = ["phishing_urgence", "phishing_credentials", "phishing_cohere
 
 def decide(payload, retries=2):
     payload = dict(payload, model=MODEL)
+    # Robustesse cron : si seul un "state" est fourni sans questions, injecter
+    # automatiquement les questions de triage calibrées (évite un 400 API).
+    if "questions" not in payload and "state" in payload:
+        payload = dict(payload, questions=QUESTIONS)
     req = urllib.request.Request(API, data=json.dumps(payload).encode(),
                                  headers={"Authorization": f"Bearer {api_key()}",
                                           "Content-Type": "application/json",
@@ -154,12 +158,17 @@ def decide(payload, retries=2):
             raise SystemExit(f"réseau: {last_err}")
 
 def triage_email(email):
-    """Triage complet v3.1 : TOUTES les questions en un seul appel (évaluées en parallèle)."""
+    """Triage complet v3.1 : TOUTES les questions en un seul appel (évaluées en parallèle).
+    Fail-open : en cas d'erreur API, retourne {"erreur": ...} au lieu de tuer le run
+    (un e-mail à problème ne doit jamais casser une boucle de triage cron)."""
     state = build_state(email)
     all_qs = {k: QUESTIONS[k] for k in ("categorie", "urgent_24h", "pertinence", *PHISHING_SIGNALS)}
-    res = decide({"questions": all_qs, "state": state})
+    try:
+        res = decide({"questions": all_qs, "state": state})
+    except SystemExit as e:
+        return {"erreur": str(e)[:200]}
     if "error" in res:
-        raise SystemExit(f"API error: {res['error']}")
+        return {"erreur": res["error"]}
     a = res["answers"]
     cost = res.get("usage", {}).get("cost", 0)
 
