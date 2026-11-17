@@ -38,16 +38,21 @@ Chaque article recoit un score de 0 a 10 sur chaque dimension :
 
 1. **Recuperer les 3 rapports**
 2. **Agreger et deduplicater** - si meme sujet couvert par plusieurs sources, garder la meilleure, marquer (aussi chez X, Y)
-3. **Scorer chaque article** sur 5 dimensions
-4. **Classer par score global** decroissant
-5. **Generer le rapport structure**
+3. **PRE-FILTRE JEV (obligatoire, economie)** — avant tout scoring GLM :
+   ```bash
+   python3 /home/arthur/.hermes/scripts/jev-filter.py
+   ```
+   en passant sur stdin un JSON array `[{"titre":..., "source":..., "resume":...}, ...]` (resume = premier paragraphe, max 600 chars). Le script renvoie `{total, garder, ecarter, cost, items}`. **Ne scorer GLM (5 dimensions) QUE les articles `garder=true`** (score Jev >= 1.5). Les ecartes vont au tableau final sans scoring, marques `[Jev: ecarte]`. Mentionner le coût Jev du pre-filtre dans les statistiques.
+4. **Scorer chaque article retenu** sur 5 dimensions
+5. **Classer par score global** decroissant
+6. **Generer le rapport structure**
 
 ## Format de sortie
 
 Rapport Markdown avec:
 - Top 5 du jour (avec score global et scores dimension par dimension)
-- Tableau de tous les articles (classes par score)
-- Statistiques (N articles, provenance, scores moyens, sujet dominant)
+- Tableau de tous les articles (classes par score) — les articles ecartes par Jev en fin de tableau, une ligne chacun
+- Statistiques (N articles, N gardes par pre-filtre Jev, N ecartes, cout Jev du run, provenance, scores moyens, sujet dominant)
 - Synthese IA (narratif du jour, signaux faibles)
 
 ## Regles

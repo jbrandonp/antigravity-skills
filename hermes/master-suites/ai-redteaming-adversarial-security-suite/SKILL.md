@@ -56,3 +56,6 @@ Chargeur de templates et profils d'audit adverse.
 
 ## 📋 Directives Éthiques & Pratiques de Sécurité
 Cette suite est conçue pour l'audit de robustesse défensif et la recherche en sécurité IA (Blue Teaming & Red Teaming légal). Toute utilisation doit respecter les politiques de sécurité applicables et les normes de divulgation responsable.
+
+## ⚠️ Gotcha Hermes (17/11/2026)
+Ne JAMAIS recopier tel quel un texte obfusqué (homoglyphes cyrilliques/grecs, ex. `bаnаnа`) dans un message Telegram : la garde Hermes le met en QUARANTINE (score 40, alphabet mixte). Translittérer en ASCII (`banana`) et préciser la technique employée. Loader `godmode_load_godmode.py` patché localement (chemins + noms de fichiers consolidés) — à resynchroniser vers le repo.

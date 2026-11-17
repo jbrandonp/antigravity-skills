@@ -17,7 +17,10 @@ Usage in execute_code:
 import os, sys
 from pathlib import Path
 
-_gm_scripts_dir = Path(os.getenv("HERMES_HOME", Path.home() / ".hermes")) / "skills" / "red-teaming" / "godmode" / "scripts"
+_gm_scripts_dir = Path(__file__).resolve().parent
+if not (_gm_scripts_dir / "godmode_parseltongue.py").exists():
+    # fallback: Hermes exécute parfois via script temporaire — résoudre via HERMES_HOME
+    _gm_scripts_dir = Path(os.getenv("HERMES_HOME", Path.home() / ".hermes")) / "skills" / "ai-redteaming-adversarial-security-suite" / "scripts"
 
 _gm_old_argv = sys.argv
 sys.argv = ["_godmode_loader"]
@@ -29,7 +32,7 @@ def _gm_load(path):
     exec(compile(open(path).read(), str(path), 'exec'), ns)
     return ns
 
-for _gm_script in ["parseltongue.py", "godmode_race.py", "auto_jailbreak.py"]:
+for _gm_script in ["godmode_parseltongue.py", "godmode_godmode_race.py", "godmode_auto_jailbreak.py"]:
     _gm_path = _gm_scripts_dir / _gm_script
     if _gm_path.exists():
         _gm_ns = _gm_load(_gm_path)
