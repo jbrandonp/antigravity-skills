@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Codebase Knowledge Graph</title>
+<style>
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #0f172a; color: #f8fafc; margin: 0; padding: 20px; }
+  h1 { font-size: 20px; margin-bottom: 8px; color: #38bdf8; }
+  #stats { font-size: 13px; color: #94a3b8; margin-bottom: 16px; }
+  #search { padding: 8px 12px; border-radius: 6px; border: 1px solid #334155; background: #1e293b; color: #fff; width: 320px; font-size: 14px; margin-bottom: 16px; }
+  .container { display: flex; gap: 20px; height: 80vh; }
+  #list { flex: 1; overflow-y: auto; background: #1e293b; border-radius: 8px; padding: 12px; border: 1px solid #334155; }
+  #details { flex: 2; background: #1e293b; border-radius: 8px; padding: 16px; border: 1px solid #334155; overflow-y: auto; }
+  .node-item { padding: 6px 10px; margin-bottom: 4px; border-radius: 4px; cursor: pointer; font-family: monospace; font-size: 13px; }
+  .node-item:hover { background: #334155; }
+  .badge { display: inline-block; padding: 2px 6px; border-radius: 4px; font-size: 10px; margin-right: 6px; text-transform: uppercase; font-weight: bold; }
+  .badge-file { background: #0284c7; color: #fff; }
+  .badge-class { background: #8b5cf6; color: #fff; }
+  .badge-function { background: #10b981; color: #fff; }
+</style>
+</head>
+<body>
+<h1>Codebase Knowledge Graph Explorer</h1>
+<div id="stats">Loaded 3 symbols and 2 relations.</div>
+<input type="text" id="search" placeholder="Search function, class, or file..." oninput="filterNodes()">
+<div class="container">
+  <div id="list"></div>
+  <div id="details"><p style="color:#94a3b8;">Select a symbol on the left to inspect its dependency relationships.</p></div>
+</div>
+<script>
+  const nodes = [{"id": "file:sample.py", "label": "sample.py", "type": "file"}, {"id": "class:sample.py#World", "label": "World", "type": "class", "file": "sample.py", "line": 2}, {"id": "fn:sample.py#hello", "label": "hello", "type": "function", "file": "sample.py", "line": 1}];
+  const edges = [{"source": "file:sample.py", "target": "class:sample.py#World", "relation": "contains"}, {"source": "file:sample.py", "target": "fn:sample.py#hello", "relation": "contains"}];
+
+  function renderList(filtered) {
+    const list = document.getElementById('list');
+    list.innerHTML = '';
+    filtered.slice(0, 100).forEach(n => {
+      const div = document.createElement('div');
+      div.className = 'node-item';
+      div.innerHTML = `<span class="badge badge-${n.type}">${n.type}</span>${n.label}`;
+      div.onclick = () => showDetails(n);
+      list.appendChild(div);
+    });
+  }
+
+  function filterNodes() {
+    const q = document.getElementById('search').value.toLowerCase();
+    const filtered = nodes.filter(n => n.label.toLowerCase().includes(q) || n.id.toLowerCase().includes(q));
+    renderList(filtered);
+  }
+
+  function showDetails(node) {
+    const incoming = edges.filter(e => e.target === node.id);
+    const outgoing = edges.filter(e => e.source === node.id);
+    let html = `<h2>${node.label}</h2><p><strong>Type:</strong> ${node.type} | <strong>ID:</strong> <code>${node.id}</code></p>`;
+    if (node.file) html += `<p><strong>File:</strong> <code>${node.file}</code> (Line ${node.line})</p>`;
+    html += `<h3>Outgoing Relationships (${outgoing.length})</h3><ul>`;
+    outgoing.forEach(e => html += `<li><strong>${e.relation}</strong> -> <code>${e.target}</code></li>`);
+    html += `</ul><h3>Incoming Callers / References (${incoming.length})</h3><ul>`;
+    incoming.forEach(e => html += `<li><code>${e.source}</code> -> <strong>${e.relation}</strong></li>`);
+    html += '</ul>';
+    document.getElementById('details').innerHTML = html;
+  }
+
+  renderList(nodes);
+</script>
+</body>
+</html>

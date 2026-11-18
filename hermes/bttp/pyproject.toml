@@ -1,0 +1,24 @@
+# BTTP — Bureau Numérique BTP : outillage qualité (ruff + mypy)
+# mypy --strict est le cible ; les scripts du pôle 5 à annoter sont exclus temporairement.
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "UP", "B"]
+ignore = ["E501"]  # longueur gérée par line-length
+
+[tool.mypy]
+python_version = "3.12"
+strict = true
+warn_return_any = true
+disallow_any_explicit = true
+
+# Modules à annoter (pôle 5) — décocher au fur et à mesure
+exclude = [
+    "05_Outils_et_Modeles_Excel/append_new_devis.py",
+    "05_Outils_et_Modeles_Excel/append_new_deal.py",
+    "05_Outils_et_Modeles_Excel/export_devis_to_csv.py",
+    "05_Outils_et_Modeles_Excel/calculate_lost_revenue_roi.py",
+    "05_Outils_et_Modeles_Excel/build_complete_st_nicolas_model.py",
+]

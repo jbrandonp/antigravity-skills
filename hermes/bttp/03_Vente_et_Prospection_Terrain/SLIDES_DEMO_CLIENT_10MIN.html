@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Présentation Démo Client (10 Minutes) — Bureau Numérique BTP</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #0B1120;
+            color: #F8FAFC;
+        }
+        .slide {
+            display: none;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+        }
+        .slide.active {
+            display: flex;
+            opacity: 1;
+        }
+        .mono {
+            font-family: 'JetBrains Mono', monospace;
+        }
+    </style>
+</head>
+<body class="h-screen w-screen flex flex-col justify-between overflow-hidden select-none">
+
+    <!-- Header bar -->
+    <header class="px-8 py-4 border-b border-slate-800 flex justify-between items-center bg-slate-900/60 backdrop-blur">
+        <div class="flex items-center space-x-3">
+            <span class="inline-block w-3 h-3 rounded-full bg-amber-500 animate-pulse"></span>
+            <span class="font-extrabold text-sm tracking-wider uppercase text-slate-300">Bureau Numérique BTP · Diagnostic Rentabilité & Marge</span>
+        </div>
+        <div class="text-xs font-mono text-slate-400">
+            Slide <span id="slide-num" class="text-amber-400 font-bold">1</span> / 5 · <span class="text-slate-500">Touches [←] et [→] pour naviguer</span>
+        </div>
+    </header>
+
+    <!-- Main Presentation Container -->
+    <main class="flex-1 flex items-center justify-center p-6 max-w-6xl mx-auto w-full">
+
+        <!-- Slide 1 : Le Constat de Choc -->
+        <section class="slide active flex-col items-center text-center space-y-6 w-full" data-slide="1">
+            <span class="px-3 py-1 bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs font-bold rounded-full uppercase tracking-widest">
+                Diagnostic 10 Minutes Chrono
+            </span>
+            <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight text-white leading-tight">
+                Où Fuit la Marge Réelle de Vos Chantiers ?
+            </h1>
+            <p class="text-lg text-slate-400 max-w-2xl leading-relaxed">
+                Vous travaillez 55 heures par semaine sur chantier, les camions tournent, les clients sont contents...
+                Pourtant, à la fin du mois, la trésorerie est sous tension. Voici les 3 fuites invisibles :
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 w-full pt-4">
+                <div class="bg-slate-800/60 border border-slate-700/60 p-6 rounded-2xl text-left hover:border-amber-500/50 transition">
+                    <div class="text-3xl font-black text-rose-500 mono mb-1">- 15 000 € / an</div>
+                    <div class="font-bold text-white text-base">Devis Oubliés sans Relance</div>
+                    <div class="text-xs text-slate-400 mt-2">35 % des clients signent chez un concurrent simplement parce que personne ne les a rappelés 10 jours après l'envoi de l'offre.</div>
+                </div>
+                <div class="bg-slate-800/60 border border-slate-700/60 p-6 rounded-2xl text-left hover:border-amber-500/50 transition">
+                    <div class="text-3xl font-black text-amber-400 mono mb-1">- 4 800 € / an</div>
+                    <div class="font-bold text-white text-base">Avenants Non Facturés</div>
+                    <div class="text-xs text-slate-400 mt-2">« Tant que vous y êtes, rajoutez 2 prises et un robinet ». Vous dites oui au client, mais sans signature écrite immédiate, c'est du travail gratuit.</div>
+                </div>
+                <div class="bg-slate-800/60 border border-slate-700/60 p-6 rounded-2xl text-left hover:border-amber-500/50 transition">
+                    <div class="text-3xl font-black text-indigo-400 mono mb-1">39,00 € / heure</div>
+                    <div class="font-bold text-white text-base">L'Illusion du Taux Ouvrier</div>
+                    <div class="text-xs text-slate-400 mt-2">Calculer ses devis avec 25 €/h alors qu'un ouvrier CP 124 coûte 39 €/h en intégrant l'ONSS, les timbres intempéries et les congés payés.</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 2 : La Vérité sur le Coût Ouvrier CP 124 -->
+        <section class="slide flex-col space-y-6 w-full text-left" data-slide="2">
+            <span class="px-3 py-1 bg-indigo-500/10 border border-indigo-500/30 text-indigo-400 text-xs font-bold rounded-full uppercase tracking-widest inline-block w-fit">
+                Vérité Financière Belge (CP 124 Construction)
+            </span>
+            <h2 class="text-3xl md:text-4xl font-extrabold text-white">
+                Un Ouvrier à 18 € Net Vous Coûte en Réalité 39,00 € / Heure
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center pt-2">
+                <div class="space-y-4">
+                    <div class="bg-slate-800/80 p-4 rounded-xl border border-slate-700">
+                        <div class="flex justify-between text-sm py-1 border-b border-slate-700">
+                            <span class="text-slate-400">Salaire Brut Barémique (Ouvrier qualifié 1A) :</span>
+                            <span class="font-bold mono text-white">18,34 € / h</span>
+                        </div>
+                        <div class="flex justify-between text-sm py-1 border-b border-slate-700">
+                            <span class="text-slate-400">Charges patronales ONSS Construction :</span>
+                            <span class="font-bold mono text-rose-400">+ 32,5 %</span>
+                        </div>
+                        <div class="flex justify-between text-sm py-1 border-b border-slate-700">
+                            <span class="text-slate-400">Timbres intempéries & fidélité Constructiv :</span>
+                            <span class="font-bold mono text-amber-400">+ 13,0 %</span>
+                        </div>
+                        <div class="flex justify-between text-sm py-1 border-b border-slate-700">
+                            <span class="text-slate-400">Assurance accidents du travail (Loi 1971) :</span>
+                            <span class="font-bold mono text-slate-300">+ 6,5 %</span>
+                        </div>
+                        <div class="flex justify-between text-sm py-1 border-b border-slate-700">
+                            <span class="text-slate-400">Majoration chutes & pertes matériaux :</span>
+                            <span class="font-bold mono text-slate-300">+ 10,0 %</span>
+                        </div>
+                        <div class="flex justify-between text-base py-2 font-bold bg-slate-900/80 px-2 rounded mt-2">
+                            <span class="text-amber-400">COÛT REVIENT RÉEL CHARGÉ (CP 124) :</span>
+                            <span class="font-black mono text-emerald-400 text-lg">39,00 € / h</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-gradient-to-br from-slate-800 to-slate-900 p-6 rounded-2xl border border-slate-700 flex flex-col justify-center space-y-4">
+                    <div class="text-xl font-bold text-white">Conséquence sur vos Chantiers :</div>
+                    <p class="text-sm text-slate-300 leading-relaxed">
+                        Si votre conjointe ou vous-même chiffrez un chantier de 100 heures à 28 €/h au feeling, vous perdez <span class="text-rose-400 font-bold font-mono">1 100 € de marge nette</span> sans même vous en rendre compte.
+                    </p>
+                    <div class="p-4 bg-emerald-500/10 border border-emerald-500/30 rounded-xl text-xs text-emerald-300 font-semibold">
+                        💡 Notre classeur intègre la formule mathématique du Déboursé Sec et du Coefficient K. Vous tapez les heures, le prix de vente rentable s'affiche en vert automatiquement.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 3 : L'Avenant WhatsApp en 30s -->
+        <section class="slide flex-col space-y-6 w-full text-left" data-slide="3">
+            <span class="px-3 py-1 bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-bold rounded-full uppercase tracking-widest inline-block w-fit">
+                Zéro Travail Gratuit sur Chantier
+            </span>
+            <h2 class="text-3xl md:text-4xl font-extrabold text-white">
+                Faites Signer 100 % des Travaux Imprévus en 30s sur Smartphone
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center pt-2">
+                <div class="bg-slate-900 border-2 border-emerald-500/40 p-5 rounded-2xl font-mono text-xs text-slate-300 space-y-2 shadow-2xl">
+                    <div class="text-slate-500 font-sans text-xs pb-1 border-b border-slate-800 flex justify-between">
+                        <span>💬 Message WhatsApp type envoyé au client</span>
+                        <span class="text-emerald-400 font-bold">100% Légal</span>
+                    </div>
+                    <p class="text-slate-200">« Bonjour Monsieur Dupont,</p>
+                    <p>Faisant suite à votre demande sur chantier ce matin pour :</p>
+                    <p class="text-amber-300">👉 Remplacement coffret secondaire + 4 disjoncteurs</p>
+                    <p>Montant estimé : <span class="text-emerald-400 font-bold">480,00 € HTVA</span> (TVA 6% rénovation applicable sous attestation logement > 10 ans).</p>
+                    <p class="text-slate-300">Pour lancer les travaux sans retarder le planning, merci de simplement répondre <span class="text-emerald-400 font-bold">"BON POUR ACCORD"</span> à ce message.</p>
+                    <p class="text-slate-400">Bien à vous, Brandon Chauffage SPRL »</p>
+                </div>
+                <div class="space-y-4">
+                    <div class="p-4 bg-slate-800/80 rounded-xl border border-slate-700">
+                        <div class="font-bold text-white text-base">Pourquoi ça marche à tous les coups ?</div>
+                        <ul class="text-xs text-slate-300 mt-2 space-y-2">
+                            <li>✔️ <strong>Zéro papier :</strong> L'artisan dicte ou sélectionne l'avenant depuis sa camionnette.</li>
+                            <li>✔️ <strong>Le client répond "OUI" :</strong> Preuve électronique formelle conforme au Code de Droit Économique.</li>
+                            <li>✔️ <strong>Attestation TVA 6% intégrée :</strong> Décharge fiscale complète en cas de contrôle de l'Administration TVA (AR n° 20 art. 17 § 1).</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 4 : Peppol 2026 sans ERP ruineux -->
+        <section class="slide flex-col space-y-6 w-full text-left" data-slide="4">
+            <span class="px-3 py-1 bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs font-bold rounded-full uppercase tracking-widest inline-block w-fit">
+                Obligation Légale Belge au 1er Janvier 2026
+            </span>
+            <h2 class="text-3xl md:text-4xl font-extrabold text-white">
+                Facture Électronique Peppol B2B : Zéro ERP à 2 000 € / An
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center pt-2">
+                <div class="bg-rose-950/30 border border-rose-800/50 p-6 rounded-2xl space-y-3">
+                    <div class="text-rose-400 font-bold text-lg">❌ Le Piège des Éditeurs de Logiciels</div>
+                    <ul class="text-xs text-slate-300 space-y-2">
+                        <li>• Abonnement obligatoire : <strong>120 € à 189 € HTVA par mois</strong>.</li>
+                        <li>• Frais de mise en service : <strong>800 € à 1 500 €</strong>.</li>
+                        <li>• Trop complexe : 25 champs obligatoires à remplir pour émettre une simple facture.</li>
+                        <li>• Si vous résiliez, vous perdez l'accès à vos anciens devis.</li>
+                    </ul>
+                </div>
+                <div class="bg-emerald-950/30 border border-emerald-800/50 p-6 rounded-2xl space-y-3">
+                    <div class="text-emerald-400 font-bold text-lg">✅ Notre Solution Bureau Numérique</div>
+                    <ul class="text-xs text-slate-300 space-y-2">
+                        <li>• Génération native du fichier <strong>XML Peppol BIS 3.0 UBL 2.1</strong> officiel.</li>
+                        <li>• Dépôt gratuit sur les portails publics certifiés (Hermes / Mercurius).</li>
+                        <li>• <strong>Zéro abonnement récurrent imposé</strong> : vous restez propriétaire à 100 % de vos données.</li>
+                        <li>• Votre comptable reçoit les flux directement au bon format.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 5 : L'Offre et Conclusion -->
+        <section class="slide flex-col space-y-6 w-full text-center" data-slide="5">
+            <span class="px-3 py-1 bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-bold rounded-full uppercase tracking-widest">
+                Mise en Service en 45 Minutes (Télé-Assistance)
+            </span>
+            <h2 class="text-3xl md:text-4xl font-extrabold text-white">
+                Une Installation Rentabilisée dès le Premier Chantier
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 w-full pt-2">
+                <div class="bg-slate-800/80 border border-slate-700 p-6 rounded-2xl flex flex-col justify-between">
+                    <div>
+                        <div class="text-xs uppercase tracking-wider text-slate-400 font-bold">Pack 1</div>
+                        <div class="text-2xl font-black text-white mt-1">Bouclier Rentabilité</div>
+                        <div class="text-3xl font-extrabold text-emerald-400 mono mt-3">290 € <span class="text-xs text-slate-400 font-normal">HTVA</span></div>
+                        <p class="text-xs text-slate-300 mt-4 leading-relaxed">
+                            Classeur Excel 5 onglets protégé + Calculateur Marge CP 124 + Générateur Avenants Minute Smartphone + Formation 15 min.
+                        </p>
+                    </div>
+                    <div class="text-xs text-slate-400 font-mono mt-4 pt-3 border-t border-slate-700">Acompte 50% à la commande</div>
+                </div>
+
+                <div class="bg-gradient-to-b from-slate-800 to-amber-950/40 border-2 border-amber-500 p-6 rounded-2xl flex flex-col justify-between relative shadow-xl">
+                    <span class="absolute -top-3 left-1/2 -translate-x-1/2 bg-amber-500 text-slate-950 font-black text-[10px] uppercase px-3 py-0.5 rounded-full">Recommandé</span>
+                    <div>
+                        <div class="text-xs uppercase tracking-wider text-amber-400 font-bold">Pack 2</div>
+                        <div class="text-2xl font-black text-white mt-1">Conformité Peppol 2026</div>
+                        <div class="text-3xl font-extrabold text-amber-400 mono mt-3">390 € <span class="text-xs text-slate-400 font-normal">HTVA</span></div>
+                        <p class="text-xs text-slate-300 mt-4 leading-relaxed">
+                            Pack 1 complet + Passerelle Facturation Peppol B2B XML UBL 2.1 obligatoire + Attestation fiscale TVA 6% + Garantie 30 jours.
+                        </p>
+                    </div>
+                    <div class="text-xs text-amber-300/80 font-mono mt-4 pt-3 border-t border-amber-500/30">100% déductible fiscalement</div>
+                </div>
+
+                <div class="bg-slate-800/80 border border-slate-700 p-6 rounded-2xl flex flex-col justify-between">
+                    <div>
+                        <div class="text-xs uppercase tracking-wider text-slate-400 font-bold">Pack 3 (Récurrent)</div>
+                        <div class="text-2xl font-black text-white mt-1">Assistance & Suivi</div>
+                        <div class="text-3xl font-extrabold text-indigo-400 mono mt-3">195 € <span class="text-xs text-slate-400 font-normal">/ trimestre</span></div>
+                        <div class="text-xs text-slate-400">(soit 65 € HTVA / mois)</div>
+                        <p class="text-xs text-slate-300 mt-4 leading-relaxed">
+                            Rapport exécutif mensuel patron + Dépannage prioritaire WhatsApp 7h-8h et 17h-18h30 + Actualisation barèmes matériaux.
+                        </p>
+                    </div>
+                    <div class="text-xs text-slate-400 font-mono mt-4 pt-3 border-t border-slate-700">Facturé d'avance chaque trimestre</div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Controls footer -->
+    <footer class="px-8 py-4 border-t border-slate-800 flex justify-between items-center bg-slate-900/60">
+        <button id="prev-btn" class="px-4 py-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-xs font-bold text-slate-300 transition">
+            ← Précédent
+        </button>
+        <div class="flex space-x-2" id="dots">
+            <span class="w-2.5 h-2.5 rounded-full bg-amber-400"></span>
+            <span class="w-2.5 h-2.5 rounded-full bg-slate-700"></span>
+            <span class="w-2.5 h-2.5 rounded-full bg-slate-700"></span>
+            <span class="w-2.5 h-2.5 rounded-full bg-slate-700"></span>
+            <span class="w-2.5 h-2.5 rounded-full bg-slate-700"></span>
+        </div>
+        <button id="next-btn" class="px-4 py-2 rounded-lg bg-amber-500 hover:bg-amber-400 text-xs font-bold text-slate-950 transition">
+            Suivant →
+        </button>
+    </footer>
+
+    <script>
+        const slides = document.querySelectorAll('.slide');
+        const slideNum = document.getElementById('slide-num');
+        const prevBtn = document.getElementById('prev-btn');
+        const nextBtn = document.getElementById('next-btn');
+        const dots = document.getElementById('dots').children;
+        let currentSlide = 0;
+
+        function updateSlide(index) {
+            slides.forEach(s => s.classList.remove('active'));
+            for (let i = 0; i < dots.length; i++) {
+                dots[i].className = i === index ? 'w-2.5 h-2.5 rounded-full bg-amber-400' : 'w-2.5 h-2.5 rounded-full bg-slate-700';
+            }
+            slides[index].classList.add('active');
+            slideNum.textContent = index + 1;
+            prevBtn.disabled = index === 0;
+            prevBtn.style.opacity = index === 0 ? '0.4' : '1';
+            nextBtn.textContent = index === slides.length - 1 ? 'Revoir ↺' : 'Suivant →';
+        }
+
+        prevBtn.addEventListener('click', () => {
+            if (currentSlide > 0) {
+                currentSlide--;
+                updateSlide(currentSlide);
+            }
+        });
+
+        nextBtn.addEventListener('click', () => {
+            if (currentSlide < slides.length - 1) {
+                currentSlide++;
+            } else {
+                currentSlide = 0;
+            }
+            updateSlide(currentSlide);
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight' || e.key === ' ') {
+                if (currentSlide < slides.length - 1) {
+                    currentSlide++;
+                    updateSlide(currentSlide);
+                }
+            } else if (e.key === 'ArrowLeft') {
+                if (currentSlide > 0) {
+                    currentSlide--;
+                    updateSlide(currentSlide);
+                }
+            }
+        });
+
+        updateSlide(0);
+    </script>
+</body>
+</html>

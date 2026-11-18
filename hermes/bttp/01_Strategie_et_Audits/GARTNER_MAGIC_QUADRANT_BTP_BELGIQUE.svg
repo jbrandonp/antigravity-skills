@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 700" width="900" height="700" style="background-color: #0b1120; font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif;">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#020617" />
+    </linearGradient>
+    <filter id="glowOurSolution" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="6" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+  <rect width="900" height="700" fill="url(#bgGrad)" />
+  <text x="80" y="45" font-size="20" font-weight="bold" fill="#f8fafc">Marché Solutions Gestion BTP Belgique 2026</text>
+  <text x="80" y="65" font-size="12" fill="#94a3b8">Matrice Stratégique Exécutive — Gartner Magic Quadrant Method</text>
+  <rect x="80" y="80" width="370.0" height="270.0" fill="#1e293b" fill-opacity="0.25" stroke="#334155" stroke-width="1" />
+  <text x="100" y="110" font-size="14" font-weight="bold" fill="#38bdf8">CHALLENGERS</text>
+  <rect x="450.0" y="80" width="370.0" height="270.0" fill="#065f46" fill-opacity="0.15" stroke="#334155" stroke-width="1" />
+  <text x="710" y="110" font-size="14" font-weight="bold" fill="#34d399">LEADERS</text>
+  <rect x="80" y="350.0" width="370.0" height="270.0" fill="#0f172a" fill-opacity="0.4" stroke="#334155" stroke-width="1" />
+  <text x="100" y="600" font-size="14" font-weight="bold" fill="#94a3b8">NICHE PLAYERS</text>
+  <rect x="450.0" y="350.0" width="370.0" height="270.0" fill="#854d0e" fill-opacity="0.15" stroke="#334155" stroke-width="1" />
+  <text x="690" y="600" font-size="14" font-weight="bold" fill="#fbbf24">VISIONARIES</text>
+  <line x1="450.0" y1="80" x2="450.0" y2="620" stroke="#64748b" stroke-width="1.5" stroke-dasharray="4,4" />
+  <line x1="80" y1="350.0" x2="820" y2="350.0" stroke="#64748b" stroke-width="1.5" stroke-dasharray="4,4" />
+  <text x="450.0" y="670" font-size="13" font-weight="600" fill="#cbd5e1" text-anchor="middle">Exhaustivité de la Vision (Completeness of Vision) &#8594;</text>
+  <text x="30" y="350.0" font-size="13" font-weight="600" fill="#cbd5e1" text-anchor="middle" transform="rotate(-90, 30, 350.0)">Capacité d'Exécution (Ability to Execute) &#8594;</text>
+  <circle cx="775.5999999999999" cy="161.0" r="14" fill="#3b82f6" fill-opacity="0.3" filter="url(#glowOurSolution)" />
+  <circle cx="775.5999999999999" cy="161.0" r="8" fill="#2563eb" stroke="#60a5fa" stroke-width="2.5" />
+  <text x="775.5999999999999" y="147.0" font-size="12" font-weight="bold" fill="#60a5fa" text-anchor="middle">Bureau Numérique BTP (NOUS)</text>
+  <circle cx="635.0" cy="144.8" r="6" fill="#38bdf8" stroke="#0f172a" stroke-width="1.5" />
+  <text x="635.0" y="134.8" font-size="11" font-weight="500" fill="#e2e8f0" text-anchor="middle">Vertuoza</text>
+  <circle cx="450.0" cy="198.8" r="6" fill="#38bdf8" stroke="#0f172a" stroke-width="1.5" />
+  <text x="450.0" y="188.8" font-size="11" font-weight="500" fill="#e2e8f0" text-anchor="middle">Bouwsoft (Visma)</text>
+  <circle cx="583.2" cy="269.0" r="6" fill="#f59e0b" stroke="#0f172a" stroke-width="1.5" />
+  <text x="583.2" y="259.0" font-size="11" font-weight="500" fill="#e2e8f0" text-anchor="middle">Robaws</text>
+  <circle cx="686.8" cy="377.0" r="6" fill="#f59e0b" stroke="#0f172a" stroke-width="1.5" />
+  <text x="686.8" y="367.0" font-size="11" font-weight="500" fill="#e2e8f0" text-anchor="middle">CO-TOOLS (Liège)</text>
+  <circle cx="191.0" cy="458.0" r="6" fill="#94a3b8" stroke="#0f172a" stroke-width="1.5" />
+  <text x="191.0" y="448.0" font-size="11" font-weight="500" fill="#e2e8f0" text-anchor="middle">Excel Brouillon</text>
+  <circle cx="228.0" cy="404.0" r="6" fill="#94a3b8" stroke="#0f172a" stroke-width="1.5" />
+  <text x="228.0" y="394.0" font-size="11" font-weight="500" fill="#e2e8f0" text-anchor="middle">Télésecrétariat classique</text>
+</svg>
