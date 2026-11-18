@@ -1,1 +1,85 @@
-IyBCT04gREUgQ09NTUFOREUgJiBQUk9QT1NJVElPTiBDT01NRVJDSUFMRSBPRkZJQ0lFTExFCiMjIFByZXN0YXRpb25zIGQnSW5nw6luaWVyaWUgZGUgTWFyZ2UsIENvbmZvcm1pdMOpIFBlcHBvbCAyMDI2ICYgT3JnYW5pc2F0aW9uIE51bcOpcmlxdWUgQlRQCgotLS0KCioqTnVtw6lybyBkJ09mZnJlIDoqKiBQUk9QLTIwMjYtQlRQLVswMDFdICAKKipEYXRlIGQnw6ltaXNzaW9uIDoqKiBbRGF0ZSBkdSBqb3VyXSAgCioqVmFsaWRpdMOpIGRlIGwnb2ZmcmUgOioqIDMwIGpvdXJzIGNhbGVuZHJpZXIgIAoKLS0tCgojIyMgMS4gSURFTlRJRklDQVRJT04gREVTIFBBUlRJRVMKCiMjIyMgTGUgUHJlc3RhdGFpcmUgOgotICoqTm9tIGNvbW1lcmNpYWwgOioqIEJ1cmVhdSBOdW3DqXJpcXVlIEJUUAotICoqT3DDqXJhdGV1ciBkZSBmYWN0dXJhdGlvbiBsw6lnYWxlIDoqKiBTbWFydCBDb29wIChTb2Npw6l0w6kgTXV0dWVsbGUgcG91ciBBcnRpc3RlcyAtIFNDIEVTKQotICoqQWRyZXNzZSBsw6lnYWxlIDoqKiBSdWUgw4ltaWxlIEbDqXJvbiA3MCwgMTA2MCBCcnV4ZWxsZXMKLSAqKkJ1cmVhdSBkJ2FwcHVpIGxvY2FsIDoqKiBTbWFydCBMacOoZ2Ug4oCUIEJvdWxldmFyZCBkJ0F2cm95IDI4LCA0MDAwIExpw6hnZQotICoqTnVtw6lybyBkJ2VudHJlcHJpc2UgLyBUVkEgOioqIEJFIDA0NTkuMTgwLjU3MwotICoqUmVzcG9uc2FibGUgZGUgbWlzc2lvbiA6KiogQnJhbmRvbiBbTm9tXSAoTnVtw6lybyBkJ2FjdGl2aXTDqSBTbWFydCA6IFtWb3RyZSBOdW3DqXJvXSkKLSAqKlTDqWzDqXBob25lIGRpcmVjdCA6KiogW1ZvdHJlIFTDqWzDqXBob25lXSB8ICoqRW1haWwgOioqIFtWb3RyZSBFbWFpbF0KCiMjIyMgTGUgRG9ubmV1ciBkJ09yZHJlIChMZSBDbGllbnQpIDoKLSAqKk5vbSBkZSBsJ2VudHJlcHJpc2UgOioqIFtSYWlzb24gU29jaWFsZSBkZSBsJ2FydGlzYW4gLyBUUEVdCi0gKipGb3JtZSBqdXJpZGlxdWUgOioqIFtTUkwgLyBFbnRyZXByaXNlIEluZGl2aWR1ZWxsZV0KLSAqKk51bcOpcm8gZCdlbnRyZXByaXNlIC8gVFZBIDoqKiBCRSAwWy4uLl0uWy4uLl0uWy4uLl0KLSAqKk5vbSBkdSBnw6lyYW50IC8gcmVzcG9uc2FibGUgOioqIFtQcsOpbm9tIE5vbV0KLSAqKkFkcmVzc2UgZHUgc2nDqGdlIDoqKiBbUnVlLCBOdW3DqXJvLCBDb2RlIFBvc3RhbCwgTG9jYWxpdMOpXQotICoqVMOpbMOpcGhvbmUgZGlyZWN0IDoqKiBbVMOpbMOpcGhvbmVdIHwgKipFbWFpbCA6KiogW0VtYWlsXQoKLS0tCgojIyMgMi4gRMOJVEFJTCBERVMgUEFDS1MgSEFVVEUgVkFMRVVSIEFKT1VUw4lFCgoqKENvY2hlciBsYSBvdSBsZXMgb3B0aW9ucyByZXRlbnVlcykqCgp8IENob2l4IHwgUHJlc3RhdGlvbiB8IERlc2NyaXB0aW9uIE9ww6lyYXRpb25uZWxsZSBIYXV0ZSBWYWxldXIgfCBQcml4IEZvcmZhaXRhaXJlIEhUVkEgfCBUVkEgKDIxICUpIHwgVG90YWwgVFRDIHwKfCA6LS0tOiB8IDotLS0gfCA6LS0tIHwgOi0tLTogfCA6LS0tOiB8IDotLS06IHwKfCBbIF0gfCAqKlBhY2sgMSA6ICJCb3VjbGllciBSZW50YWJpbGl0w6kgJiBEZXZpcyBTYW5zIE91YmxpIioqICooSW5zdGFsbGF0aW9uIDEwMCUgw6AgRGlzdGFuY2UpKiB8IOKAoiAqKkNhbGN1bGF0ZXVyIGRlIETDqWJvdXJzw6kgU2VjIGV0IENvZWZmaWNpZW50IEsgKENQIDEyNCBCZWxnaXF1ZSkqKiA6IENhbGN1bCBkdSBjb8O7dCBob3JhaXJlIHLDqWVsIGNoYXJnw6kgZGVzIG91dnJpZXJzIChPTlNTIDMyLjUlICsgYWNjaWRlbnRzIGxvaSAxOTcxICsgQ29uc3RydWN0aXYgMTMlKSBldCBwcml4IHBsYW5jaGVyIG5vbiBuw6lnb2NpYWJsZS48YnI+4oCiICoqTWF0cmljZSBkZSBTdWl2aSAmIERhc2hib2FyZCBQYXRyb24qKiA6IETDqXRlY3Rpb24gZGVzIGZ1aXRlcyBkZSBtYXJnZSBldCBhbGVydGVzIGF1dG9tYXRpcXVlcyBkZSByZWxhbmNlIMOgIEorNCwgSis5LCBKKzE0Ljxicj7igKIgKipHw6luw6lyYXRldXIgZCdBdmVuYW50cyBNaW51dGUgU21hcnRwaG9uZSAoQW50aS1UcmF2YWlsIEdyYXR1aXQpKiogOiBWYWxpZGF0aW9uIGV4cHJlc3NlIHBhciBXaGF0c0FwcCBkZXMgdHJhdmF1eCBpbXByw6l2dXMgc3VyIGNoYW50aWVyLjxicj7igKIgKipTYXV2ZWdhcmRlIGNsb3VkIGF1dG9tYXRpcXVlKiogKE9uZURyaXZlIC8gR29vZ2xlIERyaXZlKSBldCByYWNjb3VyY2kgbW9iaWxlIFBXQS48YnI+4oCiICoqVMOpbMOpLWTDqXBsb2llbWVudCAmIGZvcm1hdGlvbiBpbmRpdmlkdWVsbGUgw6AgZGlzdGFuY2UgKDQ1IG1pbiBjaHJvbm8pKiouIHwgMjkwLDAwIOKCrCB8IDYwLDkwIOKCrCB8IDM1MCw5MCDigqwgfAp8IFsgXSB8ICoqUGFjayAyIDogIkNvbmZvcm1pdMOpIFBlcHBvbCAyMDI2ICYgU8OpY3VyaXNhdGlvbiBGaXNjYWxlIioqICooU29sdXRpb24gSW50w6lncmFsZSkqIHwg4oCiICoqVG91dCBsZSBjb250ZW51IGR1IFBhY2sgMSoqIChSZW50YWJpbGl0w6kgQ1AgMTI0ICsgQXZlbmFudHMgTWludXRlICsgRGFzaGJvYXJkKS48YnI+4oCiICoqRmFjdHVyYXRpb24gUGVwcG9sIGNvbmZvcm1lIDIwMjYgKFVCTCAyLjEgWE1MKSoqIDogR8OpbsOpcmF0aW9uIGRlIHZvcyBmYWN0dXJlcyDDqWxlY3Ryb25pcXVlcyBhdSBmb3JtYXQgbMOpZ2FsIFVCTCAyLjEsIHByw6p0ZXMgw6AgaW5qZWN0ZXIgZGFucyB2b3RyZSBwb2ludCBkJ2FjY8OocyBQZXBwb2wgY2VydGlmacOpIChvYmxpZ2F0b2lyZSBwb3VyIHRvdXQgQjJCIGJlbGdlIGF1IDFlciBqYW52aWVyIDIwMjYpLjxicj7igKIgKipNb2R1bGUgZCdBdHRlc3RhdGlvbiBGaXNjYWxlIEzDqWdhbGUgVFZBIDYlIChBUiBuwrAgMjApKiogOiBDbGF1c2UgZGUgZMOpY2hhcmdlIGludMOpZ3LDqWUgcG91ciByw6lub3ZhdGlvbnMgPiAxMCBhbnMgw6l2aXRhbnQgdG91dCByZWRyZXNzZW1lbnQgZmlzY2FsIHLDqXRyb2FjdGlmLjxicj7igKIgKipSZW1pc2UgYXV4IG5vcm1lcyBqdXJpZGlxdWVzIGRlIHZvcyBkZXZpcyoqIChtZW50aW9ucyBsw6lnYWxlcyBCQ0UsIGTDqWxhaXMgZGUgcGFpZW1lbnQgbG9pIDIwMDIsIGNsYXVzZXMgZGUgcsOpc2VydmUgZGUgcHJvcHJpw6l0w6kpLjxicj7igKIgKipUw6lsw6ktYXNzaXN0YW5jZSBwcmlvcml0YWlyZSAxIG1vaXMgaW5jbHVzZSoqLiB8IDM5MCwwMCDigqwgfCA4MSw5MCDigqwgfCA0NzEsOTAg4oKsIHwKfCBbIF0gfCAqKlBhY2sgMyA6ICJWb3RyZSBDb3BpbG90ZSIgKEZpbmFuY2llciAmIFJpdHVlbHMgZHUgVmVuZHJlZGkpKiogKihSw6ljdXJyZW50IFRyaW1lc3RyaWVsKSogfCDigKIgKipWb3RyZSBjb3BpbG90ZSBkJ29yZ2FuaXNhdGlvbiA6IHN1aXQgdm9zIGRldmlzIGNoYXF1ZSBtYXRpbiwgcmVsYW5jZSDDoCB2b3RyZSBwbGFjZSwgcHLDqXBhcmUgdm90cmUgcmFwcG9ydCBwYXRyb24gZHUgMWVyIGR1IG1vaXMqKiAoNjUg4oKsL21vaXMgdnMgfjQgMDAwIOKCrCBjaGFyZ8OpcyBkJ3VuIHNlY3LDqXRhaXJlIOKAlCBqYW1haXMgZGUgY29uZ8OpKS48YnI+4oCiICoqVMOpbMOpLWFzc2lzdGFuY2UgZGlyZWN0ZSBwcmlvcml0YWlyZSBlbiA2MCBzZWNvbmRlcyoqIChRdWljayBBc3Npc3QgLyBXaGF0c0FwcCkuPGJyPuKAoiAqKkF1ZGl0IG1lbnN1ZWwgZGUgbWFyZ2UgZXQgZ8OpbsOpcmF0aW9uIGR1ICJSYXBwb3J0IFBhdHJvbiIqKiAoY2hpZmZyZXMgY2zDqXMsIHJlbnRhYmlsaXTDqSByw6llbGxlIGRlcyBjaGFudGllcnMgZmluaXMsIHJlbGFuY2VzIHByaW9yaXRhaXJlcykuPGJyPuKAoiAqKkNvbnRyw7RsZSBkZXMgc2F1dmVnYXJkZXMgY2xvdWQqKiBldCBtaXNlIMOgIGpvdXIgZGVzIGJhcsOobWVzIG1hdMOpcmlhdXgvaW5kZXhhdGlvbnMgQ1AgMTI0Ljxicj7igKIgRmFjdHVyYXRpb24gdHJpbWVzdHJpZWxsZSBhbnRpY2lww6llIChzb2l0IDY1IOKCrCBIVFZBIC8gbW9pcykuIHwgMTk1LDAwIOKCrCAvIHRyaW0uIHwgNDAsOTUg4oKsIHwgMjM1LDk1IOKCrCB8CgotLS0KCiMjIyAzLiBNT0RBTElUw4lTIEZJTkFOQ0nDiFJFUyAmIENBTEVORFJJRVIgRCdFWMOJQ1VUSU9OICgxMDAlIERJU1RBTkNJRUwpCgoxLiAqKkNvbmRpdGlvbnMgZGUgcsOoZ2xlbWVudCA6KioKICAgLSAqKkFjb21wdGUgw6AgbGEgY29tbWFuZGUgOioqIDUwICUgZHUgbW9udGFudCB0b3RhbCBUVEMgw6AgbGEgc2lnbmF0dXJlIG51bcOpcmlxdWUgZHUgYm9uIGRlIGNvbW1hbmRlIChzb2l0IFtNb250YW50IEFjb21wdGVdIOKCrCkuCiAgIC0gKipTb2xkZSDDoCBsYSBsaXZyYWlzb24gOioqIDUwICUgw6AgbCdpc3N1ZSBkZSBsYSB0w6lsw6ktZm9ybWF0aW9uIGV0IHZhbGlkYXRpb24gZHUgc3lzdMOobWUgKHNvaXQgW01vbnRhbnQgU29sZGVdIOKCrCkuCjIuICoqQ29vcmRvbm7DqWVzIGJhbmNhaXJlcyBkZSBwYWllbWVudCBvZmZpY2llbCA6KioKICAgLSAqKkLDqW7DqWZpY2lhaXJlIDoqKiBTbWFydCBDb29wIChTQyBFUykKICAgLSAqKklCQU4gOioqIFtJQkFOIFNtYXJ0IGRlIHZvdHJlIGNvbXB0ZSBkJ2FjdGl2aXTDqV0KICAgLSAqKkJJQyA6KiogW0JJQyBTbWFydF0KICAgLSAqKkNvbW11bmljYXRpb24gb2JsaWdhdG9pcmUgOioqIGBbVm90cmUgTnVtw6lybyBkJ0FjdGl2aXTDqSBTbWFydF0gKyBQUk9QLTIwMjYtQlRQLVswMDFdYAozLiAqKkTDqWxhaSBldCBtb2RlIGQnaW50ZXJ2ZW50aW9uIDoqKgogICAtIETDqXBsb2llbWVudCAxMDAgJSDDoCBkaXN0YW5jZSBwYXIgQXNzaXN0YW5jZSBSYXBpZGUgV2luZG93cyAoUXVpY2sgQXNzaXN0IDogYFdpbiArIEN0cmwgKyBRYCkgb3UgR29vZ2xlIE1lZXQuCiAgIC0gRHVyw6llIGRlIGTDqXBsb2llbWVudCA6IDQ1IMOgIDYwIG1pbnV0ZXMgbW9udHJlIGVuIG1haW4gZW4gZmluIGRlIGpvdXJuw6llICgxN2gzMCkgc2FucyBwZXJ0dXJiZXIgbGUgdHJhdmFpbCBzdXIgbGVzIGNoYW50aWVycy4KCi0tLQoKIyMjIDQuIEVOR0FHRU1FTlQgRVQgQ09ORElUSU9OUyBHw4lOw4lSQUxFUyAoTEVTIDkgQ0xBVVNFUyBERSBQUk9URUNUSU9OKQoKMS4gKipEw6lsaW1pdGF0aW9uIGRlIHByZXN0YXRpb24gOioqIExhIHByw6lzZW50ZSBtaXNzaW9uIGNvbnN0aXR1ZSB1bmUgcHJlc3RhdGlvbiBkZSBjb25zZWlsIGVuIG9yZ2FuaXNhdGlvbiBhZG1pbmlzdHJhdGl2ZSwgcGFyYW3DqXRyYWdlIGJ1cmVhdXRpcXVlIGV0IG9wdGltaXNhdGlvbiBkZSByZW50YWJpbGl0w6kuIEVsbGUgZXhjbHV0IHRvdXRlIHRlbnVlIGNvbXB0YWJsZSByw6lnbGVtZW50w6llIHLDqXNlcnbDqWUgYXV4IGV4cGVydHMtY29tcHRhYmxlcyBhZ3LDqcOpcyBJVEFBIGV0IHRvdXRlIGludGVydmVudGlvbiBwaHlzaXF1ZSBzdXIgY2hhbnRpZXIuCjIuICoqT2JsaWdhdGlvbiBkZSBtb3llbnMgc3RyaWN0ZSA6KiogTGUgcHJlc3RhdGFpcmUgcydlbmdhZ2Ugw6AgdW5lIG9ibGlnYXRpb24gZGUgbW95ZW5zIGVuIGZvdXJuaXNzYW50IHVuIGFjY29tcGFnbmVtZW50IG9yZ2FuaXNhdGlvbm5lbCByaWdvdXJldXgsIHNhbnMgb2JsaWdhdGlvbiBkZSByw6lzdWx0YXQgY29tbWVyY2lhbCBzdXIgbGUgY2hpZmZyZSBkJ2FmZmFpcmVzIGVmZmVjdGl2ZW1lbnQgc2lnbsOpIG91IGVuY2Fpc3PDqSBwYXIgbGUgZG9ubmV1ciBkJ29yZHJlLgozLiAqKkxJTUlUQVRJT04gRVQgUExBRk9OTkVNRU5UIERFIFJFU1BPTlNBQklMSVTDiSA6KiogTGEgcmVzcG9uc2FiaWxpdMOpIGR1IHByZXN0YXRhaXJlIGVzdCBleHByZXNzw6ltZW50IGV0IHN0cmljdGVtZW50IHBsYWZvbm7DqWUgYXUgbW9udGFudCBuZXQgcGVyw6d1IHBvdXIgbGEgcHJlc3RhdGlvbiBleMOpY3V0w6llLgo0LiAqKlDDqXJpbcOodHJlIGV0IGNvdXBlLWZldSA1MCBkZXZpcyA6KiogTGEgcmVwcmlzZSBldCBsJ2Fzc2Fpbmlzc2VtZW50IGRlIGwnaGlzdG9yaXF1ZSBjb21tZXJjaWFsIHNvbnQgc3RyaWN0ZW1lbnQgbGltaXTDqXMgw6AgdW4gdm9sdW1lIG1heGltYWwgZGUgNTAgZGV2aXMgLyBmaWNoZXMgY2xpZW50cyBwYXIgbWlzc2lvbiBmb3JmYWl0YWlyZS4KNS4gKipHYXJhbnRpZSAxNCBqb3VycyA6KiogVW5lIGFzc2lzdGFuY2UgZGUgMTQgam91cnMgYXByw6hzIGTDqXBsb2llbWVudCBlc3QgaW5jbHVzZSBwb3VyIGFqdXN0ZXIgbGVzIGZvcm11bGVzIGV0IHBhcmFtw6h0cmVzIGR1IGNsYXNzZXVyIHNhbnMgYXVjdW4gZnJhaXMgc3VwcGzDqW1lbnRhaXJlLgo2LiAqKkZlbsOqdHJlcyBTTEEgZGUgdMOpbMOpLXN1cHBvcnQgOioqIExlcyDDqWNoYW5nZXMgZXQgdMOpbMOpLWFzc2lzdGFuY2VzIHNlIGTDqXJvdWxlbnQgZW4gbW9kZSBhc3luY2hyb25lIHN1ciBjcsOpbmVhdXggcsOpc2VydsOpcyAoN2gwMCAtIDhoMDAgZXQgMTdoMDAgLSAxOGgzMCkgYWZpbiBkZSBuZSBwYXMgcGVydHVyYmVyIGxlcyBpbnRlcnZlbnRpb25zIGNoYW50aWVycyBuaSBsZXMgcGxhbm5pbmdzIGQnw6l0dWRlcy4KNy4gKipBY2NvcmQgUkdQRCAmIENvbmZpZGVudGlhbGl0w6kgOioqIFRyYWl0ZW1lbnQgZGVzIGRvbm7DqWVzIGVuIGNvbmZvcm1pdMOpIHN0cmljdGUgYXZlYyBsZSBSR1BEIDsgbGVzIGZpY2hpZXJzIGNsaWVudHMgZGVtZXVyZW50IGxhIHByb3ByacOpdMOpIGV4Y2x1c2l2ZSBkZSBsJ2FydGlzYW4gc3VyIHNvbiBlbnZpcm9ubmVtZW50IGxvY2FsIGV0IGNsb3VkIHByaXbDqS4KOC4gKipNb2RhbGl0w6lzIGQnYWNvbXB0ZSA1MC81MCA6KiogQWNvbXB0ZSBvYmxpZ2F0b2lyZSBkZSA1MCAlIMOgIGxhIGNvbW1hbmRlIGF2YW50IGTDqWNsYXJhdGlvbiBwcsOpYWxhYmxlIERpbW9uYSwgc29sZGUgZGUgNTAgJSDDoCBsYSBsaXZyYWlzb24gZmluYWxlLgo5LiAqKlLDqWd1bGFyaXTDqSBzb2NpYWxlICYgRGltb25hIDoqKiBQcmVzdGF0aW9ucyBkw6ljbGFyw6llcyBldCBhc3N1csOpZXMgZGFucyBsZSBjYWRyZSBsw6lnYWwgZHUgY29udHJhdCBkZSB0cmF2YWlsIHNhbGFyacOpIFNtYXJ0IENvb3Agc291cyBsYSBDb21taXNzaW9uIFBhcml0YWlyZSAyMDAgKENQIDIwMCkuCgotLS0KCiMjIyA1LiBCT04gUE9VUiBBQ0NPUkQgRVQgQ09NTUFOREUgRkVSTUUKCipNZW50aW9uIG1hbnVzY3JpdGUgb3UgY29uZmlybWF0aW9uIMOpY3JpdGUgcGFyIGVtYWlsIC8gV2hhdHNBcHAgOiDCqyBCb24gcG91ciBhY2NvcmQgZXQgY29tbWFuZGUgZmVybWUgwrsqCgoqKlBvdXIgbGUgQ2xpZW50IChEb25uZXVyIGQnT3JkcmUpIDoqKiAgCk5vbSBldCBxdWFsaXTDqSA6ICAKRGF0ZSBldCBzaWduYXR1cmUgbnVtw6lyaXF1ZSA6ICAKCioqUG91ciBsZSBQcmVzdGF0YWlyZSAoQnVyZWF1IE51bcOpcmlxdWUgQlRQIHZpYSBTbWFydCkgOioqICAKQnJhbmRvbiBbTm9tXSAgCkRhdGUgOiAgCg==
+# BON DE COMMANDE & PROPOSITION COMMERCIALE OFFICIELLE
+## Prestations d'Ingénierie de Marge, Conformité Peppol 2026 & Organisation Numérique BTP
+
+---
+
+**Numéro d'Offre :** PROP-2026-BTP-[001]  
+**Date d'émission :** [Date du jour]  
+**Validité de l'offre :** 30 jours calendrier  
+
+---
+
+### 1. IDENTIFICATION DES PARTIES
+
+#### Le Prestataire :
+- **Nom commercial :** Bureau Numérique BTP
+- **Opérateur de facturation légale :** Smart Coop (Société Mutuelle pour Artistes - SC ES)
+- **Adresse légale :** Rue Émile Féron 70, 1060 Bruxelles
+- **Bureau d'appui local :** Smart Liège — Boulevard d'Avroy 28, 4000 Liège
+- **Numéro d'entreprise / TVA :** BE 0459.180.573
+- **Responsable de mission :** Brandon [Nom] (Numéro d'activité Smart : [Votre Numéro])
+- **Téléphone direct :** [Votre Téléphone] | **Email :** [Votre Email]
+
+#### Le Donneur d'Ordre (Le Client) :
+- **Nom de l'entreprise :** [Raison Sociale de l'artisan / TPE]
+- **Forme juridique :** [SRL / Entreprise Individuelle]
+- **Numéro d'entreprise / TVA :** BE 0[...].[...].[...]
+- **Nom du gérant / responsable :** [Prénom Nom]
+- **Adresse du siège :** [Rue, Numéro, Code Postal, Localité]
+- **Téléphone direct :** [Téléphone] | **Email :** [Email]
+
+---
+
+### 2. DÉTAIL DES PACKS HAUTE VALEUR AJOUTÉE
+
+*(Cocher la ou les options retenues)*
+
+| Choix | Prestation | Description Opérationnelle Haute Valeur | Prix Forfaitaire HTVA | TVA (21 %) | Total TTC |
+| :---: | :--- | :--- | :---: | :---: | :---: |
+| [ ] | **Pack 1 : "Bouclier Rentabilité & Devis Sans Oubli"** *(Installation 100% à Distance)* | • **Calculateur de Déboursé Sec et Coefficient K (CP 124 Belgique)** : Calcul du coût horaire réel chargé des ouvriers (ONSS 32.5% + accidents loi 1971 + Constructiv 13%) et prix plancher non négociable.<br>• **Matrice de Suivi & Dashboard Patron** : Détection des fuites de marge et alertes automatiques de relance à J+4, J+9, J+14.<br>• **Générateur d'Avenants Minute Smartphone (Anti-Travail Gratuit)** : Validation expresse par WhatsApp des travaux imprévus sur chantier.<br>• **Sauvegarde cloud automatique** (OneDrive / Google Drive) et raccourci mobile PWA.<br>• **Télé-déploiement & formation individuelle à distance (45 min chrono)**. | 290,00 € | 60,90 € | 350,90 € |
+| [ ] | **Pack 2 : "Conformité Peppol 2026 & Sécurisation Fiscale"** *(Solution Intégrale)* | • **Tout le contenu du Pack 1** (Rentabilité CP 124 + Avenants Minute + Dashboard).<br>• **Facturation Peppol conforme 2026 (UBL 2.1 XML)** : Génération de vos factures électroniques au format légal UBL 2.1, prêtes à injecter dans votre point d'accès Peppol certifié (obligatoire pour tout B2B belge au 1er janvier 2026).<br>• **Module d'Attestation Fiscale Légale TVA 6% (AR n° 20)** : Clause de décharge intégrée pour rénovations > 10 ans évitant tout redressement fiscal rétroactif.<br>• **Remise aux normes juridiques de vos devis** (mentions légales BCE, délais de paiement loi 2002, clauses de réserve de propriété).<br>• **Télé-assistance prioritaire 1 mois incluse**. | 390,00 € | 81,90 € | 471,90 € |
+| [ ] | **Pack 3 : "Votre Copilote" (Financier & Rituels du Vendredi)** *(Récurrent Trimestriel)* | • **Votre copilote d'organisation : suit vos devis chaque matin, relance à votre place, prépare votre rapport patron du 1er du mois** (65 €/mois vs ~4 000 € chargés d'un secrétaire — jamais de congé).<br>• **Télé-assistance directe prioritaire en 60 secondes** (Quick Assist / WhatsApp).<br>• **Audit mensuel de marge et génération du "Rapport Patron"** (chiffres clés, rentabilité réelle des chantiers finis, relances prioritaires).<br>• **Contrôle des sauvegardes cloud** et mise à jour des barèmes matériaux/indexations CP 124.<br>• Facturation trimestrielle anticipée (soit 65 € HTVA / mois). | 195,00 € / trim. | 40,95 € | 235,95 € |
+
+---
+
+### 3. MODALITÉS FINANCIÈRES & CALENDRIER D'EXÉCUTION (100% DISTANCIEL)
+
+1. **Conditions de règlement :**
+   - **Acompte à la commande :** 50 % du montant total TTC à la signature numérique du bon de commande (soit [Montant Acompte] €).
+   - **Solde à la livraison :** 50 % à l'issue de la télé-formation et validation du système (soit [Montant Solde] €).
+2. **Coordonnées bancaires de paiement officiel :**
+   - **Bénéficiaire :** Smart Coop (SC ES)
+   - **IBAN :** [IBAN Smart de votre compte d'activité]
+   - **BIC :** [BIC Smart]
+   - **Communication obligatoire :** `[Votre Numéro d'Activité Smart] + PROP-2026-BTP-[001]`
+3. **Délai et mode d'intervention :**
+   - Déploiement 100 % à distance par Assistance Rapide Windows (Quick Assist : `Win + Ctrl + Q`) ou Google Meet.
+   - Durée de déploiement : 45 à 60 minutes montre en main en fin de journée (17h30) sans perturber le travail sur les chantiers.
+
+---
+
+### 4. ENGAGEMENT ET CONDITIONS GÉNÉRALES (LES 9 CLAUSES DE PROTECTION)
+
+1. **Délimitation de prestation :** La présente mission constitue une prestation de conseil en organisation administrative, paramétrage bureautique et optimisation de rentabilité. Elle exclut toute tenue comptable réglementée réservée aux experts-comptables agréés ITAA et toute intervention physique sur chantier.
+2. **Obligation de moyens stricte :** Le prestataire s'engage à une obligation de moyens en fournissant un accompagnement organisationnel rigoureux, sans obligation de résultat commercial sur le chiffre d'affaires effectivement signé ou encaissé par le donneur d'ordre.
+3. **LIMITATION ET PLAFONNEMENT DE RESPONSABILITÉ :** La responsabilité du prestataire est expressément et strictement plafonnée au montant net perçu pour la prestation exécutée.
+4. **Périmètre et coupe-feu 50 devis :** La reprise et l'assainissement de l'historique commercial sont strictement limités à un volume maximal de 50 devis / fiches clients par mission forfaitaire.
+5. **Garantie 14 jours :** Une assistance de 14 jours après déploiement est incluse pour ajuster les formules et paramètres du classeur sans aucun frais supplémentaire.
+6. **Fenêtres SLA de télé-support :** Les échanges et télé-assistances se déroulent en mode asynchrone sur créneaux réservés (7h00 - 8h00 et 17h00 - 18h30) afin de ne pas perturber les interventions chantiers ni les plannings d'études.
+7. **Accord RGPD & Confidentialité :** Traitement des données en conformité stricte avec le RGPD ; les fichiers clients demeurent la propriété exclusive de l'artisan sur son environnement local et cloud privé.
+8. **Modalités d'acompte 50/50 :** Acompte obligatoire de 50 % à la commande avant déclaration préalable Dimona, solde de 50 % à la livraison finale.
+9. **Régularité sociale & Dimona :** Prestations déclarées et assurées dans le cadre légal du contrat de travail salarié Smart Coop sous la Commission Paritaire 200 (CP 200).
+
+---
+
+### 5. BON POUR ACCORD ET COMMANDE FERME
+
+*Mention manuscrite ou confirmation écrite par email / WhatsApp : « Bon pour accord et commande ferme »*
+
+**Pour le Client (Donneur d'Ordre) :**  
+Nom et qualité :  
+Date et signature numérique :  
+
+**Pour le Prestataire (Bureau Numérique BTP via Smart) :**  
+Brandon [Nom]  
+Date :  

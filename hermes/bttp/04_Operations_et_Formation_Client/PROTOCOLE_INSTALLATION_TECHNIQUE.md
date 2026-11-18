@@ -1,1 +1,120 @@
-IyBQUk9UT0NPTEUgVEVDSE5JUVVFIEQnSU5TVEFMTEFUSU9OICYgTUFUUklDRSBERSBEw4lQTE9JRU1FTlQKIyMgQnVyZWF1IG51bcOpcmlxdWUgQlRQIOKAlCBQcm9jw6lkdXJlIFN0YW5kYXJkaXPDqWUgZCdJbnRlcnZlbnRpb24gU8OpY3VyaXPDqWUKCi0tLQoKIyMgMS4gUFJPQ8OJRFVSRSBERSBDT05ORVhJT04gRElTVEFOVEUgU8OJQ1VSSVPDiUUgKFrDqXJvIFBhcnRhZ2UgZGUgTW90IGRlIFBhc3NlKQoKPiBbIUlNUE9SVEFOVF0gUsOoZ2xlIGRlIFPDqWN1cml0w6kgQWJzb2x1ZQo+ICoqTmUgamFtYWlzIGRlbWFuZGVyIG5pIG1hbmlwdWxlciBsZSBhdWN1biBtb3QgZGUgcGFzc2UgKHByb3RlY3Rpb24gbGlicmVtZW50IGTDqXZlcnJvdWlsbGFibGUpIHBlcnNvbm5lbCBkZSBsJ2FydGlzYW4uKioKPiBMYSBwcmlzZSBlbiBtYWluIGRvaXQgc2UgZmFpcmUgZW4gZGlyZWN0LCBhdmVjIGwnYXJ0aXNhbiBwcsOpc2VudCBkZXZhbnQgc29uIMOpY3JhbiwgdmlhIGxlcyBvdXRpbHMgbmF0aWZzIGRlIFdpbmRvd3Mgb3UgZGVzIHV0aWxpdGFpcmVzIHRlbXBvcmFpcmVzIMOgIGNvZGUgdW5pcXVlLgoKIyMjIE3DqXRob2RlIDEgKFByaXZpbMOpZ2nDqWUpIDogwqsgQXNzaXN0YW5jZSBSYXBpZGUgwrsgZGUgV2luZG93cyAoUXVpY2sgQXNzaXN0KQotICoqQXZhbnRhZ2UgOioqIDEwMCAlIG5hdGlmIGRhbnMgV2luZG93cyAxMCBldCBXaW5kb3dzIDExLCBkw6lqw6AgaW5zdGFsbMOpLCB6w6lybyB0w6lsw6ljaGFyZ2VtZW50IHJlcXVpcyBwb3VyIGxlIGNsaWVudC4KLSAqKlByb3RvY29sZSA6KioKICAxLiBWb3VzIGRpdGVzIGF1IGNsaWVudCA6ICoiQXBwdXlleiBzaW11bHRhbsOpbWVudCBzdXIgbGVzIHRvdWNoZXMgYEN0cmxgICsgYFRvdWNoZSBXaW5kb3dzYCArIGBRYCIqLgogIDIuIFZvdXMgbGFuY2V6IGwnQXNzaXN0YW5jZSBSYXBpZGUgZGVwdWlzIHZvdHJlIHBvc3RlIGV0IGNsaXF1ZXogc3VyICoiQWlkZXIgdW5lIGF1dHJlIHBlcnNvbm5lIiouCiAgMy4gTWljcm9zb2Z0IHZvdXMgZ8OpbsOocmUgdW4gY29kZSBzw6ljdXJpc8OpIMOgIDYgY2hpZmZyZXMgdmFsYWJsZSAxMCBtaW51dGVzLgogIDQuIFZvdXMgZGljdGV6IGNlIGNvZGUgw6AgbCdhcnRpc2FuLCBxdWkgbCdlbmNvZGUgc3VyIHNvbiDDqWNyYW4gZXQgY2xpcXVlIHN1ciAqIlBhcnRhZ2VyIGwnw6ljcmFuIiouCiAgNS4gVm91cyBkZW1hbmRleiBsZSAqIkNvbnRyw7RsZSB0b3RhbCIqIHF1J2lsIHZhbGlkZSBkJ3VuIHNpbXBsZSBjbGljLgogIDYuIETDqHMgcXVlIHZvdXMgYXZleiBmaW5pLCBsYSBzZXNzaW9uIHNlIGNvdXBlIGV0IGF1Y3VuIGFjY8OocyB1bHTDqXJpZXVyIG4nZXN0IHBvc3NpYmxlLgoKIyMjIE3DqXRob2RlIDIgKEFsdGVybmF0aXZlKSA6IEFueURlc2sgw6AgTW90IGRlIFBhc3NlIFRlbXBvcmFpcmUKLSBTaSBsZSBjbGllbnQgZXN0IHN1ciB1bmUgYW5jaWVubmUgdmVyc2lvbiBvdSBNYWMgOgogIDEuIExlIGNsaWVudCB0w6lsw6ljaGFyZ2UgbCdleMOpY3V0YWJsZSBsw6lnZXIgYEFueURlc2suZXhlYCAoc2FucyBpbnN0YWxsYXRpb24gcmVxdWlzZSkuCiAgMi4gSWwgdm91cyBkb25uZSBzb24gaWRlbnRpZmlhbnQgw6AgOSBjaGlmZnJlcy4KICAzLiBWb3VzIGluaXRpZXogbGEgY29ubmV4aW9uIGV0IGlsIGNsaXF1ZSBzdXIgbGUgYm91dG9uIHZlcnQgKiJBY2NlcHRlciIqLgoKLS0tCgojIyAyLiBNQVRSSUNFIEQnRU5WSVJPTk5FTUVOVCA6IFFVRSBGQUlSRSBTRUxPTiBMJ8OJUVVJUEVNRU5UIERVIENMSUVOVCA/CgpUb3VzIGxlcyBhcnRpc2FucyBuZSBwb3Nzw6hkZW50IHBhcyB1bmUgbGljZW5jZSBNaWNyb3NvZnQgMzY1IEJ1c2luZXNzLiBWb2ljaSBsYSBzdHJhdMOpZ2llIGRlIGTDqXBsb2llbWVudCDDoCBhZG9wdGVyIHNlbG9uIGwnYXVkaXQgcHLDqWFsYWJsZSA6CgpgYGAK4pSM4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSQCuKUgiAgICAgICAgICAgICBBVURJVCBERSBMJ0VOVklST05ORU1FTlQgTE9HSUNJRUwgRFUgQ0xJRU5UICAgICAgICAgICAgICAgIOKUggrilJzilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilKzilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilKQK4pSCIENBUyBBIDogTGUgY2xpZW50IGEgZMOpasOgIOKUgiDinpQgRMOpcGxvaWVtZW50IHN0YW5kYXJkIDogICAgICAgICAgICAgICAgICAgIOKUggrilIIgTTM2NSBCdXNpbmVzcyBCYXNpYy9TdGQgIOKUgiAgICDigKIgTWljcm9zb2Z0IExpc3RzICsgRXhjZWwgY29ubmVjdMOpICAgICAgIOKUggrilIIgICAgICAgICAgICAgICAgICAgICAgICAgIOKUgiAgICDigKIgQWxlcnRlcyB2aWEgZmx1eCBQb3dlciBBdXRvbWF0ZSAgICAgICAg4pSCCuKUgiAgICAgICAgICAgICAgICAgICAgICAgICAg4pSCICAgIOKAoiBDb8O7dCBsb2dpY2llbCBhZGRpdGlvbm5lbCA6IDAsMDAg4oKsICAgICDilIIK4pSc4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pS84pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSkCuKUgiBDQVMgQiA6IExlIGNsaWVudCBhIHVuZSAg4pSCIOKelCBSZWNvbW1hbmRhdGlvbiBkJ3VwZ3JhZGUgb3UgT3B0aW9uIEMgOiAgICDilIIK4pSCIHZpZWlsbGUgdmVyc2lvbiBPZmZpY2UgICDilIIgICAg4oCiIFNpIGxlIGNsaWVudCBlc3QgZCdhY2NvcmQgOiBhY2hhdCBkJ3VuZeKUggrilIIgKDIwMTMvMjAxNi8yMDE5KSBvdSByaWVuIOKUgiAgICAgIGxpY2VuY2UgTTM2NSBCdXNpbmVzcyBCYXNpYyAoNSw2MCDigqwvbSkg4pSCCuKUgiAgICAgICAgICAgICAgICAgICAgICAgICAg4pSCICAgICAgZmFjdHVyw6llIGRpcmVjdGVtZW50IHBhciBNaWNyb3NvZnQuICAgIOKUggrilIIgICAgICAgICAgICAgICAgICAgICAgICAgIOKUgiAgICDigKIgU2kgcmVmdXMgY2F0w6lnb3JpcXVlIGRlIHBheWVyIHVuICAgICAgIOKUggrilIIgICAgICAgICAgICAgICAgICAgICAgICAgIOKUgiAgICAgIGFib25uZW1lbnQgOiBiYXNjdWxlIHZlcnMgQ0FTIEMuICAgICAgIOKUggrilJzilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilLzilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilKQK4pSCIENBUyBDIDogWsOJUk8gQUJPTk5FTUVOVCAg4pSCIOKelCBEw4lQTE9JRU1FTlQgQUxURVJOQVRJRiBHT09HTEUgV09SS1NQQUNFICAg4pSCCuKUgiBMZSBjbGllbnQgcmVmdXNlIHRvdXQgICAg4pSCICAgIOKAoiBHb29nbGUgU2hlZXRzIChUYWJsZWF1IGRlIGJvcmQganVtZWF1KSDilIIK4pSCIGNvw7t0IG1lbnN1ZWwgdGllcnMgICAgICAg4pSCICAgIOKAoiBHb29nbGUgRm9ybXMgcG91ciBsYSBzYWlzaWUgbW9iaWxlICAgICDilIIK4pSCICAgICAgICAgICAgICAgICAgICAgICAgICDilIIgICAg4oCiIEdvb2dsZSBBcHBzIFNjcmlwdCBncmF0dWl0IHBvdXIgbGVzICAgIOKUggrilIIgICAgICAgICAgICAgICAgICAgICAgICAgIOKUgiAgICAgIHJhcHBlbHMgZXQgYWxlcnRlcyBhdXRvbWF0aXF1ZXMgICAgICAgIOKUggrilIIgICAgICAgICAgICAgICAgICAgICAgICAgIOKUgiAgICDigKIgQ2/Du3QgbG9naWNpZWwgcGVycMOpdHVlbCA6IDAsMDAg4oKsICEgICAgIOKUggrilJTilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilLTilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilJgKYGBgCgotLS0KCiMjIDMuIEwnQUxURVJOQVRJVkUgUFJBR01BVElRVUUgw4AgTCdBUEkgV0hBVFNBUFAgKEZvcm11bGFpcmUgV2ViIE1vYmlsZSBQV0EpCgpMJ0FQSSBXaGF0c0FwcCBvZmZpY2llbGxlIMOpdGFudCBwYXlhbnRlIGV0IGNvbXBsZXhlIHBvdXIgdW5lIFRQRSwgbGEgcmVtb250w6llIGRlcyBkb25uw6llcyBkdSBjaGFudGllciB2ZXJzIGxlIGJ1cmVhdSBzJ2VmZmVjdHVlIHZpYSB1biAqKnJhY2NvdXJjaSBtb2JpbGUgc8OpY3VyaXPDqSAxMDAgJSBncmF0dWl0KiogOgoKMS4gKipDcsOpYXRpb24gZCd1biBmb3JtdWxhaXJlIMOpcHVyw6kgOioqCiAgIC0gUsOpYWxpc8OpIHNvdXMgKipNaWNyb3NvZnQgRm9ybXMqKiAoc2kgTTM2NSkgb3UgKipHb29nbGUgRm9ybXMqKiAoc2kgY29tcHRlIGdyYXR1aXQpLgogICAtIENvbXBvcnRlIDQgY2hhbXBzIG9ibGlnYXRvaXJlcyBzZXVsZW1lbnQgOiAqTm9tIGR1IGNsaWVudCosICpNb250YW50IGVzdGltw6kgSFRWQSosICpEZXNjcmlwdGlvbiBjb3VydGUqLCAqUGhvdG8gZHUgYm9uIGRlIHRyYXZhaWwgb3UgZHUgY3JvcXVpcyouCjIuICoqSW5zdGFsbGF0aW9uIHN1ciBsZSBzbWFydHBob25lIGRlIGwnYXJ0aXNhbiAoZW4gMzAgc2Vjb25kZXMpIDoqKgogICAtIE91dnJpciBsZSBsaWVuIGR1IGZvcm11bGFpcmUgZGFucyBTYWZhcmkgKGlQaG9uZSkgb3UgQ2hyb21lIChBbmRyb2lkKS4KICAgLSBDbGlxdWVyIHN1ciAqIkFqb3V0ZXIgw6AgbCfDqWNyYW4gZCdhY2N1ZWlsIiouCiAgIC0gUmVub21tZXIgbCdpY8O0bmUgOiAqKsKrIE5PVVZFQVUgREVWSVMgwrsqKi4KMy4gKipSw6lzdWx0YXQgc3VyIGxlIHRlcnJhaW4gOioqCiAgIC0gTCdhcnRpc2FuIHF1aXR0ZSBsZSBjbGllbnQsIHNvcnQgc29uIHNtYXJ0cGhvbmUsIHRhcGUgc3VyIGwnaWPDtG5lIMKrIE5PVVZFQVUgREVWSVMgwrssIHNhaXNpdCBsZSBub20gZXQgbGUgbW9udGFudCBlbiAyMCBzZWNvbmRlcy4KICAgLSBMZXMgZG9ubsOpZXMgdG9tYmVudCBpbnN0YW50YW7DqW1lbnQgZGFucyBsZSB0YWJsZWF1IGRlIGJvcmQgZHUgYnVyZWF1IHNhbnMgb3V2cmlyIGQnb3JkaW5hdGV1ci4KCi0tLQoKIyMgNC4gQkxJTkRBR0UgRVQgVkVSUk9VSUxMQUdFIERVIENMQVNTRVVSIEVYQ0VMIChQcm90ZWN0aW9uIEFudGktRXJyZXVyKQoKUG91ciBlbXDDqmNoZXIgbCdhcnRpc2FuIG91IHNhIHNlY3LDqXRhaXJlIGRlIGNhc3NlciBhY2NpZGVudGVsbGVtZW50IGxlcyBmb3JtdWxlcywgbGUgY2xhc3NldXIgZXN0IHByb3TDqWfDqSBzZWxvbiB1bmUgYXJjaGl0ZWN0dXJlIMOgIGRldXggem9uZXMgOgoKYGBgCuKUjOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUkArilIIgICAgICAgICAgICAgICAgICAgICAgICBaT05BR0UgREUgUFJPVEVDVElPTiBFWENFTCAgICAgICAgICAgICAgICAgICAgICDilIIK4pSc4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSs4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSkCuKUgiBaT05FIFZFUlJPVUlMTMOJRSAoTGVjdHVyZSBzZXVsZSBwcm90w6lnw6llKSAgICAgICAg4pSCIFpPTkUgRMOJVkVSUk9VSUxMw4lFICDilIIK4pSCIOKAoiBDb2xvbm5lIEEgOiBOwrAgRGV2aXMgKGF1dG8gb3UgaW5jcsOpbWVudGFsKSAgICAg4pSCIOKAoiBDb2xvbm5lIEMgOiBOb20gICDilIIK4pSCIOKAoiBDb2xvbm5lIEggOiBEYXRlIGRlIHJlbGFuY2UgY2FsY3Vsw6llICAgICAgICAgICDilIIg4oCiIENvbG9ubmUgRCA6IFTDqWwgICDilIIK4pSCIOKAoiBDb2xvbm5lIEkgOiBGb3JtdWxlIGR1IHN0YXR1dCBkJ3VyZ2VuY2UgICAgICAgIOKUgiDigKIgQ29sb25uZSBFIDogT2JqZXQg4pSCCuKUgiDigKIgRmV1aWxsZSDCqyBUYWJsZWF1IGRlIEJvcmQgwrsgY29tcGzDqHRlICAgICAgICAgICDilIIg4oCiIENvbG9ubmUgRiA6IFByaXggIOKUggrilIIgICAoVG91dGVzIGxlcyBmb3JtdWxlcyBTVU1JRi9DT1VOVElGIHByb3TDqWfDqWVzKSAg4pSCIOKAoiBDb2xvbm5lIEcgOiBTdGF0dXTilIIK4pSCICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICDilIIg4oCiIENvbG9ubmUgSyA6IE5vdGVzIOKUggrilJTilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilLTilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilJgKYGBgCgotICoqTW90IGRlIHBhc3NlIGRlIGTDqXZlcnJvdWlsbGFnZSBkZSBtYWludGVuYW5jZSA6KiogRMOpZmluaSBwYXIgdm91cyAoY29uc2VydsOpIGRhbnMgdm90cmUgZmljaGllciBjbGllbnQpLCDDqXZpdGFudCB0b3V0ZSBjb3JydXB0aW9uIGZvcnR1aXRlLgotICoqUsOoZ2xlIGRlIHNhdXZlZ2FyZGUgZGUgc2Vjb3VycyA6KiogTWlzZSBlbiBwbGFjZSBkJ3VuIGRvc3NpZXIgT25lRHJpdmUgYXZlYyBoaXN0b3JpcXVlIGRlcyB2ZXJzaW9ucyBhY3RpdsOpIChwZXJtZXQgZGUgcmVzdGF1cmVyIGVuIDEgY2xpYyB1biBmaWNoaWVyIMOpY3Jhc8OpIMOgIGwnw6l0YXQgZGUgbGEgdmVpbGxlKS4KCi0tLQoKIyMgNS4gQ0hFQ0tMSVNUIERFIFZBTElEQVRJT04gUE9TVC1JTlNUQUxMQVRJT04gKGF2YW50IGRlIGNsb3JlIGxhIHNlc3Npb24pCgo+IMOAIGV4w6ljdXRlciBhdmVjIGxlIGNsaWVudCBlbiB2aXNpbywganVzdGUgYXByw6hzIGxlIGTDqXBsb2llbWVudC4gU2kgdW4gc2V1bCBpdGVtIMOpY2hvdWUsIGNvcnJpZ2VyIEFWQU5UIGRlIHJhY2Nyb2NoZXIuCgojIyMgVsOpcmlmaWNhdGlvbiBlbiAzIGNsaWNzICg1IG1pbnV0ZXMpCgotIFsgXSAqKjEuIFNhaXNpZSBtb2JpbGUg4oaSIGJ1cmVhdSoqIDogbGUgY2xpZW50IGNyw6llIHVuIGRldmlzIHRlc3Qgc3VyIHNvbiBzbWFydHBob25lIChQV0EpLiBWw6lyaWZpZXIgY8O0dMOpIGJ1cmVhdSBxdWUgbGEgbGlnbmUgYXBwYXJhw650IGRhbnMgbGUgY2xhc3NldXIgZGFucyBsZXMgMiBtaW51dGVzLgotIFsgXSAqKjIuIFNhaXNpZSBidXJlYXUg4oaSIG1vYmlsZSoqIDogbGUgY2xpZW50IG91dnJlIGxhIFBXQSBldCBjb25maXJtZSBxdSdpbCB2b2l0IGxlIG3Dqm1lIGRldmlzLgotIFsgXSAqKjMuIFNhdXZlZ2FyZGUvT25lRHJpdmUgKENhcyBBL0IpKiogOiBtZW51IEZpY2hpZXIg4oaSIEluZm9ybWF0aW9ucyDihpIgYWZmaWNoZXIgwqsgRW5yZWdpc3Ryw6kgZGFucyBPbmVEcml2ZSDigJQgc3luY2hyb25pc8OpIMK7LiBQb3VyIEdvb2dsZSAoQ2FzIEMpIDogdsOpcmlmaWVyIGwnaG9yb2RhdGFnZSDCqyBNb2RpZmljYXRpb25zIGVucmVnaXN0csOpZXMgwrsgZGFucyBTaGVldHMuCi0gWyBdICoqNC4gQWxlcnRlIGRlIHJlbGFuY2UqKiA6IHNhaXNpciB1biBkZXZpcyBhdmVjIGRhdGUgZGUgcmVsYW5jZSBwYXNzw6llICsxIGpvdXIgZXQgdsOpcmlmaWVyIHF1ZSBsJ2FsZXJ0ZSBhcHBhcmHDrnQgZGFucyBsZSB0YWJsZWF1IGRlIGJvcmQuCi0gWyBdICoqNS4gUmFjY291cmNpIHNtYXJ0cGhvbmUqKiA6IGljw7RuZSBQV0EgcHLDqXNlbnRlIHN1ciBsJ8OpY3JhbiBkJ2FjY3VlaWwgZHUgY2xpZW50IChjcsOpw6llIGRldmFudCB2b3VzKS4KLSBbIF0gKio2LiBUZXN0IGRlIHJ1cHR1cmUqKiA6IGRlbWFuZGVyIGF1IGNsaWVudCBkZSBmZXJtZXIgc29uIG5hdmlnYXRldXIsIHJvdXZyaXIgbGEgUFdBIOKAlCBsYSBzZXNzaW9uIGRvaXQgdGVuaXIuCgojIyMgQ29uZmlybWF0aW9uIGRlIGZpbiBkZSBzZXNzaW9uCgotIFsgXSBTZXNzaW9uIFF1aWNrIEFzc2lzdCAqKmZlcm3DqWUqKiAobGUgY29kZSBleHBpcmUgYXV0b21hdGlxdWVtZW50IOKAlCBsZSBjb25maXJtZXIgYXUgY2xpZW50KS4KLSBbIF0gQXVjdW4gYXVjdW4gbW90IGRlIHBhc3NlIChwcm90ZWN0aW9uIGxpYnJlbWVudCBkw6l2ZXJyb3VpbGxhYmxlKSBjbGllbnQgZGVtYW5kw6kgbmkgc3RvY2vDqSAocsOoZ2xlIGFic29sdWUpLgotIFsgXSBDbGllbnQgY2FwYWJsZSBkZSBub21tZXIgbGVzIDMgZ2VzdGVzIHF1b3RpZGllbnMgOiDCqyBzYWlzaXIgbGUgZGV2aXMgbGUgam91ciBtw6ptZSDCuywgwqsgdsOpcmlmaWVyIGxlIHRhYmxlYXUgZGUgYm9yZCBsZSB2ZW5kcmVkaSDCuywgwqsgbWUgdHJhbnNmw6lyZXIgbCdhbGVydGUgc2kgcGVyZHUgwrsuCgo+IFNpIGxlIHRlc3QgMSDDqWNob3VlIDogdsOpcmlmaWVyIGxhIGNvbm5leGlvbiBPbmVEcml2ZS9Ecml2ZSBkdSBjbGllbnQgYXZhbnQgZGUgY29uY2x1cmUuIFNpIGxlIHRlc3QgNCDDqWNob3VlIDogdsOpcmlmaWVyIHF1ZSBsZXMgZm9ybXVsZXMgZHUgY2xhc3NldXIgbWHDrnRyZSBvbnQgYmllbiDDqXTDqSBjb3Bpw6llcyAoY2VsbHVsZXMgdmVycm91aWxsw6llcykuCg==
+# PROTOCOLE TECHNIQUE D'INSTALLATION & MATRICE DE DÉPLOIEMENT
+## Bureau numérique BTP — Procédure Standardisée d'Intervention Sécurisée
+
+---
+
+## 1. PROCÉDURE DE CONNEXION DISTANTE SÉCURISÉE (Zéro Partage de Mot de Passe)
+
+> [!IMPORTANT] Règle de Sécurité Absolue
+> **Ne jamais demander ni manipuler le aucun mot de passe (protection librement déverrouillable) personnel de l'artisan.**
+> La prise en main doit se faire en direct, avec l'artisan présent devant son écran, via les outils natifs de Windows ou des utilitaires temporaires à code unique.
+
+### Méthode 1 (Privilégiée) : « Assistance Rapide » de Windows (Quick Assist)
+- **Avantage :** 100 % natif dans Windows 10 et Windows 11, déjà installé, zéro téléchargement requis pour le client.
+- **Protocole :**
+  1. Vous dites au client : *"Appuyez simultanément sur les touches `Ctrl` + `Touche Windows` + `Q`"*.
+  2. Vous lancez l'Assistance Rapide depuis votre poste et cliquez sur *"Aider une autre personne"*.
+  3. Microsoft vous génère un code sécurisé à 6 chiffres valable 10 minutes.
+  4. Vous dictez ce code à l'artisan, qui l'encode sur son écran et clique sur *"Partager l'écran"*.
+  5. Vous demandez le *"Contrôle total"* qu'il valide d'un simple clic.
+  6. Dès que vous avez fini, la session se coupe et aucun accès ultérieur n'est possible.
+
+### Méthode 2 (Alternative) : AnyDesk à Mot de Passe Temporaire
+- Si le client est sur une ancienne version ou Mac :
+  1. Le client télécharge l'exécutable léger `AnyDesk.exe` (sans installation requise).
+  2. Il vous donne son identifiant à 9 chiffres.
+  3. Vous initiez la connexion et il clique sur le bouton vert *"Accepter"*.
+
+---
+
+## 2. MATRICE D'ENVIRONNEMENT : QUE FAIRE SELON L'ÉQUIPEMENT DU CLIENT ?
+
+Tous les artisans ne possèdent pas une licence Microsoft 365 Business. Voici la stratégie de déploiement à adopter selon l'audit préalable :
+
+```
+┌────────────────────────────────────────────────────────────────────────┐
+│             AUDIT DE L'ENVIRONNEMENT LOGICIEL DU CLIENT                │
+├──────────────────────────┬─────────────────────────────────────────────┤
+│ CAS A : Le client a déjà │ ➔ Déploiement standard :                    │
+│ M365 Business Basic/Std  │    • Microsoft Lists + Excel connecté       │
+│                          │    • Alertes via flux Power Automate        │
+│                          │    • Coût logiciel additionnel : 0,00 €     │
+├──────────────────────────┼─────────────────────────────────────────────┤
+│ CAS B : Le client a une  │ ➔ Recommandation d'upgrade ou Option C :    │
+│ vieille version Office   │    • Si le client est d'accord : achat d'une│
+│ (2013/2016/2019) ou rien │      licence M365 Business Basic (5,60 €/m) │
+│                          │      facturée directement par Microsoft.    │
+│                          │    • Si refus catégorique de payer un       │
+│                          │      abonnement : bascule vers CAS C.       │
+├──────────────────────────┼─────────────────────────────────────────────┤
+│ CAS C : ZÉRO ABONNEMENT  │ ➔ DÉPLOIEMENT ALTERNATIF GOOGLE WORKSPACE   │
+│ Le client refuse tout    │    • Google Sheets (Tableau de bord jumeau) │
+│ coût mensuel tiers       │    • Google Forms pour la saisie mobile     │
+│                          │    • Google Apps Script gratuit pour les    │
+│                          │      rappels et alertes automatiques        │
+│                          │    • Coût logiciel perpétuel : 0,00 € !     │
+└──────────────────────────┴─────────────────────────────────────────────┘
+```
+
+---
+
+## 3. L'ALTERNATIVE PRAGMATIQUE À L'API WHATSAPP (Formulaire Web Mobile PWA)
+
+L'API WhatsApp officielle étant payante et complexe pour une TPE, la remontée des données du chantier vers le bureau s'effectue via un **raccourci mobile sécurisé 100 % gratuit** :
+
+1. **Création d'un formulaire épuré :**
+   - Réalisé sous **Microsoft Forms** (si M365) ou **Google Forms** (si compte gratuit).
+   - Comporte 4 champs obligatoires seulement : *Nom du client*, *Montant estimé HTVA*, *Description courte*, *Photo du bon de travail ou du croquis*.
+2. **Installation sur le smartphone de l'artisan (en 30 secondes) :**
+   - Ouvrir le lien du formulaire dans Safari (iPhone) ou Chrome (Android).
+   - Cliquer sur *"Ajouter à l'écran d'accueil"*.
+   - Renommer l'icône : **« NOUVEAU DEVIS »**.
+3. **Résultat sur le terrain :**
+   - L'artisan quitte le client, sort son smartphone, tape sur l'icône « NOUVEAU DEVIS », saisit le nom et le montant en 20 secondes.
+   - Les données tombent instantanément dans le tableau de bord du bureau sans ouvrir d'ordinateur.
+
+---
+
+## 4. BLINDAGE ET VERROUILLAGE DU CLASSEUR EXCEL (Protection Anti-Erreur)
+
+Pour empêcher l'artisan ou sa secrétaire de casser accidentellement les formules, le classeur est protégé selon une architecture à deux zones :
+
+```
+┌────────────────────────────────────────────────────────────────────────┐
+│                        ZONAGE DE PROTECTION EXCEL                      │
+├──────────────────────────────────────────────────┬─────────────────────┤
+│ ZONE VERROUILLÉE (Lecture seule protégée)        │ ZONE DÉVERROUILLÉE  │
+│ • Colonne A : N° Devis (auto ou incrémental)     │ • Colonne C : Nom   │
+│ • Colonne H : Date de relance calculée           │ • Colonne D : Tél   │
+│ • Colonne I : Formule du statut d'urgence        │ • Colonne E : Objet │
+│ • Feuille « Tableau de Bord » complète           │ • Colonne F : Prix  │
+│   (Toutes les formules SUMIF/COUNTIF protégées)  │ • Colonne G : Statut│
+│                                                  │ • Colonne K : Notes │
+└──────────────────────────────────────────────────┴─────────────────────┘
+```
+
+- **Mot de passe de déverrouillage de maintenance :** Défini par vous (conservé dans votre fichier client), évitant toute corruption fortuite.
+- **Règle de sauvegarde de secours :** Mise en place d'un dossier OneDrive avec historique des versions activé (permet de restaurer en 1 clic un fichier écrasé à l'état de la veille).
+
+---
+
+## 5. CHECKLIST DE VALIDATION POST-INSTALLATION (avant de clore la session)
+
+> À exécuter avec le client en visio, juste après le déploiement. Si un seul item échoue, corriger AVANT de raccrocher.
+
+### Vérification en 3 clics (5 minutes)
+
+- [ ] **1. Saisie mobile → bureau** : le client crée un devis test sur son smartphone (PWA). Vérifier côté bureau que la ligne apparaît dans le classeur dans les 2 minutes.
+- [ ] **2. Saisie bureau → mobile** : le client ouvre la PWA et confirme qu'il voit le même devis.
+- [ ] **3. Sauvegarde/OneDrive (Cas A/B)** : menu Fichier → Informations → afficher « Enregistré dans OneDrive — synchronisé ». Pour Google (Cas C) : vérifier l'horodatage « Modifications enregistrées » dans Sheets.
+- [ ] **4. Alerte de relance** : saisir un devis avec date de relance passée +1 jour et vérifier que l'alerte apparaît dans le tableau de bord.
+- [ ] **5. Raccourci smartphone** : icône PWA présente sur l'écran d'accueil du client (créée devant vous).
+- [ ] **6. Test de rupture** : demander au client de fermer son navigateur, rouvrir la PWA — la session doit tenir.
+
+### Confirmation de fin de session
+
+- [ ] Session Quick Assist **fermée** (le code expire automatiquement — le confirmer au client).
+- [ ] Aucun aucun mot de passe (protection librement déverrouillable) client demandé ni stocké (règle absolue).
+- [ ] Client capable de nommer les 3 gestes quotidiens : « saisir le devis le jour même », « vérifier le tableau de bord le vendredi », « me transférer l'alerte si perdu ».
+
+> Si le test 1 échoue : vérifier la connexion OneDrive/Drive du client avant de conclure. Si le test 4 échoue : vérifier que les formules du classeur maître ont bien été copiées (cellules verrouillées).

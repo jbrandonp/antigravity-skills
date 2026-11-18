@@ -1,1 +1,33 @@
-IyBPUFRJT05TIFBPSU5UIEQnQUNDw4hTIFBFUFBPTCDigJQgcmVjaGVyY2hlIDE4LzExLzIwMjYgKHBvdXIgZMOpY2lzaW9uIEJyYW5kb24pCgpDb250ZXh0ZSA6IGZhY3R1cmF0aW9uIMOpbGVjdHJvbmlxdWUgYmVsZ2UgKipvYmxpZ2F0b2lyZSBkZXB1aXMgbGUgMDEvMDEvMjAyNioqIGVudHJlIGVudHJlcHJpc2VzLgpOb3RyZSBnw6luw6lyYXRldXIgcHJvZHVpdCBkdSBYTUwgVUJMIDIuMSAvIEJJUyAzLjAgY29uZm9ybWUg4oCUIGlsIG1hbnF1ZSBsJ2Vudm9pIHBhciB1bgpwb2ludCBkJ2FjY8OocyBjZXJ0aWZpw6kuIDIgb3B0aW9ucyBjcsOpZGlibGVzIHRyb3V2w6llcyAodGFyaWZzIHbDqXJpZmnDqXMgc3VyIGxlcyBzaXRlcyBvZmZpY2llbHMpIDoKCiMjIE9wdGlvbiBBIOKAlCBCaWxsaXQgOiBwbGFuIGdyYXR1aXQKfCDDiWzDqW1lbnQgfCBEw6l0YWlsIHwKfC0tLXwtLS18CnwgUGxhbiDCqyBFbnZvaSB1bmlxdWVtZW50IMK7IHwgKiowLDAwIOKCrC9tb2lzKiog4oCUIGVudm9pIGRlIGZhY3R1cmVzIGRlIHZlbnRlIHZpYSBQZXBwb2wsIDEgdXRpbGlzYXRldXIgfAp8IFBsYW5zIHBheWFudHMgfCA2LDkwLTcsNTAg4oKsL21vaXMgKDI1IGRvY3MvbW9pcykg4oaSIDIyLDkyIOKCrC9tb2lzICg1MDAgZG9jcy9tb2lzKSB8CnwgQWNjw6hzIFBlcHBvbCB8ICoqaW5jbHVzIHNhbnMgZnJhaXMgc3VwcGzDqW1lbnRhaXJlcyoqIHwKfCBFc3NhaSB8IDE1IGpvdXJzIGdyYXR1aXQsIHNhbnMgY2FydGUgfAp8IExpbWl0ZSBwb3VyIG5vdXMgfCBlbnZvaSB2aWEgTEVVUiBpbnRlcmZhY2UgKHBhcyBkJ0FQSSBjbGFpcmVtZW50IGRvY3VtZW50w6llIGVuIGdyYXR1aXQpIHwKCiMjIE9wdGlvbiBCIOKAlCBQZXBwb2wgQm94IGJ5IEZsZXhpbmEgOiBlbnZvaSBYTUwvQVBJCnwgw4lsw6ltZW50IHwgRMOpdGFpbCB8CnwtLS18LS0tfAp8IFBsYW4gTWljcm8gfCAqKjUg4oKsL21vaXMqKiAoNjAg4oKsL2FuKSDigJQgMTAwIGRvY3VtZW50cy9hbiwgc2FucyBlbmdhZ2VtZW50IHwKfCBQbGFuIFN0YW5kYXJkIHwgMTUg4oKsL21vaXMgKDYwMCBkb2NzL2FuKSB8CnwgRW52b2kgfCAqKkFQSSArIGVudm9pIFhNTCBkaXJlY3QqKiDigJQgY29tcGF0aWJsZSBhdmVjIG5vdHJlIGBnZW5lcmF0ZV9wZXBwb2xfaW52b2ljZS5weWAgfAp8IEF2YW50YWdlIHRlY2huaXF1ZSB8IGxlIHNldWwgZGVzIGRldXggcXVpIGFjY2VwdGUgZXhwbGljaXRlbWVudCBkdSBYTUwgZ8OpbsOpcsOpIGVuIGV4dGVybmUgfAoKIyMgUmVjb21tYW5kYXRpb24gKHByw6lwYXLDqWUsIGTDqWNpc2lvbiDDoCBCcmFuZG9uKQoxLiAqKlRlc3QgZ3JhdHVpdCBCaWxsaXQgMTUgam91cnMqKiBwb3VyIHZhbGlkZXIgbGUgZmx1eCBQZXBwb2wgYXZlYyB1biB2cmFpIGRlc3RpbmF0YWlyZSAoMCDigqwpLgoyLiBTaSBsJ2Vudm9pIFhNTCBhdXRvbWF0aXPDqSBlc3QgcmVxdWlzIChwaXBlbGluZSAxMDAgJSBJQSkg4oaSICoqUGVwcG9sIEJveCBNaWNybyDDoCA1IOKCrC9tb2lzKiogOiBub3RyZSBYTUwgcGFzc2UgcGFyIGxldXIgQVBJLCB6w6lybyByZXNzYWlzaWUuCjMuIE5lIHJpZW4gc291c2NyaXJlIGF2YW50IGxlIHByZW1pZXIgY2xpZW50IHLDqWVsLgoKIyMgQ2/Du3QgdnMgbW9kw6hsZQotIDUg4oKsL21vaXMgPSAxLDcgJSBkJ3VuIFBhY2sgMSAoMjkwIOKCrCkg4oCUIG7DqWdsaWdlYWJsZSBhdSBwcmVtaWVyIGNsaWVudC4KLSBUcmlnZ2VyIGQnYWNoYXQgOiBsZSBqb3VyIG/DuSBsZSBwcmVtaWVyIGNsaWVudCBzaWduw6kgZG9pdCByZWNldm9pciB1bmUgZmFjdHVyZSBQZXBwb2wuCgpTb3VyY2VzIDogYmlsbGl0LmV1L2ZyLWJlL3RhcmlmcywgYmlsbGl0LmV1L2ZyLWJlL2Vudm95ZXItZGVzLWZhY3R1cmVzLWVsZWN0cm9uaXF1ZXMtdmlhLXBlcHBvbCwgcGVwcG9sLWJveC5iZS90YXJpZnMtcGVwcG9sIChjb25zdWx0w6lzIDE4LzExLzIwMjYpLgo=
+# OPTIONS POINT D'ACCÈS PEPPOL — recherche 18/11/2026 (pour décision Brandon)
+
+Contexte : facturation électronique belge **obligatoire depuis le 01/01/2026** entre entreprises.
+Notre générateur produit du XML UBL 2.1 / BIS 3.0 conforme — il manque l'envoi par un
+point d'accès certifié. 2 options crédibles trouvées (tarifs vérifiés sur les sites officiels) :
+
+## Option A — Billit : plan gratuit
+| Élément | Détail |
+|---|---|
+| Plan « Envoi uniquement » | **0,00 €/mois** — envoi de factures de vente via Peppol, 1 utilisateur |
+| Plans payants | 6,90-7,50 €/mois (25 docs/mois) → 22,92 €/mois (500 docs/mois) |
+| Accès Peppol | **inclus sans frais supplémentaires** |
+| Essai | 15 jours gratuit, sans carte |
+| Limite pour nous | envoi via LEUR interface (pas d'API clairement documentée en gratuit) |
+
+## Option B — Peppol Box by Flexina : envoi XML/API
+| Élément | Détail |
+|---|---|
+| Plan Micro | **5 €/mois** (60 €/an) — 100 documents/an, sans engagement |
+| Plan Standard | 15 €/mois (600 docs/an) |
+| Envoi | **API + envoi XML direct** — compatible avec notre `generate_peppol_invoice.py` |
+| Avantage technique | le seul des deux qui accepte explicitement du XML généré en externe |
+
+## Recommandation (préparée, décision à Brandon)
+1. **Test gratuit Billit 15 jours** pour valider le flux Peppol avec un vrai destinataire (0 €).
+2. Si l'envoi XML automatisé est requis (pipeline 100 % IA) → **Peppol Box Micro à 5 €/mois** : notre XML passe par leur API, zéro ressaisie.
+3. Ne rien souscrire avant le premier client réel.
+
+## Coût vs modèle
+- 5 €/mois = 1,7 % d'un Pack 1 (290 €) — négligeable au premier client.
+- Trigger d'achat : le jour où le premier client signé doit recevoir une facture Peppol.
+
+Sources : billit.eu/fr-be/tarifs, billit.eu/fr-be/envoyer-des-factures-electroniques-via-peppol, peppol-box.be/tarifs-peppol (consultés 18/11/2026).
