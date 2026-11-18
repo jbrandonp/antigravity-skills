@@ -1,0 +1,18 @@
+{
+  "_meta": {
+    "version": "1.0",
+    "source_rapport": "Entreprise Solo IA §5.4 icp-qualification (score /100, seuil 70, DISQUALIFIED_NO_SIGNAL)",
+    "regles": [
+      "Chaque prospect doit avoir une URL source vérifiable (Google Maps/BCE) — sinon DISQUALIFIED_NO_SIGNAL.",
+      "Score >= 70 : qualifié. 40-69 : à re-vérifier. < 40 ou sans signal : disqualifié.",
+      "Aucun contact envoyé sans validation Telegram de Brandon (closing humain, rapport §Intro).",
+      "Statuts : nouveau -> qualifie -> contacte_J0 -> relance_J4 -> relance_J10 -> dema -> signe | disqualifie | opt_out"
+    ]
+  },
+  "grille_icp": {
+    "taille_5_15_personnes": 30,
+    "goulot_visible_avis_google_retards_devis_ou_pas_de_site": 40,
+    "dirigeant_accessible_tel_public": 30
+  },
+  "prospects": []
+}

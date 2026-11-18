@@ -542,6 +542,8 @@ Pour respecter la rentabilité et minimiser les coûts d'infrastructure, le Bure
 
 ### 7.3 MODÈLE FINANCIER A : Scénario Central (Base 150 € / 21 Projets)
 
+> **Coût API Hermes (ligne à ajouter au modèle, 18/11/2026) :** le rapport « Entreprise Solo IA » montre que la marge agentique ne tient qu'avec le cache de prompt et le routage économique (§4.2 : flotte 5 profils 625 $/mois avec cache vs 1 368 $ sans). Avant de généraliser les crons d'exécution client (Rapport Patron, relances), modéliser : coût tokens par client/mois vs 65 €/mois du Pack 3 — cible < 10 % du forfait. Notre stack (GLM Flash ~0,04-0,08 $/M + Jev 0,000065 $/décision) est 10-100× moins chère que les modèles du rapport : avantage structurel.
+
 Ce modèle simule l'activité avec une structure de charges fixes de 35 €/mois et 5 % de charges variables techniques.
 
 #### A.1 Prévisionnel Mensuel du Chiffre d'Affaires (Scénario Central)
