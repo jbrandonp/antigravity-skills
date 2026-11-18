@@ -33,3 +33,11 @@ Plateforme expérimentale riche et bien testée (94 tests réels), architecture 
 (WAF → détonateur → cache → triage → Merkle → télémétrie), aucune porte dérobée détectée.
 **Ne pas l'utiliser pour des secrets de production** ni croire son README sur la stdlib et AES-GCM.
 Les scripts de prod `jev-decide.py` / `jev-filter.py` restent la voie active.
+
+## Mise à jour 18/11 — 2 bugs d'intégration corrigés
+
+Le triage du monolithe renvoyait systématiquement `erreur_appel` :
+1. Questions vides (`{"type": "choice"}` sans instructions/criteria) + type inexistants (`boolean` au lieu de `noul`) → HTTP 400 systématique. Remplacés par les questions calibrées v3.2.
+2. Parsing de la réponse : l'API renvoie `answers` (clé `noul`), le monolithe lisait `decisions` (clé `probability`). Corrigé avec fallback.
+
+Validé après fix : spam → spam conf 1.0, pertinence 0.04 ; recruteur → emploi conf 0.96, urgent 0.71, pertinence 2.65. 94/94 tests toujours verts.
